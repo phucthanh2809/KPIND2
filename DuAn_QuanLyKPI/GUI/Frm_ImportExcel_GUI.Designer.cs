@@ -31,6 +31,8 @@ namespace DuAn_QuanLyKPI
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnChinhSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuiDi = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportWord = new DevExpress.XtraEditors.SimpleButton();
             this.btnExxportPDF = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportExcel = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +64,8 @@ namespace DuAn_QuanLyKPI
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnChinhSua);
+            this.panel4.Controls.Add(this.btnGuiDi);
             this.panel4.Controls.Add(this.btnExportWord);
             this.panel4.Controls.Add(this.btnExxportPDF);
             this.panel4.Controls.Add(this.btnExportExcel);
@@ -71,13 +75,38 @@ namespace DuAn_QuanLyKPI
             this.panel4.Size = new System.Drawing.Size(1364, 68);
             this.panel4.TabIndex = 7;
             // 
+            // btnChinhSua
+            // 
+            this.btnChinhSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChinhSua.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChinhSua.Appearance.Options.UseFont = true;
+            this.btnChinhSua.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.editnames;
+            this.btnChinhSua.Location = new System.Drawing.Point(1060, 10);
+            this.btnChinhSua.Name = "btnChinhSua";
+            this.btnChinhSua.Size = new System.Drawing.Size(122, 49);
+            this.btnChinhSua.TabIndex = 10;
+            this.btnChinhSua.Text = "Chỉnh sửa";
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
+            // 
+            // btnGuiDi
+            // 
+            this.btnGuiDi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuiDi.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiDi.Appearance.Options.UseFont = true;
+            this.btnGuiDi.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.apply_32x32;
+            this.btnGuiDi.Location = new System.Drawing.Point(1188, 10);
+            this.btnGuiDi.Name = "btnGuiDi";
+            this.btnGuiDi.Size = new System.Drawing.Size(164, 49);
+            this.btnGuiDi.TabIndex = 9;
+            this.btnGuiDi.Text = "Xác nhận gửi đi ";
+            this.btnGuiDi.Click += new System.EventHandler(this.btnGuiDi_Click);
+            // 
             // btnExportWord
             // 
-            this.btnExportWord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportWord.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportWord.Appearance.Options.UseFont = true;
             this.btnExportWord.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.underlineword;
-            this.btnExportWord.Location = new System.Drawing.Point(925, 10);
+            this.btnExportWord.Location = new System.Drawing.Point(12, 10);
             this.btnExportWord.Name = "btnExportWord";
             this.btnExportWord.Size = new System.Drawing.Size(141, 49);
             this.btnExportWord.TabIndex = 8;
@@ -86,11 +115,10 @@ namespace DuAn_QuanLyKPI
             // 
             // btnExxportPDF
             // 
-            this.btnExxportPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExxportPDF.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExxportPDF.Appearance.Options.UseFont = true;
             this.btnExxportPDF.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.documentpdf;
-            this.btnExxportPDF.Location = new System.Drawing.Point(1072, 10);
+            this.btnExxportPDF.Location = new System.Drawing.Point(159, 10);
             this.btnExxportPDF.Name = "btnExxportPDF";
             this.btnExxportPDF.Size = new System.Drawing.Size(133, 49);
             this.btnExxportPDF.TabIndex = 7;
@@ -99,11 +127,10 @@ namespace DuAn_QuanLyKPI
             // 
             // btnExportExcel
             // 
-            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportExcel.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportExcel.Appearance.Options.UseFont = true;
             this.btnExportExcel.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.exporttoxlsx;
-            this.btnExportExcel.Location = new System.Drawing.Point(1211, 10);
+            this.btnExportExcel.Location = new System.Drawing.Point(298, 10);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(141, 49);
             this.btnExportExcel.TabIndex = 6;
@@ -151,9 +178,9 @@ namespace DuAn_QuanLyKPI
             // 
             this.btnTaiFile.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiFile.Appearance.Options.UseFont = true;
-            this.btnTaiFile.Location = new System.Drawing.Point(491, 15);
+            this.btnTaiFile.Location = new System.Drawing.Point(1242, 14);
             this.btnTaiFile.Name = "btnTaiFile";
-            this.btnTaiFile.Size = new System.Drawing.Size(110, 30);
+            this.btnTaiFile.Size = new System.Drawing.Size(110, 32);
             this.btnTaiFile.TabIndex = 5;
             this.btnTaiFile.Text = "Tải File lên";
             this.btnTaiFile.Click += new System.EventHandler(this.btnTaiFile_Click_1);
@@ -161,7 +188,7 @@ namespace DuAn_QuanLyKPI
             // txtPath
             // 
             this.txtPath.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(61, 13);
+            this.txtPath.Location = new System.Drawing.Point(812, 14);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(424, 32);
             this.txtPath.TabIndex = 4;
@@ -170,7 +197,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 15);
+            this.labelControl1.Location = new System.Drawing.Point(763, 20);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(43, 24);
             this.labelControl1.TabIndex = 3;
@@ -212,5 +239,7 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraEditors.SimpleButton btnExportExcel;
         private DevExpress.XtraEditors.SimpleButton btnExxportPDF;
         private DevExpress.XtraEditors.SimpleButton btnExportWord;
+        private DevExpress.XtraEditors.SimpleButton btnChinhSua;
+        private DevExpress.XtraEditors.SimpleButton btnGuiDi;
     }
 }

@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.DataAccess.Excel;
+using BusinessCommon;
 
 namespace DuAn_QuanLyKPI
 {
     public partial class Frm_ImportExcel_GUI : DevExpress.XtraEditors.XtraForm
     {
+        private clsCommonMethod comm = new clsCommonMethod();
+        private clsEventArgs ev = new clsEventArgs("");
         public Frm_ImportExcel_GUI()
         {
             InitializeComponent();
@@ -81,6 +84,30 @@ namespace DuAn_QuanLyKPI
             if (sf.ShowDialog() == DialogResult.OK)
             {
                 gcData.ExportToXlsx(sf.FileName);
+            }
+        }
+
+        private void btnGuiDi_Click(object sender, EventArgs e)
+        {
+            if(ev.QFrmThongBao_YesNo("Bạn có muốn xác nhận gửi đi không?"))
+            {
+
+            }   
+            else
+            {
+                //
+            }    
+        }
+
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            if (ev.QFrmThongBao_YesNo("Bạn có muốn xác nhận gửi đi không?"))
+            {
+
+            }
+            else
+            {
+                //
             }
         }
     }
