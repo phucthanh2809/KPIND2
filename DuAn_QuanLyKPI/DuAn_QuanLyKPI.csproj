@@ -178,5 +178,8 @@
   <ItemGroup>
     <None Include="Resources\publicfix_32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous_32x32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

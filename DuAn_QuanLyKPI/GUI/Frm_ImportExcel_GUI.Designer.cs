@@ -31,7 +31,10 @@ namespace DuAn_QuanLyKPI
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnTaiFile = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.btnChinhSua = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuiDi = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportWord = new DevExpress.XtraEditors.SimpleButton();
             this.btnExxportPDF = new DevExpress.XtraEditors.SimpleButton();
@@ -39,23 +42,17 @@ namespace DuAn_QuanLyKPI
             this.panel3 = new System.Windows.Forms.Panel();
             this.gcData = new DevExpress.XtraGrid.GridControl();
             this.gvData = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTaiFile = new DevExpress.XtraEditors.SimpleButton();
-            this.txtPath = new System.Windows.Forms.TextBox();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -64,7 +61,10 @@ namespace DuAn_QuanLyKPI
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnTaiFile);
+            this.panel4.Controls.Add(this.txtPath);
             this.panel4.Controls.Add(this.btnChinhSua);
+            this.panel4.Controls.Add(this.labelControl1);
             this.panel4.Controls.Add(this.btnGuiDi);
             this.panel4.Controls.Add(this.btnExportWord);
             this.panel4.Controls.Add(this.btnExxportPDF);
@@ -74,6 +74,26 @@ namespace DuAn_QuanLyKPI
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1364, 68);
             this.panel4.TabIndex = 7;
+            // 
+            // btnTaiFile
+            // 
+            this.btnTaiFile.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiFile.Appearance.Options.UseFont = true;
+            this.btnTaiFile.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.previous_32x32;
+            this.btnTaiFile.Location = new System.Drawing.Point(927, 10);
+            this.btnTaiFile.Name = "btnTaiFile";
+            this.btnTaiFile.Size = new System.Drawing.Size(127, 49);
+            this.btnTaiFile.TabIndex = 5;
+            this.btnTaiFile.Text = "Tải File lên";
+            this.btnTaiFile.Click += new System.EventHandler(this.btnTaiFile_Click_1);
+            // 
+            // txtPath
+            // 
+            this.txtPath.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPath.Location = new System.Drawing.Point(497, 18);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(424, 32);
+            this.txtPath.TabIndex = 4;
             // 
             // btnChinhSua
             // 
@@ -87,6 +107,16 @@ namespace DuAn_QuanLyKPI
             this.btnChinhSua.TabIndex = 10;
             this.btnChinhSua.Text = "Chỉnh sửa";
             this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(448, 22);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(43, 24);
+            this.labelControl1.TabIndex = 3;
+            this.labelControl1.Text = "Path";
             // 
             // btnGuiDi
             // 
@@ -141,9 +171,9 @@ namespace DuAn_QuanLyKPI
             // 
             this.panel3.Controls.Add(this.gcData);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 59);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1364, 677);
+            this.panel3.Size = new System.Drawing.Size(1364, 736);
             this.panel3.TabIndex = 6;
             // 
             // gcData
@@ -152,7 +182,7 @@ namespace DuAn_QuanLyKPI
             this.gcData.Location = new System.Drawing.Point(0, 0);
             this.gcData.MainView = this.gvData;
             this.gcData.Name = "gcData";
-            this.gcData.Size = new System.Drawing.Size(1364, 677);
+            this.gcData.Size = new System.Drawing.Size(1364, 736);
             this.gcData.TabIndex = 0;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvData});
@@ -162,46 +192,6 @@ namespace DuAn_QuanLyKPI
             this.gvData.GridControl = this.gcData;
             this.gvData.Name = "gvData";
             this.gvData.OptionsView.ShowGroupPanel = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnTaiFile);
-            this.panel1.Controls.Add(this.txtPath);
-            this.panel1.Controls.Add(this.labelControl1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 59);
-            this.panel1.TabIndex = 5;
-            // 
-            // btnTaiFile
-            // 
-            this.btnTaiFile.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiFile.Appearance.Options.UseFont = true;
-            this.btnTaiFile.Location = new System.Drawing.Point(1242, 14);
-            this.btnTaiFile.Name = "btnTaiFile";
-            this.btnTaiFile.Size = new System.Drawing.Size(110, 32);
-            this.btnTaiFile.TabIndex = 5;
-            this.btnTaiFile.Text = "Tải File lên";
-            this.btnTaiFile.Click += new System.EventHandler(this.btnTaiFile_Click_1);
-            // 
-            // txtPath
-            // 
-            this.txtPath.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(812, 14);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(424, 32);
-            this.txtPath.TabIndex = 4;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(763, 20);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(43, 24);
-            this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Path";
             // 
             // Frm_ImportExcel_GUI
             // 
@@ -217,11 +207,10 @@ namespace DuAn_QuanLyKPI
             this.Load += new System.EventHandler(this.Frm_ImportExcel_GUI_Load);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -229,7 +218,6 @@ namespace DuAn_QuanLyKPI
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton btnTaiFile;
         private System.Windows.Forms.TextBox txtPath;
         private DevExpress.XtraEditors.LabelControl labelControl1;
