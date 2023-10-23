@@ -12,28 +12,21 @@ namespace DuAn_QuanLyKPI.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class KPI
+    public partial class NhomTieuChi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KPI()
+        public NhomTieuChi()
         {
-            this.ChiTietKPICaNhan = new HashSet<ChiTietKPICaNhan>();
-            this.ChiTietKPIKhoaPhong = new HashSet<ChiTietKPIKhoaPhong>();
-            this.NganHangKPI = new HashSet<NganHangKPI>();
+            this.ChiTietTieuChiPhieuCaNhan = new HashSet<ChiTietTieuChiPhieuCaNhan>();
+            this.ChiTietTieuChiPhieuPhongKhoa = new HashSet<ChiTietTieuChiPhieuPhongKhoa>();
         }
     
-        public int MaKPI { get; set; }
-        public string NoiDung { get; set; }
-        public string DonViTinh { get; set; }
-        public string PhuongPhapDo { get; set; }
-        public bool CongViecCaNhan { get; set; }
-        public string ChiTieu { get; set; }
+        public int TieuChiID { get; set; }
+        public string TenTieuChi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
+        public virtual ICollection<ChiTietTieuChiPhieuCaNhan> ChiTietTieuChiPhieuCaNhan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NganHangKPI> NganHangKPI { get; set; }
+        public virtual ICollection<ChiTietTieuChiPhieuPhongKhoa> ChiTietTieuChiPhieuPhongKhoa { get; set; }
     }
 }

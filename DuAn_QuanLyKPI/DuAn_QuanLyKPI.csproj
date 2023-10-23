@@ -33,6 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v23.1.Wizard, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -62,9 +77,16 @@
     <Compile Include="DTO\ChiTietKPIKhoaPhong.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ChiTietTieuChiPhieuCaNhan.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ChiTietTieuChiPhieuPhongKhoa.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\ChucDanh.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\DataPoint.cs" />
     <Compile Include="DTO\dbQuanLyKPI.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,10 +111,14 @@
     <Compile Include="DTO\KPI_KhoaPhong.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ListKPI_DTO.cs" />
     <Compile Include="DTO\NganHangKPI.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\NguoiDung.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\NhomTieuChi.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\PhongKhoa.cs">
@@ -110,11 +136,21 @@
     <Compile Include="GUI\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_TongHopKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_TongHopKPI.Designer.cs">
+      <DependentUpon>Frm_TongHopKPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_TongHopKPI.resx">
+      <DependentUpon>Frm_TongHopKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -123,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="DTO\dbQuanLyKPI.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -152,6 +189,13 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mentoring Arrow.gif" />
+    <None Include="Resources\success %281%29.gif" />
+    <None Include="Resources\circle-loader.gif" />
+    <None Include="Resources\Loading.gif" />
+    <None Include="Resources\loading-carga-refresh.gif" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DTO\dbQuanLyKPI.Context.tt">
