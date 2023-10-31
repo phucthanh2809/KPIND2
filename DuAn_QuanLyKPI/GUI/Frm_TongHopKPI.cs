@@ -101,6 +101,7 @@ namespace DuAn_QuanLyKPI.GUI
                         case 0: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
                         case 1: dto.TrangThai = "Đã duyệt"; Accepts++; break;
                         case 2: dto.TrangThai = "Trả về"; Refuses++; break;
+                        default: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
                     }
                     listTH.Add(dto);
                 }
