@@ -191,12 +191,6 @@
     <Compile Include="GUI\Frm_ImportExcel_GUI.Designer.cs">
       <DependentUpon>Frm_ImportExcel_GUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Frm_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Frm_Login.Designer.cs">
-      <DependentUpon>Frm_Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Frm_TongHopKPI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,13 +209,7 @@
     <EmbeddedResource Include="GUI\Frm_ImportExcel_GUI.resx">
       <DependentUpon>Frm_ImportExcel_GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_Login.resx">
-      <DependentUpon>Frm_Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="GUI\Frm_Login.resx">
-      <DependentUpon>Frm_Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_TongHopKPI.resx">
       <DependentUpon>Frm_TongHopKPI.cs</DependentUpon>
     </EmbeddedResource>
