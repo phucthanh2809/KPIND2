@@ -30,14 +30,9 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             this.pnTong = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnChinhSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGuiDi = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dgrListKPI = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgrBieuMau = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cMaPhieuKPI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cMaPhongKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cTieuDe = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,12 +43,17 @@ namespace DuAn_QuanLyKPI.GUI
             this.cLoaiPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cMauPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnChinhSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuiDi = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnTong.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrListKPI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrBieuMau)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnTong
@@ -67,25 +67,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong.Size = new System.Drawing.Size(1364, 736);
             this.pnTong.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 63);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnChinhSua);
-            this.panel2.Controls.Add(this.btnGuiDi);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 662);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1364, 74);
-            this.panel2.TabIndex = 1;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.gridControl1);
@@ -95,68 +76,31 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Size = new System.Drawing.Size(1364, 599);
             this.panel3.TabIndex = 2;
             // 
-            // btnChinhSua
-            // 
-            this.btnChinhSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChinhSua.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChinhSua.Appearance.Options.UseFont = true;
-            this.btnChinhSua.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.editnames;
-            this.btnChinhSua.Location = new System.Drawing.Point(1060, 13);
-            this.btnChinhSua.Name = "btnChinhSua";
-            this.btnChinhSua.Size = new System.Drawing.Size(122, 49);
-            this.btnChinhSua.TabIndex = 12;
-            this.btnChinhSua.Text = "Chỉnh sửa";
-            // 
-            // btnGuiDi
-            // 
-            this.btnGuiDi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuiDi.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuiDi.Appearance.Options.UseFont = true;
-            this.btnGuiDi.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.apply_32x32;
-            this.btnGuiDi.Location = new System.Drawing.Point(1188, 13);
-            this.btnGuiDi.Name = "btnGuiDi";
-            this.btnGuiDi.Size = new System.Drawing.Size(164, 49);
-            this.btnGuiDi.TabIndex = 11;
-            this.btnGuiDi.Text = "Xác nhận gửi đi ";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(378, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(637, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tổng hợp thông tin Biểu mẫu ";
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.dgrListKPI;
+            this.gridControl1.MainView = this.dgrBieuMau;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1364, 599);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dgrListKPI});
+            this.dgrBieuMau});
             // 
-            // dgrListKPI
+            // dgrBieuMau
             // 
-            this.dgrListKPI.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgrListKPI.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgrListKPI.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.dgrListKPI.Appearance.HeaderPanel.Options.UseFont = true;
-            this.dgrListKPI.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.dgrListKPI.Appearance.Row.Options.UseBackColor = true;
-            this.dgrListKPI.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
-            this.dgrListKPI.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.dgrListKPI.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgrListKPI.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.dgrListKPI.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.dgrBieuMau.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgrBieuMau.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgrBieuMau.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.dgrBieuMau.Appearance.HeaderPanel.Options.UseFont = true;
+            this.dgrBieuMau.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.dgrBieuMau.Appearance.Row.Options.UseBackColor = true;
+            this.dgrBieuMau.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.dgrBieuMau.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.dgrBieuMau.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgrBieuMau.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.dgrBieuMau.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.cMaPhieuKPI,
             this.cMaPhongKhoa,
             this.cTieuDe,
@@ -167,13 +111,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.cLoaiPhieu,
             this.cMauPhieu,
             this.cTrangThai});
-            this.dgrListKPI.GridControl = this.gridControl1;
-            this.dgrListKPI.Name = "dgrListKPI";
-            this.dgrListKPI.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.dgrListKPI.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.dgrListKPI.OptionsBehavior.Editable = false;
-            this.dgrListKPI.OptionsBehavior.ReadOnly = true;
-            this.dgrListKPI.RowHeight = 30;
+            this.dgrBieuMau.GridControl = this.gridControl1;
+            this.dgrBieuMau.Name = "dgrBieuMau";
+            this.dgrBieuMau.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.dgrBieuMau.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.dgrBieuMau.OptionsBehavior.Editable = false;
+            this.dgrBieuMau.OptionsBehavior.ReadOnly = true;
+            this.dgrBieuMau.RowHeight = 30;
             // 
             // cMaPhieuKPI
             // 
@@ -375,6 +319,62 @@ namespace DuAn_QuanLyKPI.GUI
             this.cTrangThai.Visible = true;
             this.cTrangThai.VisibleIndex = 9;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnChinhSua);
+            this.panel2.Controls.Add(this.btnGuiDi);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 662);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1364, 74);
+            this.panel2.TabIndex = 1;
+            // 
+            // btnChinhSua
+            // 
+            this.btnChinhSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChinhSua.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChinhSua.Appearance.Options.UseFont = true;
+            this.btnChinhSua.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.editnames;
+            this.btnChinhSua.Location = new System.Drawing.Point(1060, 13);
+            this.btnChinhSua.Name = "btnChinhSua";
+            this.btnChinhSua.Size = new System.Drawing.Size(122, 49);
+            this.btnChinhSua.TabIndex = 12;
+            this.btnChinhSua.Text = "Chỉnh sửa";
+            // 
+            // btnGuiDi
+            // 
+            this.btnGuiDi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuiDi.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiDi.Appearance.Options.UseFont = true;
+            this.btnGuiDi.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.apply_32x32;
+            this.btnGuiDi.Location = new System.Drawing.Point(1188, 13);
+            this.btnGuiDi.Name = "btnGuiDi";
+            this.btnGuiDi.Size = new System.Drawing.Size(164, 49);
+            this.btnGuiDi.TabIndex = 11;
+            this.btnGuiDi.Text = "Xác nhận gửi đi ";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1364, 63);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(364, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(637, 55);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tổng hợp thông tin Biểu mẫu ";
+            // 
             // Frm_HoanThanhKhoaPhong
             // 
             this.Appearance.Options.UseFont = true;
@@ -387,12 +387,12 @@ namespace DuAn_QuanLyKPI.GUI
             this.Text = "Tổng hợp thông tin biểu mẫu Khoa/ Phòng ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnTong.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrListKPI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrBieuMau)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -407,7 +407,7 @@ namespace DuAn_QuanLyKPI.GUI
         private DevExpress.XtraEditors.SimpleButton btnGuiDi;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView dgrListKPI;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgrBieuMau;
         private DevExpress.XtraGrid.Columns.GridColumn cMaPhieuKPI;
         private DevExpress.XtraGrid.Columns.GridColumn cMaPhongKhoa;
         private DevExpress.XtraGrid.Columns.GridColumn cTieuDe;
