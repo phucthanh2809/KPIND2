@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.DataAccess.Excel;
 using BusinessCommon;
+using DuAn_QuanLyKPI.Constants;
 
 namespace DuAn_QuanLyKPI
 {
@@ -22,6 +23,13 @@ namespace DuAn_QuanLyKPI
             InitializeComponent();
             
         }
+
+        void LayDuLieuLoadLenGrid()
+        {
+            var db = DataProvider.Ins.DB;
+
+        }
+
         #region Biểu mẫu
             public int sobieumau;
             public void LoadBieuMau()
@@ -81,8 +89,6 @@ namespace DuAn_QuanLyKPI
 
         }
         #endregion
-
-
         private void btnTaiFile_Click_1(object sender, EventArgs e)
         {
             //
