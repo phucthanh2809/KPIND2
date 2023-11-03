@@ -27,6 +27,10 @@ namespace DuAn_QuanLyKPI
         void LayDuLieuLoadLenGrid()
         {
             var db = DataProvider.Ins.DB;
+            var result = from c in db.ChiTietKPICaNhan
+                             //where c.ID > 1 && c.ID <4
+                         select c;
+            gcData.DataSource = result.ToList();
 
         }
 
