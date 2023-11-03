@@ -169,14 +169,6 @@
     <Compile Include="DTO\ThongBao.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="..\..\..\..\FrmChinh_GUI.cs">
-      <SubType>Form</SubType>
-      <Link>GUI\FrmChinh_GUI.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\FrmChinh_GUI.Designer.cs">
-      <DependentUpon>FrmChinh_GUI.cs</DependentUpon>
-      <Link>GUI\FrmChinh_GUI.Designer.cs</Link>
-    </Compile>
     <Compile Include="FrmTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,10 +195,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="..\..\..\..\FrmChinh_GUI.resx">
-      <DependentUpon>FrmChinh_GUI.cs</DependentUpon>
-      <Link>GUI\FrmChinh_GUI.resx</Link>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Chinh_GUI.resx">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
     </EmbeddedResource>
