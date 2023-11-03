@@ -21,17 +21,17 @@ namespace DuAn_QuanLyKPI
         public Frm_ImportExcel_GUI()
         {
             InitializeComponent();
-            
+            LayDuLieuLoadLenGrid();
         }
+        #region Khai báo biến
+        public static string IDPhieuKPI;
+        #endregion
 
-        void LayDuLieuLoadLenGrid()
+        private void LayDuLieuLoadLenGrid()
         {
             var db = DataProvider.Ins.DB;
-            var result = from c in db.ChiTietKPICaNhan
-                             //where c.ID > 1 && c.ID <4
-                         select c;
-            gcData.DataSource = result.ToList();
-
+            var listKP = db.KPI_KhoaPhong.OrderBy(x => x.TrangThai);
+            gcData.DataSource = listKP.ToList();
         }
 
         #region Biểu mẫu

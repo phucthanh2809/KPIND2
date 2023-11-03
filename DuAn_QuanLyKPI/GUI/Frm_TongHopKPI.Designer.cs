@@ -161,7 +161,7 @@
             // dgrListKPI
             // 
             this.dgrListKPI.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgrListKPI.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgrListKPI.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgrListKPI.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.dgrListKPI.Appearance.HeaderPanel.Options.UseFont = true;
             this.dgrListKPI.Appearance.Row.BackColor = System.Drawing.Color.White;
@@ -197,7 +197,7 @@
             this.cMaPhieu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cMaPhieu.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cMaPhieu.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cMaPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cMaPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cMaPhieu.AppearanceHeader.Options.UseBackColor = true;
             this.cMaPhieu.AppearanceHeader.Options.UseFont = true;
             this.cMaPhieu.AppearanceHeader.Options.UseTextOptions = true;
@@ -217,7 +217,7 @@
             this.cNguonGui.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cNguonGui.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cNguonGui.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cNguonGui.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cNguonGui.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cNguonGui.AppearanceHeader.Options.UseBackColor = true;
             this.cNguonGui.AppearanceHeader.Options.UseFont = true;
             this.cNguonGui.AppearanceHeader.Options.UseTextOptions = true;
@@ -237,7 +237,7 @@
             this.cTieuDe.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cTieuDe.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cTieuDe.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cTieuDe.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cTieuDe.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cTieuDe.AppearanceHeader.Options.UseBackColor = true;
             this.cTieuDe.AppearanceHeader.Options.UseFont = true;
             this.cTieuDe.AppearanceHeader.Options.UseTextOptions = true;
@@ -257,7 +257,7 @@
             this.cNoiDung.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cNoiDung.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cNoiDung.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cNoiDung.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cNoiDung.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cNoiDung.AppearanceHeader.Options.UseBackColor = true;
             this.cNoiDung.AppearanceHeader.Options.UseFont = true;
             this.cNoiDung.AppearanceHeader.Options.UseTextOptions = true;
@@ -277,7 +277,7 @@
             this.cNgayTao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cNgayTao.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cNgayTao.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cNgayTao.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cNgayTao.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cNgayTao.AppearanceHeader.Options.UseBackColor = true;
             this.cNgayTao.AppearanceHeader.Options.UseFont = true;
             this.cNgayTao.AppearanceHeader.Options.UseTextOptions = true;
@@ -297,7 +297,7 @@
             this.cQuy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cQuy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cQuy.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cQuy.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cQuy.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cQuy.AppearanceHeader.Options.UseBackColor = true;
             this.cQuy.AppearanceHeader.Options.UseFont = true;
             this.cQuy.AppearanceHeader.Options.UseTextOptions = true;
@@ -317,7 +317,7 @@
             this.cNam.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cNam.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cNam.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cNam.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cNam.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cNam.AppearanceHeader.Options.UseBackColor = true;
             this.cNam.AppearanceHeader.Options.UseFont = true;
             this.cNam.AppearanceHeader.Options.UseTextOptions = true;
@@ -337,7 +337,7 @@
             this.cLoaiPhieu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cLoaiPhieu.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cLoaiPhieu.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cLoaiPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cLoaiPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cLoaiPhieu.AppearanceHeader.Options.UseBackColor = true;
             this.cLoaiPhieu.AppearanceHeader.Options.UseFont = true;
             this.cLoaiPhieu.AppearanceHeader.Options.UseTextOptions = true;
@@ -357,7 +357,7 @@
             this.cMauPhieu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cMauPhieu.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cMauPhieu.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cMauPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cMauPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cMauPhieu.AppearanceHeader.Options.UseBackColor = true;
             this.cMauPhieu.AppearanceHeader.Options.UseFont = true;
             this.cMauPhieu.AppearanceHeader.Options.UseTextOptions = true;
@@ -377,7 +377,7 @@
             this.cTrangThai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cTrangThai.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cTrangThai.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cTrangThai.AppearanceHeader.Font = new System.Drawing.Font("Times", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cTrangThai.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.cTrangThai.AppearanceHeader.Options.UseBackColor = true;
             this.cTrangThai.AppearanceHeader.Options.UseFont = true;
             this.cTrangThai.AppearanceHeader.Options.UseTextOptions = true;
@@ -408,7 +408,7 @@
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.White;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
@@ -488,7 +488,7 @@
             // 
             // lblWaiting
             // 
-            this.lblWaiting.Appearance.Font = new System.Drawing.Font("SVN-Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWaiting.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWaiting.Appearance.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblWaiting.Appearance.Options.UseFont = true;
             this.lblWaiting.Appearance.Options.UseForeColor = true;
@@ -519,7 +519,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("SVN-Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
@@ -553,7 +553,7 @@
             // 
             // lblRefuse
             // 
-            this.lblRefuse.Appearance.Font = new System.Drawing.Font("SVN-Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefuse.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRefuse.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.lblRefuse.Appearance.Options.UseFont = true;
             this.lblRefuse.Appearance.Options.UseForeColor = true;
@@ -570,7 +570,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("SVN-Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
@@ -619,7 +619,7 @@
             // 
             // lblAccept
             // 
-            this.lblAccept.Appearance.Font = new System.Drawing.Font("SVN-Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccept.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccept.Appearance.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblAccept.Appearance.Options.UseFont = true;
             this.lblAccept.Appearance.Options.UseForeColor = true;
@@ -636,7 +636,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("SVN-Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
