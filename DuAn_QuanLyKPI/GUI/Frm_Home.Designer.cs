@@ -38,7 +38,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQuanLyNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,10 +49,10 @@ namespace DuAn_QuanLyKPI.GUI
             // pnhome
             // 
             this.pnhome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnhome.Location = new System.Drawing.Point(0, 158);
+            this.pnhome.Location = new System.Drawing.Point(0, 150);
             this.pnhome.Margin = new System.Windows.Forms.Padding(4);
             this.pnhome.Name = "pnhome";
-            this.pnhome.Size = new System.Drawing.Size(1030, 551);
+            this.pnhome.Size = new System.Drawing.Size(1030, 559);
             this.pnhome.TabIndex = 5;
             // 
             // ribbonControl1
@@ -74,7 +73,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1030, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1030, 150);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // btnDangNhap
@@ -97,6 +96,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnDoiMatKhau.Id = 5;
             this.btnDoiMatKhau.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDoiMatKhau.ImageOptions.SvgImage")));
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick_1);
             // 
             // btnQuanLyNguoiDung
             // 
@@ -104,6 +104,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQuanLyNguoiDung.Id = 6;
             this.btnQuanLyNguoiDung.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnQuanLyNguoiDung.ImageOptions.SvgImage")));
             this.btnQuanLyNguoiDung.Name = "btnQuanLyNguoiDung";
+            this.btnQuanLyNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLyNguoiDung_ItemClick_1);
             // 
             // btnDangXuat
             // 
@@ -111,21 +112,16 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnDangXuat.Id = 8;
             this.btnDangXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangXuat.ImageOptions.SvgImage")));
             this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick_1);
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
             this.ribbonPageGroup6,
             this.ribbonPageGroup4,
             this.ribbonPageGroup5});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Hệ Thống";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnDangNhap);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup6
             // 
@@ -179,7 +175,6 @@ namespace DuAn_QuanLyKPI.GUI
         private DevExpress.XtraBars.BarButtonItem btnQuanLyNguoiDung;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;

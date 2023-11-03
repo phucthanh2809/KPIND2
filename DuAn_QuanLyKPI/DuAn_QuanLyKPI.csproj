@@ -212,6 +212,14 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\close.png" />
+    <None Include="Resources\changelock.png" />
+    <None Include="Resources\Tiêu đề Website BV%2816%29_preview_rev_11.png" />
+    <None Include="Resources\lock11.png" />
+    <None Include="Resources\icons8-lock-50.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\hinh-up-bac-si-nhat-4-1-1088x760.jpg" />
+    <None Include="Resources\Tiêu đề Website BV%2816%29_preview_rev_1.png" />
     <None Include="Resources\noimage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

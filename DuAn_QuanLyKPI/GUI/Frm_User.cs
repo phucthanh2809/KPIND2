@@ -228,29 +228,7 @@ namespace DuAn_QuanLyKPI.GUI
 
       
 
-        private void dgrDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-
-
-            addBiding();
-
-            //if (e.RowIndex == -1)
-            //    addBiding();
-            //    return;
-            //if (dgrDanhSach["c_Xoa", e.RowIndex] == dgrDanhSach.CurrentCell)
-            //{
-            //    if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn xóa người dùng " + dgrDanhSach.CurrentRow.Cells["cTenTaiKhoan"].Value.ToString() + "này không ?"))
-            //    {
-            //        msql = "DELETE FROM [dbo].[NguoiDung] WHERE MaNV = N'" + dgrDanhSach.CurrentRow.Cells["cMaNV"].Value.ToString() + "'";
-            //        comm.RunSQL(mconnectstring, msql);
-
-            //        LoadData();
-
-            //    }
-            //}
-        }
-       
+        
 
         private void dgrDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -541,7 +519,19 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void dgrDanhSach_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                pbUser.Image = Base64ToImage((byte[])dgrDanhSach.SelectedRows[0].Cells[5].Value);
+            }
+            catch (Exception)
+            {
+                pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
+            }
+        }
 
+        private void dgrDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            addBiding();
         }
     }
 }

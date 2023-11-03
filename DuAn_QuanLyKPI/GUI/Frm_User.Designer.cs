@@ -70,8 +70,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.pbUser = new System.Windows.Forms.PictureBox();
             this.btnUpImage = new System.Windows.Forms.Button();
+            this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSach)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,7 +82,7 @@ namespace DuAn_QuanLyKPI.GUI
             // btnclear
             // 
             this.btnclear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnclear.Location = new System.Drawing.Point(620, 78);
+            this.btnclear.Location = new System.Drawing.Point(728, 78);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(75, 34);
             this.btnclear.TabIndex = 8;
@@ -109,7 +109,7 @@ namespace DuAn_QuanLyKPI.GUI
             // btnView
             // 
             this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnView.Location = new System.Drawing.Point(516, 78);
+            this.btnView.Location = new System.Drawing.Point(624, 78);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(98, 34);
             this.btnView.TabIndex = 7;
@@ -124,7 +124,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(328, 137);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(923, 558);
+            this.panel3.Size = new System.Drawing.Size(1031, 624);
             this.panel3.TabIndex = 5;
             // 
             // dgrDanhSach
@@ -146,9 +146,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSach.ReadOnly = true;
             this.dgrDanhSach.RowTemplate.Height = 100;
             this.dgrDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrDanhSach.Size = new System.Drawing.Size(923, 558);
+            this.dgrDanhSach.Size = new System.Drawing.Size(1031, 624);
             this.dgrDanhSach.TabIndex = 0;
             this.dgrDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDanhSach_CellClick);
+            this.dgrDanhSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrDanhSach_CellMouseClick);
             this.dgrDanhSach.Click += new System.EventHandler(this.dgrDanhSach_Click_1);
             // 
             // cMaNV
@@ -260,9 +261,10 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel5
             // 
+            this.panel5.BackgroundImage = global::DuAn_QuanLyKPI.Properties.Resources.Tiêu_đề_Website_BV_16__preview_rev_11;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(744, 0);
+            this.panel5.Location = new System.Drawing.Point(852, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(179, 137);
             this.panel5.TabIndex = 6;
@@ -431,7 +433,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(328, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(923, 137);
+            this.panel2.Size = new System.Drawing.Size(1031, 137);
             this.panel2.TabIndex = 4;
             // 
             // label3
@@ -539,7 +541,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 695);
+            this.panel1.Size = new System.Drawing.Size(328, 761);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -563,6 +565,16 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnLuu.Visible = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
+            // btnUpImage
+            // 
+            this.btnUpImage.Location = new System.Drawing.Point(123, 190);
+            this.btnUpImage.Name = "btnUpImage";
+            this.btnUpImage.Size = new System.Drawing.Size(75, 33);
+            this.btnUpImage.TabIndex = 4;
+            this.btnUpImage.Text = "Upload";
+            this.btnUpImage.UseVisualStyleBackColor = true;
+            this.btnUpImage.Click += new System.EventHandler(this.btnUpImage_Click_1);
+            // 
             // pbUser
             // 
             this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -575,21 +587,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.pbUser.TabIndex = 5;
             this.pbUser.TabStop = false;
             // 
-            // btnUpImage
-            // 
-            this.btnUpImage.Location = new System.Drawing.Point(123, 190);
-            this.btnUpImage.Name = "btnUpImage";
-            this.btnUpImage.Size = new System.Drawing.Size(75, 33);
-            this.btnUpImage.TabIndex = 4;
-            this.btnUpImage.Text = "Upload";
-            this.btnUpImage.UseVisualStyleBackColor = true;
-            this.btnUpImage.Click += new System.EventHandler(this.btnUpImage_Click_1);
-            // 
             // Frm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 695);
+            this.ClientSize = new System.Drawing.Size(1359, 761);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

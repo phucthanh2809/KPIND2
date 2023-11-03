@@ -74,5 +74,15 @@ namespace DuAn_QuanLyKPI.GUI
         {
             this.Close();
         }
+
+        private void btnDoiMatKhau_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
