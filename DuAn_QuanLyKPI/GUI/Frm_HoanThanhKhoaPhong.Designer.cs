@@ -31,7 +31,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             this.pnTong = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gcBieuMau = new DevExpress.XtraGrid.GridControl();
             this.dgrBieuMau = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cMaPhieuKPI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cMaPhongKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,7 +40,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNgayTao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cQuy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cNam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cLoaiPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cMauPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,7 +49,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.pnTong.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcBieuMau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrBieuMau)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,23 +68,23 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.gridControl1);
+            this.panel3.Controls.Add(this.gcBieuMau);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 63);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1364, 599);
             this.panel3.TabIndex = 2;
             // 
-            // gridControl1
+            // gcBieuMau
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.dgrBieuMau;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1364, 599);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcBieuMau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcBieuMau.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gcBieuMau.Location = new System.Drawing.Point(0, 0);
+            this.gcBieuMau.MainView = this.dgrBieuMau;
+            this.gcBieuMau.Name = "gcBieuMau";
+            this.gcBieuMau.Size = new System.Drawing.Size(1364, 599);
+            this.gcBieuMau.TabIndex = 2;
+            this.gcBieuMau.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgrBieuMau});
             // 
             // dgrBieuMau
@@ -108,15 +107,15 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNgayTao,
             this.cQuy,
             this.cNam,
-            this.cLoaiPhieu,
             this.cMauPhieu,
             this.cTrangThai});
-            this.dgrBieuMau.GridControl = this.gridControl1;
+            this.dgrBieuMau.GridControl = this.gcBieuMau;
             this.dgrBieuMau.Name = "dgrBieuMau";
             this.dgrBieuMau.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgrBieuMau.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgrBieuMau.OptionsBehavior.Editable = false;
             this.dgrBieuMau.OptionsBehavior.ReadOnly = true;
+            this.dgrBieuMau.OptionsView.ShowGroupPanel = false;
             this.dgrBieuMau.RowHeight = 30;
             // 
             // cMaPhieuKPI
@@ -134,7 +133,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaPhieuKPI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cMaPhieuKPI.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.cMaPhieuKPI.Caption = "Mã phiếu KPI";
-            this.cMaPhieuKPI.FieldName = "MaPhieuKPI";
+            this.cMaPhieuKPI.FieldName = "MaKPI";
             this.cMaPhieuKPI.Name = "cMaPhieuKPI";
             this.cMaPhieuKPI.Visible = true;
             this.cMaPhieuKPI.VisibleIndex = 0;
@@ -213,8 +212,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNgayTao.AppearanceHeader.Options.UseTextOptions = true;
             this.cNgayTao.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.cNgayTao.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cNgayTao.Caption = "Ngày gửi";
-            this.cNgayTao.FieldName = "NgayGui";
+            this.cNgayTao.Caption = "Ngày tạo";
+            this.cNgayTao.FieldName = "NgayTao";
             this.cNgayTao.Name = "cNgayTao";
             this.cNgayTao.Visible = true;
             this.cNgayTao.VisibleIndex = 4;
@@ -259,26 +258,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNam.Visible = true;
             this.cNam.VisibleIndex = 6;
             // 
-            // cLoaiPhieu
-            // 
-            this.cLoaiPhieu.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
-            this.cLoaiPhieu.AppearanceCell.Options.UseFont = true;
-            this.cLoaiPhieu.AppearanceCell.Options.UseTextOptions = true;
-            this.cLoaiPhieu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cLoaiPhieu.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cLoaiPhieu.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cLoaiPhieu.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.cLoaiPhieu.AppearanceHeader.Options.UseBackColor = true;
-            this.cLoaiPhieu.AppearanceHeader.Options.UseFont = true;
-            this.cLoaiPhieu.AppearanceHeader.Options.UseTextOptions = true;
-            this.cLoaiPhieu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cLoaiPhieu.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cLoaiPhieu.Caption = "Loại phiếu";
-            this.cLoaiPhieu.FieldName = "LoaiPhieu";
-            this.cLoaiPhieu.Name = "cLoaiPhieu";
-            this.cLoaiPhieu.Visible = true;
-            this.cLoaiPhieu.VisibleIndex = 7;
-            // 
             // cMauPhieu
             // 
             this.cMauPhieu.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
@@ -297,7 +276,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMauPhieu.FieldName = "MauPhieu";
             this.cMauPhieu.Name = "cMauPhieu";
             this.cMauPhieu.Visible = true;
-            this.cMauPhieu.VisibleIndex = 8;
+            this.cMauPhieu.VisibleIndex = 7;
             // 
             // cTrangThai
             // 
@@ -317,7 +296,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cTrangThai.FieldName = "TrangThai";
             this.cTrangThai.Name = "cTrangThai";
             this.cTrangThai.Visible = true;
-            this.cTrangThai.VisibleIndex = 9;
+            this.cTrangThai.VisibleIndex = 8;
             // 
             // panel2
             // 
@@ -364,9 +343,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(364, 4);
@@ -388,7 +365,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnTong.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcBieuMau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrBieuMau)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -406,7 +383,7 @@ namespace DuAn_QuanLyKPI.GUI
         private DevExpress.XtraEditors.SimpleButton btnChinhSua;
         private DevExpress.XtraEditors.SimpleButton btnGuiDi;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gcBieuMau;
         private DevExpress.XtraGrid.Views.Grid.GridView dgrBieuMau;
         private DevExpress.XtraGrid.Columns.GridColumn cMaPhieuKPI;
         private DevExpress.XtraGrid.Columns.GridColumn cMaPhongKhoa;
@@ -415,7 +392,6 @@ namespace DuAn_QuanLyKPI.GUI
         private DevExpress.XtraGrid.Columns.GridColumn cNgayTao;
         private DevExpress.XtraGrid.Columns.GridColumn cQuy;
         private DevExpress.XtraGrid.Columns.GridColumn cNam;
-        private DevExpress.XtraGrid.Columns.GridColumn cLoaiPhieu;
         private DevExpress.XtraGrid.Columns.GridColumn cMauPhieu;
         private DevExpress.XtraGrid.Columns.GridColumn cTrangThai;
     }
