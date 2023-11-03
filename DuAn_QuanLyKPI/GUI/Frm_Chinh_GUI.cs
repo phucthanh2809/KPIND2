@@ -58,5 +58,10 @@ namespace DuAn_QuanLyKPI
         {
             OpenForm(typeof(Frm_TongHopKPI));
         }
+
+        private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(Frm_ImportExcel_GUI));
+        }
     }
 }

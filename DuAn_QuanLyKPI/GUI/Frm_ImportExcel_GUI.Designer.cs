@@ -204,7 +204,6 @@ namespace DuAn_QuanLyKPI
             this.Name = "Frm_ImportExcel_GUI";
             this.Text = "Import Excel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Frm_ImportExcel_GUI_Load);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
