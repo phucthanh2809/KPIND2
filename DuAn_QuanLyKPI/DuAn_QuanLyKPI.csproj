@@ -187,6 +187,12 @@
     <Compile Include="GUI\Frm_Chinh_GUI.Designer.cs">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_HoanThanhCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_HoanThanhCaNhan.Designer.cs">
+      <DependentUpon>Frm_HoanThanhCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_HoanThanhKhoaPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Frm_Chinh_GUI.resx">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_HoanThanhCaNhan.resx">
+      <DependentUpon>Frm_HoanThanhCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_HoanThanhKhoaPhong.resx">
       <DependentUpon>Frm_HoanThanhKhoaPhong.cs</DependentUpon>

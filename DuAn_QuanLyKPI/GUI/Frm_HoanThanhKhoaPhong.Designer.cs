@@ -72,7 +72,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 63);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1364, 599);
+            this.panel3.Size = new System.Drawing.Size(1364, 613);
             this.panel3.TabIndex = 2;
             // 
             // gcBieuMau
@@ -82,7 +82,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.gcBieuMau.Location = new System.Drawing.Point(0, 0);
             this.gcBieuMau.MainView = this.dgrBieuMau;
             this.gcBieuMau.Name = "gcBieuMau";
-            this.gcBieuMau.Size = new System.Drawing.Size(1364, 599);
+            this.gcBieuMau.Size = new System.Drawing.Size(1364, 613);
             this.gcBieuMau.TabIndex = 2;
             this.gcBieuMau.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgrBieuMau});
@@ -303,9 +303,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Controls.Add(this.btnChinhSua);
             this.panel2.Controls.Add(this.btnGuiDi);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 662);
+            this.panel2.Location = new System.Drawing.Point(0, 676);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1364, 74);
+            this.panel2.Size = new System.Drawing.Size(1364, 60);
             this.panel2.TabIndex = 1;
             // 
             // btnChinhSua
@@ -314,7 +314,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnChinhSua.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChinhSua.Appearance.Options.UseFont = true;
             this.btnChinhSua.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.editnames;
-            this.btnChinhSua.Location = new System.Drawing.Point(1060, 13);
+            this.btnChinhSua.Location = new System.Drawing.Point(1060, 6);
             this.btnChinhSua.Name = "btnChinhSua";
             this.btnChinhSua.Size = new System.Drawing.Size(122, 49);
             this.btnChinhSua.TabIndex = 12;
@@ -326,7 +326,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnGuiDi.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuiDi.Appearance.Options.UseFont = true;
             this.btnGuiDi.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.apply_32x32;
-            this.btnGuiDi.Location = new System.Drawing.Point(1188, 13);
+            this.btnGuiDi.Location = new System.Drawing.Point(1188, 6);
             this.btnGuiDi.Name = "btnGuiDi";
             this.btnGuiDi.Size = new System.Drawing.Size(164, 49);
             this.btnGuiDi.TabIndex = 11;
@@ -343,14 +343,16 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(364, 4);
+            this.label1.Location = new System.Drawing.Point(231, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(637, 55);
+            this.label1.Size = new System.Drawing.Size(903, 55);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tổng hợp thông tin Biểu mẫu ";
+            this.label1.Text = "Tổng hợp thông tin Biểu mẫu Khoa/ Phòng";
             // 
             // Frm_HoanThanhKhoaPhong
             // 
@@ -361,7 +363,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Frm_HoanThanhKhoaPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tổng hợp thông tin biểu mẫu Khoa/ Phòng ";
+            this.Text = "Tổng hợp thông tin mục tiêu KPI Khoa/ Phòng ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnTong.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
