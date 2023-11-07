@@ -163,50 +163,50 @@ namespace DuAn_QuanLyKPI.GUI
             }
         }
 
-        void AddPhanQuyen()
-        {
-            var db = DataProvider.Ins.DB;
+        //void AddPhanQuyen()
+        //{
+        //    var db = DataProvider.Ins.DB;
 
-            Quyen q = new Quyen();
-            q.MaQuyen = cboPhanQuyen.SelectedValue.ToString();
-
-
+        //    Quyen q = new Quyen();
+        //    q.MaQuyen = cboPhanQuyen.SelectedValue.ToString();
 
 
 
-            ev.QFrmThongBao("Thêm người dùng thành công");
-            LoadData();
-        }
-        void AddNguoiDung()
-        {
-            var db = DataProvider.Ins.DB;
-            if (pbUser.Image != null)
-            {
-                NguoiDung nguoidung = new NguoiDung();
-                nguoidung.MaNV = txtMaNV.Text;
-                nguoidung.TenNV = txtHoten.Text;
-                nguoidung.Gmail = txtEmail.Text;
-                nguoidung.SDT = txtSDT.Text;
-                nguoidung.TenTaiKhoan = txtTenTaiKhoan.Text.ToString();
-                nguoidung.HinhAnhNV = ImageToBase64(pbUser.Image, ImageFormat.Jpeg);
-                nguoidung.MatKhau = txtMatKhau.Text;
-                nguoidung.MaPhongKhoa = cboPhongKhoa.SelectedValue.ToString();
-                nguoidung.MaChucDanh = cboChucDanh.SelectedValue.ToString();
-                db.NguoiDung.Add(nguoidung);
-                db.SaveChanges();
-                ev.QFrmThongBao("Thêm người dùng thành công");
-                LoadData();
-            }
-            else
-            {
-
-                ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin!");
 
 
-            }
+        //    ev.QFrmThongBao("Thêm người dùng thành công");
+        //    LoadData();
+        //}
+        //void AddNguoiDung()
+        //{
+        //    var db = DataProvider.Ins.DB;
+        //    if (pbUser.Image != null)
+        //    {
+        //        NguoiDung nguoidung = new NguoiDung();
+        //        nguoidung.MaNV = txtMaNV.Text;
+        //        nguoidung.TenNV = txtHoten.Text;
+        //        nguoidung.Gmail = txtEmail.Text;
+        //        nguoidung.SDT = txtSDT.Text;
+        //        nguoidung.TenTaiKhoan = txtTenTaiKhoan.Text.ToString();
+        //        nguoidung.HinhAnhNV = ImageToBase64(pbUser.Image, ImageFormat.Jpeg);
+        //        nguoidung.MatKhau = txtMatKhau.Text;
+        //        nguoidung.MaPhongKhoa = cboPhongKhoa.SelectedValue.ToString();
+        //        nguoidung.MaChucDanh = cboChucDanh.SelectedValue.ToString();
+        //        db.NguoiDung.Add(nguoidung);
+        //        db.SaveChanges();
+        //        ev.QFrmThongBao("Thêm người dùng thành công");
+        //        LoadData();
+        //    }
+        //    else
+        //    {
+
+        //        ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin!");
 
 
-        }
+        //    }
+
+
+        //}
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
@@ -410,10 +410,142 @@ namespace DuAn_QuanLyKPI.GUI
 
             pbUser.Image = null;
         }
-
-        private void btnLuu_Click_1(object sender, EventArgs e)
+        void AddNguoiDung()
         {
 
+            var db = DataProvider.Ins.DB;
+            if (pbUser.Image != null)
+            {
+                NguoiDung nguoidung = new NguoiDung();
+                nguoidung.MaNV = txtMaNV.Text;
+                nguoidung.TenNV = txtHoten.Text;
+                nguoidung.Gmail = txtEmail.Text;
+                nguoidung.SDT = txtSDT.Text;
+                nguoidung.TenTaiKhoan = txtTenTaiKhoan.Text.ToString();
+                nguoidung.HinhAnhNV = ImageToBase64(pbUser.Image, ImageFormat.Jpeg);
+                nguoidung.MatKhau = txtMatKhau.Text;
+                nguoidung.MaPhongKhoa = cboPhongKhoa.SelectedValue.ToString();
+                nguoidung.MaChucDanh = cboChucDanh.SelectedValue.ToString();
+                db.NguoiDung.Add(nguoidung);
+                db.SaveChanges();
+                ev.QFrmThongBao("Thêm người dùng thành công");
+                LoadData();
+            }
+            else
+            {
+
+                ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin!");
+
+
+            }
+
+
+
+
+            //try
+            //{
+
+            //    byte[] image = null;
+            //    string sqlquery = "insert into NguoiDung(MaNV,TenNV,HinhAnhNV,SDT,Gmail,TenTaiKhoan,MatKhau,MaPhongKhoa,MaChucDanh) values ('" + txtMaNV.Text + "',N'" + txtHoten.Text + "',@img,'" + txtSDT.Text + "','" + txtEmail.Text + "',N'" + txtTenTaiKhoan.Text + "','" + txtMatKhau.Text + "',N'" + cboPhongKhoa.SelectedValue + "',N'" + cboChucDanh.SelectedValue + "')";
+            //    cmd = new SqlCommand(sqlquery, connection);
+            //    cmd.Parameters.Add(new SqlParameter("@img", image));
+            //    int n = cmd.ExecuteNonQuery();
+            //    connection.Close();
+            //    MessageBox.Show(n.ToString() + "Thêm người dùng thành công");
+            //    txtMaNV.Clear();
+            //    txtHoten.Clear();
+            //    txtMaNV.Focus();
+
+
+            //}
+            //catch (Exception ee)
+            //{
+            //    MessageBox.Show(ee.Message);
+
+            //}
+
+            //MemoryStream s = new MemoryStream();
+            //pbUser.Image.Save(s, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //byte[] pic = s.ToArray();
+
+            //msql = "insert into NguoiDung(MaNV,TenNV,HinhAnhNV,SDT,Gmail,TenTaiKhoan,MatKhau,MaPhongKhoa,MaChucDanh) values ('" + txtMaNV.Text + "',N'" + txtHoten.Text + "',@img,'" + txtSDT.Text + "','" + txtEmail.Text + "',N'" + txtTenTaiKhoan.Text + "','" + txtMatKhau.Text + "',N'" + cboPhongKhoa.SelectedValue + "',N'" + cboChucDanh.SelectedValue + "')";
+            //comm.RunSQL(mconnectstring, msql);
+            //ev.QFrmThongBao("Thêm người dùng thành công");
+
+
+
+            //LoadData();
+
+
+
+            //if(pbUser.Image!=null)
+
+            //   {
+
+            //       SqlConnection con = new SqlConnection(@"Data Source=192.168.50.108,1433;Initial Catalog=QuanLyKPI;User ID=sa;Password=123");
+            //       SqlCommand cmd = new SqlCommand("insert into NguoiDung(MaNV,TenNV,HinhAnhNV,SDT,Gmail,TenTaiKhoan,MatKhau,MaPhongKhoa,MaChucDanh) values ('" + txtMaNV.Text + "',N'" + txtHoten.Text + "',@img,'" + txtSDT.Text + "','" + txtEmail.Text + "',N'" + txtTenTaiKhoan.Text + "','" + txtMatKhau.Text + "',N'" + cboPhongKhoa.SelectedValue + "',N'" + cboChucDanh.SelectedValue + "')", con);
+            //       MemoryStream s = new MemoryStream();
+            //       pbUser.Image.Save(s, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //       byte[] pic = s.ToArray();
+            //       cmd.Parameters.AddWithValue("@img", pic);
+            //       con.Open();
+            //       cmd.ExecuteNonQuery();
+            //       con.Close();
+            //       ev.QFrmThongBao("Thêm người dùng thành công");
+            //       LoadData();
+            //   }
+
+
+            //   else
+            //   {
+
+            //       ev.QFrmThongBaoError("loi");
+
+            //   }
+
+
+
+
+        }
+        //    else
+        //        ev.QFrmThongBaoError("Vui lòng nhập thông tin ");
+
+        //}
+
+
+
+
+
+        void AddPhanQuyen()
+        {
+
+            
+            msql = "INSERT INTO[dbo].[PhanQuyen]" +
+            "([MaQuyen]" +
+          ",[MaNhanVien])" +
+          "VALUES (N'" + cboPhanQuyen.SelectedValue + "','" + txtMaNV.Text + "')";
+
+
+
+            comm.RunSQL(mconnectstring, msql);
+
+
+
+        }
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            if(txtMaNV.Text.Trim()!="")
+            {
+                AddNguoiDung();
+                AddPhanQuyen();
+
+            }    
+            
+            else
+            {
+                ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin");
+
+            }    
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)

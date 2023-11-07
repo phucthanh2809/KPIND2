@@ -70,8 +70,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnUpImage = new System.Windows.Forms.Button();
             this.pbUser = new System.Windows.Forms.PictureBox();
+            this.btnUpImage = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSach)).BeginInit();
             this.panel2.SuspendLayout();
@@ -565,16 +565,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnLuu.Visible = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
-            // btnUpImage
-            // 
-            this.btnUpImage.Location = new System.Drawing.Point(123, 190);
-            this.btnUpImage.Name = "btnUpImage";
-            this.btnUpImage.Size = new System.Drawing.Size(75, 33);
-            this.btnUpImage.TabIndex = 4;
-            this.btnUpImage.Text = "Upload";
-            this.btnUpImage.UseVisualStyleBackColor = true;
-            this.btnUpImage.Click += new System.EventHandler(this.btnUpImage_Click_1);
-            // 
             // pbUser
             // 
             this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -586,6 +576,16 @@ namespace DuAn_QuanLyKPI.GUI
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUser.TabIndex = 5;
             this.pbUser.TabStop = false;
+            // 
+            // btnUpImage
+            // 
+            this.btnUpImage.Location = new System.Drawing.Point(123, 190);
+            this.btnUpImage.Name = "btnUpImage";
+            this.btnUpImage.Size = new System.Drawing.Size(75, 33);
+            this.btnUpImage.TabIndex = 4;
+            this.btnUpImage.Text = "Upload";
+            this.btnUpImage.UseVisualStyleBackColor = true;
+            this.btnUpImage.Click += new System.EventHandler(this.btnUpImage_Click_1);
             // 
             // Frm_User
             // 

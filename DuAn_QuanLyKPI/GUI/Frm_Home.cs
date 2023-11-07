@@ -35,15 +35,41 @@ namespace DuAn_QuanLyKPI.GUI
         void Loaddata()
         {
 
+            //var db = DataProvider.Ins.DB;
+            //var nguoidung = db.NguoiDung.Where(x => x.TenTaiKhoan).FirstOrDefault();
+            //if (nguoidung.TenTaiKhoan == "kha")
+            //{
+            //    btnQuanLyNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-            
+            //}
+            //else if(nguoidung.TenTaiKhoan == "An")
+            //{
+            //    btnQuanLyNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+            //}
+            //var db = DataProvider.Ins.DB;
+            //bool isButtonVisible = (db != null); 
+            //NguoiDung nguoidung = new NguoiDung();
+            //var a =nguoidung.TenTaiKhoan = "kha";
+
+            //if (a)
+            //{
+
+            //    btnQuanLyNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //}
+            //else
+            //{
+
+            //}
+
+
 
 
         }
 
-        
-       
-       
+
+
+
         private void btnQuanLyNguoiDung_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Load(new Frm_User());
