@@ -15,6 +15,7 @@ namespace DuAn_QuanLyKPI
 {
     public partial class Frm_Chinh_GUI : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public static string mconnectstring = "server=192.168.50.108,1433;database=QuanLyKPI;uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
@@ -22,8 +23,10 @@ namespace DuAn_QuanLyKPI
         {
             InitializeComponent();
         }
+
+        public static int chucdanh;
         //Khai báo hàm không cho mở nhiều form giống nhau, khi mở form trùng thì sẽ tự động chuyển về form cũ
-        private void OpenForm(Type typeForm)
+        public void OpenForm(Type typeForm)
         {
             foreach (Form frm in MdiChildren)
             {
@@ -36,8 +39,7 @@ namespace DuAn_QuanLyKPI
             Form f = (Form)Activator.CreateInstance(typeForm);
             f.MdiParent = this;
             f.Show();
-        } 
-
+        }
         private void btnThongTinCaNhan_ItemClick(object sender, ItemClickEventArgs e)
         {
             //Gọi hàm mở form ra
@@ -62,6 +64,39 @@ namespace DuAn_QuanLyKPI
         private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenForm(typeof(Frm_HoanThanhKhoaPhong));
+        }
+
+        private void btnChiTieuKPI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(FrmChonBieuMau));
+        }
+
+        private void btnBieuMauGiamDocPhoGiamDoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //1: Giám đốc và Phó Giám Đốc
+            chucdanh = 1;
+            OpenForm(typeof(FrmChonBieuMau));
+        }
+
+        private void btnBieuMauTruongKhoaPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //2: Trưởng Khoa/ Phòng
+            chucdanh = 2;
+            OpenForm(typeof(FrmChonBieuMau));
+        }
+
+        private void btnBieuMauPhoKhoaPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //3: Phó Khoa/ Phòng
+            chucdanh = 3;
+            OpenForm(typeof(FrmChonBieuMau));
+        }
+
+        private void btnBieuMauCanhan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //4: cá nhân
+            chucdanh = 4;
+            OpenForm(typeof(FrmChonBieuMau));
         }
     }
 }

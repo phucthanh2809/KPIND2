@@ -117,41 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="exporttoxlsx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exporttoxlsx.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="publicfix_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\publicfix_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="previous_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\previous_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="documentpdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documentpdf.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="apply_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\apply_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="underlineword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\underlineword.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="editnames" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editnames.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="success__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\success (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circle_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circle-loader.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mentoring_Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mentoring Arrow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="morefunctions_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\morefunctions_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="cIDBieuMau.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cTenBieuMau.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cMaBieuMau.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cChon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cChon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAHdElNRQfnCwYDKx2CHsC+AAAA
+        GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA45JREFUWEfFl0lMFEEUhluJGuEqUQ96
+        ISYmJMYlMR7wQmQAIcaD60GN0SgosggIgqAyioDAAQMKQkQFRTQREUFlGRCUTVB2FIILLrigcIPT8/1F
+        9WRmWEIjw1TydaqrXtf/dy1d1YqWtCIoGyxg/Jk18h4gH8igTkZbIUkx4MXcZFZJkEeZqLdaUgUkELwn
+        MYoDqyVTEYmrxKzcakkK2DFrGXt5D5Bfx6BORlshSbF5TAhzllkkQT6Umc/IaCskNC7BG59n9JIYWSbq
+        NSX1Ia2sHFtykcwZRiy/maAs989SFh9IsVvim+681C9Tx3hME/dlfpleAHmLuqnQQcueNaGtOB7LcHAK
+        y9W7Xikd2HG7dnRnTp0WRiQT1U0INKAFTUffDAd0g+/2GzWjl1p+U2Ln0JwALWiyto+yOjLvcUhlHyV1
+        DdHljr9GEJgkMS2zjDHNi3huJ3GSejWPGGhCW3GOzjeE13wyC4hv+0Mnnr2jPXcb6GhRh3B8ofknBZT1
+        UEK7GjNI/qXvKZbrcB/MDe7Na6SDD1sopumHeAb1iEN9aNUHUQ5z0IImtBXnqPzKsGpzA/sfvKGtGVV0
+        hMW5q9hII4VzjNf1KmEOMbFvf5HHNQOda/xOx592ky6tnA4XttHuOw20LauaIl71k2e6QRgJKO0h96sV
+        IjaxUxrg9thAhbI5uSQ7uv6bKASR/KCOg+E2uWuY4loHhVuY9LYw4JleSadrPgsjiEnuHhZ1aDyy9gu/
+        RCUFcq9tSS3j5z8aX9LMgEtS8a3o+q+iEGPjW9xFu3LrzcY+iY1AyNIABPx4qLwzX1B8+1j5WPwQnX89
+        QNw2uSSXUFB5r1EcmBlwSytPVbtmtg1sjCukTQlFYu5MamDDxYICdDsKwZRDwEKqwJRDwHkMAerx9hgC
+        TELVhJkBvhhwo1aCiSZhxMt+4g8I+TzpFJMqpmlATLLpTMKgil5ySy2nqLqxoR5vgB2bGrBchlhq6IlD
+        j1qJv2a0734z6bmHYERdhljXky1DtB1s6DM3wJrQ1vwhUlHvx8VzO5N9iDDPkEeM8UNk808xNgSnsBy9
+        a8pzbEaaNhZmJpvRCLSgKTYjW23H0BTbMQ4FM2HWDiRaksmD6pEMR7H/O5JpSVIAB89TjOWhFAdVHFhl
+        tBUSGmdw9F7PGN9Y5nFUn5NjuSk2+TFRsemvGQRt9nO6kDnJWP6e45dd4++5ovwDXQiezTjMQ1UAAAAA
+        SUVORK5CYII=
+</value>
   </data>
 </root>
