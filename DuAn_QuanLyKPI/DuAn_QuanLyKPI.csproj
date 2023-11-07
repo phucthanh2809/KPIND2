@@ -166,17 +166,65 @@
     <Compile Include="DTO\ThongBao.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FrmA.7.3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmA.7.3.Designer.cs">
+      <DependentUpon>FrmA.7.3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmA.7.6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmA.7.6.Designer.cs">
+      <DependentUpon>FrmA.7.6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmCapNganHangKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmCapNganHangKPI.Designer.cs">
+      <DependentUpon>frmCapNganHangKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmChiTietQuanLyNganHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmChiTietQuanLyNganHang.Designer.cs">
+      <DependentUpon>FrmChiTietQuanLyNganHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmChonBieuMau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FrmChonBieuMau.Designer.cs">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FrmQuanLyNganHangKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmQuanLyNganHangKPI.Designer.cs">
+      <DependentUpon>FrmQuanLyNganHangKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmXemAllMucTieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmXemAllMucTieu.Designer.cs">
+      <DependentUpon>FrmXemAllMucTieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_Change_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_Change_Password.Designer.cs">
+      <DependentUpon>Frm_Change_Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_Chinh_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Frm_Chinh_GUI.Designer.cs">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_ChiTieuVuaGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_ChiTieuVuaGiao.Designer.cs">
+      <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_HoanThanhCaNhan.cs">
       <SubType>Form</SubType>
@@ -190,6 +238,12 @@
     <Compile Include="GUI\Frm_HoanThanhKhoaPhong.Designer.cs">
       <DependentUpon>Frm_HoanThanhKhoaPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_Home.Designer.cs">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_ImportExcel_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,13 +256,43 @@
     <Compile Include="GUI\Frm_TongHopKPI.Designer.cs">
       <DependentUpon>Frm_TongHopKPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_User.Designer.cs">
+      <DependentUpon>Frm_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FrmA.7.3.resx">
+      <DependentUpon>FrmA.7.3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmA.7.6.resx">
+      <DependentUpon>FrmA.7.6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmCapNganHangKPI.resx">
+      <DependentUpon>frmCapNganHangKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmChiTietQuanLyNganHang.resx">
+      <DependentUpon>FrmChiTietQuanLyNganHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChonBieuMau.resx">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmQuanLyNganHangKPI.resx">
+      <DependentUpon>FrmQuanLyNganHangKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmXemAllMucTieu.resx">
+      <DependentUpon>FrmXemAllMucTieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_Change_Password.resx">
+      <DependentUpon>Frm_Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Chinh_GUI.resx">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_ChiTieuVuaGiao.resx">
+      <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_HoanThanhCaNhan.resx">
       <DependentUpon>Frm_HoanThanhCaNhan.cs</DependentUpon>
@@ -216,8 +300,14 @@
     <EmbeddedResource Include="GUI\Frm_HoanThanhKhoaPhong.resx">
       <DependentUpon>Frm_HoanThanhKhoaPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_Home.resx">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_ImportExcel_GUI.resx">
       <DependentUpon>Frm_ImportExcel_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_User.resx">
+      <DependentUpon>Frm_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="GUI\Frm_TongHopKPI.resx">
