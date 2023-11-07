@@ -178,6 +178,12 @@
     <Compile Include="GUI\FrmChonBieuMau.Designer.cs">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_A710.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_A710.Designer.cs">
+      <DependentUpon>Frm_A710.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_Chinh_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FrmChonBieuMau.resx">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_A710.resx">
+      <DependentUpon>Frm_A710.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Chinh_GUI.resx">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>

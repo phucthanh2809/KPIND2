@@ -71,32 +71,5 @@ namespace DuAn_QuanLyKPI
             OpenForm(typeof(FrmChonBieuMau));
         }
 
-        private void btnBieuMauGiamDocPhoGiamDoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //1: Giám đốc và Phó Giám Đốc
-            chucdanh = 1;
-            OpenForm(typeof(FrmChonBieuMau));
-        }
-
-        private void btnBieuMauTruongKhoaPhong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //2: Trưởng Khoa/ Phòng
-            chucdanh = 2;
-            OpenForm(typeof(FrmChonBieuMau));
-        }
-
-        private void btnBieuMauPhoKhoaPhong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //3: Phó Khoa/ Phòng
-            chucdanh = 3;
-            OpenForm(typeof(FrmChonBieuMau));
-        }
-
-        private void btnBieuMauCanhan_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //4: cá nhân
-            chucdanh = 4;
-            OpenForm(typeof(FrmChonBieuMau));
-        }
     }
 }

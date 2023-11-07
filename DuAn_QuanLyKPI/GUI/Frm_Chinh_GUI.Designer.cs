@@ -54,7 +54,6 @@ namespace DuAn_QuanLyKPI
             this.btnKiemDuyet = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHeThongBieuMau = new DevExpress.XtraBars.BarSubItem();
             this.btnBieuMauGiamDocPhoGiamDoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnBieuMauTruongKhoaPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnBieuMauPhoKhoaPhong = new DevExpress.XtraBars.BarButtonItem();
@@ -100,7 +99,6 @@ namespace DuAn_QuanLyKPI
             this.btnExcel,
             this.btnDangKyMucTieuKPI,
             this.btnChiTieuKPI,
-            this.btnHeThongBieuMau,
             this.btnBieuMauGiamDocPhoGiamDoc,
             this.btnBieuMauTruongKhoaPhong,
             this.btnBieuMauPhoKhoaPhong,
@@ -134,7 +132,7 @@ namespace DuAn_QuanLyKPI
             // 
             // btnChiTieuKPI
             // 
-            this.btnChiTieuKPI.Caption = "Chỉ tiêu KPI ";
+            this.btnChiTieuKPI.Caption = "Biểu mẫu chỉ tiêu KPI";
             this.btnChiTieuKPI.Id = 31;
             this.btnChiTieuKPI.Name = "btnChiTieuKPI";
             this.btnChiTieuKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTieuKPI_ItemClick);
@@ -283,46 +281,33 @@ namespace DuAn_QuanLyKPI
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcel_ItemClick);
             // 
-            // btnHeThongBieuMau
-            // 
-            this.btnHeThongBieuMau.Caption = "Hệ thống biểu mẫu";
-            this.btnHeThongBieuMau.Id = 34;
-            this.btnHeThongBieuMau.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.morefunctions_32x32;
-            this.btnHeThongBieuMau.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.morefunctions_32x32;
-            this.btnHeThongBieuMau.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBieuMauGiamDocPhoGiamDoc),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBieuMauTruongKhoaPhong),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBieuMauPhoKhoaPhong),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBieuMauCanhan)});
-            this.btnHeThongBieuMau.Name = "btnHeThongBieuMau";
-            // 
             // btnBieuMauGiamDocPhoGiamDoc
             // 
             this.btnBieuMauGiamDocPhoGiamDoc.Caption = "Giám đốc và Phó Giám Đốc";
             this.btnBieuMauGiamDocPhoGiamDoc.Id = 35;
             this.btnBieuMauGiamDocPhoGiamDoc.Name = "btnBieuMauGiamDocPhoGiamDoc";
-            this.btnBieuMauGiamDocPhoGiamDoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBieuMauGiamDocPhoGiamDoc_ItemClick);
+            
             // 
             // btnBieuMauTruongKhoaPhong
             // 
             this.btnBieuMauTruongKhoaPhong.Caption = "Trưởng Khoa/ Phòng ";
             this.btnBieuMauTruongKhoaPhong.Id = 36;
             this.btnBieuMauTruongKhoaPhong.Name = "btnBieuMauTruongKhoaPhong";
-            this.btnBieuMauTruongKhoaPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBieuMauTruongKhoaPhong_ItemClick);
+
             // 
             // btnBieuMauPhoKhoaPhong
             // 
             this.btnBieuMauPhoKhoaPhong.Caption = "Phó Khoa/ Phòng ";
             this.btnBieuMauPhoKhoaPhong.Id = 37;
             this.btnBieuMauPhoKhoaPhong.Name = "btnBieuMauPhoKhoaPhong";
-            this.btnBieuMauPhoKhoaPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBieuMauPhoKhoaPhong_ItemClick);
+           
             // 
             // btnBieuMauCanhan
             // 
             this.btnBieuMauCanhan.Caption = "Cá nhân ";
             this.btnBieuMauCanhan.Id = 38;
             this.btnBieuMauCanhan.Name = "btnBieuMauCanhan";
-            this.btnBieuMauCanhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBieuMauCanhan_ItemClick);
+
             // 
             // rbTrangChu
             // 
@@ -343,7 +328,6 @@ namespace DuAn_QuanLyKPI
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnHeThongBieuMau);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDanhMucKPI);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnNganHangKPI);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKiemDuyet);
@@ -438,7 +422,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnChiTieuKPI;
         private DevExpress.XtraBars.BarButtonItem btnDangKyMucTieuKPI;
-        private DevExpress.XtraBars.BarSubItem btnHeThongBieuMau;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauGiamDocPhoGiamDoc;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauTruongKhoaPhong;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauPhoKhoaPhong;
