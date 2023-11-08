@@ -250,6 +250,12 @@
     <Compile Include="GUI\Frm_ImportExcel_GUI.Designer.cs">
       <DependentUpon>Frm_ImportExcel_GUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_TongHopKPI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_ImportExcel_GUI.resx">
       <DependentUpon>Frm_ImportExcel_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_User.resx">
       <DependentUpon>Frm_User.cs</DependentUpon>
@@ -371,6 +380,10 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\lock111.png" />
+    <None Include="Resources\Tiêu_đề_Website_BV_16_-removebg-preview.png" />
+    <None Include="Resources\Tiêu đề Website BV%2816%29.png" />
+    <None Include="Resources\noimage1.jpg" />
     <None Include="Resources\morefunctions_32x32.png" />
   </ItemGroup>
   <ItemGroup>

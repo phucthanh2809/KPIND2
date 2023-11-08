@@ -113,6 +113,16 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock11 {
+            get {
+                object obj = ResourceManager.GetObject("lock11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mentoring_Arrow {
             get {
                 object obj = ResourceManager.GetObject("Mentoring_Arrow", resourceCulture);
@@ -126,6 +136,16 @@ namespace DuAn_QuanLyKPI.Properties {
         internal static System.Drawing.Bitmap morefunctions_32x32 {
             get {
                 object obj = ResourceManager.GetObject("morefunctions_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noimage {
+            get {
+                object obj = ResourceManager.GetObject("noimage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,26 @@ namespace DuAn_QuanLyKPI.Properties {
         internal static System.Drawing.Bitmap task_32x32 {
             get {
                 object obj = ResourceManager.GetObject("task_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tiêu_đề_Website_BV_16_ {
+            get {
+                object obj = ResourceManager.GetObject("Tiêu đề Website BV(16)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tiêu_đề_Website_BV_16__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Tiêu_đề_Website_BV_16_-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

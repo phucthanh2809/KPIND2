@@ -43,7 +43,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
 
 
-            //pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
+            pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
         }
 
         private void LoadData()
