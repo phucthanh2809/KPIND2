@@ -21,7 +21,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting.Native;
-using DevExpress.XtraVerticalGrid;
+//using DevExpress.XtraVerticalGrid;
 using DuAn_QuanLyKPI.Constants;
 using DuAn_QuanLyKPI.DTO;
 

@@ -197,13 +197,13 @@ namespace DuAn_QuanLyKPI.GUI
                     FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
                     FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
                     break;
-                case 4:
-                    FrmSPTrangThai3.SelectTab(step);
-                    spPT3.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
-                    break;
+                //case 4:
+                //    FrmSPTrangThai_3.SelectTab(step);
+                //    spPT3.State = StepProgressBarItemState.Active;
+                //    FrmSPTrangThai_3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                //    FrmSPTrangThai_3.Appearances.CommonActiveColor = Color.Green;
+                //    FrmSPTrangThai_3.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
+                //    break;
             }
         }
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
@@ -225,13 +225,13 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void LoadDataMucTieu()
         {
-            msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
-            DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
-            dgrChonMucTieu.AutoGenerateColumns = false;
-            dgrChonMucTieu.DataSource = tb;
-            //var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
+            //msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
+            //DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
             //dgrChonMucTieu.AutoGenerateColumns = false;
-            //dgrChonMucTieu.DataSource = list;
+            //dgrChonMucTieu.DataSource = tb;
+            ////var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
+            ////dgrChonMucTieu.AutoGenerateColumns = false;
+            ////dgrChonMucTieu.DataSource = list;
         }
 
         private void dgrChonMucTieu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

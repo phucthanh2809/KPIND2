@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\DataProvider.cs" />
+    <Compile Include="Constants\DataUserCurrent.cs" />
     <Compile Include="DTO\ChiTietKPICaNhan.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
@@ -380,6 +381,7 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\user1.png" />
     <None Include="Resources\lock111.png" />
     <None Include="Resources\Tiêu_đề_Website_BV_16_-removebg-preview.png" />
     <None Include="Resources\Tiêu đề Website BV%2816%29.png" />

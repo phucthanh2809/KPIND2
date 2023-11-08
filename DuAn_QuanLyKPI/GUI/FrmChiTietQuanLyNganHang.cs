@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
-using DevExpress.XtraVerticalGrid;
+//using DevExpress.XtraVerticalGrid;
 using DuAn_QuanLyKPI.Constants;
 using DuAn_QuanLyKPI.DTO;
 using BusinessCommon;

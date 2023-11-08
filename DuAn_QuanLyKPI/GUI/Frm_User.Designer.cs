@@ -30,15 +30,15 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.c_Xoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cTenChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPhongKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgrDanhSach = new System.Windows.Forms.DataGridView();
+            this.cMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPhongKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTenChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.c_Xoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtMaNV = new ControlProject1510.XFilteg();
             this.txtHoten = new ControlProject1510.XFilteg();
@@ -50,28 +50,28 @@ namespace DuAn_QuanLyKPI.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtMatKhau = new ControlProject1510.XFilteg();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Upload = new System.Windows.Forms.OpenFileDialog();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboPhanQuyen = new ControlProject1510.ComboBoxSearch();
+            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboChucDanh = new ControlProject1510.ComboBoxSearch();
+            this.cboPhongKhoa = new ControlProject1510.ComboBoxSearch();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lab = new System.Windows.Forms.Label();
+            this.txtTenTaiKhoan = new ControlProject1510.XFilteg();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Upload = new System.Windows.Forms.OpenFileDialog();
             this.btnView = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTenTaiKhoan = new ControlProject1510.XFilteg();
-            this.lab = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboPhongKhoa = new ControlProject1510.ComboBoxSearch();
-            this.cboChucDanh = new ControlProject1510.ComboBoxSearch();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnQuaylai = new System.Windows.Forms.Button();
-            this.cboPhanQuyen = new ControlProject1510.ComboBoxSearch();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
@@ -88,68 +88,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1031, 624);
             this.panel3.TabIndex = 5;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Xóa";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // c_Xoa
-            // 
-            this.c_Xoa.HeaderText = "Xóa";
-            this.c_Xoa.Name = "c_Xoa";
-            this.c_Xoa.ReadOnly = true;
-            // 
-            // cHinhAnh
-            // 
-            this.cHinhAnh.DataPropertyName = "HinhAnhNV";
-            this.cHinhAnh.HeaderText = "Hình ảnh";
-            this.cHinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.cHinhAnh.MinimumWidth = 30;
-            this.cHinhAnh.Name = "cHinhAnh";
-            this.cHinhAnh.ReadOnly = true;
-            // 
-            // cTenChucDanh
-            // 
-            this.cTenChucDanh.DataPropertyName = "TenChucDanh";
-            this.cTenChucDanh.HeaderText = "Tên chức danh";
-            this.cTenChucDanh.Name = "cTenChucDanh";
-            this.cTenChucDanh.ReadOnly = true;
-            this.cTenChucDanh.Width = 200;
-            // 
-            // cPhongKhoa
-            // 
-            this.cPhongKhoa.DataPropertyName = "TenPK";
-            this.cPhongKhoa.HeaderText = "Phòng khoa";
-            this.cPhongKhoa.Name = "cPhongKhoa";
-            this.cPhongKhoa.ReadOnly = true;
-            this.cPhongKhoa.Width = 200;
-            // 
-            // cTenTaiKhoan
-            // 
-            this.cTenTaiKhoan.DataPropertyName = "TenTaiKhoan";
-            this.cTenTaiKhoan.HeaderText = "Tên tài khoản";
-            this.cTenTaiKhoan.Name = "cTenTaiKhoan";
-            this.cTenTaiKhoan.ReadOnly = true;
-            this.cTenTaiKhoan.Width = 105;
-            // 
-            // cHoTen
-            // 
-            this.cHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cHoTen.DataPropertyName = "TenNV";
-            this.cHoTen.HeaderText = "Họ tên";
-            this.cHoTen.Name = "cHoTen";
-            this.cHoTen.ReadOnly = true;
-            // 
-            // cMaNV
-            // 
-            this.cMaNV.DataPropertyName = "MANV";
-            this.cMaNV.FillWeight = 200F;
-            this.cMaNV.HeaderText = "Mã NV";
-            this.cMaNV.Name = "cMaNV";
-            this.cMaNV.ReadOnly = true;
-            this.cMaNV.Width = 70;
             // 
             // dgrDanhSach
             // 
@@ -175,6 +113,68 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDanhSach_CellClick);
             this.dgrDanhSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrDanhSach_CellMouseClick);
             this.dgrDanhSach.Click += new System.EventHandler(this.dgrDanhSach_Click_1);
+            // 
+            // cMaNV
+            // 
+            this.cMaNV.DataPropertyName = "MANV";
+            this.cMaNV.FillWeight = 200F;
+            this.cMaNV.HeaderText = "Mã NV";
+            this.cMaNV.Name = "cMaNV";
+            this.cMaNV.ReadOnly = true;
+            this.cMaNV.Width = 70;
+            // 
+            // cHoTen
+            // 
+            this.cHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cHoTen.DataPropertyName = "TenNV";
+            this.cHoTen.HeaderText = "Họ tên";
+            this.cHoTen.Name = "cHoTen";
+            this.cHoTen.ReadOnly = true;
+            // 
+            // cTenTaiKhoan
+            // 
+            this.cTenTaiKhoan.DataPropertyName = "TenTaiKhoan";
+            this.cTenTaiKhoan.HeaderText = "Tên tài khoản";
+            this.cTenTaiKhoan.Name = "cTenTaiKhoan";
+            this.cTenTaiKhoan.ReadOnly = true;
+            this.cTenTaiKhoan.Width = 105;
+            // 
+            // cPhongKhoa
+            // 
+            this.cPhongKhoa.DataPropertyName = "TenPK";
+            this.cPhongKhoa.HeaderText = "Phòng khoa";
+            this.cPhongKhoa.Name = "cPhongKhoa";
+            this.cPhongKhoa.ReadOnly = true;
+            this.cPhongKhoa.Width = 200;
+            // 
+            // cTenChucDanh
+            // 
+            this.cTenChucDanh.DataPropertyName = "TenChucDanh";
+            this.cTenChucDanh.HeaderText = "Tên chức danh";
+            this.cTenChucDanh.Name = "cTenChucDanh";
+            this.cTenChucDanh.ReadOnly = true;
+            this.cTenChucDanh.Width = 200;
+            // 
+            // cHinhAnh
+            // 
+            this.cHinhAnh.DataPropertyName = "HinhAnhNV";
+            this.cHinhAnh.HeaderText = "Hình ảnh";
+            this.cHinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.cHinhAnh.MinimumWidth = 30;
+            this.cHinhAnh.Name = "cHinhAnh";
+            this.cHinhAnh.ReadOnly = true;
+            // 
+            // c_Xoa
+            // 
+            this.c_Xoa.HeaderText = "Xóa";
+            this.c_Xoa.Name = "c_Xoa";
+            this.c_Xoa.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Xóa";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
             // 
             // cXoa
             // 
@@ -335,9 +335,187 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.Size = new System.Drawing.Size(328, 761);
             this.panel1.TabIndex = 3;
             // 
-            // Upload
+            // label9
             // 
-            this.Upload.FileName = "openFileDialog1";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 559);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 19);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Phân quyền";
+            // 
+            // cboPhanQuyen
+            // 
+            this.cboPhanQuyen.AutoComplete = false;
+            this.cboPhanQuyen.AutoDropdown = false;
+            this.cboPhanQuyen.BackColorEven = System.Drawing.Color.White;
+            this.cboPhanQuyen.BackColorOdd = System.Drawing.Color.White;
+            this.cboPhanQuyen.ColumnNames = "TenQuyen";
+            this.cboPhanQuyen.ColumnWidthDefault = 150;
+            this.cboPhanQuyen.ColumnWidths = "";
+            this.cboPhanQuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboPhanQuyen.FormattingEnabled = true;
+            this.cboPhanQuyen.LinkedColumnIndex = 0;
+            this.cboPhanQuyen.LinkedTextBox = null;
+            this.cboPhanQuyen.Location = new System.Drawing.Point(117, 556);
+            this.cboPhanQuyen.Name = "cboPhanQuyen";
+            this.cboPhanQuyen.Size = new System.Drawing.Size(180, 27);
+            this.cboPhanQuyen.TabIndex = 26;
+            // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Location = new System.Drawing.Point(121, 649);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Size = new System.Drawing.Size(75, 34);
+            this.btnQuaylai.TabIndex = 25;
+            this.btnQuaylai.Text = "Quay lại";
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Visible = false;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(204, 609);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 34);
+            this.btnSua.TabIndex = 24;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Visible = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(123, 609);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 34);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Visible = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(123, 609);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 34);
+            this.btnThem.TabIndex = 22;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 519);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 19);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Chức danh";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 478);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 19);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Phòng khoa";
+            // 
+            // cboChucDanh
+            // 
+            this.cboChucDanh.AutoComplete = false;
+            this.cboChucDanh.AutoDropdown = false;
+            this.cboChucDanh.BackColorEven = System.Drawing.Color.White;
+            this.cboChucDanh.BackColorOdd = System.Drawing.Color.White;
+            this.cboChucDanh.ColumnNames = "TenChucDanh";
+            this.cboChucDanh.ColumnWidthDefault = 150;
+            this.cboChucDanh.ColumnWidths = "";
+            this.cboChucDanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboChucDanh.FormattingEnabled = true;
+            this.cboChucDanh.LinkedColumnIndex = 0;
+            this.cboChucDanh.LinkedTextBox = null;
+            this.cboChucDanh.Location = new System.Drawing.Point(117, 516);
+            this.cboChucDanh.Name = "cboChucDanh";
+            this.cboChucDanh.Size = new System.Drawing.Size(180, 27);
+            this.cboChucDanh.TabIndex = 19;
+            // 
+            // cboPhongKhoa
+            // 
+            this.cboPhongKhoa.AutoComplete = false;
+            this.cboPhongKhoa.AutoDropdown = false;
+            this.cboPhongKhoa.BackColorEven = System.Drawing.Color.White;
+            this.cboPhongKhoa.BackColorOdd = System.Drawing.Color.White;
+            this.cboPhongKhoa.ColumnNames = "TenPK";
+            this.cboPhongKhoa.ColumnWidthDefault = 150;
+            this.cboPhongKhoa.ColumnWidths = "";
+            this.cboPhongKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboPhongKhoa.FormattingEnabled = true;
+            this.cboPhongKhoa.LinkedColumnIndex = 0;
+            this.cboPhongKhoa.LinkedTextBox = null;
+            this.cboPhongKhoa.Location = new System.Drawing.Point(117, 474);
+            this.cboPhongKhoa.Name = "cboPhongKhoa";
+            this.cboPhongKhoa.Size = new System.Drawing.Size(180, 27);
+            this.cboPhongKhoa.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 437);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 19);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Mật khẩu";
+            // 
+            // lab
+            // 
+            this.lab.AutoSize = true;
+            this.lab.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab.Location = new System.Drawing.Point(12, 397);
+            this.lab.Name = "lab";
+            this.lab.Size = new System.Drawing.Size(101, 19);
+            this.lab.TabIndex = 15;
+            this.lab.Text = "Tên tài khoản";
+            // 
+            // txtTenTaiKhoan
+            // 
+            this.txtTenTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTaiKhoan.Location = new System.Drawing.Point(117, 393);
+            this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(180, 26);
+            this.txtTenTaiKhoan.TabIndex = 13;
+            this.txtTenTaiKhoan.xCoTimMoRong = false;
+            this.txtTenTaiKhoan.xDataGrid = null;
+            this.txtTenTaiKhoan.xField_Key = "";
+            this.txtTenTaiKhoan.xKeep_Old_Value = false;
+            this.txtTenTaiKhoan.xTimChinhXac = false;
+            this.txtTenTaiKhoan.xTimMoRong = "";
+            this.txtTenTaiKhoan.xTimTrenField = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 354);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "SĐT";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 314);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 19);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Email";
             // 
             // label3
             // 
@@ -348,6 +526,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 10;
             this.label3.Text = "Họ tên";
+            // 
+            // Upload
+            // 
+            this.Upload.FileName = "openFileDialog1";
             // 
             // btnView
             // 
@@ -404,188 +586,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1031, 137);
             this.panel2.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 314);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 19);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Email";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 354);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "SĐT";
-            // 
-            // txtTenTaiKhoan
-            // 
-            this.txtTenTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenTaiKhoan.Location = new System.Drawing.Point(117, 393);
-            this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            this.txtTenTaiKhoan.Size = new System.Drawing.Size(180, 26);
-            this.txtTenTaiKhoan.TabIndex = 13;
-            this.txtTenTaiKhoan.xCoTimMoRong = false;
-            this.txtTenTaiKhoan.xDataGrid = null;
-            this.txtTenTaiKhoan.xField_Key = "";
-            this.txtTenTaiKhoan.xKeep_Old_Value = false;
-            this.txtTenTaiKhoan.xTimChinhXac = false;
-            this.txtTenTaiKhoan.xTimMoRong = "";
-            this.txtTenTaiKhoan.xTimTrenField = "";
-            // 
-            // lab
-            // 
-            this.lab.AutoSize = true;
-            this.lab.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab.Location = new System.Drawing.Point(12, 397);
-            this.lab.Name = "lab";
-            this.lab.Size = new System.Drawing.Size(101, 19);
-            this.lab.TabIndex = 15;
-            this.lab.Text = "Tên tài khoản";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 437);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Mật khẩu";
-            // 
-            // cboPhongKhoa
-            // 
-            this.cboPhongKhoa.AutoComplete = false;
-            this.cboPhongKhoa.AutoDropdown = false;
-            this.cboPhongKhoa.BackColorEven = System.Drawing.Color.White;
-            this.cboPhongKhoa.BackColorOdd = System.Drawing.Color.White;
-            this.cboPhongKhoa.ColumnNames = "TenPK";
-            this.cboPhongKhoa.ColumnWidthDefault = 150;
-            this.cboPhongKhoa.ColumnWidths = "";
-            this.cboPhongKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cboPhongKhoa.FormattingEnabled = true;
-            this.cboPhongKhoa.LinkedColumnIndex = 0;
-            this.cboPhongKhoa.LinkedTextBox = null;
-            this.cboPhongKhoa.Location = new System.Drawing.Point(117, 474);
-            this.cboPhongKhoa.Name = "cboPhongKhoa";
-            this.cboPhongKhoa.Size = new System.Drawing.Size(180, 27);
-            this.cboPhongKhoa.TabIndex = 18;
-            // 
-            // cboChucDanh
-            // 
-            this.cboChucDanh.AutoComplete = false;
-            this.cboChucDanh.AutoDropdown = false;
-            this.cboChucDanh.BackColorEven = System.Drawing.Color.White;
-            this.cboChucDanh.BackColorOdd = System.Drawing.Color.White;
-            this.cboChucDanh.ColumnNames = "TenChucDanh";
-            this.cboChucDanh.ColumnWidthDefault = 150;
-            this.cboChucDanh.ColumnWidths = "";
-            this.cboChucDanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cboChucDanh.FormattingEnabled = true;
-            this.cboChucDanh.LinkedColumnIndex = 0;
-            this.cboChucDanh.LinkedTextBox = null;
-            this.cboChucDanh.Location = new System.Drawing.Point(117, 516);
-            this.cboChucDanh.Name = "cboChucDanh";
-            this.cboChucDanh.Size = new System.Drawing.Size(180, 27);
-            this.cboChucDanh.TabIndex = 19;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 478);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 19);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Phòng khoa";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 519);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 19);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Chức danh";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(123, 609);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 34);
-            this.btnThem.TabIndex = 22;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(123, 609);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 34);
-            this.btnXoa.TabIndex = 23;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Visible = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(204, 609);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 34);
-            this.btnSua.TabIndex = 24;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Visible = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
-            // 
-            // btnQuaylai
-            // 
-            this.btnQuaylai.Location = new System.Drawing.Point(121, 649);
-            this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(75, 34);
-            this.btnQuaylai.TabIndex = 25;
-            this.btnQuaylai.Text = "Quay lại";
-            this.btnQuaylai.UseVisualStyleBackColor = true;
-            this.btnQuaylai.Visible = false;
-            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
-            // 
-            // cboPhanQuyen
-            // 
-            this.cboPhanQuyen.AutoComplete = false;
-            this.cboPhanQuyen.AutoDropdown = false;
-            this.cboPhanQuyen.BackColorEven = System.Drawing.Color.White;
-            this.cboPhanQuyen.BackColorOdd = System.Drawing.Color.White;
-            this.cboPhanQuyen.ColumnNames = "TenQuyen";
-            this.cboPhanQuyen.ColumnWidthDefault = 150;
-            this.cboPhanQuyen.ColumnWidths = "";
-            this.cboPhanQuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cboPhanQuyen.FormattingEnabled = true;
-            this.cboPhanQuyen.LinkedColumnIndex = 0;
-            this.cboPhanQuyen.LinkedTextBox = null;
-            this.cboPhanQuyen.Location = new System.Drawing.Point(117, 556);
-            this.cboPhanQuyen.Name = "cboPhanQuyen";
-            this.cboPhanQuyen.Size = new System.Drawing.Size(180, 27);
-            this.cboPhanQuyen.TabIndex = 26;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 559);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 19);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Phân quyền";
             // 
             // Frm_User
             // 

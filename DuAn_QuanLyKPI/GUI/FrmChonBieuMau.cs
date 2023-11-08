@@ -92,8 +92,8 @@ namespace DuAn_QuanLyKPI.GUI
                         //case 79:
                         //    Frm_A710 A79 = new Frm_A710();
                         //    A79.Show(); break;
-                        case 710: Frm_A710 A710 = new Frm_A710();
-                            A710.Show();break;
+                        ////////////////////case 710: Frm_A710 A710 = new Frm_A710();
+                            //////////////////////A710.Show();break;
                     }
 
                 }

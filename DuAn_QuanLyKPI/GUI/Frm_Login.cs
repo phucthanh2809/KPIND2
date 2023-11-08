@@ -110,9 +110,10 @@ namespace DuAn_QuanLyKPI.GUI
                 if (DataUserCurrent.Instance.Permission != "NV")
                 {
                     ev.QFrmThongBao("Đăng nhập thành công");
-                    Frm_Home f = new Frm_Home();
+                    Frm_Chinh_GUI f = new Frm_Chinh_GUI();
                     f.Show();
                     this.Hide();
+
                 }
                 else
                 {
