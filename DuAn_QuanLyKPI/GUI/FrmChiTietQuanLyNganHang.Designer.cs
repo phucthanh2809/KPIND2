@@ -215,7 +215,7 @@
             this.btnBoqua.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBoqua.Appearance.Options.UseFont = true;
             this.btnBoqua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoqua.ImageOptions.Image")));
-            this.btnBoqua.Location = new System.Drawing.Point(464, 6);
+            this.btnBoqua.Location = new System.Drawing.Point(464, 3);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(112, 49);
             this.btnBoqua.TabIndex = 1;

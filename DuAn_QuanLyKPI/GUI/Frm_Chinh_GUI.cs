@@ -71,5 +71,30 @@ namespace DuAn_QuanLyKPI
             OpenForm(typeof(FrmChonBieuMau));
         }
 
+        private void btnQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnUser_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(Frm_User));
+        }
+
+        private void btnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(Frm_Change_Password));
+        }
+
+        private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(ev.QFrmThongBao_YesNo("Bạn có thật sự muốn đăng xuất không?"))
+            {
+                this.Hide();
+                Frm_Login home = new Frm_Login();
+                home.ShowDialog();
+                this.Show();
+            }    
+        }
     }
 }

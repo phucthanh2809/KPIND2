@@ -239,12 +239,6 @@
     <Compile Include="GUI\Frm_HoanThanhKhoaPhong.Designer.cs">
       <DependentUpon>Frm_HoanThanhKhoaPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Frm_Home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Frm_Home.Designer.cs">
-      <DependentUpon>Frm_Home.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Frm_ImportExcel_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,9 +300,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_HoanThanhKhoaPhong.resx">
       <DependentUpon>Frm_HoanThanhKhoaPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_Home.resx">
-      <DependentUpon>Frm_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_ImportExcel_GUI.resx">
       <DependentUpon>Frm_ImportExcel_GUI.cs</DependentUpon>
@@ -381,6 +372,7 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\publicfix_32x321.png" />
     <None Include="Resources\user1.png" />
     <None Include="Resources\lock111.png" />
     <None Include="Resources\Tiêu_đề_Website_BV_16_-removebg-preview.png" />

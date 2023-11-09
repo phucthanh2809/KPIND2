@@ -16,84 +16,54 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class Frm_Login : DevExpress.XtraEditors.XtraForm
     {
-
-
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         public string a;
+        Timer timer = new Timer();
         public Frm_Login()
         {
             InitializeComponent();
-
+            InitializeTimer();
         }
-        void clear()
+        #region DateTime
+            private void InitializeTimer()
+            {
+            // Lấy ngày và giờ hiện tại
+            DateTime now = DateTime.Now;
+            // Hiển thị ngày và giờ lên Label
+            lbDateTime.Text = now.ToString();
+            }
+        #endregion
+        private void txtdangnhap_Enter_1(object sender, EventArgs e)
         {
-            txtmatkhau.Text = "";
+            ev.Qtxt_Enter(sender, e);
             txtdangnhap.Text = "";
-
-
         }
-        private void Frm_Login_Load(object sender, EventArgs e)
+
+        private void txtdangnhap_Leave_1(object sender, EventArgs e)
         {
-
+            ev.Qtxt_Leave(sender, e);
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void txtmat_khau_Enter(object sender, EventArgs e)
         {
-
+            ev.Qtxt_Enter(sender, e);
+            txtPassword.Text = "";
         }
 
+        private void txtmat_khau_Leave(object sender, EventArgs e)
+        {
+            ev.Qtxt_Leave(sender, e);
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void btndangnhap_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void peClose_EditValueChanged(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pictureEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtmatkhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtdangnhap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-      
-
-        private void btndangnhap_Click_1(object sender, EventArgs e)
-        {
             string tentk = txtdangnhap.Text;
-            string mk = txtmatkhau.Text;
+            string mk = txtPassword.Text;
 
 
             var db = DataProvider.Ins.DB;
@@ -111,8 +81,10 @@ namespace DuAn_QuanLyKPI.GUI
                 {
                     ev.QFrmThongBao("Đăng nhập thành công");
                     Frm_Chinh_GUI f = new Frm_Chinh_GUI();
-                    f.Show();
                     this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                    
 
                 }
                 else
@@ -124,7 +96,6 @@ namespace DuAn_QuanLyKPI.GUI
             else
             {
                 ev.QFrmThongBaoError("Đăng nhập thất bại");
-
             }
 
             //SqlDataAdapter da = new SqlDataAdapter("select * From [dbo].[DUOC_KC_tab.TAIKHOAN] where TenDangNhap = '" + txtdangnhap.Text + "' and  MatKhau='" + txtmatkhau.Text + "'", mconnectstring);
@@ -151,24 +122,33 @@ namespace DuAn_QuanLyKPI.GUI
             Frm_Login fl = new Frm_Login();
             fl.Close();
         }
-
-        private void btnHuy_Click_1(object sender, EventArgs e)
+        private void pbHien_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(txtPassword.PasswordChar == '*')
+            {
+                pbAn.BringToFront();
+                txtPassword.PasswordChar = '\0';
+            }    
         }
 
-        private void cbAn_CheckedChanged_1(object sender, EventArgs e)
+        private void pbAn_Click(object sender, EventArgs e)
         {
-            if (cbAn.Checked)
+            if (txtPassword.PasswordChar == '\0')
             {
-                txtmatkhau.PasswordChar = (char)0;
-
+                pbHien.BringToFront();
+                txtPassword.PasswordChar = '*';
             }
-            else
-            {
-                txtmatkhau.PasswordChar = '*';
+        }
 
-            }
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            ev.Qtxt_Enter(sender, e);
+            txtPassword.Text = "";
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            ev.Qtxt_Leave(sender, e);
         }
     }
 }

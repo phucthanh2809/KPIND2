@@ -36,6 +36,7 @@ namespace DuAn_QuanLyKPI
             this.btnThongTinCaNhan = new DevExpress.XtraBars.BarButtonItem();
             this.btnChiTieuKPI = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangKyMucTieuKPI = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucKPI = new DevExpress.XtraBars.BarSubItem();
             this.btnDanhSachKPI = new DevExpress.XtraBars.BarButtonItem();
             this.btnLanhDao = new DevExpress.XtraBars.BarButtonItem();
@@ -52,18 +53,20 @@ namespace DuAn_QuanLyKPI
             this.btnNganHangKPI = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnKiemDuyet = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
             this.btnBieuMauGiamDocPhoGiamDoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnBieuMauTruongKhoaPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnBieuMauPhoKhoaPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnBieuMauCanhan = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQuanLyNguoiDung = new DevExpress.XtraBars.BarSubItem();
+            this.btnUser = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.rbTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbCaNhan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
@@ -95,16 +98,20 @@ namespace DuAn_QuanLyKPI
             this.btnThongTinCaNhan,
             this.btnKiemDuyet,
             this.barButtonItem2,
-            this.barButtonItem3,
             this.btnExcel,
             this.btnDangKyMucTieuKPI,
             this.btnChiTieuKPI,
             this.btnBieuMauGiamDocPhoGiamDoc,
             this.btnBieuMauTruongKhoaPhong,
             this.btnBieuMauPhoKhoaPhong,
-            this.btnBieuMauCanhan});
+            this.btnBieuMauCanhan,
+            this.barButtonItem1,
+            this.btnQuanLyNguoiDung,
+            this.btnDoiMatKhau,
+            this.btnDangXuat,
+            this.btnUser});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 39;
+            this.ribbon.MaxItemId = 48;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbTrangChu});
@@ -113,14 +120,15 @@ namespace DuAn_QuanLyKPI
             // 
             // btnDMCaNhan
             // 
-            this.btnDMCaNhan.Caption = "Danh mục cá nhân";
+            this.btnDMCaNhan.Caption = "Cá nhân";
             this.btnDMCaNhan.Id = 2;
             this.btnDMCaNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDMCaNhan.ImageOptions.Image")));
             this.btnDMCaNhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDMCaNhan.ImageOptions.LargeImage")));
             this.btnDMCaNhan.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThongTinCaNhan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnChiTieuKPI),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangKyMucTieuKPI)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangKyMucTieuKPI),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat)});
             this.btnDMCaNhan.Name = "btnDMCaNhan";
             // 
             // btnThongTinCaNhan
@@ -142,6 +150,13 @@ namespace DuAn_QuanLyKPI
             this.btnDangKyMucTieuKPI.Caption = "Đăng ký mục tiêu KPI";
             this.btnDangKyMucTieuKPI.Id = 30;
             this.btnDangKyMucTieuKPI.Name = "btnDangKyMucTieuKPI";
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Caption = "Đăng xuất";
+            this.btnDangXuat.Id = 46;
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // btnDanhMucKPI
             // 
@@ -266,14 +281,6 @@ namespace DuAn_QuanLyKPI
             this.btnKiemDuyet.Name = "btnKiemDuyet";
             this.btnKiemDuyet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKiemDuyet_ItemClick);
             // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Quản lý Người dùng ";
-            this.barButtonItem3.Id = 28;
-            this.barButtonItem3.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x32;
-            this.barButtonItem3.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x32;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
             // btnExcel
             // 
             this.btnExcel.Caption = "Excel";
@@ -286,28 +293,55 @@ namespace DuAn_QuanLyKPI
             this.btnBieuMauGiamDocPhoGiamDoc.Caption = "Giám đốc và Phó Giám Đốc";
             this.btnBieuMauGiamDocPhoGiamDoc.Id = 35;
             this.btnBieuMauGiamDocPhoGiamDoc.Name = "btnBieuMauGiamDocPhoGiamDoc";
-            
             // 
             // btnBieuMauTruongKhoaPhong
             // 
             this.btnBieuMauTruongKhoaPhong.Caption = "Trưởng Khoa/ Phòng ";
             this.btnBieuMauTruongKhoaPhong.Id = 36;
             this.btnBieuMauTruongKhoaPhong.Name = "btnBieuMauTruongKhoaPhong";
-
             // 
             // btnBieuMauPhoKhoaPhong
             // 
             this.btnBieuMauPhoKhoaPhong.Caption = "Phó Khoa/ Phòng ";
             this.btnBieuMauPhoKhoaPhong.Id = 37;
             this.btnBieuMauPhoKhoaPhong.Name = "btnBieuMauPhoKhoaPhong";
-           
             // 
             // btnBieuMauCanhan
             // 
             this.btnBieuMauCanhan.Caption = "Cá nhân ";
             this.btnBieuMauCanhan.Id = 38;
             this.btnBieuMauCanhan.Name = "btnBieuMauCanhan";
-
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 43;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnQuanLyNguoiDung
+            // 
+            this.btnQuanLyNguoiDung.Caption = "Quản lý Người dùng";
+            this.btnQuanLyNguoiDung.Id = 44;
+            this.btnQuanLyNguoiDung.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x321;
+            this.btnQuanLyNguoiDung.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x321;
+            this.btnQuanLyNguoiDung.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnUser),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiMatKhau)});
+            this.btnQuanLyNguoiDung.Name = "btnQuanLyNguoiDung";
+            // 
+            // btnUser
+            // 
+            this.btnUser.Caption = "Người dùng";
+            this.btnUser.Id = 47;
+            this.btnUser.Name = "btnUser";
+            this.btnUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUser_ItemClick);
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
+            this.btnDoiMatKhau.Id = 45;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // rbTrangChu
             // 
@@ -315,8 +349,7 @@ namespace DuAn_QuanLyKPI
             this.rbCaNhan,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup4});
             this.rbTrangChu.Name = "rbTrangChu";
             this.rbTrangChu.Text = "Trang chủ ";
             // 
@@ -336,7 +369,7 @@ namespace DuAn_QuanLyKPI
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnQuanLyNguoiDung);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "User";
             // 
@@ -345,12 +378,6 @@ namespace DuAn_QuanLyKPI
             this.ribbonPageGroup4.ItemLinks.Add(this.btnCaiDat);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Cài đặt hệ thống ";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnExcel);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // ribbonStatusBar
             // 
@@ -369,11 +396,12 @@ namespace DuAn_QuanLyKPI
             // 
             // Frm_Chinh_GUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1364, 767);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.Name = "Frm_Chinh_GUI";
             this.Ribbon = this.ribbon;
@@ -417,14 +445,17 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.BarButtonItem btnKiemDuyet;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem btnExcel;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnChiTieuKPI;
         private DevExpress.XtraBars.BarButtonItem btnDangKyMucTieuKPI;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauGiamDocPhoGiamDoc;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauTruongKhoaPhong;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauPhoKhoaPhong;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauCanhan;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarSubItem btnQuanLyNguoiDung;
+        private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
+        private DevExpress.XtraBars.BarButtonItem btnDangXuat;
+        private DevExpress.XtraBars.BarButtonItem btnUser;
     }
 }
