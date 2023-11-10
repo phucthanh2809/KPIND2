@@ -96,5 +96,12 @@ namespace DuAn_QuanLyKPI
                 this.Show();
             }    
         }
+
+        private void btnThemNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_AddUser adduser = new Frm_AddUser();
+            adduser.Show();
+            //OpenForm(typeof(Frm_AddUser));
+        }
     }
 }

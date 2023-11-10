@@ -19,16 +19,12 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class Frm_User : DevExpress.XtraEditors.XtraForm
     {
-
-
-
         private string mconnectstring = "server=192.168.50.108,1433;database = QuanLyKPI; uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
         public Frm_User()
         {
-
             InitializeComponent();
             LoadData();
             addBiding();
@@ -41,11 +37,12 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Lỗi không load được hình ảnh");
             }
-
-
             pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
         }
-
+        public void MoThemNguoiDung()
+        {
+            pnThongTinNhanVien.Visible = true;
+        }
         private void LoadData()
         {
             var db = DataProvider.Ins.DB;
@@ -54,8 +51,6 @@ namespace DuAn_QuanLyKPI.GUI
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "NguoiDung");
             dgrDanhSach.AutoGenerateColumns = false;
             dgrDanhSach.DataSource = tb;
-
-
 
             msql = "SELECT * FROM [QuanLyKPI].[dbo].[PhongKhoa]";
             DataTable tb1 = comm.GetDataTable(mconnectstring, msql, "PhongKhoa");
@@ -88,23 +83,9 @@ namespace DuAn_QuanLyKPI.GUI
             cboPhanQuyen.CustomAlignment = new string[] { "l", "l" };
             cboPhanQuyen.CustomColumnStyle = new string[] { "t", "t" };
             //cboChucDanh.sf = setfocusTenKhoduoc;
-
-
-
-
-
-
         }
-
-
-
-
-
-
-
         void addBiding()
         {
-
             txtMaNV.DataBindings.Clear();
             txtMaNV.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "MANV"));
             txtHoten.DataBindings.Clear();
@@ -121,29 +102,19 @@ namespace DuAn_QuanLyKPI.GUI
             cboPhongKhoa.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "TenPK"));
             txtMatKhau.DataBindings.Clear();
             txtMatKhau.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "MatKhau"));
-
-
-
             //txtHoten.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "TenNV"));
             //txtEmail.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "Gmail"));
             //txtSDT.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "SDT"));
             //lab.DataBindings.Add(new Binding("Text", dgrDanhSach.DataSource, "TenTaiKhoan"));
-
-
         }
 
         void update()
         {
-
         }
 
         private void Frm_User_Load(object sender, EventArgs e)
         {
-
         }
-
-        
-
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
             if (image != null)
@@ -162,18 +133,11 @@ namespace DuAn_QuanLyKPI.GUI
                 return null; // Or return an appropriate default value
             }
         }
-
         //void AddPhanQuyen()
         //{
         //    var db = DataProvider.Ins.DB;
-
         //    Quyen q = new Quyen();
         //    q.MaQuyen = cboPhanQuyen.SelectedValue.ToString();
-
-
-
-
-
         //    ev.QFrmThongBao("Thêm người dùng thành công");
         //    LoadData();
         //}
@@ -199,37 +163,21 @@ namespace DuAn_QuanLyKPI.GUI
         //    }
         //    else
         //    {
-
         //        ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin!");
-
-
         //    }
-
-
         //}
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
-
         }
         void CLEAR()
         {
-
-
             txtHoten.Clear();
             txtMaNV.Clear();
             txtEmail.Clear();
             txtSDT.Clear();
             txtTenTaiKhoan.Clear();
             txtMatKhau.Clear();
-
         }
-     
-
-      
-
-        
-
         private void dgrDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -245,8 +193,6 @@ namespace DuAn_QuanLyKPI.GUI
             //    var DATA = (Byte[])(dgrDanhSach.SelectedRows[0].Cells[5].Value);
             //    var stream = new MemoryStream(DATA);
             //    pbUser.Image = Image.FromStream(stream);
-
-
             //}    
 
             try
@@ -257,8 +203,6 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
             }
-
-
         }
         public Image Base64ToImage(byte[] imageBytes)
         {
@@ -266,7 +210,6 @@ namespace DuAn_QuanLyKPI.GUI
             ms.Write(imageBytes, 0, imageBytes.Length);
             Image image = Image.FromStream(ms, true);
             return image;
-
         }
 
         private void txtMaNV_Enter(object sender, EventArgs e)
@@ -320,7 +263,6 @@ namespace DuAn_QuanLyKPI.GUI
         private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             ev.Qtxt_KeyPress_To_TextBox_Focus(sender, e, txtSDT);
-
         }
 
         private void txtSDT_Enter(object sender, EventArgs e)
@@ -338,7 +280,6 @@ namespace DuAn_QuanLyKPI.GUI
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             ev.Qtxt_KeyPress_To_TextBox_Focus(sender, e, txtTenTaiKhoan);
-
         }
 
         private void txtTenTK_Enter(object sender, EventArgs e)
@@ -374,7 +315,6 @@ namespace DuAn_QuanLyKPI.GUI
         private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
         {
             ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnThem);
-
         }
 
         private void btnThem_Enter(object sender, EventArgs e)
@@ -391,14 +331,8 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnThem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnLuu);
+            ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnLuuThem);
         }
-
-    
-
-      
-        
-
         private void btnclear_Click_1(object sender, EventArgs e)
         {
             txtHoten.Clear();
@@ -410,37 +344,6 @@ namespace DuAn_QuanLyKPI.GUI
 
             pbUser.Image = null;
         }
-        void AddNguoiDung()
-        {
-
-            var db = DataProvider.Ins.DB;
-            if (pbUser.Image != null)
-            {
-                NguoiDung nguoidung = new NguoiDung();
-                nguoidung.MaNV = txtMaNV.Text;
-                nguoidung.TenNV = txtHoten.Text;
-                nguoidung.Gmail = txtEmail.Text;
-                nguoidung.SDT = txtSDT.Text;
-                nguoidung.TenTaiKhoan = txtTenTaiKhoan.Text.ToString();
-                nguoidung.HinhAnhNV = ImageToBase64(pbUser.Image, ImageFormat.Jpeg);
-                nguoidung.MatKhau = txtMatKhau.Text;
-                nguoidung.MaPhongKhoa = cboPhongKhoa.SelectedValue.ToString();
-                nguoidung.MaChucDanh = cboChucDanh.SelectedValue.ToString();
-                db.NguoiDung.Add(nguoidung);
-                db.SaveChanges();
-                ev.QFrmThongBao("Thêm người dùng thành công");
-                LoadData();
-            }
-            else
-            {
-
-                ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin!");
-
-
-            }
-
-
-
 
             //try
             //{
@@ -506,51 +409,21 @@ namespace DuAn_QuanLyKPI.GUI
 
 
 
-        }
+        
         //    else
         //        ev.QFrmThongBaoError("Vui lòng nhập thông tin ");
 
         //}
-
-
-
-
-
         void AddPhanQuyen()
         {
-
-            
             msql = "INSERT INTO[dbo].[PhanQuyen]" +
             "([MaQuyen]" +
           ",[MaNhanVien])" +
           "VALUES (N'" + cboPhanQuyen.SelectedValue + "','" + txtMaNV.Text + "')";
-
-
-
             comm.RunSQL(mconnectstring, msql);
-
-
-
         }
-        private void btnLuu_Click_1(object sender, EventArgs e)
-        {
-            if(txtMaNV.Text.Trim()!="")
-            {
-                AddNguoiDung();
-                AddPhanQuyen();
-
-            }    
-            
-            else
-            {
-                ev.QFrmThongBaoError("Vui lòng nhập đủ thông tin");
-
-            }    
-        }
-
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
-
             try
             {
                 var db = DataProvider.Ins.DB;
@@ -561,26 +434,57 @@ namespace DuAn_QuanLyKPI.GUI
                     db.NguoiDung.Remove(sv);
                     db.SaveChanges();
                     LoadData();
-
                 }
-
             }
             catch (Exception)
             {
-
                 ev.QFrmThongBaoError("Không tìm thấy tên người dùng cần xóa");
-
             }
-
-
             //NguoiDung nguoidung = db.NguoiDung.Where(x => x.MaNV == txtMaNV.Text).FirstOrDefault();
             //db.NguoiDung.Remove(nguoidung);
             //db.SaveChanges();
+        }
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            LoadData();
 
+            pbUser.Image = null;
+            btnThem.Visible = false;
+            //btnclear.Visible = false;
+            btnLuuThem.Visible = true;
 
+            txtHoten.Clear();
+            txtMaNV.Clear();
+            txtEmail.Clear();
+            txtSDT.Clear();
+            txtTenTaiKhoan.Clear();
+            txtMatKhau.Clear();
         }
 
-        private void btnSua_Click_1(object sender, EventArgs e)
+        private void btnUpImage_Click_1(object sender, EventArgs e)
+        {
+            Upload.Filter = "select image(*.JpG;*.png;*.Gif|*.JpG;*.png;*.Gif)";
+            if (Upload.ShowDialog() == DialogResult.OK)
+            {
+                pbUser.Image = Image.FromFile(Upload.FileName);
+            }
+        }
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void dgrDanhSach_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                pbUser.Image = Base64ToImage((byte[])dgrDanhSach.SelectedRows[0].Cells[5].Value);
+            }
+            catch (Exception)
+            {
+                pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
+            }
+        }
+        private void SuaNhanVien()
         {
             var db = DataProvider.Ins.DB;
             NguoiDung nguoidung = db.NguoiDung.Where(x => x.MaNV == txtMaNV.Text).FirstOrDefault();
@@ -598,72 +502,30 @@ namespace DuAn_QuanLyKPI.GUI
             ev.QFrmThongBao("Sửa người dùng thành công");
             LoadData();
         }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-            LoadData();
-
-            pbUser.Image = null;
-            btnThem.Visible = false;
-            //btnclear.Visible = false;
-            btnLuu.Visible = true;
-            btnSua.Visible = true;
-            btnXoa.Visible = true;
-            btnQuaylai.Visible = true;
-
-            txtHoten.Clear();
-            txtMaNV.Clear();
-            txtEmail.Clear();
-            txtSDT.Clear();
-            txtTenTaiKhoan.Clear();
-            txtMatKhau.Clear();
-
-        }
-
-        private void btnUpImage_Click_1(object sender, EventArgs e)
-        {
-            Upload.Filter = "select image(*.JpG;*.png;*.Gif|*.JpG;*.png;*.Gif)";
-            if (Upload.ShowDialog() == DialogResult.OK)
-            {
-                pbUser.Image = Image.FromFile(Upload.FileName);
-            }
-        }
-
-        private void btnQuaylai_Click(object sender, EventArgs e)
-        {
-            btnThem.Visible = true;
-            btnclear.Visible = true;
-            btnLuu.Visible = false;
-            btnSua.Visible = false;
-            btnXoa.Visible = false;
-            btnQuaylai.Visible = false;
-        }
-
-        private void btnView_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void dgrDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgrDanhSach_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                pbUser.Image = Base64ToImage((byte[])dgrDanhSach.SelectedRows[0].Cells[5].Value);
-            }
-            catch (Exception)
-            {
-                pbUser.Image = DuAn_QuanLyKPI.Properties.Resources.noimage;
-            }
-        }
-
         private void dgrDanhSach_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            addBiding();
+            if (e.RowIndex == -1)
+                return;
+            if (dgrDanhSach["cSua", e.RowIndex] == dgrDanhSach.CurrentCell)
+            {
+                if (ev.QFrmThongBao_YesNo("Bạn có muốn sửa thông tin người dùng " + dgrDanhSach.CurrentRow.Cells["cHoTen"].Value.ToString() + " này không ?"))
+                {
+                    btnLuuSua.Visible = true;
+                    btnThem.Visible = false;
+                    pnThongTinNhanVien.Visible = true;
+                    addBiding();
+                }
+            }    
+        }
+
+        private void dgrDanhSach_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            ev.Qdgr_RowPostPaint(sender, e, dgrDanhSach);
+        }
+
+        private void btnLuuSua_Click(object sender, EventArgs e)
+        {
+            SuaNhanVien();
         }
     }
 }

@@ -37,7 +37,15 @@ namespace DuAn_QuanLyKPI.GUI
         private void txtdangnhap_Enter_1(object sender, EventArgs e)
         {
             ev.Qtxt_Enter(sender, e);
-            txtdangnhap.Text = "";
+            if (txtdangnhap.Text != "")
+            {
+
+            }   
+            else
+            {
+                txtdangnhap.Text = "";
+            }    
+            
         }
 
         private void txtdangnhap_Leave_1(object sender, EventArgs e)
@@ -48,7 +56,15 @@ namespace DuAn_QuanLyKPI.GUI
         private void txtmat_khau_Enter(object sender, EventArgs e)
         {
             ev.Qtxt_Enter(sender, e);
-            txtPassword.Text = "";
+            if (txtPassword.Text != "")
+            {
+
+            }
+            else
+            {
+                txtPassword.Text = "";
+            }
+            
         }
 
         private void txtmat_khau_Leave(object sender, EventArgs e)

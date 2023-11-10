@@ -60,6 +60,7 @@ namespace DuAn_QuanLyKPI
             this.btnBieuMauCanhan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLyNguoiDung = new DevExpress.XtraBars.BarSubItem();
+            this.btnThemNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.rbTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -109,9 +110,10 @@ namespace DuAn_QuanLyKPI
             this.btnQuanLyNguoiDung,
             this.btnDoiMatKhau,
             this.btnDangXuat,
-            this.btnUser});
+            this.btnUser,
+            this.btnThemNguoiDung});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 48;
+            this.ribbon.MaxItemId = 49;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbTrangChu});
@@ -124,6 +126,7 @@ namespace DuAn_QuanLyKPI
             this.btnDMCaNhan.Id = 2;
             this.btnDMCaNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDMCaNhan.ImageOptions.Image")));
             this.btnDMCaNhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDMCaNhan.ImageOptions.LargeImage")));
+            this.btnDMCaNhan.LargeWidth = 100;
             this.btnDMCaNhan.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThongTinCaNhan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnChiTieuKPI),
@@ -164,6 +167,7 @@ namespace DuAn_QuanLyKPI
             this.btnDanhMucKPI.Id = 3;
             this.btnDanhMucKPI.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDanhMucKPI.ImageOptions.Image")));
             this.btnDanhMucKPI.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDanhMucKPI.ImageOptions.LargeImage")));
+            this.btnDanhMucKPI.LargeWidth = 100;
             this.btnDanhMucKPI.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDanhSachKPI),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLanhDao),
@@ -201,6 +205,7 @@ namespace DuAn_QuanLyKPI
             this.btnCaiDat.Id = 5;
             this.btnCaiDat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCaiDat.ImageOptions.Image")));
             this.btnCaiDat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCaiDat.ImageOptions.LargeImage")));
+            this.btnCaiDat.LargeWidth = 100;
             this.btnCaiDat.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnQuanLyPhongBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPhanQuyen),
@@ -262,6 +267,7 @@ namespace DuAn_QuanLyKPI
             this.btnNganHangKPI.Id = 17;
             this.btnNganHangKPI.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNganHangKPI.ImageOptions.Image")));
             this.btnNganHangKPI.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNganHangKPI.ImageOptions.LargeImage")));
+            this.btnNganHangKPI.LargeWidth = 100;
             this.btnNganHangKPI.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.btnNganHangKPI.Name = "btnNganHangKPI";
@@ -278,6 +284,7 @@ namespace DuAn_QuanLyKPI
             this.btnKiemDuyet.Id = 26;
             this.btnKiemDuyet.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.task_32x32;
             this.btnKiemDuyet.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.task_32x32;
+            this.btnKiemDuyet.LargeWidth = 100;
             this.btnKiemDuyet.Name = "btnKiemDuyet";
             this.btnKiemDuyet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKiemDuyet_ItemClick);
             // 
@@ -320,18 +327,27 @@ namespace DuAn_QuanLyKPI
             // 
             // btnQuanLyNguoiDung
             // 
-            this.btnQuanLyNguoiDung.Caption = "Quản lý Người dùng";
+            this.btnQuanLyNguoiDung.Caption = "Người dùng";
             this.btnQuanLyNguoiDung.Id = 44;
             this.btnQuanLyNguoiDung.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x321;
             this.btnQuanLyNguoiDung.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x321;
+            this.btnQuanLyNguoiDung.LargeWidth = 100;
             this.btnQuanLyNguoiDung.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThemNguoiDung),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUser),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiMatKhau)});
             this.btnQuanLyNguoiDung.Name = "btnQuanLyNguoiDung";
             // 
+            // btnThemNguoiDung
+            // 
+            this.btnThemNguoiDung.Caption = "Thêm Người dùng";
+            this.btnThemNguoiDung.Id = 48;
+            this.btnThemNguoiDung.Name = "btnThemNguoiDung";
+            this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick);
+            // 
             // btnUser
             // 
-            this.btnUser.Caption = "Người dùng";
+            this.btnUser.Caption = "Quản lý Người dùng";
             this.btnUser.Id = 47;
             this.btnUser.Name = "btnUser";
             this.btnUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUser_ItemClick);
@@ -457,5 +473,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraBars.BarButtonItem btnUser;
+        private DevExpress.XtraBars.BarButtonItem btnThemNguoiDung;
     }
 }
