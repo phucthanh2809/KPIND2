@@ -35,8 +35,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong = new System.Windows.Forms.Panel();
             this.pnGrid = new System.Windows.Forms.Panel();
             this.dgrChonBieuMau = new System.Windows.Forms.DataGridView();
-            this.pnTieuDe = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.cIDBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTenBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,13 +42,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong.SuspendLayout();
             this.pnGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
-            this.pnTieuDe.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnTong
             // 
             this.pnTong.Controls.Add(this.pnGrid);
-            this.pnTong.Controls.Add(this.pnTieuDe);
             this.pnTong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTong.Location = new System.Drawing.Point(0, 0);
             this.pnTong.Name = "pnTong";
@@ -61,9 +57,9 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.pnGrid.Controls.Add(this.dgrChonBieuMau);
             this.pnGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnGrid.Location = new System.Drawing.Point(0, 64);
+            this.pnGrid.Location = new System.Drawing.Point(0, 0);
             this.pnGrid.Name = "pnGrid";
-            this.pnGrid.Size = new System.Drawing.Size(1364, 672);
+            this.pnGrid.Size = new System.Drawing.Size(1364, 736);
             this.pnGrid.TabIndex = 2;
             // 
             // dgrChonBieuMau
@@ -91,32 +87,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.Location = new System.Drawing.Point(0, 0);
             this.dgrChonBieuMau.Name = "dgrChonBieuMau";
             this.dgrChonBieuMau.RowTemplate.Height = 30;
-            this.dgrChonBieuMau.Size = new System.Drawing.Size(1364, 672);
+            this.dgrChonBieuMau.Size = new System.Drawing.Size(1364, 736);
             this.dgrChonBieuMau.TabIndex = 0;
             this.dgrChonBieuMau.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick);
             this.dgrChonBieuMau.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMau_RowPostPaint);
-            // 
-            // pnTieuDe
-            // 
-            this.pnTieuDe.Controls.Add(this.label1);
-            this.pnTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTieuDe.Location = new System.Drawing.Point(0, 0);
-            this.pnTieuDe.Name = "pnTieuDe";
-            this.pnTieuDe.Size = new System.Drawing.Size(1364, 64);
-            this.pnTieuDe.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(430, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(504, 55);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Vui lòng chọn biểu mẫu";
             // 
             // cIDBieuMau
             // 
@@ -162,8 +136,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong.ResumeLayout(false);
             this.pnGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).EndInit();
-            this.pnTieuDe.ResumeLayout(false);
-            this.pnTieuDe.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,9 +143,7 @@ namespace DuAn_QuanLyKPI.GUI
         #endregion
 
         private System.Windows.Forms.Panel pnTong;
-        private System.Windows.Forms.Panel pnTieuDe;
         private System.Windows.Forms.DataGridView dgrChonBieuMau;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTenBieuMau;

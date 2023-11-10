@@ -30,8 +30,6 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkCongViecCaNhan = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -42,14 +40,16 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtNoiDung = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkCongViecCaNhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChiTieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhuongPhapDo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoiDung.Properties)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,28 +61,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(873, 280);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.labelControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(873, 63);
-            this.panel2.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(80, 4);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(713, 55);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Xem Chi Tiết Quản Lý Ngân Hàng";
             // 
             // panel3
             // 
@@ -207,6 +185,28 @@ namespace DuAn_QuanLyKPI.GUI
             this.labelControl9.TabIndex = 67;
             this.labelControl9.Text = "Nội dung:";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(873, 63);
+            this.panel2.TabIndex = 0;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(134, 4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(604, 55);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Chi Tiết Quản Lý Ngân Hàng";
+            // 
             // Frm_XemChiTietQuanLyNganHangKPI
             // 
             this.Appearance.Options.UseFont = true;
@@ -220,8 +220,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.Text = "Chi tiết quản lý ngân hàng KPI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkCongViecCaNhan.Properties)).EndInit();
@@ -229,6 +227,8 @@ namespace DuAn_QuanLyKPI.GUI
             ((System.ComponentModel.ISupportInitialize)(this.txtPhuongPhapDo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoiDung.Properties)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

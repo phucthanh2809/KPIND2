@@ -191,6 +191,12 @@
     <Compile Include="GUI\FrmChonBieuMau.Designer.cs">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_InfoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_InfoUser.Designer.cs">
+      <DependentUpon>Frm_InfoUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_QuanLyNganHangKPI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChonBieuMau.resx">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_InfoUser.resx">
+      <DependentUpon>Frm_InfoUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_QuanLyNganHangKPI.resx">
       <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
