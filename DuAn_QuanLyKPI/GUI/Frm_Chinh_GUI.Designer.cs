@@ -39,6 +39,7 @@ namespace DuAn_QuanLyKPI
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucKPI = new DevExpress.XtraBars.BarSubItem();
             this.btnDanhSachKPI = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMucTieuKPI = new DevExpress.XtraBars.BarButtonItem();
             this.btnLanhDao = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhongBan = new DevExpress.XtraBars.BarButtonItem();
             this.btnCaNhan = new DevExpress.XtraBars.BarButtonItem();
@@ -50,7 +51,6 @@ namespace DuAn_QuanLyKPI
             this.btnThongTinHeThong = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
-            this.btnNganHangKPI = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnKiemDuyet = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
@@ -63,6 +63,7 @@ namespace DuAn_QuanLyKPI
             this.btnThemNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNganHangKPI = new DevExpress.XtraBars.BarButtonItem();
             this.rbTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbCaNhan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -89,7 +90,6 @@ namespace DuAn_QuanLyKPI
             this.btnPhongBan,
             this.btnLanhDao,
             this.btnCaNhan,
-            this.btnNganHangKPI,
             this.btnQuanLyPhongBan,
             this.btnPhanQuyen,
             this.btnCauHinhHeThong,
@@ -111,9 +111,11 @@ namespace DuAn_QuanLyKPI
             this.btnDoiMatKhau,
             this.btnDangXuat,
             this.btnUser,
-            this.btnThemNguoiDung});
+            this.btnThemNguoiDung,
+            this.btnMucTieuKPI,
+            this.btnNganHangKPI});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 49;
+            this.ribbon.MaxItemId = 51;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbTrangChu});
@@ -170,6 +172,7 @@ namespace DuAn_QuanLyKPI
             this.btnDanhMucKPI.LargeWidth = 100;
             this.btnDanhMucKPI.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDanhSachKPI),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnMucTieuKPI),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLanhDao),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPhongBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCaNhan)});
@@ -180,6 +183,13 @@ namespace DuAn_QuanLyKPI
             this.btnDanhSachKPI.Caption = "Danh sách KPI";
             this.btnDanhSachKPI.Id = 7;
             this.btnDanhSachKPI.Name = "btnDanhSachKPI";
+            // 
+            // btnMucTieuKPI
+            // 
+            this.btnMucTieuKPI.Caption = "Mục tiêu KPI";
+            this.btnMucTieuKPI.Id = 49;
+            this.btnMucTieuKPI.Name = "btnMucTieuKPI";
+            this.btnMucTieuKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMucTieuKPI_ItemClick);
             // 
             // btnLanhDao
             // 
@@ -260,17 +270,6 @@ namespace DuAn_QuanLyKPI
             this.barSubItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem5.ImageOptions.Image")));
             this.barSubItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem5.ImageOptions.LargeImage")));
             this.barSubItem5.Name = "barSubItem5";
-            // 
-            // btnNganHangKPI
-            // 
-            this.btnNganHangKPI.Caption = "Ngân hàng KPI";
-            this.btnNganHangKPI.Id = 17;
-            this.btnNganHangKPI.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNganHangKPI.ImageOptions.Image")));
-            this.btnNganHangKPI.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNganHangKPI.ImageOptions.LargeImage")));
-            this.btnNganHangKPI.LargeWidth = 100;
-            this.btnNganHangKPI.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
-            this.btnNganHangKPI.Name = "btnNganHangKPI";
             // 
             // barButtonItem2
             // 
@@ -358,6 +357,15 @@ namespace DuAn_QuanLyKPI
             this.btnDoiMatKhau.Id = 45;
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
+            // 
+            // btnNganHangKPI
+            // 
+            this.btnNganHangKPI.Caption = "Ngân hàng KPI";
+            this.btnNganHangKPI.Id = 50;
+            this.btnNganHangKPI.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.previewchart_32x32;
+            this.btnNganHangKPI.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.previewchart_32x32;
+            this.btnNganHangKPI.Name = "btnNganHangKPI";
+            this.btnNganHangKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNganHangKPI_ItemClick);
             // 
             // rbTrangChu
             // 
@@ -449,7 +457,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.BarButtonItem btnPhongBan;
         private DevExpress.XtraBars.BarButtonItem btnLanhDao;
         private DevExpress.XtraBars.BarButtonItem btnCaNhan;
-        private DevExpress.XtraBars.BarSubItem btnNganHangKPI;
         private DevExpress.XtraBars.BarButtonItem btnQuanLyPhongBan;
         private DevExpress.XtraBars.BarButtonItem btnPhanQuyen;
         private DevExpress.XtraBars.BarButtonItem btnCauHinhHeThong;
@@ -474,5 +481,7 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraBars.BarButtonItem btnUser;
         private DevExpress.XtraBars.BarButtonItem btnThemNguoiDung;
+        private DevExpress.XtraBars.BarButtonItem btnMucTieuKPI;
+        private DevExpress.XtraBars.BarButtonItem btnNganHangKPI;
     }
 }

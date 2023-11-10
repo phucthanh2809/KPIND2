@@ -1,6 +1,6 @@
 ﻿namespace DuAn_QuanLyKPI.GUI
 {
-    partial class FrmQuanLyNganHangKPI
+    partial class Frm_QuanLyNganHangKPI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuanLyNganHangKPI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_QuanLyNganHangKPI));
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();

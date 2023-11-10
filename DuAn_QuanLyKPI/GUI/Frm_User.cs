@@ -314,24 +314,22 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnThem);
+            
         }
 
         private void btnThem_Enter(object sender, EventArgs e)
         {
-            btnThem.Enabled = true;
             ev.Qtxt_Enter(sender, e);
         }
 
         private void btnThem_Leave(object sender, EventArgs e)
         {
-            btnThem.Enabled = true;
             ev.Qtxt_Leave(sender, e);
         }
 
         private void btnThem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnLuuThem);
+            
         }
         private void btnclear_Click_1(object sender, EventArgs e)
         {
@@ -449,9 +447,9 @@ namespace DuAn_QuanLyKPI.GUI
             LoadData();
 
             pbUser.Image = null;
-            btnThem.Visible = false;
+
             //btnclear.Visible = false;
-            btnLuuThem.Visible = true;
+
 
             txtHoten.Clear();
             txtMaNV.Clear();
@@ -511,7 +509,7 @@ namespace DuAn_QuanLyKPI.GUI
                 if (ev.QFrmThongBao_YesNo("Bạn có muốn sửa thông tin người dùng " + dgrDanhSach.CurrentRow.Cells["cHoTen"].Value.ToString() + " này không ?"))
                 {
                     btnLuuSua.Visible = true;
-                    btnThem.Visible = false;
+
                     pnThongTinNhanVien.Visible = true;
                     addBiding();
                 }

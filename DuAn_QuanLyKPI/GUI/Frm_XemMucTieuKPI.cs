@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using DuAn_QuanLyKPI.Constants;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DuAn_QuanLyKPI.Constants;
-using DuAn_QuanLyKPI.DTO;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class FrmXemAllMucTieu : Form
+    public partial class Frm_XemMucTieuKPI : DevExpress.XtraEditors.XtraForm
     {
-        public FrmXemAllMucTieu()
+        public Frm_XemMucTieuKPI()
         {
             InitializeComponent();
             LoadData();
@@ -25,6 +25,21 @@ namespace DuAn_QuanLyKPI.GUI
             var db = DataProvider.Ins.DB;
             dgvXemAllMucTieu.DataSource = db.KPI.ToList();
         }
+        private void LoadCbo()
+        {
+            var db = DataProvider.Ins.DB;
+            //Phòng Khoa
+            var list = db.PhongKhoa.ToList();
+            cboKhoaPhong.DataSource = list;
+            cboKhoaPhong.ValueMember = "MaPK";
+            cboKhoaPhong.DisplayMember = "TenPK";
+            //Chức Danh
+            var list2 = db.ChucDanh.ToList();
+            cboChucDanh.DataSource = list2;
+            cboChucDanh.ValueMember = "MaChucDanh";
+            cboChucDanh.DisplayMember = "TenChucDanh";
+        }
+
         private void cboTìmKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
             var db = DataProvider.Ins.DB;
@@ -47,25 +62,6 @@ namespace DuAn_QuanLyKPI.GUI
                     dgvXemAllMucTieu.DataSource = list4;
                     break;
             }
-        }
-        private void LoadCbo()
-        {
-            var db = DataProvider.Ins.DB;
-            //Phòng Khoa
-            var list = db.PhongKhoa.ToList();
-            cboKhoaPhong.DataSource = list;
-            cboKhoaPhong.ValueMember = "MaPK";
-            cboKhoaPhong.DisplayMember = "TenPK";
-            //Chức Danh
-            var list2 = db.ChucDanh.ToList();
-            cboChucDanh.DataSource = list2;
-            cboChucDanh.ValueMember = "MaChucDanh";
-            cboChucDanh.DisplayMember = "TenChucDanh";
-        }
-
-        private void btnBoQua_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

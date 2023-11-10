@@ -185,35 +185,23 @@
     <Compile Include="GUI\Frm_AddUser.Designer.cs">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmCapNganHangKPI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmCapNganHangKPI.Designer.cs">
-      <DependentUpon>frmCapNganHangKPI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FrmChiTietQuanLyNganHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FrmChiTietQuanLyNganHang.Designer.cs">
-      <DependentUpon>FrmChiTietQuanLyNganHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\FrmChonBieuMau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FrmChonBieuMau.Designer.cs">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmQuanLyNganHangKPI.cs">
+    <Compile Include="GUI\Frm_QuanLyNganHangKPI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmQuanLyNganHangKPI.Designer.cs">
-      <DependentUpon>FrmQuanLyNganHangKPI.cs</DependentUpon>
+    <Compile Include="GUI\Frm_QuanLyNganHangKPI.Designer.cs">
+      <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmXemAllMucTieu.cs">
+    <Compile Include="GUI\Frm_CapDanhSachKPI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmXemAllMucTieu.Designer.cs">
-      <DependentUpon>FrmXemAllMucTieu.cs</DependentUpon>
+    <Compile Include="GUI\Frm_CapDanhSachKPI.Designer.cs">
+      <DependentUpon>Frm_CapDanhSachKPI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_Change_Password.cs">
       <SubType>Form</SubType>
@@ -269,6 +257,18 @@
     <Compile Include="GUI\Frm_User.Designer.cs">
       <DependentUpon>Frm_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_XemChiTietQuanLyNganHangKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_XemChiTietQuanLyNganHangKPI.Designer.cs">
+      <DependentUpon>Frm_XemChiTietQuanLyNganHangKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_XemMucTieuKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_XemMucTieuKPI.Designer.cs">
+      <DependentUpon>Frm_XemMucTieuKPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FrmA.7.3.resx">
@@ -280,20 +280,14 @@
     <EmbeddedResource Include="GUI\Frm_AddUser.resx">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmCapNganHangKPI.resx">
-      <DependentUpon>frmCapNganHangKPI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmChiTietQuanLyNganHang.resx">
-      <DependentUpon>FrmChiTietQuanLyNganHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChonBieuMau.resx">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmQuanLyNganHangKPI.resx">
-      <DependentUpon>FrmQuanLyNganHangKPI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Frm_QuanLyNganHangKPI.resx">
+      <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmXemAllMucTieu.resx">
-      <DependentUpon>FrmXemAllMucTieu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Frm_CapDanhSachKPI.resx">
+      <DependentUpon>Frm_CapDanhSachKPI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Change_Password.resx">
       <DependentUpon>Frm_Change_Password.cs</DependentUpon>
@@ -318,6 +312,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_User.resx">
       <DependentUpon>Frm_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_XemChiTietQuanLyNganHangKPI.resx">
+      <DependentUpon>Frm_XemChiTietQuanLyNganHangKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_XemMucTieuKPI.resx">
+      <DependentUpon>Frm_XemMucTieuKPI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="GUI\Frm_TongHopKPI.resx">
@@ -381,6 +381,7 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\previewchart_32x32.png" />
     <None Include="Resources\publicfix_32x321.png" />
     <None Include="Resources\user1.png" />
     <None Include="Resources\lock111.png" />

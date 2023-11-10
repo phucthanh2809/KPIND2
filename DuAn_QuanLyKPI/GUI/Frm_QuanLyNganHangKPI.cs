@@ -27,7 +27,7 @@ using DuAn_QuanLyKPI.DTO;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class FrmQuanLyNganHangKPI : DevExpress.XtraEditors.XtraForm, INotifyPropertyChanged
+    public partial class Frm_QuanLyNganHangKPI : DevExpress.XtraEditors.XtraForm, INotifyPropertyChanged
     {
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
@@ -60,7 +60,7 @@ namespace DuAn_QuanLyKPI.GUI
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public FrmQuanLyNganHangKPI()
+        public Frm_QuanLyNganHangKPI()
         {
             InitializeComponent();
             LoadData();
@@ -254,12 +254,12 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void btnCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmCapNganHangKPI f = new frmCapNganHangKPI();
+            Frm_CapDanhSachKPI f = new Frm_CapDanhSachKPI();
             f.ShowDialog(); 
         }
         private void btnXemAllMucTieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmXemAllMucTieu f = new FrmXemAllMucTieu();
+            Frm_XemMucTieuKPI f = new Frm_XemMucTieuKPI();
             f.ShowDialog();
         }
 
@@ -291,7 +291,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void dgrMucTieuNganHang_DoubleClick(object sender, EventArgs e)
         {
-            FrmChiTietQuanLyNganHang f = new FrmChiTietQuanLyNganHang(makpi);
+            Frm_XemChiTietQuanLyNganHangKPI f = new Frm_XemChiTietQuanLyNganHangKPI(makpi);
             f.ShowDialog();
         }
 

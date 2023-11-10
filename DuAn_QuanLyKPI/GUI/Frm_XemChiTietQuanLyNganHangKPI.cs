@@ -18,17 +18,16 @@ using BusinessCommon;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class FrmChiTietQuanLyNganHang : Form
+    public partial class Frm_XemChiTietQuanLyNganHangKPI : DevExpress.XtraEditors.XtraForm
     {
         private string makpi;
-        public FrmChiTietQuanLyNganHang(string makpi)
+        public Frm_XemChiTietQuanLyNganHangKPI(string makpi)
         {
             InitializeComponent();
             this.makpi = makpi;
             LoadData();
         }
-
-        private void LoadData ()
+        private void LoadData()
         {
             var db = DataProvider.Ins.DB;
 
@@ -43,15 +42,10 @@ namespace DuAn_QuanLyKPI.GUI
             else
                 chkCongViecCaNhan.Checked = false;
         }
-        
-        private void btnBoqua_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnCap_Click(object sender, EventArgs e)
         {
             var db = DataProvider.Ins.DB;
         }
+
     }
 }

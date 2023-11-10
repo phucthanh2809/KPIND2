@@ -163,6 +163,16 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap previewchart_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("previewchart_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap previous_32x32 {
             get {
                 object obj = ResourceManager.GetObject("previous_32x32", resourceCulture);

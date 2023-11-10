@@ -103,5 +103,15 @@ namespace DuAn_QuanLyKPI
             adduser.Show();
             //OpenForm(typeof(Frm_AddUser));
         }
+
+        private void btnMucTieuKPI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(Frm_XemMucTieuKPI));
+        }
+
+        private void btnNganHangKPI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(Frm_QuanLyNganHangKPI));
+        }
     }
 }

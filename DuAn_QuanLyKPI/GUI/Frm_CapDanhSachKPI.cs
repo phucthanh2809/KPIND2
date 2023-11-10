@@ -18,15 +18,15 @@ using DuAn_QuanLyKPI.DTO;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class frmCapNganHangKPI : Form
+    public partial class Frm_CapDanhSachKPI : DevExpress.XtraEditors.XtraForm
     {
-        public frmCapNganHangKPI()
+        public Frm_CapDanhSachKPI()
         {
+            InitializeComponent();
             InitializeComponent();
             LoadCbo();
             LoadData();
         }
-
         private void LoadData()
         {
             var db = DataProvider.Ins.DB;
@@ -46,11 +46,6 @@ namespace DuAn_QuanLyKPI.GUI
             cboChucDanh.DataSource = list2;
             cboChucDanh.ValueMember = "MaChucDanh";
             cboChucDanh.DisplayMember = "TenChucDanh";
-        }
-
-        private void btnBoQua_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void CapDuLieu()
         {
@@ -76,7 +71,7 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                 }
             }
-            else 
+            else
             {
                 //tìm không thấy
                 //tạo mới xong add
@@ -93,7 +88,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 gridView1.SelectRow(rowHandle);
             }
-            
+
             //List<string> listds = new List<string> ();
             //for (int rowHandle = 0; rowHandle < gridView1.RowCount; rowHandle++)
             //{
@@ -106,49 +101,50 @@ namespace DuAn_QuanLyKPI.GUI
             //    //}
             //}
 
+            //private void CapDuLieu1()
+            //{
+            //    var db = DataProvider.Ins.DB;
+
+            //    // Try to find existing record for the selected department and position.
+            //   // var find = db.NganHangKPI.Where(x => x.MaChucDanh == cboChucDanh.SelectedValue && x.MaPK == cboKhoaPhong.SelectedValue).FirstOrDefault();
+
+            //    // If existing record found, remove it.
+            //    //if (find != null)
+            //    //{
+            //    //    db.NganHangKPI.Remove(find);
+            //    //}
+
+            //    // Create new record and add it to the database.
+            //    var newRecord = new NganHangKPI
+            //    {
+            //        MaNganHangKPI = "",
+
+            //    };
+
+            //    db.NganHangKPI.Add(newRecord);
+
+            //    // Try to save changes to the database.
+            //    try
+            //    {
+            //        db.SaveChanges();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        // Handle error if saving changes fails.
+            //    } 
+            //}
+
         }
-        
+
         private void btnCap_Click(object sender, EventArgs e)
         {
             //CapDuLieu();
             //var selectCheckboxes = 
-
-
-
-
         }
-        //private void CapDuLieu1()
-        //{
-        //    var db = DataProvider.Ins.DB;
 
-        //    // Try to find existing record for the selected department and position.
-        //   // var find = db.NganHangKPI.Where(x => x.MaChucDanh == cboChucDanh.SelectedValue && x.MaPK == cboKhoaPhong.SelectedValue).FirstOrDefault();
-
-        //    // If existing record found, remove it.
-        //    //if (find != null)
-        //    //{
-        //    //    db.NganHangKPI.Remove(find);
-        //    //}
-
-        //    // Create new record and add it to the database.
-        //    var newRecord = new NganHangKPI
-        //    {
-        //        MaNganHangKPI = "",
-
-        //    };
-
-        //    db.NganHangKPI.Add(newRecord);
-
-        //    // Try to save changes to the database.
-        //    try
-        //    {
-        //        db.SaveChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Handle error if saving changes fails.
-        //    } 
-        //}
-    
+        private void btnBoQua_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
