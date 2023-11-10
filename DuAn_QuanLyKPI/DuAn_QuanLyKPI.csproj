@@ -191,6 +191,12 @@
     <Compile Include="GUI\FrmChonBieuMau.Designer.cs">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_ChiTieuVuaGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_ChiTieuVuaGiao.Designer.cs">
+      <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_InfoUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,12 +226,6 @@
     </Compile>
     <Compile Include="GUI\Frm_Chinh_GUI.Designer.cs">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Frm_ChiTieuVuaGiao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Frm_ChiTieuVuaGiao.Designer.cs">
-      <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_HoanThanhCaNhan.cs">
       <SubType>Form</SubType>
@@ -275,6 +275,12 @@
     <Compile Include="GUI\Frm_XemMucTieuKPI.Designer.cs">
       <DependentUpon>Frm_XemMucTieuKPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FrmA.7.3.resx">
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChonBieuMau.resx">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_ChiTieuVuaGiao.resx">
+      <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_InfoUser.resx">
       <DependentUpon>Frm_InfoUser.cs</DependentUpon>
@@ -303,9 +312,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Chinh_GUI.resx">
       <DependentUpon>Frm_Chinh_GUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_ChiTieuVuaGiao.resx">
-      <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_HoanThanhCaNhan.resx">
       <DependentUpon>Frm_HoanThanhCaNhan.cs</DependentUpon>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_XemMucTieuKPI.resx">
       <DependentUpon>Frm_XemMucTieuKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="GUI\Frm_TongHopKPI.resx">

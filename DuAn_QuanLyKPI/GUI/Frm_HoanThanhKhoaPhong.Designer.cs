@@ -314,7 +314,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnChinhSua.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChinhSua.Appearance.Options.UseFont = true;
             this.btnChinhSua.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.editnames;
-            this.btnChinhSua.Location = new System.Drawing.Point(1060, 6);
+            this.btnChinhSua.Location = new System.Drawing.Point(1060, 5);
             this.btnChinhSua.Name = "btnChinhSua";
             this.btnChinhSua.Size = new System.Drawing.Size(122, 49);
             this.btnChinhSua.TabIndex = 12;
@@ -326,7 +326,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnGuiDi.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuiDi.Appearance.Options.UseFont = true;
             this.btnGuiDi.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.apply_32x32;
-            this.btnGuiDi.Location = new System.Drawing.Point(1188, 6);
+            this.btnGuiDi.Location = new System.Drawing.Point(1188, 5);
             this.btnGuiDi.Name = "btnGuiDi";
             this.btnGuiDi.Size = new System.Drawing.Size(164, 49);
             this.btnGuiDi.TabIndex = 11;
@@ -348,6 +348,7 @@ namespace DuAn_QuanLyKPI.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.Location = new System.Drawing.Point(231, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(903, 55);

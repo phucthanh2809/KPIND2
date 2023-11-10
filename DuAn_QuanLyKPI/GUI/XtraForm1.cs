@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class Frm_ChiTieuVuaGiao : DevExpress.XtraEditors.XtraForm
+    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_ChiTieuVuaGiao()
+        public XtraForm1()
         {
             InitializeComponent();
         }
