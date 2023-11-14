@@ -29,6 +29,9 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_User));
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgrDanhSach = new System.Windows.Forms.DataGridView();
@@ -53,8 +56,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnThongTinNhanVien = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLuuSua = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -97,6 +100,16 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.dgrDanhSach.AllowUserToAddRows = false;
             this.dgrDanhSach.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrDanhSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgrDanhSach.ColumnHeadersHeight = 60;
             this.dgrDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cMaNV,
@@ -108,9 +121,19 @@ namespace DuAn_QuanLyKPI.GUI
             this.cSua,
             this.Xóa});
             this.dgrDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrDanhSach.EnableHeadersVisualStyles = false;
             this.dgrDanhSach.Location = new System.Drawing.Point(0, 0);
             this.dgrDanhSach.Name = "dgrDanhSach";
             this.dgrDanhSach.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrDanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgrDanhSach.RowHeadersWidth = 40;
             this.dgrDanhSach.RowTemplate.Height = 100;
             this.dgrDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrDanhSach.Size = new System.Drawing.Size(969, 599);
@@ -353,18 +376,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnLuuSua.Visible = false;
             this.btnLuuSua.Click += new System.EventHandler(this.btnLuuSua_Click);
             // 
-            // btnView
-            // 
-            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnView.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(3, 51);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(182, 42);
-            this.btnView.TabIndex = 7;
-            this.btnView.Text = "LÀM MỚI";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
             // btnclear
             // 
             this.btnclear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -376,6 +387,18 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnclear.Text = "CLEAR";
             this.btnclear.UseVisualStyleBackColor = true;
             this.btnclear.Click += new System.EventHandler(this.btnclear_Click_1);
+            // 
+            // btnView
+            // 
+            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnView.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnView.Location = new System.Drawing.Point(3, 51);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(182, 42);
+            this.btnView.TabIndex = 7;
+            this.btnView.Text = "LÀM MỚI";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // panel6
             // 
