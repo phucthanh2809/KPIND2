@@ -14,10 +14,10 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
-        //public static string MaNV = FrmDangNhapTest.MaNV;
-        //public static string MaPhongKhoa = FrmDangNhapTest.MaPhongKhoa;
-        //public static string MaChucDanh = FrmDangNhapTest.MaChucDanh;
-        public static string mconnectstring = "server=192.168.50.108,1433;database= QuanLyKPI; uid=sa;pwd=123";
+        public static string MaNV= Frm_Login.MaNV;
+        public static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
+        public static string MaChucDanh = Frm_Login.MaChucDanh;
+        private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
@@ -87,7 +87,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void FrmA73_Load(object sender, EventArgs e)
         {
@@ -95,7 +95,7 @@ namespace DuAn_QuanLyKPI.GUI
             TrangThai1();
             TrangThai2();
             TrangThai3();
-            //TrangThai4();
+            TrangThai4();
             //InVisible(tabTaiChinh);
             //InVisible(tabVanHanh);
             //InVisible(tabKhachHang);
@@ -107,19 +107,16 @@ namespace DuAn_QuanLyKPI.GUI
         //void InVisible(TabPage tab)
         //{
         //    tab.Text = "";
-
+            
         //}
         private void TrangThai()
         {
-
             FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
             FrmSPTrangThai.ConnectorLineThickness = 2; // viền đường kết nối
             FrmSPTrangThai.IndicatorLineThickness = 2; // viền đường tròn
             FrmSPTrangThai.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
             FrmSPTrangThai.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
             FrmSPTrangThai.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTC.State = StepProgressBarItemState.Active;
-
         }
         private void TrangThai1()
         {
@@ -129,7 +126,6 @@ namespace DuAn_QuanLyKPI.GUI
             FrmSPTrangThai1.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
             FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
             FrmSPTrangThai1.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            Khach_hang.State = StepProgressBarItemState.Active;
 
         }
         private void TrangThai2()
@@ -140,76 +136,76 @@ namespace DuAn_QuanLyKPI.GUI
             FrmSPTrangThai2.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
             FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
             FrmSPTrangThai2.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            Van_Hanh.State = StepProgressBarItemState.Active;
+            spTaiChinh2.State = StepProgressBarItemState.Active;
         }
         private void TrangThai3()
         {
-            FrmSPTrangThai_3.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai_3.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai_3.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai_3.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai_3.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai_3.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTC3.State = StepProgressBarItemState.Active;
-            spKH3.State = StepProgressBarItemState.Active;
+            FrmSPTrangThai3.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai3.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai3.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai3.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai3.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinh3.State = StepProgressBarItemState.Active;
+            spKhachHang3.State = StepProgressBarItemState.Active;
         }
-        //private void TrangThai4()
-        //{
-        //    FrmSPTrangThai4.ItemOptions.Indicator.Width = 50; // độ dài item
-        //    FrmSPTrangThai4.ConnectorLineThickness = 2; // viền đường kết nối
-        //    FrmSPTrangThai4.IndicatorLineThickness = 2; // viền đường tròn
-        //    FrmSPTrangThai4.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-        //    FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-        //    FrmSPTrangThai4.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-        //    spTaiChinh4.State = StepProgressBarItemState.Active;
-        //    spKhachHang4.State = StepProgressBarItemState.Active;
-        //    spVanHanh4.State = StepProgressBarItemState.Active;
-        //}
+        private void TrangThai4()
+        {
+            FrmSPTrangThai4.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai4.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai4.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai4.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai4.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinh4.State = StepProgressBarItemState.Active;
+            spKhachHang4.State = StepProgressBarItemState.Active;
+            spVanHanh4.State = StepProgressBarItemState.Active;
+        }
         void ChuyenTrangThai(int step)
         {
             CurrentTab = step;
             switch (step)
             {
                 case 0:
-                    FrmSPTrangThai3.SelectTab(step);
+                    tabMucTieuKhoaPhong.SelectTab(step);
                     break;
                 case 1:
-                    FrmSPTrangThai3.SelectTab(step);
+                    tabMucTieuKhoaPhong.SelectTab(step);
                     // Thiết lập Trạng thái khi nhất nút
-                    spTC1.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
-                    break;
-                case 2:
-                    FrmSPTrangThai3.SelectTab(step);
-                    // Thiết lập Trạng thái khi nhất nút
-                    spKH2.State = StepProgressBarItemState.Active;
+                    spTaiChinh1.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
+                    FrmSPTrangThai1.Items[step-1].ContentBlock2.Caption = "Đã xong Tài Chính";
                     break;
-                case 3:
-                    FrmSPTrangThai3.SelectTab(step);
+                case 2:
+                    tabMucTieuKhoaPhong.SelectTab(step);
                     // Thiết lập Trạng thái khi nhất nút
-                    spVH3.State = StepProgressBarItemState.Active;
+                    spKhachHang2.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
+                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
                     break;
-                //case 4:
-                //    FrmSPTrangThai_3.SelectTab(step);
-                //    spPT3.State = StepProgressBarItemState.Active;
-                //    FrmSPTrangThai_3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                //    FrmSPTrangThai_3.Appearances.CommonActiveColor = Color.Green;
-                //    FrmSPTrangThai_3.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
-                //    break;
+                case 3:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    // Thiết lập Trạng thái khi nhất nút
+                    spVanHanh3.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
+                    break;
+                case 4:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    spPhatTrien4.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai4.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
+                    break;
             }
         }
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             //chặn click vào tab
-            FrmSPTrangThai3.SelectedIndex = CurrentTab;
+            tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
         }
 
         private void txtMucTieu_Click(object sender, EventArgs e)
@@ -225,13 +221,13 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void LoadDataMucTieu()
         {
-            //msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
-            //DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
+            msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
+            DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
+            dgrChonMucTieu.AutoGenerateColumns = false;
+            dgrChonMucTieu.DataSource = tb;
+            //var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
             //dgrChonMucTieu.AutoGenerateColumns = false;
-            //dgrChonMucTieu.DataSource = tb;
-            ////var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
-            ////dgrChonMucTieu.AutoGenerateColumns = false;
-            ////dgrChonMucTieu.DataSource = list;
+            //dgrChonMucTieu.DataSource = list;
         }
 
         private void dgrChonMucTieu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -258,14 +254,14 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void dgrChonMucTieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txt.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
+            txtMucTieuTC.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
             dgrChonMucTieu.Visible = false;
         }
 
         private void txtMucTieu_Leave(object sender, EventArgs e)
         {
             //txtMucTieu.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
-
+            
         }
         private void txtMucTieu_TextChanged(object sender, EventArgs e)
         {
@@ -319,7 +315,7 @@ namespace DuAn_QuanLyKPI.GUI
 
                     // Tăng biến đếm lên 1
                     count++;
-
+                    
                 }
                 if (total > 100)
                 {
@@ -328,12 +324,12 @@ namespace DuAn_QuanLyKPI.GUI
                 else
                 {
                     msql = "INSERT INTO [dbo].[BangTamMucTieuKhoaPhong]([MaKPI],[MucTieu],[TrongSo],[TieuChiDanhGia],[HoanThanh])" +
-                    "VALUES ('" + txtMaKPITC.Text + "', N'" + txt.Text + "', '" + TC.Text + "', N'" + txtTieuChiDanhGiaTC.Text + "', '" + txtHoanThanhTC.Text + "')";
+                    "VALUES ('" + txtMaKPITC.Text + "', N'" + txtMucTieuTC.Text + "', '" + txtTrongSoTC.Text + "', N'" + txtTieuChiDanhGiaTC.Text + "', '" + txtHoanThanhTC.Text + "')";
                     comm.RunSQL(mconnectstring, msql);
                     ev.QFrmThongBao("Đã thêm thành công");
                 }
             }
-
+            
 
 
 
@@ -351,547 +347,24 @@ namespace DuAn_QuanLyKPI.GUI
             if (total > 100)
             {
                 ev.QFrmThongBao("Lưu ý: Kiểm tra tỷ trọng vượt quá 100%");
-
+                
             }
-            else
+            else 
             {
                 // Thông báo
                 ChuyenTrangThai(1);
             }
-
+            
         }
         private void XoaThongTin()
         {
             txtMaKPITC.Text = "";
-            txt.Text = "";
-            TC.Text = "";
+            txtMucTieuTC.Text = "";
+            txtTrongSoTC.Text = "";
             txtTieuChiDanhGiaTC.Text = "";
             txtHoanThanhTC.Text = "";
         }
 
-        private void tabMucTieuKhoaPhong_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabKhachHang_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPhatTrien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel13_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtViTriCV_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtHoanThanhTC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKhoaPhongTC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmSPTrangThai_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg15_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg14txtMaKPITC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMucTieuTC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel16_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBoxSearch2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaKPITC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label29_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTen_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel14_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtTieuChiDanhGiaTC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tabVanHanh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabTaiChinh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbTen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg14_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg18_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrChonMucTieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label38_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void xFilteg6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrVanHanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtTrongSoTC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbViTriCV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stepProgressBar2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label39_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxSearch3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xFilteg9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel15_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrTaiChinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stepProgressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

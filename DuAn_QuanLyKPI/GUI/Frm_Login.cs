@@ -18,7 +18,10 @@ namespace DuAn_QuanLyKPI.GUI
     {
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
-        public string a;
+        public static string a;
+        public static string MaNV;
+        public static string MaPhongKhoa;
+        public static string MaChucDanh;
         Timer timer = new Timer();
         public Frm_Login()
         {

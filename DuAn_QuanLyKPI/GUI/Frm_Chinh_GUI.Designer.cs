@@ -35,7 +35,6 @@ namespace DuAn_QuanLyKPI
             this.btnDMCaNhan = new DevExpress.XtraBars.BarSubItem();
             this.btnThongTinCaNhan = new DevExpress.XtraBars.BarButtonItem();
             this.btnChiTieuKPI = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDangKyMucTieuKPI = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucKPI = new DevExpress.XtraBars.BarSubItem();
             this.btnDanhSachKPI = new DevExpress.XtraBars.BarButtonItem();
@@ -61,28 +60,28 @@ namespace DuAn_QuanLyKPI
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnNganHangKPI = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.rbTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbCaNhan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemDateTimeOffsetEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateTimeOffsetEdit();
+            this.repositoryItemTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemTrackBar();
+            this.repositoryItemTokenEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.repositoryItemDateTimeOffsetEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateTimeOffsetEdit();
-            this.repositoryItemTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemTrackBar();
-            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
-            this.repositoryItemTokenEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit();
-            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTrackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -105,7 +104,6 @@ namespace DuAn_QuanLyKPI
             this.btnKiemDuyet,
             this.barButtonItem2,
             this.btnExcel,
-            this.btnDangKyMucTieuKPI,
             this.btnChiTieuKPI,
             this.btnBieuMauGiamDocPhoGiamDoc,
             this.btnBieuMauTruongKhoaPhong,
@@ -144,7 +142,6 @@ namespace DuAn_QuanLyKPI
             this.btnDMCaNhan.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThongTinCaNhan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnChiTieuKPI),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDangKyMucTieuKPI),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat)});
             this.btnDMCaNhan.Name = "btnDMCaNhan";
             // 
@@ -161,13 +158,6 @@ namespace DuAn_QuanLyKPI
             this.btnChiTieuKPI.Id = 31;
             this.btnChiTieuKPI.Name = "btnChiTieuKPI";
             this.btnChiTieuKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTieuKPI_ItemClick);
-            // 
-            // btnDangKyMucTieuKPI
-            // 
-            this.btnDangKyMucTieuKPI.Caption = "Đăng ký mục tiêu KPI";
-            this.btnDangKyMucTieuKPI.Id = 30;
-            this.btnDangKyMucTieuKPI.Name = "btnDangKyMucTieuKPI";
-            this.btnDangKyMucTieuKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangKyMucTieuKPI_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -359,6 +349,18 @@ namespace DuAn_QuanLyKPI
             this.btnNganHangKPI.Name = "btnNganHangKPI";
             this.btnNganHangKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNganHangKPI_ItemClick);
             // 
+            // barEditItem3
+            // 
+            this.barEditItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barEditItem3.Caption = "barEditItem3";
+            this.barEditItem3.Edit = this.repositoryItemZoomTrackBar1;
+            this.barEditItem3.Id = 53;
+            this.barEditItem3.Name = "barEditItem3";
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
+            // 
             // rbTrangChu
             // 
             this.rbTrangChu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -395,6 +397,27 @@ namespace DuAn_QuanLyKPI
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Cài đặt hệ thống ";
             // 
+            // repositoryItemDateTimeOffsetEdit1
+            // 
+            this.repositoryItemDateTimeOffsetEdit1.AutoHeight = false;
+            this.repositoryItemDateTimeOffsetEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateTimeOffsetEdit1.Name = "repositoryItemDateTimeOffsetEdit1";
+            // 
+            // repositoryItemTrackBar1
+            // 
+            this.repositoryItemTrackBar1.LabelAppearance.Options.UseTextOptions = true;
+            this.repositoryItemTrackBar1.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemTrackBar1.Name = "repositoryItemTrackBar1";
+            // 
+            // repositoryItemTokenEdit1
+            // 
+            this.repositoryItemTokenEdit1.Name = "repositoryItemTokenEdit1";
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barEditItem3);
@@ -411,39 +434,6 @@ namespace DuAn_QuanLyKPI
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // repositoryItemDateTimeOffsetEdit1
-            // 
-            this.repositoryItemDateTimeOffsetEdit1.AutoHeight = false;
-            this.repositoryItemDateTimeOffsetEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateTimeOffsetEdit1.Name = "repositoryItemDateTimeOffsetEdit1";
-            // 
-            // repositoryItemTrackBar1
-            // 
-            this.repositoryItemTrackBar1.LabelAppearance.Options.UseTextOptions = true;
-            this.repositoryItemTrackBar1.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.repositoryItemTrackBar1.Name = "repositoryItemTrackBar1";
-            // 
-            // barEditItem3
-            // 
-            this.barEditItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barEditItem3.Caption = "barEditItem3";
-            this.barEditItem3.Edit = this.repositoryItemZoomTrackBar1;
-            this.barEditItem3.Id = 53;
-            this.barEditItem3.Name = "barEditItem3";
-            // 
-            // repositoryItemZoomTrackBar1
-            // 
-            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
-            // 
-            // repositoryItemTokenEdit1
-            // 
-            this.repositoryItemTokenEdit1.Name = "repositoryItemTokenEdit1";
-            // 
-            // repositoryItemProgressBar1
-            // 
-            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
-            // 
             // Frm_Chinh_GUI
             // 
             this.Appearance.Options.UseFont = true;
@@ -459,13 +449,13 @@ namespace DuAn_QuanLyKPI
             this.StatusBar = this.ribbonStatusBar;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTrackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,7 +488,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnExcel;
         private DevExpress.XtraBars.BarButtonItem btnChiTieuKPI;
-        private DevExpress.XtraBars.BarButtonItem btnDangKyMucTieuKPI;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauGiamDocPhoGiamDoc;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauTruongKhoaPhong;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauPhoKhoaPhong;
