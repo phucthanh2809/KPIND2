@@ -38,6 +38,8 @@
         <AssociationConnector Association="QuanLyKPIModel.FK_ThongBao_NguoiDung" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyKPIModel.KPITrongNganHang" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyKPIModel.PhanQuyen" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.tabBieuMau" Width="1.5" PointX="5.875" PointY="2.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

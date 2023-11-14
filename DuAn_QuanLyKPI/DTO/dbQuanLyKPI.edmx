@@ -66,6 +66,7 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </Key>
           <Property Name="MaChucDanh" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="TenChucDanh" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MaCapDoChucDanh" Type="int" />
         </EntityType>
         <EntityType Name="KPI">
           <Key>
@@ -166,6 +167,25 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </Key>
           <Property Name="MaQuyen" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="TenQuyen" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tabBieuMau">
+          <Key>
+            <PropertyRef Name="IDBieuMau" />
+          </Key>
+          <Property Name="IDBieuMau" Type="int" Nullable="false" />
+          <Property Name="MaBieuMau" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenBieuMau" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaCapDoKPIBenhVien" Type="int" />
         </EntityType>
         <EntityType Name="ThongBao">
           <Key>
@@ -475,6 +495,8 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhongKhoa" EntityType="Self.PhongKhoa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tabBieuMau" EntityType="Self.tabBieuMau" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongBao" EntityType="Self.ThongBao" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ChiTietKPICN_MaKPI" Association="Self.FK_ChiTietKPICN_MaKPI">
             <End Role="KPI" EntitySet="KPI" />
@@ -631,6 +653,7 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Name="TenChucDanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="NganHangKPI" Relationship="Self.FK_NganHangKPI_MaChucDanh" FromRole="ChucDanh" ToRole="NganHangKPI" />
           <NavigationProperty Name="NguoiDung" Relationship="Self.FK_NguoiDung_ChucDanh" FromRole="ChucDanh" ToRole="NguoiDung" />
+          <Property Name="MaCapDoChucDanh" Type="Int32" />
         </EntityType>
         <EntityType Name="KPI">
           <Key>
@@ -1082,6 +1105,8 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="sysdiagrams" EntityType="QuanLyKPIModel.sysdiagrams" />
+          <EntitySet Name="tabBieuMau" EntityType="QuanLyKPIModel.tabBieuMau" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1094,6 +1119,25 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tabBieuMau">
+          <Key>
+            <PropertyRef Name="IDBieuMau" />
+          </Key>
+          <Property Name="IDBieuMau" Type="Int32" Nullable="false" />
+          <Property Name="MaBieuMau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenBieuMau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaCapDoKPIBenhVien" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1149,6 +1193,7 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <EntitySetMapping Name="ChucDanh">
             <EntityTypeMapping TypeName="QuanLyKPIModel.ChucDanh">
               <MappingFragment StoreEntitySet="ChucDanh">
+                <ScalarProperty Name="MaCapDoChucDanh" ColumnName="MaCapDoChucDanh" />
                 <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
                 <ScalarProperty Name="TenChucDanh" ColumnName="TenChucDanh" />
               </MappingFragment>
@@ -1296,6 +1341,27 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyKPIModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyKPIModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tabBieuMau">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.tabBieuMau">
+              <MappingFragment StoreEntitySet="tabBieuMau">
+                <ScalarProperty Name="MaCapDoKPIBenhVien" ColumnName="MaCapDoKPIBenhVien" />
+                <ScalarProperty Name="TenBieuMau" ColumnName="TenBieuMau" />
+                <ScalarProperty Name="MaBieuMau" ColumnName="MaBieuMau" />
+                <ScalarProperty Name="IDBieuMau" ColumnName="IDBieuMau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

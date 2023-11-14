@@ -23,6 +23,7 @@ namespace DuAn_QuanLyKPI.DTO
     
         public string MaChucDanh { get; set; }
         public string TenChucDanh { get; set; }
+        public Nullable<int> MaCapDoChucDanh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NganHangKPI> NganHangKPI { get; set; }

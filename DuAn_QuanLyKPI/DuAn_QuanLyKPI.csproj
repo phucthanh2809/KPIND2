@@ -79,6 +79,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -162,6 +163,12 @@
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\sp_helpdiagrams_Result.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\sysdiagrams.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\tabBieuMau.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ThongBao.cs">
@@ -399,6 +406,9 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\apply_32x323.png" />
+    <None Include="Resources\apply_32x322.png" />
+    <None Include="Resources\apply_32x321.png" />
     <None Include="Resources\previewchart_32x32.png" />
     <None Include="Resources\publicfix_32x321.png" />
     <None Include="Resources\user1.png" />

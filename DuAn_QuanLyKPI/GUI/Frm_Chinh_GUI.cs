@@ -22,6 +22,7 @@ namespace DuAn_QuanLyKPI
         public Frm_Chinh_GUI()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
         public static int chucdanh;
