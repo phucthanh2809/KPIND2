@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,23 @@ namespace DuAn_QuanLyKPI.GUI
     {
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
-        public static string a;
-        public static string MaNV;
-        public static string MaPhongKhoa;
-        public static string MaChucDanh;
+
+        #region Tạo biến truyền dữ liệu
+            public static string a;
+            public static string MaNV;
+            public static string TenNV;
+            public static string TenChucDanh;
+            public static string MaPhongKhoa;
+            public static string MaChucDanh;
+            public static string TenPhongKhoa;
+            public static string Email;
+            public static string SDT;
+            public static string PhanQuyen;
+            public static string TK;
+            public static byte[] HinhAnh;
+        # endregion
+
+
         Timer timer = new Timer();
         public Frm_Login()
         {
@@ -72,7 +86,26 @@ namespace DuAn_QuanLyKPI.GUI
         {
             this.Close();
         }
-        private void btndangnhap_Click(object sender, EventArgs e)
+
+        private byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
+        {
+            if (image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    image.Save(ms, format);
+                    byte[] imageBytes = ms.ToArray();
+                    return imageBytes;
+                }
+            }
+            else
+            {
+                // Handle the case where 'image' is null, for example:
+                ev.QFrmThongBaoError("Vui lòng tải hình ảnh lên");
+                return null; // Or return an appropriate default value
+            }
+        }
+        private void btndangnhap_Click(object sender, EventArgs e)  
         {
             string tentk = txtdangnhap.Text;
             string mk = txtPassword.Text;
@@ -80,12 +113,26 @@ namespace DuAn_QuanLyKPI.GUI
             var nguoidung = db.NguoiDung.Where(x => x.TenTaiKhoan == tentk && x.MatKhau == mk).FirstOrDefault();
             if (nguoidung != null)
             {
-                //clear();
-                DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
-                DataUserCurrent.Instance.Permission = nguoidung.Quyen.First().MaQuyen;
-                MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
-                MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
-                MaChucDanh = DataUserCurrent.Instance.Permission = nguoidung.MaChucDanh;
+                #region  truyền dữ liệu sau khi đăng nhập thành công
+                    DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
+                    DataUserCurrent.Instance.Permission = nguoidung.Quyen.First().MaQuyen;
+                    MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
+                    MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
+                    TenPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.PhongKhoa.TenPK;
+                    MaChucDanh = DataUserCurrent.Instance.Permission = nguoidung.MaChucDanh;
+                    TenChucDanh = DataUserCurrent.Instance.Permission = nguoidung.ChucDanh.TenChucDanh;
+                    TenNV = DataUserCurrent.Instance.Permission = nguoidung.TenNV;
+                    Email = DataUserCurrent.Instance.Permission = nguoidung.Gmail;
+                    SDT = DataUserCurrent.Instance.Permission = nguoidung.SDT;
+                    TK = DataUserCurrent.Instance.Permission = nguoidung.TenTaiKhoan;
+
+                    byte[] hinhAnhBytes = nguoidung.HinhAnhNV;
+                    DataUserCurrent.Instance.Permission = hinhAnhBytes.ToString();
+                    HinhAnh = hinhAnhBytes;
+
+
+
+                #endregion
                 if (DataUserCurrent.Instance.Permission != "NV")
                 {
                     ev.QFrmThongBao("Đăng nhập thành công");

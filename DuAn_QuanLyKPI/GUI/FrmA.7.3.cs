@@ -14,10 +14,15 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
+        //lấy dữ liệu từu frm login
         public static string MaNV= Frm_Login.MaNV;
         public static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
         public static string MaChucDanh = Frm_Login.MaChucDanh;
-        public static string mconnectstring = "server=192.168.50.108,1433;database= QuanLyKPI; uid=sa;pwd=123";
+        public static string TenNV = Frm_Login.TenNV;
+        public static string TenChucDanh = Frm_Login.TenChucDanh;
+        public static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
+
+        private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
@@ -27,6 +32,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             InitializeComponent();
             LoadData();
+            LoadThongTinNhanVien();
         }
         private void LoadData()
         {
@@ -35,16 +41,26 @@ namespace DuAn_QuanLyKPI.GUI
             dgrTaiChinh.AutoGenerateColumns = false;
             dgrTaiChinh.DataSource = tb;
         }
-        private void label3_Click(object sender, EventArgs e)
+        private void LoadThongTinNhanVien()
         {
+            txtTenNV.Text = TenNV;
+            txtTenNV1.Text = TenNV;
+            txtTenNV2.Text = TenNV;
+            txtTenNV3.Text = TenNV;
+            txtTenNV4.Text = TenNV;
 
+            txtViTriCV.Text = TenChucDanh;
+            txtViTriCV1.Text = TenChucDanh;
+            txtViTriCV2.Text = TenChucDanh;
+            txtViTriCV3.Text = TenChucDanh;
+            txtViTriCV4.Text = TenChucDanh;
+
+            txtKhoaPhong.Text = TenPhongKhoa;
+            txtKhoaPhong1.Text = TenPhongKhoa;
+            txtKhoaPhong2.Text = TenPhongKhoa;
+            txtKhoaPhong3.Text = TenPhongKhoa;
+            txtKhoaPhong4.Text = TenPhongKhoa;
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnTiepTucTaiChinh_Click(object sender, EventArgs e)
         {
             KiemTraTyTrong();
@@ -297,8 +313,6 @@ namespace DuAn_QuanLyKPI.GUI
             //    comm.RunSQL(mconnectstring, msql);
             //    ev.QFrmThongBao("Đã thêm thành công");
             //}
-
-
             {
                 // Khai báo biến tổng và biến đếm
                 int total = 0;
@@ -329,10 +343,6 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBao("Đã thêm thành công");
                 }
             }
-            
-
-
-
         }
         private void KiemTraTyTrong()
         {
