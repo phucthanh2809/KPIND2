@@ -59,10 +59,7 @@ namespace DuAn_QuanLyKPI.GUI
             dgrChonBieuMau.AutoGenerateColumns = false;
             dgrChonBieuMau.DataSource = bieumau;
         }
-
         #endregion
-        
-
         private void dgrChonBieuMau_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
@@ -83,7 +80,6 @@ namespace DuAn_QuanLyKPI.GUI
                         case 73:
                             // In FrmChonBieuMau.cs or wherever you are trying to open the child form
                             FrmA73 A73 = new FrmA73();
-                            A73.MdiParent = this.MdiParent;
                             A73.Show();break;
 
                         //case 74:
@@ -116,7 +112,6 @@ namespace DuAn_QuanLyKPI.GUI
         {
             ev.Qdgr_RowPostPaint(sender, e, dgrChonBieuMau);
         }
-
     }
 }
 

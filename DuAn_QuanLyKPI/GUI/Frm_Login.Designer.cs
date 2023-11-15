@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lbDateTime = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbHien = new System.Windows.Forms.PictureBox();
+            this.pbAn = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.txtdangnhap = new System.Windows.Forms.TextBox();
@@ -41,14 +44,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btndangnhap = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbHien = new System.Windows.Forms.PictureBox();
-            this.pbAn = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbDate = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -69,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 160);
+            this.label1.Location = new System.Drawing.Point(102, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 40);
             this.label1.TabIndex = 13;
@@ -77,22 +80,23 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.lbDateTime);
+            this.panel5.Controls.Add(this.lbDate);
+            this.panel5.Controls.Add(this.lbTime);
             this.panel5.Location = new System.Drawing.Point(12, 357);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(426, 57);
             this.panel5.TabIndex = 12;
             // 
-            // lbDateTime
+            // lbTime
             // 
-            this.lbDateTime.AutoSize = true;
-            this.lbDateTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbDateTime.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateTime.Location = new System.Drawing.Point(28, 9);
-            this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(162, 40);
-            this.lbDateTime.TabIndex = 10;
-            this.lbDateTime.Text = "DateTime";
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(25, 9);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(91, 40);
+            this.lbTime.TabIndex = 10;
+            this.lbTime.Text = "Time";
             // 
             // panel1
             // 
@@ -109,6 +113,26 @@
             this.panel1.Size = new System.Drawing.Size(426, 143);
             this.panel1.TabIndex = 11;
             // 
+            // pbHien
+            // 
+            this.pbHien.Image = ((System.Drawing.Image)(resources.GetObject("pbHien.Image")));
+            this.pbHien.Location = new System.Drawing.Point(391, 53);
+            this.pbHien.Name = "pbHien";
+            this.pbHien.Size = new System.Drawing.Size(35, 32);
+            this.pbHien.TabIndex = 7;
+            this.pbHien.TabStop = false;
+            this.pbHien.Click += new System.EventHandler(this.pbHien_Click);
+            // 
+            // pbAn
+            // 
+            this.pbAn.Image = ((System.Drawing.Image)(resources.GetObject("pbAn.Image")));
+            this.pbAn.Location = new System.Drawing.Point(393, 53);
+            this.pbAn.Name = "pbAn";
+            this.pbAn.Size = new System.Drawing.Size(33, 32);
+            this.pbAn.TabIndex = 8;
+            this.pbAn.TabStop = false;
+            this.pbAn.Click += new System.EventHandler(this.pbAn_Click);
+            // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,6 +143,7 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnHuy
@@ -126,7 +151,7 @@
             this.btnHuy.BackColor = System.Drawing.Color.ForestGreen;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(269, 98);
+            this.btnHuy.Location = new System.Drawing.Point(294, 98);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(91, 38);
             this.btnHuy.TabIndex = 5;
@@ -170,7 +195,7 @@
             this.btndangnhap.BackColor = System.Drawing.Color.ForestGreen;
             this.btndangnhap.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndangnhap.ForeColor = System.Drawing.Color.White;
-            this.btndangnhap.Location = new System.Drawing.Point(116, 98);
+            this.btndangnhap.Location = new System.Drawing.Point(140, 98);
             this.btndangnhap.Name = "btndangnhap";
             this.btndangnhap.Size = new System.Drawing.Size(148, 38);
             this.btndangnhap.TabIndex = 4;
@@ -188,25 +213,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pbHien
+            // timer1
             // 
-            this.pbHien.Image = ((System.Drawing.Image)(resources.GetObject("pbHien.Image")));
-            this.pbHien.Location = new System.Drawing.Point(391, 53);
-            this.pbHien.Name = "pbHien";
-            this.pbHien.Size = new System.Drawing.Size(35, 32);
-            this.pbHien.TabIndex = 7;
-            this.pbHien.TabStop = false;
-            this.pbHien.Click += new System.EventHandler(this.pbHien_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pbAn
+            // lbDate
             // 
-            this.pbAn.Image = ((System.Drawing.Image)(resources.GetObject("pbAn.Image")));
-            this.pbAn.Location = new System.Drawing.Point(393, 53);
-            this.pbAn.Name = "pbAn";
-            this.pbAn.Size = new System.Drawing.Size(33, 32);
-            this.pbAn.TabIndex = 8;
-            this.pbAn.TabStop = false;
-            this.pbAn.Click += new System.EventHandler(this.pbAn_Click);
+            this.lbDate.AutoSize = true;
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(220, 9);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(88, 40);
+            this.lbDate.TabIndex = 11;
+            this.lbDate.Text = "Date";
             // 
             // Frm_Login
             // 
@@ -224,9 +244,9 @@
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,7 +256,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lbDateTime;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.TextBox txtdangnhap;
@@ -247,5 +267,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox pbHien;
         private System.Windows.Forms.PictureBox pbAn;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbDate;
     }
 }

@@ -26,15 +26,13 @@ namespace DuAn_QuanLyKPI.GUI
         public Frm_Login()
         {
             InitializeComponent();
-            InitializeTimer();
+            timer1.Enabled = true;
         }
         #region DateTime
-            private void InitializeTimer()
+            private void timer1_Tick(object sender, EventArgs e)
             {
-            // Lấy ngày và giờ hiện tại
-            DateTime now = DateTime.Now;
-            // Hiển thị ngày và giờ lên Label
-            lbDateTime.Text = now.ToString();
+                lbTime.Text = DateTime.Now.ToLongTimeString();
+                lbDate.Text = DateTime.Now.ToLongDateString();
             }
         #endregion
         private void txtdangnhap_Enter_1(object sender, EventArgs e)
@@ -43,19 +41,17 @@ namespace DuAn_QuanLyKPI.GUI
             if (txtdangnhap.Text != "")
             {
 
-            }   
+            }
             else
             {
                 txtdangnhap.Text = "";
-            }    
-            
-        }
+            }
 
+        }
         private void txtdangnhap_Leave_1(object sender, EventArgs e)
         {
             ev.Qtxt_Leave(sender, e);
         }
-
         private void txtmat_khau_Enter(object sender, EventArgs e)
         {
             ev.Qtxt_Enter(sender, e);
@@ -67,14 +63,11 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 txtPassword.Text = "";
             }
-            
         }
-
         private void txtmat_khau_Leave(object sender, EventArgs e)
         {
             ev.Qtxt_Leave(sender, e);
         }
-
         private void btnHuy_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -83,34 +76,27 @@ namespace DuAn_QuanLyKPI.GUI
         {
             string tentk = txtdangnhap.Text;
             string mk = txtPassword.Text;
-
-
             var db = DataProvider.Ins.DB;
             var nguoidung = db.NguoiDung.Where(x => x.TenTaiKhoan == tentk && x.MatKhau == mk).FirstOrDefault();
             if (nguoidung != null)
             {
                 //clear();
-
-
                 DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
                 DataUserCurrent.Instance.Permission = nguoidung.Quyen.First().MaQuyen;
-
-
+                MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
+                MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
+                MaChucDanh = DataUserCurrent.Instance.Permission = nguoidung.MaChucDanh;
                 if (DataUserCurrent.Instance.Permission != "NV")
                 {
                     ev.QFrmThongBao("Đăng nhập thành công");
                     Frm_Chinh_GUI f = new Frm_Chinh_GUI();
                     this.Hide();
                     f.ShowDialog();
-                    this.Show();
-                    
-
                 }
                 else
                 {
                     ev.QFrmThongBaoError("Không có quyền vào form dành cho lãnh đạo");
                 }
-
             }
             else
             {
@@ -143,13 +129,12 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void pbHien_Click(object sender, EventArgs e)
         {
-            if(txtPassword.PasswordChar == '*')
+            if (txtPassword.PasswordChar == '*')
             {
                 pbAn.BringToFront();
                 txtPassword.PasswordChar = '\0';
-            }    
+            }
         }
-
         private void pbAn_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '\0')
@@ -158,16 +143,26 @@ namespace DuAn_QuanLyKPI.GUI
                 txtPassword.PasswordChar = '*';
             }
         }
-
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             ev.Qtxt_Enter(sender, e);
             txtPassword.Text = "";
         }
-
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             ev.Qtxt_Leave(sender, e);
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Trigger the button click event
+                btndangnhap.PerformClick();
+
+                // Mark the key press as handled to prevent it from being processed further
+                e.Handled = true;
+            }
         }
     }
 }

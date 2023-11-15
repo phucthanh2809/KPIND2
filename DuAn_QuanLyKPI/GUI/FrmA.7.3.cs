@@ -14,9 +14,9 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
-        public static string MaNV= FrmDangNhapTest.MaNV;
-        public static string MaPhongKhoa = FrmDangNhapTest.MaPhongKhoa;
-        public static string MaChucDanh = FrmDangNhapTest.MaChucDanh;
+        public static string MaNV= Frm_Login.MaNV;
+        public static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
+        public static string MaChucDanh = Frm_Login.MaChucDanh;
         public static string mconnectstring = "server=192.168.50.108,1433;database= QuanLyKPI; uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
