@@ -83,7 +83,7 @@ namespace DuAn_QuanLyKPI.GUI
                         case 73:
                             // In FrmChonBieuMau.cs or wherever you are trying to open the child form
                             FrmA73 A73 = new FrmA73();
-                            A73.MdiParent = this.MdiParent; // Set the MDI parent to the same MDI parent as the current form
+                            A73.MdiParent = this.MdiParent;
                             A73.Show();break;
 
                         //case 74:
