@@ -374,7 +374,5 @@ namespace DuAn_QuanLyKPI.GUI
             txtTieuChiDanhGiaTC.Text = "";
             txtHoanThanhTC.Text = "";
         }
-
-        
     }
 }
