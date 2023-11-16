@@ -29,6 +29,7 @@ namespace DuAn_QuanLyKPI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ImportExcel_GUI));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnTaiFile = new DevExpress.XtraEditors.SimpleButton();
@@ -201,6 +202,7 @@ namespace DuAn_QuanLyKPI
             this.ClientSize = new System.Drawing.Size(1364, 736);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_ImportExcel_GUI.IconOptions.Image")));
             this.Name = "Frm_ImportExcel_GUI";
             this.Text = "Import Excel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

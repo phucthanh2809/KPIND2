@@ -226,6 +226,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.ClientSize = new System.Drawing.Size(745, 507);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_Change_Password.IconOptions.Image")));
             this.Name = "Frm_Change_Password";
             this.Text = "Frm_Change_Password";
             this.panel2.ResumeLayout(false);

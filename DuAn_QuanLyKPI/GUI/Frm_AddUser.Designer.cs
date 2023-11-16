@@ -29,6 +29,7 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AddUser));
             this.pnThongTinNhanVien = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUpImage = new System.Windows.Forms.Button();
@@ -425,6 +426,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.ClientSize = new System.Drawing.Size(552, 736);
             this.Controls.Add(this.pnThongTinNhanVien);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_AddUser.IconOptions.Image")));
             this.Name = "Frm_AddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Người dùng";

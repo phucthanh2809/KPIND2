@@ -38,6 +38,7 @@ namespace DuAn_QuanLyKPI.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmA73));
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.xFilteg9 = new ControlProject1510.XFilteg();
@@ -563,10 +564,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabPhatTrien.Controls.Add(this.panel25);
             this.tabPhatTrien.Controls.Add(this.panel23);
             this.tabPhatTrien.Controls.Add(this.panel20);
-            this.tabPhatTrien.Location = new System.Drawing.Point(4, 30);
+            this.tabPhatTrien.Location = new System.Drawing.Point(4, 22);
             this.tabPhatTrien.Name = "tabPhatTrien";
             this.tabPhatTrien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 702);
+            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 710);
             this.tabPhatTrien.TabIndex = 5;
             this.tabPhatTrien.Text = "Phát triển";
             this.tabPhatTrien.UseVisualStyleBackColor = true;
@@ -576,7 +577,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel11.Controls.Add(this.btnQuayLaiPhatTrien);
             this.panel11.Controls.Add(this.btnTiepTucPhatTrien);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(3, 653);
+            this.panel11.Location = new System.Drawing.Point(3, 661);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1350, 46);
             this.panel11.TabIndex = 19;
@@ -615,7 +616,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Location = new System.Drawing.Point(3, 331);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1350, 368);
+            this.panel25.Size = new System.Drawing.Size(1350, 376);
             this.panel25.TabIndex = 18;
             // 
             // dataGridView7
@@ -637,7 +638,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView7.Location = new System.Drawing.Point(0, 0);
             this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(1350, 368);
+            this.dataGridView7.Size = new System.Drawing.Size(1350, 376);
             this.dataGridView7.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn4
@@ -957,10 +958,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabVanHanh.Controls.Add(this.panel24);
             this.tabVanHanh.Controls.Add(this.panel22);
             this.tabVanHanh.Controls.Add(this.panel12);
-            this.tabVanHanh.Location = new System.Drawing.Point(4, 30);
+            this.tabVanHanh.Location = new System.Drawing.Point(4, 22);
             this.tabVanHanh.Name = "tabVanHanh";
             this.tabVanHanh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVanHanh.Size = new System.Drawing.Size(1356, 702);
+            this.tabVanHanh.Size = new System.Drawing.Size(1356, 710);
             this.tabVanHanh.TabIndex = 4;
             this.tabVanHanh.Text = "Vận hành";
             this.tabVanHanh.UseVisualStyleBackColor = true;
@@ -970,7 +971,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel10.Controls.Add(this.btnQuayLaiVanHanh);
             this.panel10.Controls.Add(this.btnTiepTucVanHanh);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(3, 653);
+            this.panel10.Location = new System.Drawing.Point(3, 661);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1350, 46);
             this.panel10.TabIndex = 18;
@@ -1009,7 +1010,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel24.Location = new System.Drawing.Point(3, 331);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(1350, 368);
+            this.panel24.Size = new System.Drawing.Size(1350, 376);
             this.panel24.TabIndex = 17;
             // 
             // dataGridView6
@@ -1031,7 +1032,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView6.Location = new System.Drawing.Point(0, 0);
             this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(1350, 368);
+            this.dataGridView6.Size = new System.Drawing.Size(1350, 376);
             this.dataGridView6.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn10
@@ -1351,10 +1352,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabKhachHang.Controls.Add(this.panel8);
             this.tabKhachHang.Controls.Add(this.panel6);
             this.tabKhachHang.Controls.Add(this.panel4);
-            this.tabKhachHang.Location = new System.Drawing.Point(4, 30);
+            this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
             this.tabKhachHang.Name = "tabKhachHang";
             this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(1356, 702);
+            this.tabKhachHang.Size = new System.Drawing.Size(1356, 710);
             this.tabKhachHang.TabIndex = 1;
             this.tabKhachHang.Text = "Khách hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
@@ -1364,7 +1365,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel18.Controls.Add(this.btnTiepTucKhachHang);
             this.panel18.Controls.Add(this.btnQuayLaiKhachHang);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(3, 653);
+            this.panel18.Location = new System.Drawing.Point(3, 661);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(1350, 46);
             this.panel18.TabIndex = 17;
@@ -1403,7 +1404,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 331);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1350, 368);
+            this.panel8.Size = new System.Drawing.Size(1350, 376);
             this.panel8.TabIndex = 16;
             // 
             // dataGridView5
@@ -1425,7 +1426,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(0, 0);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(1350, 368);
+            this.dataGridView5.Size = new System.Drawing.Size(1350, 376);
             this.dataGridView5.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
@@ -2252,10 +2253,10 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.tabHoanThanh.Controls.Add(this.xtraScrollableControl1);
             this.tabHoanThanh.Controls.Add(this.panel13);
-            this.tabHoanThanh.Location = new System.Drawing.Point(4, 30);
+            this.tabHoanThanh.Location = new System.Drawing.Point(4, 22);
             this.tabHoanThanh.Name = "tabHoanThanh";
             this.tabHoanThanh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHoanThanh.Size = new System.Drawing.Size(1356, 702);
+            this.tabHoanThanh.Size = new System.Drawing.Size(1356, 710);
             this.tabHoanThanh.TabIndex = 6;
             this.tabHoanThanh.Text = "Hoàn thành";
             this.tabHoanThanh.UseVisualStyleBackColor = true;
@@ -2280,9 +2281,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel15.Controls.Add(this.btnQuayLaiHoanThanh);
             this.panel15.Controls.Add(this.btnHoanThanh);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 1034);
+            this.panel15.Location = new System.Drawing.Point(0, 330);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1328, 64);
+            this.panel15.Size = new System.Drawing.Size(1345, 64);
             this.panel15.TabIndex = 3;
             // 
             // btnQuayLaiHoanThanh
@@ -2291,7 +2292,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQuayLaiHoanThanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnQuayLaiHoanThanh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuayLaiHoanThanh.ForeColor = System.Drawing.Color.Black;
-            this.btnQuayLaiHoanThanh.Location = new System.Drawing.Point(966, 6);
+            this.btnQuayLaiHoanThanh.Location = new System.Drawing.Point(983, 6);
             this.btnQuayLaiHoanThanh.Name = "btnQuayLaiHoanThanh";
             this.btnQuayLaiHoanThanh.Size = new System.Drawing.Size(124, 55);
             this.btnQuayLaiHoanThanh.TabIndex = 15;
@@ -2305,7 +2306,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnHoanThanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnHoanThanh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoanThanh.ForeColor = System.Drawing.Color.Black;
-            this.btnHoanThanh.Location = new System.Drawing.Point(1096, 6);
+            this.btnHoanThanh.Location = new System.Drawing.Point(1113, 6);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(161, 55);
             this.btnHoanThanh.TabIndex = 14;
@@ -3034,6 +3035,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.ClientSize = new System.Drawing.Size(1364, 736);
             this.Controls.Add(this.tabMucTieuKhoaPhong);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmA73.IconOptions.Image")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmA73";

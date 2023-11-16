@@ -56,7 +56,6 @@ namespace DuAn_QuanLyKPI
             this.btnBieuMauCanhan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLyNguoiDung = new DevExpress.XtraBars.BarSubItem();
-            this.btnThemNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnNganHangKPI = new DevExpress.XtraBars.BarButtonItem();
@@ -72,6 +71,7 @@ namespace DuAn_QuanLyKPI
             this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.btnThemNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTrackBar1)).BeginInit();
@@ -112,11 +112,11 @@ namespace DuAn_QuanLyKPI
             this.btnDoiMatKhau,
             this.btnDangXuat,
             this.btnUser,
-            this.btnThemNguoiDung,
             this.btnMucTieuKPI,
-            this.btnNganHangKPI});
+            this.btnNganHangKPI,
+            this.btnThemNguoiDung});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 56;
+            this.ribbon.MaxItemId = 57;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbTrangChu});
@@ -310,17 +310,10 @@ namespace DuAn_QuanLyKPI
             this.btnQuanLyNguoiDung.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.publicfix_32x321;
             this.btnQuanLyNguoiDung.LargeWidth = 100;
             this.btnQuanLyNguoiDung.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnThemNguoiDung),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUser),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThemNguoiDung),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDoiMatKhau)});
             this.btnQuanLyNguoiDung.Name = "btnQuanLyNguoiDung";
-            // 
-            // btnThemNguoiDung
-            // 
-            this.btnThemNguoiDung.Caption = "Thêm Người dùng";
-            this.btnThemNguoiDung.Id = 48;
-            this.btnThemNguoiDung.Name = "btnThemNguoiDung";
-            this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick);
             // 
             // btnUser
             // 
@@ -414,6 +407,13 @@ namespace DuAn_QuanLyKPI
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
+            // btnThemNguoiDung
+            // 
+            this.btnThemNguoiDung.Caption = "Thêm Người dùng";
+            this.btnThemNguoiDung.Id = 56;
+            this.btnThemNguoiDung.Name = "btnThemNguoiDung";
+            this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick_1);
+            // 
             // Frm_Chinh_GUI
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -480,7 +480,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraBars.BarButtonItem btnUser;
-        private DevExpress.XtraBars.BarButtonItem btnThemNguoiDung;
         private DevExpress.XtraBars.BarButtonItem btnMucTieuKPI;
         private DevExpress.XtraBars.BarButtonItem btnNganHangKPI;
         private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
@@ -488,5 +487,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraEditors.Repository.RepositoryItemTrackBar repositoryItemTrackBar1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit repositoryItemTokenEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
+        private DevExpress.XtraBars.BarButtonItem btnThemNguoiDung;
     }
 }

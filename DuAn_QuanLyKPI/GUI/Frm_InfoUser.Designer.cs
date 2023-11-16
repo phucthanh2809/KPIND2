@@ -29,8 +29,11 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_InfoUser));
             this.pnTong = new System.Windows.Forms.Panel();
             this.pnThongTin = new System.Windows.Forms.Panel();
+            this.txtChucDanh = new ControlProject1510.XFilteg();
+            this.txtPhongKhoa = new ControlProject1510.XFilteg();
             this.txtMaNV = new ControlProject1510.XFilteg();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,8 +48,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPhongKhoa = new ControlProject1510.XFilteg();
-            this.txtChucDanh = new ControlProject1510.XFilteg();
             this.pnTong.SuspendLayout();
             this.pnThongTin.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,7 +63,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTong.Location = new System.Drawing.Point(0, 0);
             this.pnTong.Name = "pnTong";
-            this.pnTong.Size = new System.Drawing.Size(1056, 328);
+            this.pnTong.Size = new System.Drawing.Size(1056, 339);
             this.pnTong.TabIndex = 0;
             // 
             // pnThongTin
@@ -82,8 +83,42 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnThongTin.Location = new System.Drawing.Point(281, 63);
             this.pnThongTin.Name = "pnThongTin";
-            this.pnThongTin.Size = new System.Drawing.Size(775, 265);
+            this.pnThongTin.Size = new System.Drawing.Size(775, 276);
             this.pnThongTin.TabIndex = 4;
+            // 
+            // txtChucDanh
+            // 
+            this.txtChucDanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtChucDanh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChucDanh.Location = new System.Drawing.Point(139, 225);
+            this.txtChucDanh.Name = "txtChucDanh";
+            this.txtChucDanh.Size = new System.Drawing.Size(624, 32);
+            this.txtChucDanh.TabIndex = 85;
+            this.txtChucDanh.xCoTimMoRong = false;
+            this.txtChucDanh.xDataGrid = null;
+            this.txtChucDanh.xField_Key = "";
+            this.txtChucDanh.xKeep_Old_Value = false;
+            this.txtChucDanh.xTimChinhXac = false;
+            this.txtChucDanh.xTimMoRong = "";
+            this.txtChucDanh.xTimTrenField = "";
+            // 
+            // txtPhongKhoa
+            // 
+            this.txtPhongKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhongKhoa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhongKhoa.Location = new System.Drawing.Point(139, 182);
+            this.txtPhongKhoa.Name = "txtPhongKhoa";
+            this.txtPhongKhoa.Size = new System.Drawing.Size(624, 32);
+            this.txtPhongKhoa.TabIndex = 84;
+            this.txtPhongKhoa.xCoTimMoRong = false;
+            this.txtPhongKhoa.xDataGrid = null;
+            this.txtPhongKhoa.xField_Key = "";
+            this.txtPhongKhoa.xKeep_Old_Value = false;
+            this.txtPhongKhoa.xTimChinhXac = false;
+            this.txtPhongKhoa.xTimMoRong = "";
+            this.txtPhongKhoa.xTimTrenField = "";
             // 
             // txtMaNV
             // 
@@ -219,7 +254,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(281, 265);
+            this.panel2.Size = new System.Drawing.Size(281, 276);
             this.panel2.TabIndex = 2;
             // 
             // pbUser
@@ -258,46 +293,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.label1.TabIndex = 66;
             this.label1.Text = "Thông tin cá nhân";
             // 
-            // txtPhongKhoa
-            // 
-            this.txtPhongKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhongKhoa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhongKhoa.Location = new System.Drawing.Point(139, 182);
-            this.txtPhongKhoa.Name = "txtPhongKhoa";
-            this.txtPhongKhoa.Size = new System.Drawing.Size(624, 32);
-            this.txtPhongKhoa.TabIndex = 84;
-            this.txtPhongKhoa.xCoTimMoRong = false;
-            this.txtPhongKhoa.xDataGrid = null;
-            this.txtPhongKhoa.xField_Key = "";
-            this.txtPhongKhoa.xKeep_Old_Value = false;
-            this.txtPhongKhoa.xTimChinhXac = false;
-            this.txtPhongKhoa.xTimMoRong = "";
-            this.txtPhongKhoa.xTimTrenField = "";
-            // 
-            // txtChucDanh
-            // 
-            this.txtChucDanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtChucDanh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChucDanh.Location = new System.Drawing.Point(139, 225);
-            this.txtChucDanh.Name = "txtChucDanh";
-            this.txtChucDanh.Size = new System.Drawing.Size(624, 32);
-            this.txtChucDanh.TabIndex = 85;
-            this.txtChucDanh.xCoTimMoRong = false;
-            this.txtChucDanh.xDataGrid = null;
-            this.txtChucDanh.xField_Key = "";
-            this.txtChucDanh.xKeep_Old_Value = false;
-            this.txtChucDanh.xTimChinhXac = false;
-            this.txtChucDanh.xTimMoRong = "";
-            this.txtChucDanh.xTimTrenField = "";
-            // 
             // Frm_InfoUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 328);
+            this.ClientSize = new System.Drawing.Size(1056, 339);
             this.Controls.Add(this.pnTong);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_InfoUser.IconOptions.Image")));
             this.Name = "Frm_InfoUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";

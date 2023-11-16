@@ -461,8 +461,8 @@
             // 
             this.btnXemAllMucTieu.Caption = "Xem Tất Cả Mục Tiêu";
             this.btnXemAllMucTieu.Id = 7;
-            this.btnXemAllMucTieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnXemAllMucTieu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnXemAllMucTieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemAllMucTieu.ImageOptions.Image")));
+            this.btnXemAllMucTieu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemAllMucTieu.ImageOptions.LargeImage")));
             this.btnXemAllMucTieu.Name = "btnXemAllMucTieu";
             this.btnXemAllMucTieu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnXemAllMucTieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemAllMucTieu_ItemClick);
@@ -508,7 +508,7 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 599);
             // 
-            // FrmQuanLyNganHangKPI
+            // Frm_QuanLyNganHangKPI
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
@@ -522,9 +522,10 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_QuanLyNganHangKPI.IconOptions.Image")));
             this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmQuanLyNganHangKPI";
+            this.Name = "Frm_QuanLyNganHangKPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);

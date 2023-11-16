@@ -101,14 +101,6 @@ namespace DuAn_QuanLyKPI
                 this.Show();
             }    
         }
-
-        private void btnThemNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Frm_AddUser adduser = new Frm_AddUser();
-            adduser.Show();
-            //OpenForm(typeof(Frm_AddUser));
-        }
-
         private void btnMucTieuKPI_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenForm(typeof(Frm_XemMucTieuKPI));
@@ -122,6 +114,12 @@ namespace DuAn_QuanLyKPI
         private void btnDangKyMucTieuKPI_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void btnThemNguoiDung_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            Frm_AddUser adduser = new Frm_AddUser();
+            adduser.Show();
         }
     }
 }

@@ -180,7 +180,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -413,7 +413,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.dgvkpidc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvkpidc.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.dgvkpidc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvkpidc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.dgvkpidc.Location = new System.Drawing.Point(0, 0);
             this.dgvkpidc.MainView = this.gridView2;
             this.dgvkpidc.Name = "dgvkpidc";
@@ -491,6 +491,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_CapDanhSachKPI.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Frm_CapDanhSachKPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
