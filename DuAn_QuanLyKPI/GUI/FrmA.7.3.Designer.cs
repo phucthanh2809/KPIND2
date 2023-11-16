@@ -41,7 +41,6 @@ namespace DuAn_QuanLyKPI.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmA73));
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.button3 = new System.Windows.Forms.Button();
@@ -120,17 +119,17 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
-            this.xFilteg3 = new ControlProject1510.XFilteg();
-            this.xFilteg4 = new ControlProject1510.XFilteg();
+            this.txtTenNV4 = new ControlProject1510.XFilteg();
+            this.txtViTriCV4 = new ControlProject1510.XFilteg();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
-            this.xFilteg5 = new ControlProject1510.XFilteg();
+            this.txtKhoaPhong4 = new ControlProject1510.XFilteg();
             this.label63 = new System.Windows.Forms.Label();
-            this.stepProgressBar1 = new DevExpress.XtraEditors.StepProgressBar();
-            this.stepProgressBarItem1 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem2 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem3 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem4 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.FrmSPTrangThai4 = new DevExpress.XtraEditors.StepProgressBar();
+            this.spTaiChinh4 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spKhachHang4 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spVanHanh4 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spPhatTrien4 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.label64 = new System.Windows.Forms.Label();
             this.pnTieuDeTongQuat = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
@@ -246,18 +245,21 @@ namespace DuAn_QuanLyKPI.GUI
             this.spVanHanh1 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.spPhatTrien1 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.tabTaiChinh = new System.Windows.Forms.TabPage();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.btnTiepTucTaiChinh = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.gridnhapmuctieu = new DevExpress.XtraGrid.GridControl();
+            this.dgrTaiChinhNhap = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridmuctieubv = new DevExpress.XtraGrid.GridControl();
+            this.dgrTaiChinhBV = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cMaKPI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cTrongSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgrChonMucTieu = new System.Windows.Forms.DataGridView();
-            this.cMaKPI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgrTaiChinh = new System.Windows.Forms.DataGridView();
-            this.cMaKPITC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cMucTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTieuChiDanhGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHoanThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnTiepTucTaiChinh = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtHoanThanhTC = new ControlProject1510.XFilteg();
             this.label51 = new System.Windows.Forms.Label();
@@ -289,6 +291,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.tabMucTieuKhoaPhong = new System.Windows.Forms.TabControl();
             this.svgImageCollection2 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).BeginInit();
@@ -311,7 +314,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel32.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai4)).BeginInit();
             this.pnTieuDeTongQuat.SuspendLayout();
             this.tabPhatTrien.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -338,16 +341,20 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai1)).BeginInit();
             this.tabTaiChinh.SuspendLayout();
-            this.panel17.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridnhapmuctieu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhNhap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridmuctieubv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhBV)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrChonMucTieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinh)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai)).BeginInit();
             this.panel7.SuspendLayout();
             this.tabMucTieuKhoaPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // svgImageCollection1
@@ -571,10 +578,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.pnTong);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1356, 702);
+            this.tabPage1.Size = new System.Drawing.Size(1356, 710);
             this.tabPage1.TabIndex = 7;
             this.tabPage1.Text = "Hoàn thành ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -588,7 +595,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTong.Location = new System.Drawing.Point(3, 3);
             this.pnTong.Name = "pnTong";
-            this.pnTong.Size = new System.Drawing.Size(1350, 696);
+            this.pnTong.Size = new System.Drawing.Size(1350, 704);
             this.pnTong.TabIndex = 0;
             // 
             // pnTongScroll
@@ -598,7 +605,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTongScroll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTongScroll.Location = new System.Drawing.Point(0, 255);
             this.pnTongScroll.Name = "pnTongScroll";
-            this.pnTongScroll.Size = new System.Drawing.Size(1350, 377);
+            this.pnTongScroll.Size = new System.Drawing.Size(1350, 385);
             this.pnTongScroll.TabIndex = 3;
             // 
             // panel35
@@ -1182,7 +1189,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel32.Controls.Add(this.btnQuayLaiHoanThanh);
             this.panel32.Controls.Add(this.btnHoanThanh);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel32.Location = new System.Drawing.Point(0, 632);
+            this.panel32.Location = new System.Drawing.Point(0, 640);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(1350, 64);
             this.panel32.TabIndex = 2;
@@ -1216,9 +1223,9 @@ namespace DuAn_QuanLyKPI.GUI
             // panel29
             // 
             this.panel29.Controls.Add(this.panel31);
-            this.panel29.Controls.Add(this.xFilteg5);
+            this.panel29.Controls.Add(this.txtKhoaPhong4);
             this.panel29.Controls.Add(this.label63);
-            this.panel29.Controls.Add(this.stepProgressBar1);
+            this.panel29.Controls.Add(this.FrmSPTrangThai4);
             this.panel29.Controls.Add(this.label64);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel29.Location = new System.Drawing.Point(0, 70);
@@ -1231,8 +1238,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel31.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel31.Controls.Add(this.label40);
-            this.panel31.Controls.Add(this.xFilteg3);
-            this.panel31.Controls.Add(this.xFilteg4);
+            this.panel31.Controls.Add(this.txtTenNV4);
+            this.panel31.Controls.Add(this.txtViTriCV4);
             this.panel31.Controls.Add(this.label61);
             this.panel31.Controls.Add(this.label62);
             this.panel31.Location = new System.Drawing.Point(836, 6);
@@ -1250,37 +1257,37 @@ namespace DuAn_QuanLyKPI.GUI
             this.label40.TabIndex = 10;
             this.label40.Text = "Thông tin cá nhân";
             // 
-            // xFilteg3
+            // txtTenNV4
             // 
-            this.xFilteg3.Enabled = false;
-            this.xFilteg3.Location = new System.Drawing.Point(159, 61);
-            this.xFilteg3.Name = "xFilteg3";
-            this.xFilteg3.ReadOnly = true;
-            this.xFilteg3.Size = new System.Drawing.Size(345, 29);
-            this.xFilteg3.TabIndex = 2;
-            this.xFilteg3.xCoTimMoRong = false;
-            this.xFilteg3.xDataGrid = null;
-            this.xFilteg3.xField_Key = "";
-            this.xFilteg3.xKeep_Old_Value = false;
-            this.xFilteg3.xTimChinhXac = false;
-            this.xFilteg3.xTimMoRong = "";
-            this.xFilteg3.xTimTrenField = null;
+            this.txtTenNV4.Enabled = false;
+            this.txtTenNV4.Location = new System.Drawing.Point(159, 61);
+            this.txtTenNV4.Name = "txtTenNV4";
+            this.txtTenNV4.ReadOnly = true;
+            this.txtTenNV4.Size = new System.Drawing.Size(345, 29);
+            this.txtTenNV4.TabIndex = 2;
+            this.txtTenNV4.xCoTimMoRong = false;
+            this.txtTenNV4.xDataGrid = null;
+            this.txtTenNV4.xField_Key = "";
+            this.txtTenNV4.xKeep_Old_Value = false;
+            this.txtTenNV4.xTimChinhXac = false;
+            this.txtTenNV4.xTimMoRong = "";
+            this.txtTenNV4.xTimTrenField = null;
             // 
-            // xFilteg4
+            // txtViTriCV4
             // 
-            this.xFilteg4.Enabled = false;
-            this.xFilteg4.Location = new System.Drawing.Point(159, 105);
-            this.xFilteg4.Name = "xFilteg4";
-            this.xFilteg4.ReadOnly = true;
-            this.xFilteg4.Size = new System.Drawing.Size(345, 29);
-            this.xFilteg4.TabIndex = 3;
-            this.xFilteg4.xCoTimMoRong = false;
-            this.xFilteg4.xDataGrid = null;
-            this.xFilteg4.xField_Key = "";
-            this.xFilteg4.xKeep_Old_Value = false;
-            this.xFilteg4.xTimChinhXac = false;
-            this.xFilteg4.xTimMoRong = "";
-            this.xFilteg4.xTimTrenField = null;
+            this.txtViTriCV4.Enabled = false;
+            this.txtViTriCV4.Location = new System.Drawing.Point(159, 105);
+            this.txtViTriCV4.Name = "txtViTriCV4";
+            this.txtViTriCV4.ReadOnly = true;
+            this.txtViTriCV4.Size = new System.Drawing.Size(345, 29);
+            this.txtViTriCV4.TabIndex = 3;
+            this.txtViTriCV4.xCoTimMoRong = false;
+            this.txtViTriCV4.xDataGrid = null;
+            this.txtViTriCV4.xField_Key = "";
+            this.txtViTriCV4.xKeep_Old_Value = false;
+            this.txtViTriCV4.xTimChinhXac = false;
+            this.txtViTriCV4.xTimMoRong = "";
+            this.txtViTriCV4.xTimTrenField = null;
             // 
             // label61
             // 
@@ -1302,23 +1309,23 @@ namespace DuAn_QuanLyKPI.GUI
             this.label62.TabIndex = 5;
             this.label62.Text = "Tên : ";
             // 
-            // xFilteg5
+            // txtKhoaPhong4
             // 
-            this.xFilteg5.BackColor = System.Drawing.SystemColors.Control;
-            this.xFilteg5.Enabled = false;
-            this.xFilteg5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xFilteg5.Location = new System.Drawing.Point(259, 8);
-            this.xFilteg5.Name = "xFilteg5";
-            this.xFilteg5.ReadOnly = true;
-            this.xFilteg5.Size = new System.Drawing.Size(571, 32);
-            this.xFilteg5.TabIndex = 23;
-            this.xFilteg5.xCoTimMoRong = false;
-            this.xFilteg5.xDataGrid = null;
-            this.xFilteg5.xField_Key = "";
-            this.xFilteg5.xKeep_Old_Value = false;
-            this.xFilteg5.xTimChinhXac = false;
-            this.xFilteg5.xTimMoRong = "";
-            this.xFilteg5.xTimTrenField = null;
+            this.txtKhoaPhong4.BackColor = System.Drawing.SystemColors.Control;
+            this.txtKhoaPhong4.Enabled = false;
+            this.txtKhoaPhong4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoaPhong4.Location = new System.Drawing.Point(259, 8);
+            this.txtKhoaPhong4.Name = "txtKhoaPhong4";
+            this.txtKhoaPhong4.ReadOnly = true;
+            this.txtKhoaPhong4.Size = new System.Drawing.Size(571, 32);
+            this.txtKhoaPhong4.TabIndex = 23;
+            this.txtKhoaPhong4.xCoTimMoRong = false;
+            this.txtKhoaPhong4.xDataGrid = null;
+            this.txtKhoaPhong4.xField_Key = "";
+            this.txtKhoaPhong4.xKeep_Old_Value = false;
+            this.txtKhoaPhong4.xTimChinhXac = false;
+            this.txtKhoaPhong4.xTimMoRong = "";
+            this.txtKhoaPhong4.xTimTrenField = null;
             // 
             // label63
             // 
@@ -1330,40 +1337,40 @@ namespace DuAn_QuanLyKPI.GUI
             this.label63.TabIndex = 22;
             this.label63.Text = "A.7.3: KHOA/PHÒNG";
             // 
-            // stepProgressBar1
+            // FrmSPTrangThai4
             // 
-            this.stepProgressBar1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.stepProgressBar1.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stepProgressBar1.Appearance.Options.UseBackColor = true;
-            this.stepProgressBar1.Appearance.Options.UseFont = true;
-            this.stepProgressBar1.Items.Add(this.stepProgressBarItem1);
-            this.stepProgressBar1.Items.Add(this.stepProgressBarItem2);
-            this.stepProgressBar1.Items.Add(this.stepProgressBarItem3);
-            this.stepProgressBar1.Items.Add(this.stepProgressBarItem4);
-            this.stepProgressBar1.Location = new System.Drawing.Point(5, 46);
-            this.stepProgressBar1.Name = "stepProgressBar1";
-            this.stepProgressBar1.Size = new System.Drawing.Size(825, 82);
-            this.stepProgressBar1.TabIndex = 21;
+            this.FrmSPTrangThai4.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.FrmSPTrangThai4.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrmSPTrangThai4.Appearance.Options.UseBackColor = true;
+            this.FrmSPTrangThai4.Appearance.Options.UseFont = true;
+            this.FrmSPTrangThai4.Items.Add(this.spTaiChinh4);
+            this.FrmSPTrangThai4.Items.Add(this.spKhachHang4);
+            this.FrmSPTrangThai4.Items.Add(this.spVanHanh4);
+            this.FrmSPTrangThai4.Items.Add(this.spPhatTrien4);
+            this.FrmSPTrangThai4.Location = new System.Drawing.Point(5, 46);
+            this.FrmSPTrangThai4.Name = "FrmSPTrangThai4";
+            this.FrmSPTrangThai4.Size = new System.Drawing.Size(825, 82);
+            this.FrmSPTrangThai4.TabIndex = 21;
             // 
-            // stepProgressBarItem1
+            // spTaiChinh4
             // 
-            this.stepProgressBarItem1.ContentBlock2.Caption = "Tài Chính";
-            this.stepProgressBarItem1.Name = "stepProgressBarItem1";
+            this.spTaiChinh4.ContentBlock2.Caption = "Tài Chính";
+            this.spTaiChinh4.Name = "spTaiChinh4";
             // 
-            // stepProgressBarItem2
+            // spKhachHang4
             // 
-            this.stepProgressBarItem2.ContentBlock2.Caption = "Khách Hàng";
-            this.stepProgressBarItem2.Name = "stepProgressBarItem2";
+            this.spKhachHang4.ContentBlock2.Caption = "Khách Hàng";
+            this.spKhachHang4.Name = "spKhachHang4";
             // 
-            // stepProgressBarItem3
+            // spVanHanh4
             // 
-            this.stepProgressBarItem3.ContentBlock2.Caption = "Vận Hành";
-            this.stepProgressBarItem3.Name = "stepProgressBarItem3";
+            this.spVanHanh4.ContentBlock2.Caption = "Vận Hành";
+            this.spVanHanh4.Name = "spVanHanh4";
             // 
-            // stepProgressBarItem4
+            // spPhatTrien4
             // 
-            this.stepProgressBarItem4.ContentBlock2.Caption = "Phát Triển";
-            this.stepProgressBarItem4.Name = "stepProgressBarItem4";
+            this.spPhatTrien4.ContentBlock2.Caption = "Phát Triển";
+            this.spPhatTrien4.Name = "spPhatTrien4";
             // 
             // label64
             // 
@@ -1401,10 +1408,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabPhatTrien.Controls.Add(this.panel25);
             this.tabPhatTrien.Controls.Add(this.panel23);
             this.tabPhatTrien.Controls.Add(this.panel20);
-            this.tabPhatTrien.Location = new System.Drawing.Point(4, 30);
+            this.tabPhatTrien.Location = new System.Drawing.Point(4, 22);
             this.tabPhatTrien.Name = "tabPhatTrien";
             this.tabPhatTrien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 702);
+            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 710);
             this.tabPhatTrien.TabIndex = 5;
             this.tabPhatTrien.Text = "Phát triển";
             this.tabPhatTrien.UseVisualStyleBackColor = true;
@@ -1414,7 +1421,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel11.Controls.Add(this.btnQuayLaiPhatTrien);
             this.panel11.Controls.Add(this.btnTiepTucPhatTrien);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(3, 653);
+            this.panel11.Location = new System.Drawing.Point(3, 661);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1350, 46);
             this.panel11.TabIndex = 19;
@@ -1453,7 +1460,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Location = new System.Drawing.Point(3, 331);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1350, 368);
+            this.panel25.Size = new System.Drawing.Size(1350, 376);
             this.panel25.TabIndex = 18;
             // 
             // dataGridView7
@@ -1475,7 +1482,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView7.Location = new System.Drawing.Point(0, 0);
             this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(1350, 368);
+            this.dataGridView7.Size = new System.Drawing.Size(1350, 376);
             this.dataGridView7.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn4
@@ -2579,7 +2586,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // tabTaiChinh
             // 
-            this.tabTaiChinh.Controls.Add(this.panel17);
+            this.tabTaiChinh.Controls.Add(this.panel13);
             this.tabTaiChinh.Controls.Add(this.panel2);
             this.tabTaiChinh.Controls.Add(this.panel3);
             this.tabTaiChinh.Controls.Add(this.panel1);
@@ -2591,14 +2598,240 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabTaiChinh.Text = "Tài chính";
             this.tabTaiChinh.UseVisualStyleBackColor = true;
             // 
-            // panel17
+            // panel13
             // 
-            this.panel17.Controls.Add(this.btnTiepTucTaiChinh);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel17.Location = new System.Drawing.Point(3, 643);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1350, 56);
-            this.panel17.TabIndex = 16;
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(3, 331);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1350, 310);
+            this.panel13.TabIndex = 16;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label24);
+            this.panel14.Controls.Add(this.gridnhapmuctieu);
+            this.panel14.Controls.Add(this.gridmuctieubv);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(1350, 310);
+            this.panel14.TabIndex = 16;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(669, -4);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(13, 336);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|";
+            // 
+            // gridnhapmuctieu
+            // 
+            this.gridnhapmuctieu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gridnhapmuctieu.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gridnhapmuctieu.Location = new System.Drawing.Point(680, 0);
+            this.gridnhapmuctieu.MainView = this.dgrTaiChinhNhap;
+            this.gridnhapmuctieu.Name = "gridnhapmuctieu";
+            this.gridnhapmuctieu.Size = new System.Drawing.Size(670, 310);
+            this.gridnhapmuctieu.TabIndex = 3;
+            this.gridnhapmuctieu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgrTaiChinhNhap});
+            this.gridnhapmuctieu.DragDrop += new System.Windows.Forms.DragEventHandler(this.gridnhapmuctieu_DragDrop);
+            this.gridnhapmuctieu.DragOver += new System.Windows.Forms.DragEventHandler(this.gridnhapmuctieu_DragOver);
+            // 
+            // dgrTaiChinhNhap
+            // 
+            this.dgrTaiChinhNhap.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgrTaiChinhNhap.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgrTaiChinhNhap.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.dgrTaiChinhNhap.Appearance.HeaderPanel.Options.UseFont = true;
+            this.dgrTaiChinhNhap.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.dgrTaiChinhNhap.Appearance.Row.Options.UseBackColor = true;
+            this.dgrTaiChinhNhap.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.dgrTaiChinhNhap.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.dgrTaiChinhNhap.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgrTaiChinhNhap.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.dgrTaiChinhNhap.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.dgrTaiChinhNhap.GridControl = this.gridnhapmuctieu;
+            this.dgrTaiChinhNhap.Name = "dgrTaiChinhNhap";
+            this.dgrTaiChinhNhap.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.dgrTaiChinhNhap.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.dgrTaiChinhNhap.OptionsBehavior.Editable = false;
+            this.dgrTaiChinhNhap.OptionsBehavior.ReadOnly = true;
+            this.dgrTaiChinhNhap.RowHeight = 30;
+            this.dgrTaiChinhNhap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseDown);
+            this.dgrTaiChinhNhap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseMove);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.Caption = "Mã KPI";
+            this.gridColumn1.FieldName = "MaKPI";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.Caption = "MỤC TIÊU BỆNH VIỆN ";
+            this.gridColumn2.FieldName = "NoiDung";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn3.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn3.Caption = "TRỌNG SỐ";
+            this.gridColumn3.FieldName = "TrongSo";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridmuctieubv
+            // 
+            this.gridmuctieubv.AllowDrop = true;
+            this.gridmuctieubv.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gridmuctieubv.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gridmuctieubv.Location = new System.Drawing.Point(0, 0);
+            this.gridmuctieubv.MainView = this.dgrTaiChinhBV;
+            this.gridmuctieubv.Name = "gridmuctieubv";
+            this.gridmuctieubv.Size = new System.Drawing.Size(670, 310);
+            this.gridmuctieubv.TabIndex = 2;
+            this.gridmuctieubv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgrTaiChinhBV});
+            this.gridmuctieubv.DragDrop += new System.Windows.Forms.DragEventHandler(this.gridmuctieubv_DragDrop);
+            this.gridmuctieubv.DragOver += new System.Windows.Forms.DragEventHandler(this.gridmuctieubv_DragOver);
+            // 
+            // dgrTaiChinhBV
+            // 
+            this.dgrTaiChinhBV.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgrTaiChinhBV.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgrTaiChinhBV.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.dgrTaiChinhBV.Appearance.HeaderPanel.Options.UseFont = true;
+            this.dgrTaiChinhBV.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.dgrTaiChinhBV.Appearance.Row.Options.UseBackColor = true;
+            this.dgrTaiChinhBV.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.dgrTaiChinhBV.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.dgrTaiChinhBV.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgrTaiChinhBV.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.dgrTaiChinhBV.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.cMaKPI,
+            this.cNoiDung,
+            this.cTrongSo});
+            this.dgrTaiChinhBV.GridControl = this.gridmuctieubv;
+            this.dgrTaiChinhBV.Name = "dgrTaiChinhBV";
+            this.dgrTaiChinhBV.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.dgrTaiChinhBV.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.dgrTaiChinhBV.OptionsBehavior.Editable = false;
+            this.dgrTaiChinhBV.OptionsBehavior.ReadOnly = true;
+            this.dgrTaiChinhBV.RowHeight = 30;
+            this.dgrTaiChinhBV.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseDown);
+            this.dgrTaiChinhBV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseMove);
+            // 
+            // cMaKPI
+            // 
+            this.cMaKPI.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cMaKPI.AppearanceCell.Options.UseFont = true;
+            this.cMaKPI.AppearanceCell.Options.UseTextOptions = true;
+            this.cMaKPI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.cMaKPI.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cMaKPI.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
+            this.cMaKPI.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cMaKPI.AppearanceHeader.Options.UseBackColor = true;
+            this.cMaKPI.AppearanceHeader.Options.UseFont = true;
+            this.cMaKPI.AppearanceHeader.Options.UseTextOptions = true;
+            this.cMaKPI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.cMaKPI.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cMaKPI.Caption = "Mã KPI";
+            this.cMaKPI.FieldName = "MaKPI";
+            this.cMaKPI.Name = "cMaKPI";
+            // 
+            // cNoiDung
+            // 
+            this.cNoiDung.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
+            this.cNoiDung.AppearanceCell.Options.UseFont = true;
+            this.cNoiDung.AppearanceCell.Options.UseTextOptions = true;
+            this.cNoiDung.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.cNoiDung.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cNoiDung.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
+            this.cNoiDung.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cNoiDung.AppearanceHeader.Options.UseBackColor = true;
+            this.cNoiDung.AppearanceHeader.Options.UseFont = true;
+            this.cNoiDung.AppearanceHeader.Options.UseTextOptions = true;
+            this.cNoiDung.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.cNoiDung.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cNoiDung.Caption = "MỤC TIÊU BỆNH VIỆN ";
+            this.cNoiDung.FieldName = "NoiDung";
+            this.cNoiDung.Name = "cNoiDung";
+            this.cNoiDung.Visible = true;
+            this.cNoiDung.VisibleIndex = 0;
+            // 
+            // cTrongSo
+            // 
+            this.cTrongSo.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
+            this.cTrongSo.AppearanceCell.Options.UseFont = true;
+            this.cTrongSo.AppearanceCell.Options.UseTextOptions = true;
+            this.cTrongSo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.cTrongSo.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cTrongSo.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
+            this.cTrongSo.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cTrongSo.AppearanceHeader.Options.UseBackColor = true;
+            this.cTrongSo.AppearanceHeader.Options.UseFont = true;
+            this.cTrongSo.AppearanceHeader.Options.UseTextOptions = true;
+            this.cTrongSo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.cTrongSo.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cTrongSo.Caption = "TRỌNG SỐ";
+            this.cTrongSo.FieldName = "TrongSo";
+            this.cTrongSo.Name = "cTrongSo";
+            this.cTrongSo.Visible = true;
+            this.cTrongSo.VisibleIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnTiepTucTaiChinh);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 641);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1350, 58);
+            this.panel2.TabIndex = 15;
             // 
             // btnTiepTucTaiChinh
             // 
@@ -2606,108 +2839,12 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTiepTucTaiChinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnTiepTucTaiChinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiepTucTaiChinh.ForeColor = System.Drawing.Color.Black;
-            this.btnTiepTucTaiChinh.Location = new System.Drawing.Point(1223, 3);
+            this.btnTiepTucTaiChinh.Location = new System.Drawing.Point(1221, 5);
             this.btnTiepTucTaiChinh.Name = "btnTiepTucTaiChinh";
             this.btnTiepTucTaiChinh.Size = new System.Drawing.Size(124, 48);
-            this.btnTiepTucTaiChinh.TabIndex = 2;
+            this.btnTiepTucTaiChinh.TabIndex = 16;
             this.btnTiepTucTaiChinh.Text = "TIẾP TỤC";
             this.btnTiepTucTaiChinh.UseVisualStyleBackColor = false;
-            this.btnTiepTucTaiChinh.Click += new System.EventHandler(this.btnTiepTucTaiChinh_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgrChonMucTieu);
-            this.panel2.Controls.Add(this.dgrTaiChinh);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 331);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1350, 368);
-            this.panel2.TabIndex = 15;
-            // 
-            // dgrChonMucTieu
-            // 
-            this.dgrChonMucTieu.AllowUserToAddRows = false;
-            this.dgrChonMucTieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgrChonMucTieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrChonMucTieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cMaKPI,
-            this.cNoiDung});
-            this.dgrChonMucTieu.Location = new System.Drawing.Point(0, 0);
-            this.dgrChonMucTieu.Name = "dgrChonMucTieu";
-            this.dgrChonMucTieu.RowTemplate.Height = 30;
-            this.dgrChonMucTieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrChonMucTieu.Size = new System.Drawing.Size(937, 306);
-            this.dgrChonMucTieu.TabIndex = 15;
-            this.dgrChonMucTieu.Visible = false;
-            // 
-            // cMaKPI
-            // 
-            this.cMaKPI.DataPropertyName = "MaKPI";
-            this.cMaKPI.HeaderText = "Mã KPI";
-            this.cMaKPI.Name = "cMaKPI";
-            this.cMaKPI.Visible = false;
-            // 
-            // cNoiDung
-            // 
-            this.cNoiDung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNoiDung.DataPropertyName = "NoiDung";
-            this.cNoiDung.HeaderText = "Nội dung";
-            this.cNoiDung.Name = "cNoiDung";
-            // 
-            // dgrTaiChinh
-            // 
-            this.dgrTaiChinh.AllowUserToAddRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgrTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cMaKPITC,
-            this.cMucTieu,
-            this.cTrongSo,
-            this.cTieuChiDanhGia,
-            this.cHoanThanh});
-            this.dgrTaiChinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgrTaiChinh.Location = new System.Drawing.Point(0, 0);
-            this.dgrTaiChinh.Name = "dgrTaiChinh";
-            this.dgrTaiChinh.RowTemplate.Height = 30;
-            this.dgrTaiChinh.Size = new System.Drawing.Size(1350, 368);
-            this.dgrTaiChinh.TabIndex = 14;
-            // 
-            // cMaKPITC
-            // 
-            this.cMaKPITC.DataPropertyName = "MaKPI";
-            this.cMaKPITC.HeaderText = "Mã KPI";
-            this.cMaKPITC.Name = "cMaKPITC";
-            this.cMaKPITC.Visible = false;
-            // 
-            // cMucTieu
-            // 
-            this.cMucTieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cMucTieu.DataPropertyName = "MucTieu";
-            this.cMucTieu.HeaderText = "Mục tiêu";
-            this.cMucTieu.Name = "cMucTieu";
-            // 
-            // cTrongSo
-            // 
-            this.cTrongSo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cTrongSo.DataPropertyName = "TrongSo";
-            this.cTrongSo.HeaderText = "Trọng số(%)";
-            this.cTrongSo.Name = "cTrongSo";
-            // 
-            // cTieuChiDanhGia
-            // 
-            this.cTieuChiDanhGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cTieuChiDanhGia.DataPropertyName = "TieuChiDanhGia";
-            this.cTieuChiDanhGia.HeaderText = "Tiêu chí đánh giá (KQ)";
-            this.cTieuChiDanhGia.Name = "cTieuChiDanhGia";
-            // 
-            // cHoanThanh
-            // 
-            this.cHoanThanh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cHoanThanh.DataPropertyName = "HoanThanh";
-            this.cHoanThanh.HeaderText = "Hoàn thành";
-            this.cHoanThanh.Name = "cHoanThanh";
             // 
             // panel3
             // 
@@ -2744,7 +2881,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtHoanThanhTC.xTimChinhXac = false;
             this.txtHoanThanhTC.xTimMoRong = "";
             this.txtHoanThanhTC.xTimTrenField = "";
-            this.txtHoanThanhTC.Click += new System.EventHandler(this.txtHoanThanhTC_Click);
             // 
             // label51
             // 
@@ -2772,7 +2908,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtTieuChiDanhGiaTC.xTimChinhXac = false;
             this.txtTieuChiDanhGiaTC.xTimMoRong = "";
             this.txtTieuChiDanhGiaTC.xTimTrenField = "";
-            this.txtTieuChiDanhGiaTC.Click += new System.EventHandler(this.txtTieuChiDanhGiaTC_Click);
             // 
             // label14
             // 
@@ -2800,7 +2935,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtTrongSoTC.xTimChinhXac = false;
             this.txtTrongSoTC.xTimMoRong = "";
             this.txtTrongSoTC.xTimTrenField = "";
-            this.txtTrongSoTC.Click += new System.EventHandler(this.txtTrongSoTC_Click);
             // 
             // label6
             // 
@@ -2851,9 +2985,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtMucTieuTC.xTimMoRong = "";
             this.txtMucTieuTC.xTimTrenField = "NoiDung";
             this.txtMucTieuTC.Click += new System.EventHandler(this.txtMucTieu_Click);
-            this.txtMucTieuTC.TextChanged += new System.EventHandler(this.txtMucTieu_TextChanged);
             this.txtMucTieuTC.Enter += new System.EventHandler(this.txtMucTieu_Enter);
-            this.txtMucTieuTC.Leave += new System.EventHandler(this.txtMucTieu_Leave);
             // 
             // label5
             // 
@@ -3037,7 +3169,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(223, 6);
+            this.label2.Location = new System.Drawing.Point(223, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(911, 55);
             this.label2.TabIndex = 2;
@@ -3090,6 +3222,10 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.svgImageCollection2.Add("actions_checkcircled", "image://svgimages/icon builder/actions_checkcircled.svg");
             // 
+            // gridView1
+            // 
+            this.gridView1.Name = "gridView1";
+            // 
             // FrmA73
             // 
             this.Appearance.Options.UseFont = true;
@@ -3133,7 +3269,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel29.PerformLayout();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai4)).EndInit();
             this.pnTieuDeTongQuat.ResumeLayout(false);
             this.pnTieuDeTongQuat.PerformLayout();
             this.tabPhatTrien.ResumeLayout(false);
@@ -3170,10 +3306,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai1)).EndInit();
             this.tabTaiChinh.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridnhapmuctieu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhNhap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridmuctieubv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhBV)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgrChonMucTieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinh)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -3183,6 +3323,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel7.PerformLayout();
             this.tabMucTieuKhoaPhong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3265,17 +3406,17 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Label label40;
-        private ControlProject1510.XFilteg xFilteg3;
-        private ControlProject1510.XFilteg xFilteg4;
+        private ControlProject1510.XFilteg txtTenNV4;
+        private ControlProject1510.XFilteg txtViTriCV4;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
-        private ControlProject1510.XFilteg xFilteg5;
+        private ControlProject1510.XFilteg txtKhoaPhong4;
         private System.Windows.Forms.Label label63;
-        private DevExpress.XtraEditors.StepProgressBar stepProgressBar1;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem1;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem2;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem3;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem4;
+        private DevExpress.XtraEditors.StepProgressBar FrmSPTrangThai4;
+        private DevExpress.XtraEditors.StepProgressBarItem spTaiChinh4;
+        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang4;
+        private DevExpress.XtraEditors.StepProgressBarItem spVanHanh4;
+        private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien4;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Panel pnTieuDeTongQuat;
         private System.Windows.Forms.Label label25;
@@ -3391,18 +3532,6 @@ namespace DuAn_QuanLyKPI.GUI
         private DevExpress.XtraEditors.StepProgressBarItem spVanHanh1;
         private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien1;
         private System.Windows.Forms.TabPage tabTaiChinh;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Button btnTiepTucTaiChinh;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgrChonMucTieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDung;
-        private System.Windows.Forms.DataGridView dgrTaiChinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPITC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMucTieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTieuChiDanhGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cHoanThanh;
         private System.Windows.Forms.Panel panel3;
         private ControlProject1510.XFilteg txtHoanThanhTC;
         private System.Windows.Forms.Label label51;
@@ -3434,5 +3563,21 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabMucTieuKhoaPhong;
         private DevExpress.Utils.SvgImageCollection svgImageCollection2;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label24;
+        private DevExpress.XtraGrid.GridControl gridnhapmuctieu;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgrTaiChinhNhap;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.GridControl gridmuctieubv;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgrTaiChinhBV;
+        private DevExpress.XtraGrid.Columns.GridColumn cMaKPI;
+        private DevExpress.XtraGrid.Columns.GridColumn cNoiDung;
+        private DevExpress.XtraGrid.Columns.GridColumn cTrongSo;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnTiepTucTaiChinh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

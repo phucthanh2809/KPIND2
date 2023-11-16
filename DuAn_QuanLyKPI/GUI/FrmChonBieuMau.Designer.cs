@@ -35,11 +35,11 @@ namespace DuAn_QuanLyKPI.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChonBieuMau));
             this.pnTong = new System.Windows.Forms.Panel();
             this.dgrChonBieuMau = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cIDBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTenBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cChon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnTong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgrChonBieuMau.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.MistyRose;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -91,13 +91,20 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick_1);
             this.dgrChonBieuMau.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMau_RowPostPaint);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Chọn";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
             // cIDBieuMau
             // 
+            this.cIDBieuMau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cIDBieuMau.DataPropertyName = "IDBieuMau";
             this.cIDBieuMau.HeaderText = "ID Biểu Mẫu";
             this.cIDBieuMau.Name = "cIDBieuMau";
             this.cIDBieuMau.ReadOnly = true;
-            this.cIDBieuMau.Width = 150;
+            this.cIDBieuMau.Width = 149;
             // 
             // cTenBieuMau
             // 
@@ -109,11 +116,12 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // cMaBieuMau
             // 
+            this.cMaBieuMau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cMaBieuMau.DataPropertyName = "MaBieuMau";
             this.cMaBieuMau.HeaderText = "Biểu mẫu";
             this.cMaBieuMau.Name = "cMaBieuMau";
             this.cMaBieuMau.ReadOnly = true;
-            this.cMaBieuMau.Width = 150;
+            this.cMaBieuMau.Width = 120;
             // 
             // cChon
             // 
@@ -121,12 +129,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cChon.Image = ((System.Drawing.Image)(resources.GetObject("cChon.Image")));
             this.cChon.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.cChon.Name = "cChon";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Chọn";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // FrmChonBieuMau
             // 

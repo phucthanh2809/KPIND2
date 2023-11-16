@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessCommon;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraGrid;
+using System.Windows.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -32,14 +36,85 @@ namespace DuAn_QuanLyKPI.GUI
         {
             InitializeComponent();
             LoadData();
-            LoadThongTinNhanVien();
+            LoadThongTinNhanVien();           
         }
+        GridHitInfo downHitInfor = null;
+
+        #region Code của Phúc 
+        private void gridmuctieubv_DragDrop(object sender, DragEventArgs e)
+        {
+            GridControl grid = sender as GridControl;
+            DataTable table = grid.DataSource as DataTable;
+            DataRow row = e.Data.GetData(typeof(DataRow)) as DataRow;
+            if (row != null && table != null && row.Table != table)
+            {
+                table.ImportRow(row);
+                row.Delete();
+            }
+        }
+
+        private void gridmuctieubv_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(DataRow)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void gridnhapmuctieu_DragDrop(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void gridnhapmuctieu_DragOver(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void dgrTaiChinh_MouseDown(object sender, MouseEventArgs e)
+        {
+            //GridView view = sender as GridView;
+            //downHitInfor = null;
+            //GridHitInfo hitInfor = view.CalcHitInfo(new Point(e.X, e.Y));
+            //if (Control.ModifierKeys != Keys.None) return;
+            //if (e.Button == MouseButtons.Left && hitInfor.RowHandle >= 0)
+            //{
+            //    downHitInfor = hitInfor;
+            //}
+        }
+
+        private void dgrTaiChinh_MouseMove(object sender, MouseEventArgs e)
+        {
+            //GridView view = sender as GridView;
+            //if (e.Button == MouseButtons.Left && downHitInfor != null)
+            //{
+            //    Size dragSize = SystemInformation.DragSize;
+            //    Rectangle dragRect = new Rectangle(new Point(downHitInfor.HitPoint.X - dragSize.Width / 2, downHitInfor.HitPoint.Y - dragSize.Height / 2), dragSize);
+            //    if (!dragRect.Contains(new Point(e.X, e.Y)))
+            //    {
+            //        DataRow row = view.GetDataRow(downHitInfor.RowHandle);
+            //        view.GridControl.DoDragDrop(row, DragDropEffects.Move);
+            //        downHitInfor = null;
+            //        DevExpress.Utils.DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+            //    }
+            //}
+        }
+
+        #endregion
+
+
+
+
         private void LoadData()
         {
             msql = "select * from BangTamMucTieuKhoaPhong";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "BangTamMucTieuKhoaPhong");
-            dgrTaiChinh.AutoGenerateColumns = false;
-            dgrTaiChinh.DataSource = tb;
+            //dgrTaiChinh.AutoGenerateColumns = false;
+            //dgrTaiChinh.DataSource = tb;
         }
         private void LoadThongTinNhanVien()
         {
@@ -63,7 +138,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void btnTiepTucTaiChinh_Click(object sender, EventArgs e)
         {
-            KiemTraTyTrong();
+            //KiemTraTyTrong();
         }
 
         private void btnQuayLaiKhachHang_Click(object sender, EventArgs e)
@@ -231,7 +306,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void txtMucTieu_Enter(object sender, EventArgs e)
         {
             LoadDataMucTieu();
-            dgrChonMucTieu.Visible = true;
+            //dgrChonMucTieu.Visible = true;
 
         }
 
@@ -239,133 +314,133 @@ namespace DuAn_QuanLyKPI.GUI
         {
             msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
-            dgrChonMucTieu.AutoGenerateColumns = false;
-            dgrChonMucTieu.DataSource = tb;
+            //dgrChonMucTieu.AutoGenerateColumns = false;
+            //dgrChonMucTieu.DataSource = tb;
             //var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
             //dgrChonMucTieu.AutoGenerateColumns = false;
             //dgrChonMucTieu.DataSource = list;
         }
 
-        private void dgrChonMucTieu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            ev.Qdgr_RowPostPaint(sender, e, dgrChonMucTieu);
-        }
-        private void dgrTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            ev.Qdgr_RowPostPaint(sender, e, dgrTaiChinh);
-        }
-        private void txtTrongSoTC_Click(object sender, EventArgs e)
-        {
-            dgrChonMucTieu.Visible = false;
-        }
+        //private void dgrChonMucTieu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{
+        //    ev.Qdgr_RowPostPaint(sender, e, dgrChonMucTieu);
+        //}
+        //private void dgrTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{
+        //    ev.Qdgr_RowPostPaint(sender, e, dgrTaiChinh);
+        //}
+        //private void txtTrongSoTC_Click(object sender, EventArgs e)
+        //{
+        //    dgrChonMucTieu.Visible = false;
+        //}
 
-        private void txtTieuChiDanhGiaTC_Click(object sender, EventArgs e)
-        {
-            dgrChonMucTieu.Visible = false;
-        }
+        //private void txtTieuChiDanhGiaTC_Click(object sender, EventArgs e)
+        //{
+        //    dgrChonMucTieu.Visible = false;
+        //}
 
-        private void txtHoanThanhTC_Click(object sender, EventArgs e)
-        {
-            dgrChonMucTieu.Visible = false;
-        }
-        private void dgrChonMucTieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            txtMucTieuTC.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
-            dgrChonMucTieu.Visible = false;
-        }
+        //private void txtHoanThanhTC_Click(object sender, EventArgs e)
+        //{
+        //    dgrChonMucTieu.Visible = false;
+        //}
+        //private void dgrChonMucTieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    txtMucTieuTC.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
+        //    dgrChonMucTieu.Visible = false;
+        //}
 
-        private void txtMucTieu_Leave(object sender, EventArgs e)
-        {
-            //txtMucTieu.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
+        //private void txtMucTieu_Leave(object sender, EventArgs e)
+        //{
+        //    //txtMucTieu.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
             
-        }
-        private void txtMucTieu_TextChanged(object sender, EventArgs e)
-        {
-            dgrChonMucTieu.Visible = false;
-        }
+        //}
+        //private void txtMucTieu_TextChanged(object sender, EventArgs e)
+        //{
+        //    dgrChonMucTieu.Visible = false;
+        //}
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ThemDuLieu();
+            //ThemDuLieu();
             LoadData();
             XoaThongTin();
         }
-        private void ThemDuLieu()
-        {
-            //// Lấy tổng các giá trị trong các cột
-            //int total = 0;
-            //for (int i = 0; i < dgrTaiChinh.Rows.Count; i++)
-            //{
-            //    total += int.Parse(dgrTaiChinh.CurrentRow.Cells["cTrongSo"].Value.ToString());
-            //}
+        //private void ThemDuLieu()
+        //{
+        //    //// Lấy tổng các giá trị trong các cột
+        //    //int total = 0;
+        //    //for (int i = 0; i < dgrTaiChinh.Rows.Count; i++)
+        //    //{
+        //    //    total += int.Parse(dgrTaiChinh.CurrentRow.Cells["cTrongSo"].Value.ToString());
+        //    //}
 
-            //int value = int.Parse(txtTrongSoTC.Text);
-            //int tytrong = total + value;
-            //// Kiểm tra giá trị
-            //if (tytrong > 100)
-            //{
-            //    ev.QFrmThongBao("Lưu ý: Tỷ trọng vượt quá 100%");
-            //}
-            //else 
-            //{
-            //    msql = "INSERT INTO [dbo].[BangTamMucTieuKhoaPhong]([MaKPI],[MucTieu],[TrongSo],[TieuChiDanhGia],[HoanThanh])" +
-            //    "VALUES ('" + txtMaKPITC.Text + "', N'" + txtMucTieuTC.Text + "', '" + txtTrongSoTC.Text + "', N'" + txtTieuChiDanhGiaTC.Text + "', '" + txtHoanThanhTC.Text + "')";
-            //    comm.RunSQL(mconnectstring, msql);
-            //    ev.QFrmThongBao("Đã thêm thành công");
-            //}
-            {
-                // Khai báo biến tổng và biến đếm
-                int total = 0;
-                int count = 0;
+        //    //int value = int.Parse(txtTrongSoTC.Text);
+        //    //int tytrong = total + value;
+        //    //// Kiểm tra giá trị
+        //    //if (tytrong > 100)
+        //    //{
+        //    //    ev.QFrmThongBao("Lưu ý: Tỷ trọng vượt quá 100%");
+        //    //}
+        //    //else 
+        //    //{
+        //    //    msql = "INSERT INTO [dbo].[BangTamMucTieuKhoaPhong]([MaKPI],[MucTieu],[TrongSo],[TieuChiDanhGia],[HoanThanh])" +
+        //    //    "VALUES ('" + txtMaKPITC.Text + "', N'" + txtMucTieuTC.Text + "', '" + txtTrongSoTC.Text + "', N'" + txtTieuChiDanhGiaTC.Text + "', '" + txtHoanThanhTC.Text + "')";
+        //    //    comm.RunSQL(mconnectstring, msql);
+        //    //    ev.QFrmThongBao("Đã thêm thành công");
+        //    //}
+        //    {
+        //        // Khai báo biến tổng và biến đếm
+        //        int total = 0;
+        //        int count = 0;
 
-                // Vòng lặp duyệt qua tất cả các hàng trong bảng
-                for (int i = 0; i < dgrTaiChinh.Rows.Count; i++)
-                {
-                    // Lấy giá trị trong cột tỷ trọng của hàng hiện tại
-                    int trongSo = int.Parse(dgrTaiChinh.CurrentRow.Cells["cTrongSo"].Value.ToString());
+        //        // Vòng lặp duyệt qua tất cả các hàng trong bảng
+        //        for (int i = 0; i < dgrTaiChinh.Rows.Count; i++)
+        //        {
+        //            // Lấy giá trị trong cột tỷ trọng của hàng hiện tại
+        //            int trongSo = int.Parse(dgrTaiChinh.CurrentRow.Cells["cTrongSo"].Value.ToString());
 
-                    // Thêm giá trị này vào biến tổng
-                    total += trongSo;
+        //            // Thêm giá trị này vào biến tổng
+        //            total += trongSo;
 
-                    // Tăng biến đếm lên 1
-                    count++;
+        //            // Tăng biến đếm lên 1
+        //            count++;
                     
-                }
-                if (total > 100)
-                {
-                    ev.QFrmThongBao("Lưu ý: Tỷ trọng vượt quá 100%");
-                }
-                else
-                {
-                    msql = "INSERT INTO [dbo].[BangTamMucTieuKhoaPhong]([MaKPI],[MucTieu],[TrongSo],[TieuChiDanhGia],[HoanThanh])" +
-                    "VALUES ('" + txtMaKPITC.Text + "', N'" + txtMucTieuTC.Text + "', '" + txtTrongSoTC.Text + "', N'" + txtTieuChiDanhGiaTC.Text + "', '" + txtHoanThanhTC.Text + "')";
-                    comm.RunSQL(mconnectstring, msql);
-                    ev.QFrmThongBao("Đã thêm thành công");
-                }
-            }
-        }
-        private void KiemTraTyTrong()
-        {
-            // Lấy tổng các giá trị trong các cột
-            int total = 0;
-            for (int i = 1; i < dgrTaiChinh.Rows.Count; i++)
-            {
-                total += int.Parse(dgrTaiChinh.CurrentRow.Cells["cTrongSo"].Value.ToString());
-            }
+        //        }
+        //        if (total > 100)
+        //        {
+        //            ev.QFrmThongBao("Lưu ý: Tỷ trọng vượt quá 100%");
+        //        }
+        //        else
+        //        {
+        //            msql = "INSERT INTO [dbo].[BangTamMucTieuKhoaPhong]([MaKPI],[MucTieu],[TrongSo],[TieuChiDanhGia],[HoanThanh])" +
+        //            "VALUES ('" + txtMaKPITC.Text + "', N'" + txtMucTieuTC.Text + "', '" + txtTrongSoTC.Text + "', N'" + txtTieuChiDanhGiaTC.Text + "', '" + txtHoanThanhTC.Text + "')";
+        //            comm.RunSQL(mconnectstring, msql);
+        //            ev.QFrmThongBao("Đã thêm thành công");
+        //        }
+        //    }
+        //}
+        //private void KiemTraTyTrong()
+        //{
+        //    // Lấy tổng các giá trị trong các cột
+        //    int total = 0;
+        //    for (int i = 1; i < dgrTaiChinh.Rows.Count; i++)
+        //    {
+        //        total += int.Parse(dgrTaiChinh.CurrentRow.Cells["cTrongSo"].Value.ToString());
+        //    }
 
-            // Kiểm tra tổng các giá trị
-            if (total > 100)
-            {
-                ev.QFrmThongBao("Lưu ý: Kiểm tra tỷ trọng vượt quá 100%");
+        //    // Kiểm tra tổng các giá trị
+        //    if (total > 100)
+        //    {
+        //        ev.QFrmThongBao("Lưu ý: Kiểm tra tỷ trọng vượt quá 100%");
                 
-            }
-            else 
-            {
-                // Thông báo
-                ChuyenTrangThai(1);
-            }
+        //    }
+        //    else 
+        //    {
+        //        // Thông báo
+        //        ChuyenTrangThai(1);
+        //    }
             
-        }
+        //}
         private void XoaThongTin()
         {
             txtMaKPITC.Text = "";
@@ -374,5 +449,7 @@ namespace DuAn_QuanLyKPI.GUI
             txtTieuChiDanhGiaTC.Text = "";
             txtHoanThanhTC.Text = "";
         }
+
+        
     }
 }
