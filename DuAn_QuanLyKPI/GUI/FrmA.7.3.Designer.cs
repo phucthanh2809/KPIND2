@@ -30,14 +30,14 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.xFilteg9 = new ControlProject1510.XFilteg();
@@ -621,8 +621,8 @@ namespace DuAn_QuanLyKPI.GUI
             // dataGridView7
             // 
             this.dataGridView7.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView7.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView7.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -1015,8 +1015,8 @@ namespace DuAn_QuanLyKPI.GUI
             // dataGridView6
             // 
             this.dataGridView6.AllowUserToAddRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView6.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView6.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
@@ -1409,8 +1409,8 @@ namespace DuAn_QuanLyKPI.GUI
             // dataGridView5
             // 
             this.dataGridView5.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1797,8 +1797,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNoiDung});
             this.dgrChonMucTieu.Location = new System.Drawing.Point(0, 0);
             this.dgrChonMucTieu.Name = "dgrChonMucTieu";
+            this.dgrChonMucTieu.RowTemplate.Height = 30;
             this.dgrChonMucTieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrChonMucTieu.Size = new System.Drawing.Size(913, 306);
+            this.dgrChonMucTieu.Size = new System.Drawing.Size(937, 306);
             this.dgrChonMucTieu.TabIndex = 15;
             this.dgrChonMucTieu.Visible = false;
             // 
@@ -1819,8 +1820,8 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrTaiChinh
             // 
             this.dgrTaiChinh.AllowUserToAddRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgrTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cMaKPITC,
@@ -1831,6 +1832,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrTaiChinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrTaiChinh.Location = new System.Drawing.Point(0, 0);
             this.dgrTaiChinh.Name = "dgrTaiChinh";
+            this.dgrTaiChinh.RowTemplate.Height = 30;
             this.dgrTaiChinh.Size = new System.Drawing.Size(1350, 368);
             this.dgrTaiChinh.TabIndex = 14;
             // 
@@ -2270,7 +2272,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.xtraScrollableControl1.Controls.Add(this.pnTAICHINH);
             this.xtraScrollableControl1.Location = new System.Drawing.Point(3, 254);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1345, 402);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1345, 394);
             this.xtraScrollableControl1.TabIndex = 12;
             // 
             // panel15
@@ -2319,7 +2321,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnPHATTRIEN.Controls.Add(this.panel30);
             this.pnPHATTRIEN.Location = new System.Drawing.Point(0, 780);
             this.pnPHATTRIEN.Name = "pnPHATTRIEN";
-            this.pnPHATTRIEN.Size = new System.Drawing.Size(1310, 254);
+            this.pnPHATTRIEN.Size = new System.Drawing.Size(1293, 254);
             this.pnPHATTRIEN.TabIndex = 2;
             // 
             // panel27
@@ -2328,14 +2330,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel27.Location = new System.Drawing.Point(0, 42);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1310, 212);
+            this.panel27.Size = new System.Drawing.Size(1293, 212);
             this.panel27.TabIndex = 1;
             // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn19,
@@ -2344,7 +2346,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1310, 212);
+            this.dataGridView4.Size = new System.Drawing.Size(1293, 212);
             this.dataGridView4.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn19
@@ -2377,7 +2379,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel30.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel30.Location = new System.Drawing.Point(0, 0);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(1310, 42);
+            this.panel30.Size = new System.Drawing.Size(1293, 42);
             this.panel30.TabIndex = 0;
             // 
             // xFilteg32
@@ -2434,7 +2436,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnAnPhatTrien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAnPhatTrien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnPhatTrien.ForeColor = System.Drawing.Color.Black;
-            this.btnAnPhatTrien.Location = new System.Drawing.Point(1186, 4);
+            this.btnAnPhatTrien.Location = new System.Drawing.Point(1169, 4);
             this.btnAnPhatTrien.Name = "btnAnPhatTrien";
             this.btnAnPhatTrien.Size = new System.Drawing.Size(82, 34);
             this.btnAnPhatTrien.TabIndex = 17;
@@ -2460,14 +2462,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnKHACHHANG.Controls.Add(this.panel26);
             this.pnKHACHHANG.Location = new System.Drawing.Point(0, 260);
             this.pnKHACHHANG.Name = "pnKHACHHANG";
-            this.pnKHACHHANG.Size = new System.Drawing.Size(1310, 254);
+            this.pnKHACHHANG.Size = new System.Drawing.Size(1293, 254);
             this.pnKHACHHANG.TabIndex = 2;
             // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn16,
@@ -2476,7 +2478,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 42);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1310, 212);
+            this.dataGridView3.Size = new System.Drawing.Size(1293, 212);
             this.dataGridView3.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn16
@@ -2509,7 +2511,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel26.Location = new System.Drawing.Point(0, 0);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(1310, 42);
+            this.panel26.Size = new System.Drawing.Size(1293, 42);
             this.panel26.TabIndex = 0;
             // 
             // xFilteg18
@@ -2542,7 +2544,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnAnTaiChinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAnTaiChinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnTaiChinh.ForeColor = System.Drawing.Color.Black;
-            this.btnAnTaiChinh.Location = new System.Drawing.Point(1189, 4);
+            this.btnAnTaiChinh.Location = new System.Drawing.Point(1172, 4);
             this.btnAnTaiChinh.Name = "btnAnTaiChinh";
             this.btnAnTaiChinh.Size = new System.Drawing.Size(82, 34);
             this.btnAnTaiChinh.TabIndex = 22;
@@ -2592,14 +2594,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnVANHANH.Controls.Add(this.panel28);
             this.pnVANHANH.Location = new System.Drawing.Point(0, 520);
             this.pnVANHANH.Name = "pnVANHANH";
-            this.pnVANHANH.Size = new System.Drawing.Size(1310, 254);
+            this.pnVANHANH.Size = new System.Drawing.Size(1293, 254);
             this.pnVANHANH.TabIndex = 1;
             // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn13,
@@ -2608,7 +2610,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 42);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1310, 212);
+            this.dataGridView2.Size = new System.Drawing.Size(1293, 212);
             this.dataGridView2.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn13
@@ -2641,7 +2643,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel28.Location = new System.Drawing.Point(0, 0);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(1310, 42);
+            this.panel28.Size = new System.Drawing.Size(1293, 42);
             this.panel28.TabIndex = 0;
             // 
             // xFilteg1
@@ -2674,7 +2676,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1186, 4);
+            this.button1.Location = new System.Drawing.Point(1169, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 34);
             this.button1.TabIndex = 30;
@@ -2727,14 +2729,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTAICHINH.Controls.Add(this.panel16);
             this.pnTAICHINH.Location = new System.Drawing.Point(0, 0);
             this.pnTAICHINH.Name = "pnTAICHINH";
-            this.pnTAICHINH.Size = new System.Drawing.Size(1310, 254);
+            this.pnTAICHINH.Size = new System.Drawing.Size(1293, 254);
             this.pnTAICHINH.TabIndex = 0;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -2744,7 +2746,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 42);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1310, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(1293, 212);
             this.dataGridView1.TabIndex = 29;
             // 
             // dataGridViewTextBoxColumn7
@@ -2809,7 +2811,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1310, 42);
+            this.panel16.Size = new System.Drawing.Size(1293, 42);
             this.panel16.TabIndex = 0;
             // 
             // label34
@@ -2842,7 +2844,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnAnKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAnKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnKhachHang.ForeColor = System.Drawing.Color.Black;
-            this.btnAnKhachHang.Location = new System.Drawing.Point(1189, 4);
+            this.btnAnKhachHang.Location = new System.Drawing.Point(1172, 4);
             this.btnAnKhachHang.Name = "btnAnKhachHang";
             this.btnAnKhachHang.Size = new System.Drawing.Size(82, 34);
             this.btnAnKhachHang.TabIndex = 25;
