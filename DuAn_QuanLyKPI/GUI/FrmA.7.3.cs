@@ -13,129 +13,41 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid;
 using System.Windows.Controls;
 using DevExpress.XtraGrid.Views.Grid;
+using GridView = System.Windows.Controls.GridView;
+using Control = System.Windows.Controls.Control;
+using DuAn_QuanLyKPI.Constants;
 
 namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
         //lấy dữ liệu từu frm login
-        public static string MaNV= Frm_Login.MaNV;
+        public static string MaNV = Frm_Login.MaNV;
         public static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
         public static string MaChucDanh = Frm_Login.MaChucDanh;
         public static string TenNV = Frm_Login.TenNV;
         public static string TenChucDanh = Frm_Login.TenChucDanh;
         public static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
 
+        //coneect & event
         private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
 
+        private DataTable dataTable1;
+        private DataTable dataTable2;
+
         private int CurrentTab = 0;
         public FrmA73()
         {
             InitializeComponent();
-            LoadData();
-            LoadThongTinNhanVien();           
-        }
-        GridHitInfo downHitInfor = null;
-
-        #region Code của Phúc 
-        private void gridmuctieubv_DragDrop(object sender, DragEventArgs e)
-        {
-            GridControl grid = sender as GridControl;
-            DataTable table = grid.DataSource as DataTable;
-            DataRow row = e.Data.GetData(typeof(DataRow)) as DataRow;
-            if (row != null && table != null && row.Table != table)
-            {
-                table.ImportRow(row);
-                row.Delete();
-            }
-        }
-
-        private void gridmuctieubv_DragOver(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(typeof(DataRow)))
-            {
-                e.Effect = DragDropEffects.Move;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void gridnhapmuctieu_DragDrop(object sender, DragEventArgs e)
-        {
+            LoadThongTinNhanVien();
+            LoadDataTaiChinh();
 
         }
+        #region Code của Kiệt
 
-        private void gridnhapmuctieu_DragOver(object sender, DragEventArgs e)
-        {
-
-        }
-
-        private void dgrTaiChinh_MouseDown(object sender, MouseEventArgs e)
-        {
-            //GridView view = sender as GridView;
-            //downHitInfor = null;
-            //GridHitInfo hitInfor = view.CalcHitInfo(new Point(e.X, e.Y));
-            //if (Control.ModifierKeys != Keys.None) return;
-            //if (e.Button == MouseButtons.Left && hitInfor.RowHandle >= 0)
-            //{
-            //    downHitInfor = hitInfor;
-            //}
-        }
-
-        private void dgrTaiChinh_MouseMove(object sender, MouseEventArgs e)
-        {
-            //GridView view = sender as GridView;
-            //if (e.Button == MouseButtons.Left && downHitInfor != null)
-            //{
-            //    Size dragSize = SystemInformation.DragSize;
-            //    Rectangle dragRect = new Rectangle(new Point(downHitInfor.HitPoint.X - dragSize.Width / 2, downHitInfor.HitPoint.Y - dragSize.Height / 2), dragSize);
-            //    if (!dragRect.Contains(new Point(e.X, e.Y)))
-            //    {
-            //        DataRow row = view.GetDataRow(downHitInfor.RowHandle);
-            //        view.GridControl.DoDragDrop(row, DragDropEffects.Move);
-            //        downHitInfor = null;
-            //        DevExpress.Utils.DXMouseEventArgs.GetMouseArgs(e).Handled = true;
-            //    }
-            //}
-        }
-
-        #endregion
-
-
-
-
-        private void LoadData()
-        {
-            msql = "select * from BangTamMucTieuKhoaPhong";
-            DataTable tb = comm.GetDataTable(mconnectstring, msql, "BangTamMucTieuKhoaPhong");
-            //dgrTaiChinh.AutoGenerateColumns = false;
-            //dgrTaiChinh.DataSource = tb;
-        }
-        private void LoadThongTinNhanVien()
-        {
-            txtTenNV.Text = TenNV;
-            txtTenNV1.Text = TenNV;
-            txtTenNV2.Text = TenNV;
-            txtTenNV3.Text = TenNV;
-            txtTenNV4.Text = TenNV;
-
-            txtViTriCV.Text = TenChucDanh;
-            txtViTriCV1.Text = TenChucDanh;
-            txtViTriCV2.Text = TenChucDanh;
-            txtViTriCV3.Text = TenChucDanh;
-            txtViTriCV4.Text = TenChucDanh;
-
-            txtKhoaPhong.Text = TenPhongKhoa;
-            txtKhoaPhong1.Text = TenPhongKhoa;
-            txtKhoaPhong2.Text = TenPhongKhoa;
-            txtKhoaPhong3.Text = TenPhongKhoa;
-            txtKhoaPhong4.Text = TenPhongKhoa;
-        }
         private void btnTiepTucTaiChinh_Click(object sender, EventArgs e)
         {
             //KiemTraTyTrong();
@@ -178,7 +90,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void FrmA73_Load(object sender, EventArgs e)
         {
@@ -187,6 +99,7 @@ namespace DuAn_QuanLyKPI.GUI
             TrangThai2();
             TrangThai3();
             TrangThai4();
+
             //InVisible(tabTaiChinh);
             //InVisible(tabVanHanh);
             //InVisible(tabKhachHang);
@@ -198,7 +111,7 @@ namespace DuAn_QuanLyKPI.GUI
         //void InVisible(TabPage tab)
         //{
         //    tab.Text = "";
-            
+
         //}
         private void TrangThai()
         {
@@ -266,7 +179,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spTaiChinh1.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai1.Items[step-1].ContentBlock2.Caption = "Đã xong Tài Chính";
+                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
                     break;
                 case 2:
                     tabMucTieuKhoaPhong.SelectTab(step);
@@ -305,21 +218,21 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txtMucTieu_Enter(object sender, EventArgs e)
         {
-            LoadDataMucTieu();
+            //LoadDataMucTieu();
             //dgrChonMucTieu.Visible = true;
 
         }
 
-        private void LoadDataMucTieu()
-        {
-            msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
-            DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
-            //dgrChonMucTieu.AutoGenerateColumns = false;
-            //dgrChonMucTieu.DataSource = tb;
-            //var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
-            //dgrChonMucTieu.AutoGenerateColumns = false;
-            //dgrChonMucTieu.DataSource = list;
-        }
+        //private void LoadDataMucTieu()
+        //{
+        //    msql = "select * from [KPITrongNganHang] as A, [NganHangKPI] as B, [KPI] as C where A.MaKPI = C.MaKPI and A.MaNganHangKPI = B.MaNganHangKPI and B.MaPK='" + MaPhongKhoa + "' and B.MaChucDanh='" + MaChucDanh + "'";
+        //    DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPITrongNganHang");
+        //    dgrChonMucTieu.AutoGenerateColumns = false;
+        //    dgrChonMucTieu.DataSource = tb;
+        //    var list = DataProvider.Ins.DB.KPI.Where(x => x.NganHangKPI.Any(a => a.MaPK == MaPhongKhoa)).ToList();
+        //    dgrChonMucTieu.AutoGenerateColumns = false;
+        //    dgrChonMucTieu.DataSource = list;
+        //}
 
         //private void dgrChonMucTieu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         //{
@@ -352,7 +265,7 @@ namespace DuAn_QuanLyKPI.GUI
         //private void txtMucTieu_Leave(object sender, EventArgs e)
         //{
         //    //txtMucTieu.Text = dgrChonMucTieu.CurrentRow.Cells["cNoiDung"].Value.ToString();
-            
+
         //}
         //private void txtMucTieu_TextChanged(object sender, EventArgs e)
         //{
@@ -362,7 +275,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
             //ThemDuLieu();
-            LoadData();
+            //LoadData();
             XoaThongTin();
         }
         //private void ThemDuLieu()
@@ -404,7 +317,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         //            // Tăng biến đếm lên 1
         //            count++;
-                    
+
         //        }
         //        if (total > 100)
         //        {
@@ -432,14 +345,14 @@ namespace DuAn_QuanLyKPI.GUI
         //    if (total > 100)
         //    {
         //        ev.QFrmThongBao("Lưu ý: Kiểm tra tỷ trọng vượt quá 100%");
-                
+
         //    }
         //    else 
         //    {
         //        // Thông báo
         //        ChuyenTrangThai(1);
         //    }
-            
+
         //}
         private void XoaThongTin()
         {
@@ -449,7 +362,87 @@ namespace DuAn_QuanLyKPI.GUI
             txtTieuChiDanhGiaTC.Text = "";
             txtHoanThanhTC.Text = "";
         }
+        #endregion
 
+        #region Code của Phúc 
+        private void LoadThongTinNhanVien()
+        {
+            txtTenNV.Text = TenNV;
+            txtTenNV1.Text = TenNV;
+            txtTenNV2.Text = TenNV;
+            txtTenNV3.Text = TenNV;
+            txtTenNV4.Text = TenNV;
+
+            txtViTriCV.Text = TenChucDanh;
+            txtViTriCV1.Text = TenChucDanh;
+            txtViTriCV2.Text = TenChucDanh;
+            txtViTriCV3.Text = TenChucDanh;
+            txtViTriCV4.Text = TenChucDanh;
+
+            txtKhoaPhong.Text = TenPhongKhoa;
+            txtKhoaPhong1.Text = TenPhongKhoa;
+            txtKhoaPhong2.Text = TenPhongKhoa;
+            txtKhoaPhong3.Text = TenPhongKhoa;
+            txtKhoaPhong4.Text = TenPhongKhoa;
+        }
+        private void LoadDataTaiChinh()
+        {
+            msql = "SELECT * FROM[dbo].[GiaoMucTieu] where TieuDe = 1 AND MaPhongKhoa = '" + MaPhongKhoa + "'";
+            DataTable tb = comm.GetDataTable(mconnectstring, msql, "GiaoMucTieu");
+            dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
+            dgrBVMucTieuTaiChinh.DataSource = tb;
+        }
+
+
+        #endregion
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonBV"].Value = true;
+            }
+        }
+
+        private void btnDeselectAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonBV"].Value = false;
+            }
+        }
+        private void copyData()
+        {
+            dgrNhapMucTieuTaiChinh.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonBV"].Value) == true)
+                {
+                    int n = dgrNhapMucTieuTaiChinh.Rows.Add();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNhapNoiDung"].Value = dgrBVMucTieuTaiChinh.Rows[n].Cells["cNoiDung"].Value.ToString();
+                }
+            }
         
+        }
+
+        private void btnCoppy_Click(object sender, EventArgs e)
+        {
+            copyData();
+        }
+
+        private void btnCoppyAll_Click(object sender, EventArgs e)
+        {
+            dgrNhapMucTieuTaiChinh.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonBV"].Value = true;
+            }
+            copyData();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dgrNhapMucTieuTaiChinh.Rows.Clear();
+        }
     }
 }

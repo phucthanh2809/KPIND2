@@ -41,6 +41,10 @@ namespace DuAn_QuanLyKPI.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmA73));
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.button3 = new System.Windows.Forms.Button();
@@ -246,18 +250,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.spPhatTrien1 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.tabTaiChinh = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.dgrNhapMucTieuTaiChinh = new System.Windows.Forms.DataGridView();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.gridnhapmuctieu = new DevExpress.XtraGrid.GridControl();
-            this.dgrTaiChinhNhap = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridmuctieubv = new DevExpress.XtraGrid.GridControl();
-            this.dgrTaiChinhBV = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cMaKPI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cTrongSo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgrBVMucTieuTaiChinh = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTiepTucTaiChinh = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -292,6 +289,23 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabMucTieuKhoaPhong = new System.Windows.Forms.TabControl();
             this.svgImageCollection2 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.btnSelectAll = new System.Windows.Forms.Button();
+            this.btnDeselectAll = new System.Windows.Forms.Button();
+            this.btnCoppyAll = new System.Windows.Forms.Button();
+            this.btnCoppy = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.cMaPhongKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMucTieuTaiChinhBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTieuDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoMucTieuTaiChinhBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChonBV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cNhapMaPhongKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNhapMucTieuBenhV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNhapTieuDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNhapNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccNhapTrongSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).BeginInit();
@@ -342,11 +356,11 @@ namespace DuAn_QuanLyKPI.GUI
             ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai1)).BeginInit();
             this.tabTaiChinh.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrNhapMucTieuTaiChinh)).BeginInit();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridnhapmuctieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhNhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridmuctieubv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhBV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrBVMucTieuTaiChinh)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -355,6 +369,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabMucTieuKhoaPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // svgImageCollection1
@@ -2600,6 +2615,8 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.panel16);
+            this.panel13.Controls.Add(this.panel15);
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(3, 331);
@@ -2607,225 +2624,98 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel13.Size = new System.Drawing.Size(1350, 310);
             this.panel13.TabIndex = 16;
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.btnCoppy);
+            this.panel16.Controls.Add(this.btnCoppyAll);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(650, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(50, 310);
+            this.panel16.TabIndex = 2;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.dgrNhapMucTieuTaiChinh);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel15.Location = new System.Drawing.Point(700, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(650, 310);
+            this.panel15.TabIndex = 1;
+            // 
+            // dgrNhapMucTieuTaiChinh
+            // 
+            this.dgrNhapMucTieuTaiChinh.AllowDrop = true;
+            this.dgrNhapMucTieuTaiChinh.AllowUserToAddRows = false;
+            this.dgrNhapMucTieuTaiChinh.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrNhapMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrNhapMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgrNhapMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrNhapMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cNhapMaPhongKhoa,
+            this.cNhapMucTieuBenhV,
+            this.cNhapTieuDe,
+            this.cNhapNoiDung,
+            this.ccNhapTrongSo});
+            this.dgrNhapMucTieuTaiChinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrNhapMucTieuTaiChinh.Location = new System.Drawing.Point(0, 0);
+            this.dgrNhapMucTieuTaiChinh.Name = "dgrNhapMucTieuTaiChinh";
+            this.dgrNhapMucTieuTaiChinh.RowTemplate.Height = 30;
+            this.dgrNhapMucTieuTaiChinh.Size = new System.Drawing.Size(650, 310);
+            this.dgrNhapMucTieuTaiChinh.TabIndex = 1;
+            // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.label24);
-            this.panel14.Controls.Add(this.gridnhapmuctieu);
-            this.panel14.Controls.Add(this.gridmuctieubv);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Controls.Add(this.dgrBVMucTieuTaiChinh);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1350, 310);
-            this.panel14.TabIndex = 16;
+            this.panel14.Size = new System.Drawing.Size(650, 310);
+            this.panel14.TabIndex = 0;
             // 
-            // label24
+            // dgrBVMucTieuTaiChinh
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(669, -4);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(13, 336);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|";
-            // 
-            // gridnhapmuctieu
-            // 
-            this.gridnhapmuctieu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gridnhapmuctieu.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridnhapmuctieu.Location = new System.Drawing.Point(680, 0);
-            this.gridnhapmuctieu.MainView = this.dgrTaiChinhNhap;
-            this.gridnhapmuctieu.Name = "gridnhapmuctieu";
-            this.gridnhapmuctieu.Size = new System.Drawing.Size(670, 310);
-            this.gridnhapmuctieu.TabIndex = 3;
-            this.gridnhapmuctieu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dgrTaiChinhNhap});
-            this.gridnhapmuctieu.DragDrop += new System.Windows.Forms.DragEventHandler(this.gridnhapmuctieu_DragDrop);
-            this.gridnhapmuctieu.DragOver += new System.Windows.Forms.DragEventHandler(this.gridnhapmuctieu_DragOver);
-            // 
-            // dgrTaiChinhNhap
-            // 
-            this.dgrTaiChinhNhap.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgrTaiChinhNhap.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgrTaiChinhNhap.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.dgrTaiChinhNhap.Appearance.HeaderPanel.Options.UseFont = true;
-            this.dgrTaiChinhNhap.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.dgrTaiChinhNhap.Appearance.Row.Options.UseBackColor = true;
-            this.dgrTaiChinhNhap.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
-            this.dgrTaiChinhNhap.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.dgrTaiChinhNhap.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgrTaiChinhNhap.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.dgrTaiChinhNhap.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
-            this.dgrTaiChinhNhap.GridControl = this.gridnhapmuctieu;
-            this.dgrTaiChinhNhap.Name = "dgrTaiChinhNhap";
-            this.dgrTaiChinhNhap.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.dgrTaiChinhNhap.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.dgrTaiChinhNhap.OptionsBehavior.Editable = false;
-            this.dgrTaiChinhNhap.OptionsBehavior.ReadOnly = true;
-            this.dgrTaiChinhNhap.RowHeight = 30;
-            this.dgrTaiChinhNhap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseDown);
-            this.dgrTaiChinhNhap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseMove);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn1.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn1.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn1.Caption = "Mã KPI";
-            this.gridColumn1.FieldName = "MaKPI";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn2.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn2.Caption = "MỤC TIÊU BỆNH VIỆN ";
-            this.gridColumn2.FieldName = "NoiDung";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
-            this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn3.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn3.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn3.Caption = "TRỌNG SỐ";
-            this.gridColumn3.FieldName = "TrongSo";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            // 
-            // gridmuctieubv
-            // 
-            this.gridmuctieubv.AllowDrop = true;
-            this.gridmuctieubv.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridmuctieubv.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridmuctieubv.Location = new System.Drawing.Point(0, 0);
-            this.gridmuctieubv.MainView = this.dgrTaiChinhBV;
-            this.gridmuctieubv.Name = "gridmuctieubv";
-            this.gridmuctieubv.Size = new System.Drawing.Size(670, 310);
-            this.gridmuctieubv.TabIndex = 2;
-            this.gridmuctieubv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dgrTaiChinhBV});
-            this.gridmuctieubv.DragDrop += new System.Windows.Forms.DragEventHandler(this.gridmuctieubv_DragDrop);
-            this.gridmuctieubv.DragOver += new System.Windows.Forms.DragEventHandler(this.gridmuctieubv_DragOver);
-            // 
-            // dgrTaiChinhBV
-            // 
-            this.dgrTaiChinhBV.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgrTaiChinhBV.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgrTaiChinhBV.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.dgrTaiChinhBV.Appearance.HeaderPanel.Options.UseFont = true;
-            this.dgrTaiChinhBV.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.dgrTaiChinhBV.Appearance.Row.Options.UseBackColor = true;
-            this.dgrTaiChinhBV.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
-            this.dgrTaiChinhBV.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.dgrTaiChinhBV.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgrTaiChinhBV.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.dgrTaiChinhBV.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.cMaKPI,
+            this.dgrBVMucTieuTaiChinh.AllowDrop = true;
+            this.dgrBVMucTieuTaiChinh.AllowUserToAddRows = false;
+            this.dgrBVMucTieuTaiChinh.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrBVMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrBVMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgrBVMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrBVMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cMaPhongKhoa,
+            this.cMucTieuTaiChinhBV,
+            this.cTieuDe,
             this.cNoiDung,
-            this.cTrongSo});
-            this.dgrTaiChinhBV.GridControl = this.gridmuctieubv;
-            this.dgrTaiChinhBV.Name = "dgrTaiChinhBV";
-            this.dgrTaiChinhBV.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.dgrTaiChinhBV.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.dgrTaiChinhBV.OptionsBehavior.Editable = false;
-            this.dgrTaiChinhBV.OptionsBehavior.ReadOnly = true;
-            this.dgrTaiChinhBV.RowHeight = 30;
-            this.dgrTaiChinhBV.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseDown);
-            this.dgrTaiChinhBV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgrTaiChinh_MouseMove);
-            // 
-            // cMaKPI
-            // 
-            this.cMaKPI.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cMaKPI.AppearanceCell.Options.UseFont = true;
-            this.cMaKPI.AppearanceCell.Options.UseTextOptions = true;
-            this.cMaKPI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cMaKPI.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cMaKPI.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cMaKPI.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cMaKPI.AppearanceHeader.Options.UseBackColor = true;
-            this.cMaKPI.AppearanceHeader.Options.UseFont = true;
-            this.cMaKPI.AppearanceHeader.Options.UseTextOptions = true;
-            this.cMaKPI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cMaKPI.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cMaKPI.Caption = "Mã KPI";
-            this.cMaKPI.FieldName = "MaKPI";
-            this.cMaKPI.Name = "cMaKPI";
-            // 
-            // cNoiDung
-            // 
-            this.cNoiDung.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
-            this.cNoiDung.AppearanceCell.Options.UseFont = true;
-            this.cNoiDung.AppearanceCell.Options.UseTextOptions = true;
-            this.cNoiDung.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cNoiDung.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cNoiDung.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cNoiDung.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.cNoiDung.AppearanceHeader.Options.UseBackColor = true;
-            this.cNoiDung.AppearanceHeader.Options.UseFont = true;
-            this.cNoiDung.AppearanceHeader.Options.UseTextOptions = true;
-            this.cNoiDung.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cNoiDung.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cNoiDung.Caption = "MỤC TIÊU BỆNH VIỆN ";
-            this.cNoiDung.FieldName = "NoiDung";
-            this.cNoiDung.Name = "cNoiDung";
-            this.cNoiDung.Visible = true;
-            this.cNoiDung.VisibleIndex = 0;
-            // 
-            // cTrongSo
-            // 
-            this.cTrongSo.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F);
-            this.cTrongSo.AppearanceCell.Options.UseFont = true;
-            this.cTrongSo.AppearanceCell.Options.UseTextOptions = true;
-            this.cTrongSo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cTrongSo.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cTrongSo.AppearanceHeader.BackColor = System.Drawing.Color.MistyRose;
-            this.cTrongSo.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.cTrongSo.AppearanceHeader.Options.UseBackColor = true;
-            this.cTrongSo.AppearanceHeader.Options.UseFont = true;
-            this.cTrongSo.AppearanceHeader.Options.UseTextOptions = true;
-            this.cTrongSo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.cTrongSo.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cTrongSo.Caption = "TRỌNG SỐ";
-            this.cTrongSo.FieldName = "TrongSo";
-            this.cTrongSo.Name = "cTrongSo";
-            this.cTrongSo.Visible = true;
-            this.cTrongSo.VisibleIndex = 1;
+            this.cTrongSoMucTieuTaiChinhBV,
+            this.cChonBV});
+            this.dgrBVMucTieuTaiChinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgrBVMucTieuTaiChinh.Location = new System.Drawing.Point(0, 0);
+            this.dgrBVMucTieuTaiChinh.Name = "dgrBVMucTieuTaiChinh";
+            this.dgrBVMucTieuTaiChinh.RowTemplate.Height = 30;
+            this.dgrBVMucTieuTaiChinh.Size = new System.Drawing.Size(650, 310);
+            this.dgrBVMucTieuTaiChinh.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnClear);
+            this.panel2.Controls.Add(this.btnDeselectAll);
+            this.panel2.Controls.Add(this.btnSelectAll);
             this.panel2.Controls.Add(this.btnTiepTucTaiChinh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(3, 641);
@@ -3226,6 +3116,164 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.gridView1.Name = "gridView1";
             // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelectAll.BackColor = System.Drawing.Color.White;
+            this.btnSelectAll.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectAll.ForeColor = System.Drawing.Color.Black;
+            this.btnSelectAll.Location = new System.Drawing.Point(5, 5);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(134, 48);
+            this.btnSelectAll.TabIndex = 17;
+            this.btnSelectAll.Text = "Chọn toàn bộ";
+            this.btnSelectAll.UseVisualStyleBackColor = false;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // btnDeselectAll
+            // 
+            this.btnDeselectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeselectAll.BackColor = System.Drawing.Color.White;
+            this.btnDeselectAll.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeselectAll.ForeColor = System.Drawing.Color.Black;
+            this.btnDeselectAll.Location = new System.Drawing.Point(145, 5);
+            this.btnDeselectAll.Name = "btnDeselectAll";
+            this.btnDeselectAll.Size = new System.Drawing.Size(152, 48);
+            this.btnDeselectAll.TabIndex = 18;
+            this.btnDeselectAll.Text = "Bỏ chọn toàn bộ";
+            this.btnDeselectAll.UseVisualStyleBackColor = false;
+            this.btnDeselectAll.Click += new System.EventHandler(this.btnDeselectAll_Click);
+            // 
+            // btnCoppyAll
+            // 
+            this.btnCoppyAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCoppyAll.BackColor = System.Drawing.Color.White;
+            this.btnCoppyAll.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCoppyAll.ForeColor = System.Drawing.Color.Black;
+            this.btnCoppyAll.Location = new System.Drawing.Point(3, 24);
+            this.btnCoppyAll.Name = "btnCoppyAll";
+            this.btnCoppyAll.Size = new System.Drawing.Size(44, 69);
+            this.btnCoppyAll.TabIndex = 19;
+            this.btnCoppyAll.Text = ">>\r\n>>";
+            this.btnCoppyAll.UseVisualStyleBackColor = false;
+            this.btnCoppyAll.Click += new System.EventHandler(this.btnCoppyAll_Click);
+            // 
+            // btnCoppy
+            // 
+            this.btnCoppy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCoppy.BackColor = System.Drawing.Color.White;
+            this.btnCoppy.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCoppy.ForeColor = System.Drawing.Color.Black;
+            this.btnCoppy.Location = new System.Drawing.Point(3, 121);
+            this.btnCoppy.Name = "btnCoppy";
+            this.btnCoppy.Size = new System.Drawing.Size(44, 69);
+            this.btnCoppy.TabIndex = 20;
+            this.btnCoppy.Text = ">>";
+            this.btnCoppy.UseVisualStyleBackColor = false;
+            this.btnCoppy.Click += new System.EventHandler(this.btnCoppy_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(700, 6);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(152, 48);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "Xóa toàn bộ";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // cMaPhongKhoa
+            // 
+            this.cMaPhongKhoa.DataPropertyName = "MaPhongKhoa";
+            this.cMaPhongKhoa.HeaderText = "Mã Phòng Khoa ";
+            this.cMaPhongKhoa.Name = "cMaPhongKhoa";
+            this.cMaPhongKhoa.ReadOnly = true;
+            this.cMaPhongKhoa.Visible = false;
+            // 
+            // cMucTieuTaiChinhBV
+            // 
+            this.cMucTieuTaiChinhBV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cMucTieuTaiChinhBV.DataPropertyName = "MucTieuBV";
+            this.cMucTieuTaiChinhBV.HeaderText = "Mục tiêu Bệnh Viện ";
+            this.cMucTieuTaiChinhBV.Name = "cMucTieuTaiChinhBV";
+            this.cMucTieuTaiChinhBV.ReadOnly = true;
+            this.cMucTieuTaiChinhBV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cMucTieuTaiChinhBV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cMucTieuTaiChinhBV.Visible = false;
+            // 
+            // cTieuDe
+            // 
+            this.cTieuDe.DataPropertyName = "TieuDe";
+            this.cTieuDe.HeaderText = "Tiêu đề";
+            this.cTieuDe.Name = "cTieuDe";
+            this.cTieuDe.ReadOnly = true;
+            this.cTieuDe.Visible = false;
+            // 
+            // cNoiDung
+            // 
+            this.cNoiDung.DataPropertyName = "NoiDung";
+            this.cNoiDung.HeaderText = "Nội Dung";
+            this.cNoiDung.Name = "cNoiDung";
+            this.cNoiDung.ReadOnly = true;
+            // 
+            // cTrongSoMucTieuTaiChinhBV
+            // 
+            this.cTrongSoMucTieuTaiChinhBV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cTrongSoMucTieuTaiChinhBV.DataPropertyName = "TrongSoBV";
+            this.cTrongSoMucTieuTaiChinhBV.HeaderText = "Trọng Số";
+            this.cTrongSoMucTieuTaiChinhBV.Name = "cTrongSoMucTieuTaiChinhBV";
+            this.cTrongSoMucTieuTaiChinhBV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cTrongSoMucTieuTaiChinhBV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cTrongSoMucTieuTaiChinhBV.Width = 78;
+            // 
+            // cChonBV
+            // 
+            this.cChonBV.HeaderText = "Chọn";
+            this.cChonBV.Name = "cChonBV";
+            // 
+            // cNhapMaPhongKhoa
+            // 
+            this.cNhapMaPhongKhoa.HeaderText = "Mã Phòng Khoa ";
+            this.cNhapMaPhongKhoa.Name = "cNhapMaPhongKhoa";
+            this.cNhapMaPhongKhoa.ReadOnly = true;
+            this.cNhapMaPhongKhoa.Visible = false;
+            // 
+            // cNhapMucTieuBenhV
+            // 
+            this.cNhapMucTieuBenhV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNhapMucTieuBenhV.HeaderText = "Mục tiêu Bệnh Viện ";
+            this.cNhapMucTieuBenhV.Name = "cNhapMucTieuBenhV";
+            this.cNhapMucTieuBenhV.ReadOnly = true;
+            this.cNhapMucTieuBenhV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cNhapMucTieuBenhV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cNhapMucTieuBenhV.Visible = false;
+            // 
+            // cNhapTieuDe
+            // 
+            this.cNhapTieuDe.HeaderText = "Tiêu đề";
+            this.cNhapTieuDe.Name = "cNhapTieuDe";
+            this.cNhapTieuDe.ReadOnly = true;
+            this.cNhapTieuDe.Visible = false;
+            // 
+            // cNhapNoiDung
+            // 
+            this.cNhapNoiDung.HeaderText = "Nội Dung";
+            this.cNhapNoiDung.Name = "cNhapNoiDung";
+            this.cNhapNoiDung.ReadOnly = true;
+            // 
+            // ccNhapTrongSo
+            // 
+            this.ccNhapTrongSo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ccNhapTrongSo.HeaderText = "Trọng Số";
+            this.ccNhapTrongSo.Name = "ccNhapTrongSo";
+            this.ccNhapTrongSo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ccNhapTrongSo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ccNhapTrongSo.Width = 78;
+            // 
             // FrmA73
             // 
             this.Appearance.Options.UseFont = true;
@@ -3307,12 +3355,11 @@ namespace DuAn_QuanLyKPI.GUI
             ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThai1)).EndInit();
             this.tabTaiChinh.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrNhapMucTieuTaiChinh)).EndInit();
             this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridnhapmuctieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhNhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridmuctieubv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrTaiChinhBV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrBVMucTieuTaiChinh)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -3324,6 +3371,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.tabMucTieuKhoaPhong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3563,21 +3611,31 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabMucTieuKhoaPhong;
         private DevExpress.Utils.SvgImageCollection svgImageCollection2;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label24;
-        private DevExpress.XtraGrid.GridControl gridnhapmuctieu;
-        private DevExpress.XtraGrid.Views.Grid.GridView dgrTaiChinhNhap;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.GridControl gridmuctieubv;
-        private DevExpress.XtraGrid.Views.Grid.GridView dgrTaiChinhBV;
-        private DevExpress.XtraGrid.Columns.GridColumn cMaKPI;
-        private DevExpress.XtraGrid.Columns.GridColumn cNoiDung;
-        private DevExpress.XtraGrid.Columns.GridColumn cTrongSo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTiepTucTaiChinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.DataGridView dgrBVMucTieuTaiChinh;
+        private System.Windows.Forms.DataGridView dgrNhapMucTieuTaiChinh;
+        private System.Windows.Forms.Button btnDeselectAll;
+        private System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.Button btnCoppyAll;
+        private System.Windows.Forms.Button btnCoppy;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhongKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMucTieuTaiChinhBV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTieuDe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoMucTieuTaiChinhBV;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonBV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNhapMaPhongKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNhapMucTieuBenhV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNhapTieuDe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNhapNoiDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccNhapTrongSo;
     }
 }
