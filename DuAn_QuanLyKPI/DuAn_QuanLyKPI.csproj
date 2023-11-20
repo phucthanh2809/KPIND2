@@ -188,6 +188,12 @@
     <Compile Include="GUI\FrmA.7.6.Designer.cs">
       <DependentUpon>FrmA.7.6.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_A77.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_A77.Designer.cs">
+      <DependentUpon>Frm_A77.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmA.7.6.resx">
       <DependentUpon>FrmA.7.6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_A77.resx">
+      <DependentUpon>Frm_A77.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_AddUser.resx">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>

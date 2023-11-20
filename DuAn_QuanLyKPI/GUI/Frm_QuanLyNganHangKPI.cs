@@ -31,7 +31,6 @@ namespace DuAn_QuanLyKPI.GUI
     {
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
-        private string msql;
         private int _edit = 0;
         private string makpi = "";
         public int Edit { get => _edit; 

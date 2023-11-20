@@ -19,7 +19,7 @@ using DuAn_QuanLyKPI.Constants;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_A77 : DevExpress.XtraEditors.XtraForm
     {
         //lấy dữ liệu từu frm login
         public static string MaNV = Frm_Login.MaNV;
@@ -39,12 +39,11 @@ namespace DuAn_QuanLyKPI.GUI
         private DataTable dataTable2;
 
         private int CurrentTab = 0;
-        public FrmA73()
+        public Frm_A77()
         {
             InitializeComponent();
             LoadThongTinNhanVien();
             LoadDataTaiChinh();
-
         }
 
         //private void LoadDataMucTieu()
