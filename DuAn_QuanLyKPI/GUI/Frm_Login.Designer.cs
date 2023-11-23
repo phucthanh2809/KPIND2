@@ -152,7 +152,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(339, 32);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "Password";
+            this.txtPassword.Text = "123";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
@@ -177,7 +177,7 @@
             this.txtdangnhap.Name = "txtdangnhap";
             this.txtdangnhap.Size = new System.Drawing.Size(339, 32);
             this.txtdangnhap.TabIndex = 0;
-            this.txtdangnhap.Text = "Username";
+            this.txtdangnhap.Text = "phuc28";
             this.txtdangnhap.Enter += new System.EventHandler(this.txtdangnhap_Enter_1);
             this.txtdangnhap.Leave += new System.EventHandler(this.txtdangnhap_Leave_1);
             // 

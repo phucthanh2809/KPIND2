@@ -1,7 +1,7 @@
 ﻿
 namespace DuAn_QuanLyKPI.GUI
 {
-    partial class FrmA76
+    partial class Frm_A76
     {
         /// <summary>
         /// Required designer variable.

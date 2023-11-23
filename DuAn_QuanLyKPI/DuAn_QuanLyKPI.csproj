@@ -176,17 +176,17 @@
     <Compile Include="DTO\ThongBao.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmA.7.3.cs">
+    <Compile Include="GUI\Frm_A73.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmA.7.3.Designer.cs">
-      <DependentUpon>FrmA.7.3.cs</DependentUpon>
+    <Compile Include="GUI\Frm_A73.Designer.cs">
+      <DependentUpon>Frm_A73.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmA.7.6.cs">
+    <Compile Include="GUI\Frm_A76.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmA.7.6.Designer.cs">
-      <DependentUpon>FrmA.7.6.cs</DependentUpon>
+    <Compile Include="GUI\Frm_A76.Designer.cs">
+      <DependentUpon>Frm_A76.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_A77.cs">
       <SubType>Form</SubType>
@@ -298,11 +298,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\FrmA.7.3.resx">
-      <DependentUpon>FrmA.7.3.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Frm_A73.resx">
+      <DependentUpon>Frm_A73.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmA.7.6.resx">
-      <DependentUpon>FrmA.7.6.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Frm_A76.resx">
+      <DependentUpon>Frm_A76.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_A77.resx">
       <DependentUpon>Frm_A77.cs</DependentUpon>
