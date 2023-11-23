@@ -170,9 +170,9 @@ namespace DuAn_QuanLyKPI.GUI
                     tabMucTieuKhoaPhong.SelectTab(step);
                     // Thiết lập Trạng thái khi nhất nút
                     spTaiChinh1.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
+                    FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
                     break;
                 case 2:
                     tabMucTieuKhoaPhong.SelectTab(step);
@@ -205,9 +205,9 @@ namespace DuAn_QuanLyKPI.GUI
             int total = 0;
             if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
             {
-                for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+                for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
                 {
-                    total += int.Parse(dgrBVMucTieuTaiChinh.CurrentRow.Cells["cTrongSoHT"].Value.ToString());
+                    total += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoHT"].Value.ToString());
                 }
                 // Kiểm tra tổng các giá trị
                 if (total == 0 && total == null)

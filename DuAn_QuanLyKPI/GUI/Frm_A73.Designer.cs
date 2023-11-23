@@ -170,9 +170,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.FrmSPTrangThai2 = new DevExpress.XtraEditors.StepProgressBar();
             this.spTaiChinh2 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem12 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem13 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem14 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spKhachHang2 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spVanHanh2 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spPhatTrien2 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.label29 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
@@ -220,10 +220,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.FrmSPTrangThai1 = new DevExpress.XtraEditors.StepProgressBar();
-            this.stepProgressBarItem4 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.spKhachHang2 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem9 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem10 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spTaiChinh1 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spKhachHang1 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spVanHanh1 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spPhatTrien1 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -270,10 +270,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.FrmSPTrangThai = new DevExpress.XtraEditors.StepProgressBar();
-            this.spTaiChinh1 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.spKhachHang1 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.spVanHanh1 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.spPhatTrien1 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spTaiChinh = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spKhachHang = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spVanHanh = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spPhatTrien = new DevExpress.XtraEditors.StepProgressBarItem();
             this.label3 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -1866,9 +1866,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.FrmSPTrangThai2.Appearance.Options.UseBackColor = true;
             this.FrmSPTrangThai2.Appearance.Options.UseFont = true;
             this.FrmSPTrangThai2.Items.Add(this.spTaiChinh2);
-            this.FrmSPTrangThai2.Items.Add(this.stepProgressBarItem12);
-            this.FrmSPTrangThai2.Items.Add(this.stepProgressBarItem13);
-            this.FrmSPTrangThai2.Items.Add(this.stepProgressBarItem14);
+            this.FrmSPTrangThai2.Items.Add(this.spKhachHang2);
+            this.FrmSPTrangThai2.Items.Add(this.spVanHanh2);
+            this.FrmSPTrangThai2.Items.Add(this.spPhatTrien2);
             this.FrmSPTrangThai2.Location = new System.Drawing.Point(2, 114);
             this.FrmSPTrangThai2.Name = "FrmSPTrangThai2";
             this.FrmSPTrangThai2.Size = new System.Drawing.Size(827, 76);
@@ -1879,20 +1879,20 @@ namespace DuAn_QuanLyKPI.GUI
             this.spTaiChinh2.ContentBlock2.Caption = "Tài Chính";
             this.spTaiChinh2.Name = "spTaiChinh2";
             // 
-            // stepProgressBarItem12
+            // spKhachHang2
             // 
-            this.stepProgressBarItem12.ContentBlock2.Caption = "Khách Hàng";
-            this.stepProgressBarItem12.Name = "stepProgressBarItem12";
+            this.spKhachHang2.ContentBlock2.Caption = "Khách Hàng";
+            this.spKhachHang2.Name = "spKhachHang2";
             // 
-            // stepProgressBarItem13
+            // spVanHanh2
             // 
-            this.stepProgressBarItem13.ContentBlock2.Caption = "Vận Hành";
-            this.stepProgressBarItem13.Name = "stepProgressBarItem13";
+            this.spVanHanh2.ContentBlock2.Caption = "Vận Hành";
+            this.spVanHanh2.Name = "spVanHanh2";
             // 
-            // stepProgressBarItem14
+            // spPhatTrien2
             // 
-            this.stepProgressBarItem14.ContentBlock2.Caption = "Phát Triển";
-            this.stepProgressBarItem14.Name = "stepProgressBarItem14";
+            this.spPhatTrien2.ContentBlock2.Caption = "Phát Triển";
+            this.spPhatTrien2.Name = "spPhatTrien2";
             // 
             // label29
             // 
@@ -2403,34 +2403,34 @@ namespace DuAn_QuanLyKPI.GUI
             this.FrmSPTrangThai1.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FrmSPTrangThai1.Appearance.Options.UseBackColor = true;
             this.FrmSPTrangThai1.Appearance.Options.UseFont = true;
-            this.FrmSPTrangThai1.Items.Add(this.stepProgressBarItem4);
-            this.FrmSPTrangThai1.Items.Add(this.spKhachHang2);
-            this.FrmSPTrangThai1.Items.Add(this.stepProgressBarItem9);
-            this.FrmSPTrangThai1.Items.Add(this.stepProgressBarItem10);
+            this.FrmSPTrangThai1.Items.Add(this.spTaiChinh1);
+            this.FrmSPTrangThai1.Items.Add(this.spKhachHang1);
+            this.FrmSPTrangThai1.Items.Add(this.spVanHanh1);
+            this.FrmSPTrangThai1.Items.Add(this.spPhatTrien1);
             this.FrmSPTrangThai1.Location = new System.Drawing.Point(2, 114);
             this.FrmSPTrangThai1.Name = "FrmSPTrangThai1";
             this.FrmSPTrangThai1.Size = new System.Drawing.Size(827, 76);
             this.FrmSPTrangThai1.TabIndex = 14;
             // 
-            // stepProgressBarItem4
+            // spTaiChinh1
             // 
-            this.stepProgressBarItem4.ContentBlock2.Caption = "Tài Chính";
-            this.stepProgressBarItem4.Name = "stepProgressBarItem4";
+            this.spTaiChinh1.ContentBlock2.Caption = "Tài Chính";
+            this.spTaiChinh1.Name = "spTaiChinh1";
             // 
-            // spKhachHang2
+            // spKhachHang1
             // 
-            this.spKhachHang2.ContentBlock2.Caption = "Khách Hàng";
-            this.spKhachHang2.Name = "spKhachHang2";
+            this.spKhachHang1.ContentBlock2.Caption = "Khách Hàng";
+            this.spKhachHang1.Name = "spKhachHang1";
             // 
-            // stepProgressBarItem9
+            // spVanHanh1
             // 
-            this.stepProgressBarItem9.ContentBlock2.Caption = "Vận Hành";
-            this.stepProgressBarItem9.Name = "stepProgressBarItem9";
+            this.spVanHanh1.ContentBlock2.Caption = "Vận Hành";
+            this.spVanHanh1.Name = "spVanHanh1";
             // 
-            // stepProgressBarItem10
+            // spPhatTrien1
             // 
-            this.stepProgressBarItem10.ContentBlock2.Caption = "Phát Triển";
-            this.stepProgressBarItem10.Name = "stepProgressBarItem10";
+            this.spPhatTrien1.ContentBlock2.Caption = "Phát Triển";
+            this.spPhatTrien1.Name = "spPhatTrien1";
             // 
             // label8
             // 
@@ -2930,34 +2930,34 @@ namespace DuAn_QuanLyKPI.GUI
             this.FrmSPTrangThai.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FrmSPTrangThai.Appearance.Options.UseBackColor = true;
             this.FrmSPTrangThai.Appearance.Options.UseFont = true;
-            this.FrmSPTrangThai.Items.Add(this.spTaiChinh1);
-            this.FrmSPTrangThai.Items.Add(this.spKhachHang1);
-            this.FrmSPTrangThai.Items.Add(this.spVanHanh1);
-            this.FrmSPTrangThai.Items.Add(this.spPhatTrien1);
+            this.FrmSPTrangThai.Items.Add(this.spTaiChinh);
+            this.FrmSPTrangThai.Items.Add(this.spKhachHang);
+            this.FrmSPTrangThai.Items.Add(this.spVanHanh);
+            this.FrmSPTrangThai.Items.Add(this.spPhatTrien);
             this.FrmSPTrangThai.Location = new System.Drawing.Point(2, 114);
             this.FrmSPTrangThai.Name = "FrmSPTrangThai";
             this.FrmSPTrangThai.Size = new System.Drawing.Size(827, 76);
             this.FrmSPTrangThai.TabIndex = 14;
             // 
-            // spTaiChinh1
+            // spTaiChinh
             // 
-            this.spTaiChinh1.ContentBlock2.Caption = "Tài Chính";
-            this.spTaiChinh1.Name = "spTaiChinh1";
+            this.spTaiChinh.ContentBlock2.Caption = "Tài Chính";
+            this.spTaiChinh.Name = "spTaiChinh";
             // 
-            // spKhachHang1
+            // spKhachHang
             // 
-            this.spKhachHang1.ContentBlock2.Caption = "Khách Hàng";
-            this.spKhachHang1.Name = "spKhachHang1";
+            this.spKhachHang.ContentBlock2.Caption = "Khách Hàng";
+            this.spKhachHang.Name = "spKhachHang";
             // 
-            // spVanHanh1
+            // spVanHanh
             // 
-            this.spVanHanh1.ContentBlock2.Caption = "Vận Hành";
-            this.spVanHanh1.Name = "spVanHanh1";
+            this.spVanHanh.ContentBlock2.Caption = "Vận Hành";
+            this.spVanHanh.Name = "spVanHanh";
             // 
-            // spPhatTrien1
+            // spPhatTrien
             // 
-            this.spPhatTrien1.ContentBlock2.Caption = "Phát Triển";
-            this.spPhatTrien1.Name = "spPhatTrien1";
+            this.spPhatTrien.ContentBlock2.Caption = "Phát Triển";
+            this.spPhatTrien.Name = "spPhatTrien";
             // 
             // label3
             // 
@@ -3882,10 +3882,10 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.TabPage tabTaiChinh;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.StepProgressBar FrmSPTrangThai;
-        private DevExpress.XtraEditors.StepProgressBarItem spTaiChinh1;
-        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang1;
-        private DevExpress.XtraEditors.StepProgressBarItem spVanHanh1;
-        private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien1;
+        private DevExpress.XtraEditors.StepProgressBarItem spTaiChinh;
+        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang;
+        private DevExpress.XtraEditors.StepProgressBarItem spVanHanh;
+        private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label10;
@@ -3953,10 +3953,10 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private DevExpress.XtraEditors.StepProgressBar FrmSPTrangThai1;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem4;
-        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang2;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem9;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem10;
+        private DevExpress.XtraEditors.StepProgressBarItem spTaiChinh1;
+        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang1;
+        private DevExpress.XtraEditors.StepProgressBarItem spVanHanh1;
+        private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label9;
@@ -4003,9 +4003,9 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private DevExpress.XtraEditors.StepProgressBar FrmSPTrangThai2;
         private DevExpress.XtraEditors.StepProgressBarItem spTaiChinh2;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem12;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem13;
-        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem14;
+        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang2;
+        private DevExpress.XtraEditors.StepProgressBarItem spVanHanh2;
+        private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label30;
