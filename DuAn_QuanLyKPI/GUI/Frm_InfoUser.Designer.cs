@@ -90,9 +90,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.txtChucDanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtChucDanh.Enabled = false;
             this.txtChucDanh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChucDanh.Location = new System.Drawing.Point(139, 225);
             this.txtChucDanh.Name = "txtChucDanh";
+            this.txtChucDanh.ReadOnly = true;
             this.txtChucDanh.Size = new System.Drawing.Size(624, 32);
             this.txtChucDanh.TabIndex = 85;
             this.txtChucDanh.xCoTimMoRong = false;
@@ -107,9 +109,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.txtPhongKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhongKhoa.Enabled = false;
             this.txtPhongKhoa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhongKhoa.Location = new System.Drawing.Point(139, 182);
             this.txtPhongKhoa.Name = "txtPhongKhoa";
+            this.txtPhongKhoa.ReadOnly = true;
             this.txtPhongKhoa.Size = new System.Drawing.Size(624, 32);
             this.txtPhongKhoa.TabIndex = 84;
             this.txtPhongKhoa.xCoTimMoRong = false;
@@ -124,9 +128,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.txtMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(139, 10);
             this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
             this.txtMaNV.Size = new System.Drawing.Size(624, 32);
             this.txtMaNV.TabIndex = 66;
             this.txtMaNV.xCoTimMoRong = false;
@@ -161,9 +167,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.txtHoten.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHoten.Enabled = false;
             this.txtHoten.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoten.Location = new System.Drawing.Point(139, 53);
             this.txtHoten.Name = "txtHoten";
+            this.txtHoten.ReadOnly = true;
             this.txtHoten.Size = new System.Drawing.Size(624, 32);
             this.txtHoten.TabIndex = 67;
             this.txtHoten.xCoTimMoRong = false;
@@ -198,9 +206,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(139, 96);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(624, 32);
             this.txtEmail.TabIndex = 68;
             this.txtEmail.xCoTimMoRong = false;
@@ -235,9 +245,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSDT.Enabled = false;
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(139, 139);
             this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
             this.txtSDT.Size = new System.Drawing.Size(624, 32);
             this.txtSDT.TabIndex = 69;
             this.txtSDT.xCoTimMoRong = false;

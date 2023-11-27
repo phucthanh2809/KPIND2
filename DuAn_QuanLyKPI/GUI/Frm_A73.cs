@@ -73,7 +73,8 @@ namespace DuAn_QuanLyKPI.GUI
         //Load DataGridview Tài chính
         private void LoadDataBVTaiChinh()
         {
-            msql = "select * from [dbo].[KPI] as KPI,[dbo].[KPI_KhoaPhong] as KPIKP,[dbo].[NhomTieuChi] as TC,[dbo].[PhongKhoa] as PK where KPI.MaKPI = KPIKP.MaKPI AND KPIKP.MaPK = PK.MaPK AND KPIKP.TieuChiID = TC.TieuChiID AND KPIKP.MaPK = '"+MaPhongKhoa+"' AND KPIKP.TieuChiID = 'F'AND KPI.CongViecCaNhan = 0 AND KPIKP.TrangThai = 0";
+            msql = "SELECT * FROM [dbo].[ChiTietKPIKhoaPhong] as CTKPIKP, [dbo].[KPI_KhoaPhong] as KPIKP, [dbo].[ChiTietTieuChiMucTieuKhoaPhong] as CTTCMTKP, [dbo].[NhomTieuChi] as TC, [dbo].[KPI] as KPI, [dbo].[PhongKhoa] as PK, [dbo].[DanhsachBieuMau] as BM " +
+                "WHERE CTTCMTKP.MaPhieuKPI = KPIKP.MaPhieuKPI and CTTCMTKP.MaKPI = KPI.MaKPI and CTTCMTKP.TieuChiID = TC.TieuChiID and CTKPIKP.ChitietID = KPIKP.IDChiTietKPIKP and KPIKP.TrangThai = 0 and KPIKP.MaPK = PK.MaPK and KPIKP.IDBieuMau = BM.IDBieuMau and KPIKP.TruongPK = 'False'";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
@@ -274,6 +275,10 @@ namespace DuAn_QuanLyKPI.GUI
         }
 
         #endregion
+
+
+
+        #endregion
         //Event coppy gridview
         #region EventCopyData
         private void btnCoppyAll_Click(object sender, EventArgs e)
@@ -285,8 +290,6 @@ namespace DuAn_QuanLyKPI.GUI
             }
             copyDataBVtoTC();
         }
-
-        #endregion
 
         #endregion
 
