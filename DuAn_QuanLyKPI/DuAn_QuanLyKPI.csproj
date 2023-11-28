@@ -111,13 +111,16 @@
     <Compile Include="DTO\ChiTietKPIKhoaPhong.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ChiTietTieuChiMucTieuKhoaPhong.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\ChiTietTieuChiPhieuCaNhan.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\ChiTietTieuChiPhieuPhongKhoa.cs">
+    <Compile Include="DTO\ChucDanh.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\ChucDanh.cs">
+    <Compile Include="DTO\DanhsachBieuMau.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\DataPoint.cs" />
@@ -168,9 +171,6 @@
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\sysdiagrams.cs">
-      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DTO\tabBieuMau.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ThongBao.cs">

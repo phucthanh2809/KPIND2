@@ -29,6 +29,7 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<int> Nam { get; set; }
         public string MauPhieu { get; set; }
         public Nullable<int> TrangThai { get; set; }
+        public Nullable<double> TrongSo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietTieuChiPhieuCaNhan> ChiTietTieuChiPhieuCaNhan { get; set; }

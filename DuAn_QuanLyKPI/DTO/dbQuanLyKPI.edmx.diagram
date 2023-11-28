@@ -4,42 +4,42 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="31fb9cf60ccb452dbb3ac58ae6cf89e6" Name="Diagram1" ZoomLevel="80">
-        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietKPICaNhan" Width="2.125" PointX="3" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietKPIKhoaPhong" Width="2.25" PointX="6" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietTieuChiPhieuPhongKhoa" Width="2.375" PointX="8.25" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.ChucDanh" Width="1.5" PointX="3.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.KPI" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.KPI_CaNhan" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.KPI_KhoaPhong" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.NganHangKPI" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.NguoiDung" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.NhomTieuChi" Width="1.5" PointX="8.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.PhongKhoa" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.Quyen" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.ThongBao" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPICN_MaKPI" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPICN_NguonChungMinh" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_MaKPI" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_NguonChungMinh" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_MaChiTietPK" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_MaPhieuPK" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_TieuChiPK" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_NganHangKPI_MaChucDanh" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_NguoiDung_ChucDanh" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_KPICaNhan_NguoiDung" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_KPIPhongKhoa_PhongKhoa" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_NganHangKPI_MaKhoa" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_NguoiDung_PhongKhoa" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.FK_ThongBao_NguoiDung" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.KPITrongNganHang" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyKPIModel.PhanQuyen" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanLyKPIModel.tabBieuMau" Width="1.5" PointX="5.875" PointY="2.375" />
+      <Diagram DiagramId="31fb9cf60ccb452dbb3ac58ae6cf89e6" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietKPICaNhan" Width="1.5" PointX="6" PointY="5.25" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietKPIKhoaPhong" Width="1.5" PointX="3" PointY="22.875" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietTieuChiMucTieuKhoaPhong" Width="1.5" PointX="7.5" PointY="15.75" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan" Width="1.5" PointX="8.25" PointY="3.375" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.ChucDanh" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.DanhsachBieuMau" Width="1.5" PointX="3" PointY="16.5" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.KPI" Width="1.5" PointX="3.75" PointY="5.375" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.KPI_CaNhan" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.KPI_KhoaPhong" Width="1.5" PointX="5.25" PointY="15.75" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.NganHangKPI" Width="1.5" PointX="6" PointY="9.75" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.NguoiDung" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.NhomTieuChi" Width="1.5" PointX="6" PointY="20.25" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.PhongKhoa" Width="1.5" PointX="0.75" PointY="9.5" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.Quyen" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="7.375" />
+        <EntityTypeShape EntityType="QuanLyKPIModel.ThongBao" Width="1.5" PointX="5.25" PointY="12.875" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPICN_MaKPI" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPICN_NguonChungMinh" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_NguonChungMinh" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_MaChiTietPK" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_KPI_KhoaPhong_NhomTieuChi" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_NganHangKPI_MaChucDanh" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_NguoiDung_ChucDanh" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_KPI_KhoaPhong_DanhsachBieuMau" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_KPICaNhan_NguoiDung" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_KPI_KhoaPhong_PhongKhoa" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_NganHangKPI_MaKhoa" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_NguoiDung_PhongKhoa" />
+        <AssociationConnector Association="QuanLyKPIModel.FK_ThongBao_NguoiDung" />
+        <AssociationConnector Association="QuanLyKPIModel.KPITrongNganHang" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

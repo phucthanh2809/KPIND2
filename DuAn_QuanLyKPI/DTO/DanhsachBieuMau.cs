@@ -12,11 +12,20 @@ namespace DuAn_QuanLyKPI.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class tabBieuMau
+    public partial class DanhsachBieuMau
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DanhsachBieuMau()
+        {
+            this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
+        }
+    
         public int IDBieuMau { get; set; }
         public string MaBieuMau { get; set; }
         public string TenBieuMau { get; set; }
         public Nullable<int> MaCapDoKPIBenhVien { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
     }
 }

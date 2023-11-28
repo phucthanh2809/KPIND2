@@ -17,16 +17,16 @@ namespace DuAn_QuanLyKPI.DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhomTieuChi()
         {
+            this.ChiTietTieuChiMucTieuKhoaPhong = new HashSet<ChiTietTieuChiMucTieuKhoaPhong>();
             this.ChiTietTieuChiPhieuCaNhan = new HashSet<ChiTietTieuChiPhieuCaNhan>();
-            this.ChiTietTieuChiPhieuPhongKhoa = new HashSet<ChiTietTieuChiPhieuPhongKhoa>();
         }
     
-        public int TieuChiID { get; set; }
+        public string TieuChiID { get; set; }
         public string TenTieuChi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTieuChiPhieuCaNhan> ChiTietTieuChiPhieuCaNhan { get; set; }
+        public virtual ICollection<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTieuChiPhieuPhongKhoa> ChiTietTieuChiPhieuPhongKhoa { get; set; }
+        public virtual ICollection<ChiTietTieuChiPhieuCaNhan> ChiTietTieuChiPhieuCaNhan { get; set; }
     }
 }

@@ -44,9 +44,9 @@ namespace DuAn_QuanLyKPI.GUI
             InitializeComponent();
             LoadThongTinNhanVien();
             LoadDataBVTaiChinh();
-            LoadDataBVKhachHang();
-            LoadDataBVVanHanh();
-            LoadDataBVPhatTrien();
+            //LoadDataBVKhachHang();
+            //LoadDataBVVanHanh();
+            //LoadDataBVPhatTrien();
         }
         #region LoadData
         //Load thông tin nhân viên 
@@ -100,8 +100,6 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
             dgrBVMucTieuPhatTrien.DataSource = tb;
         }
-
-
         #endregion
 
 

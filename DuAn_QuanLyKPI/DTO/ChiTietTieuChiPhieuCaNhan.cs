@@ -16,7 +16,7 @@ namespace DuAn_QuanLyKPI.DTO
     {
         public string MaPhieuKPI { get; set; }
         public int MaChiTietCN { get; set; }
-        public int TieuChiID { get; set; }
+        public string TieuChiID { get; set; }
         public double TrongSo { get; set; }
     
         public virtual ChiTietKPICaNhan ChiTietKPICaNhan { get; set; }

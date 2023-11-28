@@ -46,7 +46,7 @@ namespace DuAn_QuanLyKPI.GUI
         public void LoadBieuMauKhoaPhong()
         {
 
-            msql = "SELECT * FROM [dbo].[tabBieuMau] WHERE [MaCapDoKPIBenhVien] = 2";
+            msql = "SELECT * FROM [QuanLyKPI].[dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 2";
             DataTable bieumau = comm.GetDataTable(mconnectstring, msql, "KhoaPhong");
             dgrChonBieuMau.AutoGenerateColumns = false;
             dgrChonBieuMau.DataSource = bieumau;

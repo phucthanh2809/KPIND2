@@ -5,15 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="QuanLyKPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="BangTamMucTieuKhoaPhong">
-          <Property Name="MaKPI" Type="int" />
-          <Property Name="MucTieu" Type="nvarchar" MaxLength="300" />
-          <Property Name="TrongSo" Type="int" />
-          <Property Name="TieuChiDanhGia" Type="nvarchar" MaxLength="300" />
-          <Property Name="HoanThanh" Type="int" />
-        </EntityType>-->
         <EntityType Name="ChiTietKPICaNhan">
           <Key>
             <PropertyRef Name="ChitietID" />
@@ -30,13 +21,27 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Key>
             <PropertyRef Name="ChitietID" />
           </Key>
-          <Property Name="MaKPI" Type="int" Nullable="false" />
           <Property Name="TrongSo" Type="float" />
           <Property Name="NguonChungMinh" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="KeHoach" Type="varchar" MaxLength="10" />
           <Property Name="ThucHien" Type="varchar" MaxLength="10" />
           <Property Name="HoanThanh" Type="float" />
           <Property Name="ChitietID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiTietTieuChiMucTieuKhoaPhong">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaPhieuKPI" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaKPI" Type="int" Nullable="false" />
+          <Property Name="TieuChiID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ChiTieuBV" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ChiTieuHT" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrongSoTieuChiBV" Type="int" Nullable="false" />
+          <Property Name="TrongSoKPIBV" Type="int" Nullable="false" />
+          <Property Name="TrongSoTieuChiHT" Type="int" />
+          <Property Name="TrongSoKPIHT" Type="int" />
         </EntityType>
         <EntityType Name="ChiTietTieuChiPhieuCaNhan">
           <Key>
@@ -46,18 +51,7 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </Key>
           <Property Name="MaPhieuKPI" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaChiTietCN" Type="int" Nullable="false" />
-          <Property Name="TieuChiID" Type="int" Nullable="false" />
-          <Property Name="TrongSo" Type="float" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ChiTietTieuChiPhieuPhongKhoa">
-          <Key>
-            <PropertyRef Name="MaPhieuKPI" />
-            <PropertyRef Name="MaChiTietPK" />
-            <PropertyRef Name="TieuChiID" />
-          </Key>
-          <Property Name="MaPhieuKPI" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaChiTietPK" Type="int" Nullable="false" />
-          <Property Name="TieuChiID" Type="int" Nullable="false" />
+          <Property Name="TieuChiID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TrongSo" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="ChucDanh">
@@ -67,6 +61,15 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Name="MaChucDanh" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="TenChucDanh" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MaCapDoChucDanh" Type="int" />
+        </EntityType>
+        <EntityType Name="DanhsachBieuMau">
+          <Key>
+            <PropertyRef Name="IDBieuMau" />
+          </Key>
+          <Property Name="IDBieuMau" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaBieuMau" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenBieuMau" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaCapDoKPIBenhVien" Type="int" />
         </EntityType>
         <EntityType Name="KPI">
           <Key>
@@ -92,21 +95,21 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Name="Nam" Type="int" />
           <Property Name="MauPhieu" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="TrangThai" Type="int" />
+          <Property Name="TrongSo" Type="float" />
         </EntityType>
         <EntityType Name="KPI_KhoaPhong">
           <Key>
             <PropertyRef Name="MaPhieuKPI" />
           </Key>
           <Property Name="MaPhieuKPI" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaPhongKhoa" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="TieuDe" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="NoiDung" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="IDChiTietKPIKP" Type="int" Nullable="false" />
+          <Property Name="TrangThai" Type="int" Nullable="false" />
+          <Property Name="MaPK" Type="varchar" MaxLength="20" />
           <Property Name="NgayTao" Type="datetime" />
           <Property Name="Quy" Type="int" />
+          <Property Name="IDBieuMau" Type="int" Nullable="false" />
           <Property Name="Nam" Type="int" />
-          <Property Name="LanhDao" Type="bit" />
-          <Property Name="MauPhieu" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="TrangThai" Type="int" />
+          <Property Name="TruongPK" Type="bit" />
         </EntityType>
         <EntityType Name="KPITrongNganHang">
           <Key>
@@ -137,21 +140,14 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Name="MatKhau" Type="varchar(max)" Nullable="false" />
           <Property Name="MaPhongKhoa" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaChucDanh" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaQuyen" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="NhomTieuChi">
           <Key>
             <PropertyRef Name="TieuChiID" />
           </Key>
-          <Property Name="TieuChiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TieuChiID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenTieuChi" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="PhanQuyen">
-          <Key>
-            <PropertyRef Name="MaQuyen" />
-            <PropertyRef Name="MaNhanVien" />
-          </Key>
-          <Property Name="MaQuyen" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaNhanVien" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="PhongKhoa">
           <Key>
@@ -159,7 +155,7 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </Key>
           <Property Name="MaPK" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="TenPK" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="TruongPK" Type="varchar" MaxLength="20" />
+          <Property Name="TruongPK" Type="bit" />
         </EntityType>
         <EntityType Name="Quyen">
           <Key>
@@ -177,15 +173,6 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="tabBieuMau">
-          <Key>
-            <PropertyRef Name="IDBieuMau" />
-          </Key>
-          <Property Name="IDBieuMau" Type="int" Nullable="false" />
-          <Property Name="MaBieuMau" Type="nvarchar" MaxLength="50" />
-          <Property Name="TenBieuMau" Type="nvarchar" MaxLength="200" />
-          <Property Name="MaCapDoKPIBenhVien" Type="int" />
         </EntityType>
         <EntityType Name="ThongBao">
           <Key>
@@ -220,18 +207,6 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ChiTietKPIKhoaPhong_MaKPI">
-          <End Role="KPI" Type="Self.KPI" Multiplicity="1" />
-          <End Role="ChiTietKPIKhoaPhong" Type="Self.ChiTietKPIKhoaPhong" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KPI">
-              <PropertyRef Name="MaKPI" />
-            </Principal>
-            <Dependent Role="ChiTietKPIKhoaPhong">
-              <PropertyRef Name="MaKPI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ChiTietKPIKhoaPhong_NguonChungMinh">
           <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
           <End Role="ChiTietKPIKhoaPhong" Type="Self.ChiTietKPIKhoaPhong" Multiplicity="*" />
@@ -241,6 +216,18 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             </Principal>
             <Dependent Role="ChiTietKPIKhoaPhong">
               <PropertyRef Name="NguonChungMinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong">
+          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="1" />
+          <End Role="ChiTietTieuChiMucTieuKhoaPhong" Type="Self.ChiTietTieuChiMucTieuKhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPI_KhoaPhong">
+              <PropertyRef Name="MaPhieuKPI" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiMucTieuKhoaPhong">
+              <PropertyRef Name="MaPhieuKPI" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -282,37 +269,61 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
         </Association>
         <Association Name="FK_ChiTietTieuChiPhieuPK_MaChiTietPK">
           <End Role="ChiTietKPIKhoaPhong" Type="Self.ChiTietKPIKhoaPhong" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuPhongKhoa" Type="Self.ChiTietTieuChiPhieuPhongKhoa" Multiplicity="*" />
+          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ChiTietKPIKhoaPhong">
               <PropertyRef Name="ChitietID" />
             </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuPhongKhoa">
-              <PropertyRef Name="MaChiTietPK" />
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="IDChiTietKPIKP" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuPK_MaPhieuPK">
-          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuPhongKhoa" Type="Self.ChiTietTieuChiPhieuPhongKhoa" Multiplicity="*" />
+        <Association Name="FK_KPI_KhoaPhong_DanhsachBieuMau">
+          <End Role="DanhsachBieuMau" Type="Self.DanhsachBieuMau" Multiplicity="1" />
+          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="KPI_KhoaPhong">
-              <PropertyRef Name="MaPhieuKPI" />
+            <Principal Role="DanhsachBieuMau">
+              <PropertyRef Name="IDBieuMau" />
             </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuPhongKhoa">
-              <PropertyRef Name="MaPhieuKPI" />
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="IDBieuMau" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuPK_TieuChiPK">
+        <Association Name="FK_KPI_KhoaPhong_KPI">
+          <End Role="KPI" Type="Self.KPI" Multiplicity="1" />
+          <End Role="ChiTietTieuChiMucTieuKhoaPhong" Type="Self.ChiTietTieuChiMucTieuKhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPI">
+              <PropertyRef Name="MaKPI" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiMucTieuKhoaPhong">
+              <PropertyRef Name="MaKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_NhomTieuChi">
           <End Role="NhomTieuChi" Type="Self.NhomTieuChi" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuPhongKhoa" Type="Self.ChiTietTieuChiPhieuPhongKhoa" Multiplicity="*" />
+          <End Role="ChiTietTieuChiMucTieuKhoaPhong" Type="Self.ChiTietTieuChiMucTieuKhoaPhong" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NhomTieuChi">
               <PropertyRef Name="TieuChiID" />
             </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuPhongKhoa">
+            <Dependent Role="ChiTietTieuChiMucTieuKhoaPhong">
               <PropertyRef Name="TieuChiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_PhongKhoa">
+          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="0..1" />
+          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongKhoa">
+              <PropertyRef Name="MaPK" />
+            </Principal>
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="MaPK" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -325,18 +336,6 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             </Principal>
             <Dependent Role="KPI_CaNhan">
               <PropertyRef Name="MaNhanVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_KPIPhongKhoa_PhongKhoa">
-          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
-          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongKhoa">
-              <PropertyRef Name="MaPK" />
-            </Principal>
-            <Dependent Role="KPI_KhoaPhong">
-              <PropertyRef Name="MaPhongKhoa" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -412,30 +411,6 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PhanQuyen_NguoiDung">
-          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
-          <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NguoiDung">
-              <PropertyRef Name="MaNV" />
-            </Principal>
-            <Dependent Role="PhanQuyen">
-              <PropertyRef Name="MaNhanVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PhanQuyen_Quyen">
-          <End Role="Quyen" Type="Self.Quyen" Multiplicity="1" />
-          <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Quyen">
-              <PropertyRef Name="MaQuyen" />
-            </Principal>
-            <Dependent Role="PhanQuyen">
-              <PropertyRef Name="MaQuyen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ThongBao_NguoiDung">
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
           <End Role="ThongBao" Type="Self.ThongBao" Multiplicity="*" />
@@ -479,12 +454,16 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TaoMaPhieuKPI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="ngay" Type="datetime" Mode="In" />
+        </Function>
         <EntityContainer Name="QuanLyKPIModelStoreContainer">
           <EntitySet Name="ChiTietKPICaNhan" EntityType="Self.ChiTietKPICaNhan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietKPIKhoaPhong" EntityType="Self.ChiTietKPIKhoaPhong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietTieuChiMucTieuKhoaPhong" EntityType="Self.ChiTietTieuChiMucTieuKhoaPhong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietTieuChiPhieuCaNhan" EntityType="Self.ChiTietTieuChiPhieuCaNhan" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ChiTietTieuChiPhieuPhongKhoa" EntityType="Self.ChiTietTieuChiPhieuPhongKhoa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChucDanh" EntityType="Self.ChucDanh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DanhsachBieuMau" EntityType="Self.DanhsachBieuMau" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KPI" EntityType="Self.KPI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KPI_CaNhan" EntityType="Self.KPI_CaNhan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KPI_KhoaPhong" EntityType="Self.KPI_KhoaPhong" Schema="dbo" store:Type="Tables" />
@@ -492,11 +471,9 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <EntitySet Name="NganHangKPI" EntityType="Self.NganHangKPI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhomTieuChi" EntityType="Self.NhomTieuChi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhongKhoa" EntityType="Self.PhongKhoa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tabBieuMau" EntityType="Self.tabBieuMau" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongBao" EntityType="Self.ThongBao" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ChiTietKPICN_MaKPI" Association="Self.FK_ChiTietKPICN_MaKPI">
             <End Role="KPI" EntitySet="KPI" />
@@ -506,13 +483,13 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             <End Role="PhongKhoa" EntitySet="PhongKhoa" />
             <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
           </AssociationSet>
-          <AssociationSet Name="FK_ChiTietKPIKhoaPhong_MaKPI" Association="Self.FK_ChiTietKPIKhoaPhong_MaKPI">
-            <End Role="KPI" EntitySet="KPI" />
-            <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
-          </AssociationSet>
           <AssociationSet Name="FK_ChiTietKPIKhoaPhong_NguonChungMinh" Association="Self.FK_ChiTietKPIKhoaPhong_NguonChungMinh">
             <End Role="PhongKhoa" EntitySet="PhongKhoa" />
             <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong" Association="Self.FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong">
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+            <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" Association="Self.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN">
             <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
@@ -528,23 +505,27 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </AssociationSet>
           <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_MaChiTietPK" Association="Self.FK_ChiTietTieuChiPhieuPK_MaChiTietPK">
             <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
-            <End Role="ChiTietTieuChiPhieuPhongKhoa" EntitySet="ChiTietTieuChiPhieuPhongKhoa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_MaPhieuPK" Association="Self.FK_ChiTietTieuChiPhieuPK_MaPhieuPK">
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
-            <End Role="ChiTietTieuChiPhieuPhongKhoa" EntitySet="ChiTietTieuChiPhieuPhongKhoa" />
           </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_TieuChiPK" Association="Self.FK_ChiTietTieuChiPhieuPK_TieuChiPK">
+          <AssociationSet Name="FK_KPI_KhoaPhong_DanhsachBieuMau" Association="Self.FK_KPI_KhoaPhong_DanhsachBieuMau">
+            <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_KPI" Association="Self.FK_KPI_KhoaPhong_KPI">
+            <End Role="KPI" EntitySet="KPI" />
+            <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_NhomTieuChi" Association="Self.FK_KPI_KhoaPhong_NhomTieuChi">
             <End Role="NhomTieuChi" EntitySet="NhomTieuChi" />
-            <End Role="ChiTietTieuChiPhieuPhongKhoa" EntitySet="ChiTietTieuChiPhieuPhongKhoa" />
+            <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_PhongKhoa" Association="Self.FK_KPI_KhoaPhong_PhongKhoa">
+            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_KPICaNhan_NguoiDung" Association="Self.FK_KPICaNhan_NguoiDung">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KPIPhongKhoa_PhongKhoa" Association="Self.FK_KPIPhongKhoa_PhongKhoa">
-            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
-            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_KPIThuocNganHang_MaKPI" Association="Self.FK_KPIThuocNganHang_MaKPI">
             <End Role="KPI" EntitySet="KPI" />
@@ -570,14 +551,6 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             <End Role="PhongKhoa" EntitySet="PhongKhoa" />
             <End Role="NguoiDung" EntitySet="NguoiDung" />
           </AssociationSet>
-          <AssociationSet Name="FK_PhanQuyen_NguoiDung" Association="Self.FK_PhanQuyen_NguoiDung">
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-            <End Role="PhanQuyen" EntitySet="PhanQuyen" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PhanQuyen_Quyen" Association="Self.FK_PhanQuyen_Quyen">
-            <End Role="Quyen" EntitySet="Quyen" />
-            <End Role="PhanQuyen" EntitySet="PhanQuyen" />
-          </AssociationSet>
           <AssociationSet Name="FK_ThongBao_NguoiDung" Association="Self.FK_ThongBao_NguoiDung">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="ThongBao" EntitySet="ThongBao" />
@@ -587,494 +560,7 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyKPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ChiTietKPICaNhan">
-          <Key>
-            <PropertyRef Name="ChitietID" />
-          </Key>
-          <Property Name="MaKPI" Type="Int32" Nullable="false" />
-          <Property Name="TrongSo" Type="Double" />
-          <Property Name="NguonChungMinh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KeHoach" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ThucHien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="HoanThanh" Type="Double" />
-          <Property Name="ChitietID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="KPI" Relationship="Self.FK_ChiTietKPICN_MaKPI" FromRole="ChiTietKPICaNhan" ToRole="KPI" />
-          <NavigationProperty Name="PhongKhoa" Relationship="Self.FK_ChiTietKPICN_NguonChungMinh" FromRole="ChiTietKPICaNhan" ToRole="PhongKhoa" />
-          <NavigationProperty Name="ChiTietTieuChiPhieuCaNhan" Relationship="Self.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" FromRole="ChiTietKPICaNhan" ToRole="ChiTietTieuChiPhieuCaNhan" />
-        </EntityType>
-        <EntityType Name="ChiTietKPIKhoaPhong">
-          <Key>
-            <PropertyRef Name="ChitietID" />
-          </Key>
-          <Property Name="MaKPI" Type="Int32" Nullable="false" />
-          <Property Name="TrongSo" Type="Double" />
-          <Property Name="NguonChungMinh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KeHoach" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ThucHien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="HoanThanh" Type="Double" />
-          <Property Name="ChitietID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="KPI" Relationship="Self.FK_ChiTietKPIKhoaPhong_MaKPI" FromRole="ChiTietKPIKhoaPhong" ToRole="KPI" />
-          <NavigationProperty Name="PhongKhoa" Relationship="Self.FK_ChiTietKPIKhoaPhong_NguonChungMinh" FromRole="ChiTietKPIKhoaPhong" ToRole="PhongKhoa" />
-          <NavigationProperty Name="ChiTietTieuChiPhieuPhongKhoa" Relationship="Self.FK_ChiTietTieuChiPhieuPK_MaChiTietPK" FromRole="ChiTietKPIKhoaPhong" ToRole="ChiTietTieuChiPhieuPhongKhoa" />
-        </EntityType>
-        <EntityType Name="ChiTietTieuChiPhieuCaNhan">
-          <Key>
-            <PropertyRef Name="MaPhieuKPI" />
-            <PropertyRef Name="MaChiTietCN" />
-            <PropertyRef Name="TieuChiID" />
-          </Key>
-          <Property Name="MaPhieuKPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaChiTietCN" Type="Int32" Nullable="false" />
-          <Property Name="TieuChiID" Type="Int32" Nullable="false" />
-          <Property Name="TrongSo" Type="Double" Nullable="false" />
-          <NavigationProperty Name="ChiTietKPICaNhan" Relationship="Self.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" FromRole="ChiTietTieuChiPhieuCaNhan" ToRole="ChiTietKPICaNhan" />
-          <NavigationProperty Name="KPI_CaNhan" Relationship="Self.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" FromRole="ChiTietTieuChiPhieuCaNhan" ToRole="KPI_CaNhan" />
-          <NavigationProperty Name="NhomTieuChi" Relationship="Self.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" FromRole="ChiTietTieuChiPhieuCaNhan" ToRole="NhomTieuChi" />
-        </EntityType>
-        <EntityType Name="ChiTietTieuChiPhieuPhongKhoa">
-          <Key>
-            <PropertyRef Name="MaPhieuKPI" />
-            <PropertyRef Name="MaChiTietPK" />
-            <PropertyRef Name="TieuChiID" />
-          </Key>
-          <Property Name="MaPhieuKPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaChiTietPK" Type="Int32" Nullable="false" />
-          <Property Name="TieuChiID" Type="Int32" Nullable="false" />
-          <Property Name="TrongSo" Type="Double" Nullable="false" />
-          <NavigationProperty Name="ChiTietKPIKhoaPhong" Relationship="Self.FK_ChiTietTieuChiPhieuPK_MaChiTietPK" FromRole="ChiTietTieuChiPhieuPhongKhoa" ToRole="ChiTietKPIKhoaPhong" />
-          <NavigationProperty Name="KPI_KhoaPhong" Relationship="Self.FK_ChiTietTieuChiPhieuPK_MaPhieuPK" FromRole="ChiTietTieuChiPhieuPhongKhoa" ToRole="KPI_KhoaPhong" />
-          <NavigationProperty Name="NhomTieuChi" Relationship="Self.FK_ChiTietTieuChiPhieuPK_TieuChiPK" FromRole="ChiTietTieuChiPhieuPhongKhoa" ToRole="NhomTieuChi" />
-        </EntityType>
-        <EntityType Name="ChucDanh">
-          <Key>
-            <PropertyRef Name="MaChucDanh" />
-          </Key>
-          <Property Name="MaChucDanh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenChucDanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="NganHangKPI" Relationship="Self.FK_NganHangKPI_MaChucDanh" FromRole="ChucDanh" ToRole="NganHangKPI" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_NguoiDung_ChucDanh" FromRole="ChucDanh" ToRole="NguoiDung" />
-          <Property Name="MaCapDoChucDanh" Type="Int32" />
-        </EntityType>
-        <EntityType Name="KPI">
-          <Key>
-            <PropertyRef Name="MaKPI" />
-          </Key>
-          <Property Name="MaKPI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PhuongPhapDo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CongViecCaNhan" Type="Boolean" Nullable="false" />
-          <Property Name="ChiTieu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ChiTietKPICaNhan" Relationship="Self.FK_ChiTietKPICN_MaKPI" FromRole="KPI" ToRole="ChiTietKPICaNhan" />
-          <NavigationProperty Name="ChiTietKPIKhoaPhong" Relationship="Self.FK_ChiTietKPIKhoaPhong_MaKPI" FromRole="KPI" ToRole="ChiTietKPIKhoaPhong" />
-          <NavigationProperty Name="NganHangKPI" Relationship="Self.KPITrongNganHang" FromRole="KPI" ToRole="NganHangKPI" />
-        </EntityType>
-        <EntityType Name="KPI_CaNhan">
-          <Key>
-            <PropertyRef Name="MaPhieuKPI" />
-          </Key>
-          <Property Name="MaPhieuKPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NoiDung" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NgayTao" Type="DateTime" Precision="3" />
-          <Property Name="Quy" Type="Int32" />
-          <Property Name="Nam" Type="Int32" />
-          <Property Name="MauPhieu" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TrangThai" Type="Int32" />
-          <NavigationProperty Name="ChiTietTieuChiPhieuCaNhan" Relationship="Self.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" FromRole="KPI_CaNhan" ToRole="ChiTietTieuChiPhieuCaNhan" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_KPICaNhan_NguoiDung" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
-        </EntityType>
-        <EntityType Name="KPI_KhoaPhong">
-          <Key>
-            <PropertyRef Name="MaPhieuKPI" />
-          </Key>
-          <Property Name="MaPhieuKPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaPhongKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NoiDung" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NgayTao" Type="DateTime" Precision="3" />
-          <Property Name="Quy" Type="Int32" />
-          <Property Name="Nam" Type="Int32" />
-          <Property Name="LanhDao" Type="Boolean" />
-          <Property Name="MauPhieu" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TrangThai" Type="Int32" />
-          <NavigationProperty Name="ChiTietTieuChiPhieuPhongKhoa" Relationship="Self.FK_ChiTietTieuChiPhieuPK_MaPhieuPK" FromRole="KPI_KhoaPhong" ToRole="ChiTietTieuChiPhieuPhongKhoa" />
-          <NavigationProperty Name="PhongKhoa" Relationship="Self.FK_KPIPhongKhoa_PhongKhoa" FromRole="KPI_KhoaPhong" ToRole="PhongKhoa" />
-        </EntityType>
-        <EntityType Name="NganHangKPI">
-          <Key>
-            <PropertyRef Name="MaNganHangKPI" />
-          </Key>
-          <Property Name="MaNganHangKPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaChucDanh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaPK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ChucDanh" Relationship="Self.FK_NganHangKPI_MaChucDanh" FromRole="NganHangKPI" ToRole="ChucDanh" />
-          <NavigationProperty Name="PhongKhoa" Relationship="Self.FK_NganHangKPI_MaKhoa" FromRole="NganHangKPI" ToRole="PhongKhoa" />
-          <NavigationProperty Name="KPI" Relationship="Self.KPITrongNganHang" FromRole="NganHangKPI" ToRole="KPI" />
-        </EntityType>
-        <EntityType Name="NguoiDung">
-          <Key>
-            <PropertyRef Name="MaNV" />
-          </Key>
-          <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HinhAnhNV" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="SDT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="Gmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="TenTaiKhoan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MatKhau" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaPhongKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaChucDanh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ChucDanh" Relationship="Self.FK_NguoiDung_ChucDanh" FromRole="NguoiDung" ToRole="ChucDanh" />
-          <NavigationProperty Name="KPI_CaNhan" Relationship="Self.FK_KPICaNhan_NguoiDung" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
-          <NavigationProperty Name="PhongKhoa" Relationship="Self.FK_NguoiDung_PhongKhoa" FromRole="NguoiDung" ToRole="PhongKhoa" />
-          <NavigationProperty Name="ThongBao" Relationship="Self.FK_ThongBao_NguoiDung" FromRole="NguoiDung" ToRole="ThongBao" />
-          <NavigationProperty Name="Quyen" Relationship="Self.PhanQuyen" FromRole="NguoiDung" ToRole="Quyen" />
-        </EntityType>
-        <EntityType Name="NhomTieuChi">
-          <Key>
-            <PropertyRef Name="TieuChiID" />
-          </Key>
-          <Property Name="TieuChiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenTieuChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ChiTietTieuChiPhieuCaNhan" Relationship="Self.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" FromRole="NhomTieuChi" ToRole="ChiTietTieuChiPhieuCaNhan" />
-          <NavigationProperty Name="ChiTietTieuChiPhieuPhongKhoa" Relationship="Self.FK_ChiTietTieuChiPhieuPK_TieuChiPK" FromRole="NhomTieuChi" ToRole="ChiTietTieuChiPhieuPhongKhoa" />
-        </EntityType>
-        <EntityType Name="PhongKhoa">
-          <Key>
-            <PropertyRef Name="MaPK" />
-          </Key>
-          <Property Name="MaPK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenPK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TruongPK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ChiTietKPICaNhan" Relationship="Self.FK_ChiTietKPICN_NguonChungMinh" FromRole="PhongKhoa" ToRole="ChiTietKPICaNhan" />
-          <NavigationProperty Name="ChiTietKPIKhoaPhong" Relationship="Self.FK_ChiTietKPIKhoaPhong_NguonChungMinh" FromRole="PhongKhoa" ToRole="ChiTietKPIKhoaPhong" />
-          <NavigationProperty Name="KPI_KhoaPhong" Relationship="Self.FK_KPIPhongKhoa_PhongKhoa" FromRole="PhongKhoa" ToRole="KPI_KhoaPhong" />
-          <NavigationProperty Name="NganHangKPI" Relationship="Self.FK_NganHangKPI_MaKhoa" FromRole="PhongKhoa" ToRole="NganHangKPI" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_NguoiDung_PhongKhoa" FromRole="PhongKhoa" ToRole="NguoiDung" />
-        </EntityType>
-        <EntityType Name="Quyen">
-          <Key>
-            <PropertyRef Name="MaQuyen" />
-          </Key>
-          <Property Name="MaQuyen" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenQuyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.PhanQuyen" FromRole="Quyen" ToRole="NguoiDung" />
-        </EntityType>
-        <EntityType Name="ThongBao">
-          <Key>
-            <PropertyRef Name="MaThongBao" />
-          </Key>
-          <Property Name="MaThongBao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaNhanVien" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NoiDung" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_ThongBao_NguoiDung" FromRole="ThongBao" ToRole="NguoiDung" />
-        </EntityType>
-        <Association Name="FK_ChiTietKPICN_MaKPI">
-          <End Role="KPI" Type="Self.KPI" Multiplicity="1" />
-          <End Role="ChiTietKPICaNhan" Type="Self.ChiTietKPICaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KPI">
-              <PropertyRef Name="MaKPI" />
-            </Principal>
-            <Dependent Role="ChiTietKPICaNhan">
-              <PropertyRef Name="MaKPI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietKPICN_NguonChungMinh">
-          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
-          <End Role="ChiTietKPICaNhan" Type="Self.ChiTietKPICaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongKhoa">
-              <PropertyRef Name="MaPK" />
-            </Principal>
-            <Dependent Role="ChiTietKPICaNhan">
-              <PropertyRef Name="NguonChungMinh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN">
-          <End Role="ChiTietKPICaNhan" Type="Self.ChiTietKPICaNhan" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuCaNhan" Type="Self.ChiTietTieuChiPhieuCaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChiTietKPICaNhan">
-              <PropertyRef Name="ChitietID" />
-            </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuCaNhan">
-              <PropertyRef Name="MaChiTietCN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietKPIKhoaPhong_MaKPI">
-          <End Role="KPI" Type="Self.KPI" Multiplicity="1" />
-          <End Role="ChiTietKPIKhoaPhong" Type="Self.ChiTietKPIKhoaPhong" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KPI">
-              <PropertyRef Name="MaKPI" />
-            </Principal>
-            <Dependent Role="ChiTietKPIKhoaPhong">
-              <PropertyRef Name="MaKPI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietKPIKhoaPhong_NguonChungMinh">
-          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
-          <End Role="ChiTietKPIKhoaPhong" Type="Self.ChiTietKPIKhoaPhong" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongKhoa">
-              <PropertyRef Name="MaPK" />
-            </Principal>
-            <Dependent Role="ChiTietKPIKhoaPhong">
-              <PropertyRef Name="NguonChungMinh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuPK_MaChiTietPK">
-          <End Role="ChiTietKPIKhoaPhong" Type="Self.ChiTietKPIKhoaPhong" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuPhongKhoa" Type="Self.ChiTietTieuChiPhieuPhongKhoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChiTietKPIKhoaPhong">
-              <PropertyRef Name="ChitietID" />
-            </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuPhongKhoa">
-              <PropertyRef Name="MaChiTietPK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN">
-          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuCaNhan" Type="Self.ChiTietTieuChiPhieuCaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KPI_CaNhan">
-              <PropertyRef Name="MaPhieuKPI" />
-            </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuCaNhan">
-              <PropertyRef Name="MaPhieuKPI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN">
-          <End Role="NhomTieuChi" Type="Self.NhomTieuChi" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuCaNhan" Type="Self.ChiTietTieuChiPhieuCaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhomTieuChi">
-              <PropertyRef Name="TieuChiID" />
-            </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuCaNhan">
-              <PropertyRef Name="TieuChiID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuPK_MaPhieuPK">
-          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuPhongKhoa" Type="Self.ChiTietTieuChiPhieuPhongKhoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KPI_KhoaPhong">
-              <PropertyRef Name="MaPhieuKPI" />
-            </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuPhongKhoa">
-              <PropertyRef Name="MaPhieuKPI" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietTieuChiPhieuPK_TieuChiPK">
-          <End Role="NhomTieuChi" Type="Self.NhomTieuChi" Multiplicity="1" />
-          <End Role="ChiTietTieuChiPhieuPhongKhoa" Type="Self.ChiTietTieuChiPhieuPhongKhoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhomTieuChi">
-              <PropertyRef Name="TieuChiID" />
-            </Principal>
-            <Dependent Role="ChiTietTieuChiPhieuPhongKhoa">
-              <PropertyRef Name="TieuChiID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NganHangKPI_MaChucDanh">
-          <End Role="ChucDanh" Type="Self.ChucDanh" Multiplicity="1" />
-          <End Role="NganHangKPI" Type="Self.NganHangKPI" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChucDanh">
-              <PropertyRef Name="MaChucDanh" />
-            </Principal>
-            <Dependent Role="NganHangKPI">
-              <PropertyRef Name="MaChucDanh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NguoiDung_ChucDanh">
-          <End Role="ChucDanh" Type="Self.ChucDanh" Multiplicity="1" />
-          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChucDanh">
-              <PropertyRef Name="MaChucDanh" />
-            </Principal>
-            <Dependent Role="NguoiDung">
-              <PropertyRef Name="MaChucDanh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_KPICaNhan_NguoiDung">
-          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
-          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NguoiDung">
-              <PropertyRef Name="MaNV" />
-            </Principal>
-            <Dependent Role="KPI_CaNhan">
-              <PropertyRef Name="MaNhanVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_KPIPhongKhoa_PhongKhoa">
-          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
-          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongKhoa">
-              <PropertyRef Name="MaPK" />
-            </Principal>
-            <Dependent Role="KPI_KhoaPhong">
-              <PropertyRef Name="MaPhongKhoa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NganHangKPI_MaKhoa">
-          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
-          <End Role="NganHangKPI" Type="Self.NganHangKPI" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongKhoa">
-              <PropertyRef Name="MaPK" />
-            </Principal>
-            <Dependent Role="NganHangKPI">
-              <PropertyRef Name="MaPK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NguoiDung_PhongKhoa">
-          <End Role="PhongKhoa" Type="Self.PhongKhoa" Multiplicity="1" />
-          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongKhoa">
-              <PropertyRef Name="MaPK" />
-            </Principal>
-            <Dependent Role="NguoiDung">
-              <PropertyRef Name="MaPhongKhoa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ThongBao_NguoiDung">
-          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
-          <End Role="ThongBao" Type="Self.ThongBao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NguoiDung">
-              <PropertyRef Name="MaNV" />
-            </Principal>
-            <Dependent Role="ThongBao">
-              <PropertyRef Name="MaNhanVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="KPITrongNganHang">
-          <End Role="KPI" Type="Self.KPI" Multiplicity="*" />
-          <End Role="NganHangKPI" Type="Self.NganHangKPI" Multiplicity="*" />
-        </Association>
-        <Association Name="PhanQuyen">
-          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
-          <End Role="Quyen" Type="Self.Quyen" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="QuanLyKPIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChiTietKPICaNhan" EntityType="Self.ChiTietKPICaNhan" />
-          <EntitySet Name="ChiTietKPIKhoaPhong" EntityType="Self.ChiTietKPIKhoaPhong" />
-          <EntitySet Name="ChiTietTieuChiPhieuCaNhan" EntityType="Self.ChiTietTieuChiPhieuCaNhan" />
-          <EntitySet Name="ChiTietTieuChiPhieuPhongKhoa" EntityType="Self.ChiTietTieuChiPhieuPhongKhoa" />
-          <EntitySet Name="ChucDanh" EntityType="Self.ChucDanh" />
-          <EntitySet Name="KPI" EntityType="Self.KPI" />
-          <EntitySet Name="KPI_CaNhan" EntityType="Self.KPI_CaNhan" />
-          <EntitySet Name="KPI_KhoaPhong" EntityType="Self.KPI_KhoaPhong" />
-          <EntitySet Name="NganHangKPI" EntityType="Self.NganHangKPI" />
-          <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" />
-          <EntitySet Name="NhomTieuChi" EntityType="Self.NhomTieuChi" />
-          <EntitySet Name="PhongKhoa" EntityType="Self.PhongKhoa" />
-          <EntitySet Name="Quyen" EntityType="Self.Quyen" />
-          <EntitySet Name="ThongBao" EntityType="Self.ThongBao" />
-          <AssociationSet Name="FK_ChiTietKPICN_MaKPI" Association="Self.FK_ChiTietKPICN_MaKPI">
-            <End Role="KPI" EntitySet="KPI" />
-            <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietKPICN_NguonChungMinh" Association="Self.FK_ChiTietKPICN_NguonChungMinh">
-            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
-            <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" Association="Self.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN">
-            <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
-            <End Role="ChiTietTieuChiPhieuCaNhan" EntitySet="ChiTietTieuChiPhieuCaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietKPIKhoaPhong_MaKPI" Association="Self.FK_ChiTietKPIKhoaPhong_MaKPI">
-            <End Role="KPI" EntitySet="KPI" />
-            <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietKPIKhoaPhong_NguonChungMinh" Association="Self.FK_ChiTietKPIKhoaPhong_NguonChungMinh">
-            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
-            <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_MaChiTietPK" Association="Self.FK_ChiTietTieuChiPhieuPK_MaChiTietPK">
-            <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
-            <End Role="ChiTietTieuChiPhieuPhongKhoa" EntitySet="ChiTietTieuChiPhieuPhongKhoa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" Association="Self.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN">
-            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
-            <End Role="ChiTietTieuChiPhieuCaNhan" EntitySet="ChiTietTieuChiPhieuCaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" Association="Self.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN">
-            <End Role="NhomTieuChi" EntitySet="NhomTieuChi" />
-            <End Role="ChiTietTieuChiPhieuCaNhan" EntitySet="ChiTietTieuChiPhieuCaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_MaPhieuPK" Association="Self.FK_ChiTietTieuChiPhieuPK_MaPhieuPK">
-            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
-            <End Role="ChiTietTieuChiPhieuPhongKhoa" EntitySet="ChiTietTieuChiPhieuPhongKhoa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_TieuChiPK" Association="Self.FK_ChiTietTieuChiPhieuPK_TieuChiPK">
-            <End Role="NhomTieuChi" EntitySet="NhomTieuChi" />
-            <End Role="ChiTietTieuChiPhieuPhongKhoa" EntitySet="ChiTietTieuChiPhieuPhongKhoa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NganHangKPI_MaChucDanh" Association="Self.FK_NganHangKPI_MaChucDanh">
-            <End Role="ChucDanh" EntitySet="ChucDanh" />
-            <End Role="NganHangKPI" EntitySet="NganHangKPI" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NguoiDung_ChucDanh" Association="Self.FK_NguoiDung_ChucDanh">
-            <End Role="ChucDanh" EntitySet="ChucDanh" />
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KPICaNhan_NguoiDung" Association="Self.FK_KPICaNhan_NguoiDung">
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KPIPhongKhoa_PhongKhoa" Association="Self.FK_KPIPhongKhoa_PhongKhoa">
-            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
-            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NganHangKPI_MaKhoa" Association="Self.FK_NganHangKPI_MaKhoa">
-            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
-            <End Role="NganHangKPI" EntitySet="NganHangKPI" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NguoiDung_PhongKhoa" Association="Self.FK_NguoiDung_PhongKhoa">
-            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThongBao_NguoiDung" Association="Self.FK_ThongBao_NguoiDung">
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-            <End Role="ThongBao" EntitySet="ThongBao" />
-          </AssociationSet>
-          <AssociationSet Name="KPITrongNganHang" Association="Self.KPITrongNganHang">
-            <End Role="KPI" EntitySet="KPI" />
-            <End Role="NganHangKPI" EntitySet="NganHangKPI" />
-          </AssociationSet>
-          <AssociationSet Name="PhanQuyen" Association="Self.PhanQuyen">
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-            <End Role="Quyen" EntitySet="Quyen" />
-          </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -1105,9 +591,99 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="ChiTietKPICaNhan" EntityType="QuanLyKPIModel.ChiTietKPICaNhan" />
+          <EntitySet Name="ChiTietKPIKhoaPhong" EntityType="QuanLyKPIModel.ChiTietKPIKhoaPhong" />
+          <EntitySet Name="ChiTietTieuChiMucTieuKhoaPhong" EntityType="QuanLyKPIModel.ChiTietTieuChiMucTieuKhoaPhong" />
+          <EntitySet Name="ChiTietTieuChiPhieuCaNhan" EntityType="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan" />
+          <EntitySet Name="ChucDanh" EntityType="QuanLyKPIModel.ChucDanh" />
+          <EntitySet Name="DanhsachBieuMau" EntityType="QuanLyKPIModel.DanhsachBieuMau" />
+          <EntitySet Name="KPI" EntityType="QuanLyKPIModel.KPI" />
+          <EntitySet Name="KPI_CaNhan" EntityType="QuanLyKPIModel.KPI_CaNhan" />
+          <EntitySet Name="KPI_KhoaPhong" EntityType="QuanLyKPIModel.KPI_KhoaPhong" />
+          <EntitySet Name="NganHangKPI" EntityType="QuanLyKPIModel.NganHangKPI" />
+          <EntitySet Name="NguoiDung" EntityType="QuanLyKPIModel.NguoiDung" />
+          <EntitySet Name="NhomTieuChi" EntityType="QuanLyKPIModel.NhomTieuChi" />
+          <EntitySet Name="PhongKhoa" EntityType="QuanLyKPIModel.PhongKhoa" />
+          <EntitySet Name="Quyen" EntityType="QuanLyKPIModel.Quyen" />
           <EntitySet Name="sysdiagrams" EntityType="QuanLyKPIModel.sysdiagrams" />
-          <EntitySet Name="tabBieuMau" EntityType="QuanLyKPIModel.tabBieuMau" />
-        </EntityContainer>
+          <EntitySet Name="ThongBao" EntityType="QuanLyKPIModel.ThongBao" />
+          <AssociationSet Name="FK_ChiTietKPICN_MaKPI" Association="QuanLyKPIModel.FK_ChiTietKPICN_MaKPI">
+            <End Role="KPI" EntitySet="KPI" />
+            <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietKPICN_NguonChungMinh" Association="QuanLyKPIModel.FK_ChiTietKPICN_NguonChungMinh">
+            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
+            <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN">
+            <End Role="ChiTietKPICaNhan" EntitySet="ChiTietKPICaNhan" />
+            <End Role="ChiTietTieuChiPhieuCaNhan" EntitySet="ChiTietTieuChiPhieuCaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietKPIKhoaPhong_NguonChungMinh" Association="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_NguonChungMinh">
+            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
+            <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietTieuChiPhieuPK_MaChiTietPK" Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_MaChiTietPK">
+            <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong" Association="QuanLyKPIModel.FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong">
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+            <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_KPI" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI">
+            <End Role="KPI" EntitySet="KPI" />
+            <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_NhomTieuChi" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_NhomTieuChi">
+            <End Role="NhomTieuChi" EntitySet="NhomTieuChi" />
+            <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN">
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+            <End Role="ChiTietTieuChiPhieuCaNhan" EntitySet="ChiTietTieuChiPhieuCaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" Association="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN">
+            <End Role="NhomTieuChi" EntitySet="NhomTieuChi" />
+            <End Role="ChiTietTieuChiPhieuCaNhan" EntitySet="ChiTietTieuChiPhieuCaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NganHangKPI_MaChucDanh" Association="QuanLyKPIModel.FK_NganHangKPI_MaChucDanh">
+            <End Role="ChucDanh" EntitySet="ChucDanh" />
+            <End Role="NganHangKPI" EntitySet="NganHangKPI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NguoiDung_ChucDanh" Association="QuanLyKPIModel.FK_NguoiDung_ChucDanh">
+            <End Role="ChucDanh" EntitySet="ChucDanh" />
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_DanhsachBieuMau" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_DanhsachBieuMau">
+            <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPICaNhan_NguoiDung" Association="QuanLyKPIModel.FK_KPICaNhan_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_PhongKhoa" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_PhongKhoa">
+            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NganHangKPI_MaKhoa" Association="QuanLyKPIModel.FK_NganHangKPI_MaKhoa">
+            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
+            <End Role="NganHangKPI" EntitySet="NganHangKPI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NguoiDung_PhongKhoa" Association="QuanLyKPIModel.FK_NguoiDung_PhongKhoa">
+            <End Role="PhongKhoa" EntitySet="PhongKhoa" />
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongBao_NguoiDung" Association="QuanLyKPIModel.FK_ThongBao_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="ThongBao" EntitySet="ThongBao" />
+          </AssociationSet>
+          <AssociationSet Name="KPITrongNganHang" Association="QuanLyKPIModel.KPITrongNganHang">
+            <End Role="KPI" EntitySet="KPI" />
+            <End Role="NganHangKPI" EntitySet="NganHangKPI" />
+          </AssociationSet>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -1119,6 +695,194 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="ChiTietKPICaNhan">
+          <Key>
+            <PropertyRef Name="ChitietID" />
+          </Key>
+          <Property Name="MaKPI" Type="Int32" Nullable="false" />
+          <Property Name="TrongSo" Type="Double" />
+          <Property Name="NguonChungMinh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KeHoach" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ThucHien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HoanThanh" Type="Double" />
+          <Property Name="ChitietID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="KPI" Relationship="QuanLyKPIModel.FK_ChiTietKPICN_MaKPI" FromRole="ChiTietKPICaNhan" ToRole="KPI" />
+          <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_ChiTietKPICN_NguonChungMinh" FromRole="ChiTietKPICaNhan" ToRole="PhongKhoa" />
+          <NavigationProperty Name="ChiTietTieuChiPhieuCaNhan" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" FromRole="ChiTietKPICaNhan" ToRole="ChiTietTieuChiPhieuCaNhan" />
+        </EntityType>
+        <EntityType Name="ChiTietKPIKhoaPhong">
+          <Key>
+            <PropertyRef Name="ChitietID" />
+          </Key>
+          <Property Name="TrongSo" Type="Double" />
+          <Property Name="NguonChungMinh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KeHoach" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ThucHien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HoanThanh" Type="Double" />
+          <Property Name="ChitietID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_NguonChungMinh" FromRole="ChiTietKPIKhoaPhong" ToRole="PhongKhoa" />
+          <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_MaChiTietPK" FromRole="ChiTietKPIKhoaPhong" ToRole="KPI_KhoaPhong" />
+        </EntityType>
+        <EntityType Name="ChiTietTieuChiMucTieuKhoaPhong">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaPhieuKPI" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaKPI" Type="Int32" Nullable="false" />
+          <Property Name="TieuChiID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ChiTieuBV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ChiTieuHT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TrongSoTieuChiBV" Type="Int32" Nullable="false" />
+          <Property Name="TrongSoKPIBV" Type="Int32" Nullable="false" />
+          <Property Name="TrongSoTieuChiHT" Type="Int32" />
+          <Property Name="TrongSoKPIHT" Type="Int32" />
+          <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong" FromRole="ChiTietTieuChiMucTieuKhoaPhong" ToRole="KPI_KhoaPhong" />
+          <NavigationProperty Name="KPI" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI" FromRole="ChiTietTieuChiMucTieuKhoaPhong" ToRole="KPI" />
+          <NavigationProperty Name="NhomTieuChi" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NhomTieuChi" FromRole="ChiTietTieuChiMucTieuKhoaPhong" ToRole="NhomTieuChi" />
+        </EntityType>
+        <EntityType Name="ChiTietTieuChiPhieuCaNhan">
+          <Key>
+            <PropertyRef Name="MaPhieuKPI" />
+            <PropertyRef Name="MaChiTietCN" />
+            <PropertyRef Name="TieuChiID" />
+          </Key>
+          <Property Name="MaPhieuKPI" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaChiTietCN" Type="Int32" Nullable="false" />
+          <Property Name="TieuChiID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TrongSo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="ChiTietKPICaNhan" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN" FromRole="ChiTietTieuChiPhieuCaNhan" ToRole="ChiTietKPICaNhan" />
+          <NavigationProperty Name="KPI_CaNhan" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" FromRole="ChiTietTieuChiPhieuCaNhan" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="NhomTieuChi" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" FromRole="ChiTietTieuChiPhieuCaNhan" ToRole="NhomTieuChi" />
+        </EntityType>
+        <EntityType Name="ChucDanh">
+          <Key>
+            <PropertyRef Name="MaChucDanh" />
+          </Key>
+          <Property Name="MaChucDanh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TenChucDanh" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaCapDoChucDanh" Type="Int32" />
+          <NavigationProperty Name="NganHangKPI" Relationship="QuanLyKPIModel.FK_NganHangKPI_MaChucDanh" FromRole="ChucDanh" ToRole="NganHangKPI" />
+          <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_NguoiDung_ChucDanh" FromRole="ChucDanh" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="DanhsachBieuMau">
+          <Key>
+            <PropertyRef Name="IDBieuMau" />
+          </Key>
+          <Property Name="IDBieuMau" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaBieuMau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenBieuMau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaCapDoKPIBenhVien" Type="Int32" />
+          <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_DanhsachBieuMau" FromRole="DanhsachBieuMau" ToRole="KPI_KhoaPhong" />
+        </EntityType>
+        <EntityType Name="KPI">
+          <Key>
+            <PropertyRef Name="MaKPI" />
+          </Key>
+          <Property Name="MaKPI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DonViTinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhuongPhapDo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CongViecCaNhan" Type="Boolean" Nullable="false" />
+          <Property Name="ChiTieu" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ChiTietKPICaNhan" Relationship="QuanLyKPIModel.FK_ChiTietKPICN_MaKPI" FromRole="KPI" ToRole="ChiTietKPICaNhan" />
+          <NavigationProperty Name="ChiTietTieuChiMucTieuKhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI" FromRole="KPI" ToRole="ChiTietTieuChiMucTieuKhoaPhong" />
+          <NavigationProperty Name="NganHangKPI" Relationship="QuanLyKPIModel.KPITrongNganHang" FromRole="KPI" ToRole="NganHangKPI" />
+        </EntityType>
+        <EntityType Name="KPI_CaNhan">
+          <Key>
+            <PropertyRef Name="MaPhieuKPI" />
+          </Key>
+          <Property Name="MaPhieuKPI" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaNhanVien" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="Quy" Type="Int32" />
+          <Property Name="Nam" Type="Int32" />
+          <Property Name="MauPhieu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TrangThai" Type="Int32" />
+          <Property Name="TrongSo" Type="Double" />
+          <NavigationProperty Name="ChiTietTieuChiPhieuCaNhan" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN" FromRole="KPI_CaNhan" ToRole="ChiTietTieuChiPhieuCaNhan" />
+          <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_KPICaNhan_NguoiDung" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="KPI_KhoaPhong">
+          <Key>
+            <PropertyRef Name="MaPhieuKPI" />
+          </Key>
+          <Property Name="MaPhieuKPI" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IDChiTietKPIKP" Type="Int32" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <Property Name="MaPK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="Quy" Type="Int32" />
+          <Property Name="IDBieuMau" Type="Int32" Nullable="false" />
+          <Property Name="Nam" Type="Int32" />
+          <Property Name="TruongPK" Type="Boolean" />
+          <NavigationProperty Name="ChiTietKPIKhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuPK_MaChiTietPK" FromRole="KPI_KhoaPhong" ToRole="ChiTietKPIKhoaPhong" />
+          <NavigationProperty Name="ChiTietTieuChiMucTieuKhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong" FromRole="KPI_KhoaPhong" ToRole="ChiTietTieuChiMucTieuKhoaPhong" />
+          <NavigationProperty Name="DanhsachBieuMau" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_DanhsachBieuMau" FromRole="KPI_KhoaPhong" ToRole="DanhsachBieuMau" />
+          <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_PhongKhoa" FromRole="KPI_KhoaPhong" ToRole="PhongKhoa" />
+        </EntityType>
+        <EntityType Name="NganHangKPI">
+          <Key>
+            <PropertyRef Name="MaNganHangKPI" />
+          </Key>
+          <Property Name="MaNganHangKPI" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaChucDanh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaPK" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ChucDanh" Relationship="QuanLyKPIModel.FK_NganHangKPI_MaChucDanh" FromRole="NganHangKPI" ToRole="ChucDanh" />
+          <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_NganHangKPI_MaKhoa" FromRole="NganHangKPI" ToRole="PhongKhoa" />
+          <NavigationProperty Name="KPI" Relationship="QuanLyKPIModel.KPITrongNganHang" FromRole="NganHangKPI" ToRole="KPI" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TenNV" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnhNV" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SDT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Gmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TenTaiKhoan" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MaPhongKhoa" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaChucDanh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MaQuyen" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ChucDanh" Relationship="QuanLyKPIModel.FK_NguoiDung_ChucDanh" FromRole="NguoiDung" ToRole="ChucDanh" />
+          <NavigationProperty Name="KPI_CaNhan" Relationship="QuanLyKPIModel.FK_KPICaNhan_NguoiDung" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_NguoiDung_PhongKhoa" FromRole="NguoiDung" ToRole="PhongKhoa" />
+          <NavigationProperty Name="ThongBao" Relationship="QuanLyKPIModel.FK_ThongBao_NguoiDung" FromRole="NguoiDung" ToRole="ThongBao" />
+        </EntityType>
+        <EntityType Name="NhomTieuChi">
+          <Key>
+            <PropertyRef Name="TieuChiID" />
+          </Key>
+          <Property Name="TieuChiID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TenTieuChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiTietTieuChiMucTieuKhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NhomTieuChi" FromRole="NhomTieuChi" ToRole="ChiTietTieuChiMucTieuKhoaPhong" />
+          <NavigationProperty Name="ChiTietTieuChiPhieuCaNhan" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN" FromRole="NhomTieuChi" ToRole="ChiTietTieuChiPhieuCaNhan" />
+        </EntityType>
+        <EntityType Name="PhongKhoa">
+          <Key>
+            <PropertyRef Name="MaPK" />
+          </Key>
+          <Property Name="MaPK" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TenPK" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TruongPK" Type="Boolean" />
+          <NavigationProperty Name="ChiTietKPICaNhan" Relationship="QuanLyKPIModel.FK_ChiTietKPICN_NguonChungMinh" FromRole="PhongKhoa" ToRole="ChiTietKPICaNhan" />
+          <NavigationProperty Name="ChiTietKPIKhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_NguonChungMinh" FromRole="PhongKhoa" ToRole="ChiTietKPIKhoaPhong" />
+          <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_PhongKhoa" FromRole="PhongKhoa" ToRole="KPI_KhoaPhong" />
+          <NavigationProperty Name="NganHangKPI" Relationship="QuanLyKPIModel.FK_NganHangKPI_MaKhoa" FromRole="PhongKhoa" ToRole="NganHangKPI" />
+          <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_NguoiDung_PhongKhoa" FromRole="PhongKhoa" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="Quyen">
+          <Key>
+            <PropertyRef Name="MaQuyen" />
+          </Key>
+          <Property Name="MaQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TenQuyen" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -1129,194 +893,242 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tabBieuMau">
+        <EntityType Name="ThongBao">
           <Key>
-            <PropertyRef Name="IDBieuMau" />
+            <PropertyRef Name="MaThongBao" />
           </Key>
-          <Property Name="IDBieuMau" Type="Int32" Nullable="false" />
-          <Property Name="MaBieuMau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TenBieuMau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="MaCapDoKPIBenhVien" Type="Int32" />
+          <Property Name="MaThongBao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaNhanVien" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_ThongBao_NguoiDung" FromRole="ThongBao" ToRole="NguoiDung" />
         </EntityType>
-      </Schema>
+        <Association Name="FK_ChiTietKPICN_MaKPI">
+          <End Type="QuanLyKPIModel.KPI" Role="KPI" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietKPICaNhan" Role="ChiTietKPICaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPI">
+              <PropertyRef Name="MaKPI" />
+            </Principal>
+            <Dependent Role="ChiTietKPICaNhan">
+              <PropertyRef Name="MaKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietKPICN_NguonChungMinh">
+          <End Type="QuanLyKPIModel.PhongKhoa" Role="PhongKhoa" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietKPICaNhan" Role="ChiTietKPICaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongKhoa">
+              <PropertyRef Name="MaPK" />
+            </Principal>
+            <Dependent Role="ChiTietKPICaNhan">
+              <PropertyRef Name="NguonChungMinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietTieuChiPhieuCaNhan_MaChiTietCN">
+          <End Type="QuanLyKPIModel.ChiTietKPICaNhan" Role="ChiTietKPICaNhan" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan" Role="ChiTietTieuChiPhieuCaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietKPICaNhan">
+              <PropertyRef Name="ChitietID" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiPhieuCaNhan">
+              <PropertyRef Name="MaChiTietCN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietKPIKhoaPhong_NguonChungMinh">
+          <End Type="QuanLyKPIModel.PhongKhoa" Role="PhongKhoa" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietKPIKhoaPhong" Role="ChiTietKPIKhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongKhoa">
+              <PropertyRef Name="MaPK" />
+            </Principal>
+            <Dependent Role="ChiTietKPIKhoaPhong">
+              <PropertyRef Name="NguonChungMinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietTieuChiPhieuPK_MaChiTietPK">
+          <End Type="QuanLyKPIModel.ChiTietKPIKhoaPhong" Role="ChiTietKPIKhoaPhong" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietKPIKhoaPhong">
+              <PropertyRef Name="ChitietID" />
+            </Principal>
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="IDChiTietKPIKP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong">
+          <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietTieuChiMucTieuKhoaPhong" Role="ChiTietTieuChiMucTieuKhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPI_KhoaPhong">
+              <PropertyRef Name="MaPhieuKPI" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiMucTieuKhoaPhong">
+              <PropertyRef Name="MaPhieuKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_KPI">
+          <End Type="QuanLyKPIModel.KPI" Role="KPI" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietTieuChiMucTieuKhoaPhong" Role="ChiTietTieuChiMucTieuKhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPI">
+              <PropertyRef Name="MaKPI" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiMucTieuKhoaPhong">
+              <PropertyRef Name="MaKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_NhomTieuChi">
+          <End Type="QuanLyKPIModel.NhomTieuChi" Role="NhomTieuChi" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietTieuChiMucTieuKhoaPhong" Role="ChiTietTieuChiMucTieuKhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhomTieuChi">
+              <PropertyRef Name="TieuChiID" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiMucTieuKhoaPhong">
+              <PropertyRef Name="TieuChiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietTieuChiPhieuCaNhan_MaPhieuCN">
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan" Role="ChiTietTieuChiPhieuCaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPI_CaNhan">
+              <PropertyRef Name="MaPhieuKPI" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiPhieuCaNhan">
+              <PropertyRef Name="MaPhieuKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietTieuChiPhieuCaNhan_TieuChiCN">
+          <End Type="QuanLyKPIModel.NhomTieuChi" Role="NhomTieuChi" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan" Role="ChiTietTieuChiPhieuCaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhomTieuChi">
+              <PropertyRef Name="TieuChiID" />
+            </Principal>
+            <Dependent Role="ChiTietTieuChiPhieuCaNhan">
+              <PropertyRef Name="TieuChiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NganHangKPI_MaChucDanh">
+          <End Type="QuanLyKPIModel.ChucDanh" Role="ChucDanh" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.NganHangKPI" Role="NganHangKPI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChucDanh">
+              <PropertyRef Name="MaChucDanh" />
+            </Principal>
+            <Dependent Role="NganHangKPI">
+              <PropertyRef Name="MaChucDanh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NguoiDung_ChucDanh">
+          <End Type="QuanLyKPIModel.ChucDanh" Role="ChucDanh" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChucDanh">
+              <PropertyRef Name="MaChucDanh" />
+            </Principal>
+            <Dependent Role="NguoiDung">
+              <PropertyRef Name="MaChucDanh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_DanhsachBieuMau">
+          <End Type="QuanLyKPIModel.DanhsachBieuMau" Role="DanhsachBieuMau" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhsachBieuMau">
+              <PropertyRef Name="IDBieuMau" />
+            </Principal>
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="IDBieuMau" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPICaNhan_NguoiDung">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_PhongKhoa">
+          <End Type="QuanLyKPIModel.PhongKhoa" Role="PhongKhoa" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongKhoa">
+              <PropertyRef Name="MaPK" />
+            </Principal>
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="MaPK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NganHangKPI_MaKhoa">
+          <End Type="QuanLyKPIModel.PhongKhoa" Role="PhongKhoa" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.NganHangKPI" Role="NganHangKPI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongKhoa">
+              <PropertyRef Name="MaPK" />
+            </Principal>
+            <Dependent Role="NganHangKPI">
+              <PropertyRef Name="MaPK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NguoiDung_PhongKhoa">
+          <End Type="QuanLyKPIModel.PhongKhoa" Role="PhongKhoa" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongKhoa">
+              <PropertyRef Name="MaPK" />
+            </Principal>
+            <Dependent Role="NguoiDung">
+              <PropertyRef Name="MaPhongKhoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThongBao_NguoiDung">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="1" />
+          <End Type="QuanLyKPIModel.ThongBao" Role="ThongBao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="ThongBao">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KPITrongNganHang">
+          <End Type="QuanLyKPIModel.KPI" Role="KPI" Multiplicity="*" />
+          <End Type="QuanLyKPIModel.NganHangKPI" Role="NganHangKPI" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QuanLyKPIModelStoreContainer" CdmEntityContainer="QuanLyKPIEntities">
-          <EntitySetMapping Name="ChiTietKPICaNhan">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietKPICaNhan">
-              <MappingFragment StoreEntitySet="ChiTietKPICaNhan">
-                <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
-                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
-                <ScalarProperty Name="NguonChungMinh" ColumnName="NguonChungMinh" />
-                <ScalarProperty Name="KeHoach" ColumnName="KeHoach" />
-                <ScalarProperty Name="ThucHien" ColumnName="ThucHien" />
-                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
-                <ScalarProperty Name="ChitietID" ColumnName="ChitietID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChiTietKPIKhoaPhong">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietKPIKhoaPhong">
-              <MappingFragment StoreEntitySet="ChiTietKPIKhoaPhong">
-                <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
-                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
-                <ScalarProperty Name="NguonChungMinh" ColumnName="NguonChungMinh" />
-                <ScalarProperty Name="KeHoach" ColumnName="KeHoach" />
-                <ScalarProperty Name="ThucHien" ColumnName="ThucHien" />
-                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
-                <ScalarProperty Name="ChitietID" ColumnName="ChitietID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChiTietTieuChiPhieuCaNhan">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan">
-              <MappingFragment StoreEntitySet="ChiTietTieuChiPhieuCaNhan">
-                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
-                <ScalarProperty Name="MaChiTietCN" ColumnName="MaChiTietCN" />
-                <ScalarProperty Name="TieuChiID" ColumnName="TieuChiID" />
-                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChiTietTieuChiPhieuPhongKhoa">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietTieuChiPhieuPhongKhoa">
-              <MappingFragment StoreEntitySet="ChiTietTieuChiPhieuPhongKhoa">
-                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
-                <ScalarProperty Name="MaChiTietPK" ColumnName="MaChiTietPK" />
-                <ScalarProperty Name="TieuChiID" ColumnName="TieuChiID" />
-                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChucDanh">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.ChucDanh">
-              <MappingFragment StoreEntitySet="ChucDanh">
-                <ScalarProperty Name="MaCapDoChucDanh" ColumnName="MaCapDoChucDanh" />
-                <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
-                <ScalarProperty Name="TenChucDanh" ColumnName="TenChucDanh" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KPI">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.KPI">
-              <MappingFragment StoreEntitySet="KPI">
-                <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
-                <ScalarProperty Name="PhuongPhapDo" ColumnName="PhuongPhapDo" />
-                <ScalarProperty Name="CongViecCaNhan" ColumnName="CongViecCaNhan" />
-                <ScalarProperty Name="ChiTieu" ColumnName="ChiTieu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KPI_CaNhan">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_CaNhan">
-              <MappingFragment StoreEntitySet="KPI_CaNhan">
-                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
-                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
-                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-                <ScalarProperty Name="Quy" ColumnName="Quy" />
-                <ScalarProperty Name="Nam" ColumnName="Nam" />
-                <ScalarProperty Name="MauPhieu" ColumnName="MauPhieu" />
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KPI_KhoaPhong">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_KhoaPhong">
-              <MappingFragment StoreEntitySet="KPI_KhoaPhong">
-                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
-                <ScalarProperty Name="MaPhongKhoa" ColumnName="MaPhongKhoa" />
-                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-                <ScalarProperty Name="Quy" ColumnName="Quy" />
-                <ScalarProperty Name="Nam" ColumnName="Nam" />
-                <ScalarProperty Name="LanhDao" ColumnName="LanhDao" />
-                <ScalarProperty Name="MauPhieu" ColumnName="MauPhieu" />
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NganHangKPI">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.NganHangKPI">
-              <MappingFragment StoreEntitySet="NganHangKPI">
-                <ScalarProperty Name="MaNganHangKPI" ColumnName="MaNganHangKPI" />
-                <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
-                <ScalarProperty Name="MaPK" ColumnName="MaPK" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NguoiDung">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.NguoiDung">
-              <MappingFragment StoreEntitySet="NguoiDung">
-                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
-                <ScalarProperty Name="HinhAnhNV" ColumnName="HinhAnhNV" />
-                <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="Gmail" ColumnName="Gmail" />
-                <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
-                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-                <ScalarProperty Name="MaPhongKhoa" ColumnName="MaPhongKhoa" />
-                <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NhomTieuChi">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.NhomTieuChi">
-              <MappingFragment StoreEntitySet="NhomTieuChi">
-                <ScalarProperty Name="TieuChiID" ColumnName="TieuChiID" />
-                <ScalarProperty Name="TenTieuChi" ColumnName="TenTieuChi" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PhongKhoa">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.PhongKhoa">
-              <MappingFragment StoreEntitySet="PhongKhoa">
-                <ScalarProperty Name="MaPK" ColumnName="MaPK" />
-                <ScalarProperty Name="TenPK" ColumnName="TenPK" />
-                <ScalarProperty Name="TruongPK" ColumnName="TruongPK" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Quyen">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.Quyen">
-              <MappingFragment StoreEntitySet="Quyen">
-                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
-                <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ThongBao">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.ThongBao">
-              <MappingFragment StoreEntitySet="ThongBao">
-                <ScalarProperty Name="MaThongBao" ColumnName="MaThongBao" />
-                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
-                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="KPITrongNganHang" TypeName="QuanLyKPIModel.KPITrongNganHang" StoreEntitySet="KPITrongNganHang">
-            <EndProperty Name="KPI">
-              <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
-            </EndProperty>
-            <EndProperty Name="NganHangKPI">
-              <ScalarProperty Name="MaNganHangKPI" ColumnName="MaNganHangKPI" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="PhanQuyen" TypeName="QuanLyKPIModel.PhanQuyen" StoreEntitySet="PhanQuyen">
-            <EndProperty Name="NguoiDung">
-              <ScalarProperty Name="MaNV" ColumnName="MaNhanVien" />
-            </EndProperty>
-            <EndProperty Name="Quyen">
-              <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
-            </EndProperty>
-          </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QuanLyKPIModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QuanLyKPIModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QuanLyKPIModel.Store.sp_dropdiagram" />
@@ -1341,6 +1153,169 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyKPIModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyKPIModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="ChiTietKPICaNhan">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietKPICaNhan">
+              <MappingFragment StoreEntitySet="ChiTietKPICaNhan">
+                <ScalarProperty Name="ChitietID" ColumnName="ChitietID" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="ThucHien" ColumnName="ThucHien" />
+                <ScalarProperty Name="KeHoach" ColumnName="KeHoach" />
+                <ScalarProperty Name="NguonChungMinh" ColumnName="NguonChungMinh" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietKPIKhoaPhong">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietKPIKhoaPhong">
+              <MappingFragment StoreEntitySet="ChiTietKPIKhoaPhong">
+                <ScalarProperty Name="ChitietID" ColumnName="ChitietID" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="ThucHien" ColumnName="ThucHien" />
+                <ScalarProperty Name="KeHoach" ColumnName="KeHoach" />
+                <ScalarProperty Name="NguonChungMinh" ColumnName="NguonChungMinh" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietTieuChiMucTieuKhoaPhong">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietTieuChiMucTieuKhoaPhong">
+              <MappingFragment StoreEntitySet="ChiTietTieuChiMucTieuKhoaPhong">
+                <ScalarProperty Name="TrongSoKPIHT" ColumnName="TrongSoKPIHT" />
+                <ScalarProperty Name="TrongSoTieuChiHT" ColumnName="TrongSoTieuChiHT" />
+                <ScalarProperty Name="TrongSoKPIBV" ColumnName="TrongSoKPIBV" />
+                <ScalarProperty Name="TrongSoTieuChiBV" ColumnName="TrongSoTieuChiBV" />
+                <ScalarProperty Name="ChiTieuHT" ColumnName="ChiTieuHT" />
+                <ScalarProperty Name="ChiTieuBV" ColumnName="ChiTieuBV" />
+                <ScalarProperty Name="TieuChiID" ColumnName="TieuChiID" />
+                <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
+                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietTieuChiPhieuCaNhan">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.ChiTietTieuChiPhieuCaNhan">
+              <MappingFragment StoreEntitySet="ChiTietTieuChiPhieuCaNhan">
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="TieuChiID" ColumnName="TieuChiID" />
+                <ScalarProperty Name="MaChiTietCN" ColumnName="MaChiTietCN" />
+                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChucDanh">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.ChucDanh">
+              <MappingFragment StoreEntitySet="ChucDanh">
+                <ScalarProperty Name="MaCapDoChucDanh" ColumnName="MaCapDoChucDanh" />
+                <ScalarProperty Name="TenChucDanh" ColumnName="TenChucDanh" />
+                <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DanhsachBieuMau">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.DanhsachBieuMau">
+              <MappingFragment StoreEntitySet="DanhsachBieuMau">
+                <ScalarProperty Name="MaCapDoKPIBenhVien" ColumnName="MaCapDoKPIBenhVien" />
+                <ScalarProperty Name="TenBieuMau" ColumnName="TenBieuMau" />
+                <ScalarProperty Name="MaBieuMau" ColumnName="MaBieuMau" />
+                <ScalarProperty Name="IDBieuMau" ColumnName="IDBieuMau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPI">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.KPI">
+              <MappingFragment StoreEntitySet="KPI">
+                <ScalarProperty Name="ChiTieu" ColumnName="ChiTieu" />
+                <ScalarProperty Name="CongViecCaNhan" ColumnName="CongViecCaNhan" />
+                <ScalarProperty Name="PhuongPhapDo" ColumnName="PhuongPhapDo" />
+                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPI_CaNhan">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_CaNhan">
+              <MappingFragment StoreEntitySet="KPI_CaNhan">
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="MauPhieu" ColumnName="MauPhieu" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="Quy" ColumnName="Quy" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPI_KhoaPhong">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_KhoaPhong">
+              <MappingFragment StoreEntitySet="KPI_KhoaPhong">
+                <ScalarProperty Name="TruongPK" ColumnName="TruongPK" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="IDBieuMau" ColumnName="IDBieuMau" />
+                <ScalarProperty Name="Quy" ColumnName="Quy" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="MaPK" ColumnName="MaPK" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="IDChiTietKPIKP" ColumnName="IDChiTietKPIKP" />
+                <ScalarProperty Name="MaPhieuKPI" ColumnName="MaPhieuKPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NganHangKPI">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.NganHangKPI">
+              <MappingFragment StoreEntitySet="NganHangKPI">
+                <ScalarProperty Name="MaPK" ColumnName="MaPK" />
+                <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
+                <ScalarProperty Name="MaNganHangKPI" ColumnName="MaNganHangKPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguoiDung">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.NguoiDung">
+              <MappingFragment StoreEntitySet="NguoiDung">
+                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
+                <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
+                <ScalarProperty Name="MaPhongKhoa" ColumnName="MaPhongKhoa" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+                <ScalarProperty Name="Gmail" ColumnName="Gmail" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="HinhAnhNV" ColumnName="HinhAnhNV" />
+                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhomTieuChi">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.NhomTieuChi">
+              <MappingFragment StoreEntitySet="NhomTieuChi">
+                <ScalarProperty Name="TenTieuChi" ColumnName="TenTieuChi" />
+                <ScalarProperty Name="TieuChiID" ColumnName="TieuChiID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhongKhoa">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.PhongKhoa">
+              <MappingFragment StoreEntitySet="PhongKhoa">
+                <ScalarProperty Name="TruongPK" ColumnName="TruongPK" />
+                <ScalarProperty Name="TenPK" ColumnName="TenPK" />
+                <ScalarProperty Name="MaPK" ColumnName="MaPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quyen">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.Quyen">
+              <MappingFragment StoreEntitySet="Quyen">
+                <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
+                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="QuanLyKPIModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1352,17 +1327,25 @@ warning 6013: The table/view 'QuanLyKPI.dbo.BangTamMucTieuKhoaPhong' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tabBieuMau">
-            <EntityTypeMapping TypeName="QuanLyKPIModel.tabBieuMau">
-              <MappingFragment StoreEntitySet="tabBieuMau">
-                <ScalarProperty Name="MaCapDoKPIBenhVien" ColumnName="MaCapDoKPIBenhVien" />
-                <ScalarProperty Name="TenBieuMau" ColumnName="TenBieuMau" />
-                <ScalarProperty Name="MaBieuMau" ColumnName="MaBieuMau" />
-                <ScalarProperty Name="IDBieuMau" ColumnName="IDBieuMau" />
+          <EntitySetMapping Name="ThongBao">
+            <EntityTypeMapping TypeName="QuanLyKPIModel.ThongBao">
+              <MappingFragment StoreEntitySet="ThongBao">
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="MaThongBao" ColumnName="MaThongBao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <AssociationSetMapping Name="KPITrongNganHang" TypeName="QuanLyKPIModel.KPITrongNganHang" StoreEntitySet="KPITrongNganHang">
+            <EndProperty Name="NganHangKPI">
+              <ScalarProperty Name="MaNganHangKPI" ColumnName="MaNganHangKPI" />
+            </EndProperty>
+            <EndProperty Name="KPI">
+              <ScalarProperty Name="MaKPI" ColumnName="MaKPI" />
+            </EndProperty>
+          </AssociationSetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

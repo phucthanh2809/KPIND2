@@ -115,7 +115,8 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 #region  truyền dữ liệu sau khi đăng nhập thành công
                     DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
-                    DataUserCurrent.Instance.Permission = nguoidung.Quyen.First().MaQuyen;
+                DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
+
                     MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
                     MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
                     TenPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.PhongKhoa.TenPK;

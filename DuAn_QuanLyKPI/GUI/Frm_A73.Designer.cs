@@ -639,10 +639,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.pnTong);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1356, 710);
+            this.tabPage1.Size = new System.Drawing.Size(1356, 702);
             this.tabPage1.TabIndex = 7;
             this.tabPage1.Text = "Hoàn thành ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -656,7 +656,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTong.Location = new System.Drawing.Point(3, 3);
             this.pnTong.Name = "pnTong";
-            this.pnTong.Size = new System.Drawing.Size(1350, 704);
+            this.pnTong.Size = new System.Drawing.Size(1350, 696);
             this.pnTong.TabIndex = 0;
             // 
             // pnTongScroll
@@ -666,7 +666,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnTongScroll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTongScroll.Location = new System.Drawing.Point(0, 255);
             this.pnTongScroll.Name = "pnTongScroll";
-            this.pnTongScroll.Size = new System.Drawing.Size(1350, 385);
+            this.pnTongScroll.Size = new System.Drawing.Size(1350, 377);
             this.pnTongScroll.TabIndex = 3;
             // 
             // panel35
@@ -1274,7 +1274,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel32.Controls.Add(this.btnQuayLaiHoanThanh);
             this.panel32.Controls.Add(this.btnHoanThanh);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel32.Location = new System.Drawing.Point(0, 640);
+            this.panel32.Location = new System.Drawing.Point(0, 632);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(1350, 64);
             this.panel32.TabIndex = 2;
@@ -1490,10 +1490,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabVanHanh
             // 
             this.tabVanHanh.Controls.Add(this.panel12);
-            this.tabVanHanh.Location = new System.Drawing.Point(4, 22);
+            this.tabVanHanh.Location = new System.Drawing.Point(4, 30);
             this.tabVanHanh.Name = "tabVanHanh";
             this.tabVanHanh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVanHanh.Size = new System.Drawing.Size(1356, 710);
+            this.tabVanHanh.Size = new System.Drawing.Size(1356, 702);
             this.tabVanHanh.TabIndex = 4;
             this.tabVanHanh.Text = "Vận hành";
             this.tabVanHanh.UseVisualStyleBackColor = true;
@@ -1505,7 +1505,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(3, 3);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1350, 704);
+            this.panel12.Size = new System.Drawing.Size(1350, 696);
             this.panel12.TabIndex = 19;
             // 
             // panel17
@@ -1516,7 +1516,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(0, 245);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1350, 459);
+            this.panel17.Size = new System.Drawing.Size(1350, 451);
             this.panel17.TabIndex = 6;
             // 
             // panel18
@@ -1718,7 +1718,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.panel22.Controls.Add(this.dataGridView3);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel22.Location = new System.Drawing.Point(0, 259);
+            this.panel22.Location = new System.Drawing.Point(0, 251);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(1350, 200);
             this.panel22.TabIndex = 1;
@@ -3107,10 +3107,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabPhatTrien
             // 
             this.tabPhatTrien.Controls.Add(this.panel10);
-            this.tabPhatTrien.Location = new System.Drawing.Point(4, 22);
+            this.tabPhatTrien.Location = new System.Drawing.Point(4, 30);
             this.tabPhatTrien.Name = "tabPhatTrien";
             this.tabPhatTrien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 710);
+            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 702);
             this.tabPhatTrien.TabIndex = 5;
             this.tabPhatTrien.Text = "Phát triển";
             this.tabPhatTrien.UseVisualStyleBackColor = true;
@@ -3122,7 +3122,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1350, 704);
+            this.panel10.Size = new System.Drawing.Size(1350, 696);
             this.panel10.TabIndex = 20;
             // 
             // panel23
@@ -3133,7 +3133,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel23.Location = new System.Drawing.Point(0, 245);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1350, 459);
+            this.panel23.Size = new System.Drawing.Size(1350, 451);
             this.panel23.TabIndex = 7;
             // 
             // panel24
@@ -3335,7 +3335,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.panel26.Controls.Add(this.dataGridView4);
             this.panel26.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel26.Location = new System.Drawing.Point(0, 259);
+            this.panel26.Location = new System.Drawing.Point(0, 251);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(1350, 200);
             this.panel26.TabIndex = 1;

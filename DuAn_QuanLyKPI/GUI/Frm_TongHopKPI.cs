@@ -43,69 +43,69 @@ namespace DuAn_QuanLyKPI.GUI
             var db = DataProvider.Ins.DB;
             var listKP = db.KPI_KhoaPhong.OrderBy(x => x.TrangThai).ToList();
             var listCN = db.KPI_CaNhan.OrderBy(x => x.TrangThai).ToList();
-            if (listKP.Count > 0)
-            {
-                foreach (var item in listKP )
-                {
-                    ListKPI_DTO dto = new ListKPI_DTO();
-                    dto.MaPhieu = item.MaPhieuKPI;
-                    dto.LoaiPhieu = "KPI Khoa Phòng";
-                    dto.NguonGui = item.PhongKhoa.TenPK;
-                    dto.TieuDe = item.TieuDe;
-                    dto.NoiDung = item.NoiDung;
-                    switch (item.Quy)
-                    {
-                        case 0: dto.Quy = ""; break;
-                        case 1: dto.Quy = "I"; break;
-                        case 2: dto.Quy = "II"; break;
-                        case 3: dto.Quy = "III"; break;
-                        case 4: dto.Quy = "IV"; break;
-                    }
-                    dto.Nam = (int)item.Nam;
-                    dto.NgayGui = (DateTime)item.NgayTao;
-                    dto.MauPhieu = item.MauPhieu;
-                    switch (item.TrangThai)
-                    {
-                        case 0: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
-                        case 1: dto.TrangThai = "Đã duyệt"; Accepts++; break;
-                        case 2: dto.TrangThai = "Trả về"; Refuses++; break;
-                    }
-                    dto.LanhDao = (bool)item.LanhDao;
-                    listTH.Add(dto);
-                }
-            }
+            //if (listKP.Count > 0)
+            //{
+            //    foreach (var item in listKP )
+            //    {
+            //        ListKPI_DTO dto = new ListKPI_DTO();
+            //        dto.MaPhieu = item.MaPhieuKPI;
+            //        dto.LoaiPhieu = "KPI Khoa Phòng";
+            //        dto.NguonGui = item.PhongKhoa.TenPK;
+            //        dto.TieuDe = item.TieuDe;
+            //        dto.NoiDung = item.NoiDung;
+            //        switch (item.Quy)
+            //        {
+            //            case 0: dto.Quy = ""; break;
+            //            case 1: dto.Quy = "I"; break;
+            //            case 2: dto.Quy = "II"; break;
+            //            case 3: dto.Quy = "III"; break;
+            //            case 4: dto.Quy = "IV"; break;
+            //        }
+            //        dto.Nam = (int)item.Nam;
+            //        dto.NgayGui = (DateTime)item.NgayTao;
+            //        dto.MauPhieu = item.MauPhieu;
+            //        switch (item.TrangThai)
+            //        {
+            //            case 0: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
+            //            case 1: dto.TrangThai = "Đã duyệt"; Accepts++; break;
+            //            case 2: dto.TrangThai = "Trả về"; Refuses++; break;
+            //        }
+            //        dto.LanhDao = (bool)item.LanhDao;
+            //        listTH.Add(dto);
+            //    }
+            //}
 
-            if (listCN.Count > 0)
-            {
-                foreach (var item in listCN)
-                {
-                    ListKPI_DTO dto = new ListKPI_DTO();
-                    dto.MaPhieu = item.MaPhieuKPI;
-                    dto.LoaiPhieu = "KPI cá nhân";
-                    dto.NguonGui = item.NguoiDung.TenNV;
-                    dto.TieuDe = item.TieuDe;
-                    dto.NoiDung = item.NoiDung;
-                    switch (item.Quy)
-                    {
-                        case 0: dto.Quy = ""; break;
-                        case 1: dto.Quy = "I"; break;
-                        case 2: dto.Quy = "II"; break;
-                        case 3: dto.Quy = "III"; break;
-                        case 4: dto.Quy = "IV"; break;
-                    }
-                    dto.Nam = (int)item.Nam;
-                    dto.NgayGui = (DateTime)item.NgayTao;
-                    dto.MauPhieu = item.MauPhieu;
-                    switch (item.TrangThai)
-                    {
-                        case 0: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
-                        case 1: dto.TrangThai = "Đã duyệt"; Accepts++; break;
-                        case 2: dto.TrangThai = "Trả về"; Refuses++; break;
-                        default: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
-                    }
-                    listTH.Add(dto);
-                }
-            }
+            //if (listCN.Count > 0)
+            //{
+            //    foreach (var item in listCN)
+            //    {
+            //        ListKPI_DTO dto = new ListKPI_DTO();
+            //        dto.MaPhieu = item.MaPhieuKPI;
+            //        dto.LoaiPhieu = "KPI cá nhân";
+            //        dto.NguonGui = item.NguoiDung.TenNV;
+            //        dto.TieuDe = item.TieuDe;
+            //        dto.NoiDung = item.NoiDung;
+            //        switch (item.Quy)
+            //        {
+            //            case 0: dto.Quy = ""; break;
+            //            case 1: dto.Quy = "I"; break;
+            //            case 2: dto.Quy = "II"; break;
+            //            case 3: dto.Quy = "III"; break;
+            //            case 4: dto.Quy = "IV"; break;
+            //        }
+            //        dto.Nam = (int)item.Nam;
+            //        dto.NgayGui = (DateTime)item.NgayTao;
+            //        dto.MauPhieu = item.MauPhieu;
+            //        switch (item.TrangThai)
+            //        {
+            //            case 0: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
+            //            case 1: dto.TrangThai = "Đã duyệt"; Accepts++; break;
+            //            case 2: dto.TrangThai = "Trả về"; Refuses++; break;
+            //            default: dto.TrangThai = "Chờ duyệt"; Waitings++; break;
+            //        }
+            //        listTH.Add(dto);
+            //    }
+            //}
             ListItems.Clear();
             ListItems = listTH;
         }
