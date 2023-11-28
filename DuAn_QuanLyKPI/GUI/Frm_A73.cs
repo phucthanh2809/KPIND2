@@ -74,10 +74,12 @@ namespace DuAn_QuanLyKPI.GUI
         private void LoadDataBVTaiChinh()
         {
             msql = "SELECT * FROM [dbo].[ChiTietKPIKhoaPhong] as CTKPIKP, [dbo].[KPI_KhoaPhong] as KPIKP, [dbo].[ChiTietTieuChiMucTieuKhoaPhong] as CTTCMTKP, [dbo].[NhomTieuChi] as TC, [dbo].[KPI] as KPI, [dbo].[PhongKhoa] as PK, [dbo].[DanhsachBieuMau] as BM " +
-                "WHERE CTTCMTKP.MaPhieuKPI = KPIKP.MaPhieuKPI and CTTCMTKP.MaKPI = KPI.MaKPI and CTTCMTKP.TieuChiID = TC.TieuChiID and CTKPIKP.ChitietID = KPIKP.IDChiTietKPIKP and KPIKP.TrangThai = 0 and KPIKP.MaPK = PK.MaPK and KPIKP.IDBieuMau = BM.IDBieuMau and KPIKP.TruongPK = 'False'";
+                   "WHERE CTTCMTKP.MaPhieuKPI = KPIKP.MaPhieuKPI and CTTCMTKP.MaKPI = KPI.MaKPI and CTTCMTKP.TieuChiID = TC.TieuChiID and CTKPIKP.ChitietID = KPIKP.IDChiTietKPIKP and KPIKP.TrangThai = 0 and KPIKP.MaPK = PK.MaPK and KPIKP.IDBieuMau = BM.IDBieuMau and KPIKP.TruongPK = 'False'";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
+            lbYear.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNam"].Value.ToString();
+            dtNgayTaoPhieu.Value = Convert.ToDateTime(dgrBVMucTieuTaiChinh.Rows[0].Cells["cNgayTaoPhieu"].Value);
         }
         private void LoadDataBVKhachHang()
         {
@@ -250,7 +252,8 @@ namespace DuAn_QuanLyKPI.GUI
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiIDd"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTieuChiID"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaKPId"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPI"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cChiTieuHT"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuBV"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoHT"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoBV"].Value.ToString();
+                    //dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoTieuChiBV"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBV"].Value.ToString();
+                    //dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoKPIBV"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBV"].Value.ToString(); 
                 }
             }
 

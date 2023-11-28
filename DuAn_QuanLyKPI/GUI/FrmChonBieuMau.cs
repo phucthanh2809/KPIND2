@@ -37,7 +37,7 @@ namespace DuAn_QuanLyKPI.GUI
         //Lãnh đạo
             public void LoadBieuMauGiamDocvaPhoGiamDoc()
         {
-            msql = "SELECT * FROM [dbo].[tabBieuMau] WHERE [MaCapDoKPIBenhVien] = 1";
+            msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 1";
             DataTable bieumau = comm.GetDataTable(mconnectstring, msql, "GiamDocvaPhoGiamDoc");
             dgrChonBieuMau.AutoGenerateColumns = false;
             dgrChonBieuMau.DataSource = bieumau;
@@ -54,7 +54,7 @@ namespace DuAn_QuanLyKPI.GUI
         //Cá nhân
         public void LoadBieuMauCaNhan()
         {
-            msql = "SELECT * FROM [dbo].[tabBieuMau] WHERE [MaCapDoKPIBenhVien] = 3";
+            msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 3";
             DataTable bieumau = comm.GetDataTable(mconnectstring, msql, "CaNhan");
             dgrChonBieuMau.AutoGenerateColumns = false;
             dgrChonBieuMau.DataSource = bieumau;
