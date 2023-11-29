@@ -12,24 +12,29 @@ namespace DuAn_QuanLyKPI.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class ChiTietTieuChiMucTieuKhoaPhong
+    public partial class PhieuKPITongHop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChiTietTieuChiMucTieuKhoaPhong()
+        public PhieuKPITongHop()
         {
             this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
         }
     
-        public int IDChiTietMucTieuKP { get; set; }
-        public int MaKPI { get; set; }
+        public string MaPhieuKPI { get; set; }
+        public Nullable<int> MaKPI { get; set; }
+        public string MaPK { get; set; }
+        public Nullable<bool> TruongPK { get; set; }
+        public Nullable<bool> CongViecCaNhan { get; set; }
         public string TieuChiID { get; set; }
-        public string ChiTieuHT { get; set; }
-        public Nullable<int> TrongSoTieuChiHT { get; set; }
-        public Nullable<int> TrongSoKPIHT { get; set; }
+        public Nullable<int> ChiTieuBV { get; set; }
+        public Nullable<int> TrongSoTieuChiBV { get; set; }
+        public Nullable<int> TrongSoKPIBV { get; set; }
+        public Nullable<System.DateTime> NgayTaoPhieuKPI { get; set; }
     
+        public virtual KPI KPI { get; set; }
+        public virtual KPI_CaNhan KPI_CaNhan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
-        public virtual KPI KPI { get; set; }
-        public virtual NhomTieuChi NhomTieuChi { get; set; }
+        public virtual PhongKhoa PhongKhoa { get; set; }
     }
 }

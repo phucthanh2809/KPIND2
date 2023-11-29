@@ -14,7 +14,16 @@ namespace DuAn_QuanLyKPI.DTO
     
     public partial class Quyen
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Quyen()
+        {
+            this.NguoiDung = new HashSet<NguoiDung>();
+        }
+    
         public string MaQuyen { get; set; }
         public string TenQuyen { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NguoiDung> NguoiDung { get; set; }
     }
 }

@@ -14,25 +14,15 @@ namespace DuAn_QuanLyKPI.DTO
     
     public partial class KPI_CaNhan
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KPI_CaNhan()
-        {
-            this.ChiTietTieuChiPhieuCaNhan = new HashSet<ChiTietTieuChiPhieuCaNhan>();
-        }
-    
         public string MaPhieuKPI { get; set; }
         public string MaNhanVien { get; set; }
-        public string TieuDe { get; set; }
-        public string NoiDung { get; set; }
-        public Nullable<System.DateTime> NgayTao { get; set; }
+        public Nullable<System.DateTime> NgayTaoCaNhan { get; set; }
         public Nullable<int> Quy { get; set; }
         public Nullable<int> Nam { get; set; }
-        public string MauPhieu { get; set; }
         public Nullable<int> TrangThai { get; set; }
         public Nullable<double> TrongSo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTieuChiPhieuCaNhan> ChiTietTieuChiPhieuCaNhan { get; set; }
+        public virtual PhieuKPITongHop PhieuKPITongHop { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
     }
 }

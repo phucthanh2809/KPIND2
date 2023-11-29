@@ -29,8 +29,8 @@ namespace DuAn_QuanLyKPI.DTO
     
         public virtual DbSet<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
         public virtual DbSet<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
+        public virtual DbSet<ChiTietTieuChiMucTieuCaNhan> ChiTietTieuChiMucTieuCaNhan { get; set; }
         public virtual DbSet<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
-        public virtual DbSet<ChiTietTieuChiPhieuCaNhan> ChiTietTieuChiPhieuCaNhan { get; set; }
         public virtual DbSet<ChucDanh> ChucDanh { get; set; }
         public virtual DbSet<DanhsachBieuMau> DanhsachBieuMau { get; set; }
         public virtual DbSet<KPI> KPI { get; set; }
@@ -39,6 +39,7 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual DbSet<NganHangKPI> NganHangKPI { get; set; }
         public virtual DbSet<NguoiDung> NguoiDung { get; set; }
         public virtual DbSet<NhomTieuChi> NhomTieuChi { get; set; }
+        public virtual DbSet<PhieuKPITongHop> PhieuKPITongHop { get; set; }
         public virtual DbSet<PhongKhoa> PhongKhoa { get; set; }
         public virtual DbSet<Quyen> Quyen { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

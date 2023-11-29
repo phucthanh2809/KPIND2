@@ -14,26 +14,17 @@ namespace DuAn_QuanLyKPI.DTO
     
     public partial class KPI_KhoaPhong
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KPI_KhoaPhong()
-        {
-            this.ChiTietTieuChiMucTieuKhoaPhong = new HashSet<ChiTietTieuChiMucTieuKhoaPhong>();
-        }
-    
         public string MaPhieuKPI { get; set; }
         public int IDChiTietKPIKP { get; set; }
+        public Nullable<int> ChiTietKPIKP { get; set; }
         public int TrangThai { get; set; }
-        public string MaPK { get; set; }
-        public Nullable<System.DateTime> NgayTao { get; set; }
+        public Nullable<System.DateTime> NgayTaoKPIKP { get; set; }
         public Nullable<int> Quy { get; set; }
         public int IDBieuMau { get; set; }
         public Nullable<int> Nam { get; set; }
-        public Nullable<bool> TruongPK { get; set; }
     
-        public virtual ChiTietKPIKhoaPhong ChiTietKPIKhoaPhong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
+        public virtual ChiTietTieuChiMucTieuKhoaPhong ChiTietTieuChiMucTieuKhoaPhong { get; set; }
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
-        public virtual PhongKhoa PhongKhoa { get; set; }
+        public virtual PhieuKPITongHop PhieuKPITongHop { get; set; }
     }
 }

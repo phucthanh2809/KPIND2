@@ -17,8 +17,8 @@ namespace DuAn_QuanLyKPI.DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KPI()
         {
-            this.ChiTietKPICaNhan = new HashSet<ChiTietKPICaNhan>();
             this.ChiTietTieuChiMucTieuKhoaPhong = new HashSet<ChiTietTieuChiMucTieuKhoaPhong>();
+            this.PhieuKPITongHop = new HashSet<PhieuKPITongHop>();
             this.NganHangKPI = new HashSet<NganHangKPI>();
         }
     
@@ -28,11 +28,13 @@ namespace DuAn_QuanLyKPI.DTO
         public string PhuongPhapDo { get; set; }
         public bool CongViecCaNhan { get; set; }
         public string ChiTieu { get; set; }
+        public string TieuChiID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
+        public virtual NhomTieuChi NhomTieuChi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuKPITongHop> PhieuKPITongHop { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NganHangKPI> NganHangKPI { get; set; }
     }

@@ -31,11 +31,13 @@ namespace DuAn_QuanLyKPI.DTO
         public string MaPhongKhoa { get; set; }
         public string MaChucDanh { get; set; }
         public string MaQuyen { get; set; }
+        public Nullable<bool> TruongPK { get; set; }
     
         public virtual ChucDanh ChucDanh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_CaNhan> KPI_CaNhan { get; set; }
         public virtual PhongKhoa PhongKhoa { get; set; }
+        public virtual Quyen Quyen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThongBao> ThongBao { get; set; }
     }
