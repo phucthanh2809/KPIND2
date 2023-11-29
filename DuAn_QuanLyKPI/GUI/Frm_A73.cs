@@ -73,8 +73,7 @@ namespace DuAn_QuanLyKPI.GUI
         //Load DataGridview Tài chính
         private void LoadDataBVTaiChinh()
         {
-            msql = "SELECT * FROM [dbo].[ChiTietKPIKhoaPhong] as CTKPIKP, [dbo].[KPI_KhoaPhong] as KPIKP, [dbo].[ChiTietTieuChiMucTieuKhoaPhong] as CTTCMTKP, [dbo].[NhomTieuChi] as TC, [dbo].[KPI] as KPI, [dbo].[PhongKhoa] as PK, [dbo].[DanhsachBieuMau] as BM " +
-                   "WHERE CTTCMTKP.MaPhieuKPI = KPIKP.MaPhieuKPI and CTTCMTKP.MaKPI = KPI.MaKPI and CTTCMTKP.TieuChiID = TC.TieuChiID and CTKPIKP.ChitietID = KPIKP.IDChiTietKPIKP and KPIKP.TrangThai = 0 and KPIKP.MaPK = PK.MaPK and KPIKP.IDBieuMau = BM.IDBieuMau and KPIKP.TruongPK = 'False'";
+            msql = "Select * From [dbo].[PhieuKPITongHop] as PKPITH, [dbo].[KPI_KhoaPhong] as KPIKP, [dbo].[ChiTietTieuChiMucTieuKhoaPhong] as CTTCMTCKP, [dbo].[NhomTieuChi] as TC, [dbo].[DanhsachBieuMau] as BM,  [dbo].[KPI] as KPI WHERE KPIKP.MaPhieuKPI = PKPITH.MaPhieuKPI and KPIKP.IDChiTietKPIKP = CTTCMTCKP.IDChiTietMucTieuKP and CTTCMTCKP.TieuChiID = TC.TieuChiID and KPIKP.IDBieuMau = BM.IDBieuMau and CTTCMTCKP.MaKPI = KPI.MaKPI and PKPITH.MaKPI = KPI.MaKPI and PKPITH.TieuChiID = TC.TieuChiID and PKPITH.MaPK = 'CNTT' and PKPITH.TruongPK = 'False' and PKPITH.CongViecCaNhan = 'False' and KPIKP.TrangThai = 0";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
@@ -85,8 +84,8 @@ namespace DuAn_QuanLyKPI.GUI
         {
             msql = "select * from [dbo].[KPI] as KPI,[dbo].[KPI_KhoaPhong] as KPIKP,[dbo].[NhomTieuChi] as TC,[dbo].[PhongKhoa] as PK where KPI.MaKPI = KPIKP.MaKPI AND KPIKP.MaPK = PK.MaPK AND KPIKP.TieuChiID = TC.TieuChiID AND KPIKP.MaPK = '" + MaPhongKhoa + "' AND KPIKP.TieuChiID = 'C'AND KPI.CongViecCaNhan = 0 AND KPIKP.TrangThai = 0";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "KhachHang");
-            dgrBVMucTieuKhachHang.AutoGenerateColumns = false;
-            dgrBVMucTieuKhachHang.DataSource = tb;
+            //dgrBVMucTieuKhachHang.AutoGenerateColumns = false;
+            //dgrBVMucTieuKhachHang.DataSource = tb;
         }
         private void LoadDataBVVanHanh()
         {
@@ -409,7 +408,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnTiepTucTaiChinh_Click_1(object sender, EventArgs e)
         {
-            KiemTraTyTrong();
+            ChuyenTrangThai(1); 
         }
         private void btncopyDataBVtoTC_Click(object sender, EventArgs e)
         {
