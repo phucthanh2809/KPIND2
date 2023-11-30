@@ -34,7 +34,6 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual DbSet<ChucDanh> ChucDanh { get; set; }
         public virtual DbSet<DanhsachBieuMau> DanhsachBieuMau { get; set; }
         public virtual DbSet<KPI> KPI { get; set; }
-        public virtual DbSet<KPI_CaNhan> KPI_CaNhan { get; set; }
         public virtual DbSet<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         public virtual DbSet<NganHangKPI> NganHangKPI { get; set; }
         public virtual DbSet<NguoiDung> NguoiDung { get; set; }
@@ -44,6 +43,8 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual DbSet<Quyen> Quyen { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<ThongBao> ThongBao { get; set; }
+        public virtual DbSet<TongHopBieuMauPhieuKPI> TongHopBieuMauPhieuKPI { get; set; }
+        public virtual DbSet<KPI_CaNhan> KPI_CaNhan { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

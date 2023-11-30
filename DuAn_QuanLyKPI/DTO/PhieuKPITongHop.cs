@@ -14,12 +14,7 @@ namespace DuAn_QuanLyKPI.DTO
     
     public partial class PhieuKPITongHop
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PhieuKPITongHop()
-        {
-            this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
-        }
-    
+        public int ID { get; set; }
         public string MaPhieuKPI { get; set; }
         public Nullable<int> MaKPI { get; set; }
         public string MaPK { get; set; }
@@ -32,9 +27,7 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<System.DateTime> NgayTaoPhieuKPI { get; set; }
     
         public virtual KPI KPI { get; set; }
-        public virtual KPI_CaNhan KPI_CaNhan { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         public virtual PhongKhoa PhongKhoa { get; set; }
+        public virtual TongHopBieuMauPhieuKPI TongHopBieuMauPhieuKPI { get; set; }
     }
 }

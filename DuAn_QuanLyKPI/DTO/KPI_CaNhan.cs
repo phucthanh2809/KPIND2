@@ -15,14 +15,15 @@ namespace DuAn_QuanLyKPI.DTO
     public partial class KPI_CaNhan
     {
         public string MaPhieuKPI { get; set; }
+        public Nullable<int> IDChiTietMucTieuCN { get; set; }
         public string MaNhanVien { get; set; }
         public Nullable<System.DateTime> NgayTaoCaNhan { get; set; }
         public Nullable<int> Quy { get; set; }
         public Nullable<int> Nam { get; set; }
         public Nullable<int> TrangThai { get; set; }
-        public Nullable<double> TrongSo { get; set; }
     
-        public virtual PhieuKPITongHop PhieuKPITongHop { get; set; }
+        public virtual ChiTietTieuChiMucTieuCaNhan ChiTietTieuChiMucTieuCaNhan { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
+        public virtual TongHopBieuMauPhieuKPI TongHopBieuMauPhieuKPI { get; set; }
     }
 }

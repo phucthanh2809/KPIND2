@@ -17,7 +17,6 @@ namespace DuAn_QuanLyKPI.DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhongKhoa()
         {
-            this.ChiTietKPICaNhan = new HashSet<ChiTietKPICaNhan>();
             this.ChiTietKPIKhoaPhong = new HashSet<ChiTietKPIKhoaPhong>();
             this.ChucDanh = new HashSet<ChucDanh>();
             this.NganHangKPI = new HashSet<NganHangKPI>();
@@ -28,8 +27,6 @@ namespace DuAn_QuanLyKPI.DTO
         public string MaPK { get; set; }
         public string TenPK { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

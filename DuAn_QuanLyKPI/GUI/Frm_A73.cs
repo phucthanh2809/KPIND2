@@ -48,6 +48,14 @@ namespace DuAn_QuanLyKPI.GUI
             //LoadDataBVVanHanh();
             //LoadDataBVPhatTrien();
         }
+        private void FrmA73_Load(object sender, EventArgs e)
+        {
+            TrangThai();
+            TrangThai1();
+            TrangThai2();
+            TrangThai3();
+            TrangThai4();
+        }
         #region LoadData
         //Load thông tin nhân viên 
         private void LoadThongTinNhanVien()
@@ -77,8 +85,8 @@ namespace DuAn_QuanLyKPI.GUI
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
-            lbYear.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNam"].Value.ToString();
-            dtNgayTaoPhieu.Value = Convert.ToDateTime(dgrBVMucTieuTaiChinh.Rows[0].Cells["cNgayTaoPhieu"].Value);
+            //lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
+            //dtNgayTaoPhieu.Value = Convert.ToDateTime(dgrBVMucTieuTaiChinh.Rows[0].Cells["cNgayTaoPhieu"].Value);
         }
         private void LoadDataBVKhachHang()
         {
@@ -102,8 +110,6 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuPhatTrien.DataSource = tb;
         }
         #endregion
-
-
         #region Method
         private void TrangThai()
         {
@@ -207,7 +213,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
                 {
-                    total += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoHT"].Value.ToString());
+                    total += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoNTC"].Value.ToString());
                 }
                 // Kiểm tra tổng các giá trị
                 if (total == 0 && total == null)
@@ -234,6 +240,21 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
                 }    
         }
+        private void LoadTrongSoTC()
+        {
+            int total = 0;
+            if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
+            {
+                for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
+                {
+                    total += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoNTC"].Value.ToString());
+                }
+            }
+            else
+            {
+                
+            }
+        }
         //Method coppy data 
         #region Method Copy Data
         private void copyDataBVtoTC()
@@ -242,17 +263,21 @@ namespace DuAn_QuanLyKPI.GUI
 
             for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
-                if (Convert.ToBoolean(dgrBVMucTieuTaiChinh.Rows[i].Cells["cChon"].Value) == true)
+                if (Convert.ToBoolean(dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value) == true)
                 {
                     int n = dgrNhapMucTieuTaiChinh.Rows.Add();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNoiDungd"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNoiDung"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPhieuKPId"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaPhieuKPI"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPhongKhoad"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaPhongKhoa"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiIDd"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTieuChiID"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaKPId"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPI"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cChiTieuHT"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuBV"].Value.ToString();
-                    //dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoTieuChiBV"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBV"].Value.ToString();
-                    //dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoKPIBV"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBV"].Value.ToString(); 
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPhieuKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaPhieuKPIBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPKNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaPKBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiIDNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTieuChiIDBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNoiDungNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cChiTieuNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNamNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells[" cNgayTaoKPIKPNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNgayTaoKPIKPBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoTieuChiNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiNHTTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBVTC"].Value.ToString();
                 }
             }
 
@@ -262,7 +287,7 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuTaiChinh.Rows.Clear();
             for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
             {
-                if (Convert.ToBoolean(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cChon"].Value) == true)
+                if (Convert.ToBoolean(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value) == true)
                 {
                     int n = dgrBVMucTieuTaiChinh.Rows.Add();
                     dgrBVMucTieuTaiChinh.Rows[n].Cells["cNhapMaPhongKhoa"].Value = dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPhongKhoa"].Value.ToString();
@@ -286,7 +311,7 @@ namespace DuAn_QuanLyKPI.GUI
             dgrNhapMucTieuTaiChinh.Rows.Clear();
             for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChon"].Value = true;
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTCTC"].Value = true;
             }
             copyDataBVtoTC();
         }
@@ -331,27 +356,6 @@ namespace DuAn_QuanLyKPI.GUI
         {
 
         }
-        private void FrmA73_Load(object sender, EventArgs e)
-        {
-            TrangThai();
-            TrangThai1();
-            TrangThai2();
-            TrangThai3();
-            TrangThai4();
-
-            //InVisible(tabTaiChinh);
-            //InVisible(tabVanHanh);
-            //InVisible(tabKhachHang);
-            //InVisible(tabPhatTrien);
-            //InVisible(tabHoanThanh);
-
-
-        }
-        //void InVisible(TabPage tab)
-        //{
-        //    tab.Text = "";
-
-        //}
 
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -373,7 +377,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChon"].Value = true;
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
             }
         }
 
@@ -381,7 +385,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChon"].Value = false;
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = false;
             }
         }
 
@@ -405,24 +409,58 @@ namespace DuAn_QuanLyKPI.GUI
                 e.Cancel = true;
             }
         }
-
-        private void btnTiepTucTaiChinh_Click_1(object sender, EventArgs e)
+        private void dgrBVMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            ChuyenTrangThai(1); 
+            ev.Qdgr_RowPostPaint(sender, e, dgrBVMucTieuTaiChinh);
         }
-        private void btncopyDataBVtoTC_Click(object sender, EventArgs e)
+
+        private void dgrNhapMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            if (ev.QFrmThongBao_YesNo("Hãy kiểm tra thật kĩ trước khi chuyển dữ liệu đã chọn nhé!"))
+            ev.Qdgr_RowPostPaint(sender, e, dgrNhapMucTieuTaiChinh);
+        }
+        private void dgrBVMucTieuTaiChinh_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex == 0)
             {
-                copyDataBVtoTC();
+                // Kiểm tra giá trị của ô kiểm "Chọn Tất Cả BVTC" trong header
+                if ((bool)dgrBVMucTieuTaiChinh.CurrentRow.Cells["cChonTatCaBVTC"].Value == true)
+                {
+                    copyDataBVtoTC();
+                }
+                else
+                {
+
+                }    
             }
         }
 
-
-
-
+        private void btnTiepTucTaiChinh_Click_2(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(1);
+        }
+        private void dgrBVMucTieuTaiChinh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex == 1)
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                {
+                    DataGridViewCheckBoxCell cell = row.Cells["cChonTatCaBVTC"] as DataGridViewCheckBoxCell;
+                    if (cell != null)
+                    {
+                        cell.Value = true;
+                        dgrNhapMucTieuTaiChinh.Rows.Clear();
+                        for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+                        {
+                            dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
+                        }
+                        copyDataBVtoTC();
+                    }
+                    else
+                        cell.Value = false;
+                }
+            }
+        }
         #endregion
-
 
     }
 }

@@ -16,7 +16,7 @@ namespace DuAn_QuanLyKPI.DTO
     {
         public string MaPhieuKPI { get; set; }
         public int IDChiTietKPIKP { get; set; }
-        public Nullable<int> ChiTietKPIKP { get; set; }
+        public int ChiTietKPIKP { get; set; }
         public int TrangThai { get; set; }
         public Nullable<System.DateTime> NgayTaoKPIKP { get; set; }
         public Nullable<int> Quy { get; set; }
@@ -25,6 +25,6 @@ namespace DuAn_QuanLyKPI.DTO
     
         public virtual ChiTietTieuChiMucTieuKhoaPhong ChiTietTieuChiMucTieuKhoaPhong { get; set; }
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
-        public virtual PhieuKPITongHop PhieuKPITongHop { get; set; }
+        public virtual TongHopBieuMauPhieuKPI TongHopBieuMauPhieuKPI { get; set; }
     }
 }

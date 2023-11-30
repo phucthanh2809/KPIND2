@@ -21,7 +21,6 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<double> HoanThanh { get; set; }
         public int ChitietID { get; set; }
     
-        public virtual PhongKhoa PhongKhoa { get; set; }
-        public virtual ChiTietTieuChiMucTieuCaNhan ChiTietTieuChiMucTieuCaNhan { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
     }
 }

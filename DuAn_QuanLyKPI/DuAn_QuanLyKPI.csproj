@@ -196,6 +196,9 @@
     <Compile Include="DTO\ThongBao.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\TongHopBieuMauPhieuKPI.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_A73.cs">
       <SubType>Form</SubType>
     </Compile>
