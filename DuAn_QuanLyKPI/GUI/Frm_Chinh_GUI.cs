@@ -68,7 +68,6 @@ namespace DuAn_QuanLyKPI
 
         private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(Frm_HoanThanhKhoaPhong));
         }
 
         private void btnChiTieuKPI_ItemClick(object sender, ItemClickEventArgs e)

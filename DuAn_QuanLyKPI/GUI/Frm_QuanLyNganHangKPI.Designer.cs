@@ -33,6 +33,9 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.txt_TenTieuChi = new System.Windows.Forms.TextBox();
+            this.cbx_TieuChiID = new System.Windows.Forms.ComboBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.chkCongViecCaNhan = new DevExpress.XtraEditors.CheckEdit();
             this.txtChiTieu = new DevExpress.XtraEditors.TextEdit();
             this.txtPhuongPhapDo = new DevExpress.XtraEditors.TextEdit();
@@ -42,16 +45,17 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
-            this.dgrMucTieuNganHang = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cMaKPI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cPhuongPhapDo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cCongViecCaNhan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cChiTieu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.dtgv_QLNganHangKPI = new System.Windows.Forms.DataGridView();
+            this.cbChon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cMaKPI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cDonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPhuongPhapDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCongViecCaNhan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cChiTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTieuChiID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTenTieuChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kPIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -78,14 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPhuongPhapDo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoiDung.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).BeginInit();
-            this.gridSplitContainer1.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel2)).BeginInit();
-            this.gridSplitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrMucTieuNganHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_QLNganHangKPI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kPIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +98,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1049, 599);
+            this.panel1.Size = new System.Drawing.Size(1364, 712);
             this.panel1.TabIndex = 0;
             // 
             // splitContainerControl1
@@ -114,6 +112,9 @@
             // 
             this.splitContainerControl1.Panel1.Appearance.BackColor = System.Drawing.Color.White;
             this.splitContainerControl1.Panel1.Appearance.Options.UseBackColor = true;
+            this.splitContainerControl1.Panel1.Controls.Add(this.txt_TenTieuChi);
+            this.splitContainerControl1.Panel1.Controls.Add(this.cbx_TieuChiID);
+            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
             this.splitContainerControl1.Panel1.Controls.Add(this.chkCongViecCaNhan);
             this.splitContainerControl1.Panel1.Controls.Add(this.txtChiTieu);
             this.splitContainerControl1.Panel1.Controls.Add(this.txtPhuongPhapDo);
@@ -127,17 +128,44 @@
             // 
             // splitContainerControl1.Panel2
             // 
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridSplitContainer1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.dtgv_QLNganHangKPI);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel2;
-            this.splitContainerControl1.Size = new System.Drawing.Size(1049, 599);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1364, 712);
             this.splitContainerControl1.SplitterPosition = 132;
             this.splitContainerControl1.TabIndex = 0;
+            // 
+            // txt_TenTieuChi
+            // 
+            this.txt_TenTieuChi.Location = new System.Drawing.Point(830, 87);
+            this.txt_TenTieuChi.Name = "txt_TenTieuChi";
+            this.txt_TenTieuChi.Size = new System.Drawing.Size(95, 21);
+            this.txt_TenTieuChi.TabIndex = 56;
+            // 
+            // cbx_TieuChiID
+            // 
+            this.cbx_TieuChiID.FormattingEnabled = true;
+            this.cbx_TieuChiID.Location = new System.Drawing.Point(711, 87);
+            this.cbx_TieuChiID.Name = "cbx_TieuChiID";
+            this.cbx_TieuChiID.Size = new System.Drawing.Size(100, 21);
+            this.cbx_TieuChiID.TabIndex = 55;
+            this.cbx_TieuChiID.SelectedIndexChanged += new System.EventHandler(this.cbx_TieuChiID_SelectedIndexChanged);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(541, 97);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(126, 27);
+            this.labelControl1.TabIndex = 54;
+            this.labelControl1.Text = "Tiêu chí ID:";
             // 
             // chkCongViecCaNhan
             // 
             this.chkCongViecCaNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkCongViecCaNhan.Location = new System.Drawing.Point(-942, 84);
+            this.chkCongViecCaNhan.Location = new System.Drawing.Point(-1400, 84);
             this.chkCongViecCaNhan.Name = "chkCongViecCaNhan";
             this.chkCongViecCaNhan.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCongViecCaNhan.Properties.Appearance.Options.UseFont = true;
@@ -232,129 +260,90 @@
             this.labelControl9.TabIndex = 39;
             this.labelControl9.Text = "Nội dung:";
             // 
-            // gridSplitContainer1
+            // dtgv_QLNganHangKPI
             // 
-            this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridSplitContainer1.Grid = this.dgrMucTieuNganHang;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.gridSplitContainer1.Name = "gridSplitContainer1";
-            // 
-            // gridSplitContainer1.Panel1
-            // 
-            this.gridSplitContainer1.Panel1.Controls.Add(this.dgrMucTieuNganHang);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(1049, 599);
-            this.gridSplitContainer1.TabIndex = 0;
-            // 
-            // dgrMucTieuNganHang
-            // 
-            this.dgrMucTieuNganHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgrMucTieuNganHang.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgrMucTieuNganHang.EmbeddedNavigator.Appearance.Options.UseFont = true;
-            this.dgrMucTieuNganHang.Location = new System.Drawing.Point(0, 0);
-            this.dgrMucTieuNganHang.MainView = this.gridView2;
-            this.dgrMucTieuNganHang.Name = "dgrMucTieuNganHang";
-            this.dgrMucTieuNganHang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
-            this.dgrMucTieuNganHang.Size = new System.Drawing.Size(1049, 599);
-            this.dgrMucTieuNganHang.TabIndex = 3;
-            this.dgrMucTieuNganHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            this.dgrMucTieuNganHang.DoubleClick += new System.EventHandler(this.dgrMucTieuNganHang_DoubleClick);
-            // 
-            // gridView2
-            // 
-            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.gridView2.Appearance.Row.Options.UseFont = true;
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.dtgv_QLNganHangKPI.AutoGenerateColumns = false;
+            this.dtgv_QLNganHangKPI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_QLNganHangKPI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cbChon,
             this.cMaKPI,
             this.cNoiDung,
             this.cDonViTinh,
             this.cPhuongPhapDo,
             this.cCongViecCaNhan,
-            this.cChiTieu});
-            this.gridView2.GridControl = this.dgrMucTieuNganHang;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsPrint.PrintFilterInfo = true;
-            this.gridView2.OptionsSelection.MultiSelect = true;
-            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-            this.gridView2.RowHeight = 27;
-            this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
+            this.cChiTieu,
+            this.cTieuChiID,
+            this.cTenTieuChi});
+            this.dtgv_QLNganHangKPI.DataSource = this.kPIBindingSource;
+            this.dtgv_QLNganHangKPI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgv_QLNganHangKPI.Location = new System.Drawing.Point(0, 0);
+            this.dtgv_QLNganHangKPI.Name = "dtgv_QLNganHangKPI";
+            this.dtgv_QLNganHangKPI.Size = new System.Drawing.Size(0, 0);
+            this.dtgv_QLNganHangKPI.TabIndex = 0;
+            this.dtgv_QLNganHangKPI.Click += new System.EventHandler(this.dtgv_QLNganHangKPI_Click);
+            this.dtgv_QLNganHangKPI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgv_QLNganHangKPI_KeyDown);
+            // 
+            // cbChon
+            // 
+            this.cbChon.HeaderText = "Chọn";
+            this.cbChon.Name = "cbChon";
             // 
             // cMaKPI
             // 
-            this.cMaKPI.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cMaKPI.AppearanceCell.Options.UseFont = true;
-            this.cMaKPI.Caption = "Mã KPI";
-            this.cMaKPI.FieldName = "MaKPI";
+            this.cMaKPI.DataPropertyName = "MaKPI";
+            this.cMaKPI.HeaderText = "Mã KPI";
             this.cMaKPI.Name = "cMaKPI";
-            this.cMaKPI.OptionsColumn.ReadOnly = true;
-            this.cMaKPI.OptionsFilter.AllowFilter = false;
-            this.cMaKPI.Width = 47;
+            this.cMaKPI.ReadOnly = true;
+            this.cMaKPI.Width = 170;
             // 
             // cNoiDung
             // 
-            this.cNoiDung.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cNoiDung.AppearanceCell.Options.UseFont = true;
-            this.cNoiDung.Caption = "Nội Dung";
-            this.cNoiDung.FieldName = "NoiDung";
+            this.cNoiDung.DataPropertyName = "NoiDung";
+            this.cNoiDung.HeaderText = "Nội dung";
             this.cNoiDung.Name = "cNoiDung";
-            this.cNoiDung.OptionsColumn.ReadOnly = true;
-            this.cNoiDung.Visible = true;
-            this.cNoiDung.VisibleIndex = 1;
-            this.cNoiDung.Width = 167;
+            this.cNoiDung.Width = 250;
             // 
             // cDonViTinh
             // 
-            this.cDonViTinh.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cDonViTinh.AppearanceCell.Options.UseFont = true;
-            this.cDonViTinh.Caption = "Đơn Vị Tính";
-            this.cDonViTinh.FieldName = "DonViTinh";
+            this.cDonViTinh.DataPropertyName = "DonViTinh";
+            this.cDonViTinh.HeaderText = "Đơn vị tính";
             this.cDonViTinh.Name = "cDonViTinh";
-            this.cDonViTinh.OptionsColumn.ReadOnly = true;
-            this.cDonViTinh.Visible = true;
-            this.cDonViTinh.VisibleIndex = 2;
-            this.cDonViTinh.Width = 82;
+            this.cDonViTinh.Width = 200;
             // 
             // cPhuongPhapDo
             // 
-            this.cPhuongPhapDo.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cPhuongPhapDo.AppearanceCell.Options.UseFont = true;
-            this.cPhuongPhapDo.Caption = "Phương Pháp Đo";
-            this.cPhuongPhapDo.FieldName = "PhuongPhapDo";
+            this.cPhuongPhapDo.DataPropertyName = "PhuongPhapDo";
+            this.cPhuongPhapDo.HeaderText = "Phương pháp đo";
             this.cPhuongPhapDo.Name = "cPhuongPhapDo";
-            this.cPhuongPhapDo.OptionsColumn.ReadOnly = true;
-            this.cPhuongPhapDo.Visible = true;
-            this.cPhuongPhapDo.VisibleIndex = 3;
-            this.cPhuongPhapDo.Width = 167;
+            this.cPhuongPhapDo.Width = 150;
             // 
             // cCongViecCaNhan
             // 
-            this.cCongViecCaNhan.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cCongViecCaNhan.AppearanceCell.Options.UseFont = true;
-            this.cCongViecCaNhan.Caption = "Công Việc Cá Nhân";
-            this.cCongViecCaNhan.FieldName = "CongViecCaNhan";
+            this.cCongViecCaNhan.DataPropertyName = "CongViecCaNhan";
+            this.cCongViecCaNhan.HeaderText = "Công việc cá nhân";
             this.cCongViecCaNhan.Name = "cCongViecCaNhan";
-            this.cCongViecCaNhan.OptionsColumn.ReadOnly = true;
-            this.cCongViecCaNhan.Visible = true;
-            this.cCongViecCaNhan.VisibleIndex = 4;
-            this.cCongViecCaNhan.Width = 82;
+            this.cCongViecCaNhan.Width = 130;
             // 
             // cChiTieu
             // 
-            this.cChiTieu.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cChiTieu.AppearanceCell.Options.UseFont = true;
-            this.cChiTieu.Caption = "Chi Tiêu";
-            this.cChiTieu.FieldName = "ChiTieu";
+            this.cChiTieu.DataPropertyName = "ChiTieu";
+            this.cChiTieu.HeaderText = "Chỉ tiêu";
             this.cChiTieu.Name = "cChiTieu";
-            this.cChiTieu.OptionsColumn.ReadOnly = true;
-            this.cChiTieu.Visible = true;
-            this.cChiTieu.VisibleIndex = 5;
-            this.cChiTieu.Width = 93;
+            this.cChiTieu.Width = 150;
             // 
-            // repositoryItemCheckEdit1
+            // cTieuChiID
             // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.cTieuChiID.DataPropertyName = "TieuChiID";
+            this.cTieuChiID.HeaderText = "Tiêu chí ID";
+            this.cTieuChiID.Name = "cTieuChiID";
+            // 
+            // cTenTieuChi
+            // 
+            this.cTenTieuChi.DataPropertyName = "TenTieuChi";
+            this.cTenTieuChi.HeaderText = "Tên tiêu chí";
+            this.cTenTieuChi.Name = "cTenTieuChi";
+            this.cTenTieuChi.ReadOnly = true;
+            // 
             // 
             // barManager1
             // 
@@ -382,6 +371,7 @@
             this.bar1.DockCol = 0;
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.FloatLocation = new System.Drawing.Point(59, 120);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAdd),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
@@ -391,6 +381,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnClose),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCap),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXemAllMucTieu)});
+            this.bar1.Offset = 42;
             this.bar1.Text = "Tools";
             // 
             // btnAdd
@@ -422,7 +413,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Caption = "Hủy";
+            this.btnCancel.Caption = "Xóa";
             this.btnCancel.Id = 3;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
             this.btnCancel.Name = "btnCancel";
@@ -436,7 +427,6 @@
             this.btnPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrint.ImageOptions.SvgImage")));
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnPrint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrint_ItemClick);
             // 
             // btnClose
             // 
@@ -461,11 +451,9 @@
             // 
             this.btnXemAllMucTieu.Caption = "Xem Tất Cả Mục Tiêu";
             this.btnXemAllMucTieu.Id = 7;
-            this.btnXemAllMucTieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemAllMucTieu.ImageOptions.Image")));
             this.btnXemAllMucTieu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemAllMucTieu.ImageOptions.LargeImage")));
             this.btnXemAllMucTieu.Name = "btnXemAllMucTieu";
             this.btnXemAllMucTieu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnXemAllMucTieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemAllMucTieu_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -482,15 +470,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1049, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1364, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 623);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 736);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1049, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1364, 0);
             // 
             // barDockControlLeft
             // 
@@ -498,15 +486,18 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 599);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 712);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1049, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1364, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 599);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 712);
+            // 
+            // kPITableAdapter
+            // 
             // 
             // Frm_QuanLyNganHangKPI
             // 
@@ -514,7 +505,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1049, 623);
+            this.ClientSize = new System.Drawing.Size(1364, 736);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -522,7 +513,6 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_QuanLyNganHangKPI.IconOptions.Image")));
             this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_QuanLyNganHangKPI";
@@ -541,14 +531,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPhuongPhapDo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoiDung.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).EndInit();
-            this.gridSplitContainer1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
-            this.gridSplitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgrMucTieuNganHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_QLNganHangKPI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kPIBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -580,17 +564,21 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.CheckEdit chkCongViecCaNhan;
-        private DevExpress.XtraGrid.GridControl dgrMucTieuNganHang;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn cMaKPI;
-        private DevExpress.XtraGrid.Columns.GridColumn cNoiDung;
-        private DevExpress.XtraGrid.Columns.GridColumn cDonViTinh;
-        private DevExpress.XtraGrid.Columns.GridColumn cPhuongPhapDo;
-        private DevExpress.XtraGrid.Columns.GridColumn cCongViecCaNhan;
-        private DevExpress.XtraGrid.Columns.GridColumn cChiTieu;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
         private DevExpress.XtraBars.BarButtonItem btnCap;
         private DevExpress.XtraBars.BarButtonItem btnXemAllMucTieu;
+        private System.Windows.Forms.DataGridView dtgv_QLNganHangKPI;
+        private System.Windows.Forms.BindingSource kPIBindingSource;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.ComboBox cbx_TieuChiID;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cbChon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cDonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cPhuongPhapDo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cCongViecCaNhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTieuChiID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTenTieuChi;
+        private System.Windows.Forms.TextBox txt_TenTieuChi;
     }
 }

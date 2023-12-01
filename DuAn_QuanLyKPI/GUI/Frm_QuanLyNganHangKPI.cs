@@ -24,19 +24,30 @@ using DevExpress.XtraPrinting.Native;
 //using DevExpress.XtraVerticalGrid;
 using DuAn_QuanLyKPI.Constants;
 using DuAn_QuanLyKPI.DTO;
+using System.Data.SqlClient;
 
 namespace DuAn_QuanLyKPI.GUI
 {
     public partial class Frm_QuanLyNganHangKPI : DevExpress.XtraEditors.XtraForm, INotifyPropertyChanged
     {
+        private string mconnectstring = "server=192.168.50.108,1433; database=QuanLyKPI;uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
+        private string msql;
         private int _edit = 0;
-        private string makpi = "";
-        public int Edit { get => _edit; 
-            set 
-            { 
-                _edit = value; 
+        List<int> selectedItems = new List<int>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        public int Edit
+        {
+            get => _edit;
+            set
+            {
+                _edit = value;
                 OnPropertyChanged(nameof(Edit));
                 switch (value)
                 {
@@ -50,139 +61,57 @@ namespace DuAn_QuanLyKPI.GUI
                         splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
                         break;
                 }
-            } 
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         public Frm_QuanLyNganHangKPI()
         {
             InitializeComponent();
             LoadData();
-            //ShowGridPreview(GridControl grid);
+            ChoPhepNhap();
+            LoadCbo();
         }
-
-        private void LoadData ()
+        private void LoadCbo()
         {
-            var db = DataProvider.Ins.DB;
-            dgrMucTieuNganHang.DataSource = db.KPI.ToList();
+            DataTable dataTableTieuChi = new DataTable();
+            using (SqlConnection connection = new SqlConnection(mconnectstring))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT TieuChiID, TenTieuChi FROM NhomTieuChi", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        dataTableTieuChi.Load(reader);
+                    }
+                }
+              
+            }
+            dataTableTieuChi.DefaultView.Sort = "TieuChiID";
+            dataTableTieuChi = dataTableTieuChi.DefaultView.ToTable();
+            cbx_TieuChiID.DataSource = dataTableTieuChi;
+            cbx_TieuChiID.ValueMember = "TieuChiID";
+            cbx_TieuChiID.DisplayMember = "TenTieuChi";
+            cbx_TieuChiID.SelectedIndexChanged += cbx_TieuChiID_SelectedIndexChanged;
+
         }
-        
-        private void cboChucDanh_SelectedValueChanged(object sender, EventArgs e)
+            private void LoadData()
         {
+
+            msql = "SELECT * FROM [dbo].[KPI],[dbo].[NhomTieuChi] where KPI.TieuChiID = NhomTieuChi.TieuChiID";
+            DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPI");
+            dtgv_QLNganHangKPI.AutoGenerateColumns = false;
+            dtgv_QLNganHangKPI.DataSource = tb;
         }
-
-        private void cboFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //var db = DataProvider.Ins.DB;
-            //switch (cboFilter.SelectedIndex)
-            //{
-            //    case 0:
-            //        var list1 = db.KPI.ToList();
-            //        dgrMucTieuNganHang.DataSource = list1;
-            //        break; 
-            //    case 1:
-            //        var list2 = db.KPI.Where(x => x.NganHangKPI.Any(b => b.MaPK == cboKhoaPhong.SelectedValue.ToString())).ToList();
-            //        dgrMucTieuNganHang.DataSource = list2;
-            //        break;
-            //    case 2:
-            //        var list3 = db.KPI.Where(x => x.NganHangKPI.Any(b => b.MaChucDanh == cboChucDanh.SelectedValue.ToString())).ToList();
-            //        dgrMucTieuNganHang.DataSource = list3;
-            //        break;
-            //    case 3:
-            //        var list4 = db.KPI.Where(x => x.NganHangKPI.Any(b => b.MaChucDanh == cboChucDanh.SelectedValue.ToString() && b.MaPK == cboKhoaPhong.SelectedValue.ToString())).ToList();
-            //        dgrMucTieuNganHang.DataSource = list4;
-            //        break;
-            //}
-        }
-
-        
-
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void LoadLuu()
-        {
-            var db = DataProvider.Ins.DB;
-            KPI kpi = new KPI();
-            kpi.NoiDung = txtNoiDung.Text.Trim();
-            kpi.DonViTinh = txtDonViTinh.Text.Trim();
-            kpi.PhuongPhapDo = txtPhuongPhapDo.Text.Trim();
-            kpi.ChiTieu = txtChiTieu.Text.Trim();
-            kpi.CongViecCaNhan = chkCongViecCaNhan.Checked;
-            db.KPI.Add(kpi);
-            db.SaveChanges();
-            MessageBox.Show("Bạn đã nhập dữ liệu thành công");
-            LoadData();
-        }
-
-        private void LoadSua()
-        {
-            var db = DataProvider.Ins.DB;
-            KPI kpi = db.KPI.Where(x => x.NoiDung == txtNoiDung.Text).FirstOrDefault();
-            txtNoiDung.Text = kpi.NoiDung;
-            txtDonViTinh.Text = kpi.DonViTinh;
-            txtPhuongPhapDo.Text = kpi.PhuongPhapDo;
-            txtChiTieu.Text = kpi.ChiTieu;
-            db.KPI.Attach(kpi);
-            db.Entry(kpi).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
-            MessageBox.Show("Bạn đã sửa thành công!!");
-        }
-
-        private void loadXoa()
-        {
-            
-            try
-            {
-                var db = DataProvider.Ins.DB;
-                //string id = txtMaKPI.Text;
-                KPI nd = db.KPI.Where(x => x.NoiDung == txtNoiDung.Text).SingleOrDefault();
-                txtNoiDung.Text = nd.NoiDung;
-                txtDonViTinh.Text = nd.DonViTinh;
-                txtPhuongPhapDo.Text = nd.PhuongPhapDo;
-                txtChiTieu.Text = nd.ChiTieu;
-                db.KPI.Remove(nd);
-                db.SaveChanges();
-                LoadData();
-                MessageBox.Show("Bạn đã xóa thành công!!");
-            }
-            catch
-            {
-                MessageBox.Show("Bạn đã bị lỗi!!");
-            }
-        }
         private void btnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
-
-        private void btnPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            ShowGridPreview(dgrMucTieuNganHang);
-        }
-
-
-
-        //private void FrmQuanLyNganHangKPI_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    switch (e.KeyChar.ToString().ToLower())
-        //    {
-        //        case  "crtl+1":this.BtnLuu.PerformClick();
-        //            break;
-        //        case  "crtl+2":this.btnLoadData.PerformClick();
-        //            break;
-        //    }
-        //}
-
-
         private void ShowGridPreview(GridControl grid)
         {
             // Check whether the GridControl can be previewed.
@@ -197,7 +126,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void ChoPhepNhap()
         {
-            txtNoiDung.Enabled = true;
+            
             txtNoiDung.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             txtDonViTinh.Enabled = true;
             txtDonViTinh.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
@@ -206,15 +135,13 @@ namespace DuAn_QuanLyKPI.GUI
             txtChiTieu.Enabled = true;
             txtChiTieu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
         }
-
-
         private void LamMoiThongTin()
         {
             txtNoiDung.Text = "";
             txtDonViTinh.Text = "";
             txtPhuongPhapDo.Text = "";
             txtChiTieu.Text = "";
-            //LamMoiNgayHienTai();
+            cbx_TieuChiID.Text = "";
         }
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -226,79 +153,118 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
             Edit = 2;
+            LamMoiThongTin();
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (Edit == 1)
+            //thì là trạng thái thêm
             {
-                //thì là trạng thái thêm
-                LoadLuu();
+                msql = "INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo,CongViecCaNhan, ChiTieu, TieuChiID) VALUES (N'" + txtNoiDung.Text + "','" + txtDonViTinh.Text + "','" + txtPhuongPhapDo.Text + "','" + chkCongViecCaNhan.Checked + "','" + txtChiTieu.Text + "','"+cbx_TieuChiID.SelectedValue.ToString()+"')";
+                comm.RunSQL(mconnectstring, msql);
+                LoadData();
             }
-            else
+            if (Edit == 2)
+            //trạng thái sửa
             {
-                //thì là trạng thái sửa
-                LoadSua();
+                int maKPI = 0;
+                if (dtgv_QLNganHangKPI.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = dtgv_QLNganHangKPI.SelectedRows[0];
+                    int.TryParse(selectedRow.Cells["cMaKPI"].Value.ToString(), out maKPI);
+                }
+                msql = "UPDATE [dbo].[KPI] SET NoiDung = N'" + txtNoiDung.Text + "', DonViTinh = N'" + txtDonViTinh.Text + "', PhuongPhapDo = N'" + txtPhuongPhapDo.Text + "',CongViecCaNhan = '" + chkCongViecCaNhan.Checked + "', ChiTieu = '" + txtChiTieu.Text + "', TieuChiID = '" + cbx_TieuChiID.SelectedValue + "' WHERE MaKPI ='" + maKPI + "'";
+                comm.RunSQL(mconnectstring, msql);
+                LoadData();
             }
             Edit = 0;
 
         }
 
-        private void btnCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Edit = 0;
-            loadXoa();
-        }
         private void btnCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_CapDanhSachKPI f = new Frm_CapDanhSachKPI();
-            f.ShowDialog(); 
+            XtraForm1 form = new XtraForm1();
+            form.ShowDialog();
         }
-        private void btnXemAllMucTieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //Lấy dữ liệu từ gridview đổ lên các textbox
+        private void dtgv_QLNganHangKPI_Click(object sender, EventArgs e)
         {
-            Frm_XemMucTieuKPI f = new Frm_XemMucTieuKPI();
-            f.ShowDialog();
-        }
+            if (dtgv_QLNganHangKPI.SelectedRows.Count > 0)
+            {
+                // Lấy thông tin từ hàng được chọn
+                DataGridViewRow selectedRow = dtgv_QLNganHangKPI.SelectedRows[0];
+                string noiDung = selectedRow.Cells["cNoiDung"].Value.ToString();
+                string donViTinh = selectedRow.Cells["cDonViTinh"].Value.ToString();
+                string phuongPhapDo = selectedRow.Cells["cPhuongPhapDo"].Value.ToString();
+                string congViecCaNhanStr = selectedRow.Cells["cCongViecCaNhan"].Value.ToString();
+                bool congViecCaNhan;
+                if (bool.TryParse(congViecCaNhanStr, out congViecCaNhan))
+                {
+                    // Đặt giá trị bool vào CheckBox
+                    chkCongViecCaNhan.Checked = congViecCaNhan;
+                }
+                string chiTieu = selectedRow.Cells["cChiTieu"].Value.ToString();
+                string tieuChiID = selectedRow.Cells["cTieuChiID"].Value.ToString();
+                string tenTieuChi = selectedRow.Cells["cTenTieuChi"].Value.ToString();
+                // Lấy thông tin từ các ô cột khác nếu cần
+                txtNoiDung.Text = noiDung;
+                txtDonViTinh.Text = donViTinh;
+                txtPhuongPhapDo.Text = phuongPhapDo;
+                txtChiTieu.Text = chiTieu;
+                cbx_TieuChiID.Text = tieuChiID;
+                txt_TenTieuChi.Text = tenTieuChi;
 
-        private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+                // Hiển thị thông tin hoặc thực hiện hành động dựa trên dữ liệu của hàng được chọn
+                MessageBox.Show($"Đã chọn hàng có nội dung: {noiDung}");
+            }
+        }
+        //Xóa
+        private void btnCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            makpi = gridView2.GetFocusedRowCellValue("MaKPI").ToString();
-            txtNoiDung.Text = gridView2.GetFocusedRowCellValue("NoiDung").ToString();
-            txtDonViTinh.Text = gridView2.GetFocusedRowCellValue("DonViTinh").ToString();
-            txtPhuongPhapDo.Text = gridView2.GetFocusedRowCellValue("PhuongPhapDo").ToString();
-            txtChiTieu.Text = gridView2.GetFocusedRowCellValue("ChiTieu").ToString();
-            var a = gridView2.GetFocusedRowCellValue("CongViecCaNhan").ToString();
-            if (a == "True")
-                chkCongViecCaNhan.Checked = true;
-            else 
-                chkCongViecCaNhan.Checked = false;
-
-            //FrmChiTietQuanLyNganHang f = new FrmChiTietQuanLyNganHang();
-            //f.ShowDialog();
-            //makpi = gridView2.GetFocusedRowCellValue("NoiDung").ToString();
-            //makpi = gridView2.GetFocusedRowCellValue("DonViTinh").ToString();
-            //makpi = gridView2.GetFocusedRowCellValue("PhuongPhapDo").ToString();
-            //makpi = gridView2.GetFocusedRowCellValue("ChiTieu").ToString();
-            //makpi = gridView2.GetFocusedRowCellValue("CongViecCaNhan").ToString();
-            //if (makpi == "True")
-            //    chkCongViecCaNhan.Checked = true;
-            //else
-            //    chkCongViecCaNhan.Checked = false;
+            int maKPI = 0;
+            if (dtgv_QLNganHangKPI.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dtgv_QLNganHangKPI.SelectedRows[0];
+                int.TryParse(selectedRow.Cells["cMaKPI"].Value.ToString(), out maKPI);
+            }
+            msql = "DELETE [dbo].[KPI] WHERE MaKPI ='" + maKPI + "'";
+            comm.RunSQL(mconnectstring, msql);
+            LoadData();
         }
 
-        private void dgrMucTieuNganHang_DoubleClick(object sender, EventArgs e)
+        private void dtgv_QLNganHangKPI_KeyDown(object sender, KeyEventArgs e)
         {
-            Frm_XemChiTietQuanLyNganHangKPI f = new Frm_XemChiTietQuanLyNganHangKPI(makpi);
-            f.ShowDialog();
+            if (e.KeyCode == Keys.Enter)
+            {
+                int selectedRowIndex = dtgv_QLNganHangKPI.SelectedCells[0].RowIndex;
+                if (selectedRowIndex >= 0 && selectedRowIndex < dtgv_QLNganHangKPI.Rows.Count)
+                {
+                    DataGridViewRow selectedRow = dtgv_QLNganHangKPI.Rows[selectedRowIndex];
+                    string noidung = selectedRow.Cells["cNoiDung"].Value != null ? selectedRow.Cells["cNoiDung"].Value.ToString() : "";
+
+
+                    string donvitinh = selectedRow.Cells["cDonViTinh"].Value != null ? selectedRow.Cells["cDonViTinh"].Value.ToString() : "";
+                    string phuongphapdo = selectedRow.Cells["cPhuongPhapDo"].Value != null ? selectedRow.Cells["cPhuongPhapDo"].Value.ToString() : "";
+                    bool congvieccanhan = selectedRow.Cells["cCongViecCaNhan"].Value != null && (bool)selectedRow.Cells["cCongViecCaNhan"].Value;
+                    string chitieu = selectedRow.Cells["cChiTieu"].Value != null ? selectedRow.Cells["cChiTieu"].Value.ToString() : "";
+
+                    Frm_XemChiTietQuanLyNganHangKPI form2 = new Frm_XemChiTietQuanLyNganHangKPI();
+                    form2.SetData(noidung, donvitinh, phuongphapdo, congvieccanhan, chitieu);
+                    form2.Show();
+                }
+            }
         }
 
-        private void btnCap_Click(object sender, EventArgs e)
+        private void cbx_TieuChiID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-        }
+            // Lấy giá trị được chọn từ ComboBox
+            string tenTieuChi = cbx_TieuChiID.Text;
 
-        
+            // Đặt giá trị vào TextBox
+            txt_TenTieuChi.Text = tenTieuChi;
+        }
     }
 }

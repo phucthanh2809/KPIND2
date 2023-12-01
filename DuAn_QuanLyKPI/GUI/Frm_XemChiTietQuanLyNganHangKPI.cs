@@ -20,31 +20,18 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class Frm_XemChiTietQuanLyNganHangKPI : DevExpress.XtraEditors.XtraForm
     {
-        private string makpi;
-        public Frm_XemChiTietQuanLyNganHangKPI(string makpi)
+        
+        public Frm_XemChiTietQuanLyNganHangKPI()
         {
-            InitializeComponent();
-            this.makpi = makpi;
-            LoadData();
+            InitializeComponent();        
         }
-        private void LoadData()
+        public void SetData(string noidung, string donvitinh, string phuongphapdo, bool congvieccanhan, string chitieu)
         {
-            var db = DataProvider.Ins.DB;
-
-            int ma = Convert.ToInt32(makpi);
-            var k = db.KPI.Where(x => x.MaKPI == ma).First();
-            txtNoiDung.Text = k.NoiDung.ToString();
-            txtChiTieu.Text = k.ChiTieu.ToString();
-            txtDonViTinh.Text = k.DonViTinh.ToString();
-            txtPhuongPhapDo.Text = k.PhuongPhapDo.ToString();
-            if (k.CongViecCaNhan)
-                chkCongViecCaNhan.Checked = true;
-            else
-                chkCongViecCaNhan.Checked = false;
-        }
-        private void btnCap_Click(object sender, EventArgs e)
-        {
-            var db = DataProvider.Ins.DB;
+            txtNoiDung.Text = noidung;
+            txtDonViTinh.Text = donvitinh;
+            txtPhuongPhapDo.Text = phuongphapdo;
+            chkCongViecCaNhan.Checked = congvieccanhan;
+            txtChiTieu.Text = chitieu;
         }
 
     }
