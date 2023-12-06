@@ -81,7 +81,7 @@ namespace DuAn_QuanLyKPI.GUI
         //Load DataGridview Tài chính
         private void LoadDataBVTaiChinh()
         {
-            msql = "Select * From [dbo].[PhieuKPITongHop] as PKPITH, [dbo].[KPI_KhoaPhong] as KPIKP, [dbo].[ChiTietTieuChiMucTieuKhoaPhong] as CTTCMTCKP, [dbo].[NhomTieuChi] as TC, [dbo].[DanhsachBieuMau] as BM,  [dbo].[KPI] as KPI WHERE KPIKP.MaPhieuKPI = PKPITH.MaPhieuKPI and KPIKP.IDChiTietKPIKP = CTTCMTCKP.IDChiTietMucTieuKP and CTTCMTCKP.TieuChiID = TC.TieuChiID and KPIKP.IDBieuMau = BM.IDBieuMau and CTTCMTCKP.MaKPI = KPI.MaKPI and PKPITH.MaKPI = KPI.MaKPI and PKPITH.TieuChiID = TC.TieuChiID and PKPITH.MaPK = 'CNTT' and PKPITH.TruongPK = 'False' and PKPITH.CongViecCaNhan = 'False' and KPIKP.TrangThai = 0";
+            msql = "";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
@@ -99,15 +99,15 @@ namespace DuAn_QuanLyKPI.GUI
         {
             msql = "select * from [dbo].[KPI] as KPI,[dbo].[KPI_KhoaPhong] as KPIKP,[dbo].[NhomTieuChi] as TC,[dbo].[PhongKhoa] as PK where KPI.MaKPI = KPIKP.MaKPI AND KPIKP.MaPK = PK.MaPK AND KPIKP.TieuChiID = TC.TieuChiID AND KPIKP.MaPK = '" + MaPhongKhoa + "' AND KPIKP.TieuChiID = 'B'AND KPI.CongViecCaNhan = 0 AND KPIKP.TrangThai = 0";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "VanHanh");
-            dgrBVMucTieuVanHanh.AutoGenerateColumns = false;
-            dgrBVMucTieuVanHanh.DataSource = tb;  
+            //dgrBVMucTieuVanHanh.AutoGenerateColumns = false;
+            //dgrBVMucTieuVanHanh.DataSource = tb;  
         }
         private void LoadDataBVPhatTrien()
         {
             msql = "select * from [dbo].[KPI] as KPI,[dbo].[KPI_KhoaPhong] as KPIKP,[dbo].[NhomTieuChi] as TC,[dbo].[PhongKhoa] as PK where KPI.MaKPI = KPIKP.MaKPI AND KPIKP.MaPK = PK.MaPK AND KPIKP.TieuChiID = TC.TieuChiID AND KPIKP.MaPK = '" + MaPhongKhoa + "' AND KPIKP.TieuChiID = 'L'AND KPI.CongViecCaNhan = 0 AND KPIKP.TrangThai = 0";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "VanHanh");
-            dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
-            dgrBVMucTieuPhatTrien.DataSource = tb;
+            //dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
+            //dgrBVMucTieuPhatTrien.DataSource = tb;
         }
         #endregion
         #region Method
@@ -273,14 +273,13 @@ namespace DuAn_QuanLyKPI.GUI
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNoiDungNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cChiTieuNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuBVTC"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNamNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells[" cNgayTaoKPIKPNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNgayTaoKPIKPBVTC"].Value.ToString();
+                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNgayTaoKPIKPNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNgayTaoKPIKPBVTC"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoTieuChiNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBVTC"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiNHTTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
                     dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBVTC"].Value.ToString();
                 }
             }
-
         }
         private void copyDataBVtoKH()
         {
@@ -420,17 +419,15 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void dgrBVMucTieuTaiChinh_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex == 0)
+            if (e.RowIndex == -1)
+                return;
+            if (Convert.ToBoolean(dgrBVMucTieuTaiChinh.CurrentRow.Cells["cChonTatCaBVTC"].Value) == true)
             {
-                // Kiểm tra giá trị của ô kiểm "Chọn Tất Cả BVTC" trong header
-                if ((bool)dgrBVMucTieuTaiChinh.CurrentRow.Cells["cChonTatCaBVTC"].Value == true)
-                {
-                    copyDataBVtoTC();
-                }
-                else
-                {
-
-                }    
+                copyDataBVtoTC();
+            }
+            else
+            {
+                
             }
         }
 

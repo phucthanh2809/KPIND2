@@ -12,22 +12,23 @@ namespace DuAn_QuanLyKPI.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class KPI_CaNhan
+    public partial class KPI_TruongKhoaPhong
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KPI_CaNhan()
+        public KPI_TruongKhoaPhong()
         {
-            this.ChiTietKPICaNhan = new HashSet<ChiTietKPICaNhan>();
+            this.ChiTietKPITruongKhoaPhong = new HashSet<ChiTietKPITruongKhoaPhong>();
         }
     
-        public string MaPhieuKPICN { get; set; }
+        public string MaPhieuKPITKP { get; set; }
+        public string MaPhieuKPIBV { get; set; }
         public string MaPhieuKPIKP { get; set; }
-        public string QuyTacUngXu { get; set; }
-        public Nullable<double> TrongSoQuyTacUngXu { get; set; }
+        public System.DateTime NgayLapPhieuKPITKP { get; set; }
         public int IDBieuMau { get; set; }
-        public string MaNV { get; set; }
         public int QuyNam { get; set; }
-        public System.DateTime NgayLapPhieuKPICN { get; set; }
+        public string MaNV { get; set; }
+        public Nullable<double> TongTrongSoMucTieuTKP { get; set; }
+        public string TongTrongSoKetQuaTKP { get; set; }
         public string NguoiNhanTieuChiDDKKPI { get; set; }
         public Nullable<System.DateTime> NgayNhanTieuChiDDKKPI { get; set; }
         public string NguoiXemXetDDKKPI { get; set; }
@@ -40,17 +41,14 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<System.DateTime> NgayXemXetDKQKPI { get; set; }
         public string NguoiPheDuyetDKQKPI { get; set; }
         public Nullable<System.DateTime> NgayPheDuyetDKQKPI { get; set; }
-        public Nullable<double> TongTrongSoCaNhan { get; set; }
-        public Nullable<double> TongTrongSoCNMucTieuQuanTrongTrongNam { get; set; }
-        public Nullable<double> TongTrongSoCNGiaTriCotLoiBV { get; set; }
-        public Nullable<double> TongTrongSoCNKetQuaCuaQuaTrinhDanhGia { get; set; }
+        public Nullable<double> TongTrongSoTKPGiaTriCotLoiBV { get; set; }
+        public Nullable<double> TongTrongSoTKPKetQuaCuaQuaTrinhDanhGia { get; set; }
     
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
-        public virtual DanhsachBieuMau DanhsachBieuMau1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
+        public virtual KPI_BenhVien KPI_BenhVien { get; set; }
         public virtual KPI_KhoaPhong KPI_KhoaPhong { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietKPITruongKhoaPhong> ChiTietKPITruongKhoaPhong { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
-        public virtual NguoiDung NguoiDung1 { get; set; }
     }
 }

@@ -12,15 +12,14 @@ namespace DuAn_QuanLyKPI.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class ThongBao
+    public partial class ChiTietTieuChiMucTieuBV
     {
-        public int MaThongBao { get; set; }
-        public string MaNhanVien { get; set; }
-        public string TieuDe { get; set; }
-        public string NoiDung { get; set; }
-        public System.DateTime ThoiGian { get; set; }
-        public bool TrangThai { get; set; }
+        public string MaPhieuKPIBV { get; set; }
+        public int MaKPI { get; set; }
+        public Nullable<double> TrongSoTCBV { get; set; }
+        public Nullable<double> TrongSoKPIBV { get; set; }
     
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual KPI KPI { get; set; }
+        public virtual KPI_BenhVien KPI_BenhVien { get; set; }
     }
 }

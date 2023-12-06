@@ -14,13 +14,26 @@ namespace DuAn_QuanLyKPI.DTO
     
     public partial class ChiTietKPICaNhan
     {
-        public Nullable<double> TrongSo { get; set; }
+        public string MaPhieuKPICN { get; set; }
+        public int MaKPI { get; set; }
+        public string ChiTieuKPICN { get; set; }
+        public Nullable<double> TrongSoTCCN { get; set; }
+        public Nullable<double> TrongSoKPICN { get; set; }
+        public Nullable<int> KPICaNhanDangKyThem { get; set; }
+        public Nullable<double> TrongSoKPICaNhanDangKyThem { get; set; }
         public string NguonChungMinh { get; set; }
         public string KeHoach { get; set; }
-        public string ThucHien { get; set; }
-        public Nullable<double> HoanThanh { get; set; }
-        public int ChitietID { get; set; }
+        public Nullable<double> ThucHien { get; set; }
+        public Nullable<double> TyLeHoanThanh { get; set; }
+        public Nullable<System.DateTime> ThoiDiemGhiNhan { get; set; }
+        public string TieuChiDanhGiaKQ { get; set; }
+        public Nullable<double> KetQua { get; set; }
+        public Nullable<double> KetQuaKPIBV { get; set; }
+        public Nullable<double> KetQuaKPIKP { get; set; }
+        public Nullable<double> KetQuaKPIKPGiaTriCotLoiBV { get; set; }
     
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual KPI KPI { get; set; }
+        public virtual KPI KPI1 { get; set; }
+        public virtual KPI_CaNhan KPI_CaNhan { get; set; }
     }
 }

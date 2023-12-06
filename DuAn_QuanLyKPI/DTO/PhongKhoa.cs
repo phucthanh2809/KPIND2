@@ -17,25 +17,25 @@ namespace DuAn_QuanLyKPI.DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhongKhoa()
         {
-            this.ChiTietKPIKhoaPhong = new HashSet<ChiTietKPIKhoaPhong>();
             this.ChucDanh = new HashSet<ChucDanh>();
+            this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
             this.NganHangKPI = new HashSet<NganHangKPI>();
             this.NguoiDung = new HashSet<NguoiDung>();
-            this.PhieuKPITongHop = new HashSet<PhieuKPITongHop>();
+            this.ChiTietKPIKhoaPhong = new HashSet<ChiTietKPIKhoaPhong>();
         }
     
         public string MaPK { get; set; }
         public string TenPK { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChucDanh> ChucDanh { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NganHangKPI> NganHangKPI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NguoiDung> NguoiDung { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuKPITongHop> PhieuKPITongHop { get; set; }
+        public virtual ICollection<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
     }
 }

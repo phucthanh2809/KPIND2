@@ -14,25 +14,13 @@ namespace DuAn_QuanLyKPI.DTO
     
     public partial class TongHopBieuMauPhieuKPI
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TongHopBieuMauPhieuKPI()
-        {
-            this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
-            this.PhieuKPITongHop = new HashSet<PhieuKPITongHop>();
-            this.KPI_CaNhan = new HashSet<KPI_CaNhan>();
-        }
-    
         public string MaPhieuKPI { get; set; }
         public Nullable<int> IDBieuMau { get; set; }
-        public Nullable<System.DateTime> Nam { get; set; }
-        public Nullable<System.DateTime> Quy { get; set; }
+        public Nullable<int> QuyNam { get; set; }
+        public Nullable<System.DateTime> NguoiLapPhieuKPI { get; set; }
+        public Nullable<int> TrangThai { get; set; }
     
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuKPITongHop> PhieuKPITongHop { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KPI_CaNhan> KPI_CaNhan { get; set; }
+        public virtual DanhsachBieuMau DanhsachBieuMau1 { get; set; }
     }
 }

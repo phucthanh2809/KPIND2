@@ -33,6 +33,7 @@ namespace DuAn_QuanLyKPI.GUI
             public static string PhanQuyen;
             public static string TK;
             public static byte[] HinhAnh;
+            public static bool TPK;
         # endregion
 
 
@@ -115,7 +116,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 #region  truyền dữ liệu sau khi đăng nhập thành công
                     DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
-                DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
+                    DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
 
                     MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
                     MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
@@ -127,7 +128,8 @@ namespace DuAn_QuanLyKPI.GUI
                     SDT = DataUserCurrent.Instance.Permission = nguoidung.SDT;
                     TK = DataUserCurrent.Instance.Permission = nguoidung.TenTaiKhoan;
 
-                    byte[] hinhAnhBytes = nguoidung.HinhAnhNV;
+
+                byte[] hinhAnhBytes = nguoidung.HinhAnhNV;
                     DataUserCurrent.Instance.Permission = hinhAnhBytes.ToString();
                     HinhAnh = hinhAnhBytes;
 

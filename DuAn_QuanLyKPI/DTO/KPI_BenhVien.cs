@@ -12,38 +12,36 @@ namespace DuAn_QuanLyKPI.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class DanhsachBieuMau
+    public partial class KPI_BenhVien
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DanhsachBieuMau()
+        public KPI_BenhVien()
         {
-            this.KPI_BenhVien = new HashSet<KPI_BenhVien>();
-            this.KPI_CaNhan = new HashSet<KPI_CaNhan>();
-            this.KPI_CaNhan1 = new HashSet<KPI_CaNhan>();
+            this.ChiTietKPIBenhVien = new HashSet<ChiTietKPIBenhVien>();
+            this.ChiTietTieuChiMucTieuBV = new HashSet<ChiTietTieuChiMucTieuBV>();
             this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
             this.KPI_TruongKhoaPhong = new HashSet<KPI_TruongKhoaPhong>();
-            this.TongHopBieuMauPhieuKPI = new HashSet<TongHopBieuMauPhieuKPI>();
-            this.TongHopBieuMauPhieuKPI1 = new HashSet<TongHopBieuMauPhieuKPI>();
         }
     
+        public string MaPhieuKPIBV { get; set; }
+        public int NamPhieu { get; set; }
+        public Nullable<double> TongTrongSo { get; set; }
+        public string NguoiLap { get; set; }
+        public string NguoiPheDuyet { get; set; }
+        public System.DateTime NgayLapPhieuKPIBV { get; set; }
+        public Nullable<System.DateTime> NgayPheDuyet { get; set; }
         public int IDBieuMau { get; set; }
-        public string MaBieuMau { get; set; }
-        public string TenBieuMau { get; set; }
-        public Nullable<int> MaCapDoKPIBenhVien { get; set; }
     
+        public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KPI_BenhVien> KPI_BenhVien { get; set; }
+        public virtual ICollection<ChiTietKPIBenhVien> ChiTietKPIBenhVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KPI_CaNhan> KPI_CaNhan { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KPI_CaNhan> KPI_CaNhan1 { get; set; }
+        public virtual ICollection<ChiTietTieuChiMucTieuBV> ChiTietTieuChiMucTieuBV { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual NguoiDung NguoiDung1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_TruongKhoaPhong> KPI_TruongKhoaPhong { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TongHopBieuMauPhieuKPI> TongHopBieuMauPhieuKPI { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TongHopBieuMauPhieuKPI> TongHopBieuMauPhieuKPI1 { get; set; }
     }
 }

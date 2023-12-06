@@ -122,13 +122,19 @@
   <ItemGroup>
     <Compile Include="Constants\DataProvider.cs" />
     <Compile Include="Constants\DataUserCurrent.cs" />
+    <Compile Include="DTO\ChiTietKPIBenhVien.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\ChiTietKPICaNhan.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ChiTietKPIKhoaPhong.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\ChiTietTieuChiMucTieuCaNhan.cs">
+    <Compile Include="DTO\ChiTietKPITruongKhoaPhong.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ChiTietTieuChiMucTieuBV.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ChiTietTieuChiMucTieuKhoaPhong.cs">
@@ -159,10 +165,16 @@
     <Compile Include="DTO\KPI.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\KPI_BenhVien.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\KPI_CaNhan.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\KPI_KhoaPhong.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\KPI_TruongKhoaPhong.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ListKPI_DTO.cs" />
@@ -173,9 +185,6 @@
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\NhomTieuChi.cs">
-      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DTO\PhieuKPITongHop.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\PhongKhoa.cs">

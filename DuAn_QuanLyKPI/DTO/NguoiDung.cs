@@ -17,8 +17,13 @@ namespace DuAn_QuanLyKPI.DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NguoiDung()
         {
-            this.ChiTietKPICaNhan = new HashSet<ChiTietKPICaNhan>();
+            this.KPI_BenhVien = new HashSet<KPI_BenhVien>();
+            this.KPI_BenhVien1 = new HashSet<KPI_BenhVien>();
             this.KPI_CaNhan = new HashSet<KPI_CaNhan>();
+            this.KPI_CaNhan1 = new HashSet<KPI_CaNhan>();
+            this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
+            this.KPI_KhoaPhong1 = new HashSet<KPI_KhoaPhong>();
+            this.KPI_TruongKhoaPhong = new HashSet<KPI_TruongKhoaPhong>();
             this.ThongBao = new HashSet<ThongBao>();
         }
     
@@ -34,11 +39,21 @@ namespace DuAn_QuanLyKPI.DTO
         public string MaQuyen { get; set; }
         public Nullable<bool> TruongPK { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
         public virtual ChucDanh ChucDanh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_BenhVien> KPI_BenhVien { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_BenhVien> KPI_BenhVien1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_CaNhan> KPI_CaNhan { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_CaNhan> KPI_CaNhan1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_TruongKhoaPhong> KPI_TruongKhoaPhong { get; set; }
         public virtual PhongKhoa PhongKhoa { get; set; }
         public virtual Quyen Quyen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
