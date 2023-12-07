@@ -44,13 +44,19 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<double> TongTrongSoCNMucTieuQuanTrongTrongNam { get; set; }
         public Nullable<double> TongTrongSoCNGiaTriCotLoiBV { get; set; }
         public Nullable<double> TongTrongSoCNKetQuaCuaQuaTrinhDanhGia { get; set; }
+        public Nullable<int> TrangThai { get; set; }
     
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
-        public virtual DanhsachBieuMau DanhsachBieuMau1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
         public virtual KPI_KhoaPhong KPI_KhoaPhong { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
         public virtual NguoiDung NguoiDung1 { get; set; }
+        public virtual NguoiDung NguoiDung2 { get; set; }
+        public virtual NguoiDung NguoiDung3 { get; set; }
+        public virtual NguoiDung NguoiDung4 { get; set; }
+        public virtual NguoiDung NguoiDung5 { get; set; }
+        public virtual NguoiDung NguoiDung6 { get; set; }
+        public virtual NguoiDung NguoiDung7 { get; set; }
     }
 }

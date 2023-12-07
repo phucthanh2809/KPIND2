@@ -15,16 +15,22 @@ namespace DuAn_QuanLyKPI
 {
     public partial class Frm_Chinh_GUI : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private static string username = Frm_Login.TenNV;
+        private static string kp = Frm_Login.TenPhongKhoa;
+
         public static string mconnectstring = "server=192.168.50.108,1433;database=QuanLyKPI;uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
+        Timer timer = new Timer();
         public Frm_Chinh_GUI()
         {
             InitializeComponent();
+            lbUsername.Text = username;
+            lbkhoaphong.Text = kp;
+            timer1.Enabled = true;
             this.IsMdiContainer = true;
         }
-
         public static int chucdanh;
         //Khai báo hàm không cho mở nhiều form giống nhau, khi mở form trùng thì sẽ tự động chuyển về form cũ
         public void OpenForm(Type typeForm)
@@ -63,18 +69,12 @@ namespace DuAn_QuanLyKPI
 
         private void btnKiemDuyet_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenForm(typeof(Frm_TongHopKPI));
+            //OpenForm(typeof(Frm_TongHopKPI));
         }
 
         private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
         }
-
-        private void btnChiTieuKPI_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            OpenForm(typeof(FrmChonBieuMau));
-        }
-
         private void btnQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
         {
 
@@ -119,6 +119,17 @@ namespace DuAn_QuanLyKPI
         {
             Frm_AddUser adduser = new Frm_AddUser();
             adduser.Show();
+        }
+
+        private void btnBieuMauKPI_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenForm(typeof(FrmChonBieuMau));
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            lbTime.Text = DateTime.Now.ToLongTimeString();
+            lbDate.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

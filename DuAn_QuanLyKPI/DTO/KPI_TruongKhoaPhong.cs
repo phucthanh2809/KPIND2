@@ -43,6 +43,7 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<System.DateTime> NgayPheDuyetDKQKPI { get; set; }
         public Nullable<double> TongTrongSoTKPGiaTriCotLoiBV { get; set; }
         public Nullable<double> TongTrongSoTKPKetQuaCuaQuaTrinhDanhGia { get; set; }
+        public Nullable<int> TrangThai { get; set; }
     
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
         public virtual KPI_BenhVien KPI_BenhVien { get; set; }

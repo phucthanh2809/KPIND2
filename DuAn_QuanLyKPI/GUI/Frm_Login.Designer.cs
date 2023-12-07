@@ -92,7 +92,7 @@
             this.lbDate.AutoSize = true;
             this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(220, 9);
+            this.lbDate.Location = new System.Drawing.Point(221, 9);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(88, 40);
             this.lbDate.TabIndex = 11;
@@ -103,7 +103,7 @@
             this.lbTime.AutoSize = true;
             this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(25, 9);
+            this.lbTime.Location = new System.Drawing.Point(24, 9);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(91, 40);
             this.lbTime.TabIndex = 10;

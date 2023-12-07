@@ -34,6 +34,7 @@ namespace DuAn_QuanLyKPI.GUI
             public static string TK;
             public static byte[] HinhAnh;
             public static bool TPK;
+            public static int CapDoBieuMauKPI;
         # endregion
 
 
@@ -115,23 +116,23 @@ namespace DuAn_QuanLyKPI.GUI
             if (nguoidung != null)
             {
                 #region  truyền dữ liệu sau khi đăng nhập thành công
-                    DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
-                    DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
+                DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
+                DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
 
-                    MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
-                    MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
-                    TenPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.PhongKhoa.TenPK;
-                    MaChucDanh = DataUserCurrent.Instance.Permission = nguoidung.MaChucDanh;
-                    TenChucDanh = DataUserCurrent.Instance.Permission = nguoidung.ChucDanh.TenChucDanh;
-                    TenNV = DataUserCurrent.Instance.Permission = nguoidung.TenNV;
-                    Email = DataUserCurrent.Instance.Permission = nguoidung.Gmail;
-                    SDT = DataUserCurrent.Instance.Permission = nguoidung.SDT;
-                    TK = DataUserCurrent.Instance.Permission = nguoidung.TenTaiKhoan;
-
-
+                MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
+                MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;
+                TenPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.PhongKhoa.TenPK;
+                MaChucDanh = DataUserCurrent.Instance.Permission = nguoidung.MaChucDanh;
+                TenChucDanh = DataUserCurrent.Instance.Permission = nguoidung.ChucDanh.TenChucDanh;
+                TenNV = DataUserCurrent.Instance.Permission = nguoidung.TenNV;
+                Email = DataUserCurrent.Instance.Permission = nguoidung.Gmail;
+                SDT = DataUserCurrent.Instance.Permission = nguoidung.SDT;
+                TK = DataUserCurrent.Instance.Permission = nguoidung.TenTaiKhoan;
+                CapDoBieuMauKPI = (int)nguoidung.MaCapDoKPIBenhVien;
+                DataUserCurrent.Instance.Permission = CapDoBieuMauKPI.ToString();
                 byte[] hinhAnhBytes = nguoidung.HinhAnhNV;
-                    DataUserCurrent.Instance.Permission = hinhAnhBytes.ToString();
-                    HinhAnh = hinhAnhBytes;
+                DataUserCurrent.Instance.Permission = hinhAnhBytes.ToString();
+                HinhAnh = hinhAnhBytes;
 
 
 

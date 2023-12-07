@@ -30,8 +30,8 @@ namespace DuAn_QuanLyKPI
         private void LayDuLieuLoadLenGrid()
         {
             var db = DataProvider.Ins.DB;
-            var listKP = db.KPI_KhoaPhong.OrderBy(x => x.TrangThai);
-            gcData.DataSource = listKP.ToList();
+            //var listKP = db.KPI_KhoaPhong.OrderBy(x => x.TrangThai);
+            //gcData.DataSource = listKP.ToList();
         }
 
         #region Biểu mẫu

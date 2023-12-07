@@ -35,6 +35,7 @@ namespace DuAn_QuanLyKPI.DTO
         public Nullable<System.DateTime> NgayPheDuyet { get; set; }
         public Nullable<System.DateTime> NgayXemXet { get; set; }
         public int IDBieuMau { get; set; }
+        public Nullable<int> TrangThai { get; set; }
     
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
         public virtual KPI_BenhVien KPI_BenhVien { get; set; }
@@ -46,6 +47,7 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual ICollection<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
         public virtual NguoiDung NguoiDung1 { get; set; }
+        public virtual NguoiDung NguoiDung2 { get; set; }
         public virtual PhongKhoa PhongKhoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_TruongKhoaPhong> KPI_TruongKhoaPhong { get; set; }

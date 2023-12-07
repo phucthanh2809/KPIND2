@@ -34,7 +34,6 @@ namespace DuAn_QuanLyKPI
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDMCaNhan = new DevExpress.XtraBars.BarSubItem();
             this.btnThongTinCaNhan = new DevExpress.XtraBars.BarButtonItem();
-            this.btnChiTieuKPI = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDanhMucKPI = new DevExpress.XtraBars.BarSubItem();
             this.btnDanhSachKPI = new DevExpress.XtraBars.BarButtonItem();
@@ -57,8 +56,10 @@ namespace DuAn_QuanLyKPI
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLyNguoiDung = new DevExpress.XtraBars.BarSubItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThemNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnNganHangKPI = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBieuMauKPI = new DevExpress.XtraBars.BarButtonItem();
             this.rbTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbCaNhan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -71,7 +72,15 @@ namespace DuAn_QuanLyKPI
             this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnThemNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.pnThongTin = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbkhoaphong = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTrackBar1)).BeginInit();
@@ -80,6 +89,7 @@ namespace DuAn_QuanLyKPI
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            this.pnThongTin.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -102,7 +112,6 @@ namespace DuAn_QuanLyKPI
             this.btnKiemDuyet,
             this.barButtonItem2,
             this.btnExcel,
-            this.btnChiTieuKPI,
             this.btnBieuMauGiamDocPhoGiamDoc,
             this.btnBieuMauTruongKhoaPhong,
             this.btnBieuMauPhoKhoaPhong,
@@ -114,9 +123,10 @@ namespace DuAn_QuanLyKPI
             this.btnUser,
             this.btnMucTieuKPI,
             this.btnNganHangKPI,
-            this.btnThemNguoiDung});
+            this.btnThemNguoiDung,
+            this.btnBieuMauKPI});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 57;
+            this.ribbon.MaxItemId = 58;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbTrangChu});
@@ -137,7 +147,6 @@ namespace DuAn_QuanLyKPI
             this.btnDMCaNhan.LargeWidth = 100;
             this.btnDMCaNhan.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThongTinCaNhan),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnChiTieuKPI),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDangXuat)});
             this.btnDMCaNhan.Name = "btnDMCaNhan";
             // 
@@ -147,13 +156,6 @@ namespace DuAn_QuanLyKPI
             this.btnThongTinCaNhan.Id = 24;
             this.btnThongTinCaNhan.Name = "btnThongTinCaNhan";
             this.btnThongTinCaNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTinCaNhan_ItemClick);
-            // 
-            // btnChiTieuKPI
-            // 
-            this.btnChiTieuKPI.Caption = "Biểu mẫu chỉ tiêu KPI";
-            this.btnChiTieuKPI.Id = 31;
-            this.btnChiTieuKPI.Name = "btnChiTieuKPI";
-            this.btnChiTieuKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTieuKPI_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -322,6 +324,13 @@ namespace DuAn_QuanLyKPI
             this.btnUser.Name = "btnUser";
             this.btnUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUser_ItemClick);
             // 
+            // btnThemNguoiDung
+            // 
+            this.btnThemNguoiDung.Caption = "Thêm Người dùng";
+            this.btnThemNguoiDung.Id = 56;
+            this.btnThemNguoiDung.Name = "btnThemNguoiDung";
+            this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick_1);
+            // 
             // btnDoiMatKhau
             // 
             this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
@@ -335,8 +344,18 @@ namespace DuAn_QuanLyKPI
             this.btnNganHangKPI.Id = 50;
             this.btnNganHangKPI.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.previewchart_32x32;
             this.btnNganHangKPI.ImageOptions.LargeImage = global::DuAn_QuanLyKPI.Properties.Resources.previewchart_32x32;
+            this.btnNganHangKPI.LargeWidth = 100;
             this.btnNganHangKPI.Name = "btnNganHangKPI";
             this.btnNganHangKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNganHangKPI_ItemClick);
+            // 
+            // btnBieuMauKPI
+            // 
+            this.btnBieuMauKPI.Caption = "Biểu mẫu KPI ";
+            this.btnBieuMauKPI.Id = 57;
+            this.btnBieuMauKPI.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.assigntask;
+            this.btnBieuMauKPI.LargeWidth = 100;
+            this.btnBieuMauKPI.Name = "btnBieuMauKPI";
+            this.btnBieuMauKPI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBieuMauKPI_ItemClick);
             // 
             // rbTrangChu
             // 
@@ -358,6 +377,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDanhMucKPI);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnNganHangKPI);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnBieuMauKPI);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnKiemDuyet);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "KPI";
@@ -407,12 +427,103 @@ namespace DuAn_QuanLyKPI
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // btnThemNguoiDung
+            // pnThongTin
             // 
-            this.btnThemNguoiDung.Caption = "Thêm Người dùng";
-            this.btnThemNguoiDung.Id = 56;
-            this.btnThemNguoiDung.Name = "btnThemNguoiDung";
-            this.btnThemNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDung_ItemClick_1);
+            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pnThongTin.Controls.Add(this.lbkhoaphong);
+            this.pnThongTin.Controls.Add(this.label4);
+            this.pnThongTin.Controls.Add(this.label2);
+            this.pnThongTin.Controls.Add(this.lbDate);
+            this.pnThongTin.Controls.Add(this.lbTime);
+            this.pnThongTin.Controls.Add(this.lbUsername);
+            this.pnThongTin.Controls.Add(this.label1);
+            this.pnThongTin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnThongTin.Location = new System.Drawing.Point(0, 730);
+            this.pnThongTin.Name = "pnThongTin";
+            this.pnThongTin.Size = new System.Drawing.Size(1364, 37);
+            this.pnThongTin.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(270, 24);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "PHẦN MỀM QUẢN LÝ KPI";
+            // 
+            // lbDate
+            // 
+            this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDate.AutoSize = true;
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(1135, 7);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(53, 24);
+            this.lbDate.TabIndex = 13;
+            this.lbDate.Text = "Date";
+            // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(1244, 7);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(55, 24);
+            this.lbTime.TabIndex = 12;
+            this.lbTime.Text = "Time";
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.Location = new System.Drawing.Point(554, 7);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(100, 24);
+            this.lbUsername.TabIndex = 1;
+            this.lbUsername.Text = "Username";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(357, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Người đang sử dụng:";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // lbkhoaphong
+            // 
+            this.lbkhoaphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbkhoaphong.AutoSize = true;
+            this.lbkhoaphong.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbkhoaphong.Location = new System.Drawing.Point(935, 7);
+            this.lbkhoaphong.Name = "lbkhoaphong";
+            this.lbkhoaphong.Size = new System.Drawing.Size(123, 24);
+            this.lbkhoaphong.TabIndex = 16;
+            this.lbkhoaphong.Text = "Khoa Phong";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(800, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 24);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Khoa/ Phòng:";
             // 
             // Frm_Chinh_GUI
             // 
@@ -423,6 +534,7 @@ namespace DuAn_QuanLyKPI
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1364, 767);
+            this.Controls.Add(this.pnThongTin);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_Chinh_GUI.IconOptions.Image")));
@@ -440,6 +552,8 @@ namespace DuAn_QuanLyKPI
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            this.pnThongTin.ResumeLayout(false);
+            this.pnThongTin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,7 +584,6 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraBars.BarButtonItem btnKiemDuyet;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnExcel;
-        private DevExpress.XtraBars.BarButtonItem btnChiTieuKPI;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauGiamDocPhoGiamDoc;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauTruongKhoaPhong;
         private DevExpress.XtraBars.BarButtonItem btnBieuMauPhoKhoaPhong;
@@ -488,5 +601,15 @@ namespace DuAn_QuanLyKPI
         private DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit repositoryItemTokenEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
         private DevExpress.XtraBars.BarButtonItem btnThemNguoiDung;
+        private DevExpress.XtraBars.BarButtonItem btnBieuMauKPI;
+        private System.Windows.Forms.Panel pnThongTin;
+        private System.Windows.Forms.Label lbUsername;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbkhoaphong;
+        private System.Windows.Forms.Label label4;
     }
 }

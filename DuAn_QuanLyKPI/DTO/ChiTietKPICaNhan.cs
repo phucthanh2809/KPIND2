@@ -19,7 +19,7 @@ namespace DuAn_QuanLyKPI.DTO
         public string ChiTieuKPICN { get; set; }
         public Nullable<double> TrongSoTCCN { get; set; }
         public Nullable<double> TrongSoKPICN { get; set; }
-        public Nullable<int> KPICaNhanDangKyThem { get; set; }
+        public Nullable<bool> KPICaNhanDangKyThem { get; set; }
         public Nullable<double> TrongSoKPICaNhanDangKyThem { get; set; }
         public string NguonChungMinh { get; set; }
         public string KeHoach { get; set; }

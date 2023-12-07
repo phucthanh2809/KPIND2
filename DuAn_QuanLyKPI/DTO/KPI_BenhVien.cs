@@ -31,6 +31,7 @@ namespace DuAn_QuanLyKPI.DTO
         public System.DateTime NgayLapPhieuKPIBV { get; set; }
         public Nullable<System.DateTime> NgayPheDuyet { get; set; }
         public int IDBieuMau { get; set; }
+        public Nullable<int> TrangThai { get; set; }
     
         public virtual DanhsachBieuMau DanhsachBieuMau { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

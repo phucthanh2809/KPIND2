@@ -29,29 +29,55 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChonBieuMau));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChonBieuMau));
-            this.pnTong = new System.Windows.Forms.Panel();
-            this.dgrChonBieuMau = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgrChonBieuMau = new System.Windows.Forms.DataGridView();
             this.cIDBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTenBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cChon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pnTong.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.nmYear = new System.Windows.Forms.NumericUpDown();
+            this.nmQuarter = new System.Windows.Forms.NumericUpDown();
+            this.lbYear = new System.Windows.Forms.Label();
+            this.lbQuarter = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnTong
+            // dataGridViewImageColumn1
             // 
-            this.pnTong.Controls.Add(this.dgrChonBieuMau);
-            this.pnTong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTong.Location = new System.Drawing.Point(0, 0);
-            this.pnTong.Name = "pnTong";
-            this.pnTong.Size = new System.Drawing.Size(1364, 736);
-            this.pnTong.TabIndex = 0;
+            this.dataGridViewImageColumn1.HeaderText = "Chọn";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1364, 736);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgrChonBieuMau);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1364, 690);
+            this.panel3.TabIndex = 1;
             // 
             // dgrChonBieuMau
             // 
@@ -86,16 +112,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgrChonBieuMau.RowHeadersWidth = 75;
             this.dgrChonBieuMau.RowTemplate.Height = 40;
-            this.dgrChonBieuMau.Size = new System.Drawing.Size(1364, 736);
-            this.dgrChonBieuMau.TabIndex = 0;
-            this.dgrChonBieuMau.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick_1);
+            this.dgrChonBieuMau.Size = new System.Drawing.Size(1364, 690);
+            this.dgrChonBieuMau.TabIndex = 1;
+            this.dgrChonBieuMau.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick);
             this.dgrChonBieuMau.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMau_RowPostPaint);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Chọn";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // cIDBieuMau
             // 
@@ -130,32 +150,112 @@ namespace DuAn_QuanLyKPI.GUI
             this.cChon.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.cChon.Name = "cChon";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.nmYear);
+            this.panel2.Controls.Add(this.nmQuarter);
+            this.panel2.Controls.Add(this.lbYear);
+            this.panel2.Controls.Add(this.lbQuarter);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1364, 46);
+            this.panel2.TabIndex = 0;
+            // 
+            // nmYear
+            // 
+            this.nmYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nmYear.Location = new System.Drawing.Point(1226, 7);
+            this.nmYear.Maximum = new decimal(new int[] {
+            2050,
+            0,
+            0,
+            0});
+            this.nmYear.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.nmYear.Name = "nmYear";
+            this.nmYear.Size = new System.Drawing.Size(126, 32);
+            this.nmYear.TabIndex = 5;
+            this.nmYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nmYear.Value = new decimal(new int[] {
+            2023,
+            0,
+            0,
+            0});
+            // 
+            // nmQuarter
+            // 
+            this.nmQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nmQuarter.Location = new System.Drawing.Point(1061, 7);
+            this.nmQuarter.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.nmQuarter.Name = "nmQuarter";
+            this.nmQuarter.Size = new System.Drawing.Size(100, 32);
+            this.nmQuarter.TabIndex = 4;
+            this.nmQuarter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbYear
+            // 
+            this.lbYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbYear.AutoSize = true;
+            this.lbYear.Location = new System.Drawing.Point(1167, 11);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(53, 24);
+            this.lbYear.TabIndex = 3;
+            this.lbYear.Text = "Năm";
+            // 
+            // lbQuarter
+            // 
+            this.lbQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbQuarter.AutoSize = true;
+            this.lbQuarter.Location = new System.Drawing.Point(1008, 11);
+            this.lbQuarter.Name = "lbQuarter";
+            this.lbQuarter.Size = new System.Drawing.Size(47, 24);
+            this.lbQuarter.TabIndex = 2;
+            this.lbQuarter.Text = "Quý";
+            // 
             // FrmChonBieuMau
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1364, 736);
-            this.Controls.Add(this.pnTong);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmChonBieuMau.IconOptions.Image")));
             this.Name = "FrmChonBieuMau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hệ thống Biểu mẫu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.pnTong.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnTong;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgrChonBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTenBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaBieuMau;
         private System.Windows.Forms.DataGridViewImageColumn cChon;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbYear;
+        private System.Windows.Forms.Label lbQuarter;
+        private System.Windows.Forms.NumericUpDown nmYear;
+        private System.Windows.Forms.NumericUpDown nmQuarter;
     }
 }

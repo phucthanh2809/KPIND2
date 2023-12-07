@@ -38,7 +38,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietKPICaNhan' does not have a pr
           <Property Name="ChiTieuKPICN" Type="nvarchar" MaxLength="100" />
           <Property Name="TrongSoTCCN" Type="float" />
           <Property Name="TrongSoKPICN" Type="float" />
-          <Property Name="KPICaNhanDangKyThem" Type="int" />
+          <Property Name="KPICaNhanDangKyThem" Type="bit" />
           <Property Name="TrongSoKPICaNhanDangKyThem" Type="float" />
           <Property Name="NguonChungMinh" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="KeHoach" Type="nvarchar" MaxLength="50" />
@@ -160,6 +160,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="NgayLapPhieuKPIBV" Type="datetime" Nullable="false" />
           <Property Name="NgayPheDuyet" Type="datetime" />
           <Property Name="IDBieuMau" Type="int" Nullable="false" />
+          <Property Name="TrangThai" Type="int" />
         </EntityType>
         <EntityType Name="KPI_CaNhan">
           <Key>
@@ -189,6 +190,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="TongTrongSoCNMucTieuQuanTrongTrongNam" Type="float" />
           <Property Name="TongTrongSoCNGiaTriCotLoiBV" Type="float" />
           <Property Name="TongTrongSoCNKetQuaCuaQuaTrinhDanhGia" Type="float" />
+          <Property Name="TrangThai" Type="int" />
         </EntityType>
         <EntityType Name="KPI_KhoaPhong">
           <Key>
@@ -206,6 +208,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="NgayPheDuyet" Type="datetime" />
           <Property Name="NgayXemXet" Type="datetime" />
           <Property Name="IDBieuMau" Type="int" Nullable="false" />
+          <Property Name="TrangThai" Type="int" />
         </EntityType>
         <EntityType Name="KPI_TruongKhoaPhong">
           <Key>
@@ -234,6 +237,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="NgayPheDuyetDKQKPI" Type="datetime" />
           <Property Name="TongTrongSoTKPGiaTriCotLoiBV" Type="float" />
           <Property Name="TongTrongSoTKPKetQuaCuaQuaTrinhDanhGia" Type="float" />
+          <Property Name="TrangThai" Type="int" />
         </EntityType>
         <EntityType Name="KPITrongNganHang">
           <Key>
@@ -265,7 +269,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="MaPhongKhoa" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaChucDanh" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="MaQuyen" Type="varchar" MaxLength="20" />
-          <Property Name="TruongPK" Type="bit" />
+          <Property Name="MaCapDoKPIBenhVien" Type="int" />
         </EntityType>
         <EntityType Name="NhomTieuChi">
           <Key>
@@ -547,19 +551,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KPI_CaNhan_DanhsachBieuMau">
-          <End Role="DanhsachBieuMau" Type="Self.DanhsachBieuMau" Multiplicity="1" />
-          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DanhsachBieuMau">
-              <PropertyRef Name="IDBieuMau" />
-            </Principal>
-            <Dependent Role="KPI_CaNhan">
-              <PropertyRef Name="IDBieuMau" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_KPI_CaNhan_DanhsachBieuMau1">
+        <Association Name="FK_KPI_CaNhan_DanhsachBieuMau2">
           <End Role="DanhsachBieuMau" Type="Self.DanhsachBieuMau" Multiplicity="1" />
           <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -607,6 +599,78 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung2">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiNhanTieuChiDDKKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung3">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiXemXetDDKKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung4">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiPheDuyetDDKKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung5">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiNhanTieuChiDKQKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung6">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiXemXetDKQKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung7">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_CaNhan" Type="Self.KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiPheDuyetDKQKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_KPI_KhoaPhong_DanhsachBieuMau">
           <End Role="DanhsachBieuMau" Type="Self.DanhsachBieuMau" Multiplicity="1" />
           <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
@@ -631,7 +695,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KPI_KhoaPhong_KPI_BenhVien">
+        <Association Name="FK_KPI_KhoaPhong_KPI_BenhVien1">
           <End Role="KPI_BenhVien" Type="Self.KPI_BenhVien" Multiplicity="1" />
           <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -664,6 +728,18 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Principal>
             <Dependent Role="KPI_KhoaPhong">
               <PropertyRef Name="NguoiPheDuyet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_NguoiDung2">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="KPI_KhoaPhong" Type="Self.KPI_KhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="NguoiXemXet" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1085,11 +1161,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_BenhVien" EntitySet="KPI_BenhVien" />
           </AssociationSet>
-          <AssociationSet Name="FK_KPI_CaNhan_DanhsachBieuMau" Association="Self.FK_KPI_CaNhan_DanhsachBieuMau">
-            <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
-            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KPI_CaNhan_DanhsachBieuMau1" Association="Self.FK_KPI_CaNhan_DanhsachBieuMau1">
+          <AssociationSet Name="FK_KPI_CaNhan_DanhsachBieuMau2" Association="Self.FK_KPI_CaNhan_DanhsachBieuMau2">
             <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
             <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
           </AssociationSet>
@@ -1105,6 +1177,30 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
           </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung2" Association="Self.FK_KPI_CaNhan_NguoiDung2">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung3" Association="Self.FK_KPI_CaNhan_NguoiDung3">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung4" Association="Self.FK_KPI_CaNhan_NguoiDung4">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung5" Association="Self.FK_KPI_CaNhan_NguoiDung5">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung6" Association="Self.FK_KPI_CaNhan_NguoiDung6">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung7" Association="Self.FK_KPI_CaNhan_NguoiDung7">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
           <AssociationSet Name="FK_KPI_KhoaPhong_DanhsachBieuMau" Association="Self.FK_KPI_KhoaPhong_DanhsachBieuMau">
             <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
@@ -1113,7 +1209,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="KPI" EntitySet="KPI" />
             <End Role="ChiTietTieuChiMucTieuKhoaPhong" EntitySet="ChiTietTieuChiMucTieuKhoaPhong" />
           </AssociationSet>
-          <AssociationSet Name="FK_KPI_KhoaPhong_KPI_BenhVien" Association="Self.FK_KPI_KhoaPhong_KPI_BenhVien">
+          <AssociationSet Name="FK_KPI_KhoaPhong_KPI_BenhVien1" Association="Self.FK_KPI_KhoaPhong_KPI_BenhVien1">
             <End Role="KPI_BenhVien" EntitySet="KPI_BenhVien" />
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
@@ -1122,6 +1218,10 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_KPI_KhoaPhong_NguoiDung1" Association="Self.FK_KPI_KhoaPhong_NguoiDung1">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_NguoiDung2" Association="Self.FK_KPI_KhoaPhong_NguoiDung2">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
@@ -1262,11 +1362,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
             <End Role="KPI_BenhVien" EntitySet="KPI_BenhVien" />
           </AssociationSet>
-          <AssociationSet Name="FK_KPI_CaNhan_DanhsachBieuMau" Association="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau">
-            <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
-            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KPI_CaNhan_DanhsachBieuMau1" Association="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau1">
+          <AssociationSet Name="FK_KPI_CaNhan_DanhsachBieuMau2" Association="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau2">
             <End Role="DanhsachBieuMau" EntitySet="DanhsachBieuMau" />
             <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
           </AssociationSet>
@@ -1342,7 +1438,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_BenhVien" EntitySet="KPI_BenhVien" />
           </AssociationSet>
-          <AssociationSet Name="FK_KPI_KhoaPhong_KPI_BenhVien" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI_BenhVien">
+          <AssociationSet Name="FK_KPI_KhoaPhong_KPI_BenhVien1" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI_BenhVien1">
             <End Role="KPI_BenhVien" EntitySet="KPI_BenhVien" />
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
@@ -1366,6 +1462,30 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
           </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung2" Association="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung2">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung3" Association="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung3">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung4" Association="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung4">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung5" Association="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung5">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung6" Association="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung6">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_CaNhan_NguoiDung7" Association="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung7">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_CaNhan" EntitySet="KPI_CaNhan" />
+          </AssociationSet>
           <AssociationSet Name="FK_ChiTietKPIKhoaPhong_KPI_KhoaPhong" Association="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_KPI_KhoaPhong">
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
             <End Role="ChiTietKPIKhoaPhong" EntitySet="ChiTietKPIKhoaPhong" />
@@ -1379,6 +1499,10 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_KPI_KhoaPhong_NguoiDung1" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung1">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KPI_KhoaPhong_NguoiDung2" Association="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung2">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="KPI_KhoaPhong" EntitySet="KPI_KhoaPhong" />
           </AssociationSet>
@@ -1455,8 +1579,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="TenBieuMau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="MaCapDoKPIBenhVien" Type="Int32" />
           <NavigationProperty Name="KPI_BenhVien" Relationship="QuanLyKPIModel.FK_KPI_BenhVien_DanhsachBieuMau" FromRole="DanhsachBieuMau" ToRole="KPI_BenhVien" />
-          <NavigationProperty Name="KPI_CaNhan" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau" FromRole="DanhsachBieuMau" ToRole="KPI_CaNhan" />
-          <NavigationProperty Name="KPI_CaNhan1" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau1" FromRole="DanhsachBieuMau" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau2" FromRole="DanhsachBieuMau" ToRole="KPI_CaNhan" />
           <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_DanhsachBieuMau" FromRole="DanhsachBieuMau" ToRole="KPI_KhoaPhong" />
           <NavigationProperty Name="KPI_TruongKhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_DanhsachBieuMau" FromRole="DanhsachBieuMau" ToRole="KPI_TruongKhoaPhong" />
           <NavigationProperty Name="TongHopBieuMauPhieuKPI" Relationship="QuanLyKPIModel.FK_TongHopBieuMauPhieuKPI_DanhsachBieuMau" FromRole="DanhsachBieuMau" ToRole="TongHopBieuMauPhieuKPI" />
@@ -1497,12 +1620,13 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="NgayLapPhieuKPIBV" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="NgayPheDuyet" Type="DateTime" Precision="3" />
           <Property Name="IDBieuMau" Type="Int32" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" />
           <NavigationProperty Name="DanhsachBieuMau" Relationship="QuanLyKPIModel.FK_KPI_BenhVien_DanhsachBieuMau" FromRole="KPI_BenhVien" ToRole="DanhsachBieuMau" />
           <NavigationProperty Name="ChiTietKPIBenhVien" Relationship="QuanLyKPIModel.FK_ChiTietKPIBenhVien_KPI_BenhVien" FromRole="KPI_BenhVien" ToRole="ChiTietKPIBenhVien" />
           <NavigationProperty Name="ChiTietTieuChiMucTieuBV" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiMucTieuBV_KPI_BenhVien" FromRole="KPI_BenhVien" ToRole="ChiTietTieuChiMucTieuBV" />
           <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_KPI_BenhVien_NguoiDung" FromRole="KPI_BenhVien" ToRole="NguoiDung" />
           <NavigationProperty Name="NguoiDung1" Relationship="QuanLyKPIModel.FK_KPI_BV_NguoiDung" FromRole="KPI_BenhVien" ToRole="NguoiDung" />
-          <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI_BenhVien" FromRole="KPI_BenhVien" ToRole="KPI_KhoaPhong" />
+          <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI_BenhVien1" FromRole="KPI_BenhVien" ToRole="KPI_KhoaPhong" />
           <NavigationProperty Name="KPI_TruongKhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_KPI_BenhVien" FromRole="KPI_BenhVien" ToRole="KPI_TruongKhoaPhong" />
         </EntityType>
         <EntityType Name="KPI_CaNhan">
@@ -1533,12 +1657,18 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="TongTrongSoCNMucTieuQuanTrongTrongNam" Type="Double" />
           <Property Name="TongTrongSoCNGiaTriCotLoiBV" Type="Double" />
           <Property Name="TongTrongSoCNKetQuaCuaQuaTrinhDanhGia" Type="Double" />
-          <NavigationProperty Name="DanhsachBieuMau" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau" FromRole="KPI_CaNhan" ToRole="DanhsachBieuMau" />
-          <NavigationProperty Name="DanhsachBieuMau1" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau1" FromRole="KPI_CaNhan" ToRole="DanhsachBieuMau" />
+          <Property Name="TrangThai" Type="Int32" />
+          <NavigationProperty Name="DanhsachBieuMau" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_DanhsachBieuMau2" FromRole="KPI_CaNhan" ToRole="DanhsachBieuMau" />
           <NavigationProperty Name="ChiTietKPICaNhan" Relationship="QuanLyKPIModel.FK_ChiTietKPICaNhan_KPI_CaNhan" FromRole="KPI_CaNhan" ToRole="ChiTietKPICaNhan" />
           <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_KPI_KhoaPhong" FromRole="KPI_CaNhan" ToRole="KPI_KhoaPhong" />
           <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
           <NavigationProperty Name="NguoiDung1" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung1" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung2" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung2" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung3" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung3" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung4" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung4" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung5" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung5" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung6" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung6" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung7" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung7" FromRole="KPI_CaNhan" ToRole="NguoiDung" />
         </EntityType>
         <EntityType Name="KPI_KhoaPhong">
           <Key>
@@ -1556,13 +1686,15 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="NgayPheDuyet" Type="DateTime" Precision="3" />
           <Property Name="NgayXemXet" Type="DateTime" Precision="3" />
           <Property Name="IDBieuMau" Type="Int32" Nullable="false" />
+          <Property Name="TrangThai" Type="Int32" />
           <NavigationProperty Name="DanhsachBieuMau" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_DanhsachBieuMau" FromRole="KPI_KhoaPhong" ToRole="DanhsachBieuMau" />
-          <NavigationProperty Name="KPI_BenhVien" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI_BenhVien" FromRole="KPI_KhoaPhong" ToRole="KPI_BenhVien" />
+          <NavigationProperty Name="KPI_BenhVien" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_KPI_BenhVien1" FromRole="KPI_KhoaPhong" ToRole="KPI_BenhVien" />
           <NavigationProperty Name="KPI_CaNhan" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_KPI_KhoaPhong" FromRole="KPI_KhoaPhong" ToRole="KPI_CaNhan" />
           <NavigationProperty Name="ChiTietKPIKhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietKPIKhoaPhong_KPI_KhoaPhong" FromRole="KPI_KhoaPhong" ToRole="ChiTietKPIKhoaPhong" />
           <NavigationProperty Name="ChiTietTieuChiMucTieuKhoaPhong" Relationship="QuanLyKPIModel.FK_ChiTietTieuChiMucTieuKhoaPhong_KPI_KhoaPhong" FromRole="KPI_KhoaPhong" ToRole="ChiTietTieuChiMucTieuKhoaPhong" />
           <NavigationProperty Name="NguoiDung" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung" FromRole="KPI_KhoaPhong" ToRole="NguoiDung" />
           <NavigationProperty Name="NguoiDung1" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung1" FromRole="KPI_KhoaPhong" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDung2" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung2" FromRole="KPI_KhoaPhong" ToRole="NguoiDung" />
           <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_PhongKhoa" FromRole="KPI_KhoaPhong" ToRole="PhongKhoa" />
           <NavigationProperty Name="KPI_TruongKhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_KPI_KhoaPhong" FromRole="KPI_KhoaPhong" ToRole="KPI_TruongKhoaPhong" />
         </EntityType>
@@ -1593,6 +1725,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="NgayPheDuyetDKQKPI" Type="DateTime" Precision="3" />
           <Property Name="TongTrongSoTKPGiaTriCotLoiBV" Type="Double" />
           <Property Name="TongTrongSoTKPKetQuaCuaQuaTrinhDanhGia" Type="Double" />
+          <Property Name="TrangThai" Type="Int32" />
           <NavigationProperty Name="DanhsachBieuMau" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_DanhsachBieuMau" FromRole="KPI_TruongKhoaPhong" ToRole="DanhsachBieuMau" />
           <NavigationProperty Name="KPI_BenhVien" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_KPI_BenhVien" FromRole="KPI_TruongKhoaPhong" ToRole="KPI_BenhVien" />
           <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_KPI_KhoaPhong" FromRole="KPI_TruongKhoaPhong" ToRole="KPI_KhoaPhong" />
@@ -1624,14 +1757,21 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="MaPhongKhoa" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="MaChucDanh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="MaQuyen" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="TruongPK" Type="Boolean" />
+          <Property Name="MaCapDoKPIBenhVien" Type="Int32" />
           <NavigationProperty Name="ChucDanh" Relationship="QuanLyKPIModel.FK_NguoiDung_ChucDanh" FromRole="NguoiDung" ToRole="ChucDanh" />
           <NavigationProperty Name="KPI_BenhVien" Relationship="QuanLyKPIModel.FK_KPI_BenhVien_NguoiDung" FromRole="NguoiDung" ToRole="KPI_BenhVien" />
           <NavigationProperty Name="KPI_BenhVien1" Relationship="QuanLyKPIModel.FK_KPI_BV_NguoiDung" FromRole="NguoiDung" ToRole="KPI_BenhVien" />
           <NavigationProperty Name="KPI_CaNhan" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
           <NavigationProperty Name="KPI_CaNhan1" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung1" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan2" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung2" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan3" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung3" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan4" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung4" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan5" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung5" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan6" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung6" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
+          <NavigationProperty Name="KPI_CaNhan7" Relationship="QuanLyKPIModel.FK_KPI_CaNhan_NguoiDung7" FromRole="NguoiDung" ToRole="KPI_CaNhan" />
           <NavigationProperty Name="KPI_KhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung" FromRole="NguoiDung" ToRole="KPI_KhoaPhong" />
           <NavigationProperty Name="KPI_KhoaPhong1" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung1" FromRole="NguoiDung" ToRole="KPI_KhoaPhong" />
+          <NavigationProperty Name="KPI_KhoaPhong2" Relationship="QuanLyKPIModel.FK_KPI_KhoaPhong_NguoiDung2" FromRole="NguoiDung" ToRole="KPI_KhoaPhong" />
           <NavigationProperty Name="KPI_TruongKhoaPhong" Relationship="QuanLyKPIModel.FK_KPI_TruongKhoaPhong_NguoiDung" FromRole="NguoiDung" ToRole="KPI_TruongKhoaPhong" />
           <NavigationProperty Name="PhongKhoa" Relationship="QuanLyKPIModel.FK_NguoiDung_PhongKhoa" FromRole="NguoiDung" ToRole="PhongKhoa" />
           <NavigationProperty Name="Quyen" Relationship="QuanLyKPIModel.FK_NguoiDung_Quyen1" FromRole="NguoiDung" ToRole="Quyen" />
@@ -1731,7 +1871,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <Property Name="ChiTieuKPICN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TrongSoTCCN" Type="Double" />
           <Property Name="TrongSoKPICN" Type="Double" />
-          <Property Name="KPICaNhanDangKyThem" Type="Int32" />
+          <Property Name="KPICaNhanDangKyThem" Type="Boolean" />
           <Property Name="TrongSoKPICaNhanDangKyThem" Type="Double" />
           <Property Name="NguonChungMinh" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="KeHoach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1864,19 +2004,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KPI_CaNhan_DanhsachBieuMau">
-          <End Type="QuanLyKPIModel.DanhsachBieuMau" Role="DanhsachBieuMau" Multiplicity="1" />
-          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DanhsachBieuMau">
-              <PropertyRef Name="IDBieuMau" />
-            </Principal>
-            <Dependent Role="KPI_CaNhan">
-              <PropertyRef Name="IDBieuMau" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_KPI_CaNhan_DanhsachBieuMau1">
+        <Association Name="FK_KPI_CaNhan_DanhsachBieuMau2">
           <End Type="QuanLyKPIModel.DanhsachBieuMau" Role="DanhsachBieuMau" Multiplicity="1" />
           <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2104,7 +2232,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KPI_KhoaPhong_KPI_BenhVien">
+        <Association Name="FK_KPI_KhoaPhong_KPI_BenhVien1">
           <End Type="QuanLyKPIModel.KPI_BenhVien" Role="KPI_BenhVien" Multiplicity="1" />
           <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2176,6 +2304,78 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung2">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiNhanTieuChiDDKKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung3">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiXemXetDDKKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung4">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiPheDuyetDDKKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung5">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiNhanTieuChiDKQKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung6">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiXemXetDKQKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_CaNhan_NguoiDung7">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_CaNhan" Role="KPI_CaNhan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_CaNhan">
+              <PropertyRef Name="NguoiPheDuyetDKQKPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ChiTietKPIKhoaPhong_KPI_KhoaPhong">
           <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="1" />
           <End Type="QuanLyKPIModel.ChiTietKPIKhoaPhong" Role="ChiTietKPIKhoaPhong" Multiplicity="*" />
@@ -2221,6 +2421,18 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
             </Principal>
             <Dependent Role="KPI_KhoaPhong">
               <PropertyRef Name="NguoiPheDuyet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KPI_KhoaPhong_NguoiDung2">
+          <End Type="QuanLyKPIModel.NguoiDung" Role="NguoiDung" Multiplicity="0..1" />
+          <End Type="QuanLyKPIModel.KPI_KhoaPhong" Role="KPI_KhoaPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KPI_KhoaPhong">
+              <PropertyRef Name="NguoiXemXet" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2402,6 +2614,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <EntitySetMapping Name="KPI_BenhVien">
             <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_BenhVien">
               <MappingFragment StoreEntitySet="KPI_BenhVien">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="IDBieuMau" ColumnName="IDBieuMau" />
                 <ScalarProperty Name="NgayPheDuyet" ColumnName="NgayPheDuyet" />
                 <ScalarProperty Name="NgayLapPhieuKPIBV" ColumnName="NgayLapPhieuKPIBV" />
@@ -2416,6 +2629,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <EntitySetMapping Name="KPI_CaNhan">
             <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_CaNhan">
               <MappingFragment StoreEntitySet="KPI_CaNhan">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="TongTrongSoCNKetQuaCuaQuaTrinhDanhGia" ColumnName="TongTrongSoCNKetQuaCuaQuaTrinhDanhGia" />
                 <ScalarProperty Name="TongTrongSoCNGiaTriCotLoiBV" ColumnName="TongTrongSoCNGiaTriCotLoiBV" />
                 <ScalarProperty Name="TongTrongSoCNMucTieuQuanTrongTrongNam" ColumnName="TongTrongSoCNMucTieuQuanTrongTrongNam" />
@@ -2446,6 +2660,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <EntitySetMapping Name="KPI_KhoaPhong">
             <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_KhoaPhong">
               <MappingFragment StoreEntitySet="KPI_KhoaPhong">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="IDBieuMau" ColumnName="IDBieuMau" />
                 <ScalarProperty Name="NgayXemXet" ColumnName="NgayXemXet" />
                 <ScalarProperty Name="NgayPheDuyet" ColumnName="NgayPheDuyet" />
@@ -2464,6 +2679,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <EntitySetMapping Name="KPI_TruongKhoaPhong">
             <EntityTypeMapping TypeName="QuanLyKPIModel.KPI_TruongKhoaPhong">
               <MappingFragment StoreEntitySet="KPI_TruongKhoaPhong">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="TongTrongSoTKPKetQuaCuaQuaTrinhDanhGia" ColumnName="TongTrongSoTKPKetQuaCuaQuaTrinhDanhGia" />
                 <ScalarProperty Name="TongTrongSoTKPGiaTriCotLoiBV" ColumnName="TongTrongSoTKPGiaTriCotLoiBV" />
                 <ScalarProperty Name="NgayPheDuyetDKQKPI" ColumnName="NgayPheDuyetDKQKPI" />
@@ -2502,7 +2718,7 @@ warning 6002: The table/view 'QuanLyKPI.dbo.ChiTietTieuChiMucTieuKhoaPhong' does
           <EntitySetMapping Name="NguoiDung">
             <EntityTypeMapping TypeName="QuanLyKPIModel.NguoiDung">
               <MappingFragment StoreEntitySet="NguoiDung">
-                <ScalarProperty Name="TruongPK" ColumnName="TruongPK" />
+                <ScalarProperty Name="MaCapDoKPIBenhVien" ColumnName="MaCapDoKPIBenhVien" />
                 <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
                 <ScalarProperty Name="MaChucDanh" ColumnName="MaChucDanh" />
                 <ScalarProperty Name="MaPhongKhoa" ColumnName="MaPhongKhoa" />
