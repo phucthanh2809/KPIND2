@@ -44,6 +44,7 @@ namespace DuAn_QuanLyKPI.GUI
             LoadThongTinNhanVien();
             txtTest.Text = QuyNamPhieu;
             LoadDataBVTaiChinh();
+
             updateTimer = new Timer { Interval = 100 };
             updateTimer.Tick += UpdateTimer_Tick;
         }
@@ -54,8 +55,9 @@ namespace DuAn_QuanLyKPI.GUI
             TrangThai2();
             TrangThai3();
             TrangThai4();
+
         }
-        #region LoadData
+        #region LoadDataGrid
         //Load thông tin nhân viên 
         private void LoadThongTinNhanVien()
         {
@@ -80,13 +82,13 @@ namespace DuAn_QuanLyKPI.GUI
         //Load DataGridview Tài chính
         private void LoadDataBVTaiChinh()
         {
-            msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '"+QuyNamPhieu+"' ";
+            msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "' ";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
 
             lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
-            lbTSTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
+            lbTSTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
             dgrBVMucTieuTaiChinh.CurrentCellDirtyStateChanged += dgrBVMucTieuTaiChinh_CurrentCellDirtyStateChanged;
             dgrBVMucTieuTaiChinh.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
@@ -126,6 +128,9 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuPhatTrien.CurrentCellDirtyStateChanged += dgrBVMucTieuTaiChinh_CurrentCellDirtyStateChanged;
             dgrBVMucTieuPhatTrien.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
+        #endregion
+        #region Coppy Data
+
         private void LoadDataTableTC()
         {
             dgrNhapMucTieuTaiChinh.Rows.Clear();
@@ -140,16 +145,129 @@ namespace DuAn_QuanLyKPI.GUI
                 }
             }
         }
-        #endregion
-        #region Method
-        private void UpdateTimer_Tick(object sender, EventArgs e)
+        private void LoadDataTableKH()
         {
+            dgrNhapMucTieuKhachHang.Rows.Clear();
+            foreach (DataGridViewRow row in dgrBVMucTieuKhachHang.Rows)
+            {
+                if (row.Cells["cChonTatCaBVKH"].Value != null && (bool)row.Cells["cChonTatCaBVKH"].Value)
+                {
+                    int n = dgrNhapMucTieuKhachHang.Rows.Add();
+                    dgrNhapMucTieuKhachHang.Rows[n].Cells["cMaKPINKH"].Value = row.Cells["cMaKPIBVKH"].Value.ToString();
+                    dgrNhapMucTieuKhachHang.Rows[n].Cells["cNoiDungNKH"].Value = row.Cells["cNoiDungBVKH"].Value.ToString();
+                    dgrNhapMucTieuKhachHang.Rows[n].Cells["cTrongSoKPINKH"].Value = row.Cells["cTrongSoKPIBVKH"].Value;
+                }
+            }
+        }
+        private void dgrNhapMucTieuTaiChinh_ColumnHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                {
+                    row.Cells["cChonTatCaBVTC"].Value = false;
+                }
+            }
             LoadDataTableTC();
+        }
+        private void dgrNhapMucTieuKhachHang_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuKhachHang.Rows)
+                {
+                    row.Cells["cChonTatCaBVKH"].Value = false;
+                }
+            }
+            LoadDataTableKH();
+        }
+        private void dgrBVMucTieuTaiChinh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                {
+                    row.Cells["cChonTatCaBVTC"].Value = true;
+                }
+            }
+        }
+        private void dgrBVMucTieuKhachHang_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuKhachHang.Rows)
+                {
+                    row.Cells["cChonTatCaBVKH"].Value = true;
+                }
+            }
+        }
+        private void dgrBVMucTieuTaiChinh_MouseHover(object sender, EventArgs e)
+        {
+            updateTimer.Start();    
+        }
+        private void dgrBVMucTieuTaiChinh_MouseLeave(object sender, EventArgs e)
+        {
+            updateTimer.Stop();
+        }
+        private void dgrBVMucTieuKhachHang_MouseHover(object sender, EventArgs e)
+        {
+            updateTimer.Start();
+        }
+        private void dgrBVMucTieuKhachHang_MouseLeave(object sender, EventArgs e)
+        {
+            updateTimer.Stop();
+        }
+        private void dgrNhapMucTieuTaiChinh_MouseHover(object sender, EventArgs e)
+        {
+            updateTimer.Stop();
+        }
+        private void dgrNhapMucTieuKhachHang_MouseHover(object sender, EventArgs e)
+        {
+            updateTimer.Stop();
+        }
+        private void dgrNhapMucTieuTaiChinh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgrNhapMucTieuTaiChinh.Rows.Count && e.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                {
+                    if (dgrNhapMucTieuTaiChinh.Rows[e.RowIndex].Cells["cMaKPINTC"].Value.ToString() == row.Cells["cMaKPIBVTC"].Value.ToString())
+                    {
+                        row.Cells["cChonTatCaBVTC"].Value = false;
+                        break;
+                    }
+                }
+                LoadDataTableTC();
+            }
+        }
+        private void dgrNhapMucTieuKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+                if (e.RowIndex >= 0 && e.RowIndex < dgrNhapMucTieuKhachHang.Rows.Count && e.ColumnIndex == 0)
+                {
+                    foreach (DataGridViewRow row in dgrBVMucTieuKhachHang.Rows)
+                    {
+                        if (dgrNhapMucTieuKhachHang.Rows[e.RowIndex].Cells["cMaKPINKH"].Value.ToString() == row.Cells["cMaKPIBVKH"].Value.ToString())
+                        {
+                            row.Cells["cChonTatCaBVKH"].Value = false;
+                            break;
+                        }
+                    }
+                    LoadDataTableKH();
+                }
         }
         private void dgrBVMucTieuTaiChinh_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             dgrBVMucTieuTaiChinh.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
+        private void dgrBVMucTieuKhachHang_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            dgrBVMucTieuKhachHang.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+
+        #endregion
+        #region Method Chuyển Tab
+
+
         private void TrangThai()
         {
             FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
@@ -266,26 +384,26 @@ namespace DuAn_QuanLyKPI.GUI
                 {
                     ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
                 }
-                else if (total > 0 && total <= 100)
+                else if (int.Parse(txtTongTrongSoTC.Text) > 0 && int.Parse(txtTongTrongSoTC.Text) <= 100)
                 {
-                    if(ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                    if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
                     {
                         ChuyenTrangThai(step);
-                    }    
+                    }
                     else
                     {
-                        
+
                     }
                 }
                 else
                 {
-                    // Thông báo  
+                    // Thông báo  gì đó chưa biết 
                 }
             }
             else
-                {
-                    ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
-                }    
+            {
+                ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
+            }
         }
         private void TinhTrongSo()
         {
@@ -307,7 +425,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
             else
             {
-                
+
             }
         }
         //Method coppy data 
@@ -358,68 +476,12 @@ namespace DuAn_QuanLyKPI.GUI
 
 
         #endregion
-        //Event coppy gridview
-        #region EventCopyData
-        private void btnCoppyAll_Click(object sender, EventArgs e)
-        {
-            dgrNhapMucTieuTaiChinh.Rows.Clear();
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTCTC"].Value = true;
-            }
-            copyDataBVtoTC();
-        }
-
-        #endregion
 
         #region Event
-        private void dgrNhapMucTieuTaiChinh_ColumnHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        private void UpdateTimer_Tick(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
-            {
-                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
-                {
-                    row.Cells["cChonTatCaBVTC"].Value = false;
-                }
-            }
             LoadDataTableTC();
-        }
-        private void dgrBVMucTieuTaiChinh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
-            {
-                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
-                {
-                    row.Cells["cChonTatCaBVTC"].Value = true;
-                }
-            }
-        }
-        private void dgrBVMucTieuTaiChinh_MouseHover(object sender, EventArgs e)
-        {
-            updateTimer.Start();
-        }
-        private void dgrBVMucTieuTaiChinh_MouseLeave(object sender, EventArgs e)
-        {
-            updateTimer.Stop();
-        }
-        private void dgrNhapMucTieuTaiChinh_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.RowIndex < dgrNhapMucTieuTaiChinh.Rows.Count && e.ColumnIndex == 0)
-            {
-                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
-                {
-                    if (dgrNhapMucTieuTaiChinh.Rows[e.RowIndex].Cells["cMaKPINTC"].Value.ToString() == row.Cells["cMaKPIBVTC"].Value.ToString())
-                    {
-                        row.Cells["cChonTatCaBVTC"].Value = false;
-                        break;
-                    }
-                }
-                LoadDataTableTC();
-            }
-        }
-        private void dgrNhapMucTieuTaiChinh_MouseHover(object sender, EventArgs e)
-        {
-            updateTimer.Stop();
+            LoadDataTableTC();
         }
         private void btnQuayLaiVanHanh_Click(object sender, EventArgs e)
         {
@@ -449,48 +511,11 @@ namespace DuAn_QuanLyKPI.GUI
         {
 
         }
-
+        //chặn click vào tab
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //chặn click vào tab
-            tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
+            //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
         }
-
-        private void txtMucTieu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMucTieu_Enter(object sender, EventArgs e)
-        {
-            //LoadDataMucTieu();
-            //dgrChonMucTieu.Visible = true;
-
-        }
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
-            }
-        }
-
-        private void btnDeselectAll_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = false;
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            if(ev.QFrmThongBao_YesNo("Bạn có thật sự muốn xóa Form Nhập này không?"))
-            {
-                dgrNhapMucTieuTaiChinh.Rows.Clear();
-            }    
-        }
-
         private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn đóng Form này không?"))
@@ -512,16 +537,83 @@ namespace DuAn_QuanLyKPI.GUI
         {
             ev.Qdgr_RowPostPaint(sender, e, dgrNhapMucTieuTaiChinh);
         }
-        #endregion
-
         private void btnTTKH_Click(object sender, EventArgs e)
         {
-            ChuyenTrangThai(1);
+            KiemTraTyTrong(1);
         }
 
         private void dgrNhapMucTieuTaiChinh_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             TinhTrongSo();
         }
+        private void btnQLTC_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(0);
+        }
+        private void btnTTVH_Click(object sender, EventArgs e)
+        {
+            KiemTraTyTrong(2);
+        }
+
+        private void btnQLKH_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(1);
+        }
+        private void btnTTPT_Click(object sender, EventArgs e)
+        {
+            KiemTraTyTrong(3);
+        }
+        private void btnQLVH_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(2);
+        }
+        private void btnTTHT_Click(object sender, EventArgs e)
+        {
+            KiemTraTyTrong(4);
+        }
+        private void btnQLPT_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(4);
+        }
+        #endregion
+        #region Dự phòng
+        private void btnCoppyAll_Click(object sender, EventArgs e)
+        {
+            dgrNhapMucTieuTaiChinh.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTCTC"].Value = true;
+            }
+            copyDataBVtoTC();
+        }
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
+            }
+        }
+
+        private void btnDeselectAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+            {
+                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = false;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn xóa Form Nhập này không?"))
+            {
+                dgrNhapMucTieuTaiChinh.Rows.Clear();
+            }
+        }
+
+
+
+        #endregion
+
+
     }
 }
