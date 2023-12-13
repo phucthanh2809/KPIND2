@@ -36,7 +36,10 @@ namespace DuAn_QuanLyKPI.GUI
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
         Timer updateTimer;
-        DataTable dt = new DataTable();
+        DataTable tc = new DataTable();
+        DataTable kh = new DataTable();
+        DataTable vh = new DataTable();
+        DataTable pt = new DataTable();
 
         private int CurrentTab = 0;
         public FrmA73()
@@ -128,58 +131,641 @@ namespace DuAn_QuanLyKPI.GUI
             lbTSPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString();
         }
         #endregion
-        #region Coppy Data
-        private void UpdateTimer_Tick(object sender, EventArgs e)
+        #region Method Chuyển Tab
+
+
+        private void TrangThai()
         {
-            LoadDataTableTC();
-            LoadDataTableKH();
-            LoadDataTableVH();
-            LoadDataTablePT();
-        }                                                    
-        private void dgrBVMucTieuTaiChinh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-                {
-                    dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
-                }
-            }
-            LoadDataTableTC();
+            FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
         }
-        private void dgrBVMucTieuKhachHang_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void TrangThai1()
         {
-            if (e.ColumnIndex == 0)
-            {
-                for (int i = 0; i < dgrBVMucTieuKhachHang.Rows.Count; i++)
-                {
-                    dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value = true;
-                }
-            }
-            LoadDataTableKH();
+            FrmSPTrangThai1.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai1.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai1.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai1.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai1.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+
         }
-        private void dgrBVMucTieuVanHanh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void TrangThai2()
         {
-            if (e.ColumnIndex == 0)
+            FrmSPTrangThai2.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai2.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai2.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai2.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai2.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinh2.State = StepProgressBarItemState.Active;
+        }
+        private void TrangThai3()
+        {
+            FrmSPTrangThai3.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai3.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai3.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai3.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai3.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinh3.State = StepProgressBarItemState.Active;
+            spKhachHang3.State = StepProgressBarItemState.Active;
+        }
+        private void TrangThai4()
+        {
+            FrmSPTrangThai4.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThai4.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThai4.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThai4.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThai4.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinh4.State = StepProgressBarItemState.Active;
+            spKhachHang4.State = StepProgressBarItemState.Active;
+            spVanHanh4.State = StepProgressBarItemState.Active;
+        }
+        void ChuyenTrangThai(int step)
+        {
+            CurrentTab = step;
+            switch (step)
             {
-                for (int i = 0; i < dgrBVMucTieuVanHanh.Rows.Count; i++)
+                case 0:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    break;
+                case 1:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    // Thiết lập Trạng thái khi nhất nút
+                    spTaiChinh1.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
+                    LoadDataBVKhachHang();
+                    break;
+                case 2:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    //Thiết lập Trạng thái khi nhất nút
+                    spKhachHang2.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
+                    LoadDataBVVanHanh();
+                    break;
+                case 3:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    //Thiết lập Trạng thái khi nhất nút
+                    spVanHanh3.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
+                    LoadDataBVPhatTrien();
+                    break;
+                case 4:
+                    tabMucTieuKhoaPhong.SelectTab(step);
+                    spPhatTrien4.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThai4.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
+                    break;
+            }
+        }
+        private void KiemTraTyTrong(int step)
+        {
+            // Lấy tổng các giá trị trong các cột
+            if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
+            {
+                switch (step)
                 {
-                    dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value = true;
+                    case 1:
+                        int totaltc = 0;
+                        for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
+                        {
+                            totaltc += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoKPINTC"].Value.ToString());
+                        }
+                        if (totaltc == 0 && totaltc == null)
+                        {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
+                        }
+                        else if (totaltc > 100)
+                        {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
+                        }
+                        else if (totaltc > 0 && totaltc <= 100 && int.Parse(txtTongTrongSoTC.Text) > 0 && int.Parse(txtTongTrongSoTC.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyTCtoHT();
+                                LoadDataBVKhachHang();
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totaltc == null && int.Parse(txtTongTrongSoTC.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
+                    case 2:
+                        int totalkh = 0;
+                        for (int i = 0; i < dgrNhapMucTieuKhachHang.Rows.Count; i++)
+                        {
+                            totalkh += int.Parse(dgrNhapMucTieuKhachHang.CurrentRow.Cells["cTrongSoKPINKH"].Value.ToString());
+                        }
+                        if (totalkh == 0 && totalkh == null)
+                        {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
+                        }
+                        else if (totalkh > 100)
+                        {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
+                        }
+                        else if (totalkh > 0 && totalkh <= 100 && int.Parse(txtTongTrongSoKH.Text) > 0 && int.Parse(txtTongTrongSoKH.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyKHtoHT();
+                                LoadDataBVVanHanh();
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totalkh == null && int.Parse(txtTongTrongSoKH.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
+                    case 3:
+                        int totalvh = 0;
+                        for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
+                        {
+                            totalvh += int.Parse(dgrNhapMucTieuVanHanh.CurrentRow.Cells["cTrongSoKPINVH"].Value.ToString());
+                        }
+                        if (totalvh == 0 && totalvh == null)
+                        {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
+                        }
+                        else if (totalvh > 100)
+                        {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
+                        }
+                        else if (totalvh > 0 && totalvh <= 100 && int.Parse(txtTongTrongSoVH.Text) > 0 && int.Parse(txtTongTrongSoVH.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyVHtoHT();
+                                LoadDataBVPhatTrien();
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totalvh == null && int.Parse(txtTongTrongSoKH.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
+                    case 4:
+                        int totalpt = 0;
+                        for (int i = 0; i < dgrNhapMucTieuPhatTrien.Rows.Count; i++)
+                        {
+                            totalpt += int.Parse(dgrNhapMucTieuPhatTrien.CurrentRow.Cells["cTrongSoKPINPT"].Value.ToString());
+                        }
+                        if (totalpt == 0 && totalpt == null)
+                        {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
+                        }
+                        else if (totalpt > 100)
+                        {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
+                        }
+                        else if (totalpt > 0 && totalpt <= 100 && int.Parse(txtTongTrongSoPT.Text) > 0 && int.Parse(txtTongTrongSoPT.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyPTtoHT();
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totalpt == null && int.Parse(txtTongTrongSoPT.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
                 }
             }
-            LoadDataTableVH();
+            else
+            {
+                ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
+            }
+        } 
+        #endregion
+
+        #region Event
+        //chặn click vào tab
+        private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
+        }
+        private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn đóng Form này không?"))
+            {
+                FrmA73 a73 = new FrmA73();
+                a73.Close();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
-        private void dgrBVMucTieuPhatTrien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgrNhapMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            ev.Qdgr_RowPostPaint(sender, e, dgrNhapMucTieuTaiChinh);
+        }
+        private void btnTTKH_Click(object sender, EventArgs e)
+        {
+            dgrHTMucTieuTaiChinh.Rows.Clear();
+            KiemTraTyTrong(1); 
+        }
+        private void btnQLTC_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(0);
+        }
+        private void btnTTVH_Click(object sender, EventArgs e)
+        {
+            dgrHTMucTieuKhachHang.Rows.Clear();
+            KiemTraTyTrong(2);           
+        }
+
+        private void btnQLKH_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(1);
+        }
+        private void btnTTPT_Click(object sender, EventArgs e)
+        {
+            dgrHTMucTieuVanHanh.Rows.Clear();
+            KiemTraTyTrong(3);
+        }
+        private void btnQLVH_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(2);
+        }
+        private void btnTTHT_Click(object sender, EventArgs e)
+        {
+            dgrHTMucTieuPhatTrien.Rows.Clear();
+            KiemTraTyTrong(4);
+        }
+        private void btnQLPT_Click(object sender, EventArgs e)
+        {
+            ChuyenTrangThai(4);
+        }
+       
+        #endregion
+        #region Copy GridView
+
+        #region Method
+        private void LoadDataTableTC()
+        {
+            tc.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
-                for (int i = 0; i < dgrBVMucTieuPhatTrien.Rows.Count; i++)
+                if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value != null && (bool)dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value == true)
                 {
-                    dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value = true;
+                    DataRow newRow = tc.NewRow();
+                    newRow["cMaKPIcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value;
+                    newRow["cNoiDungcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNoiDungBVTC"].Value.ToString();
+                    newRow["cNamcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
+                    if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value == null)
+                    {
+                        dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value = "0";
+                        newRow["TrongSocpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value.ToString();
+                    }
+                    else
+                        newRow["TrongSocpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value.ToString();
+                    tc.Rows.Add(newRow);
                 }
             }
-            LoadDataTablePT();
+            dgrNhapMucTieuTaiChinh.DataSource = tc;
+        }
+        private void LoadDataTableKH()
+        {
+            kh.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuKhachHang.Rows.Count; i++)
+            {
+                if (dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value != null && (bool)dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value == true)
+                {
+                    DataRow newRow = kh.NewRow();
+                    newRow["cMaKPIcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cMaKPIBVKH"].Value;
+                    newRow["cNoiDungcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cNoiDungBVKH"].Value.ToString();
+                    newRow["cNamcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cNamBVKH"].Value.ToString();
+                    if (dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value == null)
+                    {
+                        dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value = "0";
+                        newRow["TrongSocpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value.ToString();
+                    }
+                    else
+                        newRow["TrongSocpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value.ToString();
+                    kh.Rows.Add(newRow);
+                }
+            }
+            dgrBVMucTieuKhachHang.DataSource = kh;
+        }
+        private void LoadDataTableVH()
+        {
+            vh.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuVanHanh.Rows.Count; i++)
+            {
+                if (dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value != null && (bool)dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value == true)
+                {
+                    DataRow newRow = vh.NewRow();
+                    newRow["cMaKPIcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cMaKPIBVVH"].Value;
+                    newRow["cNoiDungcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNoiDungBVVH"].Value.ToString();
+                    newRow["cNamcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNamBVVH"].Value.ToString();
+                    if (dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value == null)
+                    {
+                        dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value = "0";
+                        newRow["TrongSocpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value.ToString();
+                    }
+                    else
+                        newRow["TrongSocpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value.ToString();
+                    vh.Rows.Add(newRow);
+                }
+            }
+            dgrBVMucTieuVanHanh.DataSource = vh;
+        }
+        private void LoadDataTablePT()
+        {
+            pt.Rows.Clear();
+            for (int i = 0; i < dgrBVMucTieuPhatTrien.Rows.Count; i++)
+            {
+                if (dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value != null && (bool)dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value == true)
+                {
+                    DataRow newRow = pt.NewRow();
+                    newRow["cMaKPIcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cMaKPIBVPT"].Value;
+                    newRow["cNoiDungcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cNoiDungBVPT"].Value.ToString();
+                    newRow["cNamcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cNamBVPT"].Value.ToString();
+                    if (dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value == null)
+                    {
+                        dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value = "0";
+                        newRow["TrongSocpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value.ToString();
+                    }
+                    else
+                        newRow["TrongSocpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value.ToString();
+                    pt.Rows.Add(newRow);
+                }
+            }
+            dgrBVMucTieuPhatTrien.DataSource = pt;
+        }
+
+        private void CreateTableCopyTC()
+        {
+            tc.Columns.Add("cMaKPIcpTC", typeof(string));
+            tc.Columns.Add("cNoiDungcpTC", typeof(string));
+            tc.Columns.Add("cNamcpTC", typeof(int));
+            tc.Columns.Add("TrongSocpTC", typeof(int));
+            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+            PrimaryKeyColumns[0] = tc.Columns["cMaKPIcpTC"];
+            tc.PrimaryKey = PrimaryKeyColumns;
+        }
+        private void CreateTableCopyKH()
+        {
+            kh.Columns.Add("cMaKPIcpKH", typeof(string));
+            kh.Columns.Add("cNoiDungcpKH", typeof(string));
+            kh.Columns.Add("cNamcpKH", typeof(int));
+            kh.Columns.Add("TrongSocpKH", typeof(int));
+            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+            PrimaryKeyColumns[0] = kh.Columns["cMaKPIcpKH"];
+            kh.PrimaryKey = PrimaryKeyColumns;
+        }
+        private void CreateTableCopyVH()
+        {
+            vh.Columns.Add("cMaKPIcpVH", typeof(string));
+            vh.Columns.Add("cNoiDungcpVH", typeof(string));
+            vh.Columns.Add("cNamcpVH", typeof(int));
+            vh.Columns.Add("TrongSocpVH", typeof(int));
+            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+            PrimaryKeyColumns[0] = vh.Columns["cMaKPIcpVH"];
+            vh.PrimaryKey = PrimaryKeyColumns;
+        }
+        private void CreateTableCopyPT()
+        {
+            pt.Columns.Add("cMaKPIcpPT", typeof(string));
+            pt.Columns.Add("cNoiDungcpPT", typeof(string));
+            pt.Columns.Add("cNamcpPT", typeof(int));
+            pt.Columns.Add("TrongSocpPT", typeof(int));
+            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+            PrimaryKeyColumns[0] = pt.Columns["cMaKPIcpPT"];
+            pt.PrimaryKey = PrimaryKeyColumns;
+        }
+        private void ReturnDataTableTC()
+        {
+            for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
+            {
+                string value = dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString().Trim();
+                foreach (DataRow row in tc.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpTC"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cMaKPINTC"].Value))
+                    {
+                        row["TrongSocpTC"] = value;
+                    }
+                }
+            }
+            dgrNhapMucTieuTaiChinh.DataSource = tc;
+            for (int j = 0; j < dgrBVMucTieuTaiChinh.Rows.Count; j++)
+            {
+                foreach (DataRow row in tc.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpTC"]);
+                    if (id == Convert.ToString(dgrBVMucTieuTaiChinh.Rows[j].Cells["cMaKPIBVTC"].Value))
+                    {
+                        dgrBVMucTieuTaiChinh.Rows[j].Cells["cTrongSocpTC"].Value = row["TrongSocpTC"].ToString();
+                    }
+                }
+            }
+        }
+        private void ReturnDataTableKH()
+        {
+            for (int i = 0; i < dgrNhapMucTieuKhachHang.Rows.Count; i++)
+            {
+                string value = dgrNhapMucTieuKhachHang.Rows[i].Cells["cTrongSoKPINKH"].Value.ToString().Trim();
+                foreach (DataRow row in kh.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpKH"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuKhachHang.Rows[i].Cells["cMaKPINKH"].Value))
+                    {
+                        row["TrongSocpKH"] = value;
+                    }
+                }
+            }
+            dgrNhapMucTieuKhachHang.DataSource = kh;
+            for (int j = 0; j < dgrNhapMucTieuKhachHang.Rows.Count; j++)
+            {
+                foreach (DataRow row in kh.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpKH"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuKhachHang.Rows[j].Cells["cMaKPIBVKH"].Value))
+                    {
+                        dgrNhapMucTieuKhachHang.Rows[j].Cells["cTrongSocpKH"].Value = row["TrongSocpKH"].ToString();
+                    }
+                }
+            }
+        }
+        private void ReturnDataTableVH()
+        {
+            for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
+            {
+                string value = dgrNhapMucTieuVanHanh.Rows[i].Cells["cTrongSoKPINVH"].Value.ToString().Trim();
+                foreach (DataRow row in vh.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpVH"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuVanHanh.Rows[i].Cells["cMaKPINVH"].Value))
+                    {
+                        row["TrongSocpVH"] = value;
+                    }
+                }
+            }
+            dgrNhapMucTieuVanHanh.DataSource = vh;
+            for (int j = 0; j < dgrNhapMucTieuVanHanh.Rows.Count; j++)
+            {
+                foreach (DataRow row in vh.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpVH"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuVanHanh.Rows[j].Cells["cMaKPIBVVH"].Value))
+                    {
+                        dgrNhapMucTieuVanHanh.Rows[j].Cells["cTrongSocpVH"].Value = row["TrongSocpVH"].ToString();
+                    }
+                }
+            }
+        }
+        private void ReturnDataTablePT()
+        {
+            for (int i = 0; i < dgrNhapMucTieuPhatTrien.Rows.Count; i++)
+            {
+                string value = dgrNhapMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPINPT"].Value.ToString().Trim();
+                foreach (DataRow row in pt.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpPT"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[i].Cells["cMaKPINPT"].Value))
+                    {
+                        row["TrongSocpPT"] = value;
+                    }
+                }
+            }
+            dgrNhapMucTieuPhatTrien.DataSource = pt;
+            for (int j = 0; j < dgrNhapMucTieuPhatTrien.Rows.Count; j++)
+            {
+                foreach (DataRow row in pt.Rows)
+                {
+                    String id = Convert.ToString(row["cMaKPIcpPT"]);
+                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[j].Cells["cMaKPIBVPT"].Value))
+                    {
+                        dgrNhapMucTieuPhatTrien.Rows[j].Cells["cTrongSocpPT"].Value = row["TrongSocpPT"].ToString();
+                    }
+                }
+            }
+        }
+        private void TinhTrongSoTC()
+        {
+            int sc = dgrNhapMucTieuTaiChinh.Rows.Count;
+            double sum = 0;
+            for (int i = 0; i < sc; ++i)
+                sum += double.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
+
+                dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoKPINTC"].Value = 0;
+            }
+            else if (sum > 0 && sum <= 100)
+            {
+                txtTongTrongSoTC.Text = sum.ToString();
+            }
+            else if (sum == null)
+                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
+            else
+            {
+
+            }
+        }
+        private void TinhTrongSoKH()
+        {
+            int sc = dgrNhapMucTieuKhachHang.Rows.Count;
+            int sum = 0;
+            for (int i = 0; i < sc; ++i)
+                sum += int.Parse(dgrNhapMucTieuKhachHang.Rows[i].Cells["cTrongSoKPINKH"].Value.ToString());
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
+
+                dgrNhapMucTieuKhachHang.CurrentRow.Cells["cTrongSoKPINKH"].Value = 0;
+            }
+            else if (sum > 0 && sum <= 100)
+            {
+                txtTongTrongSoKH.Text = sum.ToString();
+            }
+            else if (sum == null)
+                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
+            else
+            {
+
+            }
+        }
+        private void TinhTrongSoVH()
+        {
+            int sc = dgrNhapMucTieuVanHanh.Rows.Count;
+            double sum = 0;
+            for (int i = 0; i < sc; ++i)
+                sum += double.Parse(dgrNhapMucTieuVanHanh.Rows[i].Cells["cTrongSoKPINVH"].Value.ToString());
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
+
+                dgrNhapMucTieuVanHanh.CurrentRow.Cells["cTrongSoKPINVH"].Value = 0;
+            }
+            else if (sum > 0 && sum <= 100)
+            {
+                txtTongTrongSoVH.Text = sum.ToString();
+            }
+            else if (sum == null)
+                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
+            else
+            {
+
+            }
+        }
+        private void TinhTrongSoPT()
+        {
+            int sc = dgrNhapMucTieuPhatTrien.Rows.Count;
+            double sum = 0;
+            for (int i = 0; i < sc; ++i)
+                sum += double.Parse(dgrNhapMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPINPT"].Value.ToString());
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
+
+                dgrNhapMucTieuPhatTrien.CurrentRow.Cells["cTrongSoKPINPT"].Value = 0;
+            }
+            else if (sum > 0 && sum <= 100)
+            {
+                txtTongTrongSoPT.Text = sum.ToString();
+            }
+            else if (sum == null)
+                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
+            else
+            {
+
+            }
         }
         private void CopyTCtoHT()
         {
@@ -297,665 +883,16 @@ namespace DuAn_QuanLyKPI.GUI
             }
         }
         #endregion
-        #region Method Chuyển Tab
-
-
-        private void TrangThai()
-        {
-            FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-        }
-        private void TrangThai1()
-        {
-            FrmSPTrangThai1.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai1.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai1.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai1.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai1.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-
-        }
-        private void TrangThai2()
-        {
-            FrmSPTrangThai2.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai2.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai2.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai2.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai2.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTaiChinh2.State = StepProgressBarItemState.Active;
-        }
-        private void TrangThai3()
-        {
-            FrmSPTrangThai3.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai3.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai3.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai3.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai3.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTaiChinh3.State = StepProgressBarItemState.Active;
-            spKhachHang3.State = StepProgressBarItemState.Active;
-        }
-        private void TrangThai4()
-        {
-            FrmSPTrangThai4.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai4.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai4.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai4.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai4.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTaiChinh4.State = StepProgressBarItemState.Active;
-            spKhachHang4.State = StepProgressBarItemState.Active;
-            spVanHanh4.State = StepProgressBarItemState.Active;
-        }
-        void ChuyenTrangThai(int step)
-        {
-            CurrentTab = step;
-            switch (step)
-            {
-                case 0:
-                    tabMucTieuKhoaPhong.SelectTab(step);
-                    break;
-                case 1:
-                    tabMucTieuKhoaPhong.SelectTab(step);
-                    // Thiết lập Trạng thái khi nhất nút
-                    spTaiChinh1.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
-                    LoadDataBVKhachHang();
-                    break;
-                case 2:
-                    tabMucTieuKhoaPhong.SelectTab(step);
-                    //Thiết lập Trạng thái khi nhất nút
-                    spKhachHang2.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
-                    LoadDataBVVanHanh();
-                    break;
-                case 3:
-                    tabMucTieuKhoaPhong.SelectTab(step);
-                    //Thiết lập Trạng thái khi nhất nút
-                    spVanHanh3.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
-                    LoadDataBVPhatTrien();
-                    break;
-                case 4:
-                    tabMucTieuKhoaPhong.SelectTab(step);
-                    spPhatTrien4.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai4.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
-                    break;
-            }
-        }
-        private void KiemTraTyTrong(int step)
-        {
-            // Lấy tổng các giá trị trong các cột
-            int total = 0;
-            if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
-            {
-                for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
-                {
-                    total += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoKPINTC"].Value.ToString());
-                }
-                // Kiểm tra tổng các giá trị 
-                if (total == 0 && total == null)
-                {
-                    ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
-                }
-                else if (total > 100)
-                {
-                    ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
-                }
-                else if (int.Parse(txtTongTrongSoTC.Text) > 0 && int.Parse(txtTongTrongSoTC.Text) <= 100)
-                {
-                    if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
-                    {
-                        ChuyenTrangThai(step);
-                        if (step == 1)
-                        {
-                            CopyTCtoHT();
-                            LoadDataBVKhachHang();
-                        }  
-                        else if (step == 2)
-                        {
-                            CopyKHtoHT();
-                        }    
-                        else if (step == 3)
-                        {
-                            CopyVHtoHT();
-                        }   
-                        else if (step == 4)
-                        {
-                            CopyPTtoHT();
-                        }    
-                    }
-                    else
-                    {
-
-                    }
-                }
-                else if (int.Parse(txtTongTrongSoTC.Text) == null)
-                {
-                    ev.QFrmThongBaoError("Lỗi không có dữ liệu");
-                }
-            }
-            else
-            {
-                ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
-            }
-        }
-        private void LoadTrongSoTC()
-        {
-            int total = 0;
-            if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
-            {
-                for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
-                {
-                    total += int.Parse(dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoKPINTC"].Value.ToString());
-                }
-            }
-            else
-            {
-
-            }
-        }
-        //Method coppy data 
-        #region Method Copy Data
-        private void copyDataBVtoTC()
-        {
-            dgrNhapMucTieuTaiChinh.Rows.Clear();
-
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                if (Convert.ToBoolean(dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value) == true)
-                {
-                    int n = dgrNhapMucTieuTaiChinh.Rows.Add();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPhieuKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaPhieuKPIBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPKNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaPKBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiIDNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTieuChiIDBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNoiDungNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cChiTieuNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNamNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNgayTaoKPIKPNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNgayTaoKPIKPBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoTieuChiNTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuChiNHTTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
-                    dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoKPINTC"].Value = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIBVTC"].Value.ToString();
-                }
-            }
-        }
-        private void copyDataBVtoKH()
-        {
-            dgrBVMucTieuTaiChinh.Rows.Clear();
-            for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
-            {
-                if (Convert.ToBoolean(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value) == true)
-                {
-                    int n = dgrBVMucTieuTaiChinh.Rows.Add();
-                    dgrBVMucTieuTaiChinh.Rows[n].Cells["cNhapMaPhongKhoa"].Value = dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMaPhongKhoa"].Value.ToString();
-                    dgrBVMucTieuTaiChinh.Rows[n].Cells["cNhapMucTieuBenhV"].Value = dgrNhapMucTieuTaiChinh.Rows[n].Cells["cMucTieuTaiChinhBV"].Value.ToString();
-                    dgrBVMucTieuTaiChinh.Rows[n].Cells["cNhapTieuDe"].Value = dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTieuDe"].Value.ToString();
-                    dgrBVMucTieuTaiChinh.Rows[n].Cells["cNhapNoiDung"].Value = dgrNhapMucTieuTaiChinh.Rows[n].Cells["cNoiDung"].Value.ToString();
-                    dgrBVMucTieuTaiChinh.Rows[n].Cells["cNhapTrongSo"].Value = dgrNhapMucTieuTaiChinh.Rows[n].Cells["cTrongSoMucTieuTaiChinhBV"].Value.ToString();
-                }
-            }
-        }
-
-        #endregion
-        #endregion
 
         #region Event
-        //chặn click vào tab
-        private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
+        //Timer_Tick
+        private void UpdateTimer_Tick(object sender, EventArgs e)
         {
-            //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
+            LoadDataTableTC();
+            LoadDataTableKH();
+            LoadDataTableVH();
+            LoadDataTablePT();
         }
-        private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn đóng Form này không?"))
-            {
-                FrmA73 a73 = new FrmA73();
-                a73.Close();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void dgrNhapMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            ev.Qdgr_RowPostPaint(sender, e, dgrNhapMucTieuTaiChinh);
-        }
-        private void btnTTKH_Click(object sender, EventArgs e)
-        {
-            dgrHTMucTieuTaiChinh.Rows.Clear();
-            KiemTraTyTrong(1); 
-        }
-        private void btnQLTC_Click(object sender, EventArgs e)
-        {
-            ChuyenTrangThai(0);
-        }
-        private void btnTTVH_Click(object sender, EventArgs e)
-        {
-            KiemTraTyTrong(2);           
-        }
-
-        private void btnQLKH_Click(object sender, EventArgs e)
-        {
-            ChuyenTrangThai(1);
-        }
-        private void btnTTPT_Click(object sender, EventArgs e)
-        {
-            KiemTraTyTrong(3);
-        }
-        private void btnQLVH_Click(object sender, EventArgs e)
-        {
-            ChuyenTrangThai(2);
-        }
-        private void btnTTHT_Click(object sender, EventArgs e)
-        {
-            KiemTraTyTrong(4);
-        }
-        private void btnQLPT_Click(object sender, EventArgs e)
-        {
-            ChuyenTrangThai(4);
-        }
-       
-        #endregion
-        #region Dự phòng
-        private void btnCoppyAll_Click(object sender, EventArgs e)
-        {
-            dgrNhapMucTieuTaiChinh.Rows.Clear();
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTCTC"].Value = true;
-            }
-            copyDataBVtoTC();
-        }
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
-            }
-        }
-
-        private void btnDeselectAll_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = false;
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn xóa Form Nhập này không?"))
-            {
-                dgrNhapMucTieuTaiChinh.Rows.Clear();
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-        #endregion
-        #region Copy GridView
-
-        #region Method
-        private void LoadDataTableTC()
-        {
-            dt.Rows.Clear();
-            for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
-            {
-                if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value != null && (bool)dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value == true)
-                {
-                    DataRow newRow = dt.NewRow();
-                    newRow["cMaKPIcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value;
-                    newRow["cNoiDungcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNoiDungBVTC"].Value.ToString();
-                    newRow["cNamcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
-                    if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value == null)
-                    {
-                        dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value = "0";
-                        newRow["TrongSocpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value.ToString();
-                    }
-                    else
-                        newRow["TrongSocpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value.ToString();
-                    dt.Rows.Add(newRow);
-                }
-            }
-            dgrNhapMucTieuTaiChinh.DataSource = dt;
-        }
-        private void LoadDataTableKH()
-        {
-            dt.Rows.Clear();
-            for (int i = 0; i < dgrBVMucTieuKhachHang.Rows.Count; i++)
-            {
-                if (dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value != null && (bool)dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value == true)
-                {
-                    DataRow newRow = dt.NewRow();
-                    newRow["cMaKPIcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cMaKPIBVKH"].Value;
-                    newRow["cNoiDungcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cNoiDungBVKH"].Value.ToString();
-                    newRow["cNamcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cNamBVKH"].Value.ToString();
-                    if (dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value == null)
-                    {
-                        dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value = "0";
-                        newRow["TrongSocpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value.ToString();
-                    }
-                    else
-                        newRow["TrongSocpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value.ToString();
-                    dt.Rows.Add(newRow);
-                }
-            }
-            dgrBVMucTieuKhachHang.DataSource = dt;
-        }
-        private void LoadDataTableVH()
-        {
-            dt.Rows.Clear();
-            for (int i = 0; i < dgrBVMucTieuVanHanh.Rows.Count; i++)
-            {
-                if (dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value != null && (bool)dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value == true)
-                {
-                    DataRow newRow = dt.NewRow();
-                    newRow["cMaKPIcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cMaKPIBVVH"].Value;
-                    newRow["cNoiDungcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNoiDungBVVH"].Value.ToString();
-                    newRow["cNamcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNamBVVH"].Value.ToString();
-                    if (dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value == null)
-                    {
-                        dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value = "0";
-                        newRow["TrongSocpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value.ToString();
-                    }
-                    else
-                        newRow["TrongSocpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value.ToString();
-                    dt.Rows.Add(newRow);
-                }
-            }
-            dgrBVMucTieuVanHanh.DataSource = dt;
-        }
-        private void LoadDataTablePT()
-        {
-            dt.Rows.Clear();
-            for (int i = 0; i < dgrBVMucTieuPhatTrien.Rows.Count; i++)
-            {
-                if (dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value != null && (bool)dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value == true)
-                {
-                    DataRow newRow = dt.NewRow();
-                    newRow["cMaKPIcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cMaKPIBVPT"].Value;
-                    newRow["cNoiDungcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cNoiDungBVPT"].Value.ToString();
-                    newRow["cNamcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cNamBVPT"].Value.ToString();
-                    if (dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value == null)
-                    {
-                        dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value = "0";
-                        newRow["TrongSocpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value.ToString();
-                    }
-                    else
-                        newRow["TrongSocpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value.ToString();
-                    dt.Rows.Add(newRow);
-                }
-            }
-            dgrBVMucTieuPhatTrien.DataSource = dt;
-        }
-
-        private void CreateTableCopyTC()
-        {
-            dt.Columns.Add("cMaKPIcpTC", typeof(string));
-            dt.Columns.Add("cNoiDungcpTC", typeof(string));
-            dt.Columns.Add("cNamcpTC", typeof(int));
-            dt.Columns.Add("TrongSocpTC", typeof(int));
-            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-            PrimaryKeyColumns[0] = dt.Columns["cMaKPIcpTC"];
-            dt.PrimaryKey = PrimaryKeyColumns;
-        }
-        private void CreateTableCopyKH()
-        {
-            dt.Columns.Add("cMaKPIcpKH", typeof(string));
-            dt.Columns.Add("cNoiDungcpKH", typeof(string));
-            dt.Columns.Add("cNamcpKH", typeof(int));
-            dt.Columns.Add("TrongSocpKH", typeof(int));
-            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-            PrimaryKeyColumns[0] = dt.Columns["cMaKPIcpKH"];
-            dt.PrimaryKey = PrimaryKeyColumns;
-        }
-        private void CreateTableCopyVH()
-        {
-            dt.Columns.Add("cMaKPIcpVH", typeof(string));
-            dt.Columns.Add("cNoiDungcpVH", typeof(string));
-            dt.Columns.Add("cNamcpVH", typeof(int));
-            dt.Columns.Add("TrongSocpVH", typeof(int));
-            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-            PrimaryKeyColumns[0] = dt.Columns["cMaKPIcpVH"];
-            dt.PrimaryKey = PrimaryKeyColumns;
-        }
-        private void CreateTableCopyPT()
-        {
-            dt.Columns.Add("cMaKPIcpPT", typeof(string));
-            dt.Columns.Add("cNoiDungcpPT", typeof(string));
-            dt.Columns.Add("cNamcpPT", typeof(int));
-            dt.Columns.Add("TrongSocpPT", typeof(int));
-            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-            PrimaryKeyColumns[0] = dt.Columns["cMaKPIcpPT"];
-            dt.PrimaryKey = PrimaryKeyColumns;
-        }
-        private void ReturnDataTableTC()
-        {
-            for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
-            {
-                string value = dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString().Trim();
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpTC"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cMaKPINTC"].Value))
-                    {
-                        row["TrongSocpTC"] = value;
-                    }
-                }
-            }
-            dgrNhapMucTieuTaiChinh.DataSource = dt;
-            for (int j = 0; j < dgrBVMucTieuTaiChinh.Rows.Count; j++)
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpTC"]);
-                    if (id == Convert.ToString(dgrBVMucTieuTaiChinh.Rows[j].Cells["cMaKPIBVTC"].Value))
-                    {
-                        dgrBVMucTieuTaiChinh.Rows[j].Cells["cTrongSocpTC"].Value = row["TrongSocpTC"].ToString();
-                    }
-                }
-            }
-        }
-        private void ReturnDataTableKH()
-        {
-            for (int i = 0; i < dgrNhapMucTieuKhachHang.Rows.Count; i++)
-            {
-                string value = dgrNhapMucTieuKhachHang.Rows[i].Cells["cTrongSoKPINKH"].Value.ToString().Trim();
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpKH"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuKhachHang.Rows[i].Cells["cMaKPINKH"].Value))
-                    {
-                        row["TrongSocpKH"] = value;
-                    }
-                }
-            }
-            dgrNhapMucTieuKhachHang.DataSource = dt;
-            for (int j = 0; j < dgrNhapMucTieuKhachHang.Rows.Count; j++)
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpKH"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuKhachHang.Rows[j].Cells["cMaKPIBVKH"].Value))
-                    {
-                        dgrNhapMucTieuKhachHang.Rows[j].Cells["cTrongSocpKH"].Value = row["TrongSocpKH"].ToString();
-                    }
-                }
-            }
-        }
-        private void ReturnDataTableVH()
-        {
-            for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
-            {
-                string value = dgrNhapMucTieuVanHanh.Rows[i].Cells["cTrongSoKPINVH"].Value.ToString().Trim();
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpVH"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuVanHanh.Rows[i].Cells["cMaKPINVH"].Value))
-                    {
-                        row["TrongSocpVH"] = value;
-                    }
-                }
-            }
-            dgrNhapMucTieuVanHanh.DataSource = dt;
-            for (int j = 0; j < dgrNhapMucTieuVanHanh.Rows.Count; j++)
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpVH"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuVanHanh.Rows[j].Cells["cMaKPIBVVH"].Value))
-                    {
-                        dgrNhapMucTieuVanHanh.Rows[j].Cells["cTrongSocpVH"].Value = row["TrongSocpVH"].ToString();
-                    }
-                }
-            }
-        }
-        private void ReturnDataTablePT()
-        {
-            for (int i = 0; i < dgrNhapMucTieuPhatTrien.Rows.Count; i++)
-            {
-                string value = dgrNhapMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPINPT"].Value.ToString().Trim();
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpPT"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[i].Cells["cMaKPINPT"].Value))
-                    {
-                        row["TrongSocpPT"] = value;
-                    }
-                }
-            }
-            dgrNhapMucTieuPhatTrien.DataSource = dt;
-            for (int j = 0; j < dgrNhapMucTieuPhatTrien.Rows.Count; j++)
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    String id = Convert.ToString(row["cMaKPIcpPT"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[j].Cells["cMaKPIBVPT"].Value))
-                    {
-                        dgrNhapMucTieuPhatTrien.Rows[j].Cells["cTrongSocpPT"].Value = row["TrongSocpPT"].ToString();
-                    }
-                }
-            }
-        }
-        private void TinhTrongSoTC()
-        {
-            int sc = dgrNhapMucTieuTaiChinh.Rows.Count;
-            double sum = 0;
-            for (int i = 0; i < sc; ++i)
-                sum += double.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
-            if (sum > 100)
-            {
-                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
-
-                dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cTrongSoKPINTC"].Value = 0;
-            }
-            else if (sum > 0 && sum <= 100)
-            {
-                txtTongTrongSoTC.Text = sum.ToString();
-            }
-            else if (sum == null)
-                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
-            else
-            {
-
-            }
-        }
-        private void TinhTrongSoKH()
-        {
-            int sc = dgrNhapMucTieuKhachHang.Rows.Count;
-            double sum = 0;
-            for (int i = 0; i < sc; ++i)
-                sum += double.Parse(dgrNhapMucTieuKhachHang.Rows[i].Cells["cTrongSoKPINKH"].Value.ToString());
-            if (sum > 100)
-            {
-                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
-
-                dgrNhapMucTieuKhachHang.CurrentRow.Cells["cTrongSoKPINKH"].Value = 0;
-            }
-            else if (sum > 0 && sum <= 100)
-            {
-                txtTongTrongSoKH.Text = sum.ToString();
-            }
-            else if (sum == null)
-                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
-            else
-            {
-
-            }
-        }
-        private void TinhTrongSoVH()
-        {
-            int sc = dgrNhapMucTieuVanHanh.Rows.Count;
-            double sum = 0;
-            for (int i = 0; i < sc; ++i)
-                sum += double.Parse(dgrNhapMucTieuVanHanh.Rows[i].Cells["cTrongSoKPINVH"].Value.ToString());
-            if (sum > 100)
-            {
-                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
-
-                dgrNhapMucTieuVanHanh.CurrentRow.Cells["cTrongSoKPINVH"].Value = 0;
-            }
-            else if (sum > 0 && sum <= 100)
-            {
-                txtTongTrongSoVH.Text = sum.ToString();
-            }
-            else if (sum == null)
-                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
-            else
-            {
-
-            }
-        }
-        private void TinhTrongSoPT()
-        {
-            int sc = dgrNhapMucTieuPhatTrien.Rows.Count;
-            double sum = 0;
-            for (int i = 0; i < sc; ++i)
-                sum += double.Parse(dgrNhapMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPINPT"].Value.ToString());
-            if (sum > 100)
-            {
-                ev.QFrmThongBaoError("Trọng số đã vượt quá 100%. Vui lòng nhập lại trọng số");
-
-                dgrNhapMucTieuPhatTrien.CurrentRow.Cells["cTrongSoKPINPT"].Value = 0;
-            }
-            else if (sum > 0 && sum <= 100)
-            {
-                txtTongTrongSoPT.Text = sum.ToString();
-            }
-            else if (sum == null)
-                ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
-            else
-            {
-
-            }
-        }
-        #endregion
-
-        #region Event
         //CellClick 
         private void dgrBVMucTieuTaiChinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1277,6 +1214,52 @@ namespace DuAn_QuanLyKPI.GUI
             TinhTrongSoPT();
         }
         //ColumnHeaderMouseClick
+        private void dgrBVMucTieuTaiChinh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
+                {
+                    dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value = true;
+                }
+            }
+            LoadDataTableTC();
+        }
+        private void dgrBVMucTieuKhachHang_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                for (int i = 0; i < dgrBVMucTieuKhachHang.Rows.Count; i++)
+                {
+                    dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value = true;
+                }
+            }
+            LoadDataTableKH();
+        }
+        private void dgrBVMucTieuVanHanh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                for (int i = 0; i < dgrBVMucTieuVanHanh.Rows.Count; i++)
+                {
+                    dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value = true;
+                }
+            }
+            LoadDataTableVH();
+        }
+
+        private void dgrBVMucTieuPhatTrien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                for (int i = 0; i < dgrBVMucTieuPhatTrien.Rows.Count; i++)
+                {
+                    dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value = true;
+                }
+            }
+            LoadDataTablePT();
+        }
+
         private void dgrNhapMucTieuTaiChinh_ColumnHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 0)
