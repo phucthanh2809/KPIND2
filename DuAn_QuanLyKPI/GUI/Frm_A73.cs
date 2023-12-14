@@ -242,7 +242,6 @@ namespace DuAn_QuanLyKPI.GUI
                     for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; ++i)
                     {
                         totaltc += int.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
-                        testc.Text = totaltc.ToString(); ;
                     }
                     if (totaltc == 0 && totaltc == null)
                     {
@@ -259,8 +258,9 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyTCtoHT();
                             LoadDataBVKhachHang();
                             ChuyenTrangThai(1);
-                        }
-                        else
+                            CreateTableCopyKH();
+                            }
+                            else
                         {
                         }
                     }
@@ -271,8 +271,9 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyTCtoHT();
                             LoadDataBVKhachHang();
                             ChuyenTrangThai(1);
-                        }
-                        else
+                            CreateTableCopyKH();
+                            }
+                            else
                         {
                         }
                     }
@@ -302,8 +303,7 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyKHtoHT();
                             LoadDataBVVanHanh();
                             ChuyenTrangThai(2);
-                            CreateTableCopyKH();
-                            }
+                        }
                         else
                         {
                         }
@@ -315,7 +315,6 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyKHtoHT();
                             LoadDataBVVanHanh();
                             ChuyenTrangThai(2);
-                            CreateTableCopyKH();
                         }
                         else
                         {
@@ -528,10 +527,10 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                     else
                         newRow["TrongSocpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value.ToString();
-                    tc.Rows.Add(newRow);
+                    kh.Rows.Add(newRow);
                 }
             }
-            dgrNhapMucTieuKhachHang.DataSource = tc;
+            dgrNhapMucTieuKhachHang.DataSource = kh;
         }
         private void LoadDataTableVH()
         {
@@ -667,9 +666,9 @@ namespace DuAn_QuanLyKPI.GUI
                 foreach (DataRow row in kh.Rows)
                 {
                     String id = Convert.ToString(row["cMaKPIcpKH"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuKhachHang.Rows[j].Cells["cMaKPIBVKH"].Value))
+                    if (id == Convert.ToString(dgrNhapMucTieuKhachHang.Rows[j].Cells["cMaKPINKH"].Value))
                     {
-                        dgrNhapMucTieuKhachHang.Rows[j].Cells["cTrongSocpKH"].Value = row["TrongSocpKH"].ToString();
+                        dgrBVMucTieuKhachHang.Rows[j].Cells["cTrongSocpKH"].Value = row["TrongSocpKH"].ToString();
                     }
                 }
             }
@@ -1111,6 +1110,8 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
                     dgrNhapMucTieuKhachHang.CancelEdit();
                 }
+                TinhTrongSoKH();
+                TinhTrongSoKH();
             }
         }
 
@@ -1253,8 +1254,6 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void dgrNhapMucTieuKhachHang_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            TinhTrongSoKH();
-            TinhTrongSoKH();
         }
         private void dgrNhapMucTieuVanHanh_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
