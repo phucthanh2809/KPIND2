@@ -21,7 +21,7 @@ namespace PhanMemQuanLyKPI
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
-        DataTable dtDanhSach1; 
+        DataTable dtDanhSach1;
         DataTable dtDanhSach2 = new DataTable();
 
         DataTable dtKhachHang1;
@@ -54,56 +54,17 @@ namespace PhanMemQuanLyKPI
             loadChungMinh();
             loadEnabled();
 
-           
-            btnXoa.DoubleClick += BtnXoa_DoubleClick;
+
+            btnXoa.Click += BtnXoa_Click;
             gvDanhSach1.CustomDrawColumnHeader += GvDanhSach1_CustomDrawColumnHeader;
 
             gvDanhSach2.ShowingEditor += GvDanhSach2_ShowingEditor;
             gvDanhSach2.ValidatingEditor += GvDanhSach2_ValidatingEditor;
-          
+
 
         }
 
-        private void GvDanhSach2_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            GridView view = sender as GridView;
-            if (view.FocusedColumn.FieldName == "TrongSoTCBV")
-            {
-                double result;
-                if (!double.TryParse(e.Value.ToString(), out result))
-                {
-                    e.Valid = false;
-                    MessageBox.Show(e.ErrorText = "Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                }
-            }
-        }
-
-        private void GvDanhSach2_ShowingEditor(object sender, CancelEventArgs e)
-        {
-            GridView view = sender as GridView;
-            if (view.FocusedColumn.FieldName == "TrongSoTCBV")
-            {
-                string cellValue = view.GetFocusedValue().ToString();
-                double result;
-                e.Cancel = !double.TryParse(cellValue, out result);
-            }
-        }
-
-        private void GvDanhSach1_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e)
-        {
-            if (e.Column != null)
-            {
-                GridColumn column = e.Column;
-
-                if (column.ColumnType == typeof(bool) && column.Visible && column.OptionsColumn.AllowSort == DefaultBoolean.False)
-                {
-                    column.Caption = "Chọn tất cả";
-                }
-            }
-        }
-
-
-        private void BtnXoa_DoubleClick(object sender, EventArgs e)
+        private void BtnXoa_Click(object sender, EventArgs e)
         {
             if (gvDanhSach2.GetFocusedRowCellValue("MaKPI") != null)
             {
@@ -133,7 +94,48 @@ namespace PhanMemQuanLyKPI
             TinhTrongSo();
         }
 
-        
+        private void GvDanhSach2_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == "TrongSoTCBV")
+            {
+                double result;
+                if (!double.TryParse(e.Value.ToString(), out result))
+                {
+                    e.Valid = false;
+                    MessageBox.Show(e.ErrorText = "Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void GvDanhSach2_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == "TrongSoTCBV")
+            {
+                string cellValue = view.GetFocusedValue().ToString();
+                double result;
+                e.Cancel = !double.TryParse(cellValue, out result);
+            }
+        }
+
+        private void GvDanhSach1_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e)
+        {
+            if (e.Column != null)
+            {
+                GridColumn column = e.Column;
+
+                if (column.ColumnType == typeof(bool) && column.Visible && column.OptionsColumn.AllowSort == DefaultBoolean.False)
+                {
+                    column.Caption = "Chọn tất cả";
+                }
+            }
+        }
+
+
+
+
+
 
         void loadData()
         {
@@ -145,15 +147,15 @@ namespace PhanMemQuanLyKPI
             gvDanhSach1.OptionsBehavior.Editable = false;
             gvDanhSach1.ColumnPanelRowHeight = 60;
             gvDanhSach1.Appearance.HeaderPanel.BackColor = Color.LightBlue;
-            gvDanhSach1.Appearance.HeaderPanel.ForeColor = Color.DeepPink; 
+            gvDanhSach1.Appearance.HeaderPanel.ForeColor = Color.DeepPink;
         }
 
         void loadData2()
         {
             dtDanhSach2 = dtDanhSach1.Clone();
             gvDanhSach2.ColumnPanelRowHeight = 60;
-            gvDanhSach2.Appearance.HeaderPanel.BackColor = Color.LightBlue; 
-            gvDanhSach2.Appearance.HeaderPanel.ForeColor = Color.DeepPink; 
+            gvDanhSach2.Appearance.HeaderPanel.BackColor = Color.LightBlue;
+            gvDanhSach2.Appearance.HeaderPanel.ForeColor = Color.DeepPink;
         }
 
         void loadKH1()
@@ -177,7 +179,7 @@ namespace PhanMemQuanLyKPI
             gvKhachHang2.Appearance.HeaderPanel.ForeColor = Color.DeepPink;
         }
 
- 
+
         void loadChungMinh()
         {
             slkChungMinh.DataSource = _phongkhoa.getList();
@@ -281,7 +283,7 @@ namespace PhanMemQuanLyKPI
             }
         }
 
-    
+
 
 
         private void DeleteSelectedRows(DataTable dataTable, GridView gridView)
@@ -329,18 +331,34 @@ namespace PhanMemQuanLyKPI
             TinhTrongSo();
         }
 
-        private void gvDanhSach2_Click(object sender, EventArgs e)
-        {
-            DeleteSelectedRows(dtDanhSach2, gvDanhSach1);
-            TinhTrongSo();
-        }
 
         private void gvDanhSach2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             TinhTrongSo();
         }
 
+        private void gvDanhSach2_MouseDown(object sender, MouseEventArgs e)
+        {
+            {
+                GridView view = sender as GridView;
+                if (view != null && e.Button == MouseButtons.Left)
+                {
+                    DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitInfo = view.CalcHitInfo(e.Location);
+                    if (hitInfo.HitTest == DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitTest.Column)
+                    {
+                        string columnName = hitInfo.Column.FieldName; // Tên của cột được click
+                                                                      // Thực hiện xóa dữ liệu hoặc các hành động khác dựa trên tên cột ở đây
+                                                                      // Ví dụ:
+                        if (columnName == "XOAALL")
+                        {
+                            DeleteSelectedRows(dtDanhSach2, gvDanhSach1);
+                            TinhTrongSo();
+                        }
 
+                    }
+                }
+            }
+        }
     }
 }
     

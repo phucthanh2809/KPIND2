@@ -45,8 +45,6 @@ namespace DuAn_QuanLyKPI.GUI
         public FrmA73()
         {
             InitializeComponent();
-
-            txtTest.Text = QuyNamPhieu;
             LoadThongTinNhanVien();
             LoadDataBVTaiChinh();
 
@@ -95,7 +93,6 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuTaiChinh.DataSource = tb;
 
             lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
-            lbTSTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
         }
         private void LoadDataBVKhachHang()
         {
@@ -105,7 +102,6 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuKhachHang.DataSource = tb;
 
             lbYearKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cNamBVKH"].Value.ToString();
-            lbTSKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString();
         }
         private void LoadDataBVVanHanh()
         {
@@ -115,7 +111,7 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuVanHanh.DataSource = tb;
 
             lbYearVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cNamBVVH"].Value.ToString();
-            lbTSVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString();
+
         }
         private void LoadDataBVPhatTrien()
         {
@@ -125,7 +121,6 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuPhatTrien.DataSource = tb;
 
             lbYearPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
-            lbTSPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString();
         }
         #endregion
         #region Method Chuyển Tab
@@ -136,7 +131,7 @@ namespace DuAn_QuanLyKPI.GUI
             FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
             FrmSPTrangThai.ConnectorLineThickness = 2; // viền đường kết nối
             FrmSPTrangThai.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
             FrmSPTrangThai.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
             FrmSPTrangThai.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
         }
@@ -145,7 +140,7 @@ namespace DuAn_QuanLyKPI.GUI
             FrmSPTrangThai1.ItemOptions.Indicator.Width = 50; // độ dài item
             FrmSPTrangThai1.ConnectorLineThickness = 2; // viền đường kết nối
             FrmSPTrangThai1.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai1.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThai1.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
             FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
             FrmSPTrangThai1.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
 
@@ -197,7 +192,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spTaiChinh1.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
+                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính \n" + dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
                     LoadDataBVKhachHang();
                     break;
                 case 2:
@@ -206,7 +201,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spKhachHang2.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
+                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng \n" + dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
                     LoadDataBVVanHanh();
                     break;
                 case 3:
@@ -215,7 +210,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spVanHanh3.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
+                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành" + dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
                     LoadDataBVPhatTrien();
                     break;
                 case 4:
@@ -223,7 +218,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spPhatTrien4.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai4.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
+                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển" + dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
                     break;
             }
         }
@@ -306,7 +301,7 @@ namespace DuAn_QuanLyKPI.GUI
                         {
                         }
                     }
-                    else if (totalkh == 100 && int.Parse(txtTongTrongSoTC.Text) == 100)
+                    else if (totalkh == 100 && int.Parse(txtTongTrongSoKH.Text) == 100)
                     {
                         if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
                         {
@@ -353,7 +348,7 @@ namespace DuAn_QuanLyKPI.GUI
 
                         }
                     }
-                    else if (totalvh == 100 && int.Parse(txtTongTrongSoTC.Text) == 100)
+                    else if (totalvh == 100 && int.Parse(txtTongTrongSoVH.Text) == 100)
                     {
                         if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
                         {
@@ -367,7 +362,7 @@ namespace DuAn_QuanLyKPI.GUI
 
                         }
                     }
-                    else if (totalvh == null && int.Parse(txtTongTrongSoKH.Text) == null)
+                    else if (totalvh == null && int.Parse(txtTongTrongSoVH.Text) == null)
                     {
                         ev.QFrmThongBaoError("Lỗi không có dữ liệu");
                     }
@@ -397,7 +392,7 @@ namespace DuAn_QuanLyKPI.GUI
                         {
                         }
                     }
-                    else if (totalpt == 100 && int.Parse(txtTongTrongSoTC.Text) == 100)
+                    else if (totalpt == 100 && int.Parse(txtTongTrongSoPT.Text) == 100)
                     {
                         if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
                         {
@@ -721,7 +716,7 @@ namespace DuAn_QuanLyKPI.GUI
                 foreach (DataRow row in pt.Rows)
                 {
                     String id = Convert.ToString(row["cMaKPIcpPT"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[j].Cells["cMaKPIPT"].Value))
+                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[j].Cells["cMaKPINPT"].Value))
                     {
                         dgrBVMucTieuPhatTrien.Rows[j].Cells["cTrongSocpPT"].Value = row["TrongSocpPT"].ToString();
                     }
@@ -1111,8 +1106,6 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
                     dgrNhapMucTieuKhachHang.CancelEdit();
                 }
-                TinhTrongSoKH();
-                TinhTrongSoKH();
             }
         }
 
@@ -1255,6 +1248,8 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void dgrNhapMucTieuKhachHang_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
+            TinhTrongSoKH();
+            TinhTrongSoKH();
         }
         private void dgrNhapMucTieuVanHanh_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
