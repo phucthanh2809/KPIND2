@@ -51,9 +51,6 @@ namespace DuAn_QuanLyKPI.GUI
             LoadDataBVTaiChinh();
 
             CreateTableCopyTC();
-            
-            //CreateTableCopyVH();
-            //CreateTableCopyPT();
 
             updateTimer = new Timer { Interval = 100 };
             updateTimer.Tick += UpdateTimer_Tick;
@@ -259,8 +256,8 @@ namespace DuAn_QuanLyKPI.GUI
                             LoadDataBVKhachHang();
                             ChuyenTrangThai(1);
                             CreateTableCopyKH();
-                            }
-                            else
+                        }
+                        else
                         {
                         }
                     }
@@ -272,8 +269,8 @@ namespace DuAn_QuanLyKPI.GUI
                             LoadDataBVKhachHang();
                             ChuyenTrangThai(1);
                             CreateTableCopyKH();
-                            }
-                            else
+                        }
+                        else
                         {
                         }
                     }
@@ -303,6 +300,7 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyKHtoHT();
                             LoadDataBVVanHanh();
                             ChuyenTrangThai(2);
+                            CreateTableCopyVH();
                         }
                         else
                         {
@@ -315,6 +313,7 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyKHtoHT();
                             LoadDataBVVanHanh();
                             ChuyenTrangThai(2);
+                            CreateTableCopyVH();
                         }
                         else
                         {
@@ -347,6 +346,7 @@ namespace DuAn_QuanLyKPI.GUI
                             CopyVHtoHT();
                             LoadDataBVPhatTrien();
                             ChuyenTrangThai(3);
+                            CreateTableCopyPT();
                         }
                         else
                         {
@@ -360,6 +360,7 @@ namespace DuAn_QuanLyKPI.GUI
                            CopyVHtoHT();
                            LoadDataBVPhatTrien();
                            ChuyenTrangThai(3);
+                           CreateTableCopyPT();
                         }
                         else
                         {
@@ -553,7 +554,7 @@ namespace DuAn_QuanLyKPI.GUI
                     vh.Rows.Add(newRow);
                 }
             }
-            dgrBVMucTieuVanHanh.DataSource = vh;
+            dgrNhapMucTieuVanHanh.DataSource = vh;
         }
         private void LoadDataTablePT()
         {
@@ -576,7 +577,7 @@ namespace DuAn_QuanLyKPI.GUI
                     pt.Rows.Add(newRow);
                 }
             }
-            dgrBVMucTieuPhatTrien.DataSource = pt;
+            dgrNhapMucTieuPhatTrien.DataSource = pt;
         }
 
         private void CreateTableCopyTC()
@@ -693,9 +694,9 @@ namespace DuAn_QuanLyKPI.GUI
                 foreach (DataRow row in vh.Rows)
                 {
                     String id = Convert.ToString(row["cMaKPIcpVH"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuVanHanh.Rows[j].Cells["cMaKPIBVVH"].Value))
+                    if (id == Convert.ToString(dgrNhapMucTieuVanHanh.Rows[j].Cells["cMaKPINVH"].Value))
                     {
-                        dgrNhapMucTieuVanHanh.Rows[j].Cells["cTrongSocpVH"].Value = row["TrongSocpVH"].ToString();
+                        dgrBVMucTieuVanHanh.Rows[j].Cells["cTrongSocpVH"].Value = row["TrongSocpVH"].ToString();
                     }
                 }
             }
@@ -720,9 +721,9 @@ namespace DuAn_QuanLyKPI.GUI
                 foreach (DataRow row in pt.Rows)
                 {
                     String id = Convert.ToString(row["cMaKPIcpPT"]);
-                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[j].Cells["cMaKPIBVPT"].Value))
+                    if (id == Convert.ToString(dgrNhapMucTieuPhatTrien.Rows[j].Cells["cMaKPIPT"].Value))
                     {
-                        dgrNhapMucTieuPhatTrien.Rows[j].Cells["cTrongSocpPT"].Value = row["TrongSocpPT"].ToString();
+                        dgrBVMucTieuPhatTrien.Rows[j].Cells["cTrongSocpPT"].Value = row["TrongSocpPT"].ToString();
                     }
                 }
             }

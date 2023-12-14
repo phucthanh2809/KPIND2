@@ -251,6 +251,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.cTrongSoKPIBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSocpKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgrNhapMucTieuKhachHang = new System.Windows.Forms.DataGridView();
+            this.cXoaTatCaNKH = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cMaKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNoiDungNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNamNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTongTrongSoKH = new ControlProject1510.XFilteg();
             this.label46 = new System.Windows.Forms.Label();
@@ -322,11 +327,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.stepProgressBarItem3 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.oDataInstantFeedbackSource1 = new DevExpress.Data.ODataLinq.ODataInstantFeedbackSource();
-            this.cXoaTatCaNKH = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cMaKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNoiDungNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNamNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSoKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cXoaTatCaNVH = new System.Windows.Forms.DataGridViewImageColumn();
             this.cMaKPINVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungNVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -2735,6 +2735,45 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuKhachHang.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrNhapMucTieuKhachHang_RowPostPaint);
             this.dgrNhapMucTieuKhachHang.MouseHover += new System.EventHandler(this.dgrNhapMucTieuKhachHang_MouseHover);
             // 
+            // cXoaTatCaNKH
+            // 
+            this.cXoaTatCaNKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cXoaTatCaNKH.HeaderText = "Xóa tất cả";
+            this.cXoaTatCaNKH.Image = ((System.Drawing.Image)(resources.GetObject("cXoaTatCaNKH.Image")));
+            this.cXoaTatCaNKH.Name = "cXoaTatCaNKH";
+            this.cXoaTatCaNKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cXoaTatCaNKH.Width = 68;
+            // 
+            // cMaKPINKH
+            // 
+            this.cMaKPINKH.DataPropertyName = "cMaKPIcpKH";
+            this.cMaKPINKH.HeaderText = "Mã KPI ";
+            this.cMaKPINKH.Name = "cMaKPINKH";
+            this.cMaKPINKH.ReadOnly = true;
+            this.cMaKPINKH.Visible = false;
+            // 
+            // cNoiDungNKH
+            // 
+            this.cNoiDungNKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungNKH.DataPropertyName = "cNoiDungcpKH";
+            this.cNoiDungNKH.HeaderText = "Mục tiêu Khoa/ Phòng ";
+            this.cNoiDungNKH.Name = "cNoiDungNKH";
+            this.cNoiDungNKH.ReadOnly = true;
+            // 
+            // cNamNKH
+            // 
+            this.cNamNKH.DataPropertyName = "cNamcpKH";
+            this.cNamNKH.HeaderText = "Năm";
+            this.cNamNKH.Name = "cNamNKH";
+            this.cNamNKH.ReadOnly = true;
+            this.cNamNKH.Visible = false;
+            // 
+            // cTrongSoKPINKH
+            // 
+            this.cTrongSoKPINKH.DataPropertyName = "TrongSocpKH";
+            this.cTrongSoKPINKH.HeaderText = "Trọng số (%)";
+            this.cTrongSoKPINKH.Name = "cTrongSoKPINKH";
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.txtTongTrongSoKH);
@@ -3510,45 +3549,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // cXoaTatCaNKH
-            // 
-            this.cXoaTatCaNKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cXoaTatCaNKH.HeaderText = "Xóa tất cả";
-            this.cXoaTatCaNKH.Image = ((System.Drawing.Image)(resources.GetObject("cXoaTatCaNKH.Image")));
-            this.cXoaTatCaNKH.Name = "cXoaTatCaNKH";
-            this.cXoaTatCaNKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cXoaTatCaNKH.Width = 92;
-            // 
-            // cMaKPINKH
-            // 
-            this.cMaKPINKH.DataPropertyName = "cMaKPIcpKH";
-            this.cMaKPINKH.HeaderText = "Mã KPI ";
-            this.cMaKPINKH.Name = "cMaKPINKH";
-            this.cMaKPINKH.ReadOnly = true;
-            this.cMaKPINKH.Visible = false;
-            // 
-            // cNoiDungNKH
-            // 
-            this.cNoiDungNKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNoiDungNKH.DataPropertyName = "cNoiDungcpKH";
-            this.cNoiDungNKH.HeaderText = "Mục tiêu Khoa/ Phòng ";
-            this.cNoiDungNKH.Name = "cNoiDungNKH";
-            this.cNoiDungNKH.ReadOnly = true;
-            // 
-            // cNamNKH
-            // 
-            this.cNamNKH.DataPropertyName = "cNamcpKH";
-            this.cNamNKH.HeaderText = "Năm";
-            this.cNamNKH.Name = "cNamNKH";
-            this.cNamNKH.ReadOnly = true;
-            this.cNamNKH.Visible = false;
-            // 
-            // cTrongSoKPINKH
-            // 
-            this.cTrongSoKPINKH.DataPropertyName = "TrongSocpKH";
-            this.cTrongSoKPINKH.HeaderText = "Trọng số (%)";
-            this.cTrongSoKPINKH.Name = "cTrongSoKPINKH";
-            // 
             // cXoaTatCaNVH
             // 
             this.cXoaTatCaNVH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -3560,6 +3560,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // cMaKPINVH
             // 
+            this.cMaKPINVH.DataPropertyName = "cMaKPIcpVH";
             this.cMaKPINVH.HeaderText = "Mã KPI ";
             this.cMaKPINVH.Name = "cMaKPINVH";
             this.cMaKPINVH.ReadOnly = true;
@@ -3568,17 +3569,20 @@ namespace DuAn_QuanLyKPI.GUI
             // cNoiDungNVH
             // 
             this.cNoiDungNVH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungNVH.DataPropertyName = "cNoiDungcpVH";
             this.cNoiDungNVH.HeaderText = "Mục tiêu Khoa/ Phòng ";
             this.cNoiDungNVH.Name = "cNoiDungNVH";
             this.cNoiDungNVH.ReadOnly = true;
             // 
             // cNamNVH
             // 
+            this.cNamNVH.DataPropertyName = "cNamcpVH";
             this.cNamNVH.HeaderText = "Năm";
             this.cNamNVH.Name = "cNamNVH";
             // 
             // cTrongSoKPINVH
             // 
+            this.cTrongSoKPINVH.DataPropertyName = "TrongSocpVH";
             this.cTrongSoKPINVH.HeaderText = "Trọng số (%)";
             this.cTrongSoKPINVH.Name = "cTrongSoKPINVH";
             // 
@@ -3593,6 +3597,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // cMaKPINPT
             // 
+            this.cMaKPINPT.DataPropertyName = "cMaKPIcpPT";
             this.cMaKPINPT.HeaderText = "Mã KPI ";
             this.cMaKPINPT.Name = "cMaKPINPT";
             this.cMaKPINPT.ReadOnly = true;
@@ -3601,12 +3606,14 @@ namespace DuAn_QuanLyKPI.GUI
             // cNoiDungNPT
             // 
             this.cNoiDungNPT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungNPT.DataPropertyName = "cNoiDungcpPT";
             this.cNoiDungNPT.HeaderText = "Mục tiêu Khoa/ Phòng ";
             this.cNoiDungNPT.Name = "cNoiDungNPT";
             this.cNoiDungNPT.ReadOnly = true;
             // 
             // cNamNPT
             // 
+            this.cNamNPT.DataPropertyName = "cNamcpPT";
             this.cNamNPT.HeaderText = "Năm";
             this.cNamNPT.Name = "cNamNPT";
             this.cNamNPT.ReadOnly = true;
@@ -3614,6 +3621,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // cTrongSoKPINPT
             // 
+            this.cTrongSoKPINPT.DataPropertyName = "TrongSocpPT";
             this.cTrongSoKPINPT.HeaderText = "Trọng số (%)";
             this.cTrongSoKPINPT.Name = "cTrongSoKPINPT";
             // 
@@ -4018,16 +4026,16 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpTC;
-        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINVH;
         private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNamNKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINKH;
+        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINVH;
         private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNPT;
