@@ -1,4 +1,5 @@
 ﻿using DuAn_QuanLyKPI.GUI;
+using PhanMemQuanLyKPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace DuAn_QuanLyKPI
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new Frm_Login());
+                    Application.Run(new frmMain());
                 }
                 finally
                 {
