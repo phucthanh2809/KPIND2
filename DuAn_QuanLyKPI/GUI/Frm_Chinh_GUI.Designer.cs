@@ -73,14 +73,14 @@ namespace DuAn_QuanLyKPI
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.pnThongTin = new System.Windows.Forms.Panel();
+            this.lbkhoaphong = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbkhoaphong = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTrackBar1)).BeginInit();
@@ -94,6 +94,7 @@ namespace DuAn_QuanLyKPI
             // 
             // ribbon
             // 
+            this.ribbon.BackColor = System.Drawing.Color.White;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -136,6 +137,7 @@ namespace DuAn_QuanLyKPI
             this.repositoryItemZoomTrackBar1,
             this.repositoryItemTokenEdit1,
             this.repositoryItemProgressBar1});
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbon.Size = new System.Drawing.Size(1364, 158);
             // 
             // btnDMCaNhan
@@ -429,7 +431,7 @@ namespace DuAn_QuanLyKPI
             // 
             // pnThongTin
             // 
-            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnThongTin.Controls.Add(this.lbkhoaphong);
             this.pnThongTin.Controls.Add(this.label4);
             this.pnThongTin.Controls.Add(this.label2);
@@ -442,6 +444,28 @@ namespace DuAn_QuanLyKPI
             this.pnThongTin.Name = "pnThongTin";
             this.pnThongTin.Size = new System.Drawing.Size(1364, 37);
             this.pnThongTin.TabIndex = 2;
+            // 
+            // lbkhoaphong
+            // 
+            this.lbkhoaphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbkhoaphong.AutoSize = true;
+            this.lbkhoaphong.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbkhoaphong.Location = new System.Drawing.Point(935, 7);
+            this.lbkhoaphong.Name = "lbkhoaphong";
+            this.lbkhoaphong.Size = new System.Drawing.Size(123, 24);
+            this.lbkhoaphong.TabIndex = 16;
+            this.lbkhoaphong.Text = "Khoa Phòng";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(800, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 24);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Khoa/ Phòng:";
             // 
             // label2
             // 
@@ -457,7 +481,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDate.AutoSize = true;
-            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.Location = new System.Drawing.Point(1135, 7);
             this.lbDate.Name = "lbDate";
@@ -469,7 +493,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
-            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.Location = new System.Drawing.Point(1244, 7);
             this.lbTime.Name = "lbTime";
@@ -503,34 +527,13 @@ namespace DuAn_QuanLyKPI
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // lbkhoaphong
-            // 
-            this.lbkhoaphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbkhoaphong.AutoSize = true;
-            this.lbkhoaphong.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbkhoaphong.Location = new System.Drawing.Point(935, 7);
-            this.lbkhoaphong.Name = "lbkhoaphong";
-            this.lbkhoaphong.Size = new System.Drawing.Size(123, 24);
-            this.lbkhoaphong.TabIndex = 16;
-            this.lbkhoaphong.Text = "Khoa Phong";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(800, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 24);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Khoa/ Phòng:";
-            // 
             // Frm_Chinh_GUI
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1364, 767);

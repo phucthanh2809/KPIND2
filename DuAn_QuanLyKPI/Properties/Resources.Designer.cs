@@ -131,6 +131,16 @@ namespace DuAn_QuanLyKPI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap debut {
+            get {
+                object obj = ResourceManager.GetObject("debut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage documentpdf {
@@ -256,6 +266,16 @@ namespace DuAn_QuanLyKPI.Properties {
         internal static System.Drawing.Bitmap task_32x32 {
             get {
                 object obj = ResourceManager.GetObject("task_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap textbox_user_24 {
+            get {
+                object obj = ResourceManager.GetObject("textbox_user_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

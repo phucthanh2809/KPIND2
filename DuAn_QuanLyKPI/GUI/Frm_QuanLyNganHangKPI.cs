@@ -186,8 +186,6 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraForm1 form = new XtraForm1();
-            form.ShowDialog();
         }
         //Lấy dữ liệu từ gridview đổ lên các textbox
         private void dtgv_QLNganHangKPI_Click(object sender, EventArgs e)
