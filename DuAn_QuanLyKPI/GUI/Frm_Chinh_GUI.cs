@@ -17,6 +17,7 @@ namespace DuAn_QuanLyKPI
     {
         private static string username = Frm_Login.TenNV;
         private static string kp = Frm_Login.TenPhongKhoa;
+        public static int chucdanh;
 
         public static string mconnectstring = "server=192.168.50.108,1433;database=QuanLyKPI;uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
@@ -26,12 +27,14 @@ namespace DuAn_QuanLyKPI
         public Frm_Chinh_GUI()
         {
             InitializeComponent();
+            IsMdiContainer = true;
+
+
+
             lbUsername.Text = username;
             lbkhoaphong.Text = kp;
             timer1.Enabled = true;
-            this.IsMdiContainer = true;
         }
-        public static int chucdanh;
         //Khai báo hàm không cho mở nhiều form giống nhau, khi mở form trùng thì sẽ tự động chuyển về form cũ
         public void OpenForm(Type typeForm)
         {

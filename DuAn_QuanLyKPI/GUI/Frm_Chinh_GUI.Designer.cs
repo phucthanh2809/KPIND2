@@ -483,7 +483,7 @@ namespace DuAn_QuanLyKPI
             this.lbDate.AutoSize = true;
             this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(1135, 7);
+            this.lbDate.Location = new System.Drawing.Point(1133, 7);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(53, 24);
             this.lbDate.TabIndex = 13;
@@ -495,7 +495,7 @@ namespace DuAn_QuanLyKPI
             this.lbTime.AutoSize = true;
             this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(1244, 7);
+            this.lbTime.Location = new System.Drawing.Point(1242, 7);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(55, 24);
             this.lbTime.TabIndex = 12;

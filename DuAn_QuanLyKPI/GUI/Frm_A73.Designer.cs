@@ -764,6 +764,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtPTHT.Enter += new System.EventHandler(this.txtPTVH_Enter);
             this.txtPTHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPTVH_KeyPress);
             this.txtPTHT.Leave += new System.EventHandler(this.txtPTVH_Leave);
+            this.txtPTHT.Validated += new System.EventHandler(this.txtPTHT_Validated);
             // 
             // label76
             // 
@@ -883,6 +884,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtVHHT.Enter += new System.EventHandler(this.txtVHHT_Enter);
             this.txtVHHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVHHT_KeyPress);
             this.txtVHHT.Leave += new System.EventHandler(this.txtVHHT_Leave);
+            this.txtVHHT.Validated += new System.EventHandler(this.txtVHHT_Validated);
             // 
             // label73
             // 
@@ -1002,6 +1004,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtKHHT.Enter += new System.EventHandler(this.txtKHHT_Enter);
             this.txtKHHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKHHT_KeyPress);
             this.txtKHHT.Leave += new System.EventHandler(this.txtKHHT_Leave);
+            this.txtKHHT.Validated += new System.EventHandler(this.txtKHHT_Validated);
             // 
             // label70
             // 
@@ -1122,6 +1125,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtTCHT.Enter += new System.EventHandler(this.txtTCHT_Enter);
             this.txtTCHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTCHT_KeyPress);
             this.txtTCHT.Leave += new System.EventHandler(this.txtTCHT_Leave);
+            this.txtTCHT.Validated += new System.EventHandler(this.txtTCHT_Validated);
             // 
             // label67
             // 
@@ -1359,9 +1363,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.FrmSPTrangThai4.Items.Add(this.spKhachHang4);
             this.FrmSPTrangThai4.Items.Add(this.spVanHanh4);
             this.FrmSPTrangThai4.Items.Add(this.spPhatTrien4);
-            this.FrmSPTrangThai4.Location = new System.Drawing.Point(5, 66);
+            this.FrmSPTrangThai4.Location = new System.Drawing.Point(5, 73);
             this.FrmSPTrangThai4.Name = "FrmSPTrangThai4";
-            this.FrmSPTrangThai4.Size = new System.Drawing.Size(825, 113);
+            this.FrmSPTrangThai4.Size = new System.Drawing.Size(825, 106);
             this.FrmSPTrangThai4.TabIndex = 21;
             // 
             // spTaiChinh4
@@ -1408,10 +1412,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabVanHanh
             // 
             this.tabVanHanh.Controls.Add(this.panel6);
-            this.tabVanHanh.Location = new System.Drawing.Point(4, 22);
+            this.tabVanHanh.Location = new System.Drawing.Point(4, 30);
             this.tabVanHanh.Name = "tabVanHanh";
             this.tabVanHanh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVanHanh.Size = new System.Drawing.Size(1356, 710);
+            this.tabVanHanh.Size = new System.Drawing.Size(1356, 702);
             this.tabVanHanh.TabIndex = 4;
             this.tabVanHanh.Text = "Vận hành";
             this.tabVanHanh.UseVisualStyleBackColor = true;
@@ -1424,7 +1428,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1350, 704);
+            this.panel6.Size = new System.Drawing.Size(1350, 696);
             this.panel6.TabIndex = 0;
             // 
             // splitContainer3
@@ -1441,8 +1445,8 @@ namespace DuAn_QuanLyKPI.GUI
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dgrNhapMucTieuVanHanh);
-            this.splitContainer3.Size = new System.Drawing.Size(1350, 449);
-            this.splitContainer3.SplitterDistance = 217;
+            this.splitContainer3.Size = new System.Drawing.Size(1350, 441);
+            this.splitContainer3.SplitterDistance = 213;
             this.splitContainer3.TabIndex = 8;
             // 
             // dgrBVMucTieuVanHanh
@@ -1464,7 +1468,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuVanHanh.Location = new System.Drawing.Point(0, 0);
             this.dgrBVMucTieuVanHanh.Name = "dgrBVMucTieuVanHanh";
             this.dgrBVMucTieuVanHanh.RowTemplate.Height = 30;
-            this.dgrBVMucTieuVanHanh.Size = new System.Drawing.Size(1350, 217);
+            this.dgrBVMucTieuVanHanh.Size = new System.Drawing.Size(1350, 213);
             this.dgrBVMucTieuVanHanh.TabIndex = 16;
             this.dgrBVMucTieuVanHanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuVanHanh_CellClick);
             this.dgrBVMucTieuVanHanh.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuVanHanh_ColumnHeaderMouseClick);
@@ -1547,7 +1551,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuVanHanh.Location = new System.Drawing.Point(0, 0);
             this.dgrNhapMucTieuVanHanh.Name = "dgrNhapMucTieuVanHanh";
             this.dgrNhapMucTieuVanHanh.RowTemplate.Height = 30;
-            this.dgrNhapMucTieuVanHanh.Size = new System.Drawing.Size(1350, 228);
+            this.dgrNhapMucTieuVanHanh.Size = new System.Drawing.Size(1350, 224);
             this.dgrNhapMucTieuVanHanh.TabIndex = 17;
             this.dgrNhapMucTieuVanHanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuVanHanh_CellClick);
             this.dgrNhapMucTieuVanHanh.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuVanHanh_CellEndEdit);
@@ -1602,7 +1606,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel14.Controls.Add(this.btnQLKH);
             this.panel14.Controls.Add(this.btnTTPT);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(0, 658);
+            this.panel14.Location = new System.Drawing.Point(0, 650);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1350, 46);
             this.panel14.TabIndex = 7;
@@ -1920,6 +1924,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuTaiChinh.AllowUserToAddRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgrBVMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgrBVMucTieuTaiChinh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgrBVMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrBVMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonTatCaBVTC,
@@ -2006,6 +2011,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuTaiChinh.AllowUserToAddRows = false;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgrNhapMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgrNhapMucTieuTaiChinh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgrNhapMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNhapMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cXoaTatCaNTC,
@@ -2341,10 +2347,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabKhachHang
             // 
             this.tabKhachHang.Controls.Add(this.panel3);
-            this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
+            this.tabKhachHang.Location = new System.Drawing.Point(4, 30);
             this.tabKhachHang.Name = "tabKhachHang";
             this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(1356, 710);
+            this.tabKhachHang.Size = new System.Drawing.Size(1356, 702);
             this.tabKhachHang.TabIndex = 1;
             this.tabKhachHang.Text = "Khách hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
@@ -2357,7 +2363,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1350, 704);
+            this.panel3.Size = new System.Drawing.Size(1350, 696);
             this.panel3.TabIndex = 18;
             // 
             // splitContainer2
@@ -2374,8 +2380,8 @@ namespace DuAn_QuanLyKPI.GUI
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgrNhapMucTieuKhachHang);
-            this.splitContainer2.Size = new System.Drawing.Size(1350, 449);
-            this.splitContainer2.SplitterDistance = 217;
+            this.splitContainer2.Size = new System.Drawing.Size(1350, 441);
+            this.splitContainer2.SplitterDistance = 212;
             this.splitContainer2.TabIndex = 7;
             // 
             // dgrBVMucTieuKhachHang
@@ -2397,7 +2403,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuKhachHang.Location = new System.Drawing.Point(0, 0);
             this.dgrBVMucTieuKhachHang.Name = "dgrBVMucTieuKhachHang";
             this.dgrBVMucTieuKhachHang.RowTemplate.Height = 30;
-            this.dgrBVMucTieuKhachHang.Size = new System.Drawing.Size(1350, 217);
+            this.dgrBVMucTieuKhachHang.Size = new System.Drawing.Size(1350, 212);
             this.dgrBVMucTieuKhachHang.TabIndex = 16;
             this.dgrBVMucTieuKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuKhachHang_CellClick);
             this.dgrBVMucTieuKhachHang.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuKhachHang_ColumnHeaderMouseClick);
@@ -2479,7 +2485,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuKhachHang.Location = new System.Drawing.Point(0, 0);
             this.dgrNhapMucTieuKhachHang.Name = "dgrNhapMucTieuKhachHang";
             this.dgrNhapMucTieuKhachHang.RowTemplate.Height = 30;
-            this.dgrNhapMucTieuKhachHang.Size = new System.Drawing.Size(1350, 228);
+            this.dgrNhapMucTieuKhachHang.Size = new System.Drawing.Size(1350, 225);
             this.dgrNhapMucTieuKhachHang.TabIndex = 17;
             this.dgrNhapMucTieuKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuKhachHang_CellClick);
             this.dgrNhapMucTieuKhachHang.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuKhachHang_CellEndEdit);
@@ -2536,7 +2542,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel5.Controls.Add(this.btnQLTC);
             this.panel5.Controls.Add(this.btnTTVH);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 658);
+            this.panel5.Location = new System.Drawing.Point(0, 650);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1350, 46);
             this.panel5.TabIndex = 6;
@@ -2803,10 +2809,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabPhatTrien
             // 
             this.tabPhatTrien.Controls.Add(this.panel10);
-            this.tabPhatTrien.Location = new System.Drawing.Point(4, 22);
+            this.tabPhatTrien.Location = new System.Drawing.Point(4, 30);
             this.tabPhatTrien.Name = "tabPhatTrien";
             this.tabPhatTrien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 710);
+            this.tabPhatTrien.Size = new System.Drawing.Size(1356, 702);
             this.tabPhatTrien.TabIndex = 5;
             this.tabPhatTrien.Text = "Phát triển";
             this.tabPhatTrien.UseVisualStyleBackColor = true;
@@ -2817,7 +2823,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1350, 704);
+            this.panel10.Size = new System.Drawing.Size(1350, 696);
             this.panel10.TabIndex = 20;
             // 
             // panel23
@@ -2828,7 +2834,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1350, 704);
+            this.panel23.Size = new System.Drawing.Size(1350, 696);
             this.panel23.TabIndex = 7;
             // 
             // splitContainer4
@@ -2845,8 +2851,8 @@ namespace DuAn_QuanLyKPI.GUI
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.dgrNhapMucTieuPhatTrien);
-            this.splitContainer4.Size = new System.Drawing.Size(1350, 449);
-            this.splitContainer4.SplitterDistance = 219;
+            this.splitContainer4.Size = new System.Drawing.Size(1350, 441);
+            this.splitContainer4.SplitterDistance = 215;
             this.splitContainer4.TabIndex = 9;
             // 
             // dgrBVMucTieuPhatTrien
@@ -2868,7 +2874,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuPhatTrien.Location = new System.Drawing.Point(0, 0);
             this.dgrBVMucTieuPhatTrien.Name = "dgrBVMucTieuPhatTrien";
             this.dgrBVMucTieuPhatTrien.RowTemplate.Height = 30;
-            this.dgrBVMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 219);
+            this.dgrBVMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 215);
             this.dgrBVMucTieuPhatTrien.TabIndex = 16;
             this.dgrBVMucTieuPhatTrien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuPhatTrien_CellClick);
             this.dgrBVMucTieuPhatTrien.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuPhatTrien_ColumnHeaderMouseClick);
@@ -2951,7 +2957,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuPhatTrien.Location = new System.Drawing.Point(0, 0);
             this.dgrNhapMucTieuPhatTrien.Name = "dgrNhapMucTieuPhatTrien";
             this.dgrNhapMucTieuPhatTrien.RowTemplate.Height = 30;
-            this.dgrNhapMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 226);
+            this.dgrNhapMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 222);
             this.dgrNhapMucTieuPhatTrien.TabIndex = 17;
             this.dgrNhapMucTieuPhatTrien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuPhatTrien_CellClick);
             this.dgrNhapMucTieuPhatTrien.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuPhatTrien_CellEndEdit);
@@ -3008,7 +3014,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel17.Controls.Add(this.btnQLVH);
             this.panel17.Controls.Add(this.btnTTHT);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel17.Location = new System.Drawing.Point(0, 658);
+            this.panel17.Location = new System.Drawing.Point(0, 650);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(1350, 46);
             this.panel17.TabIndex = 8;
@@ -3481,7 +3487,6 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Panel panel34;
         private System.Windows.Forms.Label label65;
-        private ControlProject1510.XFilteg txtTCHT;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Button btnQLPT;
@@ -3708,5 +3713,6 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpTC;
         private ControlProject1510.XFilteg txtTongTrongSoMucTieu;
         private System.Windows.Forms.Label label33;
+        private ControlProject1510.XFilteg txtTCHT;
     }
 }
