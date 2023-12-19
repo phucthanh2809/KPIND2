@@ -214,6 +214,12 @@
     <Compile Include="DTO\TongHopBieuMauPhieuKPI.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\backup.Designer.cs">
+      <DependentUpon>backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\backup.resx">
+      <DependentUpon>backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +436,9 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\actions_checkcircled.svg" />
+    <None Include="Resources\close.svg" />
+    <None Include="Resources\markcomplete.svg" />
     <None Include="Resources\textbox_user_24.jpg" />
     <None Include="Resources\debut.JPG" />
     <None Include="Resources\assigntask.svg" />

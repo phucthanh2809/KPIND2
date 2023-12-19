@@ -503,7 +503,7 @@ namespace DuAn_QuanLyKPI.GUI
         //chặn click vào tab
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
+           tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
         }
         private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
         {

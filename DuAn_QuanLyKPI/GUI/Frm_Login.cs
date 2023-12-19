@@ -140,7 +140,6 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txtdangnhap_Enter(object sender, EventArgs e)
         {
-            ev.Qtxt_Enter(sender, e);
             if (txtdangnhap.Text != "")
             {
 
@@ -151,14 +150,8 @@ namespace DuAn_QuanLyKPI.GUI
             }
         }
 
-        private void txtdangnhap_Leave(object sender, EventArgs e)
-        {
-            ev.Qtxt_Leave(sender, e);
-        }
-
         private void txtPassword_Enter_1(object sender, EventArgs e)
         {
-            ev.Qtxt_Enter(sender, e);
             if (txtPassword.Text != "")
             {
 
@@ -170,18 +163,44 @@ namespace DuAn_QuanLyKPI.GUI
             Bitmap bmpass = new Bitmap(@"D:\Thanh Phuc\Dự án quản lý KPI\Du An KPI\animation\textbox_password.png");
             pictureBox1.Image = bmpass;
         }
-
-        private void txtPassword_Leave_1(object sender, EventArgs e)
+        private void pbHien_Click_1(object sender, EventArgs e)
         {
-            ev.Qtxt_Leave(sender, e);
+            if (txtPassword.PasswordChar == '*')
+            {
+                pbAn.BringToFront();
+                txtPassword.PasswordChar = '\0';
+                if (txtdangnhap.Text.Length > 0)
+                    pictureBox1.Image = images[txtdangnhap.Text.Length - 1];
+                else
+                    pictureBox1.Image = Properties.Resources.debut;
+            }
+
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void pbAn_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            if (txtPassword.PasswordChar == '\0')
+            {
+                pbHien.BringToFront();
+                txtPassword.PasswordChar = '*';
+                Bitmap bmpass = new Bitmap(@"D:\Thanh Phuc\Dự án quản lý KPI\Du An KPI\animation\textbox_password.png");
+                pictureBox1.Image = bmpass;
+            }
         }
 
-        private void btndangnhap_Click_1(object sender, EventArgs e)
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Trigger the button click event
+                btnLogin.PerformClick();
+
+                // Mark the key press as handled to prevent it from being processed further
+                e.Handled = true;
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             string tentk = txtdangnhap.Text;
             string mk = txtPassword.Text;
@@ -227,69 +246,13 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Đăng nhập thất bại");
             }
-
-            //SqlDataAdapter da = new SqlDataAdapter("select * From [dbo].[DUOC_KC_tab.TAIKHOAN] where TenDangNhap = '" + txtdangnhap.Text + "' and  MatKhau='" + txtmatkhau.Text + "'", mconnectstring);
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //if (dt.Rows.Count > 0)
-
-            //{
-
-            //    ev.QFrmThongBao("Đăng nhập thành công");
-
-            //    //tendn = dt.Rows[0]["TenDangNhap"].ToString();
-
-            //    Frm_Home f = new Frm_Home();
-            //    this.Hide();
-
-            //    f.ShowDialog();
-            //}
-            //else
-            //{
-
-            //    ev.QFrmThongBaoError("Đăng nhập không thành công");
-            //}
             Frm_Login fl = new Frm_Login();
             fl.Close();
         }
 
-        private void pbHien_Click_1(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (txtPassword.PasswordChar == '*')
-            {
-                pbAn.BringToFront();
-                txtPassword.PasswordChar = '\0';
-                if (txtdangnhap.Text.Length > 0)
-                    pictureBox1.Image = images[txtdangnhap.Text.Length - 1];
-                else
-                    pictureBox1.Image = Properties.Resources.debut;
-            }
-
+            this.Close();
         }
-
-        private void pbAn_Click_1(object sender, EventArgs e)
-        {
-            if (txtPassword.PasswordChar == '\0')
-            {
-                pbHien.BringToFront();
-                txtPassword.PasswordChar = '*';
-                Bitmap bmpass = new Bitmap(@"D:\Thanh Phuc\Dự án quản lý KPI\Du An KPI\animation\textbox_password.png");
-                pictureBox1.Image = bmpass;
-            }
-        }
-
-        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Trigger the button click event
-                btndangnhap.PerformClick();
-
-                // Mark the key press as handled to prevent it from being processed further
-                e.Handled = true;
-            }
-        }
-
-
     }
 }

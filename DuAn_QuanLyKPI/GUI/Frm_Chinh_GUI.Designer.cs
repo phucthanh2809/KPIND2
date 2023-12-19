@@ -94,7 +94,7 @@ namespace DuAn_QuanLyKPI
             // 
             // ribbon
             // 
-            this.ribbon.BackColor = System.Drawing.Color.White;
+            this.ribbon.BackColor = System.Drawing.SystemColors.Window;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -431,7 +431,7 @@ namespace DuAn_QuanLyKPI
             // 
             // pnThongTin
             // 
-            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
             this.pnThongTin.Controls.Add(this.lbkhoaphong);
             this.pnThongTin.Controls.Add(this.label4);
             this.pnThongTin.Controls.Add(this.label2);
@@ -450,7 +450,7 @@ namespace DuAn_QuanLyKPI
             this.lbkhoaphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbkhoaphong.AutoSize = true;
             this.lbkhoaphong.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbkhoaphong.Location = new System.Drawing.Point(935, 13);
+            this.lbkhoaphong.Location = new System.Drawing.Point(930, 13);
             this.lbkhoaphong.Name = "lbkhoaphong";
             this.lbkhoaphong.Size = new System.Drawing.Size(123, 24);
             this.lbkhoaphong.TabIndex = 16;
@@ -481,7 +481,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDate.AutoSize = true;
-            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.Location = new System.Drawing.Point(1123, 13);
             this.lbDate.Name = "lbDate";
@@ -493,7 +493,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
-            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.Location = new System.Drawing.Point(1232, 13);
             this.lbTime.Name = "lbTime";
@@ -608,11 +608,11 @@ namespace DuAn_QuanLyKPI
         private System.Windows.Forms.Panel pnThongTin;
         private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbkhoaphong;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }
