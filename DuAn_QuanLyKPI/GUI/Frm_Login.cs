@@ -259,11 +259,12 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 pbAn.BringToFront();
                 txtPassword.PasswordChar = '\0';
+                if (txtdangnhap.Text.Length > 0)
+                    pictureBox1.Image = images[txtdangnhap.Text.Length - 1];
+                else
+                    pictureBox1.Image = Properties.Resources.debut;
             }
-            if (txtdangnhap.Text.Length > 0)
-                pictureBox1.Image = images[txtdangnhap.Text.Length - 1];
-            else
-                pictureBox1.Image = Properties.Resources.debut;
+
         }
 
         private void pbAn_Click_1(object sender, EventArgs e)
@@ -272,9 +273,9 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 pbHien.BringToFront();
                 txtPassword.PasswordChar = '*';
+                Bitmap bmpass = new Bitmap(@"D:\Thanh Phuc\Dự án quản lý KPI\Du An KPI\animation\textbox_password.png");
+                pictureBox1.Image = bmpass;
             }
-            Bitmap bmpass = new Bitmap(@"D:\Thanh Phuc\Dự án quản lý KPI\Du An KPI\animation\textbox_password.png");
-            pictureBox1.Image = bmpass;
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)

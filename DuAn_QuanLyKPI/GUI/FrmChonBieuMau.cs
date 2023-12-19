@@ -29,6 +29,7 @@ namespace DuAn_QuanLyKPI.GUI
         public FrmChonBieuMau()
         {
             InitializeComponent();
+
             LoadData();
         }
         #region LoadDataGrid
@@ -88,25 +89,8 @@ namespace DuAn_QuanLyKPI.GUI
                         //    Frm_A710 A72 = new Frm_A710();
                         //    A72.Show(); break;
                         case 73:
-                            //FrmA73 A73 = new FrmA73();
-                            //A73.Show(); break;
-
-                            // Create an instance of Form2
-                            FrmA73 FrmA73 = new FrmA73();
-
-                            // Set properties for Form2
-                            FrmA73.TopLevel = false;
-                            FrmA73.FormBorderStyle = FormBorderStyle.None;
-                            FrmA73.Dock = DockStyle.Fill;
-
-                            // Set Form2 as a child of the Panel
-                            documentManager1.Controls.Add(FrmA73);
-
-
-                            // Show Form2
-                            FrmA73.Show();
-
-
+                            FrmA73 A73 = new FrmA73();
+                            A73.Show(); break;
                             break;
                         //case 74:
                         //    Frm_A710 A74 = new Frm_A710();

@@ -76,6 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(63, 165);
             this.label1.Name = "label1";
@@ -85,6 +86,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::DuAn_QuanLyKPI.Properties.Resources.debut;
@@ -97,7 +99,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel5.Controls.Add(this.lbDate);
             this.panel5.Controls.Add(this.lbTime);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -109,9 +111,10 @@
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(221, 9);
+            this.lbDate.ForeColor = System.Drawing.Color.Black;
+            this.lbDate.Location = new System.Drawing.Point(223, 9);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(88, 40);
             this.lbDate.TabIndex = 11;
@@ -120,9 +123,10 @@
             // lbTime
             // 
             this.lbTime.AutoSize = true;
-            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(24, 9);
+            this.lbTime.ForeColor = System.Drawing.Color.Black;
+            this.lbTime.Location = new System.Drawing.Point(16, 9);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(91, 40);
             this.lbTime.TabIndex = 10;
@@ -165,7 +169,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(107, 86);
+            this.label3.Location = new System.Drawing.Point(70, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 24);
             this.label3.TabIndex = 10;
@@ -175,7 +179,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(107, 12);
+            this.label2.Location = new System.Drawing.Point(70, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 9;
@@ -184,7 +188,7 @@
             // pbHien
             // 
             this.pbHien.Image = ((System.Drawing.Image)(resources.GetObject("pbHien.Image")));
-            this.pbHien.Location = new System.Drawing.Point(273, 119);
+            this.pbHien.Location = new System.Drawing.Point(313, 125);
             this.pbHien.Name = "pbHien";
             this.pbHien.Size = new System.Drawing.Size(35, 32);
             this.pbHien.TabIndex = 7;
@@ -194,7 +198,7 @@
             // pbAn
             // 
             this.pbAn.Image = ((System.Drawing.Image)(resources.GetObject("pbAn.Image")));
-            this.pbAn.Location = new System.Drawing.Point(275, 119);
+            this.pbAn.Location = new System.Drawing.Point(315, 125);
             this.pbAn.Name = "pbAn";
             this.pbAn.Size = new System.Drawing.Size(33, 32);
             this.pbAn.TabIndex = 8;
@@ -204,10 +208,10 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(107, 119);
+            this.txtPassword.Location = new System.Drawing.Point(67, 125);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(201, 32);
+            this.txtPassword.Size = new System.Drawing.Size(281, 32);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "123";
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -217,12 +221,13 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(153)))));
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
-            this.btnHuy.Location = new System.Drawing.Point(226, 160);
+            this.btnHuy.Location = new System.Drawing.Point(225, 168);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(82, 38);
+            this.btnHuy.Size = new System.Drawing.Size(126, 38);
             this.btnHuy.TabIndex = 5;
             this.btnHuy.Text = "HỦY";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -231,9 +236,9 @@
             // txtdangnhap
             // 
             this.txtdangnhap.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdangnhap.Location = new System.Drawing.Point(107, 45);
+            this.txtdangnhap.Location = new System.Drawing.Point(67, 47);
             this.txtdangnhap.Name = "txtdangnhap";
-            this.txtdangnhap.Size = new System.Drawing.Size(201, 32);
+            this.txtdangnhap.Size = new System.Drawing.Size(281, 32);
             this.txtdangnhap.TabIndex = 0;
             this.txtdangnhap.Text = "phuc28";
             this.txtdangnhap.Click += new System.EventHandler(this.txtdangnhap_Click);
@@ -243,30 +248,32 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(71, 119);
+            this.panel4.Location = new System.Drawing.Point(31, 119);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(30, 32);
             this.panel4.TabIndex = 6;
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(71, 45);
+            this.panel3.Location = new System.Drawing.Point(31, 45);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(30, 32);
             this.panel3.TabIndex = 5;
             // 
             // btndangnhap
             // 
-            this.btndangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(153)))));
+            this.btndangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btndangnhap.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndangnhap.ForeColor = System.Drawing.Color.Black;
-            this.btndangnhap.Location = new System.Drawing.Point(71, 160);
+            this.btndangnhap.Location = new System.Drawing.Point(70, 168);
             this.btndangnhap.Name = "btndangnhap";
             this.btndangnhap.Size = new System.Drawing.Size(149, 38);
             this.btndangnhap.TabIndex = 4;
@@ -276,12 +283,14 @@
             // 
             // Frm_Login
             // 
+            this.AcceptButton = this.btndangnhap;
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(415, 500);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

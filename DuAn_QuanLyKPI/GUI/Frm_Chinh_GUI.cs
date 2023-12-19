@@ -27,10 +27,8 @@ namespace DuAn_QuanLyKPI
         public Frm_Chinh_GUI()
         {
             InitializeComponent();
+
             IsMdiContainer = true;
-
-
-
             lbUsername.Text = username;
             lbkhoaphong.Text = kp;
             timer1.Enabled = true;

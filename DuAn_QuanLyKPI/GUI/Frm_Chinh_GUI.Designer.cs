@@ -431,7 +431,7 @@ namespace DuAn_QuanLyKPI
             // 
             // pnThongTin
             // 
-            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pnThongTin.Controls.Add(this.lbkhoaphong);
             this.pnThongTin.Controls.Add(this.label4);
             this.pnThongTin.Controls.Add(this.label2);
@@ -440,9 +440,9 @@ namespace DuAn_QuanLyKPI
             this.pnThongTin.Controls.Add(this.lbUsername);
             this.pnThongTin.Controls.Add(this.label1);
             this.pnThongTin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnThongTin.Location = new System.Drawing.Point(0, 730);
+            this.pnThongTin.Location = new System.Drawing.Point(0, 717);
             this.pnThongTin.Name = "pnThongTin";
-            this.pnThongTin.Size = new System.Drawing.Size(1364, 37);
+            this.pnThongTin.Size = new System.Drawing.Size(1364, 50);
             this.pnThongTin.TabIndex = 2;
             // 
             // lbkhoaphong
@@ -450,7 +450,7 @@ namespace DuAn_QuanLyKPI
             this.lbkhoaphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbkhoaphong.AutoSize = true;
             this.lbkhoaphong.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbkhoaphong.Location = new System.Drawing.Point(935, 7);
+            this.lbkhoaphong.Location = new System.Drawing.Point(935, 13);
             this.lbkhoaphong.Name = "lbkhoaphong";
             this.lbkhoaphong.Size = new System.Drawing.Size(123, 24);
             this.lbkhoaphong.TabIndex = 16;
@@ -461,7 +461,7 @@ namespace DuAn_QuanLyKPI
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(800, 7);
+            this.label4.Location = new System.Drawing.Point(800, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 24);
             this.label4.TabIndex = 15;
@@ -471,7 +471,7 @@ namespace DuAn_QuanLyKPI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 7);
+            this.label2.Location = new System.Drawing.Point(12, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(270, 24);
             this.label2.TabIndex = 14;
@@ -481,9 +481,9 @@ namespace DuAn_QuanLyKPI
             // 
             this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDate.AutoSize = true;
-            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(1133, 7);
+            this.lbDate.Location = new System.Drawing.Point(1123, 13);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(53, 24);
             this.lbDate.TabIndex = 13;
@@ -493,9 +493,9 @@ namespace DuAn_QuanLyKPI
             // 
             this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
-            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(1242, 7);
+            this.lbTime.Location = new System.Drawing.Point(1232, 13);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(55, 24);
             this.lbTime.TabIndex = 12;
@@ -506,7 +506,7 @@ namespace DuAn_QuanLyKPI
             this.lbUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.Location = new System.Drawing.Point(554, 7);
+            this.lbUsername.Location = new System.Drawing.Point(549, 13);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(100, 24);
             this.lbUsername.TabIndex = 1;
@@ -517,7 +517,7 @@ namespace DuAn_QuanLyKPI
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(357, 7);
+            this.label1.Location = new System.Drawing.Point(357, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 24);
             this.label1.TabIndex = 0;

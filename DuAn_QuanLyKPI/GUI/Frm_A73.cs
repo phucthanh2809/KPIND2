@@ -46,9 +46,6 @@ namespace DuAn_QuanLyKPI.GUI
         public FrmA73()
         {
             InitializeComponent();
-            Frm_Chinh_GUI main = new Frm_Chinh_GUI();
-            FrmA73 a73 = new FrmA73();
-            a73.MdiParent = main;
 
             LoadThongTinNhanVien();
             LoadDataBVTaiChinh();
@@ -82,7 +79,7 @@ namespace DuAn_QuanLyKPI.GUI
             txtViTriCV3.Text = TenChucDanh;
             txtViTriCV4.Text = TenChucDanh;
 
-            txtKhoaPhong.Text = TenPhongKhoa;
+            lbKhoaPhong.Text = TenPhongKhoa;
             txtKhoaPhong1.Text = TenPhongKhoa;
             txtKhoaPhong2.Text = TenPhongKhoa;
             txtKhoaPhong3.Text = TenPhongKhoa;
@@ -95,9 +92,9 @@ namespace DuAn_QuanLyKPI.GUI
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
-
+ 
             lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
-        }
+        } 
         private void LoadDataBVKhachHang()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'C' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "'";
