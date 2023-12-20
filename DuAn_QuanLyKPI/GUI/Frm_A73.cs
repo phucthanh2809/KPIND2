@@ -1,21 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using BusinessCommon;
+using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessCommon;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraGrid;
-using System.Windows.Controls;
-using DevExpress.XtraGrid.Views.Grid;
-using GridView = System.Windows.Controls.GridView;
-using Control = System.Windows.Controls.Control;
-using DuAn_QuanLyKPI.Constants;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -33,7 +23,7 @@ namespace DuAn_QuanLyKPI.GUI
         //coneect & event
         private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
-        private clsEventArgs ev = new clsEventArgs("");
+        private clsEventArgs ev = new clsEventArgs(string.Empty);
         private string msql;
 
         Timer updateTimer;
@@ -79,11 +69,11 @@ namespace DuAn_QuanLyKPI.GUI
             txtViTriCV3.Text = TenChucDanh;
             txtViTriCV4.Text = TenChucDanh;
 
-            lbKhoaPhong.Text = TenPhongKhoa;
-            txtKhoaPhong1.Text = TenPhongKhoa;
-            txtKhoaPhong2.Text = TenPhongKhoa;
-            txtKhoaPhong3.Text = TenPhongKhoa;
-            txtKhoaPhong4.Text = TenPhongKhoa;
+            lbKhoaPhongTC.Text = TenPhongKhoa;
+            lbKhoaPhongKH.Text = TenPhongKhoa;
+            lbKhoaPhongVH.Text = TenPhongKhoa;
+            lbKhoaPhongPT.Text = TenPhongKhoa;
+            lbKhoaPhongHT.Text = TenPhongKhoa;
         }
         //Load DataGridview Tài chính
         private void LoadDataBVTaiChinh()
@@ -92,9 +82,9 @@ namespace DuAn_QuanLyKPI.GUI
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
- 
+
             lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
-        } 
+        }
         private void LoadDataBVKhachHang()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'C' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "'";
@@ -193,7 +183,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spTaiChinh1.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính \n" + dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
+                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
                     LoadDataBVKhachHang();
                     break;
                 case 2:
@@ -202,7 +192,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spKhachHang2.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng \n" + dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
+                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
                     LoadDataBVVanHanh();
                     break;
                 case 3:
@@ -211,7 +201,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spVanHanh3.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành" + dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
+                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
                     LoadDataBVPhatTrien();
                     break;
                 case 4:
@@ -219,7 +209,7 @@ namespace DuAn_QuanLyKPI.GUI
                     spPhatTrien4.State = StepProgressBarItemState.Active;
                     FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThai4.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển" + dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
+                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
                     break;
             }
         }
@@ -230,185 +220,228 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 switch (step)
                 {
-                case 1:
-                    int totaltc = 0;
-                    for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; ++i)
-                    {
-                        totaltc += int.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
-                    }
-                    if (totaltc == 0 && totaltc == null)
-                    {
-                        ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
-                    }
-                    else if (totaltc > 100)
-                    {
-                        ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
-                    }
-                    else if (totaltc > 0 && totaltc < 100 && int.Parse(txtTongTrongSoTC.Text) > 0 && int.Parse(txtTongTrongSoTC.Text) < 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                    case 1:
+                        int totaltc = 0;
+                        for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; ++i)
                         {
-                            CopyTCtoHT();
-                            LoadDataBVKhachHang();
-                            ChuyenTrangThai(1);
-                            CreateTableCopyKH();
+                            totaltc += int.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
                         }
-                        else
+                        if (totaltc == 0 && totaltc == null)
                         {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
-                    }
-                    else if (totaltc == 100 && int.Parse(txtTongTrongSoTC.Text) == 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                        else if (totaltc > 100)
                         {
-                            CopyTCtoHT();
-                            LoadDataBVKhachHang();
-                            ChuyenTrangThai(1);
-                            CreateTableCopyKH();
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
                         }
-                        else
+                        else if (totaltc > 0 && totaltc < 100 && int.Parse(txtTongTrongSoTC.Text) > 0 && int.Parse(txtTongTrongSoTC.Text) < 100)
                         {
-                        }
-                    }
-                    else if (totaltc == null && int.Parse(txtTongTrongSoTC.Text) == null)
-                    {
-                        ev.QFrmThongBaoError("Lỗi không có dữ liệu");
-                    }
-                    break;
-                case 2:
-                    int totalkh = 0;
-                    for (int i = 0; i < dgrNhapMucTieuKhachHang.Rows.Count; i++)
-                    {
-                        totalkh += int.Parse(dgrNhapMucTieuKhachHang.CurrentRow.Cells["cTrongSoKPINKH"].Value.ToString());
-                    }
-                    if (totalkh == 0 && totalkh == null)
-                    {
-                        ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
-                    }
-                    else if (totalkh > 100)
-                    {
-                        ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
-                    }
-                    else if (totalkh > 0 && totalkh < 100 && int.Parse(txtTongTrongSoKH.Text) > 0 && int.Parse(txtTongTrongSoKH.Text) <= 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
-                        {
-                            CopyKHtoHT();
-                            LoadDataBVVanHanh();
-                            ChuyenTrangThai(2);
-                            CreateTableCopyVH();
-                        }
-                        else
-                        {
-                        }
-                    }
-                    else if (totalkh == 100 && int.Parse(txtTongTrongSoKH.Text) == 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
-                        {
-                            CopyKHtoHT();
-                            LoadDataBVVanHanh();
-                            ChuyenTrangThai(2);
-                            CreateTableCopyVH();
-                        }
-                        else
-                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyTCtoHT();
+                                LoadDataBVKhachHang();
+                                ChuyenTrangThai(1);
+                                if (txtTongTrongSoKH.Text == string.Empty)
+                                {
+                                    CreateTableCopyKH();
+                                }
+                                else
+                                {
 
+                                }
+                            }
+                            else
+                            {
+                            }
                         }
-                    }
-                    else if (totalkh == null && int.Parse(txtTongTrongSoKH.Text) == null)
-                    {
-                        ev.QFrmThongBaoError("Lỗi không có dữ liệu");
-                    }
-                    break;
-                case 3:
-                    int totalvh = 0;
-                    for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
-                    {
-                        totalvh += int.Parse(dgrNhapMucTieuVanHanh.CurrentRow.Cells["cTrongSoKPINVH"].Value.ToString());
-                    }
-                    if (totalvh == 0 && totalvh == null)
-                    {
-                        ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
-                    }
-                    else if (totalvh > 100)
-                    {
-                        ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
-                    }
-                    else if (totalvh > 0 && totalvh < 100 && int.Parse(txtTongTrongSoVH.Text) > 0 && int.Parse(txtTongTrongSoVH.Text) <= 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                        else if (totaltc == 100 && int.Parse(txtTongTrongSoTC.Text) == 100)
                         {
-                            CopyVHtoHT();
-                            LoadDataBVPhatTrien();
-                            ChuyenTrangThai(3);
-                            CreateTableCopyPT();
-                        }
-                        else
-                        {
+                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            {
+                                LoadDataBVKhachHang();
+                                CopyTCtoHT();
+                                ChuyenTrangThai(1);
+                                if (txtTongTrongSoKH.Text == string.Empty)
+                                {
+                                    CreateTableCopyKH();
+                                }
+                                else
+                                {
 
-                        }
-                    }
-                    else if (totalvh == 100 && int.Parse(txtTongTrongSoVH.Text) == 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
-                        {
-                           CopyVHtoHT();
-                           LoadDataBVPhatTrien();
-                           ChuyenTrangThai(3);
-                           CreateTableCopyPT();
-                        }
-                        else
-                        {
+                                }
+                            }
+                            else
+                            {
 
+                            }
                         }
-                    }
-                    else if (totalvh == null && int.Parse(txtTongTrongSoVH.Text) == null)
-                    {
-                        ev.QFrmThongBaoError("Lỗi không có dữ liệu");
-                    }
-                    break;
-                case 4:
-                    int totalpt = 0;
-                    for (int i = 0; i < dgrNhapMucTieuPhatTrien.Rows.Count; i++)
-                    {
-                        totalpt += int.Parse(dgrNhapMucTieuPhatTrien.CurrentRow.Cells["cTrongSoKPINPT"].Value.ToString());
-                    }
-                    if (totalpt == 0 && totalpt == null)
-                    {
-                        ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
-                    }
-                    else if (totalpt > 100)
-                    {
-                        ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
-                    }
-                    else if (totalpt > 0 && totalpt < 100 && int.Parse(txtTongTrongSoPT.Text) > 0 && int.Parse(txtTongTrongSoPT.Text) <= 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                        else if (totaltc == null && int.Parse(txtTongTrongSoTC.Text) == null)
                         {
-                            CopyPTtoHT();
-                            ChuyenTrangThai(4);
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
                         }
-                        else
+                        break;
+                    case 2:
+                        int totalkh = 0;
+                        for (int i = 0; i < dgrNhapMucTieuKhachHang.Rows.Count; i++)
                         {
+                            totalkh += int.Parse(dgrNhapMucTieuKhachHang.CurrentRow.Cells["cTrongSoKPINKH"].Value.ToString());
                         }
-                    }
-                    else if (totalpt == 100 && int.Parse(txtTongTrongSoPT.Text) == 100)
-                    {
-                        if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                        if (totalkh == 0 && totalkh == null)
                         {
-                            CopyPTtoHT();
-                            ChuyenTrangThai(4);
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
-                        else
+                        else if (totalkh > 100)
                         {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
                         }
-                    }
-                    else if (totalpt == null && int.Parse(txtTongTrongSoPT.Text) == null)
-                    {
-                        ev.QFrmThongBaoError("Lỗi không có dữ liệu");
-                    }
-                    break;
+                        else if (totalkh > 0 && totalkh < 100 && int.Parse(txtTongTrongSoKH.Text) > 0 && int.Parse(txtTongTrongSoKH.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyKHtoHT();
+                                LoadDataBVVanHanh();
+                                ChuyenTrangThai(2);
+                                if (txtTongTrongSoVH.Text == string.Empty)
+                                {
+                                    CreateTableCopyVH();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+                            }
+                        }
+                        else if (totalkh == 100 && int.Parse(txtTongTrongSoKH.Text) == 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            {
+                                CopyKHtoHT();
+                                LoadDataBVVanHanh();
+                                ChuyenTrangThai(2);
+                                if (txtTongTrongSoVH.Text == string.Empty)
+                                {
+                                    CreateTableCopyVH();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totalkh == null && int.Parse(txtTongTrongSoKH.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
+                    case 3:
+                        int totalvh = 0;
+                        for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
+                        {
+                            totalvh += int.Parse(dgrNhapMucTieuVanHanh.CurrentRow.Cells["cTrongSoKPINVH"].Value.ToString());
+                        }
+                        if (totalvh == 0 && totalvh == null)
+                        {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
+                        }
+                        else if (totalvh > 100)
+                        {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
+                        }
+                        else if (totalvh > 0 && totalvh < 100 && int.Parse(txtTongTrongSoVH.Text) > 0 && int.Parse(txtTongTrongSoVH.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyVHtoHT();
+                                LoadDataBVPhatTrien();
+                                ChuyenTrangThai(3);
+                                if (txtTongTrongSoPT.Text == string.Empty)
+                                {
+                                    CreateTableCopyPT();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totalvh == 100 && int.Parse(txtTongTrongSoVH.Text) == 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            {
+                                CopyVHtoHT();
+                                LoadDataBVPhatTrien();
+                                ChuyenTrangThai(3);
+                                if (txtTongTrongSoPT.Text == string.Empty)
+                                {
+                                    CreateTableCopyPT();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else if (totalvh == null && int.Parse(txtTongTrongSoVH.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
+                    case 4:
+                        int totalpt = 0;
+                        for (int i = 0; i < dgrNhapMucTieuPhatTrien.Rows.Count; i++)
+                        {
+                            totalpt += int.Parse(dgrNhapMucTieuPhatTrien.CurrentRow.Cells["cTrongSoKPINPT"].Value.ToString());
+                        }
+                        if (totalpt == 0 && totalpt == null)
+                        {
+                            ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
+                        }
+                        else if (totalpt > 100)
+                        {
+                            ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
+                        }
+                        else if (totalpt > 0 && totalpt < 100 && int.Parse(txtTongTrongSoPT.Text) > 0 && int.Parse(txtTongTrongSoPT.Text) <= 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
+                            {
+                                CopyPTtoHT();
+                                ChuyenTrangThai(4);
+                            }
+                            else
+                            {
+                            }
+                        }
+                        else if (totalpt == 100 && int.Parse(txtTongTrongSoPT.Text) == 100)
+                        {
+                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            {
+                                CopyPTtoHT();
+                                ChuyenTrangThai(4);
+                            }
+                            else
+                            {
+                            }
+                        }
+                        else if (totalpt == null && int.Parse(txtTongTrongSoPT.Text) == null)
+                        {
+                            ev.QFrmThongBaoError("Lỗi không có dữ liệu");
+                        }
+                        break;
                 }
             }
             else
@@ -418,7 +451,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         #endregion
         #region Method
-        private void TinhTongTrongSoPhuongDien()
+        private void TinhTongTrongSoPhuongDien(int num)
         {
             //if (txtTCHT.Text != null && txtKHHT.Text == null && txtVHHT.Text == null && txtPTHT.Text == null)
             //{
@@ -437,18 +470,6 @@ namespace DuAn_QuanLyKPI.GUI
             //    txtTongTrongSoMucTieu.Text = txtPTHT.Text;
             //}
 
-            //else if (txtTCHT.Text != null && txtKHHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtKHHT.Text)).ToString();
-            //}
-            //else if (txtTCHT.Text != null && txtVHHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtVHHT.Text)).ToString();
-            //}
-            //else if (txtTCHT.Text != null && txtPTHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtPTHT.Text)).ToString();
-            //}
             //else if (txtKHHT.Text != null && txtVHHT.Text != null)
             //{
             //    txtTongTrongSoMucTieu.Text = (int.Parse(txtKHHT.Text) + int.Parse(txtVHHT.Text)).ToString();
@@ -476,34 +497,94 @@ namespace DuAn_QuanLyKPI.GUI
             //{
             //    txtTongTrongSoMucTieu.Text = (int.Parse(txtKHHT.Text) + int.Parse(txtVHHT.Text) + int.Parse(txtPTHT.Text)).ToString();
             //}
-            if (txtTCHT.Text != "" && txtKHHT.Text != "" && txtVHHT.Text != "" && txtPTHT.Text != "")
-            {
-                try
-                {
-                    int tc = int.Parse(txtTCHT.Text);
-                    int kh = int.Parse(txtKHHT.Text);
-                    int vh = int.Parse(txtVHHT.Text);
-                    int pt = int.Parse(txtPTHT.Text);
-                    int sum = tc + kh + vh + pt;
-                    txtTongTrongSoMucTieu.Text = sum.ToString();
-                }
-                catch (Exception)
-                {
-                    ev.QFrmThongBaoError("Lỗi nhập sai định dạng");
-                }
-            }
-            else
-            {
 
-            }    
-           
+            switch (num)
+            {
+                case 1:
+                    if (txtTCHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = txtTCHT.Text;
+                    }
+                    else if (txtTCHT.Text == string.Empty)
+                    {
+
+                    }
+                    else if (txtTCHT.Text != string.Empty && txtKHHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtKHHT.Text)).ToString();
+                    }
+                    else if (txtTCHT.Text != string.Empty && txtVHHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtVHHT.Text)).ToString();
+                    }
+                    else if (txtTCHT.Text != string.Empty && txtPTHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtPTHT.Text)).ToString();
+                    }
+                    break;
+                case 2:
+                    if (txtKHHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = txtKHHT.Text;
+                    }
+                    else
+                    {
+
+                    }
+                    break;
+                case 3:
+                    if (txtVHHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = txtVHHT.Text;
+
+                    }
+                    else
+                    {
+
+                    }
+                    break;
+                case 4:
+                    if (txtPTHT.Text != string.Empty)
+                    {
+                        txtTongTrongSoMucTieu.Text = txtPTHT.Text;
+                    }
+                    else
+                    {
+
+                    }
+                    break;
+                case 5:
+                    if (txtTCHT.Text != string.Empty && txtKHHT.Text != string.Empty && txtVHHT.Text != string.Empty && txtPTHT.Text != string.Empty)
+                    {
+                        try
+                        {
+                            int tc = int.Parse(txtTCHT.Text);
+                            int kh = int.Parse(txtKHHT.Text);
+                            int vh = int.Parse(txtVHHT.Text);
+                            int pt = int.Parse(txtPTHT.Text);
+                            int sum = tc + kh + vh + pt;
+                            txtTongTrongSoMucTieu.Text = sum.ToString();
+                        }
+                        catch (Exception)
+                        {
+                            ev.QFrmThongBaoError("Lỗi nhập sai định dạng");
+                        }
+                    }
+                    else
+                    {
+                        ev.QFrmThongBaoError("Vui lòng nhập đầy đủ");
+                    }
+                    break;
+
+            }
+
         }
         #endregion
         #region Event
         //chặn click vào tab
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-           tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
+            //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
         }
         private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -525,7 +606,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void btnTTKH_Click(object sender, EventArgs e)
         {
             dgrHTMucTieuTaiChinh.Rows.Clear();
-            KiemTraTyTrong(1); 
+            KiemTraTyTrong(1);
         }
         private void btnQLTC_Click(object sender, EventArgs e)
         {
@@ -534,7 +615,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void btnTTVH_Click(object sender, EventArgs e)
         {
             dgrHTMucTieuKhachHang.Rows.Clear();
-            KiemTraTyTrong(2);           
+            KiemTraTyTrong(2);
         }
 
         private void btnQLKH_Click(object sender, EventArgs e)
@@ -548,6 +629,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void btnQLVH_Click(object sender, EventArgs e)
         {
+
             ChuyenTrangThai(2);
         }
         private void btnTTHT_Click(object sender, EventArgs e)
@@ -575,24 +657,20 @@ namespace DuAn_QuanLyKPI.GUI
             txtTCHT.xActive = false;
             ev.Qtxt_Leave(sender, e);
         }
-
         private void txtKHHT_Enter(object sender, EventArgs e)
         {
             txtKHHT.xActive = true;
             ev.Qtxt_Enter(sender, e);
         }
-
         private void txtKHHT_KeyPress(object sender, KeyPressEventArgs e)
         {
             ev.Qtxt_KeyPress_To_TextBox_Focus(sender, e, txtVHHT);
         }
-
         private void txtKHHT_Leave(object sender, EventArgs e)
         {
             txtKHHT.xActive = false;
             ev.Qtxt_Leave(sender, e);
         }
-
         private void txtVHHT_Enter(object sender, EventArgs e)
         {
             txtVHHT.xActive = true;
@@ -623,53 +701,56 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txtPTVH_Leave(object sender, EventArgs e)
         {
+            TinhTongTrongSoPhuongDien(5);
             txtPTHT.xActive = false;
             ev.Qtxt_Leave(sender, e);
         }
-        private void txtTCHT_TextChanged(object sender, EventArgs e)
+        private void txtTCHT_Validating(object sender, CancelEventArgs e)
         {
-            if (txtTongTrongSoMucTieu.Text != "")
-            {
-                try
-                {
-                    int tong = int.Parse(txtTongTrongSoMucTieu.Text);
-                    if (tong > 100)
-                    {
-                        ev.QFrmThongBaoError("Trọng số nhập đã vượt quá 100%. Vui lòng kiểm tra và nhập lại!");
-                    }
-                    else if (tong > 0 && tong <= 100)
-                    {
-                        TinhTongTrongSoPhuongDien();
-                    }
-                    else if (tong < 0)
-                    {
+            string userInput = txtTCHT.Text.ToString();
+            int parsedValue;
 
-                    }
-                }
-                catch (Exception)
-                {
-                    ev.QFrmThongBaoError("Đã có lỗi xảy ra trong quá trình thực hiện");
-                } 
+            if (!int.TryParse(userInput, out parsedValue))
+            {
+                ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
+                txtTCHT.Text = "0";
             }
-            else
+        }
+
+        private void txtKHHT_Validating(object sender, CancelEventArgs e)
+        {
+            string userInput = txtKHHT.Text.ToString();
+            int parsedValue;
+
+            if (!int.TryParse(userInput, out parsedValue))
             {
-                
-            }    
+                ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
+                txtKHHT.Text = "0";
+            }
         }
 
-        private void txtKHHT_TextChanged(object sender, EventArgs e)
+        private void txtVHHT_Validating(object sender, CancelEventArgs e)
         {
-            TinhTongTrongSoPhuongDien();
+            string userInput = txtVHHT.Text.ToString();
+            int parsedValue;
+
+            if (!int.TryParse(userInput, out parsedValue))
+            {
+                ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
+                txtVHHT.Text = "0";
+            }
         }
 
-        private void txtVHHT_TextChanged(object sender, EventArgs e)
+        private void txtPTHT_Validating(object sender, CancelEventArgs e)
         {
-            TinhTongTrongSoPhuongDien();
-        }
+            string userInput = txtPTHT.Text.ToString();
+            int parsedValue;
 
-        private void txtPTVH_TextChanged(object sender, EventArgs e)
-        {
-            TinhTongTrongSoPhuongDien();
+            if (!int.TryParse(userInput, out parsedValue))
+            {
+                ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
+                txtPTHT.Text = "0";
+            }
         }
         #endregion
 
@@ -708,13 +789,20 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void CreateTableCopyPT()
         {
-            pt.Columns.Add("cMaKPIcpPT", typeof(string));
-            pt.Columns.Add("cNoiDungcpPT", typeof(string));
-            pt.Columns.Add("cNamcpPT", typeof(int));
-            pt.Columns.Add("TrongSocpPT", typeof(int));
-            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-            PrimaryKeyColumns[0] = pt.Columns["cMaKPIcpPT"];
-            pt.PrimaryKey = PrimaryKeyColumns;
+            if (pt != null)
+            {
+                pt.Columns.Add("cMaKPIcpPT", typeof(string));
+                pt.Columns.Add("cNoiDungcpPT", typeof(string));
+                pt.Columns.Add("cNamcpPT", typeof(int));
+                pt.Columns.Add("TrongSocpPT", typeof(int));
+                DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+                PrimaryKeyColumns[0] = pt.Columns["cMaKPIcpPT"];
+                pt.PrimaryKey = PrimaryKeyColumns;
+            }
+            else
+            {
+
+            }
         }
         private void LoadDataTableTC()
         {
@@ -808,7 +896,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
             dgrNhapMucTieuPhatTrien.DataSource = pt;
         }
-       
+
         private void ReturnDataTableTC()
         {
             for (int i = 0; i < dgrNhapMucTieuTaiChinh.Rows.Count; i++)
@@ -1000,7 +1088,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
             else if (sum > 0 && sum <= 100)
             {
-                txtTongTrongSoPT.Text = sum.ToString();                        
+                txtTongTrongSoPT.Text = sum.ToString();
             }
             else if (sum == null)
                 ev.QFrmThongBaoError("Trọng số chưa hợp lý!");
@@ -1169,6 +1257,8 @@ namespace DuAn_QuanLyKPI.GUI
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgrBVMucTieuVanHanh.Rows.Count && e.ColumnIndex >= 0 && e.ColumnIndex < dgrBVMucTieuVanHanh.Columns.Count)
             {
+
+
                 if (dgrBVMucTieuVanHanh.Rows[e.RowIndex].Cells["cChonTatCaBVVH"].Value != null && (bool)dgrBVMucTieuVanHanh.Rows[e.RowIndex].Cells["cChonTatCaBVVH"].Value == true)
                 {
                     LoadDataTableVH();
@@ -1230,7 +1320,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 foreach (DataGridViewRow row in dgrBVMucTieuVanHanh.Rows)
                 {
-                    if (dgrNhapMucTieuVanHanh.Rows[e.RowIndex].Cells["cMaKPINVH"].Value.ToString() == row.Cells["cMaKPINVH"].Value.ToString())
+                    if (dgrNhapMucTieuVanHanh.Rows[e.RowIndex].Cells["cMaKPINVH"].Value.ToString() == row.Cells["cMaKPIBVVH"].Value.ToString())
                     {
                         row.Cells["cChonTatCaBVVH"].Value = false;
                         break;
@@ -1245,7 +1335,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 foreach (DataGridViewRow row in dgrBVMucTieuPhatTrien.Rows)
                 {
-                    if (dgrNhapMucTieuPhatTrien.Rows[e.RowIndex].Cells["cMaKPINPT"].Value.ToString() == row.Cells["cMaKPINPT"].Value.ToString())
+                    if (dgrNhapMucTieuPhatTrien.Rows[e.RowIndex].Cells["cMaKPINPT"].Value.ToString() == row.Cells["cMaKPIBVPT"].Value.ToString())
                     {
                         row.Cells["cChonTatCaBVPT"].Value = false;
                         break;
@@ -1438,7 +1528,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void dgrNhapMucTieuTaiChinh_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             TinhTrongSoKPITC();
-            TinhTrongSoKPITC();    
+            TinhTrongSoKPITC();
         }
         private void dgrNhapMucTieuKhachHang_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
@@ -1519,7 +1609,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 for (int i = 0; i < dgrNhapMucTieuKhachHang.Rows.Count; i++)
                 {
-                    dgrNhapMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value = false;
+                    dgrBVMucTieuKhachHang.Rows[i].Cells["cChonTatCaBVKH"].Value = false;
                 }
                 LoadDataTableKH();
             }
@@ -1530,7 +1620,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
                 {
-                    dgrNhapMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value = false;
+                    dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value = false;
                 }
                 LoadDataTableVH();
             }
@@ -1541,7 +1631,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 for (int i = 0; i < dgrNhapMucTieuPhatTrien.Rows.Count; i++)
                 {
-                    dgrNhapMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value = false;
+                    dgrBVMucTieuPhatTrien.Rows[i].Cells["cChonTatCaBVPT"].Value = false;
                 }
                 LoadDataTablePT();
             }
@@ -1567,25 +1657,24 @@ namespace DuAn_QuanLyKPI.GUI
 
         #endregion
 
-        protected void txtTCHT_Validated(object sender, EventArgs e)
+        private void txtTCHT_TextChanged(object sender, EventArgs e)
         {
-            TinhTongTrongSoPhuongDien();
+            TinhTongTrongSoPhuongDien(1);
         }
 
-        private void txtKHHT_Validated(object sender, EventArgs e)
+        private void txtKHHT_TextChanged(object sender, EventArgs e)
         {
-            
-            TinhTongTrongSoPhuongDien();
+            TinhTongTrongSoPhuongDien(2);
         }
 
-        private void txtVHHT_Validated(object sender, EventArgs e)
+        private void txtVHHT_TextChanged(object sender, EventArgs e)
         {
-            TinhTongTrongSoPhuongDien();
+            TinhTongTrongSoPhuongDien(3);
         }
 
-        private void txtPTHT_Validated(object sender, EventArgs e)
+        private void txtPTHT_TextChanged(object sender, EventArgs e)
         {
-            TinhTongTrongSoPhuongDien();
+            TinhTongTrongSoPhuongDien(4);
         }
     }
 }
