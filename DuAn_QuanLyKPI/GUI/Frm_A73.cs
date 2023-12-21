@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -33,10 +34,12 @@ namespace DuAn_QuanLyKPI.GUI
         DataTable pt = new DataTable();
 
         private int CurrentTab = 0;
+
+        private DataGridView[] dataGridViews;
         public FrmA73()
         {
             InitializeComponent();
-
+            InitializeDataGridViews();
             LoadThongTinNhanVien();
             LoadDataBVTaiChinh();
 
@@ -53,6 +56,20 @@ namespace DuAn_QuanLyKPI.GUI
             TrangThai3();
             TrangThai4();
         }
+        private void InitializeDataGridViews()
+        {
+            // Khởi tạo mảng DataGridView
+            dataGridViews = new DataGridView[] { dgrHTMucTieuTaiChinh, dgrHTMucTieuKhachHang, dgrHTMucTieuVanHanh, dgrHTMucTieuPhatTrien };
+
+            // Code khởi tạo và hiển thị dữ liệu trong các DataGridView ở đây...
+
+            // Ví dụ:
+            for (int i = 0; i < dataGridViews.Length; i++)
+            {
+                dataGridViews[i].Rows.Add($"Row {i + 1}, Column 1", $"Row {i + 1}, Column 2", $"Row {i + 1}, Column 3");
+            }
+        }
+
         #region LoadDataGrid
         //Load thông tin nhân viên 
         private void LoadThongTinNhanVien()
@@ -116,7 +133,7 @@ namespace DuAn_QuanLyKPI.GUI
         #endregion
         #region Method Chuyển Tab
 
-
+        
         private void TrangThai()
         {
             FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
@@ -134,7 +151,6 @@ namespace DuAn_QuanLyKPI.GUI
             FrmSPTrangThai1.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
             FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
             FrmSPTrangThai1.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-
         }
         private void TrangThai2()
         {
@@ -447,135 +463,24 @@ namespace DuAn_QuanLyKPI.GUI
             else
             {
                 ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
-            }
+            }    
         }
         #endregion
         #region Method
-        private void TinhTongTrongSoPhuongDien(int num)
-        {
-            //if (txtTCHT.Text != null && txtKHHT.Text == null && txtVHHT.Text == null && txtPTHT.Text == null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = txtTCHT.Text;
-            //}
-            //else if (txtTCHT.Text == null && txtKHHT.Text != null && txtVHHT.Text == null && txtPTHT.Text == null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = txtKHHT.Text;
-            //}
-            //else if (txtTCHT.Text == null && txtKHHT.Text == null && txtVHHT.Text != null && txtPTHT.Text == null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = txtVHHT.Text;
-            //}
-            //else if (txtTCHT.Text == null && txtKHHT.Text == null && txtVHHT.Text == null && txtPTHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = txtPTHT.Text;
-            //}
-
-            //else if (txtKHHT.Text != null && txtVHHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtKHHT.Text) + int.Parse(txtVHHT.Text)).ToString();
-            //}
-            //else if (txtKHHT.Text != null && txtPTHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtKHHT.Text) + int.Parse(txtPTHT.Text)).ToString();
-            //}
-            //else if (txtVHHT.Text != null && txtPTHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtVHHT.Text) + int.Parse(txtPTHT.Text)).ToString();
-            //}
-            ////1-2-3
-            //else if (txtTCHT.Text != null && txtKHHT.Text != null && txtVHHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtKHHT.Text) + int.Parse(txtVHHT.Text)).ToString();
-            //}
-            ////1-3-4
-            //else if (txtTCHT.Text != null && txtVHHT.Text != null && txtPTHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtVHHT.Text) + int.Parse(txtPTHT.Text)).ToString();
-            //}
-            ////2-3-4
-            //else if (txtKHHT.Text != null && txtVHHT.Text != null && txtPTHT.Text != null)
-            //{
-            //    txtTongTrongSoMucTieu.Text = (int.Parse(txtKHHT.Text) + int.Parse(txtVHHT.Text) + int.Parse(txtPTHT.Text)).ToString();
-            //}
-
-            switch (num)
+        private void TinhTongTrongSoPhuongDien()
+        { 
+            try
             {
-                case 1:
-                    if (txtTCHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = txtTCHT.Text;
-                    }
-                    else if (txtTCHT.Text == string.Empty)
-                    {
-
-                    }
-                    else if (txtTCHT.Text != string.Empty && txtKHHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtKHHT.Text)).ToString();
-                    }
-                    else if (txtTCHT.Text != string.Empty && txtVHHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtVHHT.Text)).ToString();
-                    }
-                    else if (txtTCHT.Text != string.Empty && txtPTHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = (int.Parse(txtTCHT.Text) + int.Parse(txtPTHT.Text)).ToString();
-                    }
-                    break;
-                case 2:
-                    if (txtKHHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = txtKHHT.Text;
-                    }
-                    else
-                    {
-
-                    }
-                    break;
-                case 3:
-                    if (txtVHHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = txtVHHT.Text;
-
-                    }
-                    else
-                    {
-
-                    }
-                    break;
-                case 4:
-                    if (txtPTHT.Text != string.Empty)
-                    {
-                        txtTongTrongSoMucTieu.Text = txtPTHT.Text;
-                    }
-                    else
-                    {
-
-                    }
-                    break;
-                case 5:
-                    if (txtTCHT.Text != string.Empty && txtKHHT.Text != string.Empty && txtVHHT.Text != string.Empty && txtPTHT.Text != string.Empty)
-                    {
-                        try
-                        {
-                            int tc = int.Parse(txtTCHT.Text);
-                            int kh = int.Parse(txtKHHT.Text);
-                            int vh = int.Parse(txtVHHT.Text);
-                            int pt = int.Parse(txtPTHT.Text);
-                            int sum = tc + kh + vh + pt;
-                            txtTongTrongSoMucTieu.Text = sum.ToString();
-                        }
-                        catch (Exception)
-                        {
-                            ev.QFrmThongBaoError("Lỗi nhập sai định dạng");
-                        }
-                    }
-                    else
-                    {
-                        ev.QFrmThongBaoError("Vui lòng nhập đầy đủ");
-                    }
-                    break;
-
+                int tc = int.Parse(txtTCHT.Text);
+                int kh = int.Parse(txtKHHT.Text);
+                int vh = int.Parse(txtVHHT.Text);
+                int pt = int.Parse(txtPTHT.Text);
+                int sum = tc + kh + vh + pt;
+                txtTongTrongSoMucTieu.Text = sum.ToString();
+            }
+            catch (Exception)
+            {
+                ev.QFrmThongBaoError("Lỗi nhập sai định dạng hoặc thiếu dữ liệu");
             }
 
         }
@@ -586,19 +491,6 @@ namespace DuAn_QuanLyKPI.GUI
         {
             //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
         }
-        private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn đóng Form này không?"))
-            {
-                FrmA73 a73 = new FrmA73();
-                a73.Close();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void dgrNhapMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             ev.Qdgr_RowPostPaint(sender, e, dgrNhapMucTieuTaiChinh);
@@ -629,7 +521,6 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void btnQLVH_Click(object sender, EventArgs e)
         {
-
             ChuyenTrangThai(2);
         }
         private void btnTTHT_Click(object sender, EventArgs e)
@@ -668,6 +559,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void txtKHHT_Leave(object sender, EventArgs e)
         {
+            TinhTongTrongSoPhuongDien();
             txtKHHT.xActive = false;
             ev.Qtxt_Leave(sender, e);
         }
@@ -684,6 +576,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txtVHHT_Leave(object sender, EventArgs e)
         {
+            TinhTongTrongSoPhuongDien();
             txtVHHT.xActive = false;
             ev.Qtxt_Leave(sender, e);
         }
@@ -701,7 +594,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txtPTVH_Leave(object sender, EventArgs e)
         {
-            TinhTongTrongSoPhuongDien(5);
+            TinhTongTrongSoPhuongDien();
             txtPTHT.xActive = false;
             ev.Qtxt_Leave(sender, e);
         }
@@ -709,11 +602,20 @@ namespace DuAn_QuanLyKPI.GUI
         {
             string userInput = txtTCHT.Text.ToString();
             int parsedValue;
-
             if (!int.TryParse(userInput, out parsedValue))
             {
                 ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
                 txtTCHT.Text = "0";
+            }
+
+            TinhTongTrongSoPhuongDien();
+            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
+                txtTCHT.Text = "0"; 
+                TinhTongTrongSoPhuongDien();
+                txtTCHT.Focus();
             }
         }
 
@@ -727,8 +629,16 @@ namespace DuAn_QuanLyKPI.GUI
                 ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
                 txtKHHT.Text = "0";
             }
+            TinhTongTrongSoPhuongDien();
+            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
+                txtKHHT.Text = "0";
+                TinhTongTrongSoPhuongDien();
+                txtKHHT.Focus();
+            }
         }
-
         private void txtVHHT_Validating(object sender, CancelEventArgs e)
         {
             string userInput = txtVHHT.Text.ToString();
@@ -738,6 +648,15 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
                 txtVHHT.Text = "0";
+            }
+            TinhTongTrongSoPhuongDien();
+            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
+                txtVHHT.Text = "0";
+                TinhTongTrongSoPhuongDien();
+                txtVHHT.Focus();
             }
         }
 
@@ -751,7 +670,100 @@ namespace DuAn_QuanLyKPI.GUI
                 ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
                 txtPTHT.Text = "0";
             }
+            TinhTongTrongSoPhuongDien();
+            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+            if (sum > 100)
+            {
+                ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
+                txtPTHT.Text = "0";
+                TinhTongTrongSoPhuongDien();
+                txtPTHT.Focus();
+            }
         }
+        private void FrmA73_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ev.QFrmThongBao_YesNo("Bạn có thật sự muốn đóng Form này không?"))
+            {
+                FrmA73 a73 = new FrmA73();
+                a73.Close();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        private void btnHoanThanh_Click(object sender, EventArgs e)
+        {
+            TinhTongTrongSoPhuongDien();
+            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+            if (sum < 100 && sum > 100)
+            {
+                ev.QFrmThongBaoError("Trọng số chưa đạt đủ hoặc vượt quá 100%");
+            }
+            else if (sum == 100)
+            {
+                if (ev.QFrmThongBao_YesNo("Bạn có chắc muốn tiếp tục không? Hãy kiểm tra thật kĩ thông tin trước khi Hoàn thành nhé!"))
+                {
+                    this.Hide();
+                    Frm_ImportExcel_GUI excel = new Frm_ImportExcel_GUI();
+                    excel.ShowDialog();
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                
+            }
+
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = true;
+
+            // Tạo một workbook mới
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+
+            // Sao chép dữ liệu từ tất cả các DataGridViews vào cùng một sheet
+            CopyDataGridViewsToExcelSheet(dataGridViews, workbook);
+        }
+        private void CopyDataGridViewsToExcelSheet(DataGridView[] dataGridViews, Excel.Workbook workbook)
+        {
+            // Tạo một worksheet mới trong workbook
+            Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets.Add();
+            worksheet.Name = "MergedSheet";
+
+            int rowOffset = 1;  // Bắt đầu từ hàng 1
+
+            // Sao chép dữ liệu từ mỗi DataGridView sang worksheet và để khoảng trống giữa các nhóm
+            foreach (DataGridView dataGridView in dataGridViews)
+            {
+                // Sao chép tên nhóm (nếu có) vào sheet
+                worksheet.Cells[rowOffset, 1] = $"Group: {dataGridView.Name}";
+                rowOffset++;
+
+                // Sao chép dữ liệu từ DataGridView sang worksheet
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView.Columns.Count; j++)
+                    {
+                        worksheet.Cells[rowOffset + i, j + 1] = dataGridView[j, i].Value;
+                    }
+                }
+
+                // Tạo khoảng trống giữa các nhóm (nếu không phải nhóm cuối cùng)
+                if (dataGridView != dataGridViews.Last())
+                {
+                    rowOffset += 2;  // Dùng 2 dòng trống
+                }
+                else
+                {
+                    rowOffset++;  // Dùng 1 dòng trống cho nhóm cuối cùng
+                }
+            }
+        }
+
+
         #endregion
 
         #region Copy GridView
@@ -1257,8 +1269,6 @@ namespace DuAn_QuanLyKPI.GUI
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgrBVMucTieuVanHanh.Rows.Count && e.ColumnIndex >= 0 && e.ColumnIndex < dgrBVMucTieuVanHanh.Columns.Count)
             {
-
-
                 if (dgrBVMucTieuVanHanh.Rows[e.RowIndex].Cells["cChonTatCaBVVH"].Value != null && (bool)dgrBVMucTieuVanHanh.Rows[e.RowIndex].Cells["cChonTatCaBVVH"].Value == true)
                 {
                     LoadDataTableVH();
@@ -1656,25 +1666,5 @@ namespace DuAn_QuanLyKPI.GUI
         #endregion
 
         #endregion
-
-        private void txtTCHT_TextChanged(object sender, EventArgs e)
-        {
-            TinhTongTrongSoPhuongDien(1);
-        }
-
-        private void txtKHHT_TextChanged(object sender, EventArgs e)
-        {
-            TinhTongTrongSoPhuongDien(2);
-        }
-
-        private void txtVHHT_TextChanged(object sender, EventArgs e)
-        {
-            TinhTongTrongSoPhuongDien(3);
-        }
-
-        private void txtPTHT_TextChanged(object sender, EventArgs e)
-        {
-            TinhTongTrongSoPhuongDien(4);
-        }
     }
 }
