@@ -43,15 +43,15 @@
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pbHien = new System.Windows.Forms.PictureBox();
             this.pbAn = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtdangnhap = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -90,13 +90,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::DuAn_QuanLyKPI.Properties.Resources.debut;
-            this.pictureBox1.Location = new System.Drawing.Point(137, 12);
+            this.pictureBox1.Image = global::DuAn_QuanLyKPI.Properties.Resources.Tiêu_đề_Website_BV_16__removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(115, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -222,6 +222,16 @@
             this.panel7.Size = new System.Drawing.Size(350, 1);
             this.panel7.TabIndex = 14;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(75, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 26);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Mật khẩu:";
+            // 
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.Black;
@@ -230,6 +240,16 @@
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(350, 1);
             this.panel18.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(75, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 26);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tài khoản:";
             // 
             // pbHien
             // 
@@ -266,7 +286,6 @@
             this.txtPassword.Size = new System.Drawing.Size(257, 28);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "123";
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter_1);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
@@ -280,8 +299,6 @@
             this.txtdangnhap.Size = new System.Drawing.Size(257, 28);
             this.txtdangnhap.TabIndex = 0;
             this.txtdangnhap.Text = "phuc28";
-            this.txtdangnhap.Click += new System.EventHandler(this.txtdangnhap_Click);
-            this.txtdangnhap.TextChanged += new System.EventHandler(this.txtdangnhap_TextChanged);
             this.txtdangnhap.Enter += new System.EventHandler(this.txtdangnhap_Enter);
             // 
             // panel4
@@ -305,26 +322,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(30, 32);
             this.panel3.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(75, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 26);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Mật khẩu:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(75, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 26);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tài khoản:";
             // 
             // Frm_Login
             // 

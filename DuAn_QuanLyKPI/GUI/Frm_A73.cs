@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -36,6 +37,7 @@ namespace DuAn_QuanLyKPI.GUI
         private int CurrentTab = 0;
 
         private DataGridView[] dataGridViews;
+        private TextBox[] textBoxes;
         public FrmA73()
         {
             InitializeComponent();
@@ -370,7 +372,7 @@ namespace DuAn_QuanLyKPI.GUI
                         {
                             ev.QFrmThongBaoError("Trọng số đã vượt quá 100%");
                         }
-                        else if (totalvh > 0 && totalvh < 100 && int.Parse(txtTongTrongSoVH.Text) > 0 && int.Parse(txtTongTrongSoVH.Text) <= 100)
+                        else if (totalvh > 0 && totalvh < 100 && int.Parse(txtTongTrongSoVH.Text) > 0 && int.Parse(txtTongTrongSoVH.Text) < 100)
                         {
                             if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
                             {
@@ -704,9 +706,9 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 if (ev.QFrmThongBao_YesNo("Bạn có chắc muốn tiếp tục không? Hãy kiểm tra thật kĩ thông tin trước khi Hoàn thành nhé!"))
                 {
-                    this.Hide();
-                    Frm_ImportExcel_GUI excel = new Frm_ImportExcel_GUI();
-                    excel.ShowDialog();
+                    string existingFilePath = Path.Combine("D:\\Thanh Phuc\\Dự án quản lý KPI\\Du An KPI\\DuAn_QuanLyKPI\\bin\\Debug", "A73.xlsx");
+                    // Pass the full path to the function
+                    AddDataGridViewsToExistingExcelSheet(dataGridViews, existingFilePath,  txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString());   
                 }
                 else
                 {
@@ -717,50 +719,86 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 
             }
-
+            
+        }
+        private void AddDataGridViewsToExistingExcelSheet(DataGridView[] dataGridViews, string existingFilePath, string tc, string kh, string vh, string pt, string tennv, string ngaylap)
+        {
+            // Mở một workbook Excel đã có sẵn
             Excel.Application excelApp = new Excel.Application();
             excelApp.Visible = true;
+            Excel.Workbook workbook = excelApp.Workbooks.Open(existingFilePath);
 
-            // Tạo một workbook mới
-            Excel.Workbook workbook = excelApp.Workbooks.Add();
-
-            // Sao chép dữ liệu từ tất cả các DataGridViews vào cùng một sheet
-            CopyDataGridViewsToExcelSheet(dataGridViews, workbook);
-        }
-        private void CopyDataGridViewsToExcelSheet(DataGridView[] dataGridViews, Excel.Workbook workbook)
-        {
-            // Tạo một worksheet mới trong workbook
-            Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets.Add();
-            worksheet.Name = "MergedSheet";
-
-            int rowOffset = 1;  // Bắt đầu từ hàng 1
-
-            // Sao chép dữ liệu từ mỗi DataGridView sang worksheet và để khoảng trống giữa các nhóm
-            foreach (DataGridView dataGridView in dataGridViews)
+            // Tìm và sử dụng một worksheet đã có trong workbook
+            Excel.Worksheet worksheet = null;
+            foreach (Excel.Worksheet sheet in workbook.Sheets)
             {
-                // Sao chép tên nhóm (nếu có) vào sheet
-                worksheet.Cells[rowOffset, 1] = $"Group: {dataGridView.Name}";
-                rowOffset++;
+                if (sheet.Name == "A7.3.Muc tieu khoa.phong")
+                {
+                    worksheet = sheet;
+                    break;
+                }
+            }
 
-                // Sao chép dữ liệu từ DataGridView sang worksheet
+            if (worksheet == null)
+            {
+                ev.QFrmThongBaoError("Không tìm thấy worksheet có tên A7.3.Muc tieu khoa.phong trong file Excel.");
+                workbook.Close();
+                excelApp.Quit();
+                return;
+            }
+            worksheet.Cells[6, 6] = tc;  // TextBox1 vào F6
+            worksheet.Cells[12, 6] = kh; // TextBox2 vào F12
+            worksheet.Cells[18, 6] = vh; // TextBox3 vào F18
+            worksheet.Cells[24, 6] = pt; // TextBox4 vào F18
+            worksheet.Cells[38, 3] = tennv; // TextBox4 vào F18
+            worksheet.Cells[45, 3] = ngaylap;
+            // Vị trí bắt đầu cho từng group
+            int[] startRows = { 7, 13, 19, 25 };
+            int startCol = 5;  // Bắt đầu từ cột E
+
+            // Sao chép dữ liệu từ mỗi DataGridView sang worksheet
+            for (int groupIndex = 0; groupIndex < dataGridViews.Length; groupIndex++)
+            {
+                DataGridView dataGridView = dataGridViews[groupIndex];
+
+                int startRow = startRows[groupIndex];
+
+                // Sao chép dữ liệu từ cột 2 và cột 4 của DataGridView sang worksheet
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    for (int j = 0; j < dataGridView.Columns.Count; j++)
+                    // Kiểm tra xem dữ liệu đã tồn tại trong sheet chưa
+                    bool dataExists = false;
+                    for (int row = 1; row <= worksheet.UsedRange.Rows.Count; row++)
                     {
-                        worksheet.Cells[rowOffset + i, j + 1] = dataGridView[j, i].Value;
+                        if (worksheet.Cells[row, startCol].Value == dataGridView[2, i].Value &&
+                            worksheet.Cells[row, startCol + 1].Value == dataGridView[4, i].Value)
+                        {
+                            dataExists = true;
+                            break;
+                        }
+                    }
+                    // Nếu dữ liệu chưa tồn tại, thêm vào sheet
+                    if (!dataExists)
+                    {
+                        worksheet.Cells[startRow, startCol] = dataGridView[2, i].Value;  // Cột 2
+                        worksheet.Cells[startRow, startCol + 1] = dataGridView[4, i].Value;  // Cột 4
+                        startRow++;
                     }
                 }
 
                 // Tạo khoảng trống giữa các nhóm (nếu không phải nhóm cuối cùng)
-                if (dataGridView != dataGridViews.Last())
+                if (groupIndex != dataGridViews.Length - 1)
                 {
-                    rowOffset += 2;  // Dùng 2 dòng trống
+                    startRow += 2;  // Dùng 2 dòng trống
                 }
                 else
                 {
-                    rowOffset++;  // Dùng 1 dòng trống cho nhóm cuối cùng
+                    startRow++;  // Dùng 1 dòng trống cho nhóm cuối cùng
                 }
             }
+
+            // Lưu workbook
+            workbook.Save();
         }
 
 
