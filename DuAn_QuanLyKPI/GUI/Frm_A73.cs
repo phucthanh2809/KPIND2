@@ -4,10 +4,10 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.IO;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -44,7 +44,7 @@ namespace DuAn_QuanLyKPI.GUI
             InitializeDataGridViews();
             LoadThongTinNhanVien();
             LoadDataBVTaiChinh();
-
+            
             CreateTableCopyTC();
 
             updateTimer = new Timer { Interval = 100 };
@@ -135,7 +135,7 @@ namespace DuAn_QuanLyKPI.GUI
         #endregion
         #region Method Chuyển Tab
 
-        
+
         private void TrangThai()
         {
             FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
@@ -280,7 +280,7 @@ namespace DuAn_QuanLyKPI.GUI
                                 LoadDataBVKhachHang();
                                 CopyTCtoHT();
                                 ChuyenTrangThai(1);
-                                if (txtTongTrongSoKH.Text == "")
+                                if (txtTongTrongSoKH.Text == string.Empty)
                                 {
                                     CreateTableCopyKH();
                                 }
@@ -321,7 +321,7 @@ namespace DuAn_QuanLyKPI.GUI
                                 CopyKHtoHT();
                                 LoadDataBVVanHanh();
                                 ChuyenTrangThai(2);
-                                if (txtTongTrongSoVH.Text == "")
+                                if (txtTongTrongSoVH.Text == string.Empty)
                                 {
                                     CreateTableCopyVH();
                                 }
@@ -341,7 +341,7 @@ namespace DuAn_QuanLyKPI.GUI
                                 CopyKHtoHT();
                                 LoadDataBVVanHanh();
                                 ChuyenTrangThai(2);
-                                if (txtTongTrongSoVH.Text == "")
+                                if (txtTongTrongSoVH.Text == string.Empty)
                                 {
                                     CreateTableCopyVH();
                                 }
@@ -382,7 +382,7 @@ namespace DuAn_QuanLyKPI.GUI
                                 CopyVHtoHT();
                                 LoadDataBVPhatTrien();
                                 ChuyenTrangThai(3);
-                                if (txtTongTrongSoPT.Text == "")
+                                if (txtTongTrongSoPT.Text == string.Empty)
                                 {
                                     CreateTableCopyPT();
                                 }
@@ -403,7 +403,7 @@ namespace DuAn_QuanLyKPI.GUI
                                 CopyVHtoHT();
                                 LoadDataBVPhatTrien();
                                 ChuyenTrangThai(3);
-                                if (txtTongTrongSoPT.Text == "")
+                                if (txtTongTrongSoPT.Text == string.Empty)
                                 {
                                     CreateTableCopyPT();
                                 }
@@ -457,7 +457,7 @@ namespace DuAn_QuanLyKPI.GUI
                             }
                             else
                             {
-                            }
+                            } 
                         }
                         else if (totalpt == null && int.Parse(txtTongTrongSoPT.Text) == null)
                         {
@@ -469,12 +469,12 @@ namespace DuAn_QuanLyKPI.GUI
             else
             {
                 ev.QFrmThongBaoError("Chưa có dữ liệu! Vui lòng kiểm tra lại");
-            }    
+            }
         }
         #endregion
         #region Method
         private void TinhTongTrongSoPhuongDien()
-        { 
+        {
             try
             {
                 int tc = int.Parse(txtTCHT.Text);
@@ -628,7 +628,7 @@ namespace DuAn_QuanLyKPI.GUI
             if (sum > 100)
             {
                 ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
-                txtTCHT.Text = "0"; 
+                txtTCHT.Text = "0";
                 TinhTongTrongSoPhuongDien();
                 txtTCHT.Focus();
             }
@@ -749,9 +749,16 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 if (ev.QFrmThongBao_YesNo("Bạn có chắc muốn tiếp tục không? Hãy kiểm tra thật kĩ thông tin trước khi Hoàn thành nhé!"))
                 {
-                    string existingFilePath = Path.Combine("A73.xlsx");
-                    // Pass the full path to the function
-                    AddDataGridViewsToExistingExcelSheet(dataGridViews, existingFilePath,  txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString());
+                    // Lấy đường dẫn của thư mục bin-debug
+                    string binDebugPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents");
+
+                    // Tên tệp tin
+                    string fileName = "A73.xlsx";
+
+                    // Tạo đường dẫn đầy đủ
+                    string existingFilePath = Path.Combine(binDebugPath, fileName);
+
+                    AddDataGridViewsToExistingExcelSheet(dataGridViews, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
                     ev.QFrmThongBao("Nếu cần chỉnh sửa. Vui lòng chỉnh sửa trên Form, KHÔNG ĐƯỢC chỉnh sửa trên Excel. Mọi sự chỉnh sửa trên Excel phải tự chịu trách nhiệm!");
                 }
                 else
@@ -761,16 +768,39 @@ namespace DuAn_QuanLyKPI.GUI
             }
             else
             {
-                
+
             }
-            
         }
         private void AddDataGridViewsToExistingExcelSheet(DataGridView[] dataGridViews, string existingFilePath, string tc, string kh, string vh, string pt, string tennv, string ngaylap)
         {
-            // Mở một workbook Excel đã có sẵn
+            string documentPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string kpiFolderPath = Path.Combine(documentPath, "KPI");
+            if (!Directory.Exists(kpiFolderPath))
+            {
+                Directory.CreateDirectory(kpiFolderPath);
+            }
+
+            // Tạo đường dẫn cho file mới trong thư mục KPI
+            //string newFolderPath = Path.Combine(kpiFolderPath, "KPI");
+
+            // Tạo đường dẫn cho file copy mới trong thư mục Document ổ C
+            
+            string newFilePath = Path.Combine(kpiFolderPath, "A73_Copy.xlsx");
+
+            // Kiểm tra xem file copy đã tồn tại hay chưa
+            if (File.Exists(newFilePath))
+            {
+                // Nếu tồn tại, xóa file cũ
+                File.Delete(newFilePath);
+            }
+
+            // Copy file gốc vào file mới
+            File.Copy(existingFilePath, newFilePath);
+
+            // Mở workbook Excel mới
             Excel.Application excelApp = new Excel.Application();
             excelApp.Visible = true;
-            Excel.Workbook workbook = excelApp.Workbooks.Open(existingFilePath);
+            Excel.Workbook workbook = excelApp.Workbooks.Open(newFilePath);
 
             // Tìm và sử dụng một worksheet đã có trong workbook
             Excel.Worksheet worksheet = null;
@@ -795,7 +825,7 @@ namespace DuAn_QuanLyKPI.GUI
             worksheet.Cells[18, 6] = vh; // TextBox3 vào F18
             worksheet.Cells[24, 6] = pt; // TextBox4 vào F18
             worksheet.Cells[38, 3] = tennv; // TextBox4 vào F18
-            worksheet.Cells[39, 3] = ngaylap;
+            worksheet.Cells[39, 3] = "Ngày(Date) " + ngaylap;
             // Vị trí bắt đầu cho từng group
             int[] startRows = { 7, 13, 19, 25 };
             int startCol = 5;  // Bắt đầu từ cột E
@@ -842,7 +872,17 @@ namespace DuAn_QuanLyKPI.GUI
             }
 
             // Lưu workbook
-            workbook.SaveAs("A73.xlsx");
+            try
+            {
+                if (dgrHTMucTieuTaiChinh.Rows.Count > 0 && dgrHTMucTieuKhachHang.Rows.Count > 0 && dgrHTMucTieuVanHanh.Rows.Count > 0 && dgrHTMucTieuPhatTrien.Rows.Count > 0)
+                {
+                    //workbook.SaveAs("A73.xlsx");
+                }
+            }
+            catch (Exception)
+            {
+                ev.QFrmThongBaoError("Không có dữ liệu nào để xuất ra");
+            }
         }
         private void dgrHTMucTieuTaiChinh_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
@@ -1019,7 +1059,6 @@ namespace DuAn_QuanLyKPI.GUI
         #endregion
 
         #region Copy GridView
-
         #region Method
         private void CreateTableCopyTC()
         {
@@ -1067,7 +1106,7 @@ namespace DuAn_QuanLyKPI.GUI
             else
             {
 
-            }    
+            }
         }
         private void CreateTableCopyPT()
         {
@@ -1733,6 +1772,7 @@ namespace DuAn_QuanLyKPI.GUI
                 }
             }
         }
+            
         //CellEndEdit
         private void dgrNhapMucTieuTaiChinh_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
