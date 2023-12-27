@@ -76,17 +76,17 @@ namespace DuAn_QuanLyKPI.GUI
         //Load thông tin nhân viên 
         private void LoadThongTinNhanVien()
         {
-            txtTenNV.Text = TenNV;
-            txtTenNV1.Text = TenNV;
-            txtTenNV2.Text = TenNV;
-            txtTenNV3.Text = TenNV;
-            txtTenNV4.Text = TenNV;
+            txtTenNVTC.Text = TenNV;
+            txtTenNVKH.Text = TenNV;
+            txtTenNVVH.Text = TenNV;
+            txtTenNVPT.Text = TenNV;
+            txtTenNVHT.Text = TenNV;
 
-            txtViTriCV.Text = TenChucDanh;
-            txtViTriCV1.Text = TenChucDanh;
-            txtViTriCV2.Text = TenChucDanh;
-            txtViTriCV3.Text = TenChucDanh;
-            txtViTriCV4.Text = TenChucDanh;
+            txtViTriCVTC.Text = TenChucDanh;
+            txtViTriCVKH.Text = TenChucDanh;
+            txtViTriCVVH.Text = TenChucDanh;
+            txtViTriCVPT.Text = TenChucDanh;
+            txtViTriCVHT.Text = TenChucDanh; 
 
             lbKhoaPhongTC.Text = TenPhongKhoa;
             lbKhoaPhongKH.Text = TenPhongKhoa;
@@ -101,7 +101,6 @@ namespace DuAn_QuanLyKPI.GUI
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
-
             lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
         }
         private void LoadDataBVKhachHang()
@@ -138,54 +137,54 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void TrangThai()
         {
-            FrmSPTrangThai.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            FrmSPTrangThaiTC.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThaiTC.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThaiTC.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThaiTC.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThaiTC.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThaiTC.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
         }
         private void TrangThai1()
         {
-            FrmSPTrangThai1.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai1.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai1.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai1.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai1.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            FrmSPTrangThaiKH.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThaiKH.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThaiKH.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThaiKH.ItemOptions.ConnectorOffset = 20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThaiKH.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThaiKH.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
         }
         private void TrangThai2()
         {
-            FrmSPTrangThai2.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai2.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai2.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai2.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai2.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTaiChinh2.State = StepProgressBarItemState.Active;
+            FrmSPTrangThaiVH.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThaiVH.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThaiVH.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThaiVH.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThaiVH.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThaiVH.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinhVH.State = StepProgressBarItemState.Active;
         }
         private void TrangThai3()
         {
-            FrmSPTrangThai3.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai3.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai3.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai3.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai3.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTaiChinh3.State = StepProgressBarItemState.Active;
-            spKhachHang3.State = StepProgressBarItemState.Active;
+            FrmSPTrangThaiPT.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThaiPT.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThaiPT.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThaiPT.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThaiPT.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThaiPT.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinhPT.State = StepProgressBarItemState.Active;
+            spKhachHangPT.State = StepProgressBarItemState.Active;
         }
         private void TrangThai4()
         {
-            FrmSPTrangThai4.ItemOptions.Indicator.Width = 50; // độ dài item
-            FrmSPTrangThai4.ConnectorLineThickness = 2; // viền đường kết nối
-            FrmSPTrangThai4.IndicatorLineThickness = 2; // viền đường tròn
-            FrmSPTrangThai4.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
-            FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
-            FrmSPTrangThai4.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
-            spTaiChinh4.State = StepProgressBarItemState.Active;
-            spKhachHang4.State = StepProgressBarItemState.Active;
-            spVanHanh4.State = StepProgressBarItemState.Active;
+            FrmSPTrangThaiHT.ItemOptions.Indicator.Width = 50; // độ dài item
+            FrmSPTrangThaiHT.ConnectorLineThickness = 2; // viền đường kết nối
+            FrmSPTrangThaiHT.IndicatorLineThickness = 2; // viền đường tròn
+            FrmSPTrangThaiHT.ItemOptions.ConnectorOffset = -20; // điểm bắt đầu, kết thúc
+            FrmSPTrangThaiHT.ItemOptions.Indicator.ActiveStateDrawMode = IndicatorDrawMode.Outline; //click xanh viền tròn
+            FrmSPTrangThaiHT.ItemOptions.Indicator.InactiveStateDrawMode = IndicatorDrawMode.Outline; // chưa click viền tròn
+            spTaiChinhHT.State = StepProgressBarItemState.Active;
+            spKhachHangHT.State = StepProgressBarItemState.Active;
+            spVanHanhHT.State = StepProgressBarItemState.Active;
         }
         void ChuyenTrangThai(int step)
         {
@@ -198,36 +197,36 @@ namespace DuAn_QuanLyKPI.GUI
                 case 1:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     // Thiết lập Trạng thái khi nhất nút
-                    spTaiChinh1.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai1.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai1.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai1.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
+                    spTaiChinhKH.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThaiKH.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiKH.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiKH.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
                     LoadDataBVKhachHang();
                     break;
                 case 2:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     //Thiết lập Trạng thái khi nhất nút
-                    spKhachHang2.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai2.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai2.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai2.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
+                    spKhachHangVH.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThaiVH.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiVH.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiVH.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
                     LoadDataBVVanHanh();
                     break;
                 case 3:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     //Thiết lập Trạng thái khi nhất nút
-                    spVanHanh3.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai3.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai3.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai3.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
+                    spVanHanhPT.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThaiPT.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiPT.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiPT.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
                     LoadDataBVPhatTrien();
                     break;
                 case 4:
                     tabMucTieuKhoaPhong.SelectTab(step);
-                    spPhatTrien4.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThai4.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThai4.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThai4.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
+                    spPhatTrienHT.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThaiHT.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiHT.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiHT.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
                     break;
             }
         }
@@ -243,9 +242,8 @@ namespace DuAn_QuanLyKPI.GUI
                         int totaltc = 0;
                         for (int i = 0; i < rowdgrtc; ++i)
                             totaltc += int.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
-                        txtTesttc.Text = totaltc.ToString();
 
-                        if (totaltc == 0 && totaltc == null)
+                        if (totaltc == 0 && totaltc == 0 && totaltc == null && totaltc == null)
                         {
                             ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
@@ -304,7 +302,6 @@ namespace DuAn_QuanLyKPI.GUI
                         int totalkh = 0;
                         for (int i = 0; i < rowdgrkh; ++i)
                             totalkh += int.Parse(dgrNhapMucTieuKhachHang.Rows[i].Cells["cTrongSoKPINKH"].Value.ToString());
-                        txtTestkh.Text = totalkh.ToString();
 
                         if (totalkh == 0 && totalkh == null)
                         {
@@ -365,7 +362,6 @@ namespace DuAn_QuanLyKPI.GUI
                         int totalvh = 0;
                         for (int i = 0; i < rowdgrvh; ++i)
                             totalvh += int.Parse(dgrNhapMucTieuVanHanh.Rows[i].Cells["cTrongSoKPINVH"].Value.ToString());
-                        txtTestvh.Text = totalvh.ToString();
 
                         if (totalvh == 0 && totalvh == null)
                         {
@@ -427,7 +423,6 @@ namespace DuAn_QuanLyKPI.GUI
                         int totalpt = 0;
                         for (int i = 0; i < rowdgrpt; ++i)
                             totalpt += int.Parse(dgrNhapMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPINPT"].Value.ToString());
-                        txtTestpt.Text = totalpt.ToString();
 
                         if (totalpt == 0 && totalpt == null)
                         {
@@ -492,10 +487,10 @@ namespace DuAn_QuanLyKPI.GUI
         }
         #endregion
         #region Event
-        //chặn click vào tab
+        //chặn click vào ta b
         private void tabMucTieuKhoaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
+            tabMucTieuKhoaPhong.SelectedIndex = CurrentTab;
         }
         private void dgrNhapMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -756,10 +751,9 @@ namespace DuAn_QuanLyKPI.GUI
                     string fileName = "A73.xlsx";
 
                     // Tạo đường dẫn đầy đủ
-                    string existingFilePath = Path.Combine(binDebugPath, fileName);
-
-                    AddDataGridViewsToExistingExcelSheet(dataGridViews, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
                     ev.QFrmThongBao("Nếu cần chỉnh sửa. Vui lòng chỉnh sửa trên Form, KHÔNG ĐƯỢC chỉnh sửa trên Excel. Mọi sự chỉnh sửa trên Excel phải tự chịu trách nhiệm!");
+                    string existingFilePath = Path.Combine(binDebugPath, fileName);
+                    AddDataGridViewsToExistingExcelSheet(dataGridViews, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
                 }
                 else
                 {
@@ -768,7 +762,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
             else
             {
-
+            
             }
         }
         private void AddDataGridViewsToExistingExcelSheet(DataGridView[] dataGridViews, string existingFilePath, string tc, string kh, string vh, string pt, string tennv, string ngaylap)
@@ -776,7 +770,7 @@ namespace DuAn_QuanLyKPI.GUI
             string documentPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string kpiFolderPath = Path.Combine(documentPath, "KPI");
             if (!Directory.Exists(kpiFolderPath))
-            {
+            {                
                 Directory.CreateDirectory(kpiFolderPath);
             }
 
@@ -785,7 +779,7 @@ namespace DuAn_QuanLyKPI.GUI
 
             // Tạo đường dẫn cho file copy mới trong thư mục Document ổ C
             
-            string newFilePath = Path.Combine(kpiFolderPath, "A73_Copy.xlsx");
+            string newFilePath = Path.Combine(kpiFolderPath, "A73_Biểu mẫu Mục tiêu Khoa Phòng.xlsx");
 
             // Kiểm tra xem file copy đã tồn tại hay chưa
             if (File.Exists(newFilePath))
@@ -824,8 +818,8 @@ namespace DuAn_QuanLyKPI.GUI
             worksheet.Cells[12, 6] = kh; // TextBox2 vào F12
             worksheet.Cells[18, 6] = vh; // TextBox3 vào F18
             worksheet.Cells[24, 6] = pt; // TextBox4 vào F18
-            worksheet.Cells[38, 3] = tennv; // TextBox4 vào F18
-            worksheet.Cells[39, 3] = "Ngày(Date) " + ngaylap;
+            worksheet.Cells[38, 2] = tennv; // TextBox4 vào F18
+            worksheet.Cells[39, 2] = "Ngày(Date) " + ngaylap;
             // Vị trí bắt đầu cho từng group
             int[] startRows = { 7, 13, 19, 25 };
             int startCol = 5;  // Bắt đầu từ cột E

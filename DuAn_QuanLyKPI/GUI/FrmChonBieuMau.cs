@@ -29,8 +29,15 @@ namespace DuAn_QuanLyKPI.GUI
         public FrmChonBieuMau()
         {
             InitializeComponent();
-
             LoadData();
+            if (nmQuarter.Value == 0)
+            {
+                QuyNam = nmYear.Value.ToString();
+            }
+            else if (nmQuarter.Value != 0)
+            {
+                QuyNam = (nmQuarter.Value.ToString() + nmYear.Value.ToString());
+            }
         }
         #region LoadDataGrid
         //Lãnh đạo
@@ -72,14 +79,7 @@ namespace DuAn_QuanLyKPI.GUI
                 if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + " này không ?"))
                 {
                     int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
-                    if (nmQuarter.Value == 0)
-                    {
-                        QuyNam = nmYear.Value.ToString();
-                    }    
-                    else if (nmQuarter.Value != 0)
-                    {
-                        QuyNam = (nmQuarter.Value.ToString() + nmYear.Value.ToString());
-                    }    
+                    
                     switch (caseValue)
                     {
                         //case 71:
@@ -89,8 +89,15 @@ namespace DuAn_QuanLyKPI.GUI
                         //    Frm_A710 A72 = new Frm_A710();
                         //    A72.Show(); break;
                         case 73:
-                            FrmA73 A73 = new FrmA73();
-                            A73.Show(); break;
+                            try
+                            {
+                                FrmA73 A73 = new FrmA73();
+                                A73.Show();
+                            }
+                            catch (Exception)
+                            {
+                                ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            }
                             break;
                         //case 74:
                         //    Frm_A710 A74 = new Frm_A710();
