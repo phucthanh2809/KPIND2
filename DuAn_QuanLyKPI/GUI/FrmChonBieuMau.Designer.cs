@@ -46,10 +46,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.cQuy4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cNam = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
-            this.txtTest = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
@@ -202,6 +202,21 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Size = new System.Drawing.Size(1364, 60);
             this.panel2.TabIndex = 0;
             // 
+            // txtYear
+            // 
+            this.txtYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtYear.Location = new System.Drawing.Point(1237, 14);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(120, 32);
+            this.txtYear.TabIndex = 8;
+            // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(1047, 14);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(100, 32);
+            this.txtTest.TabIndex = 7;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -223,20 +238,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.lbYear.Size = new System.Drawing.Size(68, 26);
             this.lbYear.TabIndex = 3;
             this.lbYear.Text = "Năm:";
-            // 
-            // txtTest
-            // 
-            this.txtTest.Location = new System.Drawing.Point(402, 13);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(100, 32);
-            this.txtTest.TabIndex = 7;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(1237, 14);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(120, 32);
-            this.txtYear.TabIndex = 8;
             // 
             // FrmChonBieuMau
             // 
