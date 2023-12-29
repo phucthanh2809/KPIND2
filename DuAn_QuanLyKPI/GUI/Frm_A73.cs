@@ -243,7 +243,7 @@ namespace DuAn_QuanLyKPI.GUI
                         for (int i = 0; i < rowdgrtc; ++i)
                             totaltc += int.Parse(dgrNhapMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPINTC"].Value.ToString());
 
-                        if (totaltc == 0 && totaltc == 0 && totaltc == null && totaltc == null)
+                        if (totaltc == 0 && totaltc == 0 || totaltc == null && totaltc == null)
                         {
                             ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
@@ -253,39 +253,16 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                         else if (totaltc > 0 && totaltc < 100 && int.Parse(txtTongTrongSoTC.Text) > 0 && int.Parse(txtTongTrongSoTC.Text) < 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
-                            {
-                                CopyTCtoHT();
-                                LoadDataBVKhachHang();
-                                ChuyenTrangThai(1);
-                                if (dgrNhapMucTieuKhachHang.Rows.Count == 0)
-                                {
-                                    CreateTableCopyKH();
-                                }
-                                else
-                                {
-
-                                }
-                            }
-                            else
-                            {
-                            }
+                            ev.QFrmThongBaoError("Trọng số chưa được 100%");
                         }
                         else if (totaltc == 100 && int.Parse(txtTongTrongSoTC.Text) == 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            LoadDataBVKhachHang();
+                            CopyTCtoHT();
+                            ChuyenTrangThai(1);
+                            if (txtTongTrongSoKH.Text == string.Empty)
                             {
-                                LoadDataBVKhachHang();
-                                CopyTCtoHT();
-                                ChuyenTrangThai(1);
-                                if (txtTongTrongSoKH.Text == string.Empty)
-                                {
-                                    CreateTableCopyKH();
-                                }
-                                else
-                                {
-
-                                }
+                                CreateTableCopyKH();
                             }
                             else
                             {
@@ -302,8 +279,7 @@ namespace DuAn_QuanLyKPI.GUI
                         int totalkh = 0;
                         for (int i = 0; i < rowdgrkh; ++i)
                             totalkh += int.Parse(dgrNhapMucTieuKhachHang.Rows[i].Cells["cTrongSoKPINKH"].Value.ToString());
-
-                        if (totalkh == 0 && totalkh == null)
+                        if (totalkh == 0 && totalkh == 0 || totalkh == null && totalkh == null)
                         {
                             ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
@@ -313,39 +289,16 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                         else if (totalkh > 0 && totalkh < 100 && int.Parse(txtTongTrongSoKH.Text) > 0 && int.Parse(txtTongTrongSoKH.Text) < 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
-                            {
-                                CopyKHtoHT();
-                                LoadDataBVVanHanh();
-                                ChuyenTrangThai(2);
-                                if (txtTongTrongSoVH.Text == string.Empty)
-                                {
-                                    CreateTableCopyVH();
-                                }
-                                else
-                                {
-
-                                }
-                            }
-                            else
-                            {
-                            }
+                            ev.QFrmThongBaoError("Trọng số chưa được 100%");
                         }
                         else if (totalkh == 100 && int.Parse(txtTongTrongSoKH.Text) == 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            CopyKHtoHT();
+                            LoadDataBVVanHanh();
+                            ChuyenTrangThai(2);
+                            if (txtTongTrongSoVH.Text == string.Empty)
                             {
-                                CopyKHtoHT();
-                                LoadDataBVVanHanh();
-                                ChuyenTrangThai(2);
-                                if (txtTongTrongSoVH.Text == string.Empty)
-                                {
-                                    CreateTableCopyVH();
-                                }
-                                else
-                                {
-
-                                }
+                                CreateTableCopyVH();
                             }
                             else
                             {
@@ -362,8 +315,7 @@ namespace DuAn_QuanLyKPI.GUI
                         int totalvh = 0;
                         for (int i = 0; i < rowdgrvh; ++i)
                             totalvh += int.Parse(dgrNhapMucTieuVanHanh.Rows[i].Cells["cTrongSoKPINVH"].Value.ToString());
-
-                        if (totalvh == 0 && totalvh == null)
+                        if (totalvh == 0 && totalvh == 0 || totalvh == null && totalvh == null)
                         {
                             ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
@@ -373,40 +325,16 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                         else if (totalvh > 0 && totalvh < 100 && int.Parse(txtTongTrongSoVH.Text) > 0 && int.Parse(txtTongTrongSoVH.Text) < 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
-                            {
-                                CopyVHtoHT();
-                                LoadDataBVPhatTrien();
-                                ChuyenTrangThai(3);
-                                if (txtTongTrongSoPT.Text == string.Empty)
-                                {
-                                    CreateTableCopyPT();
-                                }
-                                else
-                                {
-
-                                }
-                            }
-                            else
-                            {
-
-                            }
+                            ev.QFrmThongBaoError("Trọng số chưa được 100%");
                         }
                         else if (totalvh == 100 && int.Parse(txtTongTrongSoVH.Text) == 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
+                            CopyVHtoHT();
+                            LoadDataBVPhatTrien();
+                            ChuyenTrangThai(3);
+                            if (txtTongTrongSoPT.Text == string.Empty)
                             {
-                                CopyVHtoHT();
-                                LoadDataBVPhatTrien();
-                                ChuyenTrangThai(3);
-                                if (txtTongTrongSoPT.Text == string.Empty)
-                                {
-                                    CreateTableCopyPT();
-                                }
-                                else
-                                {
-
-                                }
+                                CreateTableCopyPT();
                             }
                             else
                             {
@@ -423,8 +351,7 @@ namespace DuAn_QuanLyKPI.GUI
                         int totalpt = 0;
                         for (int i = 0; i < rowdgrpt; ++i)
                             totalpt += int.Parse(dgrNhapMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPINPT"].Value.ToString());
-
-                        if (totalpt == 0 && totalpt == null)
+                        if (totalpt == 0 && totalpt == 0 || totalpt == null && totalpt == null)
                         {
                             ev.QFrmThongBao("Lưu ý: Chưa nhập tỷ trọng");
                         }
@@ -434,25 +361,12 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                         else if (totalpt > 0 && totalpt < 100 && int.Parse(txtTongTrongSoPT.Text) > 0 && int.Parse(txtTongTrongSoPT.Text) < 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Lưu ý: Kiểm tra tỷ trọng chưa được 100%. Bạn có muốn tiếp tục không?"))
-                            {
-                                CopyPTtoHT();
-                                ChuyenTrangThai(4);
-                            }
-                            else
-                            {
-                            }
+                            ev.QFrmThongBaoError("Trọng số chưa được 100%");
                         }
                         else if (totalpt == 100 && int.Parse(txtTongTrongSoPT.Text) == 100)
                         {
-                            if (ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn tiếp tục không? Vui lòng kiểm tra thông tin thật kĩ nhé!"))
-                            {
-                                CopyPTtoHT();
-                                ChuyenTrangThai(4);
-                            }
-                            else
-                            {
-                            } 
+                            CopyPTtoHT();
+                            ChuyenTrangThai(4);
                         }
                         else if (totalpt == null && int.Parse(txtTongTrongSoPT.Text) == null)
                         {
@@ -1961,14 +1875,53 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void dgrNhapMucTieuVanHanh_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
+            //{
+            //    for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
+            //    {
+            //        dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value = false;
+            //    }
+            //    LoadDataTableVH();
+            //}
+
             if (e.Button == MouseButtons.Left && e.ColumnIndex == 0)
             {
                 for (int i = 0; i < dgrNhapMucTieuVanHanh.Rows.Count; i++)
                 {
                     dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value = false;
                 }
-                LoadDataTableVH();
+
+                // Clear rows from dgrNhapMucTieuVanHanh
+                dgrNhapMucTieuVanHanh.Rows.Clear();
+
+                for (int i = 0; i < dgrBVMucTieuVanHanh.Rows.Count; i++)
+                {
+                    if (dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value != null &&
+                        (bool)dgrBVMucTieuVanHanh.Rows[i].Cells["cChonTatCaBVVH"].Value == true)
+                    {
+                        DataRow newRow = vh.NewRow();
+                        newRow["cMaKPIcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cMaKPIBVVH"].Value;
+                        newRow["cNoiDungcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNoiDungBVVH"].Value.ToString();
+                        newRow["cNamcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNamBVVH"].Value.ToString();
+
+                        if (dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value == null)
+                        {
+                            dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value = "0";
+                            newRow["TrongSocpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value.ToString();
+                        }
+                        else
+                        {
+                            newRow["TrongSocpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value.ToString();
+                        }
+
+                        vh.Rows.Add(newRow);
+                    }
+                }
+
+                // Set the DataSource after processing the rows
+                dgrNhapMucTieuVanHanh.DataSource = vh;
             }
+
         }
         private void dgrNhapMucTieuPhatTrien_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

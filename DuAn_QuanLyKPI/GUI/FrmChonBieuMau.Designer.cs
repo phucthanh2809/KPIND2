@@ -30,29 +30,30 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChonBieuMau));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgrChonBieuMau = new System.Windows.Forms.DataGridView();
+            this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cIDBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTenBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cChon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cQuy1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cQuy2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cQuy3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cQuy4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cNam = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.nmYear = new System.Windows.Forms.NumericUpDown();
-            this.nmQuarter = new System.Windows.Forms.NumericUpDown();
             this.lbYear = new System.Windows.Forms.Label();
-            this.lbQuarter = new System.Windows.Forms.Label();
+            this.txtTest = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmYear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -83,35 +84,40 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrChonBieuMau
             // 
             this.dgrChonBieuMau.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrChonBieuMau.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrChonBieuMau.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgrChonBieuMau.BackgroundColor = System.Drawing.Color.White;
             this.dgrChonBieuMau.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrChonBieuMau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrChonBieuMau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgrChonBieuMau.ColumnHeadersHeight = 50;
             this.dgrChonBieuMau.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cMaBieuMau,
             this.cIDBieuMau,
             this.cTenBieuMau,
-            this.cMaBieuMau,
-            this.cChon});
+            this.cQuy1,
+            this.cQuy2,
+            this.cQuy3,
+            this.cQuy4,
+            this.cNam});
             this.dgrChonBieuMau.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrChonBieuMau.EnableHeadersVisualStyles = false;
             this.dgrChonBieuMau.Location = new System.Drawing.Point(0, 0);
             this.dgrChonBieuMau.Name = "dgrChonBieuMau";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrChonBieuMau.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrChonBieuMau.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgrChonBieuMau.RowHeadersWidth = 75;
             this.dgrChonBieuMau.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrChonBieuMau.RowTemplate.Height = 50;
@@ -119,23 +125,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.TabIndex = 1;
             this.dgrChonBieuMau.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick);
             this.dgrChonBieuMau.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMau_RowPostPaint);
-            // 
-            // cIDBieuMau
-            // 
-            this.cIDBieuMau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cIDBieuMau.DataPropertyName = "IDBieuMau";
-            this.cIDBieuMau.HeaderText = "ID Biểu Mẫu";
-            this.cIDBieuMau.Name = "cIDBieuMau";
-            this.cIDBieuMau.ReadOnly = true;
-            this.cIDBieuMau.Width = 149;
-            // 
-            // cTenBieuMau
-            // 
-            this.cTenBieuMau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cTenBieuMau.DataPropertyName = "TenBieuMau";
-            this.cTenBieuMau.HeaderText = "Tên Biểu Mẫu";
-            this.cTenBieuMau.Name = "cTenBieuMau";
-            this.cTenBieuMau.ReadOnly = true;
             // 
             // cMaBieuMau
             // 
@@ -146,20 +135,67 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaBieuMau.ReadOnly = true;
             this.cMaBieuMau.Width = 120;
             // 
-            // cChon
+            // cIDBieuMau
             // 
-            this.cChon.HeaderText = "Chọn";
-            this.cChon.Image = ((System.Drawing.Image)(resources.GetObject("cChon.Image")));
-            this.cChon.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.cChon.Name = "cChon";
+            this.cIDBieuMau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cIDBieuMau.DataPropertyName = "IDBieuMau";
+            this.cIDBieuMau.HeaderText = "ID Biểu Mẫu";
+            this.cIDBieuMau.Name = "cIDBieuMau";
+            this.cIDBieuMau.ReadOnly = true;
+            this.cIDBieuMau.Visible = false;
+            this.cIDBieuMau.Width = 149;
+            // 
+            // cTenBieuMau
+            // 
+            this.cTenBieuMau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cTenBieuMau.DataPropertyName = "TenBieuMau";
+            this.cTenBieuMau.HeaderText = "Tên Biểu Mẫu";
+            this.cTenBieuMau.Name = "cTenBieuMau";
+            this.cTenBieuMau.ReadOnly = true;
+            // 
+            // cQuy1
+            // 
+            this.cQuy1.HeaderText = "Quý 1";
+            this.cQuy1.Name = "cQuy1";
+            this.cQuy1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cQuy1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cQuy2
+            // 
+            this.cQuy2.HeaderText = "Quý 2";
+            this.cQuy2.Name = "cQuy2";
+            this.cQuy2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cQuy2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cQuy3
+            // 
+            this.cQuy3.HeaderText = "Quý 3";
+            this.cQuy3.Name = "cQuy3";
+            this.cQuy3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cQuy3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cQuy4
+            // 
+            this.cQuy4.HeaderText = "Quý 4";
+            this.cQuy4.Name = "cQuy4";
+            this.cQuy4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cQuy4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cNam
+            // 
+            this.cNam.HeaderText = "Năm";
+            this.cNam.Name = "cNam";
+            this.cNam.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cNam.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.txtYear);
+            this.panel2.Controls.Add(this.txtTest);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.nmYear);
-            this.panel2.Controls.Add(this.nmQuarter);
             this.panel2.Controls.Add(this.lbYear);
-            this.panel2.Controls.Add(this.lbQuarter);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -171,69 +207,36 @@ namespace DuAn_QuanLyKPI.GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(0, 10);
+            this.label2.Location = new System.Drawing.Point(3, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(392, 40);
             this.label2.TabIndex = 6;
             this.label2.Text = "HỆ THỐNG BIỂU MẪU";
             // 
-            // nmYear
-            // 
-            this.nmYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmYear.Location = new System.Drawing.Point(1226, 14);
-            this.nmYear.Maximum = new decimal(new int[] {
-            2050,
-            0,
-            0,
-            0});
-            this.nmYear.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.nmYear.Name = "nmYear";
-            this.nmYear.Size = new System.Drawing.Size(126, 32);
-            this.nmYear.TabIndex = 5;
-            this.nmYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nmYear.Value = new decimal(new int[] {
-            2023,
-            0,
-            0,
-            0});
-            // 
-            // nmQuarter
-            // 
-            this.nmQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmQuarter.Location = new System.Drawing.Point(1061, 14);
-            this.nmQuarter.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.nmQuarter.Name = "nmQuarter";
-            this.nmQuarter.Size = new System.Drawing.Size(100, 32);
-            this.nmQuarter.TabIndex = 4;
-            this.nmQuarter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lbYear
             // 
             this.lbYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(1167, 18);
+            this.lbYear.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYear.Location = new System.Drawing.Point(1163, 17);
             this.lbYear.Name = "lbYear";
-            this.lbYear.Size = new System.Drawing.Size(53, 24);
+            this.lbYear.Size = new System.Drawing.Size(68, 26);
             this.lbYear.TabIndex = 3;
-            this.lbYear.Text = "Năm";
+            this.lbYear.Text = "Năm:";
             // 
-            // lbQuarter
+            // txtTest
             // 
-            this.lbQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbQuarter.AutoSize = true;
-            this.lbQuarter.Location = new System.Drawing.Point(1008, 18);
-            this.lbQuarter.Name = "lbQuarter";
-            this.lbQuarter.Size = new System.Drawing.Size(47, 24);
-            this.lbQuarter.TabIndex = 2;
-            this.lbQuarter.Text = "Quý";
+            this.txtTest.Location = new System.Drawing.Point(402, 13);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(100, 32);
+            this.txtTest.TabIndex = 7;
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(1237, 14);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(120, 32);
+            this.txtYear.TabIndex = 8;
             // 
             // FrmChonBieuMau
             // 
@@ -252,8 +255,6 @@ namespace DuAn_QuanLyKPI.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmYear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,13 +266,16 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridView dgrChonBieuMau;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbYear;
-        private System.Windows.Forms.Label lbQuarter;
-        private System.Windows.Forms.NumericUpDown nmYear;
-        private System.Windows.Forms.NumericUpDown nmQuarter;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTenBieuMau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaBieuMau;
-        private System.Windows.Forms.DataGridViewImageColumn cChon;
+        private System.Windows.Forms.DataGridViewImageColumn cQuy1;
+        private System.Windows.Forms.DataGridViewImageColumn cQuy2;
+        private System.Windows.Forms.DataGridViewImageColumn cQuy3;
+        private System.Windows.Forms.DataGridViewImageColumn cQuy4;
+        private System.Windows.Forms.DataGridViewImageColumn cNam;
+        private System.Windows.Forms.TextBox txtTest;
+        private System.Windows.Forms.TextBox txtYear;
     }
 }

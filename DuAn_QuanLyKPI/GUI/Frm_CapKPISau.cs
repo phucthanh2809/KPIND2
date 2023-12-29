@@ -1,106 +1,101 @@
-﻿using System;
+﻿using BusinessCommon;
+using DevExpress.XtraEditors;
+using DuAn_QuanLyKPI.Constants;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessCommon;
-using ControlProject1510;
-using DevExpress.Charts.Native;
-using DevExpress.CodeParser;
-using DevExpress.Data.Linq.Helpers;
-using DevExpress.Data.ODataLinq.Helpers;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraPrinting.Native;
-//using DevExpress.XtraVerticalGrid;
-using DuAn_QuanLyKPI.Constants;
-using DuAn_QuanLyKPI.DTO;
-using System.Globalization;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-
-    public partial class Frm_CapDanhSachKPI : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_CapKPISau : DevExpress.XtraEditors.XtraForm
     {
-        //lấy dữ liệu từu frm login
-        public static string MaNV = Frm_Login.MaNV;
-        public static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
-        public static string MaChucDanh = Frm_Login.MaChucDanh;
-        public static string TenNV = Frm_Login.TenNV;
-        public static string TenChucDanh = Frm_Login.TenChucDanh;
-        public static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
         private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
-        //private string mconnectstring = "server=192.168.50.108,1433; database=QuanLyKPI;uid=sa;pwd=123";
+        public List<int> SelectedKPIs { get; private set; }
+        public List<string> Items { get; set; }
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
         List<int> selectedItems = new List<int>();
-        public Form ReturnForm { get; set; }
-        public int NamPhieu { get; set; }
+        private List<int> maKPIList;
+        private object isChecked;
+        // Thuộc tính để nhận giá trị string từ TextBox1 trên Form1
+        public string MaPhieuKPI { get; set; }
 
+        // Thuộc tính để nhận giá trị int từ TextBox2 trên Form1
+        public int NamPhieuKPI { get; set; }
 
-        public Frm_CapDanhSachKPI()
-        {
-            InitializeComponent();           
-            LoadData();
-            txt_Nam.Visible = false;
-            lb_Nam.Visible = false;
-
-        }
-        public Frm_CapDanhSachKPI(int nam)
+        public Frm_CapKPISau(List<int> maKPIList, string maPhieuKPI, int namPhieuKPI)
         {
             InitializeComponent();
-            LoadData();
-            NamPhieu = nam;
-            if(NamPhieu != 0)
+            this.maKPIList = maKPIList;
+            MaPhieuKPI = maPhieuKPI;
+            NamPhieuKPI = namPhieuKPI;
+            if (NamPhieuKPI != 0)
             {
-                txt_Nam.Visible = true;
-                lb_Nam.Visible = true;
-                txt_Nam.Text = NamPhieu.ToString();
-    
+                // Directly assign the integer value to the TextBox
+                txt_Nam.Text = NamPhieuKPI.ToString();
             }
+            if (!string.IsNullOrEmpty(MaPhieuKPI))
+            {
+                // Gán giá trị năm phiếu vào TextBox
+                txt_maPhieu.Text = MaPhieuKPI;
+            }
+            LoadData();
+
+        }
+        public Frm_CapKPISau()
+        {
+            InitializeComponent();
+
         }
         private void LoadData()
         {
             msql = "SELECT dbo.KPI.*, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID ORDER BY KPI.TieuChiID; ";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPI");
+
+            // Thêm cột cChon vào DataTable nếu chưa tồn tại
+            if (!tb.Columns.Contains("cChon"))
+            {
+                tb.Columns.Add("cChon", typeof(bool));
+            }
+
+            // Hiển thị DataTable trong DataGridView
             dtgv_CapKPI.AutoGenerateColumns = false;
-            dtgv_CapKPI.DataSource = tb;      
+            dtgv_CapKPI.DataSource = tb;
+
         }
-        
-        //private void SelectAllCheckboxes()
+        //private void CheckMaKPI()
         //{
         //    foreach (DataGridViewRow row in dtgv_CapKPI.Rows)
         //    {
-        //        // Đảm bảo rằng hàng không phải là hàng header
-        //        if (!row.IsNewRow)
+        //        if (row.Cells["clMaKPI"].Value != null)
         //        {
-        //            // Lấy ô kiểm từ cột có tên "cChon"
-        //            DataGridViewCheckBoxCell checkboxCell = row.Cells["cChon"] as DataGridViewCheckBoxCell;
+        //            int maKPIValue = Convert.ToInt32(row.Cells["clMaKPI"].Value);
 
-        //            // Kiểm tra xem ô kiểm có tồn tại và chưa được chọn
-        //            if (checkboxCell != null )
+        //            // Kiểm tra xem maKPIValue có trong maKPIList hay không
+        //            if (maKPIList.Contains(maKPIValue))
         //            {
-        //                // Chọn ô kiểm
-        //                checkboxCell.Value = true;
+        //                row.Cells["cChon"].Value = true;
         //            }
-        //            else if(checkboxCell != null && Convert.ToBoolean(checkboxCell.Value) == true)
+        //            else
         //            {
-        //                checkboxCell.Value = false;
+        //                row.Cells["cChon"].Value = false;
         //            }
         //        }
         //    }
+
+        //    // Cập nhật lại dữ liệu trong DataGridView
+        //    dtgv_CapKPI.Refresh();
         //}
+
+
         private void ToggleAllCheckboxes(bool isChecked)
         {
             foreach (DataGridViewRow row in dtgv_CapKPI.Rows)
@@ -132,113 +127,50 @@ namespace DuAn_QuanLyKPI.GUI
         {
             ToggleAllCheckboxes(false);
         }
-       
-        //private void LoadCbo()
-        //{
-        //    //string maChucDanh = cboChucDanh.SelectedValue.ToString();
-        //    //string maPhongKhoa = cboKhoaPhong.SelectedValue.ToString();
-        //    string msql = @"SELECT dbo.KPI.*, dbo.NhomTieuChi.* FROM dbo.KPI
-        //    INNER JOIN dbo.KPITrongNganHang ON dbo.KPI.MaKPI = dbo.KPITrongNganHang.MaKPI
-        //    INNER JOIN dbo.NganHangKPI ON dbo.KPITrongNganHang.MaNganHangKPI = dbo.NganHangKPI.MaNganHangKPI
-        //    LEFT JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID
-        //    WHERE dbo.NganHangKPI.MaChucDanh = @maChucDanh
-        //    AND dbo.NganHangKPI.MaPK = @maPK;";
-        //    DataTable dt = new DataTable();
-        //    using (SqlConnection connection = new SqlConnection(mconnectstring))
-        //    {
-        //        SqlCommand command = new SqlCommand(msql, connection);
-        //        command.Parameters.AddWithValue("@maChucDanh", MaChucDanh);
-        //        command.Parameters.AddWithValue("@maPK", MaPhongKhoa);
-        //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-        //        adapter.Fill(dt);
-        //    }
-        //    dtgv_CapKPI.AutoGenerateColumns = false;
-        //    dtgv_CapKPI.DataSource = dt;
-        //}
-
-        //Ấn nút cấp danh sách 
-
-        //Ấn nút cấp danh sách
         private void btnCap_Click(object sender, EventArgs e)
         {
-
-            //if (selectedItems.Count > 0)
-            //{
-            //    // Kiểm tra xem có đủ tiêu chí không
-            //    if (AreAllCriteriaMet())
-            //    {
-            //        // Nếu đủ, thực hiện các công việc cấp
-            //        bool result = ev.QFrmThongBao_YesNo("Bạn có chắc chắn ???");
-            //        if(result == true )
-            //        {
-            //            int namphieu;
-            //            if(int.TryParse(txt_Nam.Text, out namphieu))
-            //            {
-            //                Frm_ChiTieuVuaGiao newForm = new Frm_ChiTieuVuaGiao(selectedItems, namphieu);
-            //                newForm.ShowDialog();
-            //            }
-
-            //        }
-            //        //else if(result == true && txt_Nam.Visible == true)
-            //        //{
-            //        //    Frm_ChiTieuVuaGiao newForm = new Frm_ChiTieuVuaGiao(selectedItems);
-            //        //    newForm.ShowDialog();
-            //        //}
-            //    }
-            //    else
-            //    {
-            //        // Nếu không đủ, hiển thị thông báo
-            //        ev.QFrmThongBao("Dữ liệu không đủ tiêu chí. Vui lòng kiểm tra lại.");
-            //    }
-            //}
-            //else
-            //{
-            //    ev.QFrmThongBao("Vui lòng chọn ít nhất một mục để cấp.");
-            //}
             if (selectedItems.Count > 0)
             {
                 // Kiểm tra xem có đủ tiêu chí không
                 if (AreAllCriteriaMet())
                 {
+                    // Nếu đủ, thực hiện các công việc cấp
                     bool result = ev.QFrmThongBao_YesNo("Bạn có chắc chắn ???");
                     if (result == true)
                     {
-                        if (txt_Nam.Visible)
+                        ////int namPhieuFromForm1 = NamPhieuFromForm1;
+                        //Frm_ChinhSuaCap newForm = new Frm_ChinhSuaCap(selectedItems);                   
+                        //newForm.ShowDialog();
+                        string maPhieuKPI = txt_maPhieu.Text;
+                        int namPhieuKPI;
+                        //int namPhieuFromForm1 = NamPhieuFromForm1;
+                        if (int.TryParse(txt_Nam.Text, out namPhieuKPI))
                         {
-                            // Form 2
-                            int namphieu;
-                            if (int.TryParse(txt_Nam.Text, out namphieu))
-                            {
-                                Frm_ChiTieuVuaGiao newForm = new Frm_ChiTieuVuaGiao(selectedItems, namphieu);
-                                newForm.ShowDialog();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Vui lòng nhập một giá trị số nguyên cho năm.");
-                            }
+                            Frm_ChinhSuaCap newForm = new Frm_ChinhSuaCap(selectedItems, maPhieuKPI, namPhieuKPI);
+                            newForm.MaPhieuKPI1 = maPhieuKPI;
+                            newForm.NamPhieuKPI1 = namPhieuKPI;
+                            newForm.ShowDialog();
+
                         }
                         else
                         {
-                            // Form 3
-                            Frm_ChiTieuVuaGiao newForm = new Frm_ChiTieuVuaGiao(selectedItems);
-                            newForm.ShowDialog();
+
                         }
                     }
-                    
                 }
                 else
                 {
                     // Nếu không đủ, hiển thị thông báo
                     ev.QFrmThongBao("Dữ liệu không đủ tiêu chí. Vui lòng kiểm tra lại.");
                 }
+
             }
             else
             {
                 ev.QFrmThongBao("Vui lòng chọn ít nhất một mục để cấp.");
             }
-        }
 
-        // Kiểm tra tiêu chí
+        }
         private bool AreAllCriteriaMet()
         {
             int columnIndex = dtgv_CapKPI.Columns["clTieuChiID"].Index;
@@ -269,7 +201,6 @@ namespace DuAn_QuanLyKPI.GUI
         }
 
 
-        //Lấy danh sách mã KPI các mục cần cấp
         private void dtgv_CapKPI_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dtgv_CapKPI.Columns[0].Index && e.RowIndex >= 0) // Thay 0 bằng index của cột chứa checkbox
@@ -295,23 +226,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
         }
 
-        //kiểm tra tình trạng checkbox ấn chọn hoặc bỏ chọn cho tất cả
-        private void ck_ChonAll_CheckedChanged(object sender, EventArgs e)
-        {
-            // Kiểm tra xem CheckBox có được chọn hay không
-            if (ck_ChonAll.Checked)
-            {
-                // Nếu được chọn, thì chọn tất cả
-                SelectAllCheckboxes();
-            }
-            else
-            {
-                // Nếu không được chọn, thì bỏ chọn tất cả
-                DeselectAllCheckboxes();
-            }
-        }
 
-        //Sử dụng sự kiện lấy mã ở những ô checkbox được chọn.
         private void dtgv_CapKPI_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra nếu sự kiện được kích hoạt trên ô kiểm header "cChon"
@@ -390,27 +305,131 @@ namespace DuAn_QuanLyKPI.GUI
                 }
             }
         }
-
-
         private void dtgv_CapKPI_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             ev.Qdgr_RowPostPaint(sender, e, dtgv_CapKPI);
         }
 
-        private void Frm_CapDanhSachKPI_FormClosed(object sender, FormClosedEventArgs e)
+        private void Frm_CapKPISau_Load(object sender, EventArgs e)
         {
-            // Kiểm tra xem form trở lại đã được đặt hay chưa
-            if (ReturnForm != null)
+            CheckAndSortMaKPI();
+        }
+
+        private void CheckAndSortMaKPI()
+        {
+            msql = "SELECT dbo.KPI.*, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID ORDER BY KPI.TieuChiID; ";
+            // Lấy dữ liệu từ cơ sở dữ liệu cho kết quả tìm kiếm
+            DataTable searchResult = comm.GetDataTable(mconnectstring, msql, "KPI");
+
+            // Tạo DataTable mới chứa kết quả tìm kiếm và các KPI đã chọn trước đó
+            DataTable combinedDataTable = new DataTable();
+            combinedDataTable.Columns.Add("MaKPI", typeof(int)); // Thêm các cột khác nếu cần thiết
+
+            // Lưu trữ các KPI đã chọn trước đó vào bảng tạm thời
+            DataTable selectedItemsTable = new DataTable();
+            selectedItemsTable.Columns.Add("MaKPI", typeof(int));
+
+            foreach (var i in maKPIList)
             {
-                // Nếu có, hiển thị lại form trở lại
-                ReturnForm.Show();
+                string queryID = $"SELECT dbo.KPI.*, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID WHERE dbo.KPI.MaKPI = '{i}'";
+                DataTable idt = comm.GetDataTable(mconnectstring, queryID, "KPI");
+                selectedItemsTable.Merge(idt);
+            }
+
+            // Hiển thị lại các KPI đã chọn trước đó
+            combinedDataTable.Merge(selectedItemsTable);
+
+            // Loại bỏ các KPI đã chọn trước đó khỏi kết quả tìm kiếm
+            foreach (DataRow row in selectedItemsTable.Rows)
+            {
+                DataRow[] rowsToRemove = searchResult.Select($"MaKPI = {row["MaKPI"]}");
+                foreach (DataRow rowToRemove in rowsToRemove)
+                {
+                    searchResult.Rows.Remove(rowToRemove);
+                }
+            }
+
+            // Thêm kết quả tìm kiếm vào DataTable
+            combinedDataTable.Merge(searchResult);
+
+            // Hiển thị dữ liệu trên DataGridView
+            dtgv_CapKPI.AutoGenerateColumns = false;
+            dtgv_CapKPI.DataSource = combinedDataTable;
+            foreach (var i in maKPIList)
+            {
+                foreach (DataGridViewRow row in dtgv_CapKPI.Rows)
+                {
+                    if (row.Cells["clMaKPI"].Value != null && int.Parse(row.Cells["clMaKPI"].Value.ToString()) == i)
+                    {
+                        row.Cells["cChon"].Value = true;
+                    }
+                }
+            }
+
+        }
+
+        private void ck_ChonAll_CheckedChanged_1(object sender, EventArgs e)
+        {
+            // Kiểm tra xem CheckBox có được chọn hay không
+            if (ck_ChonAll.Checked)
+            {
+                // Nếu được chọn, thì chọn tất cả
+                SelectAllCheckboxes();
+            }
+            else
+            {
+                // Nếu không được chọn, thì bỏ chọn tất cả
+                DeselectAllCheckboxes();
             }
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btn_Cap_Paint(object sender, PaintEventArgs e)
         {
-            Frm_ChinhSuaCap form = new Frm_ChinhSuaCap();
-            form.ShowDialog();
+
+        }
+
+        private void btn_Cap1_Click(object sender, EventArgs e)
+        {
+            if (selectedItems.Count > 0)
+            {
+                // Kiểm tra xem có đủ tiêu chí không
+                if (AreAllCriteriaMet())
+                {
+                    // Nếu đủ, thực hiện các công việc cấp
+                    bool result = ev.QFrmThongBao_YesNo("Bạn có chắc chắn ???");
+                    if (result == true)
+                    {
+                        ////int namPhieuFromForm1 = NamPhieuFromForm1;
+                        //Frm_ChinhSuaCap newForm = new Frm_ChinhSuaCap(selectedItems);                   
+                        //newForm.ShowDialog();
+                        string maPhieuKPI = txt_maPhieu.Text;
+                        int namPhieuKPI;
+                        //int namPhieuFromForm1 = NamPhieuFromForm1;
+                        if (int.TryParse(txt_Nam.Text, out namPhieuKPI))
+                        {
+                            Frm_ChinhSuaCap newForm = new Frm_ChinhSuaCap(selectedItems, maPhieuKPI, namPhieuKPI);
+                            newForm.MaPhieuKPI1 = maPhieuKPI;
+                            newForm.NamPhieuKPI1 = namPhieuKPI;
+                            newForm.ShowDialog();
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                    // Nếu không đủ, hiển thị thông báo
+                    ev.QFrmThongBao("Dữ liệu không đủ tiêu chí. Vui lòng kiểm tra lại.");
+                }
+
+            }
+            else
+            {
+                ev.QFrmThongBao("Vui lòng chọn ít nhất một mục để cấp.");
+            }
         }
     }
 }

@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="ControlProject1510, Version=1.0.7075.38120, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Chính\KhoDuocphuc\KhoDuoc\bin\Debug\ControlProject1510.dll</HintPath>
+      <HintPath>..\..\..\PM\test_pm\test_pm\ControlProject1510.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -69,10 +69,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="barcode">
-      <HintPath>..\..\..\Chính\KhoDuocphuc\KhoDuoc\bin\Debug\barcode.dll</HintPath>
+      <HintPath>..\..\..\PM\test_pm\test_pm\barcode.dll</HintPath>
     </Reference>
     <Reference Include="BusinessCommon">
-      <HintPath>..\..\..\Chính\KhoDuocphuc\KhoDuoc\bin\Debug\BusinessCommon.dll</HintPath>
+      <HintPath>..\..\..\PM\test_pm\test_pm\BusinessCommon.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.CodeParser.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -244,6 +244,12 @@
     <Compile Include="GUI\Frm_A77.Designer.cs">
       <DependentUpon>Frm_A77.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_A78.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_A78.Designer.cs">
+      <DependentUpon>Frm_A78.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,24 @@
     <Compile Include="GUI\FrmChonBieuMau.Designer.cs">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_CapDanhSachKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_CapDanhSachKPI.Designer.cs">
+      <DependentUpon>Frm_CapDanhSachKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_CapKPISau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_CapKPISau.Designer.cs">
+      <DependentUpon>Frm_CapKPISau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_ChinhSuaCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_ChinhSuaCap.Designer.cs">
+      <DependentUpon>Frm_ChinhSuaCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_ChiTieuVuaGiao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,18 +291,6 @@
     </Compile>
     <Compile Include="GUI\Frm_InfoUser.Designer.cs">
       <DependentUpon>Frm_InfoUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Frm_QuanLyNganHangKPI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Frm_QuanLyNganHangKPI.Designer.cs">
-      <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Frm_CapDanhSachKPI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Frm_CapDanhSachKPI.Designer.cs">
-      <DependentUpon>Frm_CapDanhSachKPI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_Change_Password.cs">
       <SubType>Form</SubType>
@@ -303,6 +315,12 @@
     </Compile>
     <Compile Include="GUI\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_QuanLyNganHangKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_QuanLyNganHangKPI.Designer.cs">
+      <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_User.cs">
       <SubType>Form</SubType>
@@ -339,23 +357,29 @@
     <EmbeddedResource Include="GUI\Frm_A77.resx">
       <DependentUpon>Frm_A77.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_A78.resx">
+      <DependentUpon>Frm_A78.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_AddUser.resx">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChonBieuMau.resx">
       <DependentUpon>FrmChonBieuMau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_CapDanhSachKPI.resx">
+      <DependentUpon>Frm_CapDanhSachKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_CapKPISau.resx">
+      <DependentUpon>Frm_CapKPISau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_ChinhSuaCap.resx">
+      <DependentUpon>Frm_ChinhSuaCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_ChiTieuVuaGiao.resx">
       <DependentUpon>Frm_ChiTieuVuaGiao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_InfoUser.resx">
       <DependentUpon>Frm_InfoUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_QuanLyNganHangKPI.resx">
-      <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_CapDanhSachKPI.resx">
-      <DependentUpon>Frm_CapDanhSachKPI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Change_Password.resx">
       <DependentUpon>Frm_Change_Password.cs</DependentUpon>
@@ -368,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_QuanLyNganHangKPI.resx">
+      <DependentUpon>Frm_QuanLyNganHangKPI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_User.resx">
       <DependentUpon>Frm_User.cs</DependentUpon>

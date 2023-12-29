@@ -30,14 +30,6 @@ namespace DuAn_QuanLyKPI.GUI
         {
             InitializeComponent();
             LoadData();
-            if (nmQuarter.Value == 0)
-            {
-                QuyNam = nmYear.Value.ToString();
-            }
-            else if (nmQuarter.Value != 0)
-            {
-                QuyNam = (nmQuarter.Value.ToString() + nmYear.Value.ToString());
-            }
         }
         #region LoadDataGrid
         //Lãnh đạo
@@ -74,12 +66,12 @@ namespace DuAn_QuanLyKPI.GUI
         {
             if (e.RowIndex == -1)
                 return;
-            if (dgrChonBieuMau["cChon", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+            if (dgrChonBieuMau["cQuy1", e.RowIndex] == dgrChonBieuMau.CurrentCell)
             {
-                if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + " này không ?"))
+                if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 1 này không ?"))
                 {
                     int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
-                    
+                    QuyNam = "1" + txtYear.Text;
                     switch (caseValue)
                     {
                         //case 71:
@@ -120,7 +112,491 @@ namespace DuAn_QuanLyKPI.GUI
                             //case 710: frm_a710 a710 = new frm_a710();
                             //a710.show();break;
                     }
-
+                }
+            }
+            if (dgrChonBieuMau["cQuy2", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+            {
+                if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 2 này không ?"))
+                {
+                    int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                    QuyNam = "2" + txtYear.Text;
+                    switch (caseValue)
+                    {
+                        //case 71:
+                        //    try
+                        //    {
+                        //        FrmA71 A71 = new FrmA71();
+                        //        A71.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 72:
+                        //    try
+                        //    {
+                        //        FrmA72 A72 = new FrmA72();
+                        //        A72.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        case 73:
+                            try
+                            {
+                                FrmA73 A73 = new FrmA73();
+                                A73.Show();
+                            }
+                            catch (Exception)
+                            {
+                                ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            }
+                            break;
+                            //case 74:
+                            //    try
+                            //    {
+                            //        FrmA74 A74 = new FrmA74();
+                            //        A74.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 75:
+                            //    try
+                            //    {
+                            //        FrmA75 A75 = new FrmA75();
+                            //        A75.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 76:
+                            //    try
+                            //    {
+                            //        FrmA76 A76 = new FrmA76();
+                            //        A76.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 77:
+                            //    try
+                            //    {
+                            //        FrmA77 A77 = new FrmA77();
+                            //        A77.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 78:
+                            //    try
+                            //    {
+                            //        FrmA78 A78 = new FrmA78();
+                            //        A78.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 79:
+                            //    try
+                            //    {
+                            //        FrmA79 A79 = new FrmA79();
+                            //        A79.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 710:
+                            //    try
+                            //    {
+                            //        FrmA710 A710 = new FrmA710();
+                            //        A710.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                    }
+                }
+            }
+            if (dgrChonBieuMau["cQuy3", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+            {
+                if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 3 này không ?"))
+                {
+                    int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                    QuyNam = "3" + txtYear.Text;
+                    switch (caseValue)
+                    {
+                        //case 71:
+                        //    try
+                        //    {
+                        //        FrmA71 A71 = new FrmA71();
+                        //        A71.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 72:
+                        //    try
+                        //    {
+                        //        FrmA72 A72 = new FrmA72();
+                        //        A72.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        case 73:
+                            try
+                            {
+                                FrmA73 A73 = new FrmA73();
+                                A73.Show();
+                            }
+                            catch (Exception)
+                            {
+                                ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            }
+                            break;
+                            //case 74:
+                            //    try
+                            //    {
+                            //        FrmA74 A74 = new FrmA74();
+                            //        A74.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 75:
+                            //    try
+                            //    {
+                            //        FrmA75 A75 = new FrmA75();
+                            //        A75.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 76:
+                            //    try
+                            //    {
+                            //        FrmA76 A76 = new FrmA76();
+                            //        A76.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 77:
+                            //    try
+                            //    {
+                            //        FrmA77 A77 = new FrmA77();
+                            //        A77.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 78:
+                            //    try
+                            //    {
+                            //        FrmA78 A78 = new FrmA78();
+                            //        A78.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 79:
+                            //    try
+                            //    {
+                            //        FrmA79 A79 = new FrmA79();
+                            //        A79.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 710:
+                            //    try
+                            //    {
+                            //        FrmA710 A710 = new FrmA710();
+                            //        A710.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                    }
+                }
+            }
+            if (dgrChonBieuMau["cQuy4", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+            {
+                if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 4 này không ?"))
+                {
+                    int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                    QuyNam = "4" + txtYear.Text;
+                    switch (caseValue)
+                    {
+                        //case 71:
+                        //    try
+                        //    {
+                        //        FrmA71 A71 = new FrmA71();
+                        //        A71.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 72:
+                        //    try
+                        //    {
+                        //        FrmA72 A72 = new FrmA72();
+                        //        A72.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        case 73:
+                            try
+                            {
+                                FrmA73 A73 = new FrmA73();
+                                A73.Show();
+                            }
+                            catch (Exception)
+                            {
+                                ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            }
+                            break;
+                        //case 74:
+                        //    try
+                        //    {
+                        //        FrmA74 A74 = new FrmA74();
+                        //        A74.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 75:
+                        //    try
+                        //    {
+                        //        FrmA75 A75 = new FrmA75();
+                        //        A75.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 76:
+                        //    try
+                        //    {
+                        //        FrmA76 A76 = new FrmA76();
+                        //        A76.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 77:
+                        //    try
+                        //    {
+                        //        FrmA77 A77 = new FrmA77();
+                        //        A77.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 78:
+                        //    try
+                        //    {
+                        //        FrmA78 A78 = new FrmA78();
+                        //        A78.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 79:
+                        //    try
+                        //    {
+                        //        FrmA79 A79 = new FrmA79();
+                        //        A79.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 710:
+                        //    try
+                        //    {
+                        //        FrmA710 A710 = new FrmA710();
+                        //        A710.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                    }
+                }
+            }
+            if (dgrChonBieuMau["cNam", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+            {
+                if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Năm này không ?"))
+                {
+                    int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                    QuyNam = txtYear.Text;
+                    txtTest.Text = QuyNam;
+                    switch (caseValue)
+                    {
+                        //case 71:
+                        //    try
+                        //    {
+                        //        FrmA71 A71 = new FrmA71();
+                        //        A71.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        //case 72:
+                        //    try
+                        //    {
+                        //        FrmA72 A72 = new FrmA72();
+                        //        A72.Show();
+                        //    }
+                        //    catch (Exception)
+                        //    {
+                        //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                        //    }
+                        //    break;
+                        case 73:
+                            try
+                            {
+                                FrmA73 A73 = new FrmA73();
+                                A73.Show();
+                            }
+                            catch (Exception)
+                            {
+                                ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            }
+                            break;
+                            //case 74:
+                            //    try
+                            //    {
+                            //        FrmA74 A74 = new FrmA74();
+                            //        A74.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 75:
+                            //    try
+                            //    {
+                            //        FrmA75 A75 = new FrmA75();
+                            //        A75.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 76:
+                            //    try
+                            //    {
+                            //        FrmA76 A76 = new FrmA76();
+                            //        A76.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 77:
+                            //    try
+                            //    {
+                            //        FrmA77 A77 = new FrmA77();
+                            //        A77.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 78:
+                            //    try
+                            //    {
+                            //        FrmA78 A78 = new FrmA78();
+                            //        A78.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 79:
+                            //    try
+                            //    {
+                            //        FrmA79 A79 = new FrmA79();
+                            //        A79.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                            //case 710:
+                            //    try
+                            //    {
+                            //        FrmA710 A710 = new FrmA710();
+                            //        A710.Show();
+                            //    }
+                            //    catch (Exception)
+                            //    {
+                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                            //    }
+                            //    break;
+                    }
                 }
             }
         }
