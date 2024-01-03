@@ -130,6 +130,7 @@ namespace DuAn_QuanLyKPI.GUI
             dgrBVMucTieuPhatTrien.DataSource = tb;
 
             lbYearPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
+            lbYearHT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
         }
         #endregion
         #region Method Chuyển Tab
@@ -811,7 +812,6 @@ namespace DuAn_QuanLyKPI.GUI
                             targetCell.Value = 0;
                         }
                     }
-
                     dgrHTMucTieuTaiChinh.CancelEdit();
                 }
                 else
