@@ -137,7 +137,9 @@ namespace DuAn_QuanLyKPI.GUI
                             //    a75.show(); break;
                             case 76:
                                 Frm_A76 A76 = new Frm_A76();
-                                A76.Show(); break;
+                    
+                                A76.Show(); 
+                                break;
                                 //case 77:
                                 //    Frm_A710 A77 = new Frm_A710();
                                 //    A77.Show(); break;
@@ -520,7 +522,7 @@ namespace DuAn_QuanLyKPI.GUI
                     if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Năm này không ?"))
                     {
                         int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
-                        QuyNam = nmYear.Text.Trim();
+                        QuyNam = txtTest.Text;
                         switch (caseValue)
                         {
                             //case 71:
@@ -548,14 +550,16 @@ namespace DuAn_QuanLyKPI.GUI
                             case 73:
                                 try
                                 {
+                                    
                                     FrmA73 A73 = new FrmA73();
                                     A73.Show();
                                 }
-                                catch (Exception)
+                                catch (Exception ex)
                                 {
-                                    ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                                    ev.QFrmThongBaoError($"Error: {ex.Message}");
                                 }
                                 break;
+
                                 //case 74:
                                 //    try
                                 //    {

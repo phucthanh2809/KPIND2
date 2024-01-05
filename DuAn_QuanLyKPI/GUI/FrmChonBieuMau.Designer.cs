@@ -30,17 +30,13 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChonBieuMau));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgrChonBieuMau = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbYear = new System.Windows.Forms.Label();
-            this.nmYear = new System.Windows.Forms.NumericUpDown();
             this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cIDBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTenBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +45,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.cQuy3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cQuy4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cNam = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.nmYear = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbYear = new System.Windows.Forms.Label();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
@@ -84,18 +85,18 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrChonBieuMau
             // 
             this.dgrChonBieuMau.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrChonBieuMau.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrChonBieuMau.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgrChonBieuMau.BackgroundColor = System.Drawing.Color.White;
             this.dgrChonBieuMau.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrChonBieuMau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrChonBieuMau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgrChonBieuMau.ColumnHeadersHeight = 50;
             this.dgrChonBieuMau.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cMaBieuMau,
@@ -110,14 +111,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.EnableHeadersVisualStyles = false;
             this.dgrChonBieuMau.Location = new System.Drawing.Point(0, 0);
             this.dgrChonBieuMau.Name = "dgrChonBieuMau";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrChonBieuMau.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrChonBieuMau.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgrChonBieuMau.RowHeadersWidth = 75;
             this.dgrChonBieuMau.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrChonBieuMau.RowTemplate.Height = 50;
@@ -125,56 +126,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMau.TabIndex = 1;
             this.dgrChonBieuMau.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick);
             this.dgrChonBieuMau.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMau_RowPostPaint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.nmYear);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.lbYear);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1364, 60);
-            this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(3, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(392, 40);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "HỆ THỐNG BIỂU MẪU";
-            // 
-            // lbYear
-            // 
-            this.lbYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbYear.AutoSize = true;
-            this.lbYear.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbYear.Location = new System.Drawing.Point(1156, 17);
-            this.lbYear.Name = "lbYear";
-            this.lbYear.Size = new System.Drawing.Size(68, 26);
-            this.lbYear.TabIndex = 3;
-            this.lbYear.Text = "Năm:";
-            // 
-            // nmYear
-            // 
-            this.nmYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmYear.Location = new System.Drawing.Point(1230, 14);
-            this.nmYear.Maximum = new decimal(new int[] {
-            2099,
-            0,
-            0,
-            0});
-            this.nmYear.Name = "nmYear";
-            this.nmYear.Size = new System.Drawing.Size(120, 32);
-            this.nmYear.TabIndex = 9;
-            this.nmYear.ValueChanged += new System.EventHandler(this.nmYear_ValueChanged);
-            this.nmYear.Click += new System.EventHandler(this.nmYear_Click);
             // 
             // cMaBieuMau
             // 
@@ -239,6 +190,64 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNam.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cNam.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.txtTest);
+            this.panel2.Controls.Add(this.nmYear);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lbYear);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1364, 60);
+            this.panel2.TabIndex = 0;
+            // 
+            // nmYear
+            // 
+            this.nmYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nmYear.Location = new System.Drawing.Point(1230, 14);
+            this.nmYear.Maximum = new decimal(new int[] {
+            2099,
+            0,
+            0,
+            0});
+            this.nmYear.Name = "nmYear";
+            this.nmYear.Size = new System.Drawing.Size(120, 32);
+            this.nmYear.TabIndex = 9;
+            this.nmYear.ValueChanged += new System.EventHandler(this.nmYear_ValueChanged);
+            this.nmYear.Click += new System.EventHandler(this.nmYear_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(392, 40);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "HỆ THỐNG BIỂU MẪU";
+            // 
+            // lbYear
+            // 
+            this.lbYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbYear.AutoSize = true;
+            this.lbYear.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYear.Location = new System.Drawing.Point(1156, 17);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(68, 26);
+            this.lbYear.TabIndex = 3;
+            this.lbYear.Text = "Năm:";
+            // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(980, 17);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(100, 32);
+            this.txtTest.TabIndex = 10;
+            // 
             // FrmChonBieuMau
             // 
             this.Appearance.Options.UseFont = true;
@@ -279,5 +288,6 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewImageColumn cQuy4;
         private System.Windows.Forms.DataGridViewImageColumn cNam;
         private System.Windows.Forms.NumericUpDown nmYear;
+        private System.Windows.Forms.TextBox txtTest;
     }
 }
