@@ -29,10 +29,10 @@ namespace DuAn_QuanLyKPI.GUI
         private string msql;
 
         Timer updateTimer;
-        DataTable tc = new DataTable();
-        DataTable kh = new DataTable();
-        DataTable vh = new DataTable();
-        DataTable pt = new DataTable();
+        private DataTable tc = new DataTable();
+        private DataTable kh = new DataTable();
+        private DataTable vh = new DataTable();
+        private DataTable pt = new DataTable();
 
         private int CurrentTab = 0;
 
@@ -70,6 +70,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 dataGridViews[i].Rows.Add($"Row {i + 1}, Column 1", $"Row {i + 1}, Column 2", $"Row {i + 1}, Column 3");
             }
+
         }
 
         #region LoadDataGrid
@@ -1074,6 +1075,7 @@ namespace DuAn_QuanLyKPI.GUI
             tc.Columns.Add("cMaKPIcpTC", typeof(string));
             tc.Columns.Add("cNoiDungcpTC", typeof(string));
             tc.Columns.Add("cKeHoachcpTC", typeof(string));
+            tc.Columns.Add("cChiTieuKPIcpTC", typeof(string));
             tc.Columns.Add("cNamcpTC", typeof(int));
             tc.Columns.Add("TrongSocpTC", typeof(int));
             DataColumn[] PrimaryKeyColumns = new DataColumn[1];
@@ -1149,6 +1151,7 @@ namespace DuAn_QuanLyKPI.GUI
                     newRow["cMaKPIcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cMaKPIBVTC"].Value;
                     newRow["cNoiDungcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNoiDungBVTC"].Value.ToString();
                     newRow["cKeHoachcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cKeHoachBVTC"].Value.ToString();
+                    newRow["cChiTieuKPIcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuKPITC"].Value.ToString();
                     newRow["cNamcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
                     if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value == null)
                     {
@@ -1703,6 +1706,7 @@ namespace DuAn_QuanLyKPI.GUI
         //CellValidating
         private void dgrNhapMucTieuTaiChinh_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
+            //Thay đổi nội dung  của Trọng số 
             if (e.ColumnIndex == dgrNhapMucTieuTaiChinh.Columns["cTrongSoKPINTC"].Index)
             {
                 string userInput = e.FormattedValue.ToString();
@@ -1722,7 +1726,53 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                 }
             }
+            if (e.ColumnIndex == dgrNhapMucTieuTaiChinh.Columns["cKeHoachNTC"].Index)
+            {
+                try
+                {
+                    string chitieu = dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cChiTieuKPINTC"].Value.ToString("dd/MM/yyyy");
+                    string userInput = e.FormattedValue.ToString();
+                    int parsedValue;
+                    DateTime dttc;
+                    if (chitieu.Contains("dd/mm/yyyy"))
+                    {
+                        if (!DateTime.TryParse(userInput, out dttc))
+                        {
+                            ev.QFrmThongBaoError("Nhập sai định dạng dữ liệu");
+                            dgrNhapMucTieuTaiChinh.CancelEdit();
+                        }
+                        else if(dttc < DateTime.MinValue || dttc > DateTime.MaxValue)
+                        {
+                            ev.QFrmThongBaoError("Ngày giờ nhập vào phải hợp lệ");
+                            dgrNhapMucTieuTaiChinh.CancelEdit();
+                        }
+                        else
+                        { }    
+                    }
+                    else
+                    {
+                        if (!int.TryParse(userInput, out parsedValue))
+                        {
+                            ev.QFrmThongBaoError("Chỉ được nhập số");
+                            dgrNhapMucTieuTaiChinh.CancelEdit();
+                        }
+                        else
+                        {
+                            if (parsedValue < 0 || parsedValue > 100)
+                            {
+                                ev.QFrmThongBaoError("Số nhập vào phải nằm trong khoảng từ 0 đến 100");
+                                dgrNhapMucTieuTaiChinh.CancelEdit();
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    ev.QFrmThongBaoError("Không có dữ liệu");
+                }
+            }
         }
+ 
         private void dgrNhapMucTieuKhachHang_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             if (e.ColumnIndex == dgrNhapMucTieuKhachHang.Columns["cTrongSoKPINKH"].Index)
@@ -1790,11 +1840,15 @@ namespace DuAn_QuanLyKPI.GUI
                 }
             }
         }
-            
+
         //CellEndEdit
         private void dgrNhapMucTieuTaiChinh_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             dgrNhapMucTieuTaiChinh.Rows[e.RowIndex].ErrorText = string.Empty;
+            if (e.ColumnIndex == dgrNhapMucTieuTaiChinh.Columns["cKeHoachNTC"].Index)
+            {
+
+            }
         }
         private void dgrNhapMucTieuKhachHang_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -1846,7 +1900,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         //RowPostPaint
         private void dgrBVMucTieuTaiChinh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
+       {
             ev.Qdgr_RowPostPaint(sender, e, dgrBVMucTieuTaiChinh);
         }
         private void dgrBVMucTieuKhachHang_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -2063,6 +2117,10 @@ namespace DuAn_QuanLyKPI.GUI
             updateTimer.Stop();
         }
         #endregion
+
+        #endregion
+        #region Nhập và kiểm tra Kế hoạch 
+
 
         #endregion
     }

@@ -46,10 +46,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.cQuy4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cNam = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.nmYear = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.lbYear = new System.Windows.Forms.Label();
-            this.txtTest = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMau)).BeginInit();
@@ -204,6 +204,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Size = new System.Drawing.Size(1364, 60);
             this.panel2.TabIndex = 0;
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(980, 17);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(100, 32);
+            this.txtTest.TabIndex = 10;
+            this.txtTest.Text = "2025";
+            // 
             // nmYear
             // 
             this.nmYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,13 +248,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.lbYear.Size = new System.Drawing.Size(68, 26);
             this.lbYear.TabIndex = 3;
             this.lbYear.Text = "Năm:";
-            // 
-            // txtTest
-            // 
-            this.txtTest.Location = new System.Drawing.Point(980, 17);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(100, 32);
-            this.txtTest.TabIndex = 10;
             // 
             // FrmChonBieuMau
             // 

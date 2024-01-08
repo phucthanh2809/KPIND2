@@ -145,7 +145,7 @@
   <data name="cSua.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        4gAAAOIB3aE9QwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALKSURBVFhH7ZdP
+        4QAAAOEBcBgcLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALKSURBVFhH7ZdP
         aNNQHMdfdGmSVmXoQRAEryJ4cGjyOtHqwT+TTRCLq6NjfS9zmxM8+HegMjyoCHrU+a96EEH8gx7Ei6AH
         B+plUyYdDkV0CMpwKAo72Dx/v7QRm6a0aVPw4OHT5uX98r6fvIQkjwgh6o4WZVSj/J5q8NeKYd4N62aT
         01dUHDSKwXpVw8xCuKVsGbDgX6iU/1IN1oH9ngcFBZxtHwaHWo9Y0uWMILe/COnCmFBaDqNQVqPdUbuQ
@@ -167,7 +167,7 @@
   <data name="Xóa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMiSURBVFhH7Zdf
+        6wAAAOsBK2zXwgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMiSURBVFhH7Zdf
         SFNhHIZXgUqEeREVhX+guqquoqAsw5pz4nAzGuimc0laViTZjKgsFZWEduF0mYVKgTDXjCiI8g8sUBKK
         FgRBhKRBYIPUwjR1+vb71tnh7HjctO2ii73wXpzvnPM9z/m2nY/JlpOMjIzYrKysnMzMzF3ckGxbMzbG
         3cLn1dXAunpMxDchhTsV3hD4mEKhmJPL5UhLS4NKpbJtacEGgo7JqgBfo2rh2WpFKndbeMLB5xlcqVRO
@@ -202,7 +202,7 @@
   <data name="Frm_User.IconOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXsAAAEYCAYAAAC9Xlb/AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAA/7JJREFUeF7sXQV4FdfWvQlWp+4u/2v72r72tX0VNESQeLAYwaW01FtaWio4hAAJ
+        EgAACxIB0t1+/AAA/7JJREFUeF7sXQV4FdfWvQlWp+4u/2v72r72tX0VNESQeLAYwaW01FtaWio4hAAJ
         7sQVIgR3d3eLe9Bg8f2vdWYmBEjw0te+u79vf3PvzNy5Z46sLWeffUxmMpOZzGQmM5nJTGYyk5nMZCYz
         mclMZjKTmcxkJjOZyUxmMpOZzGQmM5nJTGYyk5nMZCYzmclMZjKTmcxkJjOZyUxmMpOZzGQmM5nJTGYy
         k5nMZCYzmclMZjKTmcxkJjOZyUxmMpOZzGQmM5nJTGYyk5nMZCYzmclMZjKTmcxkJjOZyUx/RyqSshqZ

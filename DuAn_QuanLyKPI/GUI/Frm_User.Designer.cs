@@ -30,11 +30,19 @@ namespace DuAn_QuanLyKPI.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_User));
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgrDanhSach = new System.Windows.Forms.DataGridView();
+            this.cMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPhongKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTenChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Xóa = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtMaNV = new ControlProject1510.XFilteg();
@@ -74,14 +82,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
-            this.cMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPhongKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTenChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Xóa = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
@@ -107,16 +107,17 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.dgrDanhSach.AllowUserToAddRows = false;
             this.dgrDanhSach.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrDanhSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrDanhSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgrDanhSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrDanhSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgrDanhSach.ColumnHeadersHeight = 60;
             this.dgrDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cMaNV,
@@ -140,6 +141,76 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSach.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrDanhSach_CellMouseClick);
             this.dgrDanhSach.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrDanhSach_RowPostPaint);
             this.dgrDanhSach.Click += new System.EventHandler(this.dgrDanhSach_Click_1);
+            // 
+            // cMaNV
+            // 
+            this.cMaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cMaNV.DataPropertyName = "MANV";
+            this.cMaNV.FillWeight = 200F;
+            this.cMaNV.HeaderText = "Mã NV";
+            this.cMaNV.Name = "cMaNV";
+            this.cMaNV.ReadOnly = true;
+            this.cMaNV.Width = 76;
+            // 
+            // cHoTen
+            // 
+            this.cHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cHoTen.DataPropertyName = "TenNV";
+            this.cHoTen.HeaderText = "Họ tên";
+            this.cHoTen.Name = "cHoTen";
+            this.cHoTen.ReadOnly = true;
+            // 
+            // cTenTaiKhoan
+            // 
+            this.cTenTaiKhoan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cTenTaiKhoan.DataPropertyName = "TenTaiKhoan";
+            this.cTenTaiKhoan.HeaderText = "Tên tài khoản";
+            this.cTenTaiKhoan.Name = "cTenTaiKhoan";
+            this.cTenTaiKhoan.ReadOnly = true;
+            this.cTenTaiKhoan.Width = 106;
+            // 
+            // cPhongKhoa
+            // 
+            this.cPhongKhoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cPhongKhoa.DataPropertyName = "TenPK";
+            this.cPhongKhoa.HeaderText = "Phòng khoa";
+            this.cPhongKhoa.Name = "cPhongKhoa";
+            this.cPhongKhoa.ReadOnly = true;
+            this.cPhongKhoa.Width = 97;
+            // 
+            // cTenChucDanh
+            // 
+            this.cTenChucDanh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cTenChucDanh.DataPropertyName = "TenChucDanh";
+            this.cTenChucDanh.HeaderText = "Tên chức danh";
+            this.cTenChucDanh.Name = "cTenChucDanh";
+            this.cTenChucDanh.ReadOnly = true;
+            this.cTenChucDanh.Width = 114;
+            // 
+            // cHinhAnh
+            // 
+            this.cHinhAnh.DataPropertyName = "HinhAnhNV";
+            this.cHinhAnh.HeaderText = "Hình ảnh";
+            this.cHinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.cHinhAnh.MinimumWidth = 30;
+            this.cHinhAnh.Name = "cHinhAnh";
+            this.cHinhAnh.ReadOnly = true;
+            // 
+            // cSua
+            // 
+            this.cSua.HeaderText = "Sửa";
+            this.cSua.Image = ((System.Drawing.Image)(resources.GetObject("cSua.Image")));
+            this.cSua.Name = "cSua";
+            this.cSua.ReadOnly = true;
+            this.cSua.Width = 50;
+            // 
+            // Xóa
+            // 
+            this.Xóa.HeaderText = "Xóa";
+            this.Xóa.Image = ((System.Drawing.Image)(resources.GetObject("Xóa.Image")));
+            this.Xóa.Name = "Xóa";
+            this.Xóa.ReadOnly = true;
+            this.Xóa.Width = 50;
             // 
             // dataGridViewImageColumn1
             // 
@@ -275,6 +346,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // pnThongTinNhanVien
             // 
+            this.pnThongTinNhanVien.BackColor = System.Drawing.Color.White;
             this.pnThongTinNhanVien.Controls.Add(this.flowLayoutPanel1);
             this.pnThongTinNhanVien.Controls.Add(this.panel6);
             this.pnThongTinNhanVien.Controls.Add(this.panel4);
@@ -288,6 +360,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Controls.Add(this.btnLuuSua);
             this.flowLayoutPanel1.Controls.Add(this.btnclear);
             this.flowLayoutPanel1.Controls.Add(this.btnUpImage);
@@ -335,6 +408,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.txtMaNV);
@@ -516,6 +590,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.pbUser);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
@@ -552,6 +627,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -608,76 +684,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1364, 736);
             this.fluentDesignFormContainer1.TabIndex = 10;
-            // 
-            // cMaNV
-            // 
-            this.cMaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cMaNV.DataPropertyName = "MANV";
-            this.cMaNV.FillWeight = 200F;
-            this.cMaNV.HeaderText = "Mã NV";
-            this.cMaNV.Name = "cMaNV";
-            this.cMaNV.ReadOnly = true;
-            this.cMaNV.Width = 65;
-            // 
-            // cHoTen
-            // 
-            this.cHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cHoTen.DataPropertyName = "TenNV";
-            this.cHoTen.HeaderText = "Họ tên";
-            this.cHoTen.Name = "cHoTen";
-            this.cHoTen.ReadOnly = true;
-            // 
-            // cTenTaiKhoan
-            // 
-            this.cTenTaiKhoan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cTenTaiKhoan.DataPropertyName = "TenTaiKhoan";
-            this.cTenTaiKhoan.HeaderText = "Tên tài khoản";
-            this.cTenTaiKhoan.Name = "cTenTaiKhoan";
-            this.cTenTaiKhoan.ReadOnly = true;
-            this.cTenTaiKhoan.Width = 143;
-            // 
-            // cPhongKhoa
-            // 
-            this.cPhongKhoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cPhongKhoa.DataPropertyName = "TenPK";
-            this.cPhongKhoa.HeaderText = "Phòng khoa";
-            this.cPhongKhoa.Name = "cPhongKhoa";
-            this.cPhongKhoa.ReadOnly = true;
-            this.cPhongKhoa.Width = 130;
-            // 
-            // cTenChucDanh
-            // 
-            this.cTenChucDanh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cTenChucDanh.DataPropertyName = "TenChucDanh";
-            this.cTenChucDanh.HeaderText = "Tên chức danh";
-            this.cTenChucDanh.Name = "cTenChucDanh";
-            this.cTenChucDanh.ReadOnly = true;
-            this.cTenChucDanh.Width = 152;
-            // 
-            // cHinhAnh
-            // 
-            this.cHinhAnh.DataPropertyName = "HinhAnhNV";
-            this.cHinhAnh.HeaderText = "Hình ảnh";
-            this.cHinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.cHinhAnh.MinimumWidth = 30;
-            this.cHinhAnh.Name = "cHinhAnh";
-            this.cHinhAnh.ReadOnly = true;
-            // 
-            // cSua
-            // 
-            this.cSua.HeaderText = "Sửa";
-            this.cSua.Image = ((System.Drawing.Image)(resources.GetObject("cSua.Image")));
-            this.cSua.Name = "cSua";
-            this.cSua.ReadOnly = true;
-            this.cSua.Width = 50;
-            // 
-            // Xóa
-            // 
-            this.Xóa.HeaderText = "Xóa";
-            this.Xóa.Image = ((System.Drawing.Image)(resources.GetObject("Xóa.Image")));
-            this.Xóa.Name = "Xóa";
-            this.Xóa.ReadOnly = true;
-            this.Xóa.Width = 50;
             // 
             // Frm_User
             // 

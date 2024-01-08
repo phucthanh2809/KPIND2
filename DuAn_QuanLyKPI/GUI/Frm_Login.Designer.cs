@@ -180,6 +180,7 @@
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseBorderColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.close;
             this.btnCancel.Location = new System.Drawing.Point(257, 205);
             this.btnCancel.Name = "btnCancel";
@@ -325,12 +326,14 @@
             // 
             // Frm_Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(415, 540);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
