@@ -84,6 +84,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachHTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIHTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIHTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel41 = new System.Windows.Forms.Panel();
@@ -96,6 +97,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachHTVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIHTVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIHTVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel39 = new System.Windows.Forms.Panel();
@@ -108,6 +110,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachHTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIHTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIHTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel37 = new System.Windows.Forms.Panel();
@@ -157,6 +160,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPIBVVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungBVVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachBVVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamBVVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoTieuChiBVVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIBVVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -166,6 +170,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPINVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungNVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachNVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPINVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamNVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPINVH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -197,7 +202,24 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel11 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgrBVMucTieuTaiChinh = new System.Windows.Forms.DataGridView();
+            this.cChonTatCaBVTC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cMaPhieuKPIBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMaKPIBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNoiDungBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cKeHoachBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPITC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNamBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoTieuChiBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoKPIBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSocpTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgrNhapMucTieuTaiChinh = new System.Windows.Forms.DataGridView();
+            this.cXoaTatCaNTC = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cMaKPINTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNoiDungNTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cKeHoachNTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPINTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNamNTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoKPINTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel13 = new System.Windows.Forms.Panel();
             this.txtTongTrongSoTC = new ControlProject1510.XFilteg();
             this.label13 = new System.Windows.Forms.Label();
@@ -231,6 +253,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPIBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoTieuChiBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIBVKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -239,7 +262,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.cXoaTatCaNKH = new System.Windows.Forms.DataGridViewImageColumn();
             this.cMaKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cKeHoachNTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cKeHoachNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamNKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPINKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -275,6 +299,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPIBVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungBVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachBVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamBVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoTieuChiBVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIBVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -284,6 +309,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPINPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungNPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachNPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPINPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamNPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPINPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel27 = new System.Windows.Forms.Panel();
@@ -359,23 +385,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cChiTieuKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cXoaTatCaNTC = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cMaKPINTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNoiDungNTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cKeHoachNTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cChiTieuKPINTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNamNTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSoKPINTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cChonTatCaBVTC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cMaPhieuKPIBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cMaKPIBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNoiDungBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cKeHoachBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cChiTieuKPITC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNamBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSoTieuChiBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSoKPIBVTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSocpTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).BeginInit();
@@ -758,6 +767,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.cKeHoachHTPT,
+            this.cChiTieuKPIHTPT,
             this.dataGridViewTextBoxColumn16,
             this.cTrongSoKPIHTPT});
             this.dgrHTMucTieuPhatTrien.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -793,12 +803,18 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn15.DataPropertyName = "cNoiDungNPT";
             this.dataGridViewTextBoxColumn15.HeaderText = "Mục tiêu Khoa/ Phòng ";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             // 
             // cKeHoachHTPT
             // 
             this.cKeHoachHTPT.HeaderText = "Kế hoạch ";
             this.cKeHoachHTPT.Name = "cKeHoachHTPT";
+            // 
+            // cChiTieuKPIHTPT
+            // 
+            this.cChiTieuKPIHTPT.DataPropertyName = "cChiTieuKPINTC";
+            this.cChiTieuKPIHTPT.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPIHTPT.Name = "cChiTieuKPIHTPT";
+            this.cChiTieuKPIHTPT.Visible = false;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -897,6 +913,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.cKeHoachHTVH,
+            this.cChiTieuKPIHTVH,
             this.dataGridViewTextBoxColumn12,
             this.cTrongSoKPIHTVH});
             this.dgrHTMucTieuVanHanh.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -932,12 +949,18 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn11.DataPropertyName = "cNoiDungNVH";
             this.dataGridViewTextBoxColumn11.HeaderText = "Mục tiêu Khoa/ Phòng ";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // cKeHoachHTVH
             // 
             this.cKeHoachHTVH.HeaderText = "Kế hoạch ";
             this.cKeHoachHTVH.Name = "cKeHoachHTVH";
+            // 
+            // cChiTieuKPIHTVH
+            // 
+            this.cChiTieuKPIHTVH.DataPropertyName = "cChiTieuKPINVH";
+            this.cChiTieuKPIHTVH.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPIHTVH.Name = "cChiTieuKPIHTVH";
+            this.cChiTieuKPIHTVH.Visible = false;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -1036,6 +1059,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn6,
             this.cKeHoachHTKH,
+            this.cChiTieuKPIHTKH,
             this.dataGridViewTextBoxColumn7,
             this.cTrongSoKPIHTKH});
             this.dgrHTMucTieuKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1071,13 +1095,19 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn6.DataPropertyName = "cNoiDungNKH";
             this.dataGridViewTextBoxColumn6.HeaderText = "Mục tiêu Khoa/ Phòng ";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // cKeHoachHTKH
             // 
             this.cKeHoachHTKH.DataPropertyName = "cKeHoachNKH";
             this.cKeHoachHTKH.HeaderText = "Kế hoạch";
             this.cKeHoachHTKH.Name = "cKeHoachHTKH";
+            // 
+            // cChiTieuKPIHTKH
+            // 
+            this.cChiTieuKPIHTKH.DataPropertyName = "cChiTieuKPINKH";
+            this.cChiTieuKPIHTKH.HeaderText = "Chỉ tiêu  ";
+            this.cChiTieuKPIHTKH.Name = "cChiTieuKPIHTKH";
+            this.cChiTieuKPIHTKH.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -1186,6 +1216,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrHTMucTieuTaiChinh.RowTemplate.Height = 40;
             this.dgrHTMucTieuTaiChinh.Size = new System.Drawing.Size(1333, 200);
             this.dgrHTMucTieuTaiChinh.TabIndex = 18;
+            this.dgrHTMucTieuTaiChinh.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrHTMucTieuTaiChinh_CellValidated);
             this.dgrHTMucTieuTaiChinh.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgrHTMucTieuTaiChinh_CellValidating);
             this.dgrHTMucTieuTaiChinh.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrHTMucTieuTaiChinh_RowPostPaint);
             // 
@@ -1575,10 +1606,10 @@ namespace DuAn_QuanLyKPI.GUI
             // tabVanHanh
             // 
             this.tabVanHanh.Controls.Add(this.panel6);
-            this.tabVanHanh.Location = new System.Drawing.Point(4, 22);
+            this.tabVanHanh.Location = new System.Drawing.Point(4, 30);
             this.tabVanHanh.Name = "tabVanHanh";
             this.tabVanHanh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVanHanh.Size = new System.Drawing.Size(1356, 710);
+            this.tabVanHanh.Size = new System.Drawing.Size(1356, 702);
             this.tabVanHanh.TabIndex = 4;
             this.tabVanHanh.Text = "Vận hành";
             this.tabVanHanh.UseVisualStyleBackColor = true;
@@ -1591,7 +1622,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1350, 704);
+            this.panel6.Size = new System.Drawing.Size(1350, 696);
             this.panel6.TabIndex = 0;
             // 
             // splitContainer3
@@ -1608,8 +1639,8 @@ namespace DuAn_QuanLyKPI.GUI
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dgrNhapMucTieuVanHanh);
-            this.splitContainer3.Size = new System.Drawing.Size(1350, 533);
-            this.splitContainer3.SplitterDistance = 257;
+            this.splitContainer3.Size = new System.Drawing.Size(1350, 525);
+            this.splitContainer3.SplitterDistance = 253;
             this.splitContainer3.TabIndex = 7;
             // 
             // dgrBVMucTieuVanHanh
@@ -1633,6 +1664,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPIBVVH,
             this.cNoiDungBVVH,
             this.cKeHoachBVVH,
+            this.cChiTieuKPIVH,
             this.cNamBVVH,
             this.cTrongSoTieuChiBVVH,
             this.cTrongSoKPIBVVH,
@@ -1643,7 +1675,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuVanHanh.ReadOnly = true;
             this.dgrBVMucTieuVanHanh.RowHeadersWidth = 40;
             this.dgrBVMucTieuVanHanh.RowTemplate.Height = 40;
-            this.dgrBVMucTieuVanHanh.Size = new System.Drawing.Size(1350, 257);
+            this.dgrBVMucTieuVanHanh.Size = new System.Drawing.Size(1350, 253);
             this.dgrBVMucTieuVanHanh.TabIndex = 18;
             this.dgrBVMucTieuVanHanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuVanHanh_CellClick);
             this.dgrBVMucTieuVanHanh.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuVanHanh_ColumnHeaderMouseClick);
@@ -1692,6 +1724,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.cKeHoachBVVH.HeaderText = "Kế hoạch";
             this.cKeHoachBVVH.Name = "cKeHoachBVVH";
             this.cKeHoachBVVH.ReadOnly = true;
+            // 
+            // cChiTieuKPIVH
+            // 
+            this.cChiTieuKPIVH.DataPropertyName = "ChiTieu";
+            this.cChiTieuKPIVH.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPIVH.Name = "cChiTieuKPIVH";
+            this.cChiTieuKPIVH.ReadOnly = true;
+            this.cChiTieuKPIVH.Visible = false;
             // 
             // cNamBVVH
             // 
@@ -1748,6 +1788,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPINVH,
             this.cNoiDungNVH,
             this.cKeHoachNVH,
+            this.cChiTieuKPINVH,
             this.cNamNVH,
             this.cTrongSoKPINVH});
             this.dgrNhapMucTieuVanHanh.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1755,7 +1796,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuVanHanh.Name = "dgrNhapMucTieuVanHanh";
             this.dgrNhapMucTieuVanHanh.RowHeadersWidth = 40;
             this.dgrNhapMucTieuVanHanh.RowTemplate.Height = 40;
-            this.dgrNhapMucTieuVanHanh.Size = new System.Drawing.Size(1350, 272);
+            this.dgrNhapMucTieuVanHanh.Size = new System.Drawing.Size(1350, 268);
             this.dgrNhapMucTieuVanHanh.TabIndex = 19;
             this.dgrNhapMucTieuVanHanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuVanHanh_CellClick);
             this.dgrNhapMucTieuVanHanh.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuVanHanh_CellEndEdit);
@@ -1796,6 +1837,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.cKeHoachNVH.DataPropertyName = "cKeHoachcpVH";
             this.cKeHoachNVH.HeaderText = "Kế hoạch ";
             this.cKeHoachNVH.Name = "cKeHoachNVH";
+            // 
+            // cChiTieuKPINVH
+            // 
+            this.cChiTieuKPINVH.DataPropertyName = "cChiTieuKPIcpVH";
+            this.cChiTieuKPINVH.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPINVH.Name = "cChiTieuKPINVH";
+            this.cChiTieuKPINVH.Visible = false;
             // 
             // cNamNVH
             // 
@@ -2036,7 +2084,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel8.Controls.Add(this.label24);
             this.panel8.Controls.Add(this.btnTTPT);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 658);
+            this.panel8.Location = new System.Drawing.Point(0, 650);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1350, 46);
             this.panel8.TabIndex = 2;
@@ -2186,6 +2234,92 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuTaiChinh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgrBVMucTieuTaiChinh_MouseClick);
             this.dgrBVMucTieuTaiChinh.MouseLeave += new System.EventHandler(this.dgrBVMucTieuTaiChinh_MouseLeave);
             // 
+            // cChonTatCaBVTC
+            // 
+            this.cChonTatCaBVTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cChonTatCaBVTC.HeaderText = "Chọn tất cả";
+            this.cChonTatCaBVTC.Name = "cChonTatCaBVTC";
+            this.cChonTatCaBVTC.ReadOnly = true;
+            this.cChonTatCaBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cChonTatCaBVTC.Width = 96;
+            // 
+            // cMaPhieuKPIBVTC
+            // 
+            this.cMaPhieuKPIBVTC.DataPropertyName = "MaPhieuKPIBV";
+            this.cMaPhieuKPIBVTC.HeaderText = "Mã phiếu KPI ";
+            this.cMaPhieuKPIBVTC.Name = "cMaPhieuKPIBVTC";
+            this.cMaPhieuKPIBVTC.ReadOnly = true;
+            this.cMaPhieuKPIBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cMaPhieuKPIBVTC.Visible = false;
+            // 
+            // cMaKPIBVTC
+            // 
+            this.cMaKPIBVTC.DataPropertyName = "MaKPI";
+            this.cMaKPIBVTC.HeaderText = "Mã KPI ";
+            this.cMaKPIBVTC.Name = "cMaKPIBVTC";
+            this.cMaKPIBVTC.ReadOnly = true;
+            this.cMaKPIBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cMaKPIBVTC.Visible = false;
+            // 
+            // cNoiDungBVTC
+            // 
+            this.cNoiDungBVTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungBVTC.DataPropertyName = "NoiDung";
+            this.cNoiDungBVTC.HeaderText = "Mục tiêu Bệnh Viện";
+            this.cNoiDungBVTC.Name = "cNoiDungBVTC";
+            this.cNoiDungBVTC.ReadOnly = true;
+            this.cNoiDungBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cKeHoachBVTC
+            // 
+            this.cKeHoachBVTC.DataPropertyName = "KeHoach";
+            this.cKeHoachBVTC.HeaderText = "Kế hoạch";
+            this.cKeHoachBVTC.Name = "cKeHoachBVTC";
+            this.cKeHoachBVTC.ReadOnly = true;
+            // 
+            // cChiTieuKPITC
+            // 
+            this.cChiTieuKPITC.DataPropertyName = "ChiTieu";
+            this.cChiTieuKPITC.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPITC.Name = "cChiTieuKPITC";
+            this.cChiTieuKPITC.ReadOnly = true;
+            this.cChiTieuKPITC.Visible = false;
+            // 
+            // cNamBVTC
+            // 
+            this.cNamBVTC.DataPropertyName = "NamPhieu";
+            this.cNamBVTC.HeaderText = "Năm";
+            this.cNamBVTC.Name = "cNamBVTC";
+            this.cNamBVTC.ReadOnly = true;
+            this.cNamBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cNamBVTC.Visible = false;
+            // 
+            // cTrongSoTieuChiBVTC
+            // 
+            this.cTrongSoTieuChiBVTC.DataPropertyName = "TrongSoTCBV";
+            this.cTrongSoTieuChiBVTC.HeaderText = "Trọng số Tiêu chí Bệnh Viện";
+            this.cTrongSoTieuChiBVTC.Name = "cTrongSoTieuChiBVTC";
+            this.cTrongSoTieuChiBVTC.ReadOnly = true;
+            this.cTrongSoTieuChiBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cTrongSoTieuChiBVTC.Visible = false;
+            // 
+            // cTrongSoKPIBVTC
+            // 
+            this.cTrongSoKPIBVTC.DataPropertyName = "TrongSoKPIBV";
+            this.cTrongSoKPIBVTC.HeaderText = "Trọng số (%)";
+            this.cTrongSoKPIBVTC.Name = "cTrongSoKPIBVTC";
+            this.cTrongSoKPIBVTC.ReadOnly = true;
+            this.cTrongSoKPIBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cTrongSocpTC
+            // 
+            this.cTrongSocpTC.DataPropertyName = "TrongSocpTC";
+            this.cTrongSocpTC.HeaderText = "Trọng số Copy Tài Chính ";
+            this.cTrongSocpTC.Name = "cTrongSocpTC";
+            this.cTrongSocpTC.ReadOnly = true;
+            this.cTrongSocpTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cTrongSocpTC.Visible = false;
+            // 
             // dgrNhapMucTieuTaiChinh
             // 
             this.dgrNhapMucTieuTaiChinh.AllowUserToAddRows = false;
@@ -2225,6 +2359,58 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuTaiChinh.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrNhapMucTieuTaiChinh_ColumnHeaderMouseClick_1);
             this.dgrNhapMucTieuTaiChinh.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrNhapMucTieuTaiChinh_RowPostPaint_1);
             this.dgrNhapMucTieuTaiChinh.MouseHover += new System.EventHandler(this.dgrNhapMucTieuTaiChinh_MouseHover);
+            // 
+            // cXoaTatCaNTC
+            // 
+            this.cXoaTatCaNTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cXoaTatCaNTC.HeaderText = "Xóa tất cả";
+            this.cXoaTatCaNTC.Image = ((System.Drawing.Image)(resources.GetObject("cXoaTatCaNTC.Image")));
+            this.cXoaTatCaNTC.Name = "cXoaTatCaNTC";
+            this.cXoaTatCaNTC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cXoaTatCaNTC.Width = 68;
+            // 
+            // cMaKPINTC
+            // 
+            this.cMaKPINTC.DataPropertyName = "cMaKPIcpTC";
+            this.cMaKPINTC.HeaderText = "Mã KPI ";
+            this.cMaKPINTC.Name = "cMaKPINTC";
+            this.cMaKPINTC.ReadOnly = true;
+            this.cMaKPINTC.Visible = false;
+            // 
+            // cNoiDungNTC
+            // 
+            this.cNoiDungNTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungNTC.DataPropertyName = "cNoiDungcpTC";
+            this.cNoiDungNTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
+            this.cNoiDungNTC.Name = "cNoiDungNTC";
+            this.cNoiDungNTC.ReadOnly = true;
+            // 
+            // cKeHoachNTC
+            // 
+            this.cKeHoachNTC.DataPropertyName = "cKeHoachcpTC";
+            this.cKeHoachNTC.HeaderText = "Kế hoạch ";
+            this.cKeHoachNTC.Name = "cKeHoachNTC";
+            // 
+            // cChiTieuKPINTC
+            // 
+            this.cChiTieuKPINTC.DataPropertyName = "cChiTieuKPIcpTC";
+            this.cChiTieuKPINTC.HeaderText = "Chỉ tiêu";
+            this.cChiTieuKPINTC.Name = "cChiTieuKPINTC";
+            this.cChiTieuKPINTC.Visible = false;
+            // 
+            // cNamNTC
+            // 
+            this.cNamNTC.DataPropertyName = "cNamcpTC";
+            this.cNamNTC.HeaderText = "Năm";
+            this.cNamNTC.Name = "cNamNTC";
+            this.cNamNTC.ReadOnly = true;
+            this.cNamNTC.Visible = false;
+            // 
+            // cTrongSoKPINTC
+            // 
+            this.cTrongSoKPINTC.DataPropertyName = "TrongSocpTC";
+            this.cTrongSoKPINTC.HeaderText = "Trọng số (%)";
+            this.cTrongSoKPINTC.Name = "cTrongSoKPINTC";
             // 
             // panel13
             // 
@@ -2550,7 +2736,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgrNhapMucTieuKhachHang);
             this.splitContainer2.Size = new System.Drawing.Size(1350, 533);
-            this.splitContainer2.SplitterDistance = 254;
+            this.splitContainer2.SplitterDistance = 253;
             this.splitContainer2.TabIndex = 6;
             // 
             // dgrBVMucTieuKhachHang
@@ -2574,6 +2760,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPIBVKH,
             this.cNoiDungBVKH,
             this.cKeHoachBVKH,
+            this.cChiTieuKPIKH,
             this.cNamBVKH,
             this.cTrongSoTieuChiBVKH,
             this.cTrongSoKPIBVKH,
@@ -2584,7 +2771,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuKhachHang.ReadOnly = true;
             this.dgrBVMucTieuKhachHang.RowHeadersWidth = 40;
             this.dgrBVMucTieuKhachHang.RowTemplate.Height = 40;
-            this.dgrBVMucTieuKhachHang.Size = new System.Drawing.Size(1350, 254);
+            this.dgrBVMucTieuKhachHang.Size = new System.Drawing.Size(1350, 253);
             this.dgrBVMucTieuKhachHang.TabIndex = 18;
             this.dgrBVMucTieuKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuKhachHang_CellClick);
             this.dgrBVMucTieuKhachHang.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuKhachHang_ColumnHeaderMouseClick);
@@ -2634,6 +2821,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.cKeHoachBVKH.HeaderText = "Kế hoạch";
             this.cKeHoachBVKH.Name = "cKeHoachBVKH";
             this.cKeHoachBVKH.ReadOnly = true;
+            // 
+            // cChiTieuKPIKH
+            // 
+            this.cChiTieuKPIKH.DataPropertyName = "ChiTieu";
+            this.cChiTieuKPIKH.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPIKH.Name = "cChiTieuKPIKH";
+            this.cChiTieuKPIKH.ReadOnly = true;
+            this.cChiTieuKPIKH.Visible = false;
             // 
             // cNamBVKH
             // 
@@ -2689,7 +2884,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.cXoaTatCaNKH,
             this.cMaKPINKH,
             this.cNoiDungNKH,
-            this.cKeHoachNTKH,
+            this.cKeHoachNKH,
+            this.cChiTieuKPINKH,
             this.cNamNKH,
             this.cTrongSoKPINKH});
             this.dgrNhapMucTieuKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2697,7 +2893,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuKhachHang.Name = "dgrNhapMucTieuKhachHang";
             this.dgrNhapMucTieuKhachHang.RowHeadersWidth = 40;
             this.dgrNhapMucTieuKhachHang.RowTemplate.Height = 40;
-            this.dgrNhapMucTieuKhachHang.Size = new System.Drawing.Size(1350, 275);
+            this.dgrNhapMucTieuKhachHang.Size = new System.Drawing.Size(1350, 276);
             this.dgrNhapMucTieuKhachHang.TabIndex = 19;
             this.dgrNhapMucTieuKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuKhachHang_CellClick);
             this.dgrNhapMucTieuKhachHang.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuKhachHang_CellEndEdit);
@@ -2733,11 +2929,18 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNoiDungNKH.Name = "cNoiDungNKH";
             this.cNoiDungNKH.ReadOnly = true;
             // 
-            // cKeHoachNTKH
+            // cKeHoachNKH
             // 
-            this.cKeHoachNTKH.DataPropertyName = "cKeHoachcpKH";
-            this.cKeHoachNTKH.HeaderText = "Kế hoạch ";
-            this.cKeHoachNTKH.Name = "cKeHoachNTKH";
+            this.cKeHoachNKH.DataPropertyName = "cKeHoachcpKH";
+            this.cKeHoachNKH.HeaderText = "Kế hoạch ";
+            this.cKeHoachNKH.Name = "cKeHoachNKH";
+            // 
+            // cChiTieuKPINKH
+            // 
+            this.cChiTieuKPINKH.DataPropertyName = "cChiTieuKPIcpKH";
+            this.cChiTieuKPINKH.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPINKH.Name = "cChiTieuKPINKH";
+            this.cChiTieuKPINKH.Visible = false;
             // 
             // cNamNKH
             // 
@@ -3077,7 +3280,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.splitContainer4.Panel2.Controls.Add(this.dgrNhapMucTieuPhatTrien);
             this.splitContainer4.Size = new System.Drawing.Size(1350, 533);
-            this.splitContainer4.SplitterDistance = 257;
+            this.splitContainer4.SplitterDistance = 256;
             this.splitContainer4.TabIndex = 11;
             // 
             // dgrBVMucTieuPhatTrien
@@ -3101,6 +3304,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPIBVPT,
             this.cNoiDungBVPT,
             this.cKeHoachBVPT,
+            this.cChiTieuKPIPT,
             this.cNamBVPT,
             this.cTrongSoTieuChiBVPT,
             this.cTrongSoKPIBVPT,
@@ -3111,7 +3315,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuPhatTrien.ReadOnly = true;
             this.dgrBVMucTieuPhatTrien.RowHeadersWidth = 40;
             this.dgrBVMucTieuPhatTrien.RowTemplate.Height = 40;
-            this.dgrBVMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 257);
+            this.dgrBVMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 256);
             this.dgrBVMucTieuPhatTrien.TabIndex = 18;
             this.dgrBVMucTieuPhatTrien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuPhatTrien_CellClick);
             this.dgrBVMucTieuPhatTrien.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuPhatTrien_ColumnHeaderMouseClick);
@@ -3161,6 +3365,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.cKeHoachBVPT.HeaderText = "Kế hoạch";
             this.cKeHoachBVPT.Name = "cKeHoachBVPT";
             this.cKeHoachBVPT.ReadOnly = true;
+            // 
+            // cChiTieuKPIPT
+            // 
+            this.cChiTieuKPIPT.DataPropertyName = "ChiTieu";
+            this.cChiTieuKPIPT.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPIPT.Name = "cChiTieuKPIPT";
+            this.cChiTieuKPIPT.ReadOnly = true;
+            this.cChiTieuKPIPT.Visible = false;
             // 
             // cNamBVPT
             // 
@@ -3217,6 +3429,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaKPINPT,
             this.cNoiDungNPT,
             this.cKeHoachNPT,
+            this.cChiTieuKPINPT,
             this.cNamNPT,
             this.cTrongSoKPINPT});
             this.dgrNhapMucTieuPhatTrien.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3224,7 +3437,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuPhatTrien.Name = "dgrNhapMucTieuPhatTrien";
             this.dgrNhapMucTieuPhatTrien.RowHeadersWidth = 40;
             this.dgrNhapMucTieuPhatTrien.RowTemplate.Height = 40;
-            this.dgrNhapMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 272);
+            this.dgrNhapMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 273);
             this.dgrNhapMucTieuPhatTrien.TabIndex = 19;
             this.dgrNhapMucTieuPhatTrien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuPhatTrien_CellClick);
             this.dgrNhapMucTieuPhatTrien.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuPhatTrien_CellEndEdit);
@@ -3265,6 +3478,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.cKeHoachNPT.DataPropertyName = "cKeHoachcpPT";
             this.cKeHoachNPT.HeaderText = "Kế hoạch";
             this.cKeHoachNPT.Name = "cKeHoachNPT";
+            // 
+            // cChiTieuKPINPT
+            // 
+            this.cChiTieuKPINPT.DataPropertyName = "cChiTieuKPIcpPT";
+            this.cChiTieuKPINPT.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPINPT.Name = "cChiTieuKPINPT";
+            this.cChiTieuKPINPT.Visible = false;
             // 
             // cNamNPT
             // 
@@ -3945,7 +4165,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewTextBoxColumn2.DataPropertyName = "cMaKPINTC";
             this.dataGridViewTextBoxColumn2.HeaderText = "Mã KPI ";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // cNoiDungHTTC
@@ -3954,7 +4173,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNoiDungHTTC.DataPropertyName = "cNoiDungNTC";
             this.cNoiDungHTTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
             this.cNoiDungHTTC.Name = "cNoiDungHTTC";
-            this.cNoiDungHTTC.ReadOnly = true;
             // 
             // cKeHoachHTTC
             // 
@@ -3967,13 +4185,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.cChiTieuKPIHTTC.DataPropertyName = "cChiTieuKPINTC";
             this.cChiTieuKPIHTTC.HeaderText = "Chỉ tiêu";
             this.cChiTieuKPIHTTC.Name = "cChiTieuKPIHTTC";
+            this.cChiTieuKPIHTTC.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "cNamNTC";
             this.dataGridViewTextBoxColumn4.HeaderText = "Năm";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // cTrongSoKPIHTTC
@@ -3981,144 +4199,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cTrongSoKPIHTTC.DataPropertyName = "cTrongSoKPIBVTC";
             this.cTrongSoKPIHTTC.HeaderText = "Trọng số (%)";
             this.cTrongSoKPIHTTC.Name = "cTrongSoKPIHTTC";
-            // 
-            // cXoaTatCaNTC
-            // 
-            this.cXoaTatCaNTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cXoaTatCaNTC.HeaderText = "Xóa tất cả";
-            this.cXoaTatCaNTC.Image = ((System.Drawing.Image)(resources.GetObject("cXoaTatCaNTC.Image")));
-            this.cXoaTatCaNTC.Name = "cXoaTatCaNTC";
-            this.cXoaTatCaNTC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cXoaTatCaNTC.Width = 92;
-            // 
-            // cMaKPINTC
-            // 
-            this.cMaKPINTC.DataPropertyName = "cMaKPIcpTC";
-            this.cMaKPINTC.HeaderText = "Mã KPI ";
-            this.cMaKPINTC.Name = "cMaKPINTC";
-            this.cMaKPINTC.ReadOnly = true;
-            this.cMaKPINTC.Visible = false;
-            // 
-            // cNoiDungNTC
-            // 
-            this.cNoiDungNTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNoiDungNTC.DataPropertyName = "cNoiDungcpTC";
-            this.cNoiDungNTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
-            this.cNoiDungNTC.Name = "cNoiDungNTC";
-            this.cNoiDungNTC.ReadOnly = true;
-            // 
-            // cKeHoachNTC
-            // 
-            this.cKeHoachNTC.DataPropertyName = "cKeHoachcpTC";
-            this.cKeHoachNTC.HeaderText = "Kế hoạch ";
-            this.cKeHoachNTC.Name = "cKeHoachNTC";
-            // 
-            // cChiTieuKPINTC
-            // 
-            this.cChiTieuKPINTC.DataPropertyName = "cChiTieuKPIcpTC";
-            this.cChiTieuKPINTC.HeaderText = "Chỉ tiêu";
-            this.cChiTieuKPINTC.Name = "cChiTieuKPINTC";
-            this.cChiTieuKPINTC.Visible = false;
-            // 
-            // cNamNTC
-            // 
-            this.cNamNTC.DataPropertyName = "cNamcpTC";
-            this.cNamNTC.HeaderText = "Năm";
-            this.cNamNTC.Name = "cNamNTC";
-            this.cNamNTC.ReadOnly = true;
-            this.cNamNTC.Visible = false;
-            // 
-            // cTrongSoKPINTC
-            // 
-            this.cTrongSoKPINTC.DataPropertyName = "TrongSocpTC";
-            this.cTrongSoKPINTC.HeaderText = "Trọng số (%)";
-            this.cTrongSoKPINTC.Name = "cTrongSoKPINTC";
-            // 
-            // cChonTatCaBVTC
-            // 
-            this.cChonTatCaBVTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cChonTatCaBVTC.HeaderText = "Chọn tất cả";
-            this.cChonTatCaBVTC.Name = "cChonTatCaBVTC";
-            this.cChonTatCaBVTC.ReadOnly = true;
-            this.cChonTatCaBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cChonTatCaBVTC.Width = 121;
-            // 
-            // cMaPhieuKPIBVTC
-            // 
-            this.cMaPhieuKPIBVTC.DataPropertyName = "MaPhieuKPIBV";
-            this.cMaPhieuKPIBVTC.HeaderText = "Mã phiếu KPI ";
-            this.cMaPhieuKPIBVTC.Name = "cMaPhieuKPIBVTC";
-            this.cMaPhieuKPIBVTC.ReadOnly = true;
-            this.cMaPhieuKPIBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cMaPhieuKPIBVTC.Visible = false;
-            // 
-            // cMaKPIBVTC
-            // 
-            this.cMaKPIBVTC.DataPropertyName = "MaKPI";
-            this.cMaKPIBVTC.HeaderText = "Mã KPI ";
-            this.cMaKPIBVTC.Name = "cMaKPIBVTC";
-            this.cMaKPIBVTC.ReadOnly = true;
-            this.cMaKPIBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cMaKPIBVTC.Visible = false;
-            // 
-            // cNoiDungBVTC
-            // 
-            this.cNoiDungBVTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNoiDungBVTC.DataPropertyName = "NoiDung";
-            this.cNoiDungBVTC.HeaderText = "Mục tiêu Bệnh Viện";
-            this.cNoiDungBVTC.Name = "cNoiDungBVTC";
-            this.cNoiDungBVTC.ReadOnly = true;
-            this.cNoiDungBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cKeHoachBVTC
-            // 
-            this.cKeHoachBVTC.DataPropertyName = "KeHoach";
-            this.cKeHoachBVTC.HeaderText = "Kế hoạch";
-            this.cKeHoachBVTC.Name = "cKeHoachBVTC";
-            this.cKeHoachBVTC.ReadOnly = true;
-            // 
-            // cChiTieuKPITC
-            // 
-            this.cChiTieuKPITC.DataPropertyName = "ChiTieu";
-            this.cChiTieuKPITC.HeaderText = "Chỉ tiêu ";
-            this.cChiTieuKPITC.Name = "cChiTieuKPITC";
-            this.cChiTieuKPITC.ReadOnly = true;
-            this.cChiTieuKPITC.Visible = false;
-            // 
-            // cNamBVTC
-            // 
-            this.cNamBVTC.DataPropertyName = "NamPhieu";
-            this.cNamBVTC.HeaderText = "Năm";
-            this.cNamBVTC.Name = "cNamBVTC";
-            this.cNamBVTC.ReadOnly = true;
-            this.cNamBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cNamBVTC.Visible = false;
-            // 
-            // cTrongSoTieuChiBVTC
-            // 
-            this.cTrongSoTieuChiBVTC.DataPropertyName = "TrongSoTCBV";
-            this.cTrongSoTieuChiBVTC.HeaderText = "Trọng số Tiêu chí Bệnh Viện";
-            this.cTrongSoTieuChiBVTC.Name = "cTrongSoTieuChiBVTC";
-            this.cTrongSoTieuChiBVTC.ReadOnly = true;
-            this.cTrongSoTieuChiBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cTrongSoTieuChiBVTC.Visible = false;
-            // 
-            // cTrongSoKPIBVTC
-            // 
-            this.cTrongSoKPIBVTC.DataPropertyName = "TrongSoKPIBV";
-            this.cTrongSoKPIBVTC.HeaderText = "Trọng số (%)";
-            this.cTrongSoKPIBVTC.Name = "cTrongSoKPIBVTC";
-            this.cTrongSoKPIBVTC.ReadOnly = true;
-            this.cTrongSoKPIBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cTrongSocpTC
-            // 
-            this.cTrongSocpTC.DataPropertyName = "TrongSocpTC";
-            this.cTrongSocpTC.HeaderText = "Trọng số Copy Tài Chính ";
-            this.cTrongSocpTC.Name = "cTrongSocpTC";
-            this.cTrongSocpTC.ReadOnly = true;
-            this.cTrongSocpTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cTrongSocpTC.Visible = false;
             // 
             // FrmA73
             // 
@@ -4485,76 +4565,6 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.DataGridView dgrHTMucTieuTaiChinh;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTPT;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTVH;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTKH;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhieuKPIBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPIBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpVH;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhieuKPIBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPIBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpKH;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhieuKPIBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPIBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpPT;
-        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINVH;
-        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNTKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINKH;
-        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINPT;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIHTTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTTC;
         private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNTC;
@@ -4572,5 +4582,84 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpTC;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhieuKPIBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPIBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpKH;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhieuKPIBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPIBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpVH;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaPhieuKPIBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPIBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoTieuChiBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIBVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSocpPT;
+        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPINVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINVH;
+        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPINKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINKH;
+        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPINPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNamNPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINPT;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIHTPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTPT;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIHTVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTVH;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIHTKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTKH;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIHTTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTTC;
     }
 }
