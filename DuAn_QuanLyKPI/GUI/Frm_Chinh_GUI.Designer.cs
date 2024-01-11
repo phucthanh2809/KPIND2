@@ -352,7 +352,7 @@ namespace DuAn_QuanLyKPI
             // 
             // btnBieuMauKPI
             // 
-            this.btnBieuMauKPI.Caption = "Biểu mẫu KPI ";
+            this.btnBieuMauKPI.Caption = "Hệ thống Biểu mẫu ";
             this.btnBieuMauKPI.Id = 57;
             this.btnBieuMauKPI.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.assigntask;
             this.btnBieuMauKPI.LargeWidth = 100;

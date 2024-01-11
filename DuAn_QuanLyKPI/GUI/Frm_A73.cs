@@ -44,7 +44,7 @@ namespace DuAn_QuanLyKPI.GUI
             InitializeComponent();
             InitializeDataGridViews();
             LoadThongTinNhanVien();
-            LoadDataBVTaiChinh(true);
+            LoadDataBVTaiChinh();
             
             CreateTableCopyTC();
 
@@ -97,47 +97,37 @@ namespace DuAn_QuanLyKPI.GUI
             lbKhoaPhongHT.Text = TenPhongKhoa;
         }
         //Load DataGridview Tài chính
-        private void LoadDataBVTaiChinh(bool replace)
+        private void LoadDataBVTaiChinh()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "' ";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
             dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
             dgrBVMucTieuTaiChinh.DataSource = tb;
+            // Only execute replacement logic if replacetc is true
+            //try
+            //{
+            //    foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+            //    {
+            //        string noiDung = row.Cells["cNoiDungBVTC"].Value.ToString();
+
+            //        if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+            //        {
+            //            // Replace the value only if the condition is met
+            //            noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
+            //        }
+            //        else if (noiDung.Contains("dd/mm/yyyy"))
+            //        {
+            //            // Replace the value only if the condition is met
+            //            noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
+            //        }
+            //        row.Cells["cNoiDungBVTC"].Value = noiDung;
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
+            //}
             lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
-            if (replace = true)
-            {
-                ReplaceKeHoach();
-            }  
-            else
-            {
-
-            }    
-        }
-        private void ReplaceKeHoach()
-        {
-            try
-            {
-                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
-                {
-                    string noiDung = row.Cells["cNoiDungBVTC"].Value.ToString();
-
-                    if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
-                    {
-                        //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                        noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
-                    }
-                    else if (noiDung.Contains("dd/mm/yyyy"))
-                    {
-                        //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                        noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
-                    }
-                    row.Cells["cNoiDungBVTC"].Value = noiDung;
-                }
-            }
-            catch (Exception)
-            {
-                ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
-            }
         }
         private void LoadDataBVKhachHang()
         {
@@ -168,7 +158,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
             }
-    lbYearKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cNamBVKH"].Value.ToString();
+            lbYearKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cNamBVKH"].Value.ToString();
         }
         private void LoadDataBVVanHanh()
         {
@@ -986,6 +976,7 @@ namespace DuAn_QuanLyKPI.GUI
             tc.Rows.Clear();
             for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
+
                 if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value != null && (bool)dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value == true)
                 {
                     DataRow newRow = tc.NewRow();
@@ -1004,7 +995,7 @@ namespace DuAn_QuanLyKPI.GUI
                     tc.Rows.Add(newRow);
                 }
             }
-            dgrNhapMucTieuTaiChinh.DataSource = tc;
+            dgrNhapMucTieuTaiChinh.DataSource = tc; 
         }
         private void LoadDataTableKH()
         {
@@ -1398,6 +1389,73 @@ namespace DuAn_QuanLyKPI.GUI
                 ev.QFrmThongBao("Chưa có dữ liệu. Vui lòng nhập dữ liệu");
             }
         }
+        private void ReplaceBVTC(bool Replace)
+        {
+            if (Replace = true)
+            {
+                try
+                {
+                    foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                    {
+                        string noiDung = row.Cells["cNoiDungBVTC"].Value.ToString();
+
+                        if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+                        {
+                            // Replace the value only if the condition is met
+                            noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
+                        }
+                        else if (noiDung.Contains("dd/mm/yyyy"))
+                        {
+                            // Replace the value only if the condition is met
+                            noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
+                        }
+                        row.Cells["cNoiDungBVTC"].Value = noiDung;
+                    }
+                }
+                catch (Exception)
+                {
+                    ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
+                }
+            }
+            else
+            {
+
+            }
+        }
+        private void ReplaceNTC(bool Replace)
+        {
+            if (Replace = true)
+            {
+                try
+                {
+                    foreach (DataGridViewRow row in dgrNhapMucTieuTaiChinh.Rows)
+                    {
+                        string noiDung = row.Cells["cNoiDungNTC"].Value.ToString();
+
+                        if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+                        {
+                            // Replace the value only if the condition is met
+                            noiDung = noiDung.Replace("X", row.Cells["cKeHoachNTC"].Value.ToString().Trim());
+                        }
+                        else if (noiDung.Contains("dd/mm/yyyy"))
+                        {
+                            // Replace the value only if the condition is met
+                            noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachNTC"].Value.ToString().Trim());
+                        }
+                        row.Cells["cNoiDungNTC"].Value = noiDung;
+                    }
+                }
+                catch (Exception)
+                {
+                    ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
+                }
+            }    
+            else    
+            {
+
+            }    
+        }
+
         #endregion
 
         #region Event
@@ -1423,6 +1481,7 @@ namespace DuAn_QuanLyKPI.GUI
                 LoadDataTableTC();
                 dgrBVMucTieuTaiChinh.Rows[e.RowIndex].Cells["cChonTatCaBVTC"].Value = true;
             }
+            ReplaceNTC(true);
         }
         private void dgrBVMucTieuKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1982,7 +2041,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void dgrNhapMucTieuTaiChinh_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             TinhTrongSoKPITC();
-            TinhTrongSoKPITC();
+            TinhTrongSoKPITC();     
         }
         private void dgrNhapMucTieuKhachHang_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
