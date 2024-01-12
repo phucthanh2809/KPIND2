@@ -1,6 +1,7 @@
 ﻿using BusinessCommon;
 using DevExpress.XtraEditors;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -44,8 +45,8 @@ namespace DuAn_QuanLyKPI.GUI
             InitializeComponent();
             InitializeDataGridViews();
             LoadThongTinNhanVien();
-            LoadDataBVTaiChinh();
-            
+            LoadDataBVTaiChinh(true);
+
             CreateTableCopyTC();
 
             updateTimer = new Timer { Interval = 100 };
@@ -94,41 +95,30 @@ namespace DuAn_QuanLyKPI.GUI
             lbKhoaPhongKH.Text = TenPhongKhoa;
             lbKhoaPhongVH.Text = TenPhongKhoa;
             lbKhoaPhongPT.Text = TenPhongKhoa;
-            lbKhoaPhongHT.Text = TenPhongKhoa;
+            lbKhoaPhongHT.Text = TenPhongKhoa; 
         }
         //Load DataGridview Tài chính
-        private void LoadDataBVTaiChinh()
+        private void LoadDataBVTaiChinh(bool replace)
         {
-            msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "' ";
-            DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
-            dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
-            dgrBVMucTieuTaiChinh.DataSource = tb;
-            // Only execute replacement logic if replacetc is true
-            //try
-            //{
-            //    foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
-            //    {
-            //        string noiDung = row.Cells["cNoiDungBVTC"].Value.ToString();
+            if (replace == true)
+            {
+                msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "' ";
+                DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
+                dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
+                dgrBVMucTieuTaiChinh.DataSource = tb;
+                ReplaceBVTC(true);
+            }
+            else if (replace == false)
+            {
+                ReplaceBVTC(false);
+            }
 
-            //        if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
-            //        {
-            //            // Replace the value only if the condition is met
-            //            noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
-            //        }
-            //        else if (noiDung.Contains("dd/mm/yyyy"))
-            //        {
-            //            // Replace the value only if the condition is met
-            //            noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
-            //        }
-            //        row.Cells["cNoiDungBVTC"].Value = noiDung;
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
-            //}
-            lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
+            if (dgrBVMucTieuTaiChinh.Rows.Count > 0)  // Check if there are rows before accessing them
+            {
+                lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
+            }
         }
+
         private void LoadDataBVKhachHang()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'C' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "'";
@@ -190,7 +180,6 @@ namespace DuAn_QuanLyKPI.GUI
                 ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
             }
             lbYearVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cNamBVVH"].Value.ToString();
-
         }
         private void LoadDataBVPhatTrien()
         {
@@ -976,7 +965,6 @@ namespace DuAn_QuanLyKPI.GUI
             tc.Rows.Clear();
             for (int i = 0; i < dgrBVMucTieuTaiChinh.Rows.Count; i++)
             {
-
                 if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value != null && (bool)dgrBVMucTieuTaiChinh.Rows[i].Cells["cChonTatCaBVTC"].Value == true)
                 {
                     DataRow newRow = tc.NewRow();
@@ -1391,7 +1379,7 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void ReplaceBVTC(bool Replace)
         {
-            if (Replace = true)
+            if (Replace)
             {
                 try
                 {
@@ -1419,19 +1407,35 @@ namespace DuAn_QuanLyKPI.GUI
             }
             else
             {
+                // Example: assuming originalValues is a List<string>
+                List<string> originalValues = new List<string>(); // Replace with your initialization
 
+                // Code for restoring to the original state
+                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                {
+                    int rowIndex = row.Index;
+
+                    if (rowIndex >= 0 && rowIndex < originalValues.Count)
+                    {
+                        row.Cells["cNoiDungBVTC"].Value = originalValues[rowIndex];
+                    }
+                    else
+                    {
+                        // Handle the case where the index is out of range
+                        // You may want to log or display an error message
+                    }
+                }
             }
         }
         private void ReplaceNTC(bool Replace)
         {
-            if (Replace = true)
+            if (Replace)
             {
                 try
                 {
                     foreach (DataGridViewRow row in dgrNhapMucTieuTaiChinh.Rows)
                     {
                         string noiDung = row.Cells["cNoiDungNTC"].Value.ToString();
-
                         if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
                         {
                             // Replace the value only if the condition is met
@@ -1450,12 +1454,11 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
                 }
             }    
-            else    
+            else 
             {
 
             }    
         }
-
         #endregion
 
         #region Event
@@ -1481,7 +1484,6 @@ namespace DuAn_QuanLyKPI.GUI
                 LoadDataTableTC();
                 dgrBVMucTieuTaiChinh.Rows[e.RowIndex].Cells["cChonTatCaBVTC"].Value = true;
             }
-            ReplaceNTC(true);
         }
         private void dgrBVMucTieuKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1633,6 +1635,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 try
                 {
+                    ReplaceNTC(false);
                     string chitieu = dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cChiTieuKPINTC"].Value.ToString();
 
                     if (chitieu.Contains("dd/mm/yyyy") || chitieu.Contains("dd/MM/yyyy"))
@@ -1657,6 +1660,7 @@ namespace DuAn_QuanLyKPI.GUI
                             // Set the appropriate value for the "cKeHoachNTC" column if needed.
                             dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cKeHoachNTC"].Value = userInput;
                         }
+                        ReplaceNTC(true);
                     }
                     else
                     {
