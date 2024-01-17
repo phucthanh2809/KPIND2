@@ -177,6 +177,9 @@
     <Compile Include="DTO\KPI_CaNhan.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\KPI_DangKiThem.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\KPI_KhoaPhong.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
@@ -190,6 +193,9 @@
     <Compile Include="DTO\NguoiDung.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\NguoiTruyCap.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\NhomTieuChi.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
@@ -197,6 +203,9 @@
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Quyen.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\QuyenTruyCap.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\sp_helpdiagramdefinition_Result.cs">
@@ -212,6 +221,9 @@
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\TongHopBieuMauPhieuKPI.cs">
+      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\TongHopTrangThaiBieuMauKPI_Result.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\backup.cs">

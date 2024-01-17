@@ -10,17 +10,10 @@
 namespace DuAn_QuanLyKPI.DTO
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ChiTietTieuChiMucTieuKhoaPhong
+    public partial class TongHopTrangThaiBieuMauKPI_Result
     {
-        public string MaPhieuKPIKP { get; set; }
-        public int MaKPI { get; set; }
-        public Nullable<double> TrongSoTCKP { get; set; }
-        public Nullable<double> TrongSoKPIKP { get; set; }
-        public string KeHoach { get; set; }
-    
-        public virtual KPI KPI { get; set; }
-        public virtual KPI_KhoaPhong KPI_KhoaPhong { get; set; }
+        public int IDBieuMau { get; set; }
+        public int NamPhieu { get; set; }
     }
 }

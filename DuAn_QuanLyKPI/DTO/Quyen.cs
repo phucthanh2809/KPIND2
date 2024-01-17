@@ -20,7 +20,7 @@ namespace DuAn_QuanLyKPI.DTO
             this.NguoiDung = new HashSet<NguoiDung>();
         }
     
-        public string MaQuyen { get; set; }
+        public int MaQuyen { get; set; }
         public string TenQuyen { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

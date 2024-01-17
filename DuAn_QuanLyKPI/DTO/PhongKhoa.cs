@@ -20,8 +20,8 @@ namespace DuAn_QuanLyKPI.DTO
             this.ChucDanh = new HashSet<ChucDanh>();
             this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
             this.NganHangKPI = new HashSet<NganHangKPI>();
-            this.NguoiDung = new HashSet<NguoiDung>();
             this.ChiTietKPIKhoaPhong = new HashSet<ChiTietKPIKhoaPhong>();
+            this.NguoiDung = new HashSet<NguoiDung>();
         }
     
         public string MaPK { get; set; }
@@ -34,8 +34,8 @@ namespace DuAn_QuanLyKPI.DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NganHangKPI> NganHangKPI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiDung> NguoiDung { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NguoiDung> NguoiDung { get; set; }
     }
 }

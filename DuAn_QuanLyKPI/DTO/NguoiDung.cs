@@ -27,6 +27,7 @@ namespace DuAn_QuanLyKPI.DTO
             this.KPI_CaNhan5 = new HashSet<KPI_CaNhan>();
             this.KPI_CaNhan6 = new HashSet<KPI_CaNhan>();
             this.KPI_CaNhan7 = new HashSet<KPI_CaNhan>();
+            this.KPI_DangKiThem = new HashSet<KPI_DangKiThem>();
             this.KPI_KhoaPhong = new HashSet<KPI_KhoaPhong>();
             this.KPI_KhoaPhong1 = new HashSet<KPI_KhoaPhong>();
             this.KPI_KhoaPhong2 = new HashSet<KPI_KhoaPhong>();
@@ -43,8 +44,9 @@ namespace DuAn_QuanLyKPI.DTO
         public string MatKhau { get; set; }
         public string MaPhongKhoa { get; set; }
         public string MaChucDanh { get; set; }
-        public string MaQuyen { get; set; }
+        public Nullable<int> MaQuyen { get; set; }
         public Nullable<int> MaCapDoKPIBenhVien { get; set; }
+        public Nullable<bool> QuyenTruyCap { get; set; }
     
         public virtual ChucDanh ChucDanh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -67,6 +69,8 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual ICollection<KPI_CaNhan> KPI_CaNhan6 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_CaNhan> KPI_CaNhan7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KPI_DangKiThem> KPI_DangKiThem { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -32,13 +32,15 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual DbSet<KPI> KPI { get; set; }
         public virtual DbSet<KPI_BenhVien> KPI_BenhVien { get; set; }
         public virtual DbSet<KPI_CaNhan> KPI_CaNhan { get; set; }
+        public virtual DbSet<KPI_DangKiThem> KPI_DangKiThem { get; set; }
         public virtual DbSet<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         public virtual DbSet<KPI_TruongKhoaPhong> KPI_TruongKhoaPhong { get; set; }
         public virtual DbSet<NganHangKPI> NganHangKPI { get; set; }
-        public virtual DbSet<NguoiDung> NguoiDung { get; set; }
+        public virtual DbSet<NguoiTruyCap> NguoiTruyCap { get; set; }
         public virtual DbSet<NhomTieuChi> NhomTieuChi { get; set; }
         public virtual DbSet<PhongKhoa> PhongKhoa { get; set; }
         public virtual DbSet<Quyen> Quyen { get; set; }
+        public virtual DbSet<QuyenTruyCap> QuyenTruyCap { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<ThongBao> ThongBao { get; set; }
         public virtual DbSet<TongHopBieuMauPhieuKPI> TongHopBieuMauPhieuKPI { get; set; }
@@ -48,6 +50,7 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual DbSet<ChiTietKPITruongKhoaPhong> ChiTietKPITruongKhoaPhong { get; set; }
         public virtual DbSet<ChiTietTieuChiMucTieuBV> ChiTietTieuChiMucTieuBV { get; set; }
         public virtual DbSet<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
+        public virtual DbSet<NguoiDung> NguoiDung { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -150,6 +153,19 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<TongHopTrangThaiBieuMauKPI_Result> TongHopTrangThaiBieuMauKPI(Nullable<int> iDBieuMau, Nullable<int> nam)
+        {
+            var iDBieuMauParameter = iDBieuMau.HasValue ?
+                new ObjectParameter("IDBieuMau", iDBieuMau) :
+                new ObjectParameter("IDBieuMau", typeof(int));
+    
+            var namParameter = nam.HasValue ?
+                new ObjectParameter("Nam", nam) :
+                new ObjectParameter("Nam", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TongHopTrangThaiBieuMauKPI_Result>("TongHopTrangThaiBieuMauKPI", iDBieuMauParameter, namParameter);
         }
     }
 }

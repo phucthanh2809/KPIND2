@@ -26,5 +26,6 @@ namespace DuAn_QuanLyKPI.Constants
         // Thêm các thuộc tính để lưu trữ thông tin của bạn
         public string IDUserCurrent { get; set; }
         public string Permission { get; set; }
+        public int Quyen { get; set; }
     }
 }

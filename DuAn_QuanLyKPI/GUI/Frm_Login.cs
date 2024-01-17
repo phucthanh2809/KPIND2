@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -140,7 +141,8 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 #region  truyền dữ liệu sau khi đăng nhập thành công
                 DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
-                DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
+
+                int MaQuyen = DataUserCurrent.Instance.Quyen = (int)nguoidung.MaQuyen;
 
                 MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
                 MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;

@@ -45,11 +45,11 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual ICollection<ChiTietKPIKhoaPhong> ChiTietKPIKhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietTieuChiMucTieuKhoaPhong> ChiTietTieuChiMucTieuKhoaPhong { get; set; }
-        public virtual NguoiDung NguoiDung { get; set; }
-        public virtual NguoiDung NguoiDung1 { get; set; }
-        public virtual NguoiDung NguoiDung2 { get; set; }
         public virtual PhongKhoa PhongKhoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_TruongKhoaPhong> KPI_TruongKhoaPhong { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual NguoiDung NguoiDung1 { get; set; }
+        public virtual NguoiDung NguoiDung2 { get; set; }
     }
 }
