@@ -7,7 +7,6 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -45,12 +44,13 @@ namespace DuAn_QuanLyKPI.GUI
             InitializeComponent();
             InitializeDataGridViews();
             LoadThongTinNhanVien();
-            LoadDataBVTaiChinh(true);
-
+            LoadDataBVTaiChinh();
+            
             CreateTableCopyTC();
 
             updateTimer = new Timer { Interval = 100 };
             updateTimer.Tick += UpdateTimer_Tick;
+            dtNgayLap.Value = DateTime.Now;
         }
         private void FrmA73_Load(object sender, EventArgs e)
         {
@@ -99,13 +99,58 @@ namespace DuAn_QuanLyKPI.GUI
         }
         //Load DataGridview Tài chính
 
+        private void LoadDataBVTaiChinh()
+        {
+            msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "' ";
+            DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
+            if (tb != null)
+            {
+                dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
+                dgrBVMucTieuTaiChinh.DataSource = tb;
+                lbTSTCTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
+            }
+            if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
+            {
+                lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
+            }
+            try
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuTaiChinh.Rows)
+                {
+                    string noiDung = row.Cells["cNoiDungBVTC"].Value.ToString();
 
+                    if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+                    {
+                        //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
+                    }
+                    else if (noiDung.Contains("dd/mm/yyyy"))
+                    {
+                        //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVTC"].Value.ToString().Trim());
+                    }
+                    row.Cells["cNoiDungBVTC"].Value = noiDung;
+                }
+            }
+            catch (Exception)
+            {
+                ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
+            }
+        }
         private void LoadDataBVKhachHang()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'C' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "'";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "KhachHang");
-            dgrBVMucTieuKhachHang.AutoGenerateColumns = false;
-            dgrBVMucTieuKhachHang.DataSource = tb;
+            if (tb != null)
+            {
+                dgrBVMucTieuKhachHang.AutoGenerateColumns = false;
+                dgrBVMucTieuKhachHang.DataSource = tb;
+                lbTSKHTC.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
+            }
+            if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
+            {
+                lbYearKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cNamBVKH"].Value.ToString();
+            }
             try
             {
                 foreach (DataGridViewRow row in dgrBVMucTieuKhachHang.Rows)
@@ -129,14 +174,21 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
             }
-            lbYearKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cNamBVKH"].Value.ToString();
         }
         private void LoadDataBVVanHanh()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'B' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "'";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "VanHanh");
-            dgrBVMucTieuVanHanh.AutoGenerateColumns = false;
-            dgrBVMucTieuVanHanh.DataSource = tb;
+            if (tb != null)
+            {
+                dgrBVMucTieuVanHanh.AutoGenerateColumns = false;
+                dgrBVMucTieuVanHanh.DataSource = tb;
+                lbTSVHTC.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
+            }
+            if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
+            {
+                lbYearVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cNamBVVH"].Value.ToString();
+            }
             try
             {
                 foreach (DataGridViewRow row in dgrBVMucTieuVanHanh.Rows)
@@ -160,15 +212,23 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
             }
-            lbYearVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cNamBVVH"].Value.ToString();
         }
         private void LoadDataBVPhatTrien()
         {
             msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'L' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "'";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "PhatTrien");
-            dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
-            dgrBVMucTieuPhatTrien.DataSource = tb;
-                try
+            if (tb != null)
+            {
+                dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
+                dgrBVMucTieuPhatTrien.DataSource = tb;
+                lbTSPTTC.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
+            }
+            if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
+            {
+                lbYearPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
+                lbYearHT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
+            }
+            try
                 {
                     foreach (DataGridViewRow row in dgrBVMucTieuPhatTrien.Rows)
                     {
@@ -191,8 +251,6 @@ namespace DuAn_QuanLyKPI.GUI
                 {
                     ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
                 }
-            lbYearPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
-            lbYearHT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
         }
         #endregion
         #region Method Chuyển Tab
@@ -564,12 +622,6 @@ namespace DuAn_QuanLyKPI.GUI
             txtPTHT.xActive = true;
             ev.Qtxt_Enter(sender, e);
         }
-
-        private void txtPTVH_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnHoanThanh);
-        }
-
         private void txtPTVH_Leave(object sender, EventArgs e)
         {
             TinhTongTrongSoPhuongDien();
@@ -880,7 +932,6 @@ namespace DuAn_QuanLyKPI.GUI
                 kh.Columns.Add("cNoiDungcpKH", typeof(string));
                 kh.Columns.Add("cKeHoachcpKH", typeof(string));
                 kh.Columns.Add("cChiTieuKPIcpKH", typeof(string));
-                kh.Columns.Add("cNamcpKH", typeof(int));
                 kh.Columns.Add("TrongSocpKH", typeof(int));
 
                 DataColumn[] primaryKeyColumns = new DataColumn[1];
@@ -900,7 +951,6 @@ namespace DuAn_QuanLyKPI.GUI
                 vh.Columns.Add("cNoiDungcpVH", typeof(string));
                 vh.Columns.Add("cKeHoachcpVH", typeof(string));
                 vh.Columns.Add("cChiTieuKPIcpVH", typeof(string));
-                vh.Columns.Add("cNamcpVH", typeof(int));
                 vh.Columns.Add("TrongSocpVH", typeof(int));
                 DataColumn[] PrimaryKeyColumns = new DataColumn[1];
                 PrimaryKeyColumns[0] = vh.Columns["cMaKPIcpVH"];
@@ -919,7 +969,6 @@ namespace DuAn_QuanLyKPI.GUI
                 pt.Columns.Add("cNoiDungcpPT", typeof(string));
                 pt.Columns.Add("cKeHoachcpPT", typeof(string));
                 pt.Columns.Add("cChiTieuKPIcpPT", typeof(string));
-                pt.Columns.Add("cNamcpPT", typeof(int));
                 pt.Columns.Add("TrongSocpPT", typeof(int));
                 DataColumn[] PrimaryKeyColumns = new DataColumn[1];
                 PrimaryKeyColumns[0] = pt.Columns["cMaKPIcpPT"];
@@ -942,7 +991,6 @@ namespace DuAn_QuanLyKPI.GUI
                     newRow["cNoiDungcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cNoiDungBVKH"].Value.ToString();
                     newRow["cKeHoachcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cKeHoachBVKH"].Value.ToString();
                     newRow["cChiTieuKPIcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cChiTieuKPIKH"].Value.ToString();
-                    newRow["cNamcpKH"] = dgrBVMucTieuKhachHang.Rows[i].Cells["cNamBVKH"].Value.ToString();
                     if (dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value == null)
                     {
                         dgrBVMucTieuKhachHang.Rows[i].Cells["cTrongSocpKH"].Value = "0";
@@ -967,7 +1015,6 @@ namespace DuAn_QuanLyKPI.GUI
                     newRow["cNoiDungcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNoiDungBVVH"].Value.ToString();
                     newRow["cKeHoachcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cKeHoachBVVH"].Value.ToString();
                     newRow["cChiTieuKPIcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cChiTieuKPIVH"].Value.ToString();
-                    newRow["cNamcpVH"] = dgrBVMucTieuVanHanh.Rows[i].Cells["cNamBVVH"].Value.ToString();
                     if (dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value == null)
                     {
                         dgrBVMucTieuVanHanh.Rows[i].Cells["cTrongSocpVH"].Value = "0";
@@ -992,7 +1039,6 @@ namespace DuAn_QuanLyKPI.GUI
                     newRow["cNoiDungcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cNoiDungBVPT"].Value.ToString();
                     newRow["cKeHoachcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cKeHoachBVPT"].Value.ToString();
                     newRow["cChiTieuKPIcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cChiTieuKPIPT"].Value.ToString();
-                    newRow["cNamcpPT"] = dgrBVMucTieuPhatTrien.Rows[i].Cells["cNamBVPT"].Value.ToString();
                     if (dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value == null)
                     {
                         dgrBVMucTieuPhatTrien.Rows[i].Cells["cTrongSocpPT"].Value = "0";
@@ -1179,34 +1225,46 @@ namespace DuAn_QuanLyKPI.GUI
 
             }
         }
+
         private void CopyTCtoHT()
         {
             if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
             {
-                dgrHTMucTieuTaiChinh.ColumnCount = dgrNhapMucTieuTaiChinh.ColumnCount;
-                foreach (DataGridViewColumn col in dgrNhapMucTieuTaiChinh.Columns)
+                // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
+                if (dgrHTMucTieuTaiChinh.ColumnCount == 3)
                 {
-                    dgrHTMucTieuTaiChinh.Columns[col.Index].Name = col.Name;
-                }
-                foreach (DataGridViewRow row in dgrNhapMucTieuTaiChinh.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        DataGridViewRow newRow = (DataGridViewRow)row.Clone();
+                    // Đặt tên cho cột của dgrHTMucTieuTaiChinh
+                    dgrHTMucTieuTaiChinh.Columns[0].Name = "cNoiDungHTTC";
+                    dgrHTMucTieuTaiChinh.Columns[1].Name = "cKeHoachHTTC";
+                    dgrHTMucTieuTaiChinh.Columns[2].Name = "cTrongSoKPIHTTC";
 
-                        for (int i = 0; i < row.Cells.Count; i++)
+                    foreach (DataGridViewRow row in dgrNhapMucTieuTaiChinh.Rows)
+                    {
+                        if (!row.IsNewRow)
                         {
-                            newRow.Cells[i].Value = row.Cells[i].Value;
+                            // Lấy giá trị của 3 cột cần thiết
+                            object noiDung = row.Cells["cNoiDungNTC"].Value;
+                            object keHoach = row.Cells["cKeHoachNTC"].Value;
+                            object trongSo = row.Cells["cTrongSoKPINTC"].Value;
+
+                            // Thêm giá trị vào dgrHTMucTieuTaiChinh
+                            dgrHTMucTieuTaiChinh.Rows.Add(noiDung, keHoach, trongSo);
                         }
-                        dgrHTMucTieuTaiChinh.Rows.Add(newRow);
                     }
+                }
+                else
+                {
+                    // Số lượng cột của dgrHTMucTieuTaiChinh không đúng, thông báo lỗi
+                    ev.QFrmThongBao("Số lượng cột của dgrHTMucTieuTaiChinh không đúng. Vui lòng kiểm tra lại.");
                 }
             }
             else
             {
                 ev.QFrmThongBao("Chưa có dữ liệu. Vui lòng nhập dữ liệu");
             }
+
         }
+
         private void CopyKHtoHT()
         {
             if (dgrNhapMucTieuKhachHang.Rows.Count > 0)
@@ -1880,36 +1938,13 @@ namespace DuAn_QuanLyKPI.GUI
 
         #endregion
 
-        private void LoadDataBVTaiChinh(bool replace)
-        {
-            if (replace)
-            {
-                msql = "SELECT * FROM dbo.KPI INNER JOIN dbo.ChiTietTieuChiMucTieuBV ON dbo.KPI.MaKPI = dbo.ChiTietTieuChiMucTieuBV.MaKPI INNER JOIN dbo.KPI_BenhVien ON dbo.ChiTietTieuChiMucTieuBV.MaPhieuKPIBV = dbo.KPI_BenhVien.MaPhieuKPIBV WHERE dbo.KPI.TieuChiID = 'F' AND dbo.KPI_BenhVien.NamPhieu = '" + QuyNamPhieu + "' ";
-                DataTable tb = comm.GetDataTable(mconnectstring, msql, "Taichinh");
-            if (tb != null)
-            {
-                dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
-                dgrBVMucTieuTaiChinh.DataSource = tb;
 
-            }
-            }
-            else
-            {
-
-            }
-
-            if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
-            {
-                lbYearTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cNamBVTC"].Value.ToString();
-            }
-        }
         private void CreateTableCopyTC()
         {
             tc.Columns.Add("cMaKPIcpTC", typeof(string));
             tc.Columns.Add("cNoiDungcpTC", typeof(string));
             tc.Columns.Add("cKeHoachcpTC", typeof(string));
             tc.Columns.Add("cChiTieuKPIcpTC", typeof(string));
-            tc.Columns.Add("cNamcpTC", typeof(int));
             tc.Columns.Add("TrongSocpTC", typeof(int));
             DataColumn[] PrimaryKeyColumns = new DataColumn[1];
             PrimaryKeyColumns[0] = tc.Columns["cMaKPIcpTC"];
@@ -1927,7 +1962,7 @@ namespace DuAn_QuanLyKPI.GUI
                     newRow["cNoiDungcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNoiDungBVTC"].Value.ToString();
                     newRow["cKeHoachcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cKeHoachBVTC"].Value.ToString();
                     newRow["cChiTieuKPIcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cChiTieuKPITC"].Value.ToString();
-                    newRow["cNamcpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cNamBVTC"].Value.ToString();
+
                     if (dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value == null)
                     {
                         dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value = "0";

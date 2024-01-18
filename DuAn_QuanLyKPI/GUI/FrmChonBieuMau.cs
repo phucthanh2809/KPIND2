@@ -39,61 +39,38 @@ namespace DuAn_QuanLyKPI.GUI
         {
             switch (CapDoBieuMauKPI)
             {
-                //Admin
-                case 0:
-                    msql = "SELECT * FROM [dbo].[DanhsachBieuMau]";
-                    DataTable admin = comm.GetDataTable(mconnectstring, msql, "Admin");
-                    dgrChonBieuMau.AutoGenerateColumns = false;
-                    dgrChonBieuMau.DataSource = admin;
-                    LoadTrangThai(0);
-                    break;
                 //GiamDocvaPhoGiamDoc
                 case 1:
                     msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 1";
                     DataTable gd = comm.GetDataTable(mconnectstring, msql, "GiamDocvaPhoGiamDoc");
-                    dgrChonBieuMau.AutoGenerateColumns = false;
-                    dgrChonBieuMau.DataSource = gd;
-                    LoadTrangThai(1);
+                    dgrChonBieuMauNam.AutoGenerateColumns = false;
+                    dgrChonBieuMauNam.DataSource = gd;
+                    btnQuy.Visible = false;
                     break;
                 //Khoa Phòng
                 case 2:
-                    msql = "SELECT * FROM [QuanLyKPI].[dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 2";
-                    DataTable kp = comm.GetDataTable(mconnectstring, msql, "KhoaPhong");
-                    dgrChonBieuMau.AutoGenerateColumns = false;
-                    dgrChonBieuMau.DataSource = kp;
-                    LoadTrangThai(2);
+                    msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] <> 1 and [Nam] = 1";
+                    DataTable kpn = comm.GetDataTable(mconnectstring, msql, "KhoaPhongNam");
+                    dgrChonBieuMauNam.AutoGenerateColumns = false;
+                    dgrChonBieuMauNam.DataSource = kpn;
+
+                    msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] <> 1 and [Nam] = 0";
+                    DataTable kpq = comm.GetDataTable(mconnectstring, msql, "KhoaPhongQuy");
+                    dgrChonBieuMauQuy.AutoGenerateColumns = false;
+                    dgrChonBieuMauQuy.DataSource = kpq;
                     break;
                 //Cá nhân
                 case 3:
-                    msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 3";
-                    DataTable cn = comm.GetDataTable(mconnectstring, msql, "CaNhan");
-                    dgrChonBieuMau.AutoGenerateColumns = false;
-                    dgrChonBieuMau.DataSource = cn;
-                    LoadTrangThai(3);
+                    msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 3 and [Nam] = 1";
+                    DataTable cnn = comm.GetDataTable(mconnectstring, msql, "CaNhanNam");
+                    dgrChonBieuMauNam.AutoGenerateColumns = false;
+                    dgrChonBieuMauNam.DataSource = cnn;
+
+                    msql = "SELECT * FROM [dbo].[DanhsachBieuMau] WHERE [MaCapDoKPIBenhVien] = 3 and [Nam] = 0";
+                    DataTable cnq = comm.GetDataTable(mconnectstring, msql, "CaNhanQuy");
+                    dgrChonBieuMauQuy.AutoGenerateColumns = false;
+                    dgrChonBieuMauQuy.DataSource = cnq;
                     break;
-            }
-        }
-        private void LoadTrangThai(int CapDoBieuMauKPI)
-        {
-            switch (CapDoBieuMauKPI)
-            {
-                //Admin
-                case 0:
-
-                break;
-                //GiamDocvaPhoGiamDoc
-                case 1:
-
-
-                    break;
-                //Khoa Phòng
-                case 2:
-
-                break;
-                //Cá nhân
-                case 3:
-
-                break;
             }
         }
         #endregion
@@ -104,11 +81,11 @@ namespace DuAn_QuanLyKPI.GUI
                 return;
             if (nmYear.Text != "")
             {
-                if (dgrChonBieuMau["cQuy1", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+                if (dgrChonBieuMauNam["cQuy1", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
                 {
-                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 1 này không ?"))
+                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 1 này không ?"))
                     {
-                        int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
                         QuyNam = ("1" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
@@ -154,11 +131,11 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                     }
                 }
-                else if (dgrChonBieuMau["cQuy2", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+                else if (dgrChonBieuMauNam["cQuy2", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
                 {
-                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 2 này không ?"))
+                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 2 này không ?"))
                     {
-                        int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
                         QuyNam = ("2" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
@@ -275,11 +252,11 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                     }
                 }
-                else if (dgrChonBieuMau["cQuy3", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+                else if (dgrChonBieuMauNam["cQuy3", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
                 {
-                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 3 này không ?"))
+                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 3 này không ?"))
                     {
-                        int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
                         QuyNam = ("3" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
@@ -396,11 +373,11 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                     }
                 }
-                else if (dgrChonBieuMau["cQuy4", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+                else if (dgrChonBieuMauNam["cQuy4", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
                 {
-                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 4 này không ?"))
+                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Quý 4 này không ?"))
                     {
-                        int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
                         QuyNam = ("4" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
@@ -517,11 +494,11 @@ namespace DuAn_QuanLyKPI.GUI
                         }
                     }
                 }
-                else if (dgrChonBieuMau["cNam", e.RowIndex] == dgrChonBieuMau.CurrentCell)
+                else if (dgrChonBieuMauNam["cNam", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
                 {
-                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMau.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Năm này không ?"))
+                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Năm này không ?"))
                     {
-                        int caseValue = int.Parse(dgrChonBieuMau.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
                         QuyNam = txtTest.Text;
                         switch (caseValue)
                         {
@@ -650,7 +627,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void dgrChonBieuMau_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            ev.Qdgr_RowPostPaint(sender, e, dgrChonBieuMau);
+            ev.Qdgr_RowPostPaint(sender, e, dgrChonBieuMauNam);
         }
 
         private void FrmChonBieuMau_Load(object sender, EventArgs e)
@@ -668,6 +645,18 @@ namespace DuAn_QuanLyKPI.GUI
         {
             string newValue = (string)nmYear.Value.ToString();
             QuyNam = newValue;
+        }
+
+        private void btnNam_Click(object sender, EventArgs e)
+        {
+            dgrChonBieuMauNam.Visible = true;
+            dgrChonBieuMauQuy.Visible = false;
+        }
+
+        private void btnQuy_Click(object sender, EventArgs e)
+        {
+            dgrChonBieuMauNam.Visible = false;
+            dgrChonBieuMauQuy.Visible = true;
         }
     }
 }

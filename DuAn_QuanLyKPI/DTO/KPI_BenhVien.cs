@@ -38,11 +38,11 @@ namespace DuAn_QuanLyKPI.DTO
         public virtual ICollection<ChiTietKPIBenhVien> ChiTietKPIBenhVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietTieuChiMucTieuBV> ChiTietTieuChiMucTieuBV { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual NguoiDung NguoiDung1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_KhoaPhong> KPI_KhoaPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KPI_TruongKhoaPhong> KPI_TruongKhoaPhong { get; set; }
-        public virtual NguoiDung NguoiDung { get; set; }
-        public virtual NguoiDung NguoiDung1 { get; set; }
     }
 }

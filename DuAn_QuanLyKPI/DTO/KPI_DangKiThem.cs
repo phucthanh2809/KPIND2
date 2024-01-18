@@ -34,9 +34,9 @@ namespace DuAn_QuanLyKPI.DTO
         public string ChiTieu { get; set; }
     
         public virtual KPI KPI { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKPICaNhan> ChiTietKPICaNhan { get; set; }
         public virtual NhomTieuChi NhomTieuChi { get; set; }
-        public virtual NguoiDung NguoiDung { get; set; }
     }
 }

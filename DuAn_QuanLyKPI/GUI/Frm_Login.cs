@@ -31,6 +31,7 @@ namespace DuAn_QuanLyKPI.GUI
             public static string TenPhongKhoa;
             public static string Email;
             public static string SDT;
+            public static string MaQuyen;
             public static string PhanQuyen;
             public static string TK;
             public static byte[] HinhAnh;
@@ -141,8 +142,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 #region  truyền dữ liệu sau khi đăng nhập thành công
                 DataUserCurrent.Instance.IDUserCurrent = nguoidung.MaNV;
-
-                int MaQuyen = DataUserCurrent.Instance.Quyen = (int)nguoidung.MaQuyen;
+                MaQuyen = DataUserCurrent.Instance.Permission = nguoidung.MaQuyen;
 
                 MaNV = DataUserCurrent.Instance.Permission = nguoidung.MaNV;
                 MaPhongKhoa = DataUserCurrent.Instance.Permission = nguoidung.MaPhongKhoa;

@@ -19,7 +19,7 @@ namespace DuAn_QuanLyKPI.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -123,6 +123,36 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backward_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("backward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barofpie_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("barofpie_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barofpie_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("barofpie_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circle_loader {
             get {
                 object obj = ResourceManager.GetObject("circle_loader", resourceCulture);
@@ -213,6 +243,16 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forward_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("forward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock11 {
             get {
                 object obj = ResourceManager.GetObject("lock11", resourceCulture);
@@ -263,6 +303,16 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pieseries_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("pieseries_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap previewchart_32x32 {
             get {
                 object obj = ResourceManager.GetObject("previewchart_32x32", resourceCulture);
@@ -303,6 +353,16 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap show_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("show_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap success__1_ {
             get {
                 object obj = ResourceManager.GetObject("success__1_", resourceCulture);
@@ -316,6 +376,16 @@ namespace DuAn_QuanLyKPI.Properties {
         internal static System.Drawing.Bitmap task_32x32 {
             get {
                 object obj = ResourceManager.GetObject("task_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap task_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("task_32x321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

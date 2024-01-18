@@ -193,9 +193,6 @@
     <Compile Include="DTO\NguoiDung.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\NguoiTruyCap.cs">
-      <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO\NhomTieuChi.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
@@ -475,6 +472,13 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\pieseries_32x32.png" />
+    <None Include="Resources\barofpie_32x321.png" />
+    <None Include="Resources\barofpie_32x32.png" />
+    <None Include="Resources\show_32x32.png" />
+    <None Include="Resources\task_32x321.png" />
+    <None Include="Resources\backward_32x32.png" />
+    <None Include="Resources\forward_32x32.png" />
     <None Include="Resources\actions_checkcircled.svg" />
     <None Include="Resources\close.svg" />
     <None Include="Resources\markcomplete.svg" />

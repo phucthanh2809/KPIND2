@@ -44,9 +44,10 @@ namespace DuAn_QuanLyKPI.DTO
         public string MatKhau { get; set; }
         public string MaPhongKhoa { get; set; }
         public string MaChucDanh { get; set; }
-        public Nullable<int> MaQuyen { get; set; }
+        public string MaQuyen { get; set; }
         public Nullable<int> MaCapDoKPIBenhVien { get; set; }
         public Nullable<bool> QuyenTruyCap { get; set; }
+        public string MaChucNang { get; set; }
     
         public virtual ChucDanh ChucDanh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
