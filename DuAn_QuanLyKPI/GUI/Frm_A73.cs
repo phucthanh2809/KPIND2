@@ -314,40 +314,56 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 case 0:
                     tabMucTieuKhoaPhong.SelectTab(step);
+                    spTaiChinhTC.State = StepProgressBarItemState.Active;
+                    FrmSPTrangThaiKH.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiKH.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiKH.Items[step].ContentBlock2.Caption = "Đang tại Tài chính";
                     break;
                 case 1:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     // Thiết lập Trạng thái khi nhất nút
                     spTaiChinhKH.State = StepProgressBarItemState.Active;
+                    spKhachHangKH.State = StepProgressBarItemState.Active;
                     FrmSPTrangThaiKH.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThaiKH.Appearances.CommonActiveColor = Color.Green;
                     FrmSPTrangThaiKH.Items[step - 1].ContentBlock2.Caption = "Đã xong Tài Chính";
+                    FrmSPTrangThaiKH.Items[step].ContentBlock2.Caption = "Đang tại Khách Hàng";
                     LoadDataBVKhachHang();
                     break;
                 case 2:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     //Thiết lập Trạng thái khi nhất nút
+                    spTaiChinhVH.State = StepProgressBarItemState.Active;
                     spKhachHangVH.State = StepProgressBarItemState.Active;
+                    spVanHanhVH.State = StepProgressBarItemState.Active;
                     FrmSPTrangThaiVH.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThaiVH.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiVH.Items[step - 2].ContentBlock2.Caption = "Đã xong Tài chính";
                     FrmSPTrangThaiVH.Items[step - 1].ContentBlock2.Caption = "Đã xong Khách Hàng";
+                    FrmSPTrangThaiVH.Items[step].ContentBlock2.Caption = "Đang tại Vận hành";
                     LoadDataBVVanHanh();
                     break;
                 case 3:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     //Thiết lập Trạng thái khi nhất nút
+                    spTaiChinhPT.State = StepProgressBarItemState.Active;
+                    spKhachHangPT.State = StepProgressBarItemState.Active;
                     spVanHanhPT.State = StepProgressBarItemState.Active;
+                    spPhatTrienPT.State = StepProgressBarItemState.Active;
+
                     FrmSPTrangThaiPT.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
                     FrmSPTrangThaiPT.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiPT.Items[step - 3].ContentBlock2.Caption = "Đã xong Tài chính";
+                    FrmSPTrangThaiPT.Items[step - 2].ContentBlock2.Caption = "Đã xong Khách Hàng";
                     FrmSPTrangThaiPT.Items[step - 1].ContentBlock2.Caption = "Đã xong Vận Hành";
+                    FrmSPTrangThaiPT.Items[step].ContentBlock2.Caption = "Đang tại Phát triển";
                     LoadDataBVPhatTrien();
                     break;
                 case 4:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     spPhatTrienHT.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThaiHT.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiHT.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[1];
                     FrmSPTrangThaiHT.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThaiHT.Items[step - 1].ContentBlock2.Caption = "Đã xong Phát Triển";
                     break;
             }
         }
@@ -845,11 +861,11 @@ namespace DuAn_QuanLyKPI.GUI
                 }
 
                 // Update specific cells with provided values
-                worksheet.Cells[6,  6]  = tc;      // TextBox1 vào F6
-                worksheet.Cells[17, 6] = kh;       // TextBox2 vào F12
-                worksheet.Cells[28, 6] = vh;       // TextBox3 vào F18
-                worksheet.Cells[39, 6] = pt;       // TextBox4 vào F18
-                worksheet.Cells[58, 2] = tennv;    // TextBox4 vào F18
+                worksheet.Cells[6, 6] = tc;
+                worksheet.Cells[17, 6] = kh;
+                worksheet.Cells[28, 6] = vh;
+                worksheet.Cells[39, 6] = pt;
+                worksheet.Cells[58, 2] = tennv;
                 worksheet.Cells[59, 2] = "Ngày(Date) " + ngaylap;
 
                 // Set the starting position for each group
@@ -859,19 +875,18 @@ namespace DuAn_QuanLyKPI.GUI
                 // Copy data from each DataGridView to the worksheet
                 for (int groupIndex = 0; groupIndex < dataGridViews.Length; groupIndex++)
                 {
-                    DataGridView dataGridView = dataGridViews[groupIndex];
                     int startRow = startRows[groupIndex];
 
                     // Copy data from column 2 and column 4 of the DataGridView to the worksheet
-                    for (int i = 0; i < dataGridView.Rows.Count; i++)
+                    for (int i = 0; i < dataGridViews[groupIndex].Rows.Count; i++)
                     {
                         bool dataExists = false;
 
                         // Check if the data already exists in the sheet
                         for (int row = 1; row <= worksheet.UsedRange.Rows.Count; row++)
                         {
-                            if (worksheet.Cells[row, startCol].Value == dataGridView[2, i].Value &&
-                                worksheet.Cells[row, startCol + 1].Value == dataGridView[4, i].Value)
+                            if (worksheet.Cells[row, startCol].Value == dataGridViews[groupIndex][2, i].Value &&
+                                worksheet.Cells[row, startCol + 1].Value == dataGridViews[groupIndex][4, i].Value)
                             {
                                 dataExists = true;
                                 break;
@@ -881,8 +896,8 @@ namespace DuAn_QuanLyKPI.GUI
                         // If the data doesn't exist, add it to the sheet
                         if (!dataExists)
                         {
-                            worksheet.Cells[startRow, startCol] = dataGridView[2, i].Value;    // Column 2
-                            worksheet.Cells[startRow, startCol + 1] = dataGridView[4, i].Value; // Column 4
+                            worksheet.Cells[startRow, startCol] = dataGridViews[groupIndex][2, i].Value;    // Column 2
+                            worksheet.Cells[startRow, startCol + 1] = dataGridViews[groupIndex][4, i].Value; // Column 4
                             startRow++;
                         }
                     }
@@ -897,6 +912,7 @@ namespace DuAn_QuanLyKPI.GUI
                         startRow++;     // Use 1 empty row for the last group
                     }
                 }
+
                 // Save the workbook
                 try
                 {
@@ -904,6 +920,10 @@ namespace DuAn_QuanLyKPI.GUI
                     {
                         // Uncomment the line below if you want to save the workbook
                         // workbook.SaveAs("A73.xlsx");
+                    }
+                    else
+                    {
+                        ev.QFrmThongBaoError("Không có dữ liệu nào để xuất ra");
                     }
                 }
                 catch (Exception)
@@ -915,6 +935,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 // Handle any other exceptions
                 ev.QFrmThongBaoError("An error occurred: " + ex.Message);
+            
             }
         }
         #endregion
@@ -1255,38 +1276,45 @@ namespace DuAn_QuanLyKPI.GUI
                 else
                 {
                     // Số lượng cột của dgrHTMucTieuTaiChinh không đúng, thông báo lỗi
-                    ev.QFrmThongBao("Số lượng cột của dgrHTMucTieuTaiChinh không đúng. Vui lòng kiểm tra lại.");
+                    ev.QFrmThongBao("Số lượng cột của Hoàn thành Tài chính không đúng. Vui lòng kiểm tra lại.");
                 }
             }
             else
             {
                 ev.QFrmThongBao("Chưa có dữ liệu. Vui lòng nhập dữ liệu");
             }
-
         }
 
         private void CopyKHtoHT()
         {
             if (dgrNhapMucTieuKhachHang.Rows.Count > 0)
             {
-                dgrHTMucTieuKhachHang.ColumnCount = dgrNhapMucTieuKhachHang.ColumnCount;
-                foreach (DataGridViewColumn col in dgrNhapMucTieuKhachHang.Columns)
+                // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
+                if (dgrHTMucTieuKhachHang.ColumnCount == 3)
                 {
-                    dgrHTMucTieuKhachHang.Columns[col.Index].Name = col.Name;
-                }
+                    // Đặt tên cho cột của dgrHTMucTieuTaiChinh
+                    dgrHTMucTieuKhachHang.Columns[0].Name = "cNoiDungHTKH";
+                    dgrHTMucTieuKhachHang.Columns[1].Name = "cKeHoachHTKH";
+                    dgrHTMucTieuKhachHang.Columns[2].Name = "cTrongSoKPIHTKH";
 
-                foreach (DataGridViewRow row in dgrNhapMucTieuKhachHang.Rows)
-                {
-                    if (!row.IsNewRow)
+                    foreach (DataGridViewRow row in dgrNhapMucTieuKhachHang.Rows)
                     {
-                        DataGridViewRow newRow = (DataGridViewRow)row.Clone();
-
-                        for (int i = 0; i < row.Cells.Count; i++)
+                        if (!row.IsNewRow)
                         {
-                            newRow.Cells[i].Value = row.Cells[i].Value;
+                            // Lấy giá trị của 3 cột cần thiết
+                            object noiDung = row.Cells["cNoiDungNKH"].Value;
+                            object keHoach = row.Cells["cKeHoachNKH"].Value;
+                            object trongSo = row.Cells["cTrongSoKPINKH"].Value;
+
+                            // Thêm giá trị vào dgrHTMucTieuTaiChinh
+                            dgrHTMucTieuKhachHang.Rows.Add(noiDung, keHoach, trongSo);
                         }
-                        dgrHTMucTieuKhachHang.Rows.Add(newRow);
                     }
+                }
+                else
+                {
+                    // Số lượng cột của dgrHTMucTieuTaiChinh không đúng, thông báo lỗi
+                    ev.QFrmThongBao("Số lượng cột của Hoàn thành Khách hàng không đúng. Vui lòng kiểm tra lại.");
                 }
             }
             else
@@ -1298,24 +1326,32 @@ namespace DuAn_QuanLyKPI.GUI
         {
             if (dgrNhapMucTieuVanHanh.Rows.Count > 0)
             {
-                dgrHTMucTieuVanHanh.ColumnCount = dgrNhapMucTieuVanHanh.ColumnCount;
-                foreach (DataGridViewColumn col in dgrNhapMucTieuVanHanh.Columns)
+                // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
+                if (dgrHTMucTieuVanHanh.ColumnCount == 3)
                 {
-                    dgrHTMucTieuVanHanh.Columns[col.Index].Name = col.Name;
-                }
+                    // Đặt tên cho cột của dgrHTMucTieuTaiChinh
+                    dgrHTMucTieuVanHanh.Columns[0].Name = "cNoiDungHTVH";
+                    dgrHTMucTieuVanHanh.Columns[1].Name = "cKeHoachHTVH";
+                    dgrHTMucTieuVanHanh.Columns[2].Name = "cTrongSoKPIHTVH";
 
-                foreach (DataGridViewRow row in dgrNhapMucTieuVanHanh.Rows)
-                {
-                    if (!row.IsNewRow)
+                    foreach (DataGridViewRow row in dgrNhapMucTieuVanHanh.Rows)
                     {
-                        DataGridViewRow newRow = (DataGridViewRow)row.Clone();
-
-                        for (int i = 0; i < row.Cells.Count; i++)
+                        if (!row.IsNewRow)
                         {
-                            newRow.Cells[i].Value = row.Cells[i].Value;
+                            // Lấy giá trị của 3 cột cần thiết
+                            object noiDung = row.Cells["cNoiDungNVH"].Value;
+                            object keHoach = row.Cells["cKeHoachNVH"].Value;
+                            object trongSo = row.Cells["cTrongSoKPINVH"].Value;
+
+                            // Thêm giá trị vào dgrHTMucTieuTaiChinh
+                            dgrHTMucTieuVanHanh.Rows.Add(noiDung, keHoach, trongSo);
                         }
-                        dgrHTMucTieuVanHanh.Rows.Add(newRow);
                     }
+                }
+                else
+                {
+                    // Số lượng cột của dgrHTMucTieuTaiChinh không đúng, thông báo lỗi
+                    ev.QFrmThongBao("Số lượng cột của Hoàn thành Vận hành không đúng. Vui lòng kiểm tra lại.");
                 }
             }
             else
@@ -1327,24 +1363,32 @@ namespace DuAn_QuanLyKPI.GUI
         {
             if (dgrNhapMucTieuPhatTrien.Rows.Count > 0)
             {
-                dgrHTMucTieuPhatTrien.ColumnCount = dgrNhapMucTieuPhatTrien.ColumnCount;
-                foreach (DataGridViewColumn col in dgrNhapMucTieuPhatTrien.Columns)
+                // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
+                if (dgrHTMucTieuPhatTrien.ColumnCount == 3)
                 {
-                    dgrHTMucTieuPhatTrien.Columns[col.Index].Name = col.Name;
-                }
+                    // Đặt tên cho cột của dgrHTMucTieuTaiChinh
+                    dgrHTMucTieuPhatTrien.Columns[0].Name = "cNoiDungHTPT";
+                    dgrHTMucTieuPhatTrien.Columns[1].Name = "cKeHoachHTPT";
+                    dgrHTMucTieuPhatTrien.Columns[2].Name = "cTrongSoKPIHTPT";
 
-                foreach (DataGridViewRow row in dgrNhapMucTieuPhatTrien.Rows)
-                {
-                    if (!row.IsNewRow)
+                    foreach (DataGridViewRow row in dgrNhapMucTieuPhatTrien.Rows)
                     {
-                        DataGridViewRow newRow = (DataGridViewRow)row.Clone();
-
-                        for (int i = 0; i < row.Cells.Count; i++)
+                        if (!row.IsNewRow)
                         {
-                            newRow.Cells[i].Value = row.Cells[i].Value;
+                            // Lấy giá trị của 3 cột cần thiết
+                            object noiDung = row.Cells["cNoiDungNPT"].Value;
+                            object keHoach = row.Cells["cKeHoachNPT"].Value;
+                            object trongSo = row.Cells["cTrongSoKPINPT"].Value;
+
+                            // Thêm giá trị vào dgrHTMucTieuTaiChinh
+                            dgrHTMucTieuPhatTrien.Rows.Add(noiDung, keHoach, trongSo);
                         }
-                        dgrHTMucTieuPhatTrien.Rows.Add(newRow);
                     }
+                }
+                else
+                {
+                    // Số lượng cột của dgrHTMucTieuTaiChinh không đúng, thông báo lỗi
+                    ev.QFrmThongBao("Số lượng cột của Hoàn thành Phát triển không đúng. Vui lòng kiểm tra lại.");
                 }
             }
             else
