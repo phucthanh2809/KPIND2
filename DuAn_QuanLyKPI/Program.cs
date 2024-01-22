@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VBSQLHelper;
 
 namespace DuAn_QuanLyKPI
 {
@@ -20,7 +21,8 @@ namespace DuAn_QuanLyKPI
 
         [STAThread]
         static void Main()
-        {
+        {            
+
             bool createdNew = false;
             try
             {
@@ -36,7 +38,15 @@ namespace DuAn_QuanLyKPI
                 try
                 {
                     Application.EnableVisualStyles();
+                    
                     Application.SetCompatibleTextRenderingDefault(false);
+                    //Tạo đường kết nối cho excute sql tạo mã phiếu 
+                    SQLHelper.DATABASE = "QuanLyKPI";
+                    SQLHelper.USERNAME_DB = "sa";
+                    SQLHelper.PASSWORD_DB = "123";
+                    SQLHelper.SERVER_NAME = "192.168.50.108,1433";
+                    SQLHelper.ConnectString();
+
                     Application.Run(new Frm_Login());
                 }
                 finally

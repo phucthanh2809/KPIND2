@@ -9,6 +9,8 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using VBSQLHelper;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -45,12 +47,13 @@ namespace DuAn_QuanLyKPI.GUI
             InitializeDataGridViews();
             LoadThongTinNhanVien();
             LoadDataBVTaiChinh();
-            
+
             CreateTableCopyTC();
 
             updateTimer = new Timer { Interval = 100 };
             updateTimer.Tick += UpdateTimer_Tick;
             dtNgayLap.Value = DateTime.Now;
+            ChuyenTrangThai(0);
         }
         private void FrmA73_Load(object sender, EventArgs e)
         {
@@ -89,13 +92,13 @@ namespace DuAn_QuanLyKPI.GUI
             txtViTriCVKH.Text = TenChucDanh;
             txtViTriCVVH.Text = TenChucDanh;
             txtViTriCVPT.Text = TenChucDanh;
-            txtViTriCVHT.Text = TenChucDanh; 
+            txtViTriCVHT.Text = TenChucDanh;
 
             lbKhoaPhongTC.Text = TenPhongKhoa;
             lbKhoaPhongKH.Text = TenPhongKhoa;
             lbKhoaPhongVH.Text = TenPhongKhoa;
             lbKhoaPhongPT.Text = TenPhongKhoa;
-            lbKhoaPhongHT.Text = TenPhongKhoa; 
+            lbKhoaPhongHT.Text = TenPhongKhoa;
         }
         //Load DataGridview Tài chính
 
@@ -155,19 +158,19 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 foreach (DataGridViewRow row in dgrBVMucTieuKhachHang.Rows)
                 {
-                string noiDung = row.Cells["cNoiDungBVKH"].Value.ToString();
+                    string noiDung = row.Cells["cNoiDungBVKH"].Value.ToString();
 
-                if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
-                {
-                    //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                    noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVKH"].Value.ToString().Trim());
-                }
-                else if (noiDung.Contains("dd/mm/yyyy"))
-                {
-                    //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                    noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVKH"].Value.ToString().Trim());
-                }
-                row.Cells["cNoiDungBVKH"].Value = noiDung;
+                    if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+                    {
+                        //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVKH"].Value.ToString().Trim());
+                    }
+                    else if (noiDung.Contains("dd/mm/yyyy"))
+                    {
+                        //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVKH"].Value.ToString().Trim());
+                    }
+                    row.Cells["cNoiDungBVKH"].Value = noiDung;
                 }
             }
             catch (Exception)
@@ -193,19 +196,19 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 foreach (DataGridViewRow row in dgrBVMucTieuVanHanh.Rows)
                 {
-                string noiDung = row.Cells["cNoiDungBVVH"].Value.ToString();
+                    string noiDung = row.Cells["cNoiDungBVVH"].Value.ToString();
 
-                if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
-                {
-                    //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                    noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVVH"].Value.ToString().Trim());
-                }
-                else if (noiDung.Contains("dd/mm/yyyy"))
-                {
-                    //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                    noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVVH"].Value.ToString().Trim());
-                }
-                row.Cells["cNoiDungBVVH"].Value = noiDung;
+                    if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+                    {
+                        //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVVH"].Value.ToString().Trim());
+                    }
+                    else if (noiDung.Contains("dd/mm/yyyy"))
+                    {
+                        //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVVH"].Value.ToString().Trim());
+                    }
+                    row.Cells["cNoiDungBVVH"].Value = noiDung;
                 }
             }
             catch (Exception)
@@ -229,28 +232,28 @@ namespace DuAn_QuanLyKPI.GUI
                 lbYearHT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cNamBVPT"].Value.ToString();
             }
             try
+            {
+                foreach (DataGridViewRow row in dgrBVMucTieuPhatTrien.Rows)
                 {
-                    foreach (DataGridViewRow row in dgrBVMucTieuPhatTrien.Rows)
-                    {
-                        string noiDung = row.Cells["cNoiDungBVPT"].Value.ToString();
+                    string noiDung = row.Cells["cNoiDungBVPT"].Value.ToString();
 
-                        if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
-                        {
-                            //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                            noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVPT"].Value.ToString().Trim());
-                        }
-                        else if (noiDung.Contains("dd/mm/yyyy"))
-                        {
-                            //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
-                            noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVPT"].Value.ToString().Trim());
-                        }
-                        row.Cells["cNoiDungBVPT"].Value = noiDung;
+                    if (noiDung.Contains(" X ") || noiDung.Contains(" X%"))
+                    {
+                        //thay thế giá trị X của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("X", row.Cells["cKeHoachBVPT"].Value.ToString().Trim());
                     }
+                    else if (noiDung.Contains("dd/mm/yyyy"))
+                    {
+                        //thay thế giá trị dd/mm/yyyy của cột PPD và ND bằng giá trị của cột Kế hoạch(Chỉ tiêu)
+                        noiDung = noiDung.Replace("dd/mm/yyyy", row.Cells["cKeHoachBVPT"].Value.ToString().Trim());
+                    }
+                    row.Cells["cNoiDungBVPT"].Value = noiDung;
                 }
-                catch (Exception)
-                {
-                    ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
-                }
+            }
+            catch (Exception)
+            {
+                ev.QFrmThongBaoError("Không có dữ liệu Kế Hoạch");
+            }
         }
         #endregion
         #region Method Chuyển Tab
@@ -315,9 +318,9 @@ namespace DuAn_QuanLyKPI.GUI
                 case 0:
                     tabMucTieuKhoaPhong.SelectTab(step);
                     spTaiChinhTC.State = StepProgressBarItemState.Active;
-                    FrmSPTrangThaiKH.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
-                    FrmSPTrangThaiKH.Appearances.CommonActiveColor = Color.Green;
-                    FrmSPTrangThaiKH.Items[step].ContentBlock2.Caption = "Đang tại Tài chính";
+                    FrmSPTrangThaiTC.ItemOptions.Indicator.ActiveStateImageOptions.SvgImage = svgImageCollection1[0];
+                    FrmSPTrangThaiTC.Appearances.CommonActiveColor = Color.Green;
+                    FrmSPTrangThaiTC.Items[step].ContentBlock2.Caption = "Đang tại Tài chính";
                     break;
                 case 1:
                     tabMucTieuKhoaPhong.SelectTab(step);
@@ -534,7 +537,10 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("Lỗi nhập sai định dạng hoặc thiếu dữ liệu");
             }
-
+        }
+        public string TaoMaPhieu()
+        {
+            return SQLHelper.ExecQuerySacalar($@"SELECT [dbo].[TaoMaPhieuKPIKP]('" + Convert.ToDateTime(dtNgayLap.Value).ToString("yyyy-MM-dd") + "')").ToString();
         }
         #endregion
         #region Event
@@ -551,6 +557,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             dgrHTMucTieuTaiChinh.Rows.Clear();
             KiemTraTyTrong(1);
+            txtMaPhieu.Text = TaoMaPhieu();
         }
         private void btnQLTC_Click(object sender, EventArgs e)
         {
@@ -579,6 +586,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             dgrHTMucTieuPhatTrien.Rows.Clear();
             KiemTraTyTrong(4);
+
         }
         private void btnQLPT_Click(object sender, EventArgs e)
         {
@@ -802,7 +810,7 @@ namespace DuAn_QuanLyKPI.GUI
                     // Tạo đường dẫn đầy đủ
                     ev.QFrmThongBao("Nếu cần chỉnh sửa. Vui lòng chỉnh sửa trên Form, KHÔNG ĐƯỢC chỉnh sửa trên Excel. Mọi sự chỉnh sửa trên Excel phải tự chịu trách nhiệm!");
                     string existingFilePath = Path.Combine(binDebugPath, fileName);
-                    AddDataGridViewsToExistingExcelSheet(dataGridViews, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
+                    AddDataGridViewsToExistingExcelSheet(dataGridViews, dgrBVMucTieuTaiChinh, dgrBVMucTieuKhachHang, dgrBVMucTieuVanHanh, dgrBVMucTieuPhatTrien, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
                 }
             }
             else if (sum == null || sum == 0)
@@ -810,37 +818,36 @@ namespace DuAn_QuanLyKPI.GUI
                 ev.QFrmThongBao("Vui lòng nhập dữ liệu");
             }
         }
-        private void AddDataGridViewsToExistingExcelSheet(DataGridView[] dataGridViews, string existingFilePath, string tc, string kh, string vh, string pt, string tennv, string ngaylap)
+        private int[] startRows = { 7, 18, 29, 40 };
+
+        private void AddDataGridViewsToExistingExcelSheet(DataGridView[] dataGridViews, DataGridView dgrBVMucTieuTaiChinh, DataGridView dgrBVMucTieuKhachHang, DataGridView dgrBVMucTieuVanHanh, DataGridView dgrBVMucTieuPhatTrien, string existingFilePath, string tc, string kh, string vh, string pt, string tennv, string ngaylap)
         {
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+
             try
             {
                 string documentPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string kpiFolderPath = Path.Combine(documentPath, "KPI");
 
-                // Create the KPI folder if it doesn't exist
                 if (!Directory.Exists(kpiFolderPath))
                 {
                     Directory.CreateDirectory(kpiFolderPath);
                 }
 
-                // Specify the new file path for the copied Excel file
                 string newFilePath = Path.Combine(kpiFolderPath, "A73_Biểu mẫu Mục tiêu Khoa Phòng.xlsx");
 
-                // Delete the existing file if it exists
                 if (File.Exists(newFilePath))
                 {
                     File.Delete(newFilePath);
                 }
 
-                // Copy the existing file to the new file path
                 File.Copy(existingFilePath, newFilePath);
 
-                // Open the Excel application and the workbook
-                Excel.Application excelApp = new Excel.Application();
+                excelApp = new Excel.Application();
                 excelApp.Visible = true;
-                Excel.Workbook workbook = excelApp.Workbooks.Open(newFilePath);
+                workbook = excelApp.Workbooks.Open(newFilePath);
 
-                // Find the worksheet with the specified name
                 Excel.Worksheet worksheet = null;
                 foreach (Excel.Worksheet sheet in workbook.Sheets)
                 {
@@ -851,118 +858,120 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                 }
 
-                // Display an error message if the worksheet is not found
                 if (worksheet == null)
                 {
                     ev.QFrmThongBaoError("Không tìm thấy worksheet có tên A7.3.Muc tieu khoa.phong trong file Excel.");
-                    workbook.Close();
-                    excelApp.Quit();
                     return;
                 }
 
-                // Update specific cells with provided values
-                worksheet.Cells[6, 6] = tc;
+                worksheet.Cells[6, 6] =  tc;
                 worksheet.Cells[17, 6] = kh;
                 worksheet.Cells[28, 6] = vh;
                 worksheet.Cells[39, 6] = pt;
                 worksheet.Cells[58, 2] = tennv;
                 worksheet.Cells[59, 2] = "Ngày(Date) " + ngaylap;
 
-                // Set the starting position for each group
-                int[] startRows = { 7, 18, 29, 40 };
-                int startCol = 5;  // Bắt đầu từ cột E
-
-                // Copy data from each DataGridView to the worksheet
                 for (int groupIndex = 0; groupIndex < dataGridViews.Length; groupIndex++)
                 {
                     int startRow = startRows[groupIndex];
+                    int startCol = 5; // Starting column index in Excel worksheet
 
-                    // Copy data from column 2 and column 4 of the DataGridView to the worksheet
-                    for (int i = 0; i < dataGridViews[groupIndex].Rows.Count; i++)
+                    for (int colIndex = 0; colIndex < dataGridViews[groupIndex].Columns.Count; colIndex++)
                     {
-                        bool dataExists = false;
-
-                        // Check if the data already exists in the sheet
-                        for (int row = 1; row <= worksheet.UsedRange.Rows.Count; row++)
+                        // Check if the column is visible
+                        if (dataGridViews[groupIndex].Columns[colIndex].Visible)
                         {
-                            if (worksheet.Cells[row, startCol].Value == dataGridViews[groupIndex][2, i].Value &&
-                                worksheet.Cells[row, startCol + 1].Value == dataGridViews[groupIndex][4, i].Value)
+                            for (int rowIndex = 0; rowIndex < dataGridViews[groupIndex].Rows.Count; rowIndex++)
                             {
-                                dataExists = true;
-                                break;
+                                // Transfer data to the corresponding cells in the Excel worksheet
+                                worksheet.Cells[startRow + rowIndex, startCol] = dataGridViews[groupIndex][colIndex, rowIndex].Value;
                             }
-                        }
 
-                        // If the data doesn't exist, add it to the sheet
-                        if (!dataExists)
-                        {
-                            worksheet.Cells[startRow, startCol] = dataGridViews[groupIndex][2, i].Value;    // Column 2
-                            worksheet.Cells[startRow, startCol + 1] = dataGridViews[groupIndex][4, i].Value; // Column 4
-                            startRow++;
+                            startCol++; // Move to the next column in Excel worksheet
                         }
                     }
 
-                    // Add empty space between groups (except for the last group)
                     if (groupIndex != dataGridViews.Length - 1)
                     {
-                        startRow += 2;  // Use 2 empty rows
+                        startRow += dataGridViews[groupIndex].Rows.Count + 2; // Use 2 empty rows
                     }
                     else
                     {
-                        startRow++;     // Use 1 empty row for the last group
+                        startRow += dataGridViews[groupIndex].Rows.Count + 1; // Use 1 empty row for the last group
                     }
                 }
 
-                // Save the workbook
-                try
+                // Add data from dgrBVMucTieuTaiChinh to Excel
+                int startRowBVTC = 7;  // Update the starting row for the new data
+                int startColBVTC = 3;  // Update the starting column for the new data
+
+                for (int rowIndexBVTC = 0; rowIndexBVTC < dgrBVMucTieuTaiChinh.Rows.Count; rowIndexBVTC++)
                 {
-                    if (dgrHTMucTieuTaiChinh.Rows.Count > 0 && dgrHTMucTieuKhachHang.Rows.Count > 0 && dgrHTMucTieuVanHanh.Rows.Count > 0 && dgrHTMucTieuPhatTrien.Rows.Count > 0)
-                    {
-                        // Uncomment the line below if you want to save the workbook
-                        // workbook.SaveAs("A73.xlsx");
-                    }
-                    else
-                    {
-                        ev.QFrmThongBaoError("Không có dữ liệu nào để xuất ra");
-                    }
+                    // Transfer data to the corresponding cells in the Excel worksheet
+                    worksheet.Cells[startRowBVTC + rowIndexBVTC, startColBVTC] = dgrBVMucTieuTaiChinh["cNoiDungBVTC", rowIndexBVTC].Value;
+                    worksheet.Cells[startRowBVTC + rowIndexBVTC, startColBVTC + 1] = dgrBVMucTieuTaiChinh["cTrongSoKPIBVTC", rowIndexBVTC].Value;
                 }
-                catch (Exception)
+
+                // Add data from dgrBVMucTieuKhachHang to Excel
+                int startRowBVKH = 18;  // Update the starting row for the new data
+                int startColBVKH = 3;  // Update the starting column for the new data
+
+                for (int rowIndexBVKH = 0; rowIndexBVKH < dgrBVMucTieuKhachHang.Rows.Count; rowIndexBVKH++)
                 {
-                    ev.QFrmThongBaoError("Không có dữ liệu nào để xuất ra");
+                    // Transfer data to the corresponding cells in the Excel worksheet
+                    worksheet.Cells[startRowBVKH + rowIndexBVKH, startColBVKH] = dgrBVMucTieuKhachHang["cNoiDungBVKH", rowIndexBVKH].Value;
+                    worksheet.Cells[startRowBVKH + rowIndexBVKH, startColBVKH + 1] = dgrBVMucTieuKhachHang["cTrongSoKPIBVKH", rowIndexBVKH].Value;
+                }
+
+                // Add data from dgrBVMucTieuVanHanh to Excel
+                int startRowBVVH = 29;  // Update the starting row for the new data
+                int startColBVVH = 3;  // Update the starting column for the new data
+
+                for (int rowIndexBVVH = 0; rowIndexBVVH < dgrBVMucTieuVanHanh.Rows.Count; rowIndexBVVH++)
+                {
+                    // Transfer data to the corresponding cells in the Excel worksheet
+                    worksheet.Cells[startRowBVVH + rowIndexBVVH, startColBVVH] = dgrBVMucTieuVanHanh["cNoiDungBVVH", rowIndexBVVH].Value;
+                    worksheet.Cells[startRowBVVH + rowIndexBVVH, startColBVVH + 1] = dgrBVMucTieuVanHanh["cTrongSoKPIBVVH", rowIndexBVVH].Value;
+                }
+
+                // Add data from dgrBVMucTieuPhatTrien to Excel
+                int startRowBVPT = 40;  // Update the starting row for the new data
+                int startColBVPT = 3;   // Update the starting column for the new data
+
+                for (int rowIndexBVPT = 0; rowIndexBVPT < dgrBVMucTieuPhatTrien.Rows.Count; rowIndexBVPT++)
+                {
+                    // Transfer data to the corresponding cells in the Excel worksheet
+                    worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT] = dgrBVMucTieuPhatTrien["cNoiDungBVPT", rowIndexBVPT].Value;
+                    worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT + 1] = dgrBVMucTieuPhatTrien["cTrongSoKPIBVPT", rowIndexBVPT].Value;
                 }
             }
             catch (Exception ex)
             {
-                // Handle any other exceptions
                 ev.QFrmThongBaoError("An error occurred: " + ex.Message);
-            
             }
-        }
-        #endregion
-
-        #region Copy GridView
-        #region Method
-
+            }
+        
+        #region CoppyGrid
         private void CreateTableCopyKH()
         {
-            DataColumn existingColumn = kh.Columns["cMaKPIcpKH"];
-            if (existingColumn == null)
-            {
-                // Column doesn't exist, so add it
-                kh.Columns.Add("cMaKPIcpKH", typeof(string));
-                kh.Columns.Add("cNoiDungcpKH", typeof(string));
-                kh.Columns.Add("cKeHoachcpKH", typeof(string));
-                kh.Columns.Add("cChiTieuKPIcpKH", typeof(string));
-                kh.Columns.Add("TrongSocpKH", typeof(int));
+        DataColumn existingColumn = kh.Columns["cMaKPIcpKH"];
+        if (existingColumn == null)
+        {
+            // Column doesn't exist, so add it
+            kh.Columns.Add("cMaKPIcpKH", typeof(string));
+            kh.Columns.Add("cNoiDungcpKH", typeof(string));
+            kh.Columns.Add("cKeHoachcpKH", typeof(string));
+            kh.Columns.Add("cChiTieuKPIcpKH", typeof(string));
+            kh.Columns.Add("TrongSocpKH", typeof(int));
 
-                DataColumn[] primaryKeyColumns = new DataColumn[1];
-                primaryKeyColumns[0] = kh.Columns["cMaKPIcpKH"];
-                kh.PrimaryKey = primaryKeyColumns;
-            }
-            else
-            {
+            DataColumn[] primaryKeyColumns = new DataColumn[1];
+            primaryKeyColumns[0] = kh.Columns["cMaKPIcpKH"];
+            kh.PrimaryKey = primaryKeyColumns;
+        }
+        else
+        {
 
-            }
+        }
         }
         private void CreateTableCopyVH()
         {

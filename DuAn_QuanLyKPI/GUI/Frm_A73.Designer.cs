@@ -31,30 +31,30 @@ namespace DuAn_QuanLyKPI.GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmA73));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.xFilteg9 = new ControlProject1510.XFilteg();
@@ -98,9 +98,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.label70 = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
             this.dgrHTMucTieuTaiChinh = new System.Windows.Forms.DataGridView();
-            this.cNoiDungHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cKeHoachHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSoKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel34 = new System.Windows.Forms.Panel();
             this.txtTCHT = new ControlProject1510.XFilteg();
             this.label65 = new System.Windows.Forms.Label();
@@ -368,6 +365,9 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn8 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cNoiDungHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cKeHoachHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungHTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachHTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIHTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -377,6 +377,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cNoiDungHTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKeHoachHTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIHTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaPhieu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).BeginInit();
@@ -743,17 +744,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrHTMucTieuPhatTrien
             // 
             this.dgrHTMucTieuPhatTrien.AllowUserToAddRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrHTMucTieuPhatTrien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrHTMucTieuPhatTrien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgrHTMucTieuPhatTrien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrHTMucTieuPhatTrien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrHTMucTieuPhatTrien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgrHTMucTieuPhatTrien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrHTMucTieuPhatTrien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNoiDungHTPT,
@@ -834,17 +835,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrHTMucTieuVanHanh
             // 
             this.dgrHTMucTieuVanHanh.AllowUserToAddRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrHTMucTieuVanHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrHTMucTieuVanHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgrHTMucTieuVanHanh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrHTMucTieuVanHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrHTMucTieuVanHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgrHTMucTieuVanHanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrHTMucTieuVanHanh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNoiDungHTVH,
@@ -926,17 +927,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrHTMucTieuKhachHang
             // 
             this.dgrHTMucTieuKhachHang.AllowUserToAddRows = false;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrHTMucTieuKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrHTMucTieuKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgrHTMucTieuKhachHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrHTMucTieuKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrHTMucTieuKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgrHTMucTieuKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrHTMucTieuKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNoiDungHTKH,
@@ -1018,17 +1019,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrHTMucTieuTaiChinh
             // 
             this.dgrHTMucTieuTaiChinh.AllowUserToAddRows = false;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrHTMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrHTMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgrHTMucTieuTaiChinh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrHTMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrHTMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgrHTMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrHTMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNoiDungHTTC,
@@ -1043,22 +1044,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrHTMucTieuTaiChinh.Size = new System.Drawing.Size(1333, 200);
             this.dgrHTMucTieuTaiChinh.TabIndex = 18;
             this.dgrHTMucTieuTaiChinh.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrHTMucTieuTaiChinh_RowPostPaint);
-            // 
-            // cNoiDungHTTC
-            // 
-            this.cNoiDungHTTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNoiDungHTTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
-            this.cNoiDungHTTC.Name = "cNoiDungHTTC";
-            // 
-            // cKeHoachHTTC
-            // 
-            this.cKeHoachHTTC.HeaderText = "Kế hoạch";
-            this.cKeHoachHTTC.Name = "cKeHoachHTTC";
-            // 
-            // cTrongSoKPIHTTC
-            // 
-            this.cTrongSoKPIHTTC.HeaderText = "Trọng số (%)";
-            this.cTrongSoKPIHTTC.Name = "cTrongSoKPIHTTC";
             // 
             // panel34
             // 
@@ -1138,6 +1123,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnQLPT
             // 
+            this.btnQLPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnQLPT.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnQLPT.Appearance.Options.UseFont = true;
             this.btnQLPT.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.backward_32x32;
@@ -1150,6 +1136,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnHoanThanh
             // 
+            this.btnHoanThanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHoanThanh.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnHoanThanh.Appearance.Options.UseFont = true;
             this.btnHoanThanh.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.task_32x321;
@@ -1203,6 +1190,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.panel29.BackColor = System.Drawing.Color.White;
             this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel29.Controls.Add(this.txtMaPhieu);
             this.panel29.Controls.Add(this.label28);
             this.panel29.Controls.Add(this.label32);
             this.panel29.Controls.Add(this.label37);
@@ -1520,23 +1508,23 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dgrNhapMucTieuVanHanh);
             this.splitContainer3.Size = new System.Drawing.Size(1350, 521);
-            this.splitContainer3.SplitterDistance = 245;
+            this.splitContainer3.SplitterDistance = 244;
             this.splitContainer3.TabIndex = 7;
             // 
             // dgrBVMucTieuVanHanh
             // 
             this.dgrBVMucTieuVanHanh.AllowUserToAddRows = false;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrBVMucTieuVanHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrBVMucTieuVanHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgrBVMucTieuVanHanh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrBVMucTieuVanHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrBVMucTieuVanHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgrBVMucTieuVanHanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrBVMucTieuVanHanh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonTatCaBVVH,
@@ -1557,7 +1545,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuVanHanh.RowHeadersWidth = 40;
             this.dgrBVMucTieuVanHanh.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.dgrBVMucTieuVanHanh.RowTemplate.Height = 40;
-            this.dgrBVMucTieuVanHanh.Size = new System.Drawing.Size(1350, 245);
+            this.dgrBVMucTieuVanHanh.Size = new System.Drawing.Size(1350, 244);
             this.dgrBVMucTieuVanHanh.TabIndex = 18;
             this.dgrBVMucTieuVanHanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuVanHanh_CellClick);
             this.dgrBVMucTieuVanHanh.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuVanHanh_ColumnHeaderMouseClick);
@@ -1661,17 +1649,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrNhapMucTieuVanHanh
             // 
             this.dgrNhapMucTieuVanHanh.AllowUserToAddRows = false;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrNhapMucTieuVanHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrNhapMucTieuVanHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgrNhapMucTieuVanHanh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrNhapMucTieuVanHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrNhapMucTieuVanHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgrNhapMucTieuVanHanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNhapMucTieuVanHanh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cXoaTatCaNVH,
@@ -1686,7 +1674,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuVanHanh.RowHeadersWidth = 40;
             this.dgrNhapMucTieuVanHanh.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.dgrNhapMucTieuVanHanh.RowTemplate.Height = 40;
-            this.dgrNhapMucTieuVanHanh.Size = new System.Drawing.Size(1350, 272);
+            this.dgrNhapMucTieuVanHanh.Size = new System.Drawing.Size(1350, 273);
             this.dgrNhapMucTieuVanHanh.TabIndex = 19;
             this.dgrNhapMucTieuVanHanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuVanHanh_CellClick);
             this.dgrNhapMucTieuVanHanh.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuVanHanh_CellEndEdit);
@@ -2089,17 +2077,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrBVMucTieuTaiChinh
             // 
             this.dgrBVMucTieuTaiChinh.AllowUserToAddRows = false;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrBVMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrBVMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgrBVMucTieuTaiChinh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrBVMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrBVMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgrBVMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrBVMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonTatCaBVTC,
@@ -2225,18 +2213,18 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrNhapMucTieuTaiChinh
             // 
             this.dgrNhapMucTieuTaiChinh.AllowUserToAddRows = false;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrNhapMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrNhapMucTieuTaiChinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgrNhapMucTieuTaiChinh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgrNhapMucTieuTaiChinh.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrNhapMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrNhapMucTieuTaiChinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgrNhapMucTieuTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNhapMucTieuTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cXoaTatCaNTC,
@@ -2641,23 +2629,23 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgrNhapMucTieuKhachHang);
             this.splitContainer2.Size = new System.Drawing.Size(1350, 521);
-            this.splitContainer2.SplitterDistance = 245;
+            this.splitContainer2.SplitterDistance = 244;
             this.splitContainer2.TabIndex = 6;
             // 
             // dgrBVMucTieuKhachHang
             // 
             this.dgrBVMucTieuKhachHang.AllowUserToAddRows = false;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrBVMucTieuKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrBVMucTieuKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgrBVMucTieuKhachHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrBVMucTieuKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrBVMucTieuKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgrBVMucTieuKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrBVMucTieuKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonTatCaBVKH,
@@ -2678,7 +2666,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuKhachHang.RowHeadersWidth = 40;
             this.dgrBVMucTieuKhachHang.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.dgrBVMucTieuKhachHang.RowTemplate.Height = 40;
-            this.dgrBVMucTieuKhachHang.Size = new System.Drawing.Size(1350, 245);
+            this.dgrBVMucTieuKhachHang.Size = new System.Drawing.Size(1350, 244);
             this.dgrBVMucTieuKhachHang.TabIndex = 18;
             this.dgrBVMucTieuKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuKhachHang_CellClick);
             this.dgrBVMucTieuKhachHang.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuKhachHang_ColumnHeaderMouseClick);
@@ -2783,17 +2771,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrNhapMucTieuKhachHang
             // 
             this.dgrNhapMucTieuKhachHang.AllowUserToAddRows = false;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrNhapMucTieuKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrNhapMucTieuKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgrNhapMucTieuKhachHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrNhapMucTieuKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrNhapMucTieuKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgrNhapMucTieuKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNhapMucTieuKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cXoaTatCaNKH,
@@ -2808,7 +2796,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuKhachHang.RowHeadersWidth = 40;
             this.dgrNhapMucTieuKhachHang.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.dgrNhapMucTieuKhachHang.RowTemplate.Height = 40;
-            this.dgrNhapMucTieuKhachHang.Size = new System.Drawing.Size(1350, 272);
+            this.dgrNhapMucTieuKhachHang.Size = new System.Drawing.Size(1350, 273);
             this.dgrNhapMucTieuKhachHang.TabIndex = 19;
             this.dgrNhapMucTieuKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuKhachHang_CellClick);
             this.dgrNhapMucTieuKhachHang.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuKhachHang_CellEndEdit);
@@ -3196,23 +3184,23 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.splitContainer4.Panel2.Controls.Add(this.dgrNhapMucTieuPhatTrien);
             this.splitContainer4.Size = new System.Drawing.Size(1350, 521);
-            this.splitContainer4.SplitterDistance = 245;
+            this.splitContainer4.SplitterDistance = 244;
             this.splitContainer4.TabIndex = 11;
             // 
             // dgrBVMucTieuPhatTrien
             // 
             this.dgrBVMucTieuPhatTrien.AllowUserToAddRows = false;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrBVMucTieuPhatTrien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrBVMucTieuPhatTrien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgrBVMucTieuPhatTrien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrBVMucTieuPhatTrien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrBVMucTieuPhatTrien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgrBVMucTieuPhatTrien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrBVMucTieuPhatTrien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonTatCaBVPT,
@@ -3233,7 +3221,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrBVMucTieuPhatTrien.RowHeadersWidth = 40;
             this.dgrBVMucTieuPhatTrien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.dgrBVMucTieuPhatTrien.RowTemplate.Height = 40;
-            this.dgrBVMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 245);
+            this.dgrBVMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 244);
             this.dgrBVMucTieuPhatTrien.TabIndex = 18;
             this.dgrBVMucTieuPhatTrien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrBVMucTieuPhatTrien_CellClick);
             this.dgrBVMucTieuPhatTrien.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrBVMucTieuPhatTrien_ColumnHeaderMouseClick);
@@ -3338,17 +3326,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrNhapMucTieuPhatTrien
             // 
             this.dgrNhapMucTieuPhatTrien.AllowUserToAddRows = false;
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrNhapMucTieuPhatTrien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrNhapMucTieuPhatTrien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dgrNhapMucTieuPhatTrien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrNhapMucTieuPhatTrien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrNhapMucTieuPhatTrien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgrNhapMucTieuPhatTrien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNhapMucTieuPhatTrien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cXoaTatCaNPT,
@@ -3363,7 +3351,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNhapMucTieuPhatTrien.RowHeadersWidth = 40;
             this.dgrNhapMucTieuPhatTrien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.dgrNhapMucTieuPhatTrien.RowTemplate.Height = 40;
-            this.dgrNhapMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 272);
+            this.dgrNhapMucTieuPhatTrien.Size = new System.Drawing.Size(1350, 273);
             this.dgrNhapMucTieuPhatTrien.TabIndex = 19;
             this.dgrNhapMucTieuPhatTrien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuPhatTrien_CellClick);
             this.dgrNhapMucTieuPhatTrien.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNhapMucTieuPhatTrien_CellEndEdit);
@@ -4077,6 +4065,23 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn8.Visible = false;
             // 
+            // cNoiDungHTTC
+            // 
+            this.cNoiDungHTTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungHTTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
+            this.cNoiDungHTTC.Name = "cNoiDungHTTC";
+            // 
+            // cKeHoachHTTC
+            // 
+            this.cKeHoachHTTC.HeaderText = "Kế hoạch";
+            this.cKeHoachHTTC.Name = "cKeHoachHTTC";
+            this.cKeHoachHTTC.Visible = false;
+            // 
+            // cTrongSoKPIHTTC
+            // 
+            this.cTrongSoKPIHTTC.HeaderText = "Trọng số (%)";
+            this.cTrongSoKPIHTTC.Name = "cTrongSoKPIHTTC";
+            // 
             // cNoiDungHTKH
             // 
             this.cNoiDungHTKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -4087,6 +4092,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.cKeHoachHTKH.HeaderText = "Kế hoạch";
             this.cKeHoachHTKH.Name = "cKeHoachHTKH";
+            this.cKeHoachHTKH.Visible = false;
             // 
             // cTrongSoKPIHTKH
             // 
@@ -4103,6 +4109,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.cKeHoachHTVH.HeaderText = "Kế hoạch ";
             this.cKeHoachHTVH.Name = "cKeHoachHTVH";
+            this.cKeHoachHTVH.Visible = false;
             // 
             // cTrongSoKPIHTVH
             // 
@@ -4119,11 +4126,19 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.cKeHoachHTPT.HeaderText = "Kế hoạch ";
             this.cKeHoachHTPT.Name = "cKeHoachHTPT";
+            this.cKeHoachHTPT.Visible = false;
             // 
             // cTrongSoKPIHTPT
             // 
             this.cTrongSoKPIHTPT.HeaderText = "Trọng số (%)";
             this.cTrongSoKPIHTPT.Name = "cTrongSoKPIHTPT";
+            // 
+            // txtMaPhieu
+            // 
+            this.txtMaPhieu.Location = new System.Drawing.Point(77, 11);
+            this.txtMaPhieu.Name = "txtMaPhieu";
+            this.txtMaPhieu.Size = new System.Drawing.Size(172, 32);
+            this.txtMaPhieu.TabIndex = 5;
             // 
             // FrmA73
             // 
@@ -4567,17 +4582,18 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPINPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTVH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTVH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTVH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungHTTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTTC;
+        private System.Windows.Forms.TextBox txtMaPhieu;
     }
 }
