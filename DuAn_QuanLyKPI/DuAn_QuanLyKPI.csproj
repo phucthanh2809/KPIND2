@@ -485,6 +485,7 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\edit_32x32.png" />
     <None Include="Resources\pieseries_32x32.png" />
     <None Include="Resources\barofpie_32x321.png" />
     <None Include="Resources\barofpie_32x32.png" />

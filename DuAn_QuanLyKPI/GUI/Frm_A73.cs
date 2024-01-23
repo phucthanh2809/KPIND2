@@ -787,6 +787,11 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
+            dgrHTMucTieuTaiChinh.Columns["cKeHoachHTTC"].Visible = false;
+            dgrHTMucTieuKhachHang.Columns["cKeHoachHTKH"].Visible = false;
+            dgrHTMucTieuVanHanh.Columns["cKeHoachHTVH"].Visible = false;
+            dgrHTMucTieuPhatTrien.Columns["cKeHoachHTPT"].Visible = false;
+
             TinhTongTrongSoPhuongDien();
             int sum = int.Parse(txtTongTrongSoMucTieu.Text);
             if (sum > 100)
@@ -863,7 +868,8 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Không tìm thấy worksheet có tên A7.3.Muc tieu khoa.phong trong file Excel.");
                     return;
                 }
-
+                worksheet.Cells[2, 3] = "MỤC TIÊU KHOA/PHÒNG - NĂM " + DateTime.Now.Year.ToString();
+                worksheet.Cells[3, 3] = "KHOA / PHÒNG: " + TenPhongKhoa.ToString();
                 worksheet.Cells[6, 6] =  tc;
                 worksheet.Cells[17, 6] = kh;
                 worksheet.Cells[28, 6] = vh;
@@ -949,29 +955,29 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 ev.QFrmThongBaoError("An error occurred: " + ex.Message);
             }
-            }
+        }
         
         #region CoppyGrid
         private void CreateTableCopyKH()
         {
-        DataColumn existingColumn = kh.Columns["cMaKPIcpKH"];
-        if (existingColumn == null)
-        {
-            // Column doesn't exist, so add it
-            kh.Columns.Add("cMaKPIcpKH", typeof(string));
-            kh.Columns.Add("cNoiDungcpKH", typeof(string));
-            kh.Columns.Add("cKeHoachcpKH", typeof(string));
-            kh.Columns.Add("cChiTieuKPIcpKH", typeof(string));
-            kh.Columns.Add("TrongSocpKH", typeof(int));
+            DataColumn existingColumn = kh.Columns["cMaKPIcpKH"];
+            if (existingColumn == null)
+            {
+                // Column doesn't exist, so add it
+                kh.Columns.Add("cMaKPIcpKH", typeof(string));
+                kh.Columns.Add("cNoiDungcpKH", typeof(string));
+                kh.Columns.Add("cKeHoachcpKH", typeof(string));
+                kh.Columns.Add("cChiTieuKPIcpKH", typeof(string));
+                kh.Columns.Add("TrongSocpKH", typeof(int));
 
-            DataColumn[] primaryKeyColumns = new DataColumn[1];
-            primaryKeyColumns[0] = kh.Columns["cMaKPIcpKH"];
-            kh.PrimaryKey = primaryKeyColumns;
-        }
-        else
-        {
+                DataColumn[] primaryKeyColumns = new DataColumn[1];
+                primaryKeyColumns[0] = kh.Columns["cMaKPIcpKH"];
+                kh.PrimaryKey = primaryKeyColumns;
+            }
+            else
+            {
 
-        }
+            }
         }
         private void CreateTableCopyVH()
         {
@@ -1261,13 +1267,13 @@ namespace DuAn_QuanLyKPI.GUI
             if (dgrNhapMucTieuTaiChinh.Rows.Count > 0)
             {
                 // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
-                if (dgrHTMucTieuTaiChinh.ColumnCount == 3)
+                if (dgrHTMucTieuTaiChinh.ColumnCount == 4)
                 {
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuTaiChinh.Columns[0].Name = "cNoiDungHTTC";
                     dgrHTMucTieuTaiChinh.Columns[1].Name = "cKeHoachHTTC";
-                    dgrHTMucTieuTaiChinh.Columns[2].Name = "cTrongSoKPIHTTC";
-
+                    dgrHTMucTieuTaiChinh.Columns[2].Name = "cChiTieuKPIHTTC";
+                    dgrHTMucTieuTaiChinh.Columns[3].Name = "cTrongSoKPIHTTC";
                     foreach (DataGridViewRow row in dgrNhapMucTieuTaiChinh.Rows)
                     {
                         if (!row.IsNewRow)
@@ -1275,10 +1281,10 @@ namespace DuAn_QuanLyKPI.GUI
                             // Lấy giá trị của 3 cột cần thiết
                             object noiDung = row.Cells["cNoiDungNTC"].Value;
                             object keHoach = row.Cells["cKeHoachNTC"].Value;
+                            object chitieu = row.Cells["cChiTieuKPINTC"].Value;
                             object trongSo = row.Cells["cTrongSoKPINTC"].Value;
-
                             // Thêm giá trị vào dgrHTMucTieuTaiChinh
-                            dgrHTMucTieuTaiChinh.Rows.Add(noiDung, keHoach, trongSo);
+                            dgrHTMucTieuTaiChinh.Rows.Add(noiDung, keHoach, chitieu, trongSo);
                         }
                     }
                 }
@@ -1510,7 +1516,7 @@ namespace DuAn_QuanLyKPI.GUI
         //CellValueChanged
         private void dgrNhapMucTieuTaiChinh_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            ReturnDataTableTC();
+            ReturnDataTableTC(); 
         }
         private void dgrNhapMucTieuKhachHang_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -2274,6 +2280,107 @@ namespace DuAn_QuanLyKPI.GUI
             {
 
             }
+        }
+
+        private void dgrHTMucTieuTaiChinh_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            DataGridView dataGridView;
+            dataGridView = dgrHTMucTieuTaiChinh;
+            if (e.ColumnIndex == dataGridView.Columns["cTrongSoKPIHTTC"].Index)
+            {
+                string userInput = e.FormattedValue.ToString();
+                int parsedValue;
+
+                if (!int.TryParse(userInput, out parsedValue))
+                {
+                    ev.QFrmThongBaoError("Chỉ được nhập số không nhận chữ cái");
+                    dataGridView.CancelEdit();
+                }
+                else
+                {
+                    if (parsedValue < 0 || parsedValue > 100)
+                    {
+                        ev.QFrmThongBaoError("Số nhập vào phải nằm trong khoảng từ 0 đến 100");
+                        dataGridView.CancelEdit();
+                    }
+                }
+            }
+            if (e.ColumnIndex == dataGridView.Columns["cKeHoachHTTC"].Index)
+            {
+                try
+                {
+                    string chitieu = dataGridView.CurrentRow.Cells["cChiTieuKPIHTTC"].Value.ToString();
+
+                    if (chitieu.Contains("dd/mm/yyyy") || chitieu.Contains("dd/MM/yyyy"))
+                    {
+                        string userInput = e.FormattedValue.ToString();
+                        DateTime dttc;
+
+                        if (!DateTime.TryParseExact(userInput, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dttc))
+                        {
+                            ev.QFrmThongBaoError("Nhập sai định dạng ngày tháng (dd/MM/yyyy)");
+                            dataGridView.CancelEdit();
+                            dataGridView.CurrentRow.Cells["cKeHoachHTTC"].Value = "";
+                        }
+                        else if (dttc < DateTime.MinValue || dttc > DateTime.MaxValue)
+                        {
+                            ev.QFrmThongBaoError("Ngày giờ nhập vào không hợp lệ");
+                            dataGridView.CancelEdit();
+                            dataGridView.CurrentRow.Cells["cKeHoachHTTC"].Value = "";
+                        }
+                        else
+                        {
+                            // Set the appropriate value for the "cKeHoachNVH" column if needed.
+                            dataGridView.CurrentRow.Cells["cKeHoachHTTC"].Value = userInput;
+                        }
+                    }
+                    else
+                    {
+                        string userInput = e.FormattedValue.ToString();
+                        int parsedValue;
+
+                        if (!int.TryParse(userInput, out parsedValue))
+                        {
+                            ev.QFrmThongBaoError("Chỉ được nhập số");
+                            dataGridView.CancelEdit();
+                            dataGridView.CurrentRow.Cells["cKeHoachHTTC"].Value = 0; // Or another default value.
+                        }
+                        else if (parsedValue < 0 || parsedValue > 100)
+                        {
+                            ev.QFrmThongBaoError("Số nhập vào phải nằm trong khoảng từ 0 đến 100");
+                            dataGridView.CancelEdit();
+                            dataGridView.CurrentRow.Cells["cKeHoachHTTC"].Value = 0; // Or another default value.
+                        }
+                        else
+                        {
+                            // Set the appropriate value for the "cKeHoachNVH" column if needed.
+                            dataGridView.CurrentRow.Cells["cKeHoachHTTC"].Value = parsedValue;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    ev.QFrmThongBaoError("Sai định dạng hoặc không có dữ liệu");
+                }
+            }
+        }
+
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            if(ev.QFrmThongBao_YesNo("Bạn có chắc muốn chỉnh sửa không?"))
+            {
+                dgrHTMucTieuTaiChinh.ReadOnly = false;
+                dgrHTMucTieuTaiChinh.Columns["cKeHoachHTTC"].Visible = true;
+
+                dgrHTMucTieuKhachHang.ReadOnly = false;
+                dgrHTMucTieuKhachHang.Columns["cKeHoachHTKH"].Visible = true;
+
+                dgrHTMucTieuVanHanh.ReadOnly = false;
+                dgrHTMucTieuVanHanh.Columns["cKeHoachHTVH"].Visible = true;
+
+                dgrHTMucTieuPhatTrien.ReadOnly = false;
+                dgrHTMucTieuPhatTrien.Columns["cKeHoachHTPT"].Visible = true;
+            }    
         }
     }
 }

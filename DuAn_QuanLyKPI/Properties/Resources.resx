@@ -172,14 +172,14 @@
   <data name="apply_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="noimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noimage1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="textbox_user_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\textbox_user_24.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="show_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\show_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backward_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backward_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="underlineword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\underlineword.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
@@ -199,6 +199,9 @@
   <data name="morefunctions_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\morefunctions_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="documentpdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documentpdf.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="actions_checkcircled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_checkcircled.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
@@ -208,11 +211,11 @@
   <data name="apply_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="documentpdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documentpdf.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="backward_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backward_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editnames" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editnames.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="pieseries_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pieseries_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="previous_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\previous_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,10 +229,10 @@
   <data name="lock11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="noimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noimage1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="editnames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editnames.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="pieseries_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pieseries_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

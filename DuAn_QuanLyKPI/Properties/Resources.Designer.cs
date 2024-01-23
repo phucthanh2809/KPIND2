@@ -221,6 +221,16 @@ namespace DuAn_QuanLyKPI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("edit_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage editnames {
