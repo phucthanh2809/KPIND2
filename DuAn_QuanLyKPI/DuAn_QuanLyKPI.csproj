@@ -272,6 +272,12 @@
     <Compile Include="GUI\Frm_A78.Designer.cs">
       <DependentUpon>Frm_A78.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_AddKPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_AddKPI.Designer.cs">
+      <DependentUpon>Frm_AddKPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,6 +388,9 @@
     <EmbeddedResource Include="GUI\Frm_A78.resx">
       <DependentUpon>Frm_A78.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_AddKPI.resx">
+      <DependentUpon>Frm_AddKPI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_AddUser.resx">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +494,10 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\additem_32x32.png" />
+    <None Include="Resources\actions_add1.svg" />
+    <None Include="Resources\actions_addcircled.svg" />
+    <None Include="Resources\actions_add.svg" />
     <None Include="Resources\edit_32x32.png" />
     <None Include="Resources\pieseries_32x32.png" />
     <None Include="Resources\barofpie_32x321.png" />

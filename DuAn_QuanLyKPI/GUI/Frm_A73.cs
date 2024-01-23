@@ -111,6 +111,7 @@ namespace DuAn_QuanLyKPI.GUI
                 dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
                 dgrBVMucTieuTaiChinh.DataSource = tb;
                 lbTSTCTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
+                lbHTTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -149,6 +150,7 @@ namespace DuAn_QuanLyKPI.GUI
                 dgrBVMucTieuKhachHang.AutoGenerateColumns = false;
                 dgrBVMucTieuKhachHang.DataSource = tb;
                 lbTSKHTC.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
+                lbHTKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -187,6 +189,7 @@ namespace DuAn_QuanLyKPI.GUI
                 dgrBVMucTieuVanHanh.AutoGenerateColumns = false;
                 dgrBVMucTieuVanHanh.DataSource = tb;
                 lbTSVHTC.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
+                lbHTVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -225,6 +228,7 @@ namespace DuAn_QuanLyKPI.GUI
                 dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
                 dgrBVMucTieuPhatTrien.DataSource = tb;
                 lbTSPTTC.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
+                lbHTPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -1310,7 +1314,8 @@ namespace DuAn_QuanLyKPI.GUI
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuKhachHang.Columns[0].Name = "cNoiDungHTKH";
                     dgrHTMucTieuKhachHang.Columns[1].Name = "cKeHoachHTKH";
-                    dgrHTMucTieuKhachHang.Columns[2].Name = "cTrongSoKPIHTKH";
+                    dgrHTMucTieuKhachHang.Columns[2].Name = "cChiTieuKPIHTKH";
+                    dgrHTMucTieuKhachHang.Columns[3].Name = "cTrongSoKPIHTKH";
 
                     foreach (DataGridViewRow row in dgrNhapMucTieuKhachHang.Rows)
                     {
@@ -1319,10 +1324,11 @@ namespace DuAn_QuanLyKPI.GUI
                             // Lấy giá trị của 3 cột cần thiết
                             object noiDung = row.Cells["cNoiDungNKH"].Value;
                             object keHoach = row.Cells["cKeHoachNKH"].Value;
+                            object chitieu = row.Cells["cChiTieuKPINKH"].Value;
                             object trongSo = row.Cells["cTrongSoKPINKH"].Value;
 
                             // Thêm giá trị vào dgrHTMucTieuTaiChinh
-                            dgrHTMucTieuKhachHang.Rows.Add(noiDung, keHoach, trongSo);
+                            dgrHTMucTieuKhachHang.Rows.Add(noiDung, keHoach, chitieu, trongSo);
                         }
                     }
                 }
@@ -1347,7 +1353,8 @@ namespace DuAn_QuanLyKPI.GUI
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuVanHanh.Columns[0].Name = "cNoiDungHTVH";
                     dgrHTMucTieuVanHanh.Columns[1].Name = "cKeHoachHTVH";
-                    dgrHTMucTieuVanHanh.Columns[2].Name = "cTrongSoKPIHTVH";
+                    dgrHTMucTieuVanHanh.Columns[2].Name = "cChiTieuKPIHTVH";
+                    dgrHTMucTieuVanHanh.Columns[3].Name = "cTrongSoKPIHTVH";
 
                     foreach (DataGridViewRow row in dgrNhapMucTieuVanHanh.Rows)
                     {
@@ -1356,10 +1363,11 @@ namespace DuAn_QuanLyKPI.GUI
                             // Lấy giá trị của 3 cột cần thiết
                             object noiDung = row.Cells["cNoiDungNVH"].Value;
                             object keHoach = row.Cells["cKeHoachNVH"].Value;
+                            object chitieu = row.Cells["cChiTieuKPINVH"].Value;
                             object trongSo = row.Cells["cTrongSoKPINVH"].Value;
 
                             // Thêm giá trị vào dgrHTMucTieuTaiChinh
-                            dgrHTMucTieuVanHanh.Rows.Add(noiDung, keHoach, trongSo);
+                            dgrHTMucTieuVanHanh.Rows.Add(noiDung, keHoach, chitieu, trongSo);
                         }
                     }
                 }
@@ -1384,7 +1392,8 @@ namespace DuAn_QuanLyKPI.GUI
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuPhatTrien.Columns[0].Name = "cNoiDungHTPT";
                     dgrHTMucTieuPhatTrien.Columns[1].Name = "cKeHoachHTPT";
-                    dgrHTMucTieuPhatTrien.Columns[2].Name = "cTrongSoKPIHTPT";
+                    dgrHTMucTieuPhatTrien.Columns[2].Name = "cChiTieuKPIHTPT";
+                    dgrHTMucTieuPhatTrien.Columns[3].Name = "cTrongSoKPIHTPT";
 
                     foreach (DataGridViewRow row in dgrNhapMucTieuPhatTrien.Rows)
                     {
@@ -1393,10 +1402,11 @@ namespace DuAn_QuanLyKPI.GUI
                             // Lấy giá trị của 3 cột cần thiết
                             object noiDung = row.Cells["cNoiDungNPT"].Value;
                             object keHoach = row.Cells["cKeHoachNPT"].Value;
+                            object chitieu = row.Cells["cChiTieuKPINPT"].Value;
                             object trongSo = row.Cells["cTrongSoKPINPT"].Value;
 
                             // Thêm giá trị vào dgrHTMucTieuTaiChinh
-                            dgrHTMucTieuPhatTrien.Rows.Add(noiDung, keHoach, trongSo);
+                            dgrHTMucTieuPhatTrien.Rows.Add(noiDung, keHoach, chitieu, trongSo);
                         }
                     }
                 }
@@ -2132,13 +2142,13 @@ namespace DuAn_QuanLyKPI.GUI
                         {
                             ev.QFrmThongBaoError("Nhập sai định dạng ngày tháng (dd/MM/yyyy)");
                             dgrNhapMucTieuTaiChinh.CancelEdit();
-                            dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cKeHoachNTC"].Value = "";
+                            dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cKeHoachNTC"].Value = DateTime.Now.ToString("dd-MM-yyyy");
                         }
                         else if (dttc < DateTime.MinValue || dttc > DateTime.MaxValue)
                         {
                             ev.QFrmThongBaoError("Ngày giờ nhập vào không hợp lệ");
                             dgrNhapMucTieuTaiChinh.CancelEdit();
-                            dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cKeHoachNTC"].Value = "";
+                            dgrNhapMucTieuTaiChinh.CurrentRow.Cells["cKeHoachNTC"].Value = DateTime.Now.ToString("dd-MM-yyyy");
                         }
                         else
                         {
@@ -2380,6 +2390,20 @@ namespace DuAn_QuanLyKPI.GUI
 
                 dgrHTMucTieuPhatTrien.ReadOnly = false;
                 dgrHTMucTieuPhatTrien.Columns["cKeHoachHTPT"].Visible = true;
+            }    
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Frm_AddKPI add = new Frm_AddKPI();
+            add.ShowDialog();
+        }
+
+        private void dtNgayLap_ValueChanged(object sender, EventArgs e)
+        {
+            if(dtNgayLap.Value < DateTime.Now || dtNgayLap.Value > DateTime.Now)
+            {
+                ev.QFrmThongBaoError("Ngày lập phải là ngày hiện tại không được thay đổi");
             }    
         }
     }
