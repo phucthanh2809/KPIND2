@@ -272,11 +272,17 @@
     <Compile Include="GUI\Frm_A78.Designer.cs">
       <DependentUpon>Frm_A78.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Frm_AddKPI.cs">
+    <Compile Include="GUI\Frm_AddEditKPI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Frm_AddKPI.Designer.cs">
-      <DependentUpon>Frm_AddKPI.cs</DependentUpon>
+    <Compile Include="GUI\Frm_AddEditKPI.Designer.cs">
+      <DependentUpon>Frm_AddEditKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_AddKPIGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_AddKPIGrid.Designer.cs">
+      <DependentUpon>Frm_AddKPIGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_AddUser.cs">
       <SubType>Form</SubType>
@@ -388,8 +394,11 @@
     <EmbeddedResource Include="GUI\Frm_A78.resx">
       <DependentUpon>Frm_A78.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_AddKPI.resx">
-      <DependentUpon>Frm_AddKPI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Frm_AddEditKPI.resx">
+      <DependentUpon>Frm_AddEditKPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_AddKPIGrid.resx">
+      <DependentUpon>Frm_AddKPIGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_AddUser.resx">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>

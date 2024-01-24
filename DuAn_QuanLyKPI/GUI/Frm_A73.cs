@@ -41,6 +41,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private DataGridView[] dataGridViews;
         private TextBox[] textBoxes;
+
         public FrmA73()
         {
             InitializeComponent();
@@ -2007,7 +2008,6 @@ namespace DuAn_QuanLyKPI.GUI
 
         #endregion
 
-
         private void CreateTableCopyTC()
         {
             tc.Columns.Add("cMaKPIcpTC", typeof(string));
@@ -2039,7 +2039,7 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                     else
                         newRow["TrongSocpTC"] = dgrBVMucTieuTaiChinh.Rows[i].Cells["cTrongSocpTC"].Value.ToString();
-                    tc.Rows.Add(newRow);
+                        tc.Rows.Add(newRow);
                 }
             }
 
@@ -2395,7 +2395,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Frm_AddKPI add = new Frm_AddKPI();
+            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
             add.ShowDialog();
         }
 
