@@ -16,6 +16,23 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
+        //coneect & event
+        private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
+        private clsCommonMethod comm = new clsCommonMethod();
+        private clsEventArgs ev = new clsEventArgs(string.Empty);
+        private string msql;
+
+        Timer updateTimer;
+
+        private DataGridView[] dataGridViews;
+        private TextBox[] textBoxes;
+
+        private DataTable tc = new DataTable();
+        private DataTable kh = new DataTable();
+        private DataTable vh = new DataTable();
+        private DataTable pt = new DataTable();
+
+        private int CurrentTab = 0;
         //lấy dữ liệu từu frm login
         private static string MaNV = Frm_Login.MaNV;
         private static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
@@ -24,23 +41,8 @@ namespace DuAn_QuanLyKPI.GUI
         private static string TenChucDanh = Frm_Login.TenChucDanh;
         private static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
         private static string QuyNamPhieu = FrmChonBieuMau.QuyNam;
-
-        //coneect & event
-        private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
-        private clsCommonMethod comm = new clsCommonMethod();
-        private clsEventArgs ev = new clsEventArgs(string.Empty);
-        private string msql;
-
-        Timer updateTimer;
-        private DataTable tc = new DataTable();
-        private DataTable kh = new DataTable();
-        private DataTable vh = new DataTable();
-        private DataTable pt = new DataTable();
-
-        private int CurrentTab = 0;
-
-        private DataGridView[] dataGridViews;
-        private TextBox[] textBoxes;
+        //Truyền dữ liệu sang form để thêm kpi vào grid
+        public static string phuongdien;
 
         public FrmA73()
         {
@@ -262,8 +264,6 @@ namespace DuAn_QuanLyKPI.GUI
         }
         #endregion
         #region Method Chuyển Tab
-
-
         private void TrangThai()
         {
             FrmSPTrangThaiTC.ItemOptions.Indicator.Width = 50; // độ dài item
@@ -875,85 +875,120 @@ namespace DuAn_QuanLyKPI.GUI
                 }
                 worksheet.Cells[2, 3] = "MỤC TIÊU KHOA/PHÒNG - NĂM " + DateTime.Now.Year.ToString();
                 worksheet.Cells[3, 3] = "KHOA / PHÒNG: " + TenPhongKhoa.ToString();
-                worksheet.Cells[6, 6] =  tc;
-                worksheet.Cells[17, 6] = kh;
-                worksheet.Cells[28, 6] = vh;
-                worksheet.Cells[39, 6] = pt;
+                worksheet.Cells[6, 6] = double.Parse(tc) / 100;
+                worksheet.Cells[17, 6] = double.Parse(kh) / 100;
+                worksheet.Cells[28, 6] = double.Parse(vh) / 100;
+                worksheet.Cells[39, 6] = double.Parse(pt) / 100;
                 worksheet.Cells[58, 2] = tennv;
                 worksheet.Cells[59, 2] = "Ngày(Date) " + ngaylap;
 
-                for (int groupIndex = 0; groupIndex < dataGridViews.Length; groupIndex++)
+                try
                 {
-                    int startRow = startRows[groupIndex];
-                    int startCol = 5; // Starting column index in Excel worksheet
-
-                    for (int colIndex = 0; colIndex < dataGridViews[groupIndex].Columns.Count; colIndex++)
+                    // Convert and transfer data from dataGridViews to Excel
+                    for (int groupIndex = 0; groupIndex < dataGridViews.Length; groupIndex++)
                     {
-                        // Check if the column is visible
-                        if (dataGridViews[groupIndex].Columns[colIndex].Visible)
-                        {
-                            for (int rowIndex = 0; rowIndex < dataGridViews[groupIndex].Rows.Count; rowIndex++)
-                            {
-                                // Transfer data to the corresponding cells in the Excel worksheet
-                                worksheet.Cells[startRow + rowIndex, startCol] = dataGridViews[groupIndex][colIndex, rowIndex].Value;
-                            }
+                        int startRow = startRows[groupIndex];
+                        int startCol = 5; // Starting column index in Excel worksheet
 
-                            startCol++; // Move to the next column in Excel worksheet
+                        for (int colIndex = 0; colIndex < dataGridViews[groupIndex].Columns.Count; colIndex++)
+                        {
+                            // Check if the column is visible
+                            if (dataGridViews[groupIndex].Columns[colIndex].Visible)
+                            {
+                                for (int rowIndex = 0; rowIndex < dataGridViews[groupIndex].Rows.Count; rowIndex++)
+                                {
+                                    // Convert specific columns to double and divide by 100
+                                    string columnName = dataGridViews[groupIndex].Columns[colIndex].Name;
+                                    if (columnName.StartsWith("cTrongSoKPIBV"))
+                                    {
+                                        double originalValue = Convert.ToDouble(dataGridViews[groupIndex][colIndex, rowIndex].Value);
+                                        double newValue = originalValue / 100;
+                                        worksheet.Cells[startRow + rowIndex, startCol] = newValue;
+                                    }
+                                    else
+                                    {
+                                        // Transfer other data to the corresponding cells in the Excel worksheet
+                                        worksheet.Cells[startRow + rowIndex, startCol] = dataGridViews[groupIndex][colIndex, rowIndex].Value;
+                                    }
+                                }
+
+                                startCol++; // Move to the next column in Excel worksheet
+                            }
+                        }
+
+                        if (groupIndex != dataGridViews.Length - 1)
+                        {
+                            startRow += dataGridViews[groupIndex].Rows.Count + 2; // Use 2 empty rows
+                        }
+                        else
+                        {
+                            startRow += dataGridViews[groupIndex].Rows.Count + 1; // Use 1 empty row for the last group
                         }
                     }
 
-                    if (groupIndex != dataGridViews.Length - 1)
+                    // Add data from dgrBVMucTieuTaiChinh to Excel
+                    int startRowBVTC = 7;  // Update the starting row for the new data
+                    int startColBVTC = 3;  // Update the starting column for the new data
+
+                    for (int rowIndexBVTC = 0; rowIndexBVTC < dgrBVMucTieuTaiChinh.Rows.Count; rowIndexBVTC++)
                     {
-                        startRow += dataGridViews[groupIndex].Rows.Count + 2; // Use 2 empty rows
+                        // Transfer data to the corresponding cells in the Excel worksheet
+                        worksheet.Cells[startRowBVTC + rowIndexBVTC, startColBVTC] = dgrBVMucTieuTaiChinh["cNoiDungBVTC", rowIndexBVTC].Value;
+
+                        // Convert cTrongSoKPIBVTC to double and divide by 100
+                        double originalValueBVTC = Convert.ToDouble(dgrBVMucTieuTaiChinh["cTrongSoKPIBVTC", rowIndexBVTC].Value);
+                        double newValueBVTC = originalValueBVTC / 100;
+                        worksheet.Cells[startRowBVTC + rowIndexBVTC, startColBVTC + 1] = newValueBVTC;
                     }
-                    else
+
+                    // Add data from dgrBVMucTieuKhachHang to Excel
+                    int startRowBVKH = 18;  // Update the starting row for the new data
+                    int startColBVKH = 3;  // Update the starting column for the new data
+
+                    for (int rowIndexBVKH = 0; rowIndexBVKH < dgrBVMucTieuKhachHang.Rows.Count; rowIndexBVKH++)
                     {
-                        startRow += dataGridViews[groupIndex].Rows.Count + 1; // Use 1 empty row for the last group
+                        // Transfer data to the corresponding cells in the Excel worksheet
+                        worksheet.Cells[startRowBVKH + rowIndexBVKH, startColBVKH] = dgrBVMucTieuKhachHang["cNoiDungBVKH", rowIndexBVKH].Value;
+
+                        // Convert cTrongSoKPIBVKH to double and divide by 100
+                        double originalValueBVKH = Convert.ToDouble(dgrBVMucTieuKhachHang["cTrongSoKPIBVKH", rowIndexBVKH].Value);
+                        double newValueBVKH = originalValueBVKH / 100;
+                        worksheet.Cells[startRowBVKH + rowIndexBVKH, startColBVKH + 1] = newValueBVKH;
+                    }
+
+                    // Add data from dgrBVMucTieuVanHanh to Excel
+                    int startRowBVVH = 29;  // Update the starting row for the new data
+                    int startColBVVH = 3;  // Update the starting column for the new data
+
+                    for (int rowIndexBVVH = 0; rowIndexBVVH < dgrBVMucTieuVanHanh.Rows.Count; rowIndexBVVH++)
+                    {
+                        // Transfer data to the corresponding cells in the Excel worksheet
+                        worksheet.Cells[startRowBVVH + rowIndexBVVH, startColBVVH] = dgrBVMucTieuVanHanh["cNoiDungBVVH", rowIndexBVVH].Value;
+
+                        // Convert cTrongSoKPIBVVH to double and divide by 100
+                        double originalValueBVVH = Convert.ToDouble(dgrBVMucTieuVanHanh["cTrongSoKPIBVVH", rowIndexBVVH].Value);
+                        double newValueBVVH = originalValueBVVH / 100;
+                        worksheet.Cells[startRowBVVH + rowIndexBVVH, startColBVVH + 1] = newValueBVVH;
+                    }
+
+                    // Add data from dgrBVMucTieuPhatTrien to Excel
+                    int startRowBVPT = 40;  // Update the starting row for the new data
+                    int startColBVPT = 3;   // Update the starting column for the new data
+
+                    for (int rowIndexBVPT = 0; rowIndexBVPT < dgrBVMucTieuPhatTrien.Rows.Count; rowIndexBVPT++)
+                    {
+                        // Transfer data to the corresponding cells in the Excel worksheet
+                        worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT] = dgrBVMucTieuPhatTrien["cNoiDungBVPT", rowIndexBVPT].Value;
+
+                        // Convert cTrongSoKPIBVPT to double and divide by 100
+                        double originalValueBVPT = Convert.ToDouble(dgrBVMucTieuPhatTrien["cTrongSoKPIBVPT", rowIndexBVPT].Value);
+                        double newValueBVPT = originalValueBVPT / 100;
+                        worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT + 1] = newValueBVPT;
                     }
                 }
-
-                // Add data from dgrBVMucTieuTaiChinh to Excel
-                int startRowBVTC = 7;  // Update the starting row for the new data
-                int startColBVTC = 3;  // Update the starting column for the new data
-
-                for (int rowIndexBVTC = 0; rowIndexBVTC < dgrBVMucTieuTaiChinh.Rows.Count; rowIndexBVTC++)
+                catch (Exception ex)
                 {
-                    // Transfer data to the corresponding cells in the Excel worksheet
-                    worksheet.Cells[startRowBVTC + rowIndexBVTC, startColBVTC] = dgrBVMucTieuTaiChinh["cNoiDungBVTC", rowIndexBVTC].Value;
-                    worksheet.Cells[startRowBVTC + rowIndexBVTC, startColBVTC + 1] = dgrBVMucTieuTaiChinh["cTrongSoKPIBVTC", rowIndexBVTC].Value;
-                }
-
-                // Add data from dgrBVMucTieuKhachHang to Excel
-                int startRowBVKH = 18;  // Update the starting row for the new data
-                int startColBVKH = 3;  // Update the starting column for the new data
-
-                for (int rowIndexBVKH = 0; rowIndexBVKH < dgrBVMucTieuKhachHang.Rows.Count; rowIndexBVKH++)
-                {
-                    // Transfer data to the corresponding cells in the Excel worksheet
-                    worksheet.Cells[startRowBVKH + rowIndexBVKH, startColBVKH] = dgrBVMucTieuKhachHang["cNoiDungBVKH", rowIndexBVKH].Value;
-                    worksheet.Cells[startRowBVKH + rowIndexBVKH, startColBVKH + 1] = dgrBVMucTieuKhachHang["cTrongSoKPIBVKH", rowIndexBVKH].Value;
-                }
-
-                // Add data from dgrBVMucTieuVanHanh to Excel
-                int startRowBVVH = 29;  // Update the starting row for the new data
-                int startColBVVH = 3;  // Update the starting column for the new data
-
-                for (int rowIndexBVVH = 0; rowIndexBVVH < dgrBVMucTieuVanHanh.Rows.Count; rowIndexBVVH++)
-                {
-                    // Transfer data to the corresponding cells in the Excel worksheet
-                    worksheet.Cells[startRowBVVH + rowIndexBVVH, startColBVVH] = dgrBVMucTieuVanHanh["cNoiDungBVVH", rowIndexBVVH].Value;
-                    worksheet.Cells[startRowBVVH + rowIndexBVVH, startColBVVH + 1] = dgrBVMucTieuVanHanh["cTrongSoKPIBVVH", rowIndexBVVH].Value;
-                }
-
-                // Add data from dgrBVMucTieuPhatTrien to Excel
-                int startRowBVPT = 40;  // Update the starting row for the new data
-                int startColBVPT = 3;   // Update the starting column for the new data
-
-                for (int rowIndexBVPT = 0; rowIndexBVPT < dgrBVMucTieuPhatTrien.Rows.Count; rowIndexBVPT++)
-                {
-                    // Transfer data to the corresponding cells in the Excel worksheet
-                    worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT] = dgrBVMucTieuPhatTrien["cNoiDungBVPT", rowIndexBVPT].Value;
-                    worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT + 1] = dgrBVMucTieuPhatTrien["cTrongSoKPIBVPT", rowIndexBVPT].Value;
+                    ev.QFrmThongBaoError("An error occurred: " + ex.Message);
                 }
             }
             catch (Exception ex)
@@ -1310,7 +1345,7 @@ namespace DuAn_QuanLyKPI.GUI
             if (dgrNhapMucTieuKhachHang.Rows.Count > 0)
             {
                 // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
-                if (dgrHTMucTieuKhachHang.ColumnCount == 3)
+                if (dgrHTMucTieuKhachHang.ColumnCount == 4)
                 {
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuKhachHang.Columns[0].Name = "cNoiDungHTKH";
@@ -1349,7 +1384,7 @@ namespace DuAn_QuanLyKPI.GUI
             if (dgrNhapMucTieuVanHanh.Rows.Count > 0)
             {
                 // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
-                if (dgrHTMucTieuVanHanh.ColumnCount == 3)
+                if (dgrHTMucTieuVanHanh.ColumnCount == 4)
                 {
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuVanHanh.Columns[0].Name = "cNoiDungHTVH";
@@ -1388,7 +1423,7 @@ namespace DuAn_QuanLyKPI.GUI
             if (dgrNhapMucTieuPhatTrien.Rows.Count > 0)
             {
                 // Chắc chắn rằng dgrHTMucTieuTaiChinh có đúng 3 cột
-                if (dgrHTMucTieuPhatTrien.ColumnCount == 3)
+                if (dgrHTMucTieuPhatTrien.ColumnCount == 4)
                 {
                     // Đặt tên cho cột của dgrHTMucTieuTaiChinh
                     dgrHTMucTieuPhatTrien.Columns[0].Name = "cNoiDungHTPT";
@@ -2392,19 +2427,40 @@ namespace DuAn_QuanLyKPI.GUI
                 dgrHTMucTieuPhatTrien.Columns["cKeHoachHTPT"].Visible = true;
             }    
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
-            add.ShowDialog();
-        }
-
         private void dtNgayLap_ValueChanged(object sender, EventArgs e)
         {
             if(dtNgayLap.Value < DateTime.Now || dtNgayLap.Value > DateTime.Now)
             {
                 ev.QFrmThongBaoError("Ngày lập phải là ngày hiện tại không được thay đổi");
             }    
+        }
+
+        private void btnAddKPIKH_Click(object sender, EventArgs e)
+        {
+            phuongdien = "kh";
+            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
+            add.ShowDialog();
+        }
+
+        private void btnAddKPIVH_Click(object sender, EventArgs e)
+        {
+            phuongdien = "vh";
+            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
+            add.ShowDialog();
+        }
+
+        private void btnAddKPIPT_Click(object sender, EventArgs e)
+        {
+            phuongdien = "pt";
+            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
+            add.ShowDialog();
+        }
+
+        private void btnAddKPITC_Click(object sender, EventArgs e)
+        {
+            phuongdien = "tc";
+            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
+            add.ShowDialog();
         }
     }
 }

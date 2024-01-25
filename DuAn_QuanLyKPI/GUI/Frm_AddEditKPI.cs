@@ -20,6 +20,7 @@ namespace DuAn_QuanLyKPI.GUI
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs(string.Empty);
         private string msql;
+        Frm_AddKPIGrid addkpi = new Frm_AddKPIGrid();
         public Frm_AddEditKPI()
         {
             InitializeComponent();

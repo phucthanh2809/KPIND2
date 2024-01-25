@@ -29,8 +29,8 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AddKPIGrid));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,11 +51,15 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTaoMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnNganHangCaNhan = new DevExpress.XtraEditors.SimpleButton();
             this.btnNganHangKPI = new DevExpress.XtraEditors.SimpleButton();
+            this.nmYear = new System.Windows.Forms.NumericUpDown();
+            this.chkCongViecCaNhan = new System.Windows.Forms.CheckBox();
+            this.lbTenNV = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrNganHangCaNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKPIBenhVien)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmYear)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,14 +86,14 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.dgrNganHangCaNhan.AllowUserToAddRows = false;
             this.dgrNganHangCaNhan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrNganHangCaNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrNganHangCaNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgrNganHangCaNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNganHangCaNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -147,14 +151,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrKPIBenhVien.AllowUserToAddRows = false;
             this.dgrKPIBenhVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgrKPIBenhVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrKPIBenhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrKPIBenhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgrKPIBenhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrKPIBenhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChon,
@@ -170,7 +174,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrKPIBenhVien.Size = new System.Drawing.Size(1364, 686);
             this.dgrKPIBenhVien.TabIndex = 0;
             this.dgrKPIBenhVien.Visible = false;
-            this.dgrKPIBenhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrKPIBenhVien_CellContentClick);
             this.dgrKPIBenhVien.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrKPIBenhVien_RowPostPaint);
             // 
             // cChon
@@ -222,6 +225,9 @@ namespace DuAn_QuanLyKPI.GUI
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbTenNV);
+            this.panel2.Controls.Add(this.chkCongViecCaNhan);
+            this.panel2.Controls.Add(this.nmYear);
             this.panel2.Controls.Add(this.btnTaoMoi);
             this.panel2.Controls.Add(this.btnNganHangCaNhan);
             this.panel2.Controls.Add(this.btnNganHangKPI);
@@ -237,7 +243,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTaoMoi.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoMoi.Appearance.Options.UseFont = true;
             this.btnTaoMoi.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.additem_32x32;
-            this.btnTaoMoi.Location = new System.Drawing.Point(799, 4);
+            this.btnTaoMoi.Location = new System.Drawing.Point(433, 3);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(135, 40);
             this.btnTaoMoi.TabIndex = 2;
@@ -250,7 +256,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnNganHangCaNhan.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNganHangCaNhan.Appearance.Options.UseFont = true;
             this.btnNganHangCaNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNganHangCaNhan.ImageOptions.Image")));
-            this.btnNganHangCaNhan.Location = new System.Drawing.Point(568, 4);
+            this.btnNganHangCaNhan.Location = new System.Drawing.Point(202, 3);
             this.btnNganHangCaNhan.Name = "btnNganHangCaNhan";
             this.btnNganHangCaNhan.Size = new System.Drawing.Size(225, 40);
             this.btnNganHangCaNhan.TabIndex = 1;
@@ -263,12 +269,53 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnNganHangKPI.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNganHangKPI.Appearance.Options.UseFont = true;
             this.btnNganHangKPI.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNganHangKPI.ImageOptions.Image")));
-            this.btnNganHangKPI.Location = new System.Drawing.Point(376, 4);
+            this.btnNganHangKPI.Location = new System.Drawing.Point(10, 3);
             this.btnNganHangKPI.Name = "btnNganHangKPI";
             this.btnNganHangKPI.Size = new System.Drawing.Size(186, 40);
             this.btnNganHangKPI.TabIndex = 0;
             this.btnNganHangKPI.Text = "Ngân hàng KPI ";
             this.btnNganHangKPI.Click += new System.EventHandler(this.btnNganHangKPI_Click);
+            // 
+            // nmYear
+            // 
+            this.nmYear.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmYear.Location = new System.Drawing.Point(1271, 7);
+            this.nmYear.Maximum = new decimal(new int[] {
+            2099,
+            0,
+            0,
+            0});
+            this.nmYear.Name = "nmYear";
+            this.nmYear.Size = new System.Drawing.Size(79, 32);
+            this.nmYear.TabIndex = 3;
+            this.nmYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nmYear.Value = new decimal(new int[] {
+            2024,
+            0,
+            0,
+            0});
+            // 
+            // chkCongViecCaNhan
+            // 
+            this.chkCongViecCaNhan.AutoSize = true;
+            this.chkCongViecCaNhan.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCongViecCaNhan.Location = new System.Drawing.Point(1083, 10);
+            this.chkCongViecCaNhan.Name = "chkCongViecCaNhan";
+            this.chkCongViecCaNhan.Size = new System.Drawing.Size(181, 27);
+            this.chkCongViecCaNhan.TabIndex = 13;
+            this.chkCongViecCaNhan.Text = "Công viện cá nhân";
+            this.chkCongViecCaNhan.UseVisualStyleBackColor = true;
+            this.chkCongViecCaNhan.CheckedChanged += new System.EventHandler(this.chkCongViecCaNhan_CheckedChanged);
+            // 
+            // lbTenNV
+            // 
+            this.lbTenNV.AutoSize = true;
+            this.lbTenNV.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenNV.Location = new System.Drawing.Point(786, 11);
+            this.lbTenNV.Name = "lbTenNV";
+            this.lbTenNV.Size = new System.Drawing.Size(79, 24);
+            this.lbTenNV.TabIndex = 14;
+            this.lbTenNV.Text = "Tên NV";
             // 
             // Frm_AddKPIGrid
             // 
@@ -287,6 +334,8 @@ namespace DuAn_QuanLyKPI.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgrNganHangCaNhan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKPIBenhVien)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmYear)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,5 +361,8 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cPhuongPhapDo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoach;
+        private System.Windows.Forms.NumericUpDown nmYear;
+        private System.Windows.Forms.CheckBox chkCongViecCaNhan;
+        private System.Windows.Forms.Label lbTenNV;
     }
 }
