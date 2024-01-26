@@ -221,7 +221,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Appearance.Options.UseFont = true;
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
             this.btnLuu.Location = new System.Drawing.Point(590, 245);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 40);
@@ -272,10 +272,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.txtPhuongPhapDo);
             this.Controls.Add(this.txtDVT);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_AddEditKPI.IconOptions.Image")));
             this.Name = "Frm_AddEditKPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "               ";
+            this.Text = "KPI";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmYear)).EndInit();

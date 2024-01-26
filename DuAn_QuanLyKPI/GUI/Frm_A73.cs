@@ -796,7 +796,7 @@ namespace DuAn_QuanLyKPI.GUI
             dgrHTMucTieuKhachHang.Columns["cKeHoachHTKH"].Visible = false;
             dgrHTMucTieuVanHanh.Columns["cKeHoachHTVH"].Visible = false;
             dgrHTMucTieuPhatTrien.Columns["cKeHoachHTPT"].Visible = false;
-
+                                                                                                                                                                                                                                                                                                                                                                                                    
             TinhTongTrongSoPhuongDien();
             int sum = int.Parse(txtTongTrongSoMucTieu.Text);
             if (sum > 100)
@@ -879,8 +879,8 @@ namespace DuAn_QuanLyKPI.GUI
                 worksheet.Cells[17, 6] = double.Parse(kh) / 100;
                 worksheet.Cells[28, 6] = double.Parse(vh) / 100;
                 worksheet.Cells[39, 6] = double.Parse(pt) / 100;
-                worksheet.Cells[58, 2] = tennv;
-                worksheet.Cells[59, 2] = "Ngày(Date) " + ngaylap;
+                worksheet.Cells[58, 3] = tennv;
+                worksheet.Cells[59, 3] = "Ngày(Date) " + ngaylap;
 
                 try
                 {

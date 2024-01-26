@@ -47,7 +47,7 @@ namespace DuAn_QuanLyKPI
                     SQLHelper.SERVER_NAME = "192.168.50.108,1433";
                     SQLHelper.ConnectString();
 
-                    Application.Run(new Frm_Login());
+                    Application.Run(new Frm_AddKPIGrid());
                 }
                 finally
                 {
