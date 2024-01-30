@@ -16,6 +16,7 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
+
         //coneect & event
         private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
@@ -78,7 +79,6 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 dataGridViews[i].Rows.Add($"Row {i + 1}, Column 1", $"Row {i + 1}, Column 2", $"Row {i + 1}, Column 3");
             }
-
         }
 
         #region LoadDataGrid
@@ -113,8 +113,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 dgrBVMucTieuTaiChinh.AutoGenerateColumns = false;
                 dgrBVMucTieuTaiChinh.DataSource = tb;
-                lbTSTCTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
-                lbHTTC.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString() + "%";
+                txtTCHT.Text = dgrBVMucTieuTaiChinh.Rows[0].Cells["cTrongSoTieuChiBVTC"].Value.ToString();
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -152,8 +151,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 dgrBVMucTieuKhachHang.AutoGenerateColumns = false;
                 dgrBVMucTieuKhachHang.DataSource = tb;
-                lbTSKHTC.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
-                lbHTKH.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString() + "%";
+                txtKHHT.Text = dgrBVMucTieuKhachHang.Rows[0].Cells["cTrongSoTieuChiBVKH"].Value.ToString();
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -191,8 +189,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 dgrBVMucTieuVanHanh.AutoGenerateColumns = false;
                 dgrBVMucTieuVanHanh.DataSource = tb;
-                lbTSVHTC.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
-                lbHTVH.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString() + "%";
+                txtVHHT.Text = dgrBVMucTieuVanHanh.Rows[0].Cells["cTrongSoTieuChiBVVH"].Value.ToString();
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -230,8 +227,7 @@ namespace DuAn_QuanLyKPI.GUI
             {
                 dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
                 dgrBVMucTieuPhatTrien.DataSource = tb;
-                lbTSPTTC.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
-                lbHTPT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString() + "%";
+                txtPTHT.Text = dgrBVMucTieuPhatTrien.Rows[0].Cells["cTrongSoTieuChiBVPT"].Value.ToString();
             }
             if (dgrBVMucTieuTaiChinh.Rows.Count > 0)
             {
@@ -512,6 +508,7 @@ namespace DuAn_QuanLyKPI.GUI
                         {
                             CopyPTtoHT();
                             ChuyenTrangThai(4);
+                            TinhTongTrongSoPhuongDien();
                         }
                         else if (totalpt == null && int.Parse(txtTongTrongSoPT.Text) == null)
                         {
@@ -708,13 +705,20 @@ namespace DuAn_QuanLyKPI.GUI
             }
 
             TinhTongTrongSoPhuongDien();
-            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
-            if (sum > 100)
+            try
             {
-                ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
-                txtKHHT.Text = "0";
-                TinhTongTrongSoPhuongDien();
-                txtKHHT.Focus();
+                int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+                if (sum > 100)
+                {
+                    ev.QFrmThongBaoError("Tổng trọng số mục tiêu vượt quá 100%.Vui lòng nhập lại!");
+                    txtKHHT.Text = "0";
+                    TinhTongTrongSoPhuongDien();
+                    txtKHHT.Focus();
+                }
+            }
+            catch (Exception)
+            {
+                ev.QFrmThongBaoError("Tổng lỗi");   
             }
         }
         private void txtVHHT_Validating(object sender, CancelEventArgs e)
@@ -796,37 +800,45 @@ namespace DuAn_QuanLyKPI.GUI
             dgrHTMucTieuKhachHang.Columns["cKeHoachHTKH"].Visible = false;
             dgrHTMucTieuVanHanh.Columns["cKeHoachHTVH"].Visible = false;
             dgrHTMucTieuPhatTrien.Columns["cKeHoachHTPT"].Visible = false;
-                                                                                                                                                                                                                                                                                                                                                                                                    
-            TinhTongTrongSoPhuongDien();
-            int sum = int.Parse(txtTongTrongSoMucTieu.Text);
-            if (sum > 100)
+
+            try
             {
-                ev.QFrmThongBaoError("Trọng số vượt quá 100%");
-            }
-            else if (sum > 0 && sum < 100)
-            {
-                ev.QFrmThongBaoError("Trọng số chưa đạt đủ 100%");
-            }
-            else if (sum == 100)
-            {
-                if (ev.QFrmThongBao_YesNo("Hãy kiểm tra thật kĩ thông tin trước khi Hoàn thành nhé!"))
+                int sum = int.Parse(txtTongTrongSoMucTieu.Text);
+
+                if (sum > 100)
                 {
-                    // Lấy đường dẫn của thư mục bin-debug
-                    string binDebugPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents");
+                    ev.QFrmThongBaoError("Trọng số vượt quá 100%");
+                }
+                else if (sum > 0 && sum < 100)
+                {
+                    ev.QFrmThongBaoError("Trọng số chưa đạt đủ 100%");
+                }
+                else if (sum == 100)
+                {
+                    if (ev.QFrmThongBao_YesNo("Hãy kiểm tra thật kĩ thông tin trước khi Hoàn thành nhé!"))
+                    {
+                        // Lấy đường dẫn của thư mục bin-debug
+                        string binDebugPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents");
 
-                    // Tên tệp tin
-                    string fileName = "A73.xlsx";
+                        // Tên tệp tin
+                        string fileName = "A73.xlsx";
 
-                    // Tạo đường dẫn đầy đủ
-                    ev.QFrmThongBao("Nếu cần chỉnh sửa. Vui lòng chỉnh sửa trên Form, KHÔNG ĐƯỢC chỉnh sửa trên Excel. Mọi sự chỉnh sửa trên Excel phải tự chịu trách nhiệm!");
-                    string existingFilePath = Path.Combine(binDebugPath, fileName);
-                    AddDataGridViewsToExistingExcelSheet(dataGridViews, dgrBVMucTieuTaiChinh, dgrBVMucTieuKhachHang, dgrBVMucTieuVanHanh, dgrBVMucTieuPhatTrien, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
+                        // Tạo đường dẫn đầy đủ
+                        ev.QFrmThongBao("Nếu cần chỉnh sửa. Vui lòng chỉnh sửa trên Form, KHÔNG ĐƯỢC chỉnh sửa trên Excel. Mọi sự chỉnh sửa trên Excel phải tự chịu trách nhiệm!");
+                        string existingFilePath = Path.Combine(binDebugPath, fileName);
+                        AddDataGridViewsToExistingExcelSheet(dataGridViews, dgrBVMucTieuTaiChinh, dgrBVMucTieuKhachHang, dgrBVMucTieuVanHanh, dgrBVMucTieuPhatTrien, existingFilePath, txtTCHT.Text, txtKHHT.Text, txtVHHT.Text, txtPTHT.Text, TenNV, dtNgayLap.Value.ToString("dd/MM/yyyy"));
+                    }
+                }
+                else if (sum == null || sum == 0)
+                {
+                    ev.QFrmThongBao("Vui lòng nhập dữ liệu");
                 }
             }
-            else if (sum == null || sum == 0)
+            catch (Exception)
             {
-                ev.QFrmThongBao("Vui lòng nhập dữ liệu");
+                ev.QFrmThongBaoError("Sai định dạng dữ liệu không thể tính tổng");
             }
+            
         }
         private int[] startRows = { 7, 18, 29, 40 };
 
@@ -985,6 +997,7 @@ namespace DuAn_QuanLyKPI.GUI
                         double newValueBVPT = originalValueBVPT / 100;
                         worksheet.Cells[startRowBVPT + rowIndexBVPT, startColBVPT + 1] = newValueBVPT;
                     }
+                    btnXacNhanGuiDi.Visible = true;
                 }
                 catch (Exception ex)
                 {
@@ -2460,7 +2473,29 @@ namespace DuAn_QuanLyKPI.GUI
         {
             phuongdien = "tc";
             Frm_AddKPIGrid add = new Frm_AddKPIGrid();
-            add.ShowDialog();
+            add.ShowDialog();  
         }
+
+        private void btnXacNhanGuiDi_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void SaveTaiChinh()
+        {
+
+        }
+        private void SaveKhachHang()
+        {
+
+        }
+        private void SaveVanHanh()
+        {
+
+        }
+        private void SavePhatTrien()
+        {
+
+        }
+
     }
 }

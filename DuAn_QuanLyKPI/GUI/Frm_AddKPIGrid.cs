@@ -22,10 +22,12 @@ namespace DuAn_QuanLyKPI.GUI
 
         // Tạo biến 
         private string MaNV = Frm_Login.MaNV;
+
         public Frm_AddKPIGrid()
         {
             InitializeComponent();
             nmYear.Value = DateTime.Now.Year;
+
         }
         public void LoadNganHangKPI()
         {
@@ -110,7 +112,6 @@ namespace DuAn_QuanLyKPI.GUI
                 switch (phuongdien)
                 {
                     case "tc":
-
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'F' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "' and [CongViecCaNhan] = 1";
                         DataTable tc = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -118,10 +119,6 @@ namespace DuAn_QuanLyKPI.GUI
                         dgrNganHangCaNhan.DataSource = tc;
                         break;
                     case "kh":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'C' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "' and [CongViecCaNhan] = 1";
                         DataTable kh = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -129,10 +126,6 @@ namespace DuAn_QuanLyKPI.GUI
                         dgrKPIBenhVien.DataSource = kh;
                         break;
                     case "vh":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'B' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "' and [CongViecCaNhan] = 1";
                         DataTable vh = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -140,10 +133,6 @@ namespace DuAn_QuanLyKPI.GUI
                         dgrKPIBenhVien.DataSource = vh;
                         break;
                     case "pt":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'L' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "' and [CongViecCaNhan] = 1";
                         DataTable pt = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -157,10 +146,6 @@ namespace DuAn_QuanLyKPI.GUI
                 switch (phuongdien)
                 {
                     case "tc":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'F' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "'";
                         DataTable tc = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -168,10 +153,6 @@ namespace DuAn_QuanLyKPI.GUI
                         dgrNganHangCaNhan.DataSource = tc;
                         break;
                     case "kh":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'C' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "'";
                         DataTable kh = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -179,10 +160,6 @@ namespace DuAn_QuanLyKPI.GUI
                         dgrKPIBenhVien.DataSource = kh;
                         break;
                     case "vh":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'B' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "'";
                         DataTable vh = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -190,10 +167,6 @@ namespace DuAn_QuanLyKPI.GUI
                         dgrKPIBenhVien.DataSource = vh;
                         break;
                     case "pt":
-                        dgrKPIBenhVien.Visible = false;
-                        dgrNganHangCaNhan.Visible = true;
-                        chkCongViecCaNhanCaNhan.Visible = true;
-                        chkCongViecCaNhanNganHangKPI.Visible = false;
                         msql = "SELECT * FROM [dbo].[KPI_DangKiThem] where[MaNV] = 456789 and[TieuChiID] = 'L' and [Nam] = " + nmYear.Value + " " +
                                "and [CongViecCaNhan] = '" + chkCongViecCaNhanNganHangKPI.Checked + "'";
                         DataTable pt = comm.GetDataTable(mconnectstring, msql, "KPINH");
@@ -234,9 +207,9 @@ namespace DuAn_QuanLyKPI.GUI
             LoadNganHangCaNhan();
         }
 
-        private void dgrNganHangCaNhan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgrNganHangCaNhan_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+        }           
             
-        }
     }
 }

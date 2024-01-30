@@ -38,7 +38,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgrNganHangCaNhan = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMaKPICaNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNoiDungKPICaNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,14 +107,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNganHangCaNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrNganHangCaNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn1,
+            this.cMaKPICaNhan,
             this.cNoiDungKPICaNhan,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.dgrNganHangCaNhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrNganHangCaNhan.Location = new System.Drawing.Point(0, 0);
             this.dgrNganHangCaNhan.Name = "dgrNganHangCaNhan";
             this.dgrNganHangCaNhan.ReadOnly = true;
@@ -123,7 +122,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrNganHangCaNhan.RowTemplate.Height = 40;
             this.dgrNganHangCaNhan.Size = new System.Drawing.Size(1371, 704);
             this.dgrNganHangCaNhan.TabIndex = 17;
-            this.dgrNganHangCaNhan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNganHangCaNhan_CellContentClick);
+            this.dgrNganHangCaNhan.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrNganHangCaNhan_CellMouseClick);
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -134,12 +133,12 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.dataGridViewCheckBoxColumn1.Width = 60;
             // 
-            // dataGridViewTextBoxColumn1
+            // cMaKPICaNhan
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaKPI";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã KPI";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.cMaKPICaNhan.DataPropertyName = "MaKPI";
+            this.cMaKPICaNhan.HeaderText = "Mã KPI";
+            this.cMaKPICaNhan.Name = "cMaKPICaNhan";
+            this.cMaKPICaNhan.ReadOnly = true;
             // 
             // cNoiDungKPICaNhan
             // 
@@ -458,7 +457,7 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cTieuChiID;
         private System.Windows.Forms.DataGridView dgrNganHangCaNhan;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPICaNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungKPICaNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
