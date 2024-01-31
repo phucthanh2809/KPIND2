@@ -47,10 +47,13 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            msql = "INSERT INTO [dbo].[KPI_DangKiThem] " +
-                   "([MaNV],[Quy],[Nam],[NoiDung],[DonViTinh],[PhuongPhapDo],[CongViecCaNhan],[TieuChiID],[ChiTieu]) " +
-                   "VALUES (N'" + txtMaNV.Text + "','" + nmQuarter.Value.ToString()+ "','" + nmYear.Value.ToString() + "',N'" + txtNoiDungKPI.Text + "',N'" + txtDVT.Text + "',N'" + txtPhuongPhapDo.Text + "','" + chkCongViecCaNhan.Checked + "',N'" + cboPhuongDien.SelectedValue + "',N'" + txtChiTieu.Text + "')";
-            comm.RunSQL(mconnectstring, msql);
+            if(ev.QFrmThongBao_YesNo("Bạn có chắc muốn lưu không?"))
+            {
+                msql = "INSERT INTO [dbo].[KPI_DangKiThem] " +
+                       "([MaNV],[Quy],[Nam],[NoiDung],[DonViTinh],[PhuongPhapDo],[CongViecCaNhan],[TieuChiID],[ChiTieu]) " +
+                       "VALUES (N'" + txtMaNV.Text + "','" + nmQuarter.Value.ToString() + "','" + nmYear.Value.ToString() + "',N'" + txtNoiDungKPI.Text + "',N'" + txtDVT.Text + "',N'" + txtPhuongPhapDo.Text + "','" + chkCongViecCaNhan.Checked + "',N'" + cboPhuongDien.SelectedValue + "',N'" + txtChiTieu.Text + "')";
+                comm.RunSQL(mconnectstring, msql);
+            }    
         }
     }
 }

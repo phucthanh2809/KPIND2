@@ -16,7 +16,6 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class FrmA73 : DevExpress.XtraEditors.XtraForm
     {
-
         //coneect & event
         private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
@@ -58,6 +57,7 @@ namespace DuAn_QuanLyKPI.GUI
             updateTimer.Tick += UpdateTimer_Tick;
             dtNgayLap.Value = DateTime.Now;
             ChuyenTrangThai(0);
+
         }
         private void FrmA73_Load(object sender, EventArgs e)
         {
@@ -817,6 +817,12 @@ namespace DuAn_QuanLyKPI.GUI
                 {
                     if (ev.QFrmThongBao_YesNo("Hãy kiểm tra thật kĩ thông tin trước khi Hoàn thành nhé!"))
                     {
+                        // Divide the values in DataGridViews by 100
+                        DivideColumnValuesBy100(dgrHTMucTieuTaiChinh, "cTrongSoKPIHTTC");
+                        DivideColumnValuesBy100(dgrHTMucTieuKhachHang, "cTrongSoKPIHTKH");
+                        DivideColumnValuesBy100(dgrHTMucTieuVanHanh, "cTrongSoKPIHTVH");
+                        DivideColumnValuesBy100(dgrHTMucTieuPhatTrien, "cTrongSoKPIHTPT");
+
                         // Lấy đường dẫn của thư mục bin-debug
                         string binDebugPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents");
 
@@ -839,9 +845,20 @@ namespace DuAn_QuanLyKPI.GUI
                 ev.QFrmThongBaoError("Sai định dạng dữ liệu không thể tính tổng");
             }
             
-        }
+        } 
         private int[] startRows = { 7, 18, 29, 40 };
-
+        private void DivideColumnValuesBy100(DataGridView dataGridView, string columnName)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (row.Cells[columnName].Value != null)
+                {
+                    double originalValue = Convert.ToDouble(row.Cells[columnName].Value);
+                    double newValue = originalValue / 100;
+                    row.Cells[columnName].Value = newValue;
+                }
+            }
+        }
         private void AddDataGridViewsToExistingExcelSheet(DataGridView[] dataGridViews, DataGridView dgrBVMucTieuTaiChinh, DataGridView dgrBVMucTieuKhachHang, DataGridView dgrBVMucTieuVanHanh, DataGridView dgrBVMucTieuPhatTrien, string existingFilePath, string tc, string kh, string vh, string pt, string tennv, string ngaylap)
         {
             Excel.Application excelApp = null;
@@ -2478,24 +2495,66 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnXacNhanGuiDi_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                SaveTaiChinh();
+                SaveKhachHang();
+                SaveVanHanh();
+                SavePhatTrien();
+                SaveThongTinPhieu();
+                ev.QFrmThongBao("Đã lưu thành công");
+            }
+            catch (Exception)
+            {
+                ev.QFrmThongBaoError("Đã có lỗi xảy ra trong quá trình lưu dữ liệu ");
+            }
         }
         private void SaveTaiChinh()
         {
-
+            for (int i = 0; i < dgrHTMucTieuTaiChinh.RowCount; i++) 
+            {
+                msql = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuKhoaPhong]" +
+                   "([MaPhieuKPIKP],[NoiDungKPI],[TrongSoTCKP],[TrongSoKPIKP],[KeHoach])" +
+                   "VALUES('" + txtMaPhieu.Text + "',N'" + dgrHTMucTieuTaiChinh.Rows[i].Cells["cNoiDungHTTC"].Value.ToString() + "','" + int.Parse(txtTCHT.Text) + "','" +int.Parse(dgrHTMucTieuTaiChinh.Rows[i].Cells["cTrongSoKPIHTTC"].Value.ToString()) + "',N'" + dgrHTMucTieuTaiChinh.Rows[i].Cells["cKeHoachHTTC"].Value.ToString() + "')";
+                comm.RunSQL(mconnectstring, msql);
+            }
         }
         private void SaveKhachHang()
         {
-
+            for (int i = 0; i < dgrHTMucTieuKhachHang.RowCount; i++)
+            {
+                msql = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuKhoaPhong]" +
+                   "([MaPhieuKPIKP],[NoiDungKPI],[TrongSoTCKP],[TrongSoKPIKP],[KeHoach])" +
+                   "VALUES('" + txtMaPhieu.Text + "',N'" + dgrHTMucTieuKhachHang.Rows[i].Cells["cNoiDungHTKH"].Value.ToString() + "','" + int.Parse(txtKHHT.Text) + "','" + int.Parse(dgrHTMucTieuKhachHang.Rows[i].Cells["cTrongSoKPIHTKH"].Value.ToString()) + "',N'" + dgrHTMucTieuKhachHang.Rows[i].Cells["cKeHoachHTKH"].Value.ToString() + "')";
+                comm.RunSQL(mconnectstring, msql);
+            }
         }
         private void SaveVanHanh()
         {
-
+            for (int i = 0; i < dgrHTMucTieuVanHanh.RowCount; i++)
+            {
+                msql = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuKhoaPhong]" +
+                   "([MaPhieuKPIKP],[NoiDungKPI],[TrongSoTCKP],[TrongSoKPIKP],[KeHoach])" +
+                   "VALUES('" + txtMaPhieu.Text + "',N'" + dgrHTMucTieuVanHanh.Rows[i].Cells["cNoiDungHTVH"].Value.ToString() + "','" + int.Parse(txtVHHT.Text) + "','" + int.Parse(dgrHTMucTieuVanHanh.Rows[i].Cells["cTrongSoKPIHTVH"].Value.ToString()) + "',N'" + dgrHTMucTieuVanHanh.Rows[i].Cells["cKeHoachHTVH"].Value.ToString() + "')";
+                comm.RunSQL(mconnectstring, msql);
+            }
         }
         private void SavePhatTrien()
         {
-
+            for (int i = 0; i < dgrHTMucTieuPhatTrien.RowCount; i++)
+            {
+                msql = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuKhoaPhong]" +
+                   "([MaPhieuKPIKP],[NoiDungKPI],[TrongSoTCKP],[TrongSoKPIKP],[KeHoach])" +
+                   "VALUES('" + txtMaPhieu.Text + "',N'" + dgrHTMucTieuPhatTrien.Rows[i].Cells["cNoiDungHTPT"].Value.ToString() + "','" + int.Parse(txtPTHT.Text) + "','" + int.Parse(dgrHTMucTieuPhatTrien.Rows[i].Cells["cTrongSoKPIHTPT"].Value.ToString()) + "',N'" + dgrHTMucTieuPhatTrien.Rows[i].Cells["cKeHoachHTPT"].Value.ToString() + "')";
+                comm.RunSQL(mconnectstring, msql);
+            }
         }
-
+        private void SaveThongTinPhieu()
+        {
+            msql = "INSERT INTO [dbo].[KPI_KhoaPhong] " +
+                   "([MaPhieuKPIBV],[MaPhieuKPIKPCT],[MaPhieuKPIKP],[MaPK],[QuyNam],[NguoiLap],[NguoiPheDuyet],[NguoiXemXet],[NgayLapPhieuKPIKP],[NgayPheDuyet],[NgayXemXet],[IDBieuMau],[TrangThai])" +
+                   "VALUES ('" + dgrBVMucTieuTaiChinh.CurrentRow.Cells["cMaPhieuKPIBVTC"].Value.ToString() + "','','" + txtMaPhieu.Text + "','" + MaPhongKhoa.ToString() + "','" + dtNgayLap.Value.ToString("yyyy") + "','" + MaNV.ToString() + "','','','" + dtNgayLap.Value.ToString("yyyy-MM-dd") + "','','',73,0)";
+            comm.RunSQL(mconnectstring, msql);
+        }
     }
 }

@@ -209,7 +209,11 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void dgrNganHangCaNhan_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-        }           
-            
+        }
+
+        private void dgrNganHangCaNhan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 }

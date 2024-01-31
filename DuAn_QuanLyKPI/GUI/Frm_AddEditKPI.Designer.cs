@@ -77,7 +77,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtMaNV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(169, 251);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(140, 29);
+            this.txtMaNV.ReadOnly = true;
+            this.txtMaNV.Size = new System.Drawing.Size(323, 29);
             this.txtMaNV.TabIndex = 4;
             // 
             // label1
@@ -277,7 +278,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.Name = "Frm_AddEditKPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KPI";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmYear)).EndInit();
             this.ResumeLayout(false);
