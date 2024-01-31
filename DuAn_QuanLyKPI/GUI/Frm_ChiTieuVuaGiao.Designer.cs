@@ -71,11 +71,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.MaPhieuKPIBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clDonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clPhuongPhapDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clChiTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTieuChiID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenTieuChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTrongSoTCBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clKeHoach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -257,11 +259,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.MaPhieuKPIBV,
             this.clNoiDung,
             this.clDonViTinh,
+            this.clPhuongPhapDo,
             this.clChiTieu,
             this.clTieuChiID,
             this.clTenTieuChi,
             this.clTrongSoTCBV,
             this.cTrongSoKPIBV,
+            this.clKeHoach,
             this.btnDelete});
             this.dtgv_ChiTietKPI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgv_ChiTietKPI.Location = new System.Drawing.Point(0, 0);
@@ -447,6 +451,12 @@ namespace DuAn_QuanLyKPI.GUI
             this.clDonViTinh.ReadOnly = true;
             this.clDonViTinh.Width = 130;
             // 
+            // clPhuongPhapDo
+            // 
+            this.clPhuongPhapDo.DataPropertyName = "PhuongPhapDo";
+            this.clPhuongPhapDo.HeaderText = "Phương pháp đo";
+            this.clPhuongPhapDo.Name = "clPhuongPhapDo";
+            // 
             // clChiTieu
             // 
             this.clChiTieu.DataPropertyName = "ChiTieu";
@@ -499,6 +509,12 @@ namespace DuAn_QuanLyKPI.GUI
             this.cTrongSoKPIBV.HeaderText = "Trọng số KPI BV (%)";
             this.cTrongSoKPIBV.Name = "cTrongSoKPIBV";
             this.cTrongSoKPIBV.Width = 150;
+            // 
+            // clKeHoach
+            // 
+            this.clKeHoach.DataPropertyName = "KeHoach";
+            this.clKeHoach.HeaderText = "Kế hoạch";
+            this.clKeHoach.Name = "clKeHoach";
             // 
             // btnDelete
             // 
@@ -565,11 +581,13 @@ namespace DuAn_QuanLyKPI.GUI
         private DataGridViewTextBoxColumn MaPhieuKPIBV;
         private DataGridViewTextBoxColumn clNoiDung;
         private DataGridViewTextBoxColumn clDonViTinh;
+        private DataGridViewTextBoxColumn clPhuongPhapDo;
         private DataGridViewTextBoxColumn clChiTieu;
         private DataGridViewTextBoxColumn clTieuChiID;
         private DataGridViewTextBoxColumn clTenTieuChi;
         private DataGridViewTextBoxColumn clTrongSoTCBV;
         private DataGridViewTextBoxColumn cTrongSoKPIBV;
+        private DataGridViewTextBoxColumn clKeHoach;
         private DataGridViewImageColumn btnDelete;
     }
 }

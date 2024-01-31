@@ -37,11 +37,13 @@ namespace DuAn_QuanLyKPI.GUI
         private int _edit = 0;
         List<int> selectedItems = new List<int>();
         private int maKPI;
+        private int maKPI_Them;
         private string message;
         private bool isCaNhanSelected = false;
         private bool isBenhVienSelected = false;
         private bool isTongHopSelected = false;
-        
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -81,6 +83,8 @@ namespace DuAn_QuanLyKPI.GUI
             btnCancel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             txt_TenTieuChi.Visible = false;
+            btn_Luu.Enabled = false;
+            txt_MaKPI_Them.Visible = false;
         }
         private void LoadCbo()
         {
@@ -96,7 +100,7 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                 }
 
-            } 
+            }
             dataTableTieuChi.DefaultView.Sort = "TieuChiID";
             dataTableTieuChi = dataTableTieuChi.DefaultView.ToTable();
             cbx_TieuChiID.DataSource = dataTableTieuChi;
@@ -107,11 +111,12 @@ namespace DuAn_QuanLyKPI.GUI
         }
         private void LoadData()
         {
-            msql = "SELECT * FROM [dbo].[KPI],[dbo].[NhomTieuChi] where KPI.TieuChiID = NhomTieuChi.TieuChiID";
+            msql = "SELECT dbo.KPI.MaKPI, dbo.KPI.NoiDung, dbo.KPI.DonViTinh, dbo.KPI.PhuongPhapDo, dbo.KPI.CongViecCaNhan, dbo.KPI.ChiTieu, dbo.KPI.TieuChiID, " +
+                "dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID ";
             DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPI");
             dtgv_QLNganHangKPI.AutoGenerateColumns = false;
             dtgv_QLNganHangKPI.DataSource = tb;
-            
+
         }
         private void LoadData1()
         {
@@ -128,6 +133,14 @@ namespace DuAn_QuanLyKPI.GUI
             dtgv_QLNganHangKPI.AutoGenerateColumns = false;
             dtgv_QLNganHangKPI.DataSource = tb;
 
+        }
+        private void LoadData3()
+        {
+            msql = "SELECT dbo.NhomTieuChi.TenTieuChi, dbo.KPI_DangKiThem.MaKPI_DKT, dbo.KPI_DangKiThem.NoiDung, dbo.KPI_DangKiThem.DonViTinh, dbo.KPI_DangKiThem.PhuongPhapDo,dbo.KPI_DangKiThem.ChiTieu, " +
+                "dbo.KPI_DangKiThem.CongViecCaNhan, dbo.KPI_DangKiThem.TieuChiID FROM  dbo.NhomTieuChi INNER JOIN dbo.KPI_DangKiThem ON dbo.NhomTieuChi.TieuChiID = dbo.KPI_DangKiThem.TieuChiID ";
+            DataTable tb = comm.GetDataTable(mconnectstring, msql, "KPI_DangKiThem");
+            dtgv_QLNganHangKPI.AutoGenerateColumns = false;
+            dtgv_QLNganHangKPI.DataSource = tb;
         }
 
         private void btnLoadData_Click(object sender, EventArgs e)
@@ -195,21 +208,30 @@ namespace DuAn_QuanLyKPI.GUI
                 bool congViecCaNhan = chkCongViecCaNhan.Checked;
                 string chiTieu = cbo_ChiTieu.Text;
                 //string tieuChiID = cbx_TieuChiID.SelectedValue;
-                msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'"+cbx_TieuChiID.SelectedValue+"')";
-                comm.RunSQL(mconnectstring, msql);
+
                 //LoadData();
                 ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
-                if(isCaNhanSelected)
+                if (isCaNhanSelected)
                 {
-                    LoadData1();
-                }    
+                    //string tieuChiID = cbx_TieuChiID.SelectedValue;
+                    msql = $"INSERT INTO [dbo].[KPI_DangkiThem] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "')";
+                    comm.RunSQL(mconnectstring, msql);
+                    LoadData3();
+                    ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
+                }
                 else if (isBenhVienSelected)
                 {
+                    msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "')";
+                    comm.RunSQL(mconnectstring, msql);
                     LoadData2();
+                    ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
                 }
                 else if (isTongHopSelected)
                 {
+                    msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "')";
+                    comm.RunSQL(mconnectstring, msql);
                     LoadData();
+                    ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
                 }
 
 
@@ -227,34 +249,32 @@ namespace DuAn_QuanLyKPI.GUI
                     string chiTieu = cbo_ChiTieu.Text;
                     string tieuChiID = txt_TenTieuChi.Text; // Hoặc sử dụng SelectedValue tùy thuộc vào cách bạn set up ComboBox
 
-                    // Thực hiện câu lệnh SQL UPDATE dựa trên giá trị của MaKPI
-                    // Kiểm tra xem có hàng nào được chọn không             
-
                     string updateSql = $"UPDATE [dbo].[KPI] SET NoiDung = N'{noiDung}', DonViTinh = N'{donViTinh}', PhuongPhapDo = N'{phuongPhapDo}', CongViecCaNhan = '{congViecCaNhan}', ChiTieu = '{chiTieu}', TieuChiID = '{tieuChiID}' WHERE MaKPI = {maKPI}";
 
                     comm.RunSQL(mconnectstring, updateSql);
-
-                    // Nạp lại dữ liệu vào DataGridView sau khi cập nhật
-                    //LoadData();
-
-                    // Optional: Hiển thị thông báo hoặc thực hiện các hành động khác sau khi cập nhật
-                    ev.QFrmThongBao("Đã cập nhật dữ liệu thành công!");
-                }
-                if (isCaNhanSelected)
-                {
-                    LoadData1();
-                }
-                else if (isBenhVienSelected)
-                {
                     LoadData2();
-                }
-                else if (isTongHopSelected)
-                {
-                    LoadData();
-                }
-            }
-            Edit = 0;
+                    ev.QFrmThongBao("Đã cập nhật dữ liệu thành công!");
 
+                    if (isCaNhanSelected)
+                    {
+
+                        LoadData3();
+
+                    }
+                    else if (isBenhVienSelected)
+                    {
+
+                        LoadData2();
+
+                    }
+                    else if (isTongHopSelected)
+                    {
+                        ev.QFrmThongBao("Đã cập nhật dữ liệu thành công!");
+                    }
+                }
+                Edit = 0;
+
+            }
         }
 
         private void btnCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -274,8 +294,8 @@ namespace DuAn_QuanLyKPI.GUI
 
 
         }
-        
-       
+
+
         //Xóa
         private void btnCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -285,22 +305,11 @@ namespace DuAn_QuanLyKPI.GUI
 
                 if (result)
                 {
-                    msql = "DELETE [dbo].[KPI] WHERE MaKPI ='" + maKPI + "'";
+                    msql = $"DELETE [dbo].[KPI] WHERE MaKPI = {maKPI}";
                     comm.RunSQL(mconnectstring, msql);
-                    if (isCaNhanSelected)
-                    {
-                        LoadData1();
-                    }
-                    else if (isBenhVienSelected)
-                    {
-                        LoadData2();
-                    }
-                    else if (isTongHopSelected)
-                    {
-                        LoadData();
-                    }
+                    LoadData3();
                     ev.QFrmThongBao("Bạn đã xóa thành công !");
-                    
+
                     Edit = 0;
                 }
             }
@@ -345,15 +354,35 @@ namespace DuAn_QuanLyKPI.GUI
                 txt_TenTieuChi.Text = string.Empty;
             }
         }
+        private void UnhighlightAllRows()
+        {
+            // Hủy bôi đậm tất cả các hàng
+            foreach (DataGridViewRow row in dtgv_QLNganHangKPI.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dtgv_QLNganHangKPI.DefaultCellStyle.BackColor;
+            }
+        }
+        int selectedRowIndex = -1;
 
-        
         //Lấy dữ liệu từ gridview đổ lên các textbox
         private void dtgv_QLNganHangKPI_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             Edit = 2;
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
+                // Hủy bôi đậm các hàng khác nếu đã có
+                UnhighlightAllRows();
+
+                // Đặt màu nền cho hàng được chọn
+                dtgv_QLNganHangKPI.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(217, 237, 191);
+
+                // Lưu chỉ số hàng được chọn
+                selectedRowIndex = e.RowIndex;
+            }
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                
                 // Lấy thông tin từ ô được chọn
                 DataGridViewRow selectedRow = dtgv_QLNganHangKPI.Rows[e.RowIndex];
                 string noiDung = selectedRow.Cells["clNoiDung"].Value.ToString();
@@ -369,10 +398,13 @@ namespace DuAn_QuanLyKPI.GUI
                 string chiTieu = selectedRow.Cells["clChiTieu"].Value.ToString();
                 string tieuChiID = selectedRow.Cells["cTieuChiID"].Value.ToString();
                 string tenTieuChi = selectedRow.Cells["cTenTieuChi"].Value.ToString();
-
                 // Lấy giá trị maKPI từ cell clMaKPI
-                if (int.TryParse(selectedRow.Cells["clMaKPI"].Value.ToString(), out maKPI))
-                {
+                if (selectedRow != null &&
+                (selectedRow.Cells["clMaKPI_DKT"] != null && selectedRow.Cells["clMaKPI_DKT"].Value != null &&
+                int.TryParse(selectedRow.Cells["clMaKPI_DKT"].Value.ToString(), out maKPI)) ||
+                (selectedRow.Cells["clMaKPI"] != null && selectedRow.Cells["clMaKPI"].Value != null &&
+                int.TryParse(selectedRow.Cells["clMaKPI"].Value.ToString(), out maKPI)))
+                {     
                     // Lấy thông tin từ các ô cột khác nếu cần
                     txtNoiDung.Text = noiDung;
                     cbo_DonViTinh.Text = donViTinh;
@@ -392,115 +424,15 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Lỗi khi lấy giá trị MaKPI từ cell clMaKPI");
                 }
             }
+
         }
-       
+
         private void btnPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
 
-        private void cbo_DonViTinh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //// Lấy giá trị được chọn từ ComboBox
-            //string selectedUnit = cbo_DonViTinh.SelectedItem.ToString();
 
-            //// Hiển thị nội dung tương ứng trong ComboBox khác
-            //switch (selectedUnit)
-            //{
-            //    case "Ngày":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_ChiTieu.Items.Add("dd/mm/yyyy");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X : KPI = 100 % KQ > X : KPI = 0 % ");
-            //        cbo_PhuongPhapDo.Items.Add("KQ < dd/mm/yyyy: KPI = 100% KQ >= dd/mm/yyyy: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= ngày X: KPI = 100% KQ > ngày X: KPI = 0%");
-            //        break;
-            //    case "thời gian":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("DD/MM/YY");
-            //        cbo_ChiTieu.Items.Add("X%");
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_ChiTieu.Items.Add("dd/mm/yyyy");
-            //        cbo_ChiTieu.Items.Add("24");
-            //        cbo_PhuongPhapDo.Items.Add("KQ < dd/mm/yyyy: KPI = 100% KQ >= dd/mm/yyyy: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= 24: KPI = 100% KQ > 24: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X% : KPI = 100% KQ >X% : KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ< DD/MM/YY: 100% KPI  KQ>= DD/MM/YY: 0% KPI");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= X : KPI = 100% KQ <X : KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X : KPI = 100%  KQ > X : KPI = 0%");
-            //        break;
-            //    case "Số lần":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("0");
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_ChiTieu.Items.Add("1");
-            //        cbo_ChiTieu.Items.Add("12");
-            //        cbo_ChiTieu.Items.Add("4");
-            //        cbo_ChiTieu.Items.Add("100%");
-            //        cbo_ChiTieu.Items.Add("0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ = 0: KPI = 100% KQ >= 1: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X: KPI = 100% KQ > X: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ => 1: KPI = 100% KQ < 1: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= 12: KPI = 100% KQ < 12: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= 4: KPI = 100% KQ < 4: KPI = 0%");                 
-            //        break;
-            //     case "Số lượng":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_ChiTieu.Items.Add("3");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= X: KPI = 100% KQ < X: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X : KPI = 100% KQ > X : KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= X: 100% KPI  KQ< X: 0% KPI");
-            //        cbo_PhuongPhapDo.Items.Add("KQ > X: KPI = 100% KQ < = X: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= 3: KPI = 100% KQ < 3: KPI = 0%");
-            //        break;
-            //    case "Buổi":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= X: KPI = 100% KQ < X: KPI = 0%");
-            //        break;
-            //    case "%":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("100%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ = 100%: KPI = 100% KQ < 100%: KPI = 0%");
-            //        break;
-            //    case "Phút":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X: KPI = 100% KQ > X: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X phút: KPI = 100% KQ > X phút: KPI = 0%");
-            //        break;
-            //    case "Kỳ thi":
-            //        //cbo_ChiTieu.Items.Clear();
-            //        //cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= X: KPI = 100 % KQ < X: KPI = 0 %");
-            //        break;
-            //    case "Giờ":
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        cbo_ChiTieu.Items.Add("X");
-            //        cbo_ChiTieu.Items.Add("24");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= 24: KPI = 100% KQ > 24: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <= X giờ: KPI = 100% KQ > X giờ: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ >= X: KPI = 100% KQ < X: KPI = 0%");
-            //        cbo_PhuongPhapDo.Items.Add("KQ <  X: KPI = 100%  KQ >= X: KPI = 0%");
-            //        break;
-            //    case "Lần":
-            //    // Thêm các trường hợp khác nếu cần
-            //    default:
-            //        cbo_ChiTieu.Items.Clear();
-            //        cbo_PhuongPhapDo.Items.Clear();
-            //        break;
-            //}
-        }
         private void LoadDonViTinhComboBox()
         {
             using (SqlConnection connection = new SqlConnection(mconnectstring))
@@ -526,7 +458,7 @@ namespace DuAn_QuanLyKPI.GUI
         private void cboDonViTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadChitieuComboBox();
-            
+
         }
 
         private void LoadChitieuComboBox()
@@ -602,44 +534,35 @@ namespace DuAn_QuanLyKPI.GUI
         //        }
         //    }
         //}
-    
-    private void dtgv_QLNganHangKPI_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+
+        private void dtgv_QLNganHangKPI_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             ev.Qdgr_RowPostPaint(sender, e, dtgv_QLNganHangKPI);
         }
 
 
-        private void btn_TongHop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            isCaNhanSelected = false;
-            isBenhVienSelected = false;
-            isTongHopSelected = true;
-            Edit = 0;
-            LoadData();
-            SetButtonVisibility(DevExpress.XtraBars.BarItemVisibility.Never);
-        }
+
 
         private void btn_CaNhan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             isCaNhanSelected = true;
             isBenhVienSelected = false;
-            isTongHopSelected = false;
             Edit = 0;
-            LoadData1();
-           
+            LoadData3();
             SetButtonVisibility(DevExpress.XtraBars.BarItemVisibility.Always);
-            chkCongViecCaNhan.Checked = true;
+            btn_Luu.Visible = true;
         }
 
         private void btn_BenhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             isCaNhanSelected = false;
             isBenhVienSelected = true;
-            isTongHopSelected = false;
             Edit = 0;
-            LoadData2();
+            LoadData();
             SetButtonVisibility(DevExpress.XtraBars.BarItemVisibility.Never);
             chkCongViecCaNhan.Checked = false;
+            ck_KPI.Visible = true;
+            btn_Luu.Visible = false;
         }
 
         // Hàm này để thiết lập sự hiển thị của các nút
@@ -651,7 +574,7 @@ namespace DuAn_QuanLyKPI.GUI
             btnSave.Visibility = visibility;
         }
 
-       
+
         private void UpdatePercentIfNeeded()
         {
             if (cbo_DonViTinh.SelectedItem != null && cbo_DonViTinh.SelectedItem.ToString() == " %")
@@ -672,6 +595,131 @@ namespace DuAn_QuanLyKPI.GUI
         private void cbo_ChiTieu_Leave(object sender, EventArgs e)
         {
             UpdatePercentIfNeeded();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            Edit = 0;
+        }
+
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+            #region luu
+            //if (isDataChanged)
+            //{
+            //    if (Edit == 1)
+            //    //thì là trạng thái thêm
+            //    {
+            //        string noiDung = txtNoiDung.Text;
+            //        string donViTinh = cbo_DonViTinh.Text;
+            //        string phuongPhapDo = cbo_PhuongPhapDo.Text;
+            //        bool congViecCaNhan = chkCongViecCaNhan.Checked;
+            //        string chiTieu = cbo_ChiTieu.Text;
+            //        //string tieuChiID = cbx_TieuChiID.SelectedValue;
+
+            //        //LoadData();
+            //        ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
+            //        if (isCaNhanSelected)
+            //        {
+            //            //string tieuChiID = cbx_TieuChiID.SelectedValue;
+            //            msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID,KPIDKT) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "',1)";
+            //            comm.RunSQL(mconnectstring, msql);
+            //            LoadData3();
+            //            ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
+            //        }
+            //        else if (isBenhVienSelected)
+            //        {
+            //            msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID,KPIDKT) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "',0)";
+            //            comm.RunSQL(mconnectstring, msql);
+            //            LoadData2();
+            //            ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
+            //        }
+            //    }
+            //    if (Edit == 2)
+            //    //trạng thái sửa
+            //    {
+            //        bool result = ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn sửa ?");
+            //        if (result == true)
+            //        {
+            //            string noiDung = txtNoiDung.Text;
+            //            string donViTinh = cbo_DonViTinh.Text;
+            //            string phuongPhapDo = cbo_PhuongPhapDo.Text;
+            //            bool congViecCaNhan = chkCongViecCaNhan.Checked;
+            //            string chiTieu = cbo_ChiTieu.Text;
+            //            string tieuChiID = txt_TenTieuChi.Text; // Hoặc sử dụng SelectedValue tùy thuộc vào cách bạn set up ComboBox         
+
+            //            string updateSql = $"UPDATE [dbo].[KPI] SET NoiDung = N'{noiDung}', DonViTinh = N'{donViTinh}', PhuongPhapDo = N'{phuongPhapDo}', CongViecCaNhan = '{congViecCaNhan}', ChiTieu = '{chiTieu}', TieuChiID = '{tieuChiID}' WHERE MaKPI = {maKPI}";
+
+            //            comm.RunSQL(mconnectstring, updateSql);
+            //            ev.QFrmThongBao("Đã cập nhật dữ liệu thành công!");
+            //        }
+            //        if (isCaNhanSelected)
+            //        {
+            //            LoadData3();
+            //        }
+            //        else if (isBenhVienSelected)
+            //        {
+            //            LoadData();
+            //        }
+            //    }
+            //    Edit = 0;
+
+            //}
+            #endregion
+            Frm_AddKPIGrid form = new Frm_AddKPIGrid();
+            form.ShowDialog();
+        }
+        private bool isDataChanged = false;
+        private void txtNoiDung_TextChanged(object sender, EventArgs e)
+        {
+            isDataChanged = true;
+            btn_Luu.Enabled = true;
+        }
+
+        private void cbo_DonViTinh_TextChanged(object sender, EventArgs e)
+        {
+            isDataChanged = true;
+            btn_Luu.Enabled = true;
+        }
+
+        private void cbo_ChiTieu_TextChanged(object sender, EventArgs e)
+        {
+            isDataChanged = true;
+            btn_Luu.Enabled = true;
+        }
+
+        private void cbo_PhuongPhapDo_TextChanged(object sender, EventArgs e)
+        {
+            isDataChanged = true;
+            btn_Luu.Enabled = true;
+
+        }
+
+        private void cbx_TieuChiID_TextChanged(object sender, EventArgs e)
+        {
+            isDataChanged = true;
+            btn_Luu.Enabled = true;
+        }
+
+        private void ck_KPI_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+        {
+            if (ck_KPI.GetItemChecked(0) && ck_KPI.GetItemChecked(1))
+            {
+                LoadData();
+            }
+            else if (ck_KPI.GetItemChecked(0))
+            {
+                LoadData2();
+            }
+            else if (ck_KPI.GetItemChecked(1))
+            {
+                LoadData1();
+            }
+            
+            else
+            {
+                LoadData();
+            }
         }
     }
 

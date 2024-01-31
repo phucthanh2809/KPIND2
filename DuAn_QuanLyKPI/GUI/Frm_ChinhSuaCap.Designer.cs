@@ -32,19 +32,20 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_TroLai = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_Nam1 = new System.Windows.Forms.TextBox();
             this.txt_MaPhieu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.clTrongSoTCBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTrongSoKPIBV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cXoa = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txt_Nam1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_ChinhSuaChiTieu)).BeginInit();
@@ -132,6 +132,15 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1531, 132);
             this.panel2.TabIndex = 2;
+            // 
+            // txt_Nam1
+            // 
+            this.txt_Nam1.Location = new System.Drawing.Point(292, 84);
+            this.txt_Nam1.Name = "txt_Nam1";
+            this.txt_Nam1.Size = new System.Drawing.Size(107, 21);
+            this.txt_Nam1.TabIndex = 91;
+            this.txt_Nam1.Visible = false;
+            this.txt_Nam1.TextChanged += new System.EventHandler(this.txt_Nam1_TextChanged);
             // 
             // txt_MaPhieu
             // 
@@ -218,6 +227,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.txt_Nam.Name = "txt_Nam";
             this.txt_Nam.Size = new System.Drawing.Size(177, 29);
             this.txt_Nam.TabIndex = 15;
+            this.txt_Nam.TextChanged += new System.EventHandler(this.txt_Nam_TextChanged);
             // 
             // btn_Them
             // 
@@ -247,19 +257,19 @@ namespace DuAn_QuanLyKPI.GUI
             this.dtgv_ChinhSuaChiTieu.AllowUserToDeleteRows = false;
             this.dtgv_ChinhSuaChiTieu.AllowUserToResizeColumns = false;
             this.dtgv_ChinhSuaChiTieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.dtgv_ChinhSuaChiTieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.dtgv_ChinhSuaChiTieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv_ChinhSuaChiTieu.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtgv_ChinhSuaChiTieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Times New Roman", 14F);
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv_ChinhSuaChiTieu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_ChinhSuaChiTieu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv_ChinhSuaChiTieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_ChinhSuaChiTieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clMaKPI,
@@ -300,9 +310,9 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.clNoiDung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clNoiDung.DataPropertyName = "NoiDung";
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clNoiDung.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.clNoiDung.DefaultCellStyle = dataGridViewCellStyle3;
             this.clNoiDung.HeaderText = "Nội dung";
             this.clNoiDung.Name = "clNoiDung";
             this.clNoiDung.ReadOnly = true;
@@ -310,9 +320,9 @@ namespace DuAn_QuanLyKPI.GUI
             // clDonViTinh
             // 
             this.clDonViTinh.DataPropertyName = "DonViTinh";
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clDonViTinh.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.clDonViTinh.DefaultCellStyle = dataGridViewCellStyle4;
             this.clDonViTinh.HeaderText = "Đơn vị tính";
             this.clDonViTinh.Name = "clDonViTinh";
             this.clDonViTinh.ReadOnly = true;
@@ -321,9 +331,9 @@ namespace DuAn_QuanLyKPI.GUI
             // clChiTieu
             // 
             this.clChiTieu.DataPropertyName = "ChiTieu";
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clChiTieu.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.clChiTieu.DefaultCellStyle = dataGridViewCellStyle5;
             this.clChiTieu.HeaderText = "Chỉ tiêu";
             this.clChiTieu.Name = "clChiTieu";
             this.clChiTieu.ReadOnly = true;
@@ -332,9 +342,9 @@ namespace DuAn_QuanLyKPI.GUI
             // clTieuChiID
             // 
             this.clTieuChiID.DataPropertyName = "TieuChiID";
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clTieuChiID.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.clTieuChiID.DefaultCellStyle = dataGridViewCellStyle6;
             this.clTieuChiID.HeaderText = "Tiêu chí ID";
             this.clTieuChiID.Name = "clTieuChiID";
             this.clTieuChiID.Visible = false;
@@ -343,9 +353,9 @@ namespace DuAn_QuanLyKPI.GUI
             // clTenTieuChi
             // 
             this.clTenTieuChi.DataPropertyName = "TenTieuChi";
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clTenTieuChi.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.clTenTieuChi.DefaultCellStyle = dataGridViewCellStyle7;
             this.clTenTieuChi.HeaderText = "Tên tiêu chí";
             this.clTenTieuChi.Name = "clTenTieuChi";
             this.clTenTieuChi.ReadOnly = true;
@@ -354,9 +364,9 @@ namespace DuAn_QuanLyKPI.GUI
             // clTrongSoTCBV
             // 
             this.clTrongSoTCBV.DataPropertyName = "TrongSoTCBV";
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clTrongSoTCBV.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.clTrongSoTCBV.DefaultCellStyle = dataGridViewCellStyle8;
             this.clTrongSoTCBV.HeaderText = "Trọng số tiêu chí BV (%)";
             this.clTrongSoTCBV.Name = "clTrongSoTCBV";
             this.clTrongSoTCBV.Width = 150;
@@ -364,9 +374,9 @@ namespace DuAn_QuanLyKPI.GUI
             // cTrongSoKPIBV
             // 
             this.cTrongSoKPIBV.DataPropertyName = "TrongSoKPIBV";
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.cTrongSoKPIBV.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.cTrongSoKPIBV.DefaultCellStyle = dataGridViewCellStyle9;
             this.cTrongSoKPIBV.HeaderText = "Trọng số KPI BV (%)";
             this.cTrongSoKPIBV.Name = "cTrongSoKPIBV";
             this.cTrongSoKPIBV.Width = 150;
@@ -378,15 +388,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cXoa.Name = "cXoa";
             this.cXoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cXoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // txt_Nam1
-            // 
-            this.txt_Nam1.Location = new System.Drawing.Point(292, 84);
-            this.txt_Nam1.Name = "txt_Nam1";
-            this.txt_Nam1.Size = new System.Drawing.Size(107, 21);
-            this.txt_Nam1.TabIndex = 91;
-            this.txt_Nam1.Visible = false;
-            this.txt_Nam1.TextChanged += new System.EventHandler(this.txt_Nam1_TextChanged);
             // 
             // Frm_ChinhSuaCap
             // 

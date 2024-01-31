@@ -21,7 +21,7 @@ namespace DuAn_QuanLyKPI.GUI
         public static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
         private List<int> receivedItems;
         //private string mconnectstring = "server=192.168.50.108,1433; database=QuanLyKPI;uid=sa;pwd=123";
-        private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
+        private static string mconnectstring = Frm_Chinh_GUI.mconnectstring; 
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
@@ -67,7 +67,7 @@ namespace DuAn_QuanLyKPI.GUI
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    string query = "SELECT dbo.KPI.MaKPI, dbo.KPI.NoiDung, dbo.KPI.DonViTinh, dbo.KPI.ChiTieu,dbo.KPI.TieuChiID, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID AND MaKPI IN (" + string.Join(",", receivedItems) + ") ORDER BY dbo.NhomTieuChi.TenTieuChi";
+                    string query = "SELECT dbo.KPI.MaKPI, dbo.KPI.NoiDung, dbo.KPI.DonViTinh,dbo.KPI.PhuongPhapDo, dbo.KPI.ChiTieu,dbo.KPI.TieuChiID, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID AND MaKPI IN (" + string.Join(",", receivedItems) + ") ORDER BY dbo.NhomTieuChi.TenTieuChi";
                     command.CommandText = query;
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
@@ -97,7 +97,7 @@ namespace DuAn_QuanLyKPI.GUI
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    string query = "SELECT dbo.KPI.MaKPI, dbo.KPI.NoiDung, dbo.KPI.DonViTinh, dbo.KPI.ChiTieu,dbo.KPI.TieuChiID, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID AND MaKPI IN (" + string.Join(",", receivedItems) + ") ORDER BY dbo.NhomTieuChi.TenTieuChi";
+                    string query = "SELECT dbo.KPI.MaKPI, dbo.KPI.NoiDung, dbo.KPI.DonViTinh,dbo.KPI.PhuongPhapDo, dbo.KPI.ChiTieu,dbo.KPI.TieuChiID, dbo.NhomTieuChi.TenTieuChi FROM dbo.KPI INNER JOIN dbo.NhomTieuChi ON dbo.KPI.TieuChiID = dbo.NhomTieuChi.TieuChiID AND MaKPI IN (" + string.Join(",", receivedItems) + ") ORDER BY dbo.NhomTieuChi.TenTieuChi";
                     command.CommandText = query;
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
@@ -290,6 +290,7 @@ namespace DuAn_QuanLyKPI.GUI
                             allRowsFilled = false;
                             return;
                         }
+
                     }
                     if (allRowsFilled)
                     {
@@ -307,19 +308,21 @@ namespace DuAn_QuanLyKPI.GUI
                             using (SqlCommand command = new SqlCommand())
                             {
                                 command.Connection = connection;
-                                string query = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuBV]([MaPhieuKPIBV],[MaKPI],[TrongSoTCBV],[TrongSoKPIBV])" +
-                                    " VALUES (@mpkpi, @mkpi, @tstcbv,@tskpibv)";
+                                string query = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuBV]([MaPhieuKPIBV],[MaKPI],[TrongSoTCBV],[TrongSoKPIBV],[KeHoach])" +
+                                    " VALUES (@mpkpi, @mkpi, @tstcbv,@tskpibv,@kehoach)";
                                 command.CommandText = query;
 
                                 int maKPI = Convert.ToInt32(row.Cells["clMaKPI"].Value);
                                 int trongSoTieuChiBV = Convert.ToInt32(row.Cells["clTrongSoTCBV"].Value);
                                 int trongSoKPIBV = Convert.ToInt32(row.Cells["cTrongSoKPIBV"].Value);
+                                string kehoach = row.Cells["clKeHoach"].Value.ToString();
 
                                 // Thay thế các tham số bằng giá trị thực từ form của bạn
                                 command.Parameters.AddWithValue("@mpkpi", maPhieu);
                                 command.Parameters.AddWithValue("@mkpi", maKPI);
                                 command.Parameters.AddWithValue("@tstcbv", trongSoTieuChiBV);
                                 command.Parameters.AddWithValue("@tskpibv", trongSoKPIBV);
+                                command.Parameters.AddWithValue("@kehoach", kehoach);
 
                                 // Tiếp tục thêm các tham số khác tương ứng với cột trong bảng
 
@@ -341,6 +344,95 @@ namespace DuAn_QuanLyKPI.GUI
                     ev.QFrmThongBaoError("Bị lỗi");
                 }
             }
+        }
+        private void SaveToDatabase5()
+        {
+            using (SqlConnection connection = new SqlConnection(mconnectstring))
+            {
+                connection.Open();
+
+                if (dtgv_ChiTietKPI.SelectedCells.Count > 0)
+                {
+                    string maPhieu = txt_MaPhieu.Text;
+                    DateTime ngayTaoMaPhieu = dt_NgayTaoMaPhieu.Value;
+                    bool allRowsFilled = true;
+
+                    foreach (DataGridViewRow row in dtgv_ChiTietKPI.Rows)
+                    {
+                        if (row.Index == dtgv_ChiTietKPI.Rows.Count - 1)
+                        {
+                            continue;
+                        }
+
+                        if (!IsCellValueValid(row.Cells["clTrongSoTCBV"]) || !IsCellValueValid(row.Cells["cTrongSoKPIBV"]))
+                        {
+                            allRowsFilled = false;
+                            break;
+                        }
+                    }
+
+                    if (allRowsFilled)
+                    {
+                        using (SqlCommand command = new SqlCommand())
+                        {
+                            command.Connection = connection;
+                            string query = "INSERT INTO [dbo].[ChiTietTieuChiMucTieuBV]([MaPhieuKPIBV],[MaKPI],[TrongSoTCBV],[TrongSoKPIBV],[KeHoach])" +
+                                " VALUES (@mpkpi, @mkpi, @tstcbv, @tskpibv, @kehoach)";
+                            command.CommandText = query;
+
+                            foreach (DataGridViewRow row in dtgv_ChiTietKPI.Rows)
+                            {
+                                if (row.Index == dtgv_ChiTietKPI.Rows.Count - 1)
+                                {
+                                    continue;
+                                }
+
+                                int maKPI;
+                                int trongSoTieuChiBV;
+                                int trongSoKPIBV;
+                                string kehoach;
+
+                                if (int.TryParse(row.Cells["clMaKPI"].Value.ToString(), out maKPI) &&
+                                    int.TryParse(row.Cells["clTrongSoTCBV"].Value.ToString(), out trongSoTieuChiBV) &&
+                                    int.TryParse(row.Cells["cTrongSoKPIBV"].Value.ToString(), out trongSoKPIBV))
+                                {
+                                    kehoach = row.Cells["clKeHoach"].Value.ToString();
+
+                                    command.Parameters.Clear();
+                                    command.Parameters.AddWithValue("@mpkpi", maPhieu);
+                                    command.Parameters.AddWithValue("@mkpi", maKPI);
+                                    command.Parameters.AddWithValue("@tstcbv", trongSoTieuChiBV);
+                                    command.Parameters.AddWithValue("@tskpibv", trongSoKPIBV);
+                                    command.Parameters.AddWithValue("@kehoach", kehoach);
+
+                                    command.ExecuteNonQuery();
+                                }
+                                else
+                                {
+                                    ev.QFrmThongBaoError("Lỗi chuyển đổi kiểu dữ liệu.");
+                                    return;
+                                }
+                            }
+
+                            btn_Luu.Visible = false;
+                            ev.QFrmThongBao("Bạn đã lưu thành công");
+                        }
+                    }
+                    else
+                    {
+                        ev.QFrmThongBaoError("Vui lòng nhập giá trị cho tất cả các hàng của trọng số tiêu chí bệnh viện");
+                    }
+                }
+                else
+                {
+                    ev.QFrmThongBaoError("Bị lỗi");
+                }
+            }
+        }
+
+        private bool IsCellValueValid(DataGridViewCell cell)
+        {
+            return cell != null && cell.Value != null && !string.IsNullOrWhiteSpace(cell.Value.ToString());
         }
 
         private void SavetoDatabase2()
@@ -443,7 +535,7 @@ namespace DuAn_QuanLyKPI.GUI
                             if (isDataGridViewFilled)
                             {
                                 SavetoDatabase2();
-                                SaveToDatabase();
+                                SaveToDatabase5();
                             }
                             else
                             { ev.QFrmThongBaoError("Có ô chưa được nhập"); }    
@@ -465,7 +557,7 @@ namespace DuAn_QuanLyKPI.GUI
 
                                 if (!string.IsNullOrEmpty(maPhieu))
                                 {
-                                    SqlDataAdapter adapter = new SqlDataAdapter($"SELECT ChiTiet.*, KPI.NoiDung, KPI.DonViTinh, NhomTieuChi.TenTieuChi, KPI.ChiTieu " +
+                                    SqlDataAdapter adapter = new SqlDataAdapter($"SELECT ChiTiet.*, KPI.NoiDung, KPI.DonViTinh,dbo.KPI.PhuongPhapDo, NhomTieuChi.TenTieuChi, KPI.ChiTieu " +
                                         $"FROM dbo.ChiTietTieuChiMucTieuBV ChiTiet INNER JOIN dbo.KPI ON ChiTiet.MaKPI = KPI.MaKPI " +
                                         $"INNER JOIN dbo.NhomTieuChi ON KPI.TieuChiID = NhomTieuChi.TieuChiID WHERE ChiTiet.MaPhieuKPIBV = '{maPhieu}'", connection);
                                     DataTable dataTable = new DataTable();
@@ -567,10 +659,39 @@ namespace DuAn_QuanLyKPI.GUI
             }
 
         }
+        private Dictionary<string, float> tongTrongSoTheoTieuChi = new Dictionary<string, float>();
+        private Dictionary<int, float> originalValues = new Dictionary<int, float>();
+
+        private void KiemTraTongTrongSoHopLe()
+        {
+            tongTrongSoTheoTieuChi.Clear();
+
+            // Tính tổng trọng số theo từng tiêu chí
+            for (int i = 0; i < dtgv_ChiTietKPI.RowCount; i++)
+            {
+                string tenTieuChi = dtgv_ChiTietKPI.Rows[i].Cells["clTieuChiID"].Value?.ToString().Trim();
+                float trongSo;
+
+                if (float.TryParse(dtgv_ChiTietKPI.Rows[i].Cells["cTrongSoKPIBV"].Value?.ToString(), out trongSo))
+                {
+                    if (tongTrongSoTheoTieuChi.ContainsKey(tenTieuChi))
+                    {
+                        tongTrongSoTheoTieuChi[tenTieuChi] += trongSo;
+                    }
+                    else
+                    {
+                        tongTrongSoTheoTieuChi[tenTieuChi] = trongSo;
+                    }
+                }
+            }
+        }
         private int editedCellCount = 0;
         private void dtgv_ChiTietKPI_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            
             CapNhatTrongSoTheoTenTieuChi();
+            
+
 
             // Kiểm tra xem sự kiện có xảy ra trong cột clTrongSoTCBV không
             if (e.ColumnIndex == dtgv_ChiTietKPI.Columns["clTrongSoTCBV"].Index)
@@ -588,6 +709,8 @@ namespace DuAn_QuanLyKPI.GUI
                     editedCellCount = 0;
                 }
             }
+          
+
         }
         private bool AllTrongSoCellsEdited()
         {
@@ -741,21 +864,17 @@ namespace DuAn_QuanLyKPI.GUI
 
                     if (result == DialogResult.Yes)
                     {
-                        string newValue = GetNewDateValue(); // Hàm này để lấy giá trị mới từ người dùng, có thể làm qua một Form hoặc MessageBox để nhập giá trị
+                        string newValue = GetNewValue(); // Chỉnh sửa phương thức này để lấy giá trị mới từ người dùng
 
-                        // Kiểm tra xem giá trị mới có đúng định dạng không
-                        DateTime newDateValue;
-                        if (DateTime.TryParseExact(newValue, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out newDateValue))
+                        // Kiểm tra xem giá trị mới có chứa " X " hoặc "dd/mm/yyyy" không
+                        if (newValue.Contains(" X ") || newValue.Contains("dd/mm/yyyy"))
                         {
-                            // Thay thế chỉ đoạn "dd/mm/yy" trong giá trị cụ thể
-                            string updatedValue = ReplaceDatePlaceholder(currentCellValue, newDateValue);
-
-                            // Cập nhật giá trị chỉ cho ô cụ thể mà người dùng đã double-click
-                            cell.Value = updatedValue;
+                            // Cập nhật giá trị của ô
+                            cell.Value = newValue;
                         }
                         else
                         {
-                            MessageBox.Show("Vui lòng nhập định dạng ngày tháng dd/MM/yyyy.");
+                            MessageBox.Show("Vui lòng nhập giá trị theo định dạng 'X' hoặc 'dd/mm/yyyy'.");
                         }
                     }
                 }
@@ -780,7 +899,7 @@ namespace DuAn_QuanLyKPI.GUI
             }
         }
 
-        private string GetNewDateValue()
+        private string GetNewValue()
         {
             // Đây là nơi bạn có thể hiển thị một MessageBox hoặc một Form để nhập giá trị mới từ người dùng
             // Ví dụ đơn giản cho mục đích minh họa:

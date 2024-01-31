@@ -160,15 +160,7 @@ namespace DuAn_QuanLyKPI.GUI
             dtgv_ChinhSuaChiTieu.DataSource = _dataTable;
         }
 
-        //private DataTable CombineDataTables(DataTable table1, DataTable table2)
-        //{
-        //    DataTable combinedTable = table1.Copy();
-        //    foreach (DataRow row in table2.Rows)
-        //    {
-        //        combinedTable.ImportRow(row);
-        //    }
-        //    return combinedTable;
-        //}
+
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
@@ -704,6 +696,11 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                 }
             }
+        }
+
+        private void txt_Nam_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
