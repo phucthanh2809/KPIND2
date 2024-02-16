@@ -182,9 +182,9 @@
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.close;
-            this.btnCancel.Location = new System.Drawing.Point(257, 205);
+            this.btnCancel.Location = new System.Drawing.Point(21, 205);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(114, 51);
+            this.btnCancel.Size = new System.Drawing.Size(157, 51);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "HỦY";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -198,7 +198,7 @@
             this.btnLogin.Appearance.Options.UseBorderColor = true;
             this.btnLogin.Appearance.Options.UseFont = true;
             this.btnLogin.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_checkcircled;
-            this.btnLogin.Location = new System.Drawing.Point(64, 205);
+            this.btnLogin.Location = new System.Drawing.Point(184, 205);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(187, 51);
             this.btnLogin.TabIndex = 15;

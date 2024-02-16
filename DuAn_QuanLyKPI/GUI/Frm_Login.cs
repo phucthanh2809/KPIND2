@@ -164,7 +164,7 @@ namespace DuAn_QuanLyKPI.GUI
                 #endregion
                 if (DataUserCurrent.Instance.Permission != "NV")
                 {
-                    ev.QFrmThongBao("Đăng nhập thành công");
+                    MessageBox.Show("Đăng nhập thành công","Thông báo");
                     Frm_Chinh_GUI f = new Frm_Chinh_GUI();
                     this.Hide();
                     f.ShowDialog();

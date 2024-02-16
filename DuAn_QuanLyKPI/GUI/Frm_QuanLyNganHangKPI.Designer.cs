@@ -196,7 +196,6 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btn_Exit
             // 
-            this.btn_Exit.BackgroundImage = global::DuAn_QuanLyKPI.Properties.Resources.QUAYLAI;
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_Exit.Location = new System.Drawing.Point(1505, 82);

@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DuAn_QuanLyKPI.Constants;
 using DuAn_QuanLyKPI.DTO;
+using PhanMemQuanLyKPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,6 +74,48 @@ namespace DuAn_QuanLyKPI.GUI
                     break;
             }
         }
+        private void OpenForm(int Frm)
+        {
+            try
+            {
+                switch (Frm)
+                {
+                    case 71:
+                        Frm_A71 A71 = new Frm_A71();
+                        A71.ShowDialog();
+                        break;
+                    case 73:
+                        FrmA73 A73 = new FrmA73();
+                        A73.ShowDialog();
+                        break;
+                    case 75:
+                        Frm_A75 A75 = new Frm_A75();
+                        A75.ShowDialog();
+                        break;
+                    case 76:
+                        Frm_A76 A76 = new Frm_A76();
+                        A76.ShowDialog();
+                        break;
+                    case 77:
+                        Frm_A77 A77 = new Frm_A77();
+                        A77.ShowDialog();
+                        break;
+                    case 78:
+                        Frm_A78 A78 = new Frm_A78();
+                        A78.ShowDialog();
+                        break;
+                    default:
+                        // Handle case where Frm doesn't match any known form
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception here, for example:
+                MessageBox.Show("Đã có lỗi xảy ra khi mở Biểu mẫu " + ex.Message);
+            }
+        }
+
         #endregion
         //stt grid
         private void dgrChonBieuMau_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -89,17 +132,13 @@ namespace DuAn_QuanLyKPI.GUI
                         QuyNam = ("1" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
-                            //case 71:
-                            //    Frm_A710 A711 = new Frm_A710();
-                            //    A711.Show(); break;
                             //case 72:
                             //    Frm_A710 A72 = new Frm_A710();
                             //    A72.Show(); break;
                             case 73:
                                 try
                                 {
-                                    FrmA73 A73 = new FrmA73();
-                                    A73.Show();
+                                    OpenForm(73);
                                 }
                                 catch (Exception)
                                 {
@@ -139,17 +178,6 @@ namespace DuAn_QuanLyKPI.GUI
                         QuyNam = ("2" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
-                            //case 71:
-                            //    try
-                            //    {
-                            //        FrmA71 A71 = new FrmA71();
-                            //        A71.Show();
-                            //    }
-                            //    catch (Exception)
-                            //    {
-                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
-                            //    }
-                            //    break;
                             //case 72:
                             //    try
                             //    {
@@ -260,17 +288,6 @@ namespace DuAn_QuanLyKPI.GUI
                         QuyNam = ("3" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
-                            //case 71:
-                            //    try
-                            //    {
-                            //        FrmA71 A71 = new FrmA71();
-                            //        A71.Show();
-                            //    }
-                            //    catch (Exception)
-                            //    {
-                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
-                            //    }
-                            //    break;
                             //case 72:
                             //    try
                             //    {
@@ -381,17 +398,6 @@ namespace DuAn_QuanLyKPI.GUI
                         QuyNam = ("4" + nmYear.Text.Trim()).Trim();
                         switch (caseValue)
                         {
-                            //case 71:
-                            //    try
-                            //    {
-                            //        FrmA71 A71 = new FrmA71();
-                            //        A71.Show();
-                            //    }
-                            //    catch (Exception)
-                            //    {
-                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
-                            //    }
-                            //    break;
                             //case 72:
                             //    try
                             //    {
@@ -502,17 +508,17 @@ namespace DuAn_QuanLyKPI.GUI
                         QuyNam = txtTest.Text;
                         switch (caseValue)
                         {
-                            //case 71:
-                            //    try
-                            //    {
-                            //        FrmA71 A71 = new FrmA71();
-                            //        A71.Show();
-                            //    }
-                            //    catch (Exception)
-                            //    {
-                            //        ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
-                            //    }
-                            //    break;
+                            case 71:
+                                try
+                                {
+                                    Frm_A71 A71 = new Frm_A71();
+                                    A71.Show();
+                                }
+                                catch (Exception)
+                                {
+                                    ev.QFrmThongBaoError("Không có dữ liệu tương ứng");
+                                }
+                                break;
                             //case 72:
                             //    try
                             //    {
