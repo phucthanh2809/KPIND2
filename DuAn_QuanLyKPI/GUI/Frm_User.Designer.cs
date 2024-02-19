@@ -310,7 +310,6 @@ namespace DuAn_QuanLyKPI.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbUser.Image = global::DuAn_QuanLyKPI.Properties.Resources.noimage;
             this.pbUser.Location = new System.Drawing.Point(67, 4);
             this.pbUser.Name = "pbUser";
             this.pbUser.Size = new System.Drawing.Size(256, 256);
@@ -617,7 +616,6 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // panel5
             // 
-            this.panel5.BackgroundImage = global::DuAn_QuanLyKPI.Properties.Resources.Tiêu_đề_Website_BV_16__removebg_preview;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(760, 0);

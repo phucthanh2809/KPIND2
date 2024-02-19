@@ -91,7 +91,6 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.btnNam.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNam.Appearance.Options.UseFont = true;
-            this.btnNam.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.barofpie_32x32;
             this.btnNam.Location = new System.Drawing.Point(516, 10);
             this.btnNam.Name = "btnNam";
             this.btnNam.Size = new System.Drawing.Size(109, 40);
@@ -103,7 +102,6 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.btnQuy.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuy.Appearance.Options.UseFont = true;
-            this.btnQuy.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.pieseries_32x32;
             this.btnQuy.Location = new System.Drawing.Point(401, 10);
             this.btnQuy.Name = "btnQuy";
             this.btnQuy.Size = new System.Drawing.Size(109, 40);

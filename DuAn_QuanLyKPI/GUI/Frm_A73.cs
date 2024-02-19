@@ -44,6 +44,11 @@ namespace DuAn_QuanLyKPI.GUI
         //Truyền dữ liệu sang form để thêm kpi vào grid
         public static string phuongdien;
 
+        public static DataGridView dataGridView2;
+
+        //ví dụ
+        List<DataTable> listdt;
+        DataTable dt1;
         public FrmA73()
         {
             InitializeComponent();
@@ -53,11 +58,24 @@ namespace DuAn_QuanLyKPI.GUI
 
             CreateTableCopyTC();
 
+            //  thêm table vào list
+            listdt.Add(dt1);
+            // đây là truyền đi vào singleton nào lấy ra thì gọi get kèm index trong list để lấy đúng datatable cần
+            Singleton.Instance().setTable(listdt);
+
+            DataTable dataTable = Singleton.Instance().getTable();
+
+            dgrNhapMucTieuTaiChinh.DataSource = dataTable;
+
             updateTimer = new Timer { Interval = 100 };
             updateTimer.Tick += UpdateTimer_Tick;
             dtNgayLap.Value = DateTime.Now;
             ChuyenTrangThai(0);
-
+            
+            // Khởi tạo DataGridView
+            dataGridView2 = new DataGridView();
+            dataGridView2.Dock = DockStyle.Fill;
+            Controls.Add(dataGridView2);
         }
         private void FrmA73_Load(object sender, EventArgs e)
         {
@@ -80,7 +98,11 @@ namespace DuAn_QuanLyKPI.GUI
                 dataGridViews[i].Rows.Add($"Row {i + 1}, Column 1", $"Row {i + 1}, Column 2", $"Row {i + 1}, Column 3");
             }
         }
-
+        public static void AddRowToDataGridView(object[] rowData)
+        {
+            // Thêm dòng mới vào DataGridView trên Form 2
+            dataGridView2.Rows.Add(rowData);
+        }
         #region LoadDataGrid
         //Load thông tin nhân viên 
         private void LoadThongTinNhanVien()
@@ -543,6 +565,12 @@ namespace DuAn_QuanLyKPI.GUI
         public string TaoMaPhieu()
         {
             return SQLHelper.ExecQuerySacalar($@"SELECT [dbo].[TaoMaPhieuKPIKP]('" + Convert.ToDateTime(dtNgayLap.Value).ToString("yyyy-MM-dd") + "')").ToString();
+        }
+        public static void AddDataToGridView(string data)
+        {
+            // Thêm dòng dữ liệu vào dgrNhapMucTieuTaiChinh
+            FrmA73 A73 = new FrmA73();
+            A73.dgrNhapMucTieuTaiChinh.Rows.Add(data);
         }
         #endregion
         #region Event
@@ -2556,5 +2584,6 @@ namespace DuAn_QuanLyKPI.GUI
                    "VALUES ('" + dgrBVMucTieuTaiChinh.CurrentRow.Cells["cMaPhieuKPIBVTC"].Value.ToString() + "','','" + txtMaPhieu.Text + "','" + MaPhongKhoa.ToString() + "','" + dtNgayLap.Value.ToString("yyyy") + "','" + MaNV.ToString() + "','','','" + dtNgayLap.Value.ToString("yyyy-MM-dd") + "','','',73,0)";
             comm.RunSQL(mconnectstring, msql);
         }
+
     }
 }

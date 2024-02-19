@@ -110,6 +110,10 @@ namespace DuAn_QuanLyKPI.GUI
             this.label70 = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
             this.dgrHTMucTieuTaiChinh = new System.Windows.Forms.DataGridView();
+            this.cNoiDungHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cKeHoachHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cChiTieuKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTrongSoKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel34 = new System.Windows.Forms.Panel();
             this.txtTCHT = new ControlProject1510.XFilteg();
             this.label65 = new System.Windows.Forms.Label();
@@ -380,10 +384,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn8 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cNoiDungHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cKeHoachHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cChiTieuKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTrongSoKPIHTTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).BeginInit();
@@ -1141,6 +1141,33 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrHTMucTieuTaiChinh.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgrHTMucTieuTaiChinh_CellValidating);
             this.dgrHTMucTieuTaiChinh.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrHTMucTieuTaiChinh_RowPostPaint);
             // 
+            // cNoiDungHTTC
+            // 
+            this.cNoiDungHTTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cNoiDungHTTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
+            this.cNoiDungHTTC.Name = "cNoiDungHTTC";
+            this.cNoiDungHTTC.ReadOnly = true;
+            // 
+            // cKeHoachHTTC
+            // 
+            this.cKeHoachHTTC.HeaderText = "Kế hoạch";
+            this.cKeHoachHTTC.Name = "cKeHoachHTTC";
+            this.cKeHoachHTTC.ReadOnly = true;
+            this.cKeHoachHTTC.Visible = false;
+            // 
+            // cChiTieuKPIHTTC
+            // 
+            this.cChiTieuKPIHTTC.HeaderText = "Chỉ tiêu ";
+            this.cChiTieuKPIHTTC.Name = "cChiTieuKPIHTTC";
+            this.cChiTieuKPIHTTC.ReadOnly = true;
+            this.cChiTieuKPIHTTC.Visible = false;
+            // 
+            // cTrongSoKPIHTTC
+            // 
+            this.cTrongSoKPIHTTC.HeaderText = "Trọng số (%)";
+            this.cTrongSoKPIHTTC.Name = "cTrongSoKPIHTTC";
+            this.cTrongSoKPIHTTC.ReadOnly = true;
+            // 
             // panel34
             // 
             this.panel34.Controls.Add(this.txtTCHT);
@@ -1230,8 +1257,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnChinhSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnChinhSua.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnChinhSua.Appearance.Options.UseFont = true;
-            this.btnChinhSua.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.edit_32x32;
             this.btnChinhSua.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnChinhSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChinhSua.ImageOptions.SvgImage")));
             this.btnChinhSua.Location = new System.Drawing.Point(264, 2);
             this.btnChinhSua.Name = "btnChinhSua";
             this.btnChinhSua.Size = new System.Drawing.Size(139, 42);
@@ -1253,7 +1280,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQLPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnQLPT.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnQLPT.Appearance.Options.UseFont = true;
-            this.btnQLPT.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.backward_32x32;
+            this.btnQLPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLPT.ImageOptions.Image")));
             this.btnQLPT.Location = new System.Drawing.Point(408, 2);
             this.btnQLPT.Name = "btnQLPT";
             this.btnQLPT.Size = new System.Drawing.Size(139, 42);
@@ -1266,8 +1293,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnHoanThanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHoanThanh.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnHoanThanh.Appearance.Options.UseFont = true;
-            this.btnHoanThanh.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.task_32x321;
             this.btnHoanThanh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnHoanThanh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanThanh.ImageOptions.SvgImage")));
             this.btnHoanThanh.Location = new System.Drawing.Point(552, 2);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(139, 42);
@@ -1754,7 +1781,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnAddKPIVH
             // 
-            this.btnAddKPIVH.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_add1;
+            this.btnAddKPIVH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddKPIVH.ImageOptions.SvgImage")));
             this.btnAddKPIVH.Location = new System.Drawing.Point(0, 0);
             this.btnAddKPIVH.Name = "btnAddKPIVH";
             this.btnAddKPIVH.Size = new System.Drawing.Size(41, 56);
@@ -2079,7 +2106,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQLKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnQLKH.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnQLKH.Appearance.Options.UseFont = true;
-            this.btnQLKH.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.backward_32x32;
+            this.btnQLKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLKH.ImageOptions.Image")));
             this.btnQLKH.Location = new System.Drawing.Point(533, 2);
             this.btnQLKH.Name = "btnQLKH";
             this.btnQLKH.Size = new System.Drawing.Size(139, 42);
@@ -2092,7 +2119,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTTPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTTPT.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnTTPT.Appearance.Options.UseFont = true;
-            this.btnTTPT.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.forward_32x32;
+            this.btnTTPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTTPT.ImageOptions.Image")));
             this.btnTTPT.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnTTPT.Location = new System.Drawing.Point(678, 2);
             this.btnTTPT.Name = "btnTTPT";
@@ -2318,7 +2345,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnAddKPITC
             // 
-            this.btnAddKPITC.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_add1;
+            this.btnAddKPITC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddKPITC.ImageOptions.SvgImage")));
             this.btnAddKPITC.Location = new System.Drawing.Point(0, 0);
             this.btnAddKPITC.Name = "btnAddKPITC";
             this.btnAddKPITC.Size = new System.Drawing.Size(41, 56);
@@ -2425,7 +2452,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTTKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTTKH.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnTTKH.Appearance.Options.UseFont = true;
-            this.btnTTKH.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.forward_32x32;
+            this.btnTTKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTTKH.ImageOptions.Image")));
             this.btnTTKH.Location = new System.Drawing.Point(606, 2);
             this.btnTTKH.Name = "btnTTKH";
             this.btnTTKH.Size = new System.Drawing.Size(139, 42);
@@ -2876,7 +2903,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnAddKPIKH
             // 
-            this.btnAddKPIKH.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_add1;
+            this.btnAddKPIKH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddKPIKH.ImageOptions.SvgImage")));
             this.btnAddKPIKH.Location = new System.Drawing.Point(0, 0);
             this.btnAddKPIKH.Name = "btnAddKPIKH";
             this.btnAddKPIKH.Size = new System.Drawing.Size(41, 56);
@@ -3201,7 +3228,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQLTC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnQLTC.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnQLTC.Appearance.Options.UseFont = true;
-            this.btnQLTC.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.backward_32x32;
+            this.btnQLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLTC.ImageOptions.Image")));
             this.btnQLTC.Location = new System.Drawing.Point(533, 2);
             this.btnQLTC.Name = "btnQLTC";
             this.btnQLTC.Size = new System.Drawing.Size(139, 42);
@@ -3214,7 +3241,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTTVH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTTVH.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnTTVH.Appearance.Options.UseFont = true;
-            this.btnTTVH.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.forward_32x32;
+            this.btnTTVH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTTVH.ImageOptions.Image")));
             this.btnTTVH.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnTTVH.Location = new System.Drawing.Point(678, 2);
             this.btnTTVH.Name = "btnTTVH";
@@ -3431,7 +3458,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnAddKPIPT
             // 
-            this.btnAddKPIPT.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_add1;
+            this.btnAddKPIPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddKPIPT.ImageOptions.SvgImage")));
             this.btnAddKPIPT.Location = new System.Drawing.Point(0, 0);
             this.btnAddKPIPT.Name = "btnAddKPIPT";
             this.btnAddKPIPT.Size = new System.Drawing.Size(41, 56);
@@ -3537,7 +3564,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnQLVH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnQLVH.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnQLVH.Appearance.Options.UseFont = true;
-            this.btnQLVH.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.backward_32x32;
+            this.btnQLVH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLVH.ImageOptions.Image")));
             this.btnQLVH.Location = new System.Drawing.Point(533, 2);
             this.btnQLVH.Name = "btnQLVH";
             this.btnQLVH.Size = new System.Drawing.Size(139, 42);
@@ -3550,7 +3577,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnTTHT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTTHT.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnTTHT.Appearance.Options.UseFont = true;
-            this.btnTTHT.ImageOptions.Image = global::DuAn_QuanLyKPI.Properties.Resources.forward_32x32;
+            this.btnTTHT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTTHT.ImageOptions.Image")));
             this.btnTTHT.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnTTHT.Location = new System.Drawing.Point(678, 2);
             this.btnTTHT.Name = "btnTTHT";
@@ -4193,33 +4220,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn8.Visible = false;
             // 
-            // cNoiDungHTTC
-            // 
-            this.cNoiDungHTTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cNoiDungHTTC.HeaderText = "Mục tiêu Khoa/ Phòng ";
-            this.cNoiDungHTTC.Name = "cNoiDungHTTC";
-            this.cNoiDungHTTC.ReadOnly = true;
-            // 
-            // cKeHoachHTTC
-            // 
-            this.cKeHoachHTTC.HeaderText = "Kế hoạch";
-            this.cKeHoachHTTC.Name = "cKeHoachHTTC";
-            this.cKeHoachHTTC.ReadOnly = true;
-            this.cKeHoachHTTC.Visible = false;
-            // 
-            // cChiTieuKPIHTTC
-            // 
-            this.cChiTieuKPIHTTC.HeaderText = "Chỉ tiêu ";
-            this.cChiTieuKPIHTTC.Name = "cChiTieuKPIHTTC";
-            this.cChiTieuKPIHTTC.ReadOnly = true;
-            this.cChiTieuKPIHTTC.Visible = false;
-            // 
-            // cTrongSoKPIHTTC
-            // 
-            this.cTrongSoKPIHTTC.HeaderText = "Trọng số (%)";
-            this.cTrongSoKPIHTTC.Name = "cTrongSoKPIHTTC";
-            this.cTrongSoKPIHTTC.ReadOnly = true;
-            // 
             // FrmA73
             // 
             this.Appearance.Options.UseFont = true;
@@ -4408,7 +4408,6 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private DevExpress.Data.ODataLinq.ODataInstantFeedbackSource oDataInstantFeedbackSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNgayTaoPhieuKPIBVPT;
-        private System.Windows.Forms.DataGridView dgrNhapMucTieuTaiChinh;
         private System.Windows.Forms.DataGridView dgrHTMucTieuVanHanh;
         private System.Windows.Forms.DataGridView dgrHTMucTieuKhachHang;
         private ControlProject1510.XFilteg txtTongTrongSoMucTieu;
@@ -4581,12 +4580,6 @@ namespace DuAn_QuanLyKPI.GUI
         private DevExpress.XtraEditors.SimpleButton btnHoanThanh;
         private System.Windows.Forms.DateTimePicker dtNgayLap;
         private System.Windows.Forms.DataGridView dgrBVMucTieuTaiChinh;
-        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPINTC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINTC;
         private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNVH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINVH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNVH;
@@ -4681,5 +4674,12 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachHTTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPIHTTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPIHTTC;
+        private System.Windows.Forms.DataGridView dgrNhapMucTieuTaiChinh;
+        private System.Windows.Forms.DataGridViewImageColumn cXoaTatCaNTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cMaKPINTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDungNTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cKeHoachNTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuKPINTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTrongSoKPINTC;
     }
 }
