@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessCommon;
+using DuAn_QuanLyKPI.DAO;
 
 namespace DuAn_QuanLyKPI.GUI
 {
@@ -23,11 +24,14 @@ namespace DuAn_QuanLyKPI.GUI
         // Tạo biến 
         private string MaNV = Frm_Login.MaNV;
 
+        #region Create Value
+        FrmA73 A73 = new FrmA73();
+        #endregion
+
         public Frm_AddKPIGrid()
         {
             InitializeComponent();
             nmYear.Value = DateTime.Now.Year;
-
         }
         public void LoadNganHangKPI()
         {
@@ -216,52 +220,38 @@ namespace DuAn_QuanLyKPI.GUI
         {
 
         }
-
-        private void dgrNganHangCaNhan_SelectionChanged(object sender, EventArgs e)
+        private void CreateListCopyGridA73()
         {
-            DataGridView dgv = sender as DataGridView;
-            if (dgv != null && dgv.SelectedRows.Count > 0)
-            {
-                // Lấy dòng được chọn
-                DataGridViewRow selectedRow = dgv.SelectedRows[0];
 
-                // Lấy dữ liệu từ dòng được chọn
-                object[] rowData = new object[selectedRow.Cells.Count];
-                for (int i = 0; i < selectedRow.Cells.Count; i++)
-                {
-                    rowData[i] = selectedRow.Cells[i].Value;
-                }
-
-                // Gọi phương thức tĩnh AddRowToDataGridView trên Form 2 để thêm dữ liệu
-                FrmA73.AddRowToDataGridView(rowData);
-            }
         }
-
-        private void dgrKPIBenhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgrKPIBenhVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra nếu cột được chọn là cột CheckBox và không phải là dòng Header
-            if (e.ColumnIndex == dgrKPIBenhVien.Columns["Chon"].Index && e.RowIndex != -1)
+            // Check if the clicked cell is within the valid range of rows and columns in the DataGridView
+            if (e.RowIndex >= 0 && e.RowIndex < dgrKPIBenhVien.Rows.Count && e.ColumnIndex >= 0)
             {
-                DataGridViewCheckBoxCell checkBox = (DataGridViewCheckBoxCell)dgrKPIBenhVien.Rows[e.RowIndex].Cells["Chon"];
-                bool isChecked = (bool)checkBox.Value;
+                // Get the clicked cell
+                DataGridViewCell clickedCell = dgrKPIBenhVien.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                // Nếu CheckBox được chọn
-                if (isChecked)
+                // Check if the clicked cell is not null and is the checkbox cell
+                if (clickedCell != null && clickedCell.ColumnIndex == dgrKPIBenhVien.Columns["cChonTatCaBVTC"].Index)
                 {
-                    // Lấy dữ liệu từ dòng được chọn và thêm vào DataTable
-                    string cMaKPI = dgrKPIBenhVien.Rows[e.RowIndex].Cells["CMaKPI"].Value.ToString();
-                    string cNoiDung = dgrKPIBenhVien.Rows[e.RowIndex].Cells["cNoiDung"].Value.ToString();
-                    string cChiTieu = dgrKPIBenhVien.Rows[e.RowIndex].Cells["cChiTieu"].Value.ToString();
+                    // Check if the value of the clicked cell is not null and is true
+                    if (clickedCell.Value != null && (bool)clickedCell.Value)
+                    {
+                        // Create a list to store the data
+                        List<AddKPIGridBV> AddA73 = new List<AddKPIGridBV>();
+                        AddA73.Add(new AddKPIGridBV()
+                        {
+                            MaKPI = dgrKPIBenhVien.CurrentRow.Cells["CMaKPI"].Value?.ToString(),
+                            NoiDung = dgrKPIBenhVien.CurrentRow.Cells["cNoiDung"].Value?.ToString(),
+                            KeHoach = "",
+                            ChiTieu = dgrKPIBenhVien.CurrentRow.Cells["cChiTieu"].Value?.ToString()
+                        });
 
-                    DataTable dataTable = new DataTable();
-                    dataTable.Columns.Add("CMaKPI", typeof(string));
-                    dataTable.Columns.Add("cNoiDung", typeof(string));
-                    dataTable.Columns.Add("cChiTieu", typeof(string));
-
-                    dataTable.Rows.Add(cMaKPI, cNoiDung, cChiTieu);
-
-                    // Lưu trữ dữ liệu DataTable vào Singleton
-                    Singleton.Instance().setTable(dataTable);
+                        // Pass the list to FrmA73
+                        FrmA73 a73 = new FrmA73();
+                        a73.AddKPIBVToGridView(AddA73);
+                    }
                 }
             }
         }

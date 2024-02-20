@@ -137,6 +137,7 @@
   <ItemGroup>
     <Compile Include="Constants\DataProvider.cs" />
     <Compile Include="Constants\DataUserCurrent.cs" />
+    <Compile Include="DAO\AddKPIGridBV.cs" />
     <Compile Include="DAO\myFunctions.cs" />
     <Compile Include="DAO\PHONGKHOA.cs" />
     <Compile Include="DTO\ChiTietKPIBenhVien.cs">
@@ -399,7 +400,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Singleton.cs" />
     <EmbeddedResource Include="GUI\backup.resx">
       <DependentUpon>backup.cs</DependentUpon>
     </EmbeddedResource>
