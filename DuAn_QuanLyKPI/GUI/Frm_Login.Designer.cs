@@ -30,15 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbDate = new System.Windows.Forms.Label();
-            this.lbTime = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -52,89 +43,175 @@
             this.txtdangnhap = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbHien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAn)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
+            // btnCancel
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnCancel.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Appearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.Options.UseBackColor = true;
+            this.btnCancel.Appearance.Options.UseBorderColor = true;
+            this.btnCancel.Appearance.Options.UseFont = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.close;
+            this.btnCancel.Location = new System.Drawing.Point(22, 228);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(156, 59);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "THOÁT";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // panel6
+            // btnLogin
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(415, 218);
-            this.panel6.TabIndex = 14;
+            this.btnLogin.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnLogin.Appearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Appearance.Options.UseBackColor = true;
+            this.btnLogin.Appearance.Options.UseBorderColor = true;
+            this.btnLogin.Appearance.Options.UseFont = true;
+            this.btnLogin.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_checkcircled;
+            this.btnLogin.Location = new System.Drawing.Point(247, 228);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(239, 59);
+            this.btnLogin.TabIndex = 15;
+            this.btnLogin.Text = "ĐĂNG NHẬP ";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // label1
+            // panel8
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(63, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 40);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "PHẦN MỀM KPI";
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel8.Location = new System.Drawing.Point(20, 208);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(467, 1);
+            this.panel8.TabIndex = 14;
             // 
-            // pictureBox1
+            // panel7
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::DuAn_QuanLyKPI.Properties.Resources.Tiêu_đề_Website_BV_16__removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(115, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel7.Location = new System.Drawing.Point(20, 99);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(467, 1);
+            this.panel7.TabIndex = 14;
             // 
-            // panel5
+            // label5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.lbDate);
-            this.panel5.Controls.Add(this.lbTime);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 490);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(415, 50);
-            this.panel5.TabIndex = 12;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(71, 112);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 31);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Mật khẩu:";
             // 
-            // lbDate
+            // panel18
             // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.Color.Black;
-            this.lbDate.Location = new System.Drawing.Point(214, 5);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(88, 40);
-            this.lbDate.TabIndex = 11;
-            this.lbDate.Text = "Date";
+            this.panel18.BackColor = System.Drawing.Color.Black;
+            this.panel18.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel18.Location = new System.Drawing.Point(20, 208);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(467, 1);
+            this.panel18.TabIndex = 14;
             // 
-            // lbTime
+            // label4
             // 
-            this.lbTime.AutoSize = true;
-            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.Color.Black;
-            this.lbTime.Location = new System.Drawing.Point(19, 5);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(91, 40);
-            this.lbTime.TabIndex = 10;
-            this.lbTime.Text = "Time";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(71, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 31);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tài khoản:";
+            // 
+            // pbHien
+            // 
+            this.pbHien.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbHien.ErrorImage")));
+            this.pbHien.Image = ((System.Drawing.Image)(resources.GetObject("pbHien.Image")));
+            this.pbHien.Location = new System.Drawing.Point(449, 164);
+            this.pbHien.Name = "pbHien";
+            this.pbHien.Size = new System.Drawing.Size(37, 37);
+            this.pbHien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHien.TabIndex = 7;
+            this.pbHien.TabStop = false;
+            this.pbHien.Click += new System.EventHandler(this.pbHien_Click_1);
+            // 
+            // pbAn
+            // 
+            this.pbAn.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbAn.ErrorImage")));
+            this.pbAn.Image = ((System.Drawing.Image)(resources.GetObject("pbAn.Image")));
+            this.pbAn.Location = new System.Drawing.Point(448, 164);
+            this.pbAn.Name = "pbAn";
+            this.pbAn.Size = new System.Drawing.Size(38, 37);
+            this.pbAn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAn.TabIndex = 8;
+            this.pbAn.TabStop = false;
+            this.pbAn.Click += new System.EventHandler(this.pbAn_Click_1);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(71, 162);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(370, 32);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "123";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter_1);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            // 
+            // txtdangnhap
+            // 
+            this.txtdangnhap.BackColor = System.Drawing.Color.White;
+            this.txtdangnhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdangnhap.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdangnhap.Location = new System.Drawing.Point(71, 55);
+            this.txtdangnhap.Name = "txtdangnhap";
+            this.txtdangnhap.Size = new System.Drawing.Size(370, 32);
+            this.txtdangnhap.TabIndex = 0;
+            this.txtdangnhap.Text = "phuc28";
+            this.txtdangnhap.Enter += new System.EventHandler(this.txtdangnhap_Enter);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(22, 164);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(35, 37);
+            this.panel4.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(22, 55);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(35, 37);
+            this.panel3.TabIndex = 5;
             // 
             // panel2
             // 
@@ -147,8 +224,8 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 540);
-            this.panel2.TabIndex = 8;
+            this.panel2.Size = new System.Drawing.Size(507, 658);
+            this.panel2.TabIndex = 12;
             // 
             // panel1
             // 
@@ -167,216 +244,137 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 218);
+            this.panel1.Location = new System.Drawing.Point(0, 299);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 272);
-            this.panel1.TabIndex = 24;
+            this.panel1.Size = new System.Drawing.Size(507, 301);
+            this.panel1.TabIndex = 25;
             // 
-            // btnCancel
+            // panel5
             // 
-            this.btnCancel.Appearance.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Appearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Appearance.Options.UseBackColor = true;
-            this.btnCancel.Appearance.Options.UseBorderColor = true;
-            this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.close;
-            this.btnCancel.Location = new System.Drawing.Point(21, 205);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(157, 51);
-            this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "HỦY";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.lbDate);
+            this.panel5.Controls.Add(this.lbTime);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 600);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(507, 58);
+            this.panel5.TabIndex = 12;
             // 
-            // btnLogin
+            // lbDate
             // 
-            this.btnLogin.Appearance.BackColor = System.Drawing.Color.White;
-            this.btnLogin.Appearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLogin.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Appearance.Options.UseBackColor = true;
-            this.btnLogin.Appearance.Options.UseBorderColor = true;
-            this.btnLogin.Appearance.Options.UseFont = true;
-            this.btnLogin.ImageOptions.SvgImage = global::DuAn_QuanLyKPI.Properties.Resources.actions_checkcircled;
-            this.btnLogin.Location = new System.Drawing.Point(184, 205);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(187, 51);
-            this.btnLogin.TabIndex = 15;
-            this.btnLogin.Text = "ĐĂNG NHẬP ";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.lbDate.AutoSize = true;
+            this.lbDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.Black;
+            this.lbDate.Location = new System.Drawing.Point(250, 7);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(88, 40);
+            this.lbDate.TabIndex = 11;
+            this.lbDate.Text = "Date";
             // 
-            // panel8
+            // lbTime
             // 
-            this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel8.Location = new System.Drawing.Point(21, 185);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(350, 1);
-            this.panel8.TabIndex = 14;
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Black;
+            this.lbTime.Location = new System.Drawing.Point(14, 7);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(91, 40);
+            this.lbTime.TabIndex = 10;
+            this.lbTime.Text = "Time";
             // 
-            // panel7
+            // panel6
             // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(21, 91);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(350, 1);
-            this.panel7.TabIndex = 14;
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(507, 299);
+            this.panel6.TabIndex = 14;
             // 
-            // label5
+            // label1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(75, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 26);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Mật khẩu:";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(48, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(411, 80);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "PHẦN MỀM ĐÁNH GIÁ \r\nHIỆU QUẢ CÔNG VIỆC";
             // 
-            // panel18
+            // pictureBox1
             // 
-            this.panel18.BackColor = System.Drawing.Color.Black;
-            this.panel18.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel18.Location = new System.Drawing.Point(21, 185);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(350, 1);
-            this.panel18.TabIndex = 14;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::DuAn_QuanLyKPI.Properties.Resources.Tiêu_đề_Website_BV_16__removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(146, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // timer1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(75, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 26);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tài khoản:";
-            // 
-            // pbHien
-            // 
-            this.pbHien.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbHien.ErrorImage")));
-            this.pbHien.Image = ((System.Drawing.Image)(resources.GetObject("pbHien.Image")));
-            this.pbHien.Location = new System.Drawing.Point(339, 147);
-            this.pbHien.Name = "pbHien";
-            this.pbHien.Size = new System.Drawing.Size(32, 32);
-            this.pbHien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHien.TabIndex = 7;
-            this.pbHien.TabStop = false;
-            this.pbHien.Click += new System.EventHandler(this.pbHien_Click_1);
-            // 
-            // pbAn
-            // 
-            this.pbAn.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbAn.ErrorImage")));
-            this.pbAn.Image = ((System.Drawing.Image)(resources.GetObject("pbAn.Image")));
-            this.pbAn.Location = new System.Drawing.Point(338, 147);
-            this.pbAn.Name = "pbAn";
-            this.pbAn.Size = new System.Drawing.Size(33, 32);
-            this.pbAn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAn.TabIndex = 8;
-            this.pbAn.TabStop = false;
-            this.pbAn.Click += new System.EventHandler(this.pbAn_Click_1);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(75, 151);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(257, 28);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "123";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter_1);
-            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
-            // 
-            // txtdangnhap
-            // 
-            this.txtdangnhap.BackColor = System.Drawing.Color.White;
-            this.txtdangnhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdangnhap.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdangnhap.Location = new System.Drawing.Point(75, 57);
-            this.txtdangnhap.Name = "txtdangnhap";
-            this.txtdangnhap.Size = new System.Drawing.Size(257, 28);
-            this.txtdangnhap.TabIndex = 0;
-            this.txtdangnhap.Text = "phuc28";
-            this.txtdangnhap.Enter += new System.EventHandler(this.txtdangnhap_Enter);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(32, 147);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(30, 32);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(32, 53);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(30, 32);
-            this.panel3.TabIndex = 5;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Frm_Login
             // 
-            this.AcceptButton = this.btnLogin;
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
-            this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(415, 540);
+            this.ClientSize = new System.Drawing.Size(507, 658);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_Login.IconOptions.Image")));
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Login";
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAn)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Label lbTime;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnLogin;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pbHien;
         private System.Windows.Forms.PictureBox pbAn;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtdangnhap;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel18;
-        private DevExpress.XtraEditors.SimpleButton btnLogin;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

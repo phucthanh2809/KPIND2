@@ -23,7 +23,9 @@ namespace DuAn_QuanLyKPI.GUI
 
         // Tạo biến 
         private string MaNV = Frm_Login.MaNV;
-
+        private string BieuMau;
+        bool t = false;
+        //
         #region Create Value
         FrmA73 A73 = new FrmA73();
         #endregion
@@ -32,6 +34,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             InitializeComponent();
             nmYear.Value = DateTime.Now.Year;
+
         }
         public void LoadNganHangKPI()
         {
@@ -211,48 +214,36 @@ namespace DuAn_QuanLyKPI.GUI
             LoadNganHangCaNhan();
         }
 
-        private void dgrNganHangCaNhan_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btnCopy_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgrNganHangCaNhan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void CreateListCopyGridA73()
-        {
-
-        }
-        private void dgrKPIBenhVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Check if the clicked cell is within the valid range of rows and columns in the DataGridView
-            if (e.RowIndex >= 0 && e.RowIndex < dgrKPIBenhVien.Rows.Count && e.ColumnIndex >= 0)
+            List<CommonValue> CV = new List<CommonValue>();
+            foreach (DataGridViewRow item in dgrKPIBenhVien.Rows)
             {
-                // Get the clicked cell
-                DataGridViewCell clickedCell = dgrKPIBenhVien.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-                // Check if the clicked cell is not null and is the checkbox cell
-                if (clickedCell != null && clickedCell.ColumnIndex == dgrKPIBenhVien.Columns["cChonTatCaBVTC"].Index)
+                if (Convert.ToBoolean(item.Cells["cChonTatCaBVTC"].Value))
                 {
-                    // Check if the value of the clicked cell is not null and is true
-                    if (clickedCell.Value != null && (bool)clickedCell.Value)
+                    CV.Add(new CommonValue
                     {
-                        // Create a list to store the data
-                        List<AddKPIGridBV> AddA73 = new List<AddKPIGridBV>();
-                        AddA73.Add(new AddKPIGridBV()
-                        {
-                            MaKPI = dgrKPIBenhVien.CurrentRow.Cells["CMaKPI"].Value?.ToString(),
-                            NoiDung = dgrKPIBenhVien.CurrentRow.Cells["cNoiDung"].Value?.ToString(),
-                            KeHoach = "",
-                            ChiTieu = dgrKPIBenhVien.CurrentRow.Cells["cChiTieu"].Value?.ToString()
-                        });
-
-                        // Pass the list to FrmA73
-                        FrmA73 a73 = new FrmA73();
-                        a73.AddKPIBVToGridView(AddA73);
-                    }
+                        MaKPI = item.Cells["CMaKPI"].Value.ToString(),
+                        NoiDung = item.Cells["cNoiDung"].Value.ToString(),
+                        KeHoach = "",
+                        ChiTieu = item.Cells["cChiTieu"].Value.ToString(),
+                        TrongSo = ""
+                    });
                 }
+            }
+            if (t == false)
+            {
+                FrmA73 A73 = new FrmA73();
+                t = true;
+                A73.gridView.DataSource = CV;
+            }
+            else
+            {
+                FrmA73 A73 = (FrmA73)Application.OpenForms["FrmA73"];
+                List<CommonValue> list = (List<CommonValue>)A73.gridView.DataSource;
+                list.AddRange(CV.ToArray());
+                A73.gridView.DataSource = null;
+                A73.gridView.DataSource = list;
             }
         }
     }

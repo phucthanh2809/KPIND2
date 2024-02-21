@@ -173,6 +173,16 @@ namespace DuAn_QuanLyKPI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bank {
+            get {
+                object obj = ResourceManager.GetObject("bank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barofpie_32x32 {
             get {
                 object obj = ResourceManager.GetObject("barofpie_32x32", resourceCulture);
@@ -296,6 +306,16 @@ namespace DuAn_QuanLyKPI.Properties {
         internal static System.Drawing.Bitmap forward_32x32 {
             get {
                 object obj = ResourceManager.GetObject("forward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hospital {
+            get {
+                object obj = ResourceManager.GetObject("hospital", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,6 +45,8 @@ namespace DuAn_QuanLyKPI.GUI
         //Truyền dữ liệu sang form để thêm kpi vào grid
         public static string phuongdien;
 
+        public System.Windows.Forms.DataGridView dgr;
+
         public FrmA73()
         {
             InitializeComponent();
@@ -80,6 +82,18 @@ namespace DuAn_QuanLyKPI.GUI
                 dataGridViews[i].Rows.Add($"Row {i + 1}, Column 1", $"Row {i + 1}, Column 2", $"Row {i + 1}, Column 3");
             }
         }
+        public DataGridView gridView
+        {
+            get
+            {
+                return dgrNhapMucTieuTaiChinh;
+            }
+            set
+            {
+                dgrNhapMucTieuTaiChinh = value;
+            }
+        }
+
         #region LoadDataGrid
         //Load thông tin nhân viên 
         private void LoadThongTinNhanVien()
@@ -542,11 +556,6 @@ namespace DuAn_QuanLyKPI.GUI
         public string TaoMaPhieu()
         {
             return SQLHelper.ExecQuerySacalar($@"SELECT [dbo].[TaoMaPhieuKPIKP]('" + Convert.ToDateTime(dtNgayLap.Value).ToString("yyyy-MM-dd") + "')").ToString();
-        }
-        public void AddKPIBVToGridView(List<AddKPIGridBV> KPIBV)
-        {
-            // Assuming your DataGridView is named dgvKPIBV in FrmA73
-            dgrNhapMucTieuTaiChinh.DataSource = KPIBV;
         }
         #endregion
         #region Event

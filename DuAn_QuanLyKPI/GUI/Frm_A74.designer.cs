@@ -1,7 +1,7 @@
 ﻿
 namespace DuAn_QuanLyKPI.GUI
 {
-    partial class FrmPhanNhomMucTieuNhanVien
+    partial class Frm_A74
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@ namespace DuAn_QuanLyKPI.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_A74));
             this.dgrDanhSachMucTieuKhachHangKPI = new System.Windows.Forms.DataGridView();
             this.cNDMucTieuKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMaNhomKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +84,16 @@ namespace DuAn_QuanLyKPI.GUI
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbKP = new DevExpress.XtraEditors.LabelControl();
+            this.lbYear = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtTenNVTC = new ControlProject1510.XFilteg();
+            this.txtViTriCVTC = new ControlProject1510.XFilteg();
+            this.lbViTriCV = new System.Windows.Forms.Label();
+            this.lbTen = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSachMucTieuKhachHangKPI)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -97,6 +108,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSachMucTieuVanHanhKPI)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgrDanhSachMucTieuKhachHangKPI
@@ -137,7 +149,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSachMucTieuKhachHangKPI.RowHeadersWidth = 75;
             this.dgrDanhSachMucTieuKhachHangKPI.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrDanhSachMucTieuKhachHangKPI.RowTemplate.Height = 50;
-            this.dgrDanhSachMucTieuKhachHangKPI.Size = new System.Drawing.Size(1182, 166);
+            this.dgrDanhSachMucTieuKhachHangKPI.Size = new System.Drawing.Size(1347, 166);
             this.dgrDanhSachMucTieuKhachHangKPI.TabIndex = 5;
             // 
             // cNDMucTieuKH
@@ -183,7 +195,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 240);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1182, 166);
+            this.panel6.Size = new System.Drawing.Size(1347, 166);
             this.panel6.TabIndex = 3;
             // 
             // label4
@@ -204,7 +216,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 406);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1182, 37);
+            this.panel8.Size = new System.Drawing.Size(1347, 37);
             this.panel8.TabIndex = 4;
             // 
             // panel4
@@ -214,7 +226,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1182, 37);
+            this.panel4.Size = new System.Drawing.Size(1347, 37);
             this.panel4.TabIndex = 0;
             // 
             // label2
@@ -267,7 +279,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSachMucTieuTaiChinhKPI.RowHeadersWidth = 75;
             this.dgrDanhSachMucTieuTaiChinhKPI.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrDanhSachMucTieuTaiChinhKPI.RowTemplate.Height = 50;
-            this.dgrDanhSachMucTieuTaiChinhKPI.Size = new System.Drawing.Size(1182, 166);
+            this.dgrDanhSachMucTieuTaiChinhKPI.Size = new System.Drawing.Size(1347, 166);
             this.dgrDanhSachMucTieuTaiChinhKPI.TabIndex = 5;
             this.dgrDanhSachMucTieuTaiChinhKPI.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDanhSachMucTieuTaiChinhKPI_CellContentClick);
             this.dgrDanhSachMucTieuTaiChinhKPI.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDanhSachMucTieuTaiChinhKPI_CellValueChanged);
@@ -326,7 +338,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 37);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1182, 166);
+            this.panel5.Size = new System.Drawing.Size(1347, 166);
             this.panel5.TabIndex = 1;
             // 
             // label3
@@ -347,7 +359,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 203);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1182, 37);
+            this.panel7.Size = new System.Drawing.Size(1347, 37);
             this.panel7.TabIndex = 2;
             // 
             // dgrDanhSachMucTieuPhatTrienKPI
@@ -388,7 +400,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSachMucTieuPhatTrienKPI.RowHeadersWidth = 75;
             this.dgrDanhSachMucTieuPhatTrienKPI.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrDanhSachMucTieuPhatTrienKPI.RowTemplate.Height = 50;
-            this.dgrDanhSachMucTieuPhatTrienKPI.Size = new System.Drawing.Size(1182, 166);
+            this.dgrDanhSachMucTieuPhatTrienKPI.Size = new System.Drawing.Size(1347, 166);
             this.dgrDanhSachMucTieuPhatTrienKPI.TabIndex = 5;
             // 
             // cNDMucTieuPT
@@ -435,7 +447,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 646);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1182, 166);
+            this.panel9.Size = new System.Drawing.Size(1347, 166);
             this.panel9.TabIndex = 7;
             // 
             // pnMain
@@ -452,7 +464,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 118);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1199, 558);
+            this.pnMain.Size = new System.Drawing.Size(1364, 618);
             this.pnMain.TabIndex = 7;
             // 
             // panel10
@@ -462,7 +474,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 609);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1182, 37);
+            this.panel10.Size = new System.Drawing.Size(1347, 37);
             this.panel10.TabIndex = 6;
             // 
             // label5
@@ -482,7 +494,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 443);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 166);
+            this.panel3.Size = new System.Drawing.Size(1347, 166);
             this.panel3.TabIndex = 5;
             // 
             // dgrDanhSachMucTieuVanHanhKPI
@@ -523,7 +535,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrDanhSachMucTieuVanHanhKPI.RowHeadersWidth = 75;
             this.dgrDanhSachMucTieuVanHanhKPI.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrDanhSachMucTieuVanHanhKPI.RowTemplate.Height = 50;
-            this.dgrDanhSachMucTieuVanHanhKPI.Size = new System.Drawing.Size(1182, 166);
+            this.dgrDanhSachMucTieuVanHanhKPI.Size = new System.Drawing.Size(1347, 166);
             this.dgrDanhSachMucTieuVanHanhKPI.TabIndex = 5;
             // 
             // cNDMucTieuVH
@@ -585,13 +597,13 @@ namespace DuAn_QuanLyKPI.GUI
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(3, 66);
+            this.labelControl2.Location = new System.Drawing.Point(12, 70);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(211, 42);
+            this.labelControl2.Size = new System.Drawing.Size(200, 40);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Khoa/Phòng:";
             // 
@@ -600,39 +612,176 @@ namespace DuAn_QuanLyKPI.GUI
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(3, 3);
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(745, 55);
+            this.labelControl1.Size = new System.Drawing.Size(476, 40);
             this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "A7.4 Mục tiêu nhân viên Năm - 2023";
+            this.labelControl1.Text = "A7.4 Mục tiêu nhân viên Năm - ";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lbKP);
+            this.panel1.Controls.Add(this.lbYear);
             this.panel1.Controls.Add(this.labelControl3);
             this.panel1.Controls.Add(this.labelControl2);
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1199, 118);
+            this.panel1.Size = new System.Drawing.Size(1364, 118);
             this.panel1.TabIndex = 5;
             // 
-            // FrmPhanNhomMucTieuNhanVien
+            // lbKP
+            // 
+            this.lbKP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKP.Appearance.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKP.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lbKP.Appearance.Options.UseFont = true;
+            this.lbKP.Appearance.Options.UseForeColor = true;
+            this.lbKP.Location = new System.Drawing.Point(226, 70);
+            this.lbKP.Name = "lbKP";
+            this.lbKP.Size = new System.Drawing.Size(107, 40);
+            this.lbKP.TabIndex = 23;
+            this.lbKP.Text = "TênKP";
+            // 
+            // lbYear
+            // 
+            this.lbYear.AutoSize = true;
+            this.lbYear.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbYear.Location = new System.Drawing.Point(482, 12);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(89, 40);
+            this.lbYear.TabIndex = 22;
+            this.lbYear.Text = "Year";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel19);
+            this.panel2.Controls.Add(this.panel18);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.txtTenNVTC);
+            this.panel2.Controls.Add(this.txtViTriCVTC);
+            this.panel2.Controls.Add(this.lbViTriCV);
+            this.panel2.Controls.Add(this.lbTen);
+            this.panel2.Location = new System.Drawing.Point(916, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(445, 112);
+            this.panel2.TabIndex = 24;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Black;
+            this.panel19.Location = new System.Drawing.Point(153, 98);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(287, 1);
+            this.panel19.TabIndex = 14;
+            // 
+            // panel18
+            // 
+            this.panel18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel18.BackColor = System.Drawing.Color.Black;
+            this.panel18.Location = new System.Drawing.Point(153, 65);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(285, 1);
+            this.panel18.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(165, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(161, 26);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Người sử dụng";
+            // 
+            // txtTenNVTC
+            // 
+            this.txtTenNVTC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenNVTC.BackColor = System.Drawing.Color.White;
+            this.txtTenNVTC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenNVTC.Enabled = false;
+            this.txtTenNVTC.ForeColor = System.Drawing.Color.Black;
+            this.txtTenNVTC.Location = new System.Drawing.Point(153, 42);
+            this.txtTenNVTC.Name = "txtTenNVTC";
+            this.txtTenNVTC.ReadOnly = true;
+            this.txtTenNVTC.Size = new System.Drawing.Size(285, 19);
+            this.txtTenNVTC.TabIndex = 2;
+            this.txtTenNVTC.xCoTimMoRong = false;
+            this.txtTenNVTC.xDataGrid = null;
+            this.txtTenNVTC.xField_Key = "";
+            this.txtTenNVTC.xKeep_Old_Value = false;
+            this.txtTenNVTC.xTimChinhXac = false;
+            this.txtTenNVTC.xTimMoRong = "";
+            this.txtTenNVTC.xTimTrenField = null;
+            // 
+            // txtViTriCVTC
+            // 
+            this.txtViTriCVTC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtViTriCVTC.BackColor = System.Drawing.Color.White;
+            this.txtViTriCVTC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtViTriCVTC.Enabled = false;
+            this.txtViTriCVTC.ForeColor = System.Drawing.Color.Black;
+            this.txtViTriCVTC.Location = new System.Drawing.Point(153, 75);
+            this.txtViTriCVTC.Name = "txtViTriCVTC";
+            this.txtViTriCVTC.ReadOnly = true;
+            this.txtViTriCVTC.Size = new System.Drawing.Size(287, 19);
+            this.txtViTriCVTC.TabIndex = 3;
+            this.txtViTriCVTC.xCoTimMoRong = false;
+            this.txtViTriCVTC.xDataGrid = null;
+            this.txtViTriCVTC.xField_Key = "";
+            this.txtViTriCVTC.xKeep_Old_Value = false;
+            this.txtViTriCVTC.xTimChinhXac = false;
+            this.txtViTriCVTC.xTimMoRong = "";
+            this.txtViTriCVTC.xTimTrenField = null;
+            // 
+            // lbViTriCV
+            // 
+            this.lbViTriCV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbViTriCV.AutoSize = true;
+            this.lbViTriCV.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbViTriCV.Location = new System.Drawing.Point(1, 74);
+            this.lbViTriCV.Name = "lbViTriCV";
+            this.lbViTriCV.Size = new System.Drawing.Size(161, 24);
+            this.lbViTriCV.TabIndex = 6;
+            this.lbViTriCV.Text = "Vị trí công việc : ";
+            // 
+            // lbTen
+            // 
+            this.lbTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTen.Location = new System.Drawing.Point(101, 41);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(61, 24);
+            this.lbTen.TabIndex = 5;
+            this.lbTen.Text = "Tên : ";
+            // 
+            // Frm_A74
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 676);
+            this.ClientSize = new System.Drawing.Size(1364, 736);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_A74.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmPhanNhomMucTieuNhanVien";
-            this.Text = "FrmPhanNhomMucTieuNhanVien";
+            this.Name = "Frm_A74";
+            this.Text = "Biểu mẫu A7.4";
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSachMucTieuKhachHangKPI)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -652,6 +801,8 @@ namespace DuAn_QuanLyKPI.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSachMucTieuVanHanhKPI)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -699,5 +850,15 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewCheckBoxColumn cMucTieuTC;
         private System.Windows.Forms.DataGridViewComboBoxColumn cChucDanhTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn cID;
+        private System.Windows.Forms.Label lbYear;
+        private DevExpress.XtraEditors.LabelControl lbKP;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label10;
+        private ControlProject1510.XFilteg txtTenNVTC;
+        private ControlProject1510.XFilteg txtViTriCVTC;
+        private System.Windows.Forms.Label lbViTriCV;
+        private System.Windows.Forms.Label lbTen;
     }
 }

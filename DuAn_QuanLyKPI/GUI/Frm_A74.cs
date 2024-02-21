@@ -14,21 +14,24 @@ using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace DuAn_QuanLyKPI.GUI
 {
-    public partial class FrmPhanNhomMucTieuNhanVien : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_A74 : DevExpress.XtraEditors.XtraForm
     {
         public static string mconnectstring = "server=192.168.50.108,1433;database=QuanLyKPI;uid=sa;pwd=123";
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
 
-        public FrmPhanNhomMucTieuNhanVien()
+        private string TenKP = Frm_Login.TenPhongKhoa;
+
+        public Frm_A74()
         {
             InitializeComponent();
             load();
             combobox();
             dgrDanhSachMucTieuTaiChinhKPI.CellValueChanged += dgrDanhSachMucTieuTaiChinhKPI_CellValueChanged;
             dgrDanhSachMucTieuTaiChinhKPI.CurrentCellDirtyStateChanged += dgrDanhSachMucTieuTaiChinhKPI_CurrentCellDirtyStateChanged;
-
+            lbYear.Text = DateTime.Now.Year.ToString();
+            lbKP.Text = TenKP;
         }
 
 

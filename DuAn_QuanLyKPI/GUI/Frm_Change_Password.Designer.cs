@@ -64,7 +64,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(745, 507);
+            this.panel2.Size = new System.Drawing.Size(496, 585);
             this.panel2.TabIndex = 10;
             // 
             // label5
@@ -72,7 +72,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(165, 9);
+            this.label5.Location = new System.Drawing.Point(41, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(414, 55);
             this.label5.TabIndex = 93;
@@ -81,25 +81,24 @@ namespace DuAn_QuanLyKPI.GUI
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(12, 78);
+            this.pictureEdit1.Location = new System.Drawing.Point(13, 90);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(721, 170);
+            this.pictureEdit1.Size = new System.Drawing.Size(470, 196);
             this.pictureEdit1.TabIndex = 92;
             // 
             // btnHuy
             // 
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHuy.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHuy.Location = new System.Drawing.Point(665, 446);
+            this.btnHuy.Location = new System.Drawing.Point(402, 505);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(67, 48);
+            this.btnHuy.Size = new System.Drawing.Size(82, 55);
             this.btnHuy.TabIndex = 91;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -111,8 +110,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(7, 404);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(8, 466);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 24);
             this.label4.TabIndex = 88;
@@ -125,8 +124,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 266);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 307);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 24);
             this.label1.TabIndex = 85;
@@ -134,15 +133,14 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnDoiMatKhau
             // 
-            this.btnDoiMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDoiMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDoiMatKhau.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(518, 446);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(230, 505);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(141, 48);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(168, 55);
             this.btnDoiMatKhau.TabIndex = 89;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = false;
@@ -154,8 +152,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(7, 358);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(8, 413);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 24);
             this.label3.TabIndex = 87;
@@ -163,13 +161,12 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // txtMatKhauHienTai
             // 
-            this.txtMatKhauHienTai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMatKhauHienTai.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMatKhauHienTai.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhauHienTai.Location = new System.Drawing.Point(188, 308);
-            this.txtMatKhauHienTai.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhauHienTai.Location = new System.Drawing.Point(184, 358);
+            this.txtMatKhauHienTai.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtMatKhauHienTai.Name = "txtMatKhauHienTai";
-            this.txtMatKhauHienTai.Size = new System.Drawing.Size(544, 32);
+            this.txtMatKhauHienTai.Size = new System.Drawing.Size(300, 32);
             this.txtMatKhauHienTai.TabIndex = 84;
             // 
             // label2
@@ -179,8 +176,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(7, 312);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(8, 360);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(166, 24);
             this.label2.TabIndex = 86;
@@ -188,47 +185,42 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // txtMatKhauMoi
             // 
-            this.txtMatKhauMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMatKhauMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(188, 354);
-            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(184, 411);
+            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(544, 32);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(300, 32);
             this.txtMatKhauMoi.TabIndex = 83;
             // 
             // txtNhapLaiMatKhau
             // 
-            this.txtNhapLaiMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNhapLaiMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNhapLaiMatKhau.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(188, 400);
-            this.txtNhapLaiMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(184, 465);
+            this.txtNhapLaiMatKhau.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
-            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(544, 32);
+            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(300, 32);
             this.txtNhapLaiMatKhau.TabIndex = 82;
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenDangNhap.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDangNhap.Location = new System.Drawing.Point(188, 262);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(184, 305);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(544, 32);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(300, 32);
             this.txtTenDangNhap.TabIndex = 81;
             // 
             // Frm_Change_Password
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 507);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(496, 585);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_Change_Password.IconOptions.Image")));
             this.Name = "Frm_Change_Password";
-            this.Text = "Frm_Change_Password";
+            this.Text = "Thay đổi mật khẩu";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();

@@ -31,8 +31,15 @@ namespace DuAn_QuanLyKPI.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_InfoUser));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnThongTin = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtChucDanh = new ControlProject1510.XFilteg();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtPhongKhoa = new ControlProject1510.XFilteg();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtSDT = new ControlProject1510.XFilteg();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtEmail = new ControlProject1510.XFilteg();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtHoten = new ControlProject1510.XFilteg();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -43,14 +50,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtEmail = new ControlProject1510.XFilteg();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtSDT = new ControlProject1510.XFilteg();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtPhongKhoa = new ControlProject1510.XFilteg();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtChucDanh = new ControlProject1510.XFilteg();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -69,17 +69,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(392, 473);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(386, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "THÔNG TIN CÁ NHÂN";
             // 
             // pnThongTin
             // 
@@ -107,6 +96,122 @@ namespace DuAn_QuanLyKPI.GUI
             this.pnThongTin.Name = "pnThongTin";
             this.pnThongTin.Size = new System.Drawing.Size(399, 473);
             this.pnThongTin.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Black;
+            this.panel6.Location = new System.Drawing.Point(19, 456);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(359, 1);
+            this.panel6.TabIndex = 97;
+            // 
+            // txtChucDanh
+            // 
+            this.txtChucDanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtChucDanh.BackColor = System.Drawing.Color.White;
+            this.txtChucDanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChucDanh.Enabled = false;
+            this.txtChucDanh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChucDanh.Location = new System.Drawing.Point(19, 429);
+            this.txtChucDanh.Name = "txtChucDanh";
+            this.txtChucDanh.ReadOnly = true;
+            this.txtChucDanh.Size = new System.Drawing.Size(359, 28);
+            this.txtChucDanh.TabIndex = 96;
+            this.txtChucDanh.xCoTimMoRong = false;
+            this.txtChucDanh.xDataGrid = null;
+            this.txtChucDanh.xField_Key = "";
+            this.txtChucDanh.xKeep_Old_Value = false;
+            this.txtChucDanh.xTimChinhXac = false;
+            this.txtChucDanh.xTimMoRong = "";
+            this.txtChucDanh.xTimTrenField = "";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(19, 378);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(359, 1);
+            this.panel5.TabIndex = 95;
+            // 
+            // txtPhongKhoa
+            // 
+            this.txtPhongKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhongKhoa.BackColor = System.Drawing.Color.White;
+            this.txtPhongKhoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhongKhoa.Enabled = false;
+            this.txtPhongKhoa.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhongKhoa.Location = new System.Drawing.Point(19, 351);
+            this.txtPhongKhoa.Name = "txtPhongKhoa";
+            this.txtPhongKhoa.ReadOnly = true;
+            this.txtPhongKhoa.Size = new System.Drawing.Size(359, 28);
+            this.txtPhongKhoa.TabIndex = 94;
+            this.txtPhongKhoa.xCoTimMoRong = false;
+            this.txtPhongKhoa.xDataGrid = null;
+            this.txtPhongKhoa.xField_Key = "";
+            this.txtPhongKhoa.xKeep_Old_Value = false;
+            this.txtPhongKhoa.xTimChinhXac = false;
+            this.txtPhongKhoa.xTimMoRong = "";
+            this.txtPhongKhoa.xTimTrenField = "";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(19, 300);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(359, 1);
+            this.panel4.TabIndex = 93;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSDT.BackColor = System.Drawing.Color.White;
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSDT.Enabled = false;
+            this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(19, 273);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
+            this.txtSDT.Size = new System.Drawing.Size(359, 28);
+            this.txtSDT.TabIndex = 92;
+            this.txtSDT.xCoTimMoRong = false;
+            this.txtSDT.xDataGrid = null;
+            this.txtSDT.xField_Key = "";
+            this.txtSDT.xKeep_Old_Value = false;
+            this.txtSDT.xTimChinhXac = false;
+            this.txtSDT.xTimMoRong = "";
+            this.txtSDT.xTimTrenField = "";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(19, 222);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(359, 1);
+            this.panel3.TabIndex = 91;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(19, 195);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(359, 28);
+            this.txtEmail.TabIndex = 90;
+            this.txtEmail.xCoTimMoRong = false;
+            this.txtEmail.xDataGrid = null;
+            this.txtEmail.xField_Key = "";
+            this.txtEmail.xKeep_Old_Value = false;
+            this.txtEmail.xTimChinhXac = false;
+            this.txtEmail.xTimMoRong = "";
+            this.txtEmail.xTimTrenField = "";
             // 
             // panel2
             // 
@@ -226,121 +331,16 @@ namespace DuAn_QuanLyKPI.GUI
             this.label7.TabIndex = 80;
             this.label7.Text = "Phòng khoa:";
             // 
-            // panel3
+            // label1
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(19, 222);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(359, 1);
-            this.panel3.TabIndex = 91;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Enabled = false;
-            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(19, 195);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(359, 28);
-            this.txtEmail.TabIndex = 90;
-            this.txtEmail.xCoTimMoRong = false;
-            this.txtEmail.xDataGrid = null;
-            this.txtEmail.xField_Key = "";
-            this.txtEmail.xKeep_Old_Value = false;
-            this.txtEmail.xTimChinhXac = false;
-            this.txtEmail.xTimMoRong = "";
-            this.txtEmail.xTimTrenField = "";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(19, 300);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(359, 1);
-            this.panel4.TabIndex = 93;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSDT.BackColor = System.Drawing.Color.White;
-            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSDT.Enabled = false;
-            this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(19, 273);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.ReadOnly = true;
-            this.txtSDT.Size = new System.Drawing.Size(359, 28);
-            this.txtSDT.TabIndex = 92;
-            this.txtSDT.xCoTimMoRong = false;
-            this.txtSDT.xDataGrid = null;
-            this.txtSDT.xField_Key = "";
-            this.txtSDT.xKeep_Old_Value = false;
-            this.txtSDT.xTimChinhXac = false;
-            this.txtSDT.xTimMoRong = "";
-            this.txtSDT.xTimTrenField = "";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(19, 378);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(359, 1);
-            this.panel5.TabIndex = 95;
-            // 
-            // txtPhongKhoa
-            // 
-            this.txtPhongKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhongKhoa.BackColor = System.Drawing.Color.White;
-            this.txtPhongKhoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPhongKhoa.Enabled = false;
-            this.txtPhongKhoa.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhongKhoa.Location = new System.Drawing.Point(19, 351);
-            this.txtPhongKhoa.Name = "txtPhongKhoa";
-            this.txtPhongKhoa.ReadOnly = true;
-            this.txtPhongKhoa.Size = new System.Drawing.Size(359, 28);
-            this.txtPhongKhoa.TabIndex = 94;
-            this.txtPhongKhoa.xCoTimMoRong = false;
-            this.txtPhongKhoa.xDataGrid = null;
-            this.txtPhongKhoa.xField_Key = "";
-            this.txtPhongKhoa.xKeep_Old_Value = false;
-            this.txtPhongKhoa.xTimChinhXac = false;
-            this.txtPhongKhoa.xTimMoRong = "";
-            this.txtPhongKhoa.xTimTrenField = "";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(19, 456);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(359, 1);
-            this.panel6.TabIndex = 97;
-            // 
-            // txtChucDanh
-            // 
-            this.txtChucDanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtChucDanh.BackColor = System.Drawing.Color.White;
-            this.txtChucDanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChucDanh.Enabled = false;
-            this.txtChucDanh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChucDanh.Location = new System.Drawing.Point(19, 429);
-            this.txtChucDanh.Name = "txtChucDanh";
-            this.txtChucDanh.ReadOnly = true;
-            this.txtChucDanh.Size = new System.Drawing.Size(359, 28);
-            this.txtChucDanh.TabIndex = 96;
-            this.txtChucDanh.xCoTimMoRong = false;
-            this.txtChucDanh.xDataGrid = null;
-            this.txtChucDanh.xField_Key = "";
-            this.txtChucDanh.xKeep_Old_Value = false;
-            this.txtChucDanh.xTimChinhXac = false;
-            this.txtChucDanh.xTimMoRong = "";
-            this.txtChucDanh.xTimTrenField = "";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(386, 40);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "THÔNG TIN CÁ NHÂN";
             // 
             // panel8
             // 
@@ -372,7 +372,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.ClientSize = new System.Drawing.Size(791, 473);
             this.Controls.Add(this.pnThongTin);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_InfoUser.IconOptions.Image")));
             this.Name = "Frm_InfoUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -390,7 +390,6 @@ namespace DuAn_QuanLyKPI.GUI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnThongTin;
         private ControlProject1510.XFilteg txtMaNV;
         private System.Windows.Forms.Label label5;
@@ -412,5 +411,6 @@ namespace DuAn_QuanLyKPI.GUI
         private ControlProject1510.XFilteg txtEmail;
         private System.Windows.Forms.PictureBox pbUser;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="Dapper.Contrib, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.Contrib.1.60.1\lib\net451\Dapper.Contrib.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.BonusSkins.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v23.1.Win, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -137,7 +138,7 @@
   <ItemGroup>
     <Compile Include="Constants\DataProvider.cs" />
     <Compile Include="Constants\DataUserCurrent.cs" />
-    <Compile Include="DAO\AddKPIGridBV.cs" />
+    <Compile Include="DAO\CommonValue.cs" />
     <Compile Include="DAO\myFunctions.cs" />
     <Compile Include="DAO\PHONGKHOA.cs" />
     <Compile Include="DTO\ChiTietKPIBenhVien.cs">
@@ -236,23 +237,17 @@
     <Compile Include="DTO\TongHopTrangThaiBieuMauKPI_Result.cs">
       <DependentUpon>dbQuanLyKPI.tt</DependentUpon>
     </Compile>
-    <Compile Include="GUI\backup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\backup.Designer.cs">
-      <DependentUpon>backup.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ChinhSuaDanhSachKPI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ChinhSuaDanhSachKPI.designer.cs">
       <DependentUpon>ChinhSuaDanhSachKPI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmPhanNhomMucTieuNhanVien.cs">
+    <Compile Include="GUI\Frm_A74.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmPhanNhomMucTieuNhanVien.designer.cs">
-      <DependentUpon>FrmPhanNhomMucTieuNhanVien.cs</DependentUpon>
+    <Compile Include="GUI\Frm_A74.designer.cs">
+      <DependentUpon>Frm_A74.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_A71.cs">
       <SubType>Form</SubType>
@@ -400,14 +395,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\backup.resx">
-      <DependentUpon>backup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChinhSuaDanhSachKPI.resx">
       <DependentUpon>ChinhSuaDanhSachKPI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmPhanNhomMucTieuNhanVien.resx">
-      <DependentUpon>FrmPhanNhomMucTieuNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Frm_A74.resx">
+      <DependentUpon>Frm_A74.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_A71.resx">
       <DependentUpon>Frm_A71.cs</DependentUpon>
@@ -539,6 +531,8 @@
       <DependentUpon>dbQuanLyKPI.edmx</DependentUpon>
       <LastGenOutput>dbQuanLyKPI.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\bank.png" />
+    <None Include="Resources\hospital.png" />
     <None Include="Resources\additem_32x32.png" />
     <None Include="Resources\actions_add1.svg" />
     <None Include="Resources\actions_addcircled.svg" />

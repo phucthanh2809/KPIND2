@@ -164,7 +164,7 @@ namespace DuAn_QuanLyKPI.GUI
                 #endregion
                 if (DataUserCurrent.Instance.Permission != "NV")
                 {
-                    MessageBox.Show("Đăng nhập thành công","Thông báo");
+                    ev.QFrmThongBao("Đăng nhập thành công");
                     Frm_Chinh_GUI f = new Frm_Chinh_GUI();
                     this.Hide();
                     f.ShowDialog();
@@ -184,7 +184,10 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(ev.QFrmThongBao_YesNo("Bạn có chắc muốn thoát phần mềm không? "))
+            {
+                Application.Exit();
+            }    
         }
     }
 }

@@ -29,10 +29,10 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AddKPIGrid));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,6 +55,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.cChiTieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTieuChiID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCopy = new DevExpress.XtraEditors.SimpleButton();
             this.chkCongViecCaNhanCaNhan = new System.Windows.Forms.CheckBox();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.chkCongViecCaNhanNganHangKPI = new System.Windows.Forms.CheckBox();
@@ -94,17 +95,17 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.dgrKPICaNhan.AllowUserToAddRows = false;
             this.dgrKPICaNhan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrKPICaNhan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrKPICaNhan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgrKPICaNhan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrKPICaNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrKPICaNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgrKPICaNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrKPICaNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonNHCN,
@@ -123,8 +124,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrKPICaNhan.RowTemplate.Height = 40;
             this.dgrKPICaNhan.Size = new System.Drawing.Size(1189, 564);
             this.dgrKPICaNhan.TabIndex = 17;
-            this.dgrKPICaNhan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrNganHangCaNhan_CellContentClick);
-            this.dgrKPICaNhan.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrNganHangCaNhan_CellMouseClick);
             // 
             // cChonNHCN
             // 
@@ -200,17 +199,17 @@ namespace DuAn_QuanLyKPI.GUI
             // dgrKPIBenhVien
             // 
             this.dgrKPIBenhVien.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgrKPIBenhVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgrKPIBenhVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgrKPIBenhVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrKPIBenhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgrKPIBenhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgrKPIBenhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrKPIBenhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cChonTatCaBVTC,
@@ -229,15 +228,14 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrKPIBenhVien.RowTemplate.Height = 40;
             this.dgrKPIBenhVien.Size = new System.Drawing.Size(1371, 704);
             this.dgrKPIBenhVien.TabIndex = 16;
-            this.dgrKPIBenhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrKPIBenhVien_CellClick);
             // 
             // cChonTatCaBVTC
             // 
             this.cChonTatCaBVTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cChonTatCaBVTC.HeaderText = "Chọn ";
             this.cChonTatCaBVTC.Name = "cChonTatCaBVTC";
-            this.cChonTatCaBVTC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cChonTatCaBVTC.Width = 60;
+            this.cChonTatCaBVTC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cChonTatCaBVTC.Width = 41;
             // 
             // CMaKPI
             // 
@@ -297,6 +295,7 @@ namespace DuAn_QuanLyKPI.GUI
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnCopy);
             this.panel2.Controls.Add(this.chkCongViecCaNhanCaNhan);
             this.panel2.Controls.Add(this.lbTenNV);
             this.panel2.Controls.Add(this.chkCongViecCaNhanNganHangKPI);
@@ -309,6 +308,17 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1371, 50);
             this.panel2.TabIndex = 0;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.Appearance.Options.UseFont = true;
+            this.btnCopy.Location = new System.Drawing.Point(593, 7);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(115, 29);
+            this.btnCopy.TabIndex = 16;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // chkCongViecCaNhanCaNhan
             // 
@@ -415,7 +425,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.Name = "Frm_AddKPIGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Xóa Sửa KPI ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrKPICaNhan)).EndInit();
@@ -449,6 +458,7 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn cChiTieuCaNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DevExpress.XtraEditors.SimpleButton btnCopy;
         private System.Windows.Forms.DataGridViewCheckBoxColumn cChonTatCaBVTC;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMaKPI;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNoiDung;

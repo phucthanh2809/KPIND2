@@ -59,7 +59,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(947, 356);
+            this.panel1.Size = new System.Drawing.Size(947, 337);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -74,30 +74,30 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel3.Controls.Add(this.labelControl10);
             this.panel3.Controls.Add(this.labelControl9);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 63);
+            this.panel3.Location = new System.Drawing.Point(0, 71);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(947, 293);
+            this.panel3.Size = new System.Drawing.Size(947, 266);
             this.panel3.TabIndex = 1;
             // 
             // chkCongViecCaNhan
             // 
-            this.chkCongViecCaNhan.Location = new System.Drawing.Point(197, 182);
+            this.chkCongViecCaNhan.Location = new System.Drawing.Point(182, 221);
             this.chkCongViecCaNhan.Name = "chkCongViecCaNhan";
-            this.chkCongViecCaNhan.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCongViecCaNhan.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCongViecCaNhan.Properties.Appearance.Options.UseFont = true;
             this.chkCongViecCaNhan.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCongViecCaNhan.Properties.AppearanceDisabled.Options.UseFont = true;
             this.chkCongViecCaNhan.Properties.Caption = "Công việc cá nhân";
             this.chkCongViecCaNhan.Properties.Tag = true;
-            this.chkCongViecCaNhan.Size = new System.Drawing.Size(220, 27);
+            this.chkCongViecCaNhan.Size = new System.Drawing.Size(220, 31);
             this.chkCongViecCaNhan.TabIndex = 75;
             // 
             // labelControl11
             // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(12, 148);
+            this.labelControl11.Location = new System.Drawing.Point(12, 175);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(97, 27);
             this.labelControl11.TabIndex = 74;
@@ -105,11 +105,11 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // labelControl13
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(12, 109);
+            this.labelControl13.Location = new System.Drawing.Point(12, 125);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(141, 23);
+            this.labelControl13.Size = new System.Drawing.Size(164, 27);
             this.labelControl13.TabIndex = 73;
             this.labelControl13.Text = "Phương pháp đo:";
             // 
@@ -118,11 +118,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtChiTieu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtChiTieu.Location = new System.Drawing.Point(197, 140);
+            this.txtChiTieu.Location = new System.Drawing.Point(182, 171);
             this.txtChiTieu.Name = "txtChiTieu";
-            this.txtChiTieu.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChiTieu.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChiTieu.Properties.Appearance.Options.UseFont = true;
-            this.txtChiTieu.Size = new System.Drawing.Size(738, 30);
+            this.txtChiTieu.Size = new System.Drawing.Size(672, 34);
             this.txtChiTieu.TabIndex = 72;
             // 
             // txtPhuongPhapDo
@@ -130,11 +130,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtPhuongPhapDo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhuongPhapDo.Location = new System.Drawing.Point(197, 98);
+            this.txtPhuongPhapDo.Location = new System.Drawing.Point(182, 121);
             this.txtPhuongPhapDo.Name = "txtPhuongPhapDo";
-            this.txtPhuongPhapDo.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhuongPhapDo.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhuongPhapDo.Properties.Appearance.Options.UseFont = true;
-            this.txtPhuongPhapDo.Size = new System.Drawing.Size(738, 30);
+            this.txtPhuongPhapDo.Size = new System.Drawing.Size(672, 34);
             this.txtPhuongPhapDo.TabIndex = 71;
             this.txtPhuongPhapDo.TabStop = false;
             // 
@@ -143,11 +143,11 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtDonViTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDonViTinh.Location = new System.Drawing.Point(197, 56);
+            this.txtDonViTinh.Location = new System.Drawing.Point(182, 71);
             this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonViTinh.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonViTinh.Properties.Appearance.Options.UseFont = true;
-            this.txtDonViTinh.Size = new System.Drawing.Size(738, 30);
+            this.txtDonViTinh.Size = new System.Drawing.Size(672, 34);
             this.txtDonViTinh.TabIndex = 70;
             // 
             // txtNoiDung
@@ -155,20 +155,20 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtNoiDung.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNoiDung.Location = new System.Drawing.Point(197, 14);
+            this.txtNoiDung.Location = new System.Drawing.Point(182, 21);
             this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoiDung.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoiDung.Properties.Appearance.Options.UseFont = true;
-            this.txtNoiDung.Size = new System.Drawing.Size(738, 30);
+            this.txtNoiDung.Size = new System.Drawing.Size(672, 34);
             this.txtNoiDung.TabIndex = 69;
             this.txtNoiDung.TabStop = false;
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(12, 66);
+            this.labelControl10.Location = new System.Drawing.Point(12, 75);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(97, 27);
             this.labelControl10.TabIndex = 68;
@@ -176,7 +176,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl9.Location = new System.Drawing.Point(12, 25);
@@ -191,7 +191,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(947, 63);
+            this.panel2.Size = new System.Drawing.Size(947, 71);
             this.panel2.TabIndex = 0;
             // 
             // labelControl1
@@ -203,7 +203,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Green;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(140, 5);
+            this.labelControl1.Location = new System.Drawing.Point(171, 7);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(604, 55);
             this.labelControl1.TabIndex = 1;
@@ -213,7 +213,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(947, 356);
+            this.ClientSize = new System.Drawing.Size(947, 337);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
