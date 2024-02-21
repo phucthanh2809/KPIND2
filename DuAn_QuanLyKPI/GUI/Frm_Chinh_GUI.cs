@@ -127,7 +127,7 @@ namespace DuAn_QuanLyKPI
 
         private void btnKiemDuyet_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            OpenForm(typeof(Frm_TongHopKPI));
         }
         // OpenForm(typeof(Frm_QuanLyNganHangKPI));
         //OpenForm(typeof(Frm_XemMucTieuKPI));
