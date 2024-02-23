@@ -16,7 +16,7 @@ namespace DuAn_QuanLyKPI.GUI
 {
     public partial class Frm_A74 : DevExpress.XtraEditors.XtraForm
     {
-        public static string mconnectstring = "server=192.168.50.108,1433;database=QuanLyKPI;uid=sa;pwd=123";
+        public static string mconnectstring = Frm_Chinh_GUI.mconnectstring;
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs("");
         private string msql;
@@ -33,9 +33,6 @@ namespace DuAn_QuanLyKPI.GUI
             lbYear.Text = DateTime.Now.Year.ToString();
             lbKP.Text = TenKP;
         }
-
-
-
 
         private void load()
         {

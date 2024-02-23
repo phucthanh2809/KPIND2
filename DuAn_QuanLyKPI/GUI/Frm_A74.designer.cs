@@ -84,8 +84,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbKP = new DevExpress.XtraEditors.LabelControl();
-            this.lbYear = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -94,6 +92,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.txtViTriCVTC = new ControlProject1510.XFilteg();
             this.lbViTriCV = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
+            this.lbKP = new DevExpress.XtraEditors.LabelControl();
+            this.lbYear = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDanhSachMucTieuKhachHangKPI)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -636,32 +636,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.Size = new System.Drawing.Size(1364, 118);
             this.panel1.TabIndex = 5;
             // 
-            // lbKP
-            // 
-            this.lbKP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbKP.Appearance.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKP.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lbKP.Appearance.Options.UseFont = true;
-            this.lbKP.Appearance.Options.UseForeColor = true;
-            this.lbKP.Location = new System.Drawing.Point(226, 70);
-            this.lbKP.Name = "lbKP";
-            this.lbKP.Size = new System.Drawing.Size(107, 40);
-            this.lbKP.TabIndex = 23;
-            this.lbKP.Text = "TênKP";
-            // 
-            // lbYear
-            // 
-            this.lbYear.AutoSize = true;
-            this.lbYear.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbYear.Location = new System.Drawing.Point(482, 12);
-            this.lbYear.Name = "lbYear";
-            this.lbYear.Size = new System.Drawing.Size(89, 40);
-            this.lbYear.TabIndex = 22;
-            this.lbYear.Text = "Year";
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -674,7 +648,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel2.Controls.Add(this.txtViTriCVTC);
             this.panel2.Controls.Add(this.lbViTriCV);
             this.panel2.Controls.Add(this.lbTen);
-            this.panel2.Location = new System.Drawing.Point(916, 3);
+            this.panel2.Location = new System.Drawing.Point(907, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(445, 112);
             this.panel2.TabIndex = 24;
@@ -768,6 +742,32 @@ namespace DuAn_QuanLyKPI.GUI
             this.lbTen.Size = new System.Drawing.Size(61, 24);
             this.lbTen.TabIndex = 5;
             this.lbTen.Text = "Tên : ";
+            // 
+            // lbKP
+            // 
+            this.lbKP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKP.Appearance.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKP.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lbKP.Appearance.Options.UseFont = true;
+            this.lbKP.Appearance.Options.UseForeColor = true;
+            this.lbKP.Location = new System.Drawing.Point(226, 70);
+            this.lbKP.Name = "lbKP";
+            this.lbKP.Size = new System.Drawing.Size(107, 40);
+            this.lbKP.TabIndex = 23;
+            this.lbKP.Text = "TênKP";
+            // 
+            // lbYear
+            // 
+            this.lbYear.AutoSize = true;
+            this.lbYear.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbYear.Location = new System.Drawing.Point(482, 12);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(89, 40);
+            this.lbYear.TabIndex = 22;
+            this.lbYear.Text = "Year";
             // 
             // Frm_A74
             // 
