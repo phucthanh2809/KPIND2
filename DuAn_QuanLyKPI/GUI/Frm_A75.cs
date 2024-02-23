@@ -48,8 +48,6 @@ namespace PhanMemQuanLyKPI
 
             loadTaiChinhHT();
 
-            txtTen.Enabled = false;
-            txtViTri.Enabled = false;
             _phongkhoa = new PHONGKHOA();
             loadChungMinh();
             loadEnabled();
@@ -194,7 +192,6 @@ namespace PhanMemQuanLyKPI
             gvTaiChinhHT.OptionsBehavior.Editable = false;
         }
 
-
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             if (IsHandleCreated)
@@ -202,11 +199,10 @@ namespace PhanMemQuanLyKPI
                 Invoke(new MethodInvoker(delegate ()
                 {
                     //lblTime.Text = DateTime.Now.ToString("T");
-                    lblDay.Text = DateTime.Now.ToLongDateString();
+                    //lblDay.Text = DateTime.Now.ToLongDateString();
                 }));
             }
         }
-
 
         private void TinhTrongSo()
         {
@@ -214,9 +210,8 @@ namespace PhanMemQuanLyKPI
             double sum = 0;
             for (int i = 0; i < sc; ++i)
                 sum += double.Parse(gvDanhSach2.GetFocusedRowCellValue("TrongSoTCBV").ToString());
-            txtTongTrongSo.Text = sum.ToString();
+            //txtTongTrongSo.Text = sum.ToString();
         }
-
 
         private void gvDanhSach1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
@@ -246,35 +241,35 @@ namespace PhanMemQuanLyKPI
             int trongSo = 0;
 
             gcTaiChinhHT.DataSource = dtDanhSach2;
-            if (int.TryParse(txtTongTrongSo.Text, out trongSo))
-            {
-                if (trongSo > range)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Trọng số đang lớn hơn 100. Bạn có muốn tiếp tục?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            //if (int.TryParse(txtTongTrongSo.Text, out trongSo))
+            //{
+            //    if (trongSo > range)
+            //    {
+            //        DialogResult dialogResult = MessageBox.Show("Trọng số đang lớn hơn 100. Bạn có muốn tiếp tục?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
-                    // Kiểm tra nếu người dùng chọn Yes
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        tabDanhSach.SelectedTabPage = tabKhachHang;
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-                //else if (txtTongTrongSo.Text == trongSo.ToString())
-                //{
-                //    MessageBox.Show("Trọng số đang bằng 0. Vui lòng chọn danh mục KPI?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                //} 
-                else
-                {
-                    tabDanhSach.SelectedTabPage = tabKhachHang;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Trọng số KPI đang thiếu. Vui lòng kiểm tra lại thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //        // Kiểm tra nếu người dùng chọn Yes
+            //        if (dialogResult == DialogResult.Yes)
+            //        {
+            //            tabDanhSach.SelectedTabPage = tabKhachHang;
+            //        }
+            //        else
+            //        {
+            //            return;
+            //        }
+            //    }
+            //    //else if (txtTongTrongSo.Text == trongSo.ToString())
+            //    //{
+            //    //    MessageBox.Show("Trọng số đang bằng 0. Vui lòng chọn danh mục KPI?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            //    //} 
+            //    else
+            //    {
+            //        tabDanhSach.SelectedTabPage = tabKhachHang;
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Trọng số KPI đang thiếu. Vui lòng kiểm tra lại thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
 

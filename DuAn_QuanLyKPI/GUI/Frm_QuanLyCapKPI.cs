@@ -28,7 +28,7 @@ namespace DuAn_QuanLyKPI.GUI
         private static string TenNV = Frm_Login.TenNV;
         private static string TenChucDanh = Frm_Login.TenChucDanh;
         private static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
-        private static string QuyNamPhieu = FrmChonBieuMau.QuyNam;
+        private static string QuyNamPhieu = FrmChonBieuMau.Nam;
 
         //coneect & event
         private static string mconnectstring = Frm_Chinh_GUI.mconnectstring;

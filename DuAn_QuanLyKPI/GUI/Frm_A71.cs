@@ -27,6 +27,7 @@ namespace DuAn_QuanLyKPI.GUI
         public static string TenNV = Frm_Login.TenNV;
         public static string TenChucDanh = Frm_Login.TenChucDanh;
         public static string TenPhongKhoa = Frm_Login.TenPhongKhoa;
+        private static string NamPhieu = FrmChonBieuMau.Nam;
         Timer updateTimer;
         DataTable tc = new DataTable();
         DataTable kh = new DataTable();
@@ -1338,11 +1339,6 @@ namespace DuAn_QuanLyKPI.GUI
             ev.Qtxt_Enter(sender, e);
         }
 
-        private void txtPTVH_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ev.Qtxt_KeyPress_To_Button_Focus(sender, e, btnHoanThanh);
-        }
-
         private void txtPTVH_Leave(object sender, EventArgs e)
         {
             //TinhTongTrongSoPhuongDien();
@@ -1509,7 +1505,7 @@ namespace DuAn_QuanLyKPI.GUI
 
 
             // Kiểm tra giá trị không null
-            if (string.IsNullOrEmpty(txt_MaPhieu.Text) || string.IsNullOrEmpty(txt_Nam.Text) || string.IsNullOrEmpty(txtTongTrongSoMucTieu.Text))
+            if (string.IsNullOrEmpty(txt_MaPhieu.Text) || string.IsNullOrEmpty(NamPhieu) || string.IsNullOrEmpty(txtTongTrongSoMucTieu.Text))
             {
                 // Xử lý khi giá trị null hoặc rỗng
                 // (Bạn có thể hiển thị thông báo hoặc thực hiện các xử lý phù hợp khác)
@@ -1526,7 +1522,7 @@ namespace DuAn_QuanLyKPI.GUI
                 using (SqlCommand command = new SqlCommand(msql, connection))
                 {
                     command.Parameters.AddWithValue("@mpkpi", txt_MaPhieu.Text);
-                    command.Parameters.AddWithValue("@np", txt_Nam.Text);
+                    command.Parameters.AddWithValue("@np", NamPhieu);
                     command.Parameters.AddWithValue("@nl", 456789);
                     command.Parameters.AddWithValue("@nguoipheduyet", DBNull.Value); // Hoặc có thể sử dụng giá trị mặc định phù hợp
                     command.Parameters.AddWithValue("@ngaylpkpi", ngayTaoMaPhieu);
@@ -1561,7 +1557,7 @@ namespace DuAn_QuanLyKPI.GUI
                             continue;
                         }
 
-                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTTC"]) && string.IsNullOrEmpty(txt_Nam.Text))
+                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTTC"]) && string.IsNullOrEmpty(NamPhieu))
                         {
                             allRowsFilled = false;
                             break;
@@ -1624,7 +1620,7 @@ namespace DuAn_QuanLyKPI.GUI
                             continue;
                         }
 
-                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTKH"]) && string.IsNullOrEmpty(txt_Nam.Text))
+                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTKH"]) && string.IsNullOrEmpty(NamPhieu))
                         {
                             allRowsFilled = false;
                             break;
@@ -1686,7 +1682,7 @@ namespace DuAn_QuanLyKPI.GUI
                             continue;
                         }
 
-                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTVH"]) && string.IsNullOrEmpty(txt_Nam.Text))
+                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTVH"]) && string.IsNullOrEmpty(NamPhieu))
                         {
                             allRowsFilled = false;
                             break;
@@ -1750,7 +1746,7 @@ namespace DuAn_QuanLyKPI.GUI
                             continue;
                         }
 
-                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTPT"]) && string.IsNullOrEmpty(txt_Nam.Text))
+                        if (!IsCellValueValid(row.Cells["clTrongSoKPIBVHTPT"]) && string.IsNullOrEmpty(NamPhieu))
                         {
                             allRowsFilled = false;
                             break;
@@ -1863,9 +1859,9 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void txt_Nam_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_Nam.Text))
+            if (!string.IsNullOrEmpty(NamPhieu))
             {
-                if (int.TryParse(txt_Nam.Text, out int nam))
+                if (int.TryParse(NamPhieu, out int nam))
                 {
                     int namhientai = DateTime.Now.Year;
                     if (nam < namhientai)
@@ -1876,7 +1872,7 @@ namespace DuAn_QuanLyKPI.GUI
                 }
             }
             int namPhieu;
-            if (int.TryParse(txt_Nam.Text, out namPhieu))
+            if (int.TryParse(NamPhieu, out namPhieu))
             {
                 using (SqlConnection connection = new SqlConnection(mconnecstring))
                 {
@@ -1901,7 +1897,7 @@ namespace DuAn_QuanLyKPI.GUI
                             bool result = ev.QFrmThongBao_YesNo("Phiếu đã được cấp trên duyệt. bạn có muốn xem lại?");
                             if (result == true)
                             {
-                                if (int.TryParse(txt_Nam.Text, out int namphieu))
+                                if (int.TryParse(NamPhieu, out int namphieu))
                                 {
                                     ChinhSuaDanhSachKPI form = new ChinhSuaDanhSachKPI(namphieu);
                                     form.ShowDialog();
@@ -1990,7 +1986,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             DateTime ngayTao = dt_NgayTaoMaPhieu.Value;
             int nam = GetYearFromNgayTaoPhieuKPI(ngayTao);
-            txt_Nam.Text = nam.ToString();
+            NamPhieu = nam.ToString();
         }
         private void dt_NgayTaoMaPhieu_ValueChanged(object sender, EventArgs e)
         {

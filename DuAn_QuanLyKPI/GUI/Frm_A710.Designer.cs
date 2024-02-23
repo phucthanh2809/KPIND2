@@ -1,7 +1,7 @@
 ﻿
 namespace DuAn_QuanLyKPI.GUI
 {
-    partial class Frm_A77
+    partial class Frm_A710
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,20 @@ namespace DuAn_QuanLyKPI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Frm_A77";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_A710));
+            this.SuspendLayout();
+            // 
+            // Frm_A710
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1364, 736);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Frm_A710.IconOptions.Image")));
+            this.Name = "Frm_A710";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Biểu mẫu A7.10";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -243,6 +243,18 @@
     <Compile Include="GUI\ChinhSuaDanhSachKPI.designer.cs">
       <DependentUpon>ChinhSuaDanhSachKPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_A710.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_A710.Designer.cs">
+      <DependentUpon>Frm_A710.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_A72.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_A72.Designer.cs">
+      <DependentUpon>Frm_A72.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Frm_A74.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +296,12 @@
     </Compile>
     <Compile Include="GUI\Frm_A78.Designer.cs">
       <DependentUpon>Frm_A78.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Frm_A79.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_A79.Designer.cs">
+      <DependentUpon>Frm_A79.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Frm_AddEditKPI.cs">
       <SubType>Form</SubType>
@@ -404,6 +422,9 @@
     <EmbeddedResource Include="GUI\ChinhSuaDanhSachKPI.resx">
       <DependentUpon>ChinhSuaDanhSachKPI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_A710.resx">
+      <DependentUpon>Frm_A710.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_A74.resx">
       <DependentUpon>Frm_A74.cs</DependentUpon>
     </EmbeddedResource>
@@ -418,9 +439,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_A76.resx">
       <DependentUpon>Frm_A76.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_A77.resx">
-      <DependentUpon>Frm_A77.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_A78.resx">
       <DependentUpon>Frm_A78.cs</DependentUpon>

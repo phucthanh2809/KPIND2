@@ -1,7 +1,7 @@
 ﻿
 namespace DuAn_QuanLyKPI.GUI
 {
-    partial class Frm_A77
+    partial class Frm_A79
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace DuAn_QuanLyKPI.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Frm_A77";
+            this.Text = "Frm_A79";
         }
 
         #endregion

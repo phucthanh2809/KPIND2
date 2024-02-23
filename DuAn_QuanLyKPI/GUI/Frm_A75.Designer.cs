@@ -29,31 +29,57 @@ namespace PhanMemQuanLyKPI
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_A75));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.FrmSPTrangThaiTC = new DevExpress.XtraEditors.StepProgressBar();
+            this.spTaiChinhTC = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spKhachHang = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spVanHanh = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcTaiChinhHT = new DevExpress.XtraGrid.GridControl();
+            this.gvTaiChinhHT = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.stepProgressBar1 = new DevExpress.XtraEditors.StepProgressBar();
+            this.stepProgressBarItem1 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem2 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem3 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabDanhSach = new DevExpress.XtraTab.XtraTabControl();
             this.tabTaiChinh = new DevExpress.XtraTab.XtraTabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.txtTongTrongSo = new System.Windows.Forms.TextBox();
-            this.btnTiepTuc = new DevExpress.XtraEditors.SimpleButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnTTKH = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTongTrongSoTC = new ControlProject1510.XFilteg();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.gcDanhSach2 = new DevExpress.XtraGrid.GridControl();
@@ -90,21 +116,24 @@ namespace PhanMemQuanLyKPI
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtViTri = new System.Windows.Forms.TextBox();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblDay = new System.Windows.Forms.Label();
+            this.stepProgressBar2 = new DevExpress.XtraEditors.StepProgressBar();
+            this.stepProgressBarItem4 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem5 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem6 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.spPhatTrien = new DevExpress.XtraEditors.StepProgressBarItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lbYearTC = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenNVTC = new ControlProject1510.XFilteg();
+            this.txtViTriCVTC = new ControlProject1510.XFilteg();
+            this.lbViTriCV = new System.Windows.Forms.Label();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabKhachHang = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -164,21 +193,6 @@ namespace PhanMemQuanLyKPI
             this.tabPhatTrien = new DevExpress.XtraTab.XtraTabPage();
             this.tabHoanThanh = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.gcTaiChinhHT = new DevExpress.XtraGrid.GridControl();
-            this.gvTaiChinhHT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel18 = new System.Windows.Forms.Panel();
             this.txtTSTC = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -187,13 +201,22 @@ namespace PhanMemQuanLyKPI
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThaiTC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTaiChinhHT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTaiChinhHT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabDanhSach)).BeginInit();
             this.tabDanhSach.SuspendLayout();
             this.tabTaiChinh.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
@@ -209,14 +232,9 @@ namespace PhanMemQuanLyKPI
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).BeginInit();
+            this.panel6.SuspendLayout();
             this.tabKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
@@ -244,15 +262,302 @@ namespace PhanMemQuanLyKPI
             this.tabHoanThanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcTaiChinhHT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTaiChinhHT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // FrmSPTrangThaiTC
+            // 
+            this.FrmSPTrangThaiTC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FrmSPTrangThaiTC.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.FrmSPTrangThaiTC.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrmSPTrangThaiTC.Appearance.Options.UseBackColor = true;
+            this.FrmSPTrangThaiTC.Appearance.Options.UseFont = true;
+            this.FrmSPTrangThaiTC.Items.Add(this.spTaiChinhTC);
+            this.FrmSPTrangThaiTC.Items.Add(this.spKhachHang);
+            this.FrmSPTrangThaiTC.Items.Add(this.spVanHanh);
+            this.FrmSPTrangThaiTC.Location = new System.Drawing.Point(0, 0);
+            this.FrmSPTrangThaiTC.Name = "FrmSPTrangThaiTC";
+            this.FrmSPTrangThaiTC.Size = new System.Drawing.Size(260, 90);
+            this.FrmSPTrangThaiTC.TabIndex = 0;
+            // 
+            // spTaiChinhTC
+            // 
+            this.spTaiChinhTC.ContentBlock2.Caption = "Tài Chính";
+            this.spTaiChinhTC.Name = "spTaiChinhTC";
+            // 
+            // spKhachHang
+            // 
+            this.spKhachHang.ContentBlock2.Caption = "Khách Hàng";
+            this.spKhachHang.Name = "spKhachHang";
+            // 
+            // spVanHanh
+            // 
+            this.spVanHanh.ContentBlock2.Caption = "Vận Hành";
+            this.spVanHanh.Name = "spVanHanh";
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gcTaiChinhHT;
+            this.gridView1.Name = "gridView1";
+            // 
+            // gcTaiChinhHT
+            // 
+            this.gcTaiChinhHT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcTaiChinhHT.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcTaiChinhHT.Location = new System.Drawing.Point(2, 23);
+            this.gcTaiChinhHT.MainView = this.gvTaiChinhHT;
+            this.gcTaiChinhHT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcTaiChinhHT.Name = "gcTaiChinhHT";
+            this.gcTaiChinhHT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit3,
+            this.repositoryItemLookUpEdit1,
+            this.repositoryItemButtonEdit1});
+            this.gcTaiChinhHT.Size = new System.Drawing.Size(1358, 163);
+            this.gcTaiChinhHT.TabIndex = 3;
+            this.gcTaiChinhHT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTaiChinhHT,
+            this.gridView3,
+            this.gridView1});
+            // 
+            // gvTaiChinhHT
+            // 
+            this.gvTaiChinhHT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn27,
+            this.gridColumn28,
+            this.gridColumn29,
+            this.gridColumn30,
+            this.gridColumn31,
+            this.gridColumn32,
+            this.gridColumn33,
+            this.gridColumn34,
+            this.gridColumn56,
+            this.gridColumn57});
+            this.gvTaiChinhHT.DetailHeight = 328;
+            this.gvTaiChinhHT.GridControl = this.gcTaiChinhHT;
+            this.gvTaiChinhHT.Name = "gvTaiChinhHT";
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn27.AppearanceCell.Options.UseFont = true;
+            this.gridColumn27.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
+            this.gridColumn27.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn27.Caption = "Mã phiếu";
+            this.gridColumn27.FieldName = "MaPhieuKPIBV";
+            this.gridColumn27.MinWidth = 24;
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 0;
+            this.gridColumn27.Width = 120;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn28.AppearanceCell.Options.UseFont = true;
+            this.gridColumn28.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn28.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn28.Caption = "Nội dung";
+            this.gridColumn28.FieldName = "NoiDung";
+            this.gridColumn28.MinWidth = 24;
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 1;
+            this.gridColumn28.Width = 133;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn29.AppearanceCell.Options.UseFont = true;
+            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
+            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn29.Caption = "Trọng số";
+            this.gridColumn29.FieldName = "TrongSoTCBV";
+            this.gridColumn29.MaxWidth = 59;
+            this.gridColumn29.MinWidth = 120;
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 2;
+            this.gridColumn29.Width = 120;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn30.AppearanceCell.Options.UseFont = true;
+            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn30.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn30.Caption = "Tiêu chí đánh giá";
+            this.gridColumn30.FieldName = "TieuChiDanhGiaKQ";
+            this.gridColumn30.MinWidth = 24;
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 3;
+            this.gridColumn30.Width = 94;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn31.AppearanceCell.Options.UseFont = true;
+            this.gridColumn31.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn31.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn31.Caption = "Phương pháp đo";
+            this.gridColumn31.FieldName = "PhuongPhapDo";
+            this.gridColumn31.MinWidth = 24;
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 5;
+            this.gridColumn31.Width = 94;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn32.AppearanceCell.Options.UseFont = true;
+            this.gridColumn32.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn32.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn32.Caption = "Chứng minh";
+            this.gridColumn32.FieldName = "NguonChungMinh";
+            this.gridColumn32.MinWidth = 24;
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 4;
+            this.gridColumn32.Width = 94;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn33.AppearanceCell.Options.UseFont = true;
+            this.gridColumn33.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn33.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn33.Caption = "DVT";
+            this.gridColumn33.FieldName = "DonViTinh";
+            this.gridColumn33.MinWidth = 24;
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 6;
+            this.gridColumn33.Width = 94;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn34.AppearanceCell.Options.UseFont = true;
+            this.gridColumn34.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn34.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn34.Caption = "Kế Hoạch";
+            this.gridColumn34.FieldName = "KeHoach";
+            this.gridColumn34.MinWidth = 24;
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 7;
+            this.gridColumn34.Width = 94;
+            // 
+            // gridColumn56
+            // 
+            this.gridColumn56.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn56.AppearanceCell.Options.UseFont = true;
+            this.gridColumn56.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn56.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn56.Caption = "Thực hiện";
+            this.gridColumn56.FieldName = "ThucHien";
+            this.gridColumn56.MinWidth = 24;
+            this.gridColumn56.Name = "gridColumn56";
+            this.gridColumn56.Visible = true;
+            this.gridColumn56.VisibleIndex = 8;
+            this.gridColumn56.Width = 94;
+            // 
+            // gridColumn57
+            // 
+            this.gridColumn57.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn57.AppearanceCell.Options.UseFont = true;
+            this.gridColumn57.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn57.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn57.Caption = "Hoàn Thành";
+            this.gridColumn57.FieldName = "HoanThanh";
+            this.gridColumn57.MinWidth = 24;
+            this.gridColumn57.Name = "gridColumn57";
+            this.gridColumn57.Visible = true;
+            this.gridColumn57.VisibleIndex = 9;
+            this.gridColumn57.Width = 94;
+            // 
+            // repositoryItemCheckEdit3
+            // 
+            this.repositoryItemCheckEdit3.AutoHeight = false;
+            this.repositoryItemCheckEdit3.Name = "repositoryItemCheckEdit3";
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.repositoryItemLookUpEdit1.AppearanceDropDown.Options.UseFont = true;
+            this.repositoryItemLookUpEdit1.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.repositoryItemLookUpEdit1.AppearanceDropDownHeader.Options.UseFont = true;
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPK", "Mã PK"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPK", "Tên PK")});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gcTaiChinhHT;
+            this.gridView3.Name = "gridView3";
+            // 
+            // gridView2
+            // 
+            this.gridView2.Name = "gridView2";
+            // 
+            // stepProgressBar1
+            // 
+            this.stepProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stepProgressBar1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.stepProgressBar1.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stepProgressBar1.Appearance.Options.UseBackColor = true;
+            this.stepProgressBar1.Appearance.Options.UseFont = true;
+            this.stepProgressBar1.Items.Add(this.stepProgressBarItem1);
+            this.stepProgressBar1.Items.Add(this.stepProgressBarItem2);
+            this.stepProgressBar1.Items.Add(this.stepProgressBarItem3);
+            this.stepProgressBar1.Location = new System.Drawing.Point(0, 0);
+            this.stepProgressBar1.Name = "stepProgressBar1";
+            this.stepProgressBar1.Size = new System.Drawing.Size(260, 90);
+            this.stepProgressBar1.TabIndex = 0;
+            // 
+            // stepProgressBarItem1
+            // 
+            this.stepProgressBarItem1.ContentBlock2.Caption = "Tài Chính";
+            this.stepProgressBarItem1.Name = "stepProgressBarItem1";
+            // 
+            // stepProgressBarItem2
+            // 
+            this.stepProgressBarItem2.ContentBlock2.Caption = "Khách Hàng";
+            this.stepProgressBarItem2.Name = "stepProgressBarItem2";
+            // 
+            // stepProgressBarItem3
+            // 
+            this.stepProgressBarItem3.ContentBlock2.Caption = "Vận Hành";
+            this.stepProgressBarItem3.Name = "stepProgressBarItem3";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 0;
             // 
             // panel1
             // 
@@ -261,7 +566,7 @@ namespace PhanMemQuanLyKPI
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1169, 784);
+            this.panel1.Size = new System.Drawing.Size(1364, 736);
             this.panel1.TabIndex = 0;
             // 
             // tabDanhSach
@@ -271,7 +576,7 @@ namespace PhanMemQuanLyKPI
             this.tabDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDanhSach.Name = "tabDanhSach";
             this.tabDanhSach.SelectedTabPage = this.tabTaiChinh;
-            this.tabDanhSach.Size = new System.Drawing.Size(1169, 784);
+            this.tabDanhSach.Size = new System.Drawing.Size(1364, 736);
             this.tabDanhSach.TabIndex = 0;
             this.tabDanhSach.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabTaiChinh,
@@ -287,10 +592,9 @@ namespace PhanMemQuanLyKPI
             this.tabTaiChinh.Controls.Add(this.panel4);
             this.tabTaiChinh.Controls.Add(this.panel7);
             this.tabTaiChinh.Controls.Add(this.panel3);
-            this.tabTaiChinh.Controls.Add(this.panel2);
             this.tabTaiChinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabTaiChinh.Name = "tabTaiChinh";
-            this.tabTaiChinh.Size = new System.Drawing.Size(1167, 749);
+            this.tabTaiChinh.Size = new System.Drawing.Size(1362, 701);
             this.tabTaiChinh.Text = "Tài chính";
             // 
             // panel4
@@ -298,65 +602,63 @@ namespace PhanMemQuanLyKPI
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 471);
+            this.panel4.Location = new System.Drawing.Point(0, 365);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1167, 278);
+            this.panel4.Size = new System.Drawing.Size(1362, 336);
             this.panel4.TabIndex = 5;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 208);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.btnTTKH);
+            this.panel9.Controls.Add(this.txtTongTrongSoTC);
+            this.panel9.Controls.Add(this.label4);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(0, 290);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1167, 70);
-            this.panel9.TabIndex = 1;
+            this.panel9.Size = new System.Drawing.Size(1362, 46);
+            this.panel9.TabIndex = 2;
             // 
-            // panel10
+            // btnTTKH
             // 
-            this.panel10.Controls.Add(this.txtTongTrongSo);
-            this.panel10.Controls.Add(this.btnTiepTuc);
-            this.panel10.Controls.Add(this.label5);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(540, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(627, 70);
-            this.panel10.TabIndex = 0;
+            this.btnTTKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTTKH.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnTTKH.Appearance.Options.UseFont = true;
+            this.btnTTKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTTKH.ImageOptions.Image")));
+            this.btnTTKH.Location = new System.Drawing.Point(612, 2);
+            this.btnTTKH.Name = "btnTTKH";
+            this.btnTTKH.Size = new System.Drawing.Size(139, 42);
+            this.btnTTKH.TabIndex = 48;
+            this.btnTTKH.Text = "Tiếp tục";
             // 
-            // txtTongTrongSo
+            // txtTongTrongSoTC
             // 
-            this.txtTongTrongSo.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtTongTrongSo.Location = new System.Drawing.Point(339, 31);
-            this.txtTongTrongSo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTongTrongSo.Name = "txtTongTrongSo";
-            this.txtTongTrongSo.Size = new System.Drawing.Size(269, 24);
-            this.txtTongTrongSo.TabIndex = 3;
+            this.txtTongTrongSoTC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTongTrongSoTC.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTrongSoTC.Location = new System.Drawing.Point(1265, 4);
+            this.txtTongTrongSoTC.Name = "txtTongTrongSoTC";
+            this.txtTongTrongSoTC.ReadOnly = true;
+            this.txtTongTrongSoTC.Size = new System.Drawing.Size(92, 39);
+            this.txtTongTrongSoTC.TabIndex = 46;
+            this.txtTongTrongSoTC.xCoTimMoRong = false;
+            this.txtTongTrongSoTC.xDataGrid = null;
+            this.txtTongTrongSoTC.xField_Key = "";
+            this.txtTongTrongSoTC.xKeep_Old_Value = false;
+            this.txtTongTrongSoTC.xTimChinhXac = false;
+            this.txtTongTrongSoTC.xTimMoRong = "";
+            this.txtTongTrongSoTC.xTimTrenField = null;
             // 
-            // btnTiepTuc
+            // label4
             // 
-            this.btnTiepTuc.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnTiepTuc.Appearance.Options.UseFont = true;
-            this.btnTiepTuc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTiepTuc.ImageOptions.SvgImage")));
-            this.btnTiepTuc.Location = new System.Drawing.Point(33, 16);
-            this.btnTiepTuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTiepTuc.Name = "btnTiepTuc";
-            this.btnTiepTuc.Size = new System.Drawing.Size(131, 52);
-            this.btnTiepTuc.TabIndex = 1;
-            this.btnTiepTuc.Text = "Tiếp tục";
-            this.btnTiepTuc.Click += new System.EventHandler(this.btnTiepTuc_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(181, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 25);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tổng trọng số: ";
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1010, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(249, 31);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Tổng Trọng số nhập";
             // 
             // panel8
             // 
@@ -365,7 +667,7 @@ namespace PhanMemQuanLyKPI
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1167, 208);
+            this.panel8.Size = new System.Drawing.Size(1362, 266);
             this.panel8.TabIndex = 0;
             // 
             // groupControl4
@@ -377,7 +679,7 @@ namespace PhanMemQuanLyKPI
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(1167, 208);
+            this.groupControl4.Size = new System.Drawing.Size(1362, 266);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "Thông tin nhập liệu ";
             // 
@@ -393,7 +695,7 @@ namespace PhanMemQuanLyKPI
             this.repositoryItemCheckEdit2,
             this.slkChungMinh,
             this.btnXoa});
-            this.gcDanhSach2.Size = new System.Drawing.Size(1163, 183);
+            this.gcDanhSach2.Size = new System.Drawing.Size(1358, 241);
             this.gcDanhSach2.TabIndex = 3;
             this.gcDanhSach2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach2});
@@ -413,10 +715,9 @@ namespace PhanMemQuanLyKPI
             this.gridColumn9,
             this.gridColumn10,
             this.gridColumn21});
-            this.gvDanhSach2.DetailHeight = 284;
+            this.gvDanhSach2.DetailHeight = 328;
             this.gvDanhSach2.GridControl = this.gcDanhSach2;
             this.gvDanhSach2.Name = "gvDanhSach2";
-            this.gvDanhSach2.OptionsEditForm.PopupEditFormWidth = 686;
             this.gvDanhSach2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvDanhSach2_CellValueChanged);
             this.gvDanhSach2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gvDanhSach2_MouseDown);
             // 
@@ -427,18 +728,18 @@ namespace PhanMemQuanLyKPI
             this.gridColumn22.Caption = "Xóa TC";
             this.gridColumn22.ColumnEdit = this.btnXoa;
             this.gridColumn22.FieldName = "XOAALL";
-            this.gridColumn22.MinWidth = 21;
+            this.gridColumn22.MinWidth = 24;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 0;
-            this.gridColumn22.Width = 81;
+            this.gridColumn22.Width = 94;
             // 
             // btnXoa
             // 
             this.btnXoa.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -450,11 +751,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Mã KPI";
             this.gridColumn1.FieldName = "MaKPI";
-            this.gridColumn1.MinWidth = 21;
+            this.gridColumn1.MinWidth = 24;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 81;
+            this.gridColumn1.Width = 94;
             // 
             // gridColumn2
             // 
@@ -464,11 +765,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Mã phiếu";
             this.gridColumn2.FieldName = "MaPhieuKPIBV";
-            this.gridColumn2.MinWidth = 21;
+            this.gridColumn2.MinWidth = 24;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 103;
+            this.gridColumn2.Width = 120;
             // 
             // gridColumn3
             // 
@@ -478,11 +779,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Nội dung";
             this.gridColumn3.FieldName = "NoiDung";
-            this.gridColumn3.MinWidth = 21;
+            this.gridColumn3.MinWidth = 24;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 114;
+            this.gridColumn3.Width = 133;
             // 
             // gridColumn4
             // 
@@ -492,12 +793,12 @@ namespace PhanMemQuanLyKPI
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "Trọng số";
             this.gridColumn4.FieldName = "TrongSoTCBV";
-            this.gridColumn4.MaxWidth = 51;
-            this.gridColumn4.MinWidth = 103;
+            this.gridColumn4.MaxWidth = 59;
+            this.gridColumn4.MinWidth = 120;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 103;
+            this.gridColumn4.Width = 120;
             // 
             // gridColumn5
             // 
@@ -507,11 +808,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Tiêu chí đánh giá";
             this.gridColumn5.FieldName = "TieuChiDanhGiaKQ";
-            this.gridColumn5.MinWidth = 21;
+            this.gridColumn5.MinWidth = 24;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
-            this.gridColumn5.Width = 81;
+            this.gridColumn5.Width = 94;
             // 
             // gridColumn6
             // 
@@ -521,11 +822,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.Caption = "Phương pháp đo";
             this.gridColumn6.FieldName = "PhuongPhapDo";
-            this.gridColumn6.MinWidth = 21;
+            this.gridColumn6.MinWidth = 24;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 6;
-            this.gridColumn6.Width = 81;
+            this.gridColumn6.Width = 94;
             // 
             // gridColumn7
             // 
@@ -536,11 +837,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn7.Caption = "Chứng minh";
             this.gridColumn7.ColumnEdit = this.slkChungMinh;
             this.gridColumn7.FieldName = "NguonChungMinh";
-            this.gridColumn7.MinWidth = 21;
+            this.gridColumn7.MinWidth = 24;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 7;
-            this.gridColumn7.Width = 81;
+            this.gridColumn7.Width = 94;
             // 
             // slkChungMinh
             // 
@@ -552,8 +853,8 @@ namespace PhanMemQuanLyKPI
             this.slkChungMinh.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slkChungMinh.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPK", "Mã PK", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPK", "Tên PK", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPK", "Mã PK"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPK", "Tên PK")});
             this.slkChungMinh.Name = "slkChungMinh";
             // 
             // gridColumn8
@@ -564,11 +865,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.Caption = "DVT";
             this.gridColumn8.FieldName = "DonViTinh";
-            this.gridColumn8.MinWidth = 21;
+            this.gridColumn8.MinWidth = 24;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 8;
-            this.gridColumn8.Width = 81;
+            this.gridColumn8.Width = 94;
             // 
             // gridColumn9
             // 
@@ -578,11 +879,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.Caption = "Kế Hoạch";
             this.gridColumn9.FieldName = "KeHoach";
-            this.gridColumn9.MinWidth = 21;
+            this.gridColumn9.MinWidth = 24;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 9;
-            this.gridColumn9.Width = 81;
+            this.gridColumn9.Width = 94;
             // 
             // gridColumn10
             // 
@@ -592,11 +893,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn10.AppearanceHeader.Options.UseFont = true;
             this.gridColumn10.Caption = "Thực hiện";
             this.gridColumn10.FieldName = "ThucHien";
-            this.gridColumn10.MinWidth = 21;
+            this.gridColumn10.MinWidth = 24;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 10;
-            this.gridColumn10.Width = 81;
+            this.gridColumn10.Width = 94;
             // 
             // gridColumn21
             // 
@@ -606,11 +907,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn21.AppearanceHeader.Options.UseFont = true;
             this.gridColumn21.Caption = "Hoàn Thành";
             this.gridColumn21.FieldName = "HoanThanh";
-            this.gridColumn21.MinWidth = 21;
+            this.gridColumn21.MinWidth = 24;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 11;
-            this.gridColumn21.Width = 81;
+            this.gridColumn21.Width = 94;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -621,10 +922,10 @@ namespace PhanMemQuanLyKPI
             // 
             this.panel7.Controls.Add(this.groupControl3);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 262);
+            this.panel7.Location = new System.Drawing.Point(0, 124);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1167, 209);
+            this.panel7.Size = new System.Drawing.Size(1362, 241);
             this.panel7.TabIndex = 4;
             // 
             // groupControl3
@@ -636,7 +937,7 @@ namespace PhanMemQuanLyKPI
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1167, 209);
+            this.groupControl3.Size = new System.Drawing.Size(1362, 241);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Thông tin chi tiết tài chính";
             // 
@@ -650,7 +951,7 @@ namespace PhanMemQuanLyKPI
             this.gcDanhSach1.Name = "gcDanhSach1";
             this.gcDanhSach1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcDanhSach1.Size = new System.Drawing.Size(1163, 184);
+            this.gcDanhSach1.Size = new System.Drawing.Size(1358, 216);
             this.gcDanhSach1.TabIndex = 2;
             this.gcDanhSach1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach1});
@@ -669,10 +970,9 @@ namespace PhanMemQuanLyKPI
             this.gridColumn18,
             this.gridColumn19,
             this.gridColumn20});
-            this.gvDanhSach1.DetailHeight = 284;
+            this.gvDanhSach1.DetailHeight = 328;
             this.gvDanhSach1.GridControl = this.gcDanhSach1;
             this.gvDanhSach1.Name = "gvDanhSach1";
-            this.gvDanhSach1.OptionsEditForm.PopupEditFormWidth = 686;
             this.gvDanhSach1.OptionsSelection.MultiSelect = true;
             this.gvDanhSach1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gvDanhSach1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvDanhSach1_SelectionChanged);
@@ -685,11 +985,11 @@ namespace PhanMemQuanLyKPI
             this.MaKPI.AppearanceHeader.Options.UseFont = true;
             this.MaKPI.Caption = "Mã KPI";
             this.MaKPI.FieldName = "MaKPI";
-            this.MaKPI.MinWidth = 21;
+            this.MaKPI.MinWidth = 24;
             this.MaKPI.Name = "MaKPI";
             this.MaKPI.Visible = true;
             this.MaKPI.VisibleIndex = 1;
-            this.MaKPI.Width = 81;
+            this.MaKPI.Width = 94;
             // 
             // gridColumn11
             // 
@@ -699,11 +999,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn11.AppearanceHeader.Options.UseFont = true;
             this.gridColumn11.Caption = "Mã phiếu";
             this.gridColumn11.FieldName = "MaPhieuKPIBV";
-            this.gridColumn11.MinWidth = 21;
+            this.gridColumn11.MinWidth = 24;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 2;
-            this.gridColumn11.Width = 103;
+            this.gridColumn11.Width = 120;
             // 
             // gridColumn12
             // 
@@ -713,11 +1013,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn12.AppearanceHeader.Options.UseFont = true;
             this.gridColumn12.Caption = "Nội dung";
             this.gridColumn12.FieldName = "NoiDung";
-            this.gridColumn12.MinWidth = 21;
+            this.gridColumn12.MinWidth = 24;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 3;
-            this.gridColumn12.Width = 114;
+            this.gridColumn12.Width = 133;
             // 
             // gridColumn13
             // 
@@ -727,12 +1027,12 @@ namespace PhanMemQuanLyKPI
             this.gridColumn13.AppearanceHeader.Options.UseFont = true;
             this.gridColumn13.Caption = "Trọng số";
             this.gridColumn13.FieldName = "TrongSoTCBV";
-            this.gridColumn13.MaxWidth = 51;
-            this.gridColumn13.MinWidth = 103;
+            this.gridColumn13.MaxWidth = 59;
+            this.gridColumn13.MinWidth = 120;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 4;
-            this.gridColumn13.Width = 103;
+            this.gridColumn13.Width = 120;
             // 
             // gridColumn14
             // 
@@ -742,11 +1042,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn14.AppearanceHeader.Options.UseFont = true;
             this.gridColumn14.Caption = "Tiêu chí đánh giá";
             this.gridColumn14.FieldName = "TieuChiDanhGiaKQ";
-            this.gridColumn14.MinWidth = 21;
+            this.gridColumn14.MinWidth = 24;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 5;
-            this.gridColumn14.Width = 81;
+            this.gridColumn14.Width = 94;
             // 
             // gridColumn15
             // 
@@ -756,11 +1056,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn15.AppearanceHeader.Options.UseFont = true;
             this.gridColumn15.Caption = "Phương pháp đo";
             this.gridColumn15.FieldName = "PhuongPhapDo";
-            this.gridColumn15.MinWidth = 21;
+            this.gridColumn15.MinWidth = 24;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 6;
-            this.gridColumn15.Width = 81;
+            this.gridColumn15.Width = 94;
             // 
             // gridColumn16
             // 
@@ -770,11 +1070,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn16.AppearanceHeader.Options.UseFont = true;
             this.gridColumn16.Caption = "Chứng minh";
             this.gridColumn16.FieldName = "NguonChungMinh";
-            this.gridColumn16.MinWidth = 21;
+            this.gridColumn16.MinWidth = 24;
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 7;
-            this.gridColumn16.Width = 81;
+            this.gridColumn16.Width = 94;
             // 
             // gridColumn17
             // 
@@ -784,11 +1084,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn17.AppearanceHeader.Options.UseFont = true;
             this.gridColumn17.Caption = "DVT";
             this.gridColumn17.FieldName = "DonViTinh";
-            this.gridColumn17.MinWidth = 21;
+            this.gridColumn17.MinWidth = 24;
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 8;
-            this.gridColumn17.Width = 81;
+            this.gridColumn17.Width = 94;
             // 
             // gridColumn18
             // 
@@ -798,11 +1098,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn18.AppearanceHeader.Options.UseFont = true;
             this.gridColumn18.Caption = "Kế Hoạch";
             this.gridColumn18.FieldName = "KeHoach";
-            this.gridColumn18.MinWidth = 21;
+            this.gridColumn18.MinWidth = 24;
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 9;
-            this.gridColumn18.Width = 81;
+            this.gridColumn18.Width = 94;
             // 
             // gridColumn19
             // 
@@ -812,11 +1112,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn19.AppearanceHeader.Options.UseFont = true;
             this.gridColumn19.Caption = "Thực hiện";
             this.gridColumn19.FieldName = "ThucHien";
-            this.gridColumn19.MinWidth = 21;
+            this.gridColumn19.MinWidth = 24;
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 10;
-            this.gridColumn19.Width = 81;
+            this.gridColumn19.Width = 94;
             // 
             // gridColumn20
             // 
@@ -826,11 +1126,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn20.AppearanceHeader.Options.UseFont = true;
             this.gridColumn20.Caption = "Hoàn Thành";
             this.gridColumn20.FieldName = "HoanThanh";
-            this.gridColumn20.MinWidth = 21;
+            this.gridColumn20.MinWidth = 24;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 11;
-            this.gridColumn20.Width = 81;
+            this.gridColumn20.Width = 94;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -839,181 +1139,218 @@ namespace PhanMemQuanLyKPI
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.groupControl2);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 93);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1167, 169);
+            this.panel3.Size = new System.Drawing.Size(1362, 124);
             this.panel3.TabIndex = 3;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl2.Controls.Add(this.panel6);
-            this.groupControl2.Controls.Add(this.label6);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 0);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(595, 169);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "Tiến trình";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.progressPanel1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(2, 23);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(591, 81);
-            this.panel6.TabIndex = 3;
-            // 
-            // progressPanel1
-            // 
-            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.progressPanel1.Appearance.Options.UseBackColor = true;
-            this.progressPanel1.Location = new System.Drawing.Point(362, 16);
-            this.progressPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressPanel1.Name = "progressPanel1";
-            this.progressPanel1.Size = new System.Drawing.Size(211, 54);
-            this.progressPanel1.TabIndex = 0;
-            this.progressPanel1.Text = "progressPanel1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label6.Location = new System.Drawing.Point(302, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(277, 27);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Hoàn thành tất cả mục tiêu";
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.groupControl1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(595, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.stepProgressBar2);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.label34);
+            this.panel5.Controls.Add(this.lbYearTC);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(572, 169);
-            this.panel5.TabIndex = 1;
+            this.panel5.Size = new System.Drawing.Size(1362, 124);
+            this.panel5.TabIndex = 5;
             // 
-            // groupControl1
+            // stepProgressBar2
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl1.Controls.Add(this.txtViTri);
-            this.groupControl1.Controls.Add(this.txtTen);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(572, 169);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Thông tin cá nhân";
+            this.stepProgressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stepProgressBar2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.stepProgressBar2.Appearance.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stepProgressBar2.Appearance.Options.UseBackColor = true;
+            this.stepProgressBar2.Appearance.Options.UseFont = true;
+            this.stepProgressBar2.Items.Add(this.stepProgressBarItem4);
+            this.stepProgressBar2.Items.Add(this.stepProgressBarItem5);
+            this.stepProgressBar2.Items.Add(this.stepProgressBarItem6);
+            this.stepProgressBar2.Items.Add(this.spPhatTrien);
+            this.stepProgressBar2.Location = new System.Drawing.Point(453, 4);
+            this.stepProgressBar2.Name = "stepProgressBar2";
+            this.stepProgressBar2.Size = new System.Drawing.Size(445, 111);
+            this.stepProgressBar2.TabIndex = 30;
             // 
-            // txtViTri
+            // stepProgressBarItem4
             // 
-            this.txtViTri.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.txtViTri.Location = new System.Drawing.Point(215, 123);
-            this.txtViTri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtViTri.Name = "txtViTri";
-            this.txtViTri.Size = new System.Drawing.Size(325, 20);
-            this.txtViTri.TabIndex = 3;
+            this.stepProgressBarItem4.ContentBlock2.Caption = "Tài Chính";
+            this.stepProgressBarItem4.Name = "stepProgressBarItem4";
             // 
-            // txtTen
+            // stepProgressBarItem5
             // 
-            this.txtTen.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.txtTen.Location = new System.Drawing.Point(215, 63);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(325, 20);
-            this.txtTen.TabIndex = 2;
+            this.stepProgressBarItem5.ContentBlock2.Caption = "Khách Hàng";
+            this.stepProgressBarItem5.Name = "stepProgressBarItem5";
             // 
-            // label3
+            // stepProgressBarItem6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label3.Location = new System.Drawing.Point(40, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 27);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Vị trí công việc:";
+            this.stepProgressBarItem6.ContentBlock2.Caption = "Vận Hành";
+            this.stepProgressBarItem6.Name = "stepProgressBarItem6";
             // 
-            // label2
+            // spPhatTrien
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label2.Location = new System.Drawing.Point(150, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 27);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tên:";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1167, 93);
-            this.panel2.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.lblDay);
-            this.groupBox1.Location = new System.Drawing.Point(2, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(352, 81);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label4.Location = new System.Drawing.Point(24, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 27);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "A7.5";
-            // 
-            // lblDay
-            // 
-            this.lblDay.AutoSize = true;
-            this.lblDay.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.lblDay.Location = new System.Drawing.Point(24, 50);
-            this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(110, 27);
-            this.lblDay.TabIndex = 1;
-            this.lblDay.Text = "Năm/Year";
+            this.spPhatTrien.ContentBlock2.Caption = "Phát Triển";
+            this.spPhatTrien.Name = "spPhatTrien";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(351, 33);
+            this.label1.Location = new System.Drawing.Point(8, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(805, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TỔNG QUÁT TẤT CẢ MỤC TIÊU API BỆNH VIỆN";
+            this.label1.Size = new System.Drawing.Size(61, 28);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "A7.5";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label34.Location = new System.Drawing.Point(8, 64);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(348, 26);
+            this.label34.TabIndex = 32;
+            this.label34.Text = "MỤC TIÊU BỆNH VIỆN - NĂM";
+            // 
+            // lbYearTC
+            // 
+            this.lbYearTC.AutoSize = true;
+            this.lbYearTC.Enabled = false;
+            this.lbYearTC.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYearTC.Location = new System.Drawing.Point(362, 64);
+            this.lbYearTC.Name = "lbYearTC";
+            this.lbYearTC.Size = new System.Drawing.Size(60, 26);
+            this.lbYearTC.TabIndex = 31;
+            this.lbYearTC.Text = "Year";
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.panel19);
+            this.panel6.Controls.Add(this.panel20);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.txtTenNVTC);
+            this.panel6.Controls.Add(this.txtViTriCVTC);
+            this.panel6.Controls.Add(this.lbViTriCV);
+            this.panel6.Controls.Add(this.lbTen);
+            this.panel6.Location = new System.Drawing.Point(906, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(445, 112);
+            this.panel6.TabIndex = 29;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Black;
+            this.panel19.Location = new System.Drawing.Point(153, 98);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(287, 1);
+            this.panel19.TabIndex = 14;
+            // 
+            // panel20
+            // 
+            this.panel20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel20.BackColor = System.Drawing.Color.Black;
+            this.panel20.Location = new System.Drawing.Point(153, 65);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(285, 1);
+            this.panel20.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(100, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(261, 26);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Người lập (prepared by)";
+            // 
+            // txtTenNVTC
+            // 
+            this.txtTenNVTC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenNVTC.BackColor = System.Drawing.Color.White;
+            this.txtTenNVTC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenNVTC.Enabled = false;
+            this.txtTenNVTC.ForeColor = System.Drawing.Color.Black;
+            this.txtTenNVTC.Location = new System.Drawing.Point(153, 42);
+            this.txtTenNVTC.Name = "txtTenNVTC";
+            this.txtTenNVTC.ReadOnly = true;
+            this.txtTenNVTC.Size = new System.Drawing.Size(285, 16);
+            this.txtTenNVTC.TabIndex = 2;
+            this.txtTenNVTC.xCoTimMoRong = false;
+            this.txtTenNVTC.xDataGrid = null;
+            this.txtTenNVTC.xField_Key = "";
+            this.txtTenNVTC.xKeep_Old_Value = false;
+            this.txtTenNVTC.xTimChinhXac = false;
+            this.txtTenNVTC.xTimMoRong = "";
+            this.txtTenNVTC.xTimTrenField = null;
+            // 
+            // txtViTriCVTC
+            // 
+            this.txtViTriCVTC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtViTriCVTC.BackColor = System.Drawing.Color.White;
+            this.txtViTriCVTC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtViTriCVTC.Enabled = false;
+            this.txtViTriCVTC.ForeColor = System.Drawing.Color.Black;
+            this.txtViTriCVTC.Location = new System.Drawing.Point(153, 75);
+            this.txtViTriCVTC.Name = "txtViTriCVTC";
+            this.txtViTriCVTC.ReadOnly = true;
+            this.txtViTriCVTC.Size = new System.Drawing.Size(287, 16);
+            this.txtViTriCVTC.TabIndex = 3;
+            this.txtViTriCVTC.xCoTimMoRong = false;
+            this.txtViTriCVTC.xDataGrid = null;
+            this.txtViTriCVTC.xField_Key = "";
+            this.txtViTriCVTC.xKeep_Old_Value = false;
+            this.txtViTriCVTC.xTimChinhXac = false;
+            this.txtViTriCVTC.xTimMoRong = "";
+            this.txtViTriCVTC.xTimTrenField = null;
+            // 
+            // lbViTriCV
+            // 
+            this.lbViTriCV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbViTriCV.AutoSize = true;
+            this.lbViTriCV.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbViTriCV.Location = new System.Drawing.Point(1, 74);
+            this.lbViTriCV.Name = "lbViTriCV";
+            this.lbViTriCV.Size = new System.Drawing.Size(161, 24);
+            this.lbViTriCV.TabIndex = 6;
+            this.lbViTriCV.Text = "Vị trí công việc : ";
+            // 
+            // lbTen
+            // 
+            this.lbTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTen.Location = new System.Drawing.Point(101, 41);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(61, 24);
+            this.lbTen.TabIndex = 5;
+            this.lbTen.Text = "Tên : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(8, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 26);
+            this.label3.TabIndex = 26;
             // 
             // tabKhachHang
             // 
@@ -1024,7 +1361,7 @@ namespace PhanMemQuanLyKPI
             this.tabKhachHang.Controls.Add(this.panel11);
             this.tabKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabKhachHang.Name = "tabKhachHang";
-            this.tabKhachHang.Size = new System.Drawing.Size(1167, 749);
+            this.tabKhachHang.Size = new System.Drawing.Size(1362, 701);
             this.tabKhachHang.Text = "Khách hàng";
             // 
             // groupControl8
@@ -1035,10 +1372,10 @@ namespace PhanMemQuanLyKPI
             this.groupControl8.Controls.Add(this.groupControl9);
             this.groupControl8.Controls.Add(this.gcKhachHang1);
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl8.Location = new System.Drawing.Point(0, 262);
+            this.groupControl8.Location = new System.Drawing.Point(0, 302);
             this.groupControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(1167, 487);
+            this.groupControl8.Size = new System.Drawing.Size(1362, 399);
             this.groupControl8.TabIndex = 5;
             this.groupControl8.Text = "Thông tin chi tiết khách hàng";
             // 
@@ -1046,10 +1383,10 @@ namespace PhanMemQuanLyKPI
             // 
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(2, 415);
+            this.panel15.Location = new System.Drawing.Point(2, 475);
             this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1163, 70);
+            this.panel15.Size = new System.Drawing.Size(1358, 0);
             this.panel15.TabIndex = 4;
             // 
             // panel16
@@ -1058,19 +1395,19 @@ namespace PhanMemQuanLyKPI
             this.panel16.Controls.Add(this.btnTiepTucKH);
             this.panel16.Controls.Add(this.label13);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel16.Location = new System.Drawing.Point(536, 0);
+            this.panel16.Location = new System.Drawing.Point(627, 0);
             this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(627, 70);
+            this.panel16.Size = new System.Drawing.Size(731, 0);
             this.panel16.TabIndex = 0;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textBox3.Location = new System.Drawing.Point(339, 31);
+            this.textBox3.Location = new System.Drawing.Point(395, 36);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 24);
+            this.textBox3.Size = new System.Drawing.Size(313, 24);
             this.textBox3.TabIndex = 3;
             // 
             // btnTiepTucKH
@@ -1078,10 +1415,10 @@ namespace PhanMemQuanLyKPI
             this.btnTiepTucKH.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnTiepTucKH.Appearance.Options.UseFont = true;
             this.btnTiepTucKH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTiepTucKH.ImageOptions.SvgImage")));
-            this.btnTiepTucKH.Location = new System.Drawing.Point(33, 16);
+            this.btnTiepTucKH.Location = new System.Drawing.Point(38, 18);
             this.btnTiepTucKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTiepTucKH.Name = "btnTiepTucKH";
-            this.btnTiepTucKH.Size = new System.Drawing.Size(131, 52);
+            this.btnTiepTucKH.Size = new System.Drawing.Size(153, 60);
             this.btnTiepTucKH.TabIndex = 1;
             this.btnTiepTucKH.Text = "Tiếp tục";
             // 
@@ -1089,7 +1426,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(181, 29);
+            this.label13.Location = new System.Drawing.Point(211, 33);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(145, 25);
             this.label13.TabIndex = 2;
@@ -1101,10 +1438,10 @@ namespace PhanMemQuanLyKPI
             this.groupControl9.AppearanceCaption.Options.UseFont = true;
             this.groupControl9.Controls.Add(this.gcKhachHang2);
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl9.Location = new System.Drawing.Point(2, 207);
+            this.groupControl9.Location = new System.Drawing.Point(2, 235);
             this.groupControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(1163, 208);
+            this.groupControl9.Size = new System.Drawing.Size(1358, 240);
             this.groupControl9.TabIndex = 3;
             this.groupControl9.Text = "Thông tin nhập liệu ";
             // 
@@ -1120,7 +1457,7 @@ namespace PhanMemQuanLyKPI
             this.repositoryItemCheckEdit5,
             this.repositoryItemLookUpEdit2,
             this.repositoryItemButtonEdit2});
-            this.gcKhachHang2.Size = new System.Drawing.Size(1159, 183);
+            this.gcKhachHang2.Size = new System.Drawing.Size(1354, 215);
             this.gcKhachHang2.TabIndex = 3;
             this.gcKhachHang2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvKhachHang2});
@@ -1140,10 +1477,9 @@ namespace PhanMemQuanLyKPI
             this.gridColumn53,
             this.gridColumn54,
             this.gridColumn55});
-            this.gvKhachHang2.DetailHeight = 284;
+            this.gvKhachHang2.DetailHeight = 328;
             this.gvKhachHang2.GridControl = this.gcKhachHang2;
             this.gvKhachHang2.Name = "gvKhachHang2";
-            this.gvKhachHang2.OptionsEditForm.PopupEditFormWidth = 686;
             // 
             // gridColumn44
             // 
@@ -1152,18 +1488,18 @@ namespace PhanMemQuanLyKPI
             this.gridColumn44.Caption = "Xóa TC";
             this.gridColumn44.ColumnEdit = this.repositoryItemButtonEdit2;
             this.gridColumn44.FieldName = "XoaAll";
-            this.gridColumn44.MinWidth = 21;
+            this.gridColumn44.MinWidth = 24;
             this.gridColumn44.Name = "gridColumn44";
             this.gridColumn44.Visible = true;
             this.gridColumn44.VisibleIndex = 0;
-            this.gridColumn44.Width = 81;
+            this.gridColumn44.Width = 94;
             // 
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1175,11 +1511,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn45.AppearanceHeader.Options.UseFont = true;
             this.gridColumn45.Caption = "Mã KPI";
             this.gridColumn45.FieldName = "MaKPI";
-            this.gridColumn45.MinWidth = 21;
+            this.gridColumn45.MinWidth = 24;
             this.gridColumn45.Name = "gridColumn45";
             this.gridColumn45.Visible = true;
             this.gridColumn45.VisibleIndex = 1;
-            this.gridColumn45.Width = 81;
+            this.gridColumn45.Width = 94;
             // 
             // gridColumn46
             // 
@@ -1189,11 +1525,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn46.AppearanceHeader.Options.UseFont = true;
             this.gridColumn46.Caption = "Mã phiếu";
             this.gridColumn46.FieldName = "MaPhieuKPIBV";
-            this.gridColumn46.MinWidth = 21;
+            this.gridColumn46.MinWidth = 24;
             this.gridColumn46.Name = "gridColumn46";
             this.gridColumn46.Visible = true;
             this.gridColumn46.VisibleIndex = 2;
-            this.gridColumn46.Width = 103;
+            this.gridColumn46.Width = 120;
             // 
             // gridColumn47
             // 
@@ -1203,11 +1539,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn47.AppearanceHeader.Options.UseFont = true;
             this.gridColumn47.Caption = "Nội dung";
             this.gridColumn47.FieldName = "NoiDung";
-            this.gridColumn47.MinWidth = 21;
+            this.gridColumn47.MinWidth = 24;
             this.gridColumn47.Name = "gridColumn47";
             this.gridColumn47.Visible = true;
             this.gridColumn47.VisibleIndex = 3;
-            this.gridColumn47.Width = 114;
+            this.gridColumn47.Width = 133;
             // 
             // gridColumn48
             // 
@@ -1217,12 +1553,12 @@ namespace PhanMemQuanLyKPI
             this.gridColumn48.AppearanceHeader.Options.UseFont = true;
             this.gridColumn48.Caption = "Trọng số";
             this.gridColumn48.FieldName = "TrongSoTCBV";
-            this.gridColumn48.MaxWidth = 51;
-            this.gridColumn48.MinWidth = 103;
+            this.gridColumn48.MaxWidth = 59;
+            this.gridColumn48.MinWidth = 120;
             this.gridColumn48.Name = "gridColumn48";
             this.gridColumn48.Visible = true;
             this.gridColumn48.VisibleIndex = 4;
-            this.gridColumn48.Width = 103;
+            this.gridColumn48.Width = 120;
             // 
             // gridColumn49
             // 
@@ -1232,11 +1568,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn49.AppearanceHeader.Options.UseFont = true;
             this.gridColumn49.Caption = "Tiêu chí đánh giá";
             this.gridColumn49.FieldName = "TieuChiDanhGiaKQ";
-            this.gridColumn49.MinWidth = 21;
+            this.gridColumn49.MinWidth = 24;
             this.gridColumn49.Name = "gridColumn49";
             this.gridColumn49.Visible = true;
             this.gridColumn49.VisibleIndex = 5;
-            this.gridColumn49.Width = 81;
+            this.gridColumn49.Width = 94;
             // 
             // gridColumn50
             // 
@@ -1246,11 +1582,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn50.AppearanceHeader.Options.UseFont = true;
             this.gridColumn50.Caption = "Phương pháp đo";
             this.gridColumn50.FieldName = "PhuongPhapDo";
-            this.gridColumn50.MinWidth = 21;
+            this.gridColumn50.MinWidth = 24;
             this.gridColumn50.Name = "gridColumn50";
             this.gridColumn50.Visible = true;
             this.gridColumn50.VisibleIndex = 6;
-            this.gridColumn50.Width = 81;
+            this.gridColumn50.Width = 94;
             // 
             // gridColumn51
             // 
@@ -1261,11 +1597,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn51.Caption = "Chứng minh";
             this.gridColumn51.ColumnEdit = this.repositoryItemLookUpEdit2;
             this.gridColumn51.FieldName = "NguonChungMinh";
-            this.gridColumn51.MinWidth = 21;
+            this.gridColumn51.MinWidth = 24;
             this.gridColumn51.Name = "gridColumn51";
             this.gridColumn51.Visible = true;
             this.gridColumn51.VisibleIndex = 7;
-            this.gridColumn51.Width = 81;
+            this.gridColumn51.Width = 94;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -1277,8 +1613,8 @@ namespace PhanMemQuanLyKPI
             this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit2.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPK", "Mã PK", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPK", "Tên PK", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPK", "Mã PK"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPK", "Tên PK")});
             this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
             // 
             // gridColumn52
@@ -1289,11 +1625,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn52.AppearanceHeader.Options.UseFont = true;
             this.gridColumn52.Caption = "DVT";
             this.gridColumn52.FieldName = "DonViTinh";
-            this.gridColumn52.MinWidth = 21;
+            this.gridColumn52.MinWidth = 24;
             this.gridColumn52.Name = "gridColumn52";
             this.gridColumn52.Visible = true;
             this.gridColumn52.VisibleIndex = 8;
-            this.gridColumn52.Width = 81;
+            this.gridColumn52.Width = 94;
             // 
             // gridColumn53
             // 
@@ -1303,11 +1639,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn53.AppearanceHeader.Options.UseFont = true;
             this.gridColumn53.Caption = "Kế Hoạch";
             this.gridColumn53.FieldName = "KeHoach";
-            this.gridColumn53.MinWidth = 21;
+            this.gridColumn53.MinWidth = 24;
             this.gridColumn53.Name = "gridColumn53";
             this.gridColumn53.Visible = true;
             this.gridColumn53.VisibleIndex = 9;
-            this.gridColumn53.Width = 81;
+            this.gridColumn53.Width = 94;
             // 
             // gridColumn54
             // 
@@ -1317,11 +1653,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn54.AppearanceHeader.Options.UseFont = true;
             this.gridColumn54.Caption = "Thực hiện";
             this.gridColumn54.FieldName = "ThucHien";
-            this.gridColumn54.MinWidth = 21;
+            this.gridColumn54.MinWidth = 24;
             this.gridColumn54.Name = "gridColumn54";
             this.gridColumn54.Visible = true;
             this.gridColumn54.VisibleIndex = 10;
-            this.gridColumn54.Width = 81;
+            this.gridColumn54.Width = 94;
             // 
             // gridColumn55
             // 
@@ -1331,11 +1667,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn55.AppearanceHeader.Options.UseFont = true;
             this.gridColumn55.Caption = "Hoàn Thành";
             this.gridColumn55.FieldName = "HoanThanh";
-            this.gridColumn55.MinWidth = 21;
+            this.gridColumn55.MinWidth = 24;
             this.gridColumn55.Name = "gridColumn55";
             this.gridColumn55.Visible = true;
             this.gridColumn55.VisibleIndex = 11;
-            this.gridColumn55.Width = 81;
+            this.gridColumn55.Width = 94;
             // 
             // repositoryItemCheckEdit5
             // 
@@ -1352,7 +1688,7 @@ namespace PhanMemQuanLyKPI
             this.gcKhachHang1.Name = "gcKhachHang1";
             this.gcKhachHang1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit4});
-            this.gcKhachHang1.Size = new System.Drawing.Size(1163, 184);
+            this.gcKhachHang1.Size = new System.Drawing.Size(1358, 212);
             this.gcKhachHang1.TabIndex = 2;
             this.gcKhachHang1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvKhachHang1});
@@ -1371,10 +1707,9 @@ namespace PhanMemQuanLyKPI
             this.gridColumn41,
             this.gridColumn42,
             this.gridColumn43});
-            this.gvKhachHang1.DetailHeight = 284;
+            this.gvKhachHang1.DetailHeight = 328;
             this.gvKhachHang1.GridControl = this.gcKhachHang1;
             this.gvKhachHang1.Name = "gvKhachHang1";
-            this.gvKhachHang1.OptionsEditForm.PopupEditFormWidth = 686;
             this.gvKhachHang1.OptionsSelection.MultiSelect = true;
             this.gvKhachHang1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             // 
@@ -1386,11 +1721,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn23.AppearanceHeader.Options.UseFont = true;
             this.gridColumn23.Caption = "Mã KPI";
             this.gridColumn23.FieldName = "MaKPI";
-            this.gridColumn23.MinWidth = 21;
+            this.gridColumn23.MinWidth = 24;
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 1;
-            this.gridColumn23.Width = 81;
+            this.gridColumn23.Width = 94;
             // 
             // gridColumn24
             // 
@@ -1400,11 +1735,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn24.AppearanceHeader.Options.UseFont = true;
             this.gridColumn24.Caption = "Mã phiếu";
             this.gridColumn24.FieldName = "MaPhieuKPIBV";
-            this.gridColumn24.MinWidth = 21;
+            this.gridColumn24.MinWidth = 24;
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 2;
-            this.gridColumn24.Width = 103;
+            this.gridColumn24.Width = 120;
             // 
             // gridColumn35
             // 
@@ -1414,11 +1749,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn35.AppearanceHeader.Options.UseFont = true;
             this.gridColumn35.Caption = "Nội dung";
             this.gridColumn35.FieldName = "NoiDung";
-            this.gridColumn35.MinWidth = 21;
+            this.gridColumn35.MinWidth = 24;
             this.gridColumn35.Name = "gridColumn35";
             this.gridColumn35.Visible = true;
             this.gridColumn35.VisibleIndex = 3;
-            this.gridColumn35.Width = 114;
+            this.gridColumn35.Width = 133;
             // 
             // gridColumn36
             // 
@@ -1428,12 +1763,12 @@ namespace PhanMemQuanLyKPI
             this.gridColumn36.AppearanceHeader.Options.UseFont = true;
             this.gridColumn36.Caption = "Trọng số";
             this.gridColumn36.FieldName = "TrongSoTCBV";
-            this.gridColumn36.MaxWidth = 51;
-            this.gridColumn36.MinWidth = 103;
+            this.gridColumn36.MaxWidth = 59;
+            this.gridColumn36.MinWidth = 120;
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.Visible = true;
             this.gridColumn36.VisibleIndex = 4;
-            this.gridColumn36.Width = 103;
+            this.gridColumn36.Width = 120;
             // 
             // gridColumn37
             // 
@@ -1443,11 +1778,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn37.AppearanceHeader.Options.UseFont = true;
             this.gridColumn37.Caption = "Tiêu chí đánh giá";
             this.gridColumn37.FieldName = "TieuChiDanhGiaKQ";
-            this.gridColumn37.MinWidth = 21;
+            this.gridColumn37.MinWidth = 24;
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;
             this.gridColumn37.VisibleIndex = 5;
-            this.gridColumn37.Width = 81;
+            this.gridColumn37.Width = 94;
             // 
             // gridColumn38
             // 
@@ -1457,11 +1792,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn38.AppearanceHeader.Options.UseFont = true;
             this.gridColumn38.Caption = "Phương pháp đo";
             this.gridColumn38.FieldName = "PhuongPhapDo";
-            this.gridColumn38.MinWidth = 21;
+            this.gridColumn38.MinWidth = 24;
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 6;
-            this.gridColumn38.Width = 81;
+            this.gridColumn38.Width = 94;
             // 
             // gridColumn39
             // 
@@ -1471,11 +1806,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn39.AppearanceHeader.Options.UseFont = true;
             this.gridColumn39.Caption = "Chứng minh";
             this.gridColumn39.FieldName = "NguonChungMinh";
-            this.gridColumn39.MinWidth = 21;
+            this.gridColumn39.MinWidth = 24;
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.Visible = true;
             this.gridColumn39.VisibleIndex = 7;
-            this.gridColumn39.Width = 81;
+            this.gridColumn39.Width = 94;
             // 
             // gridColumn40
             // 
@@ -1485,11 +1820,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn40.AppearanceHeader.Options.UseFont = true;
             this.gridColumn40.Caption = "DVT";
             this.gridColumn40.FieldName = "DonViTinh";
-            this.gridColumn40.MinWidth = 21;
+            this.gridColumn40.MinWidth = 24;
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.Visible = true;
             this.gridColumn40.VisibleIndex = 8;
-            this.gridColumn40.Width = 81;
+            this.gridColumn40.Width = 94;
             // 
             // gridColumn41
             // 
@@ -1499,11 +1834,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn41.AppearanceHeader.Options.UseFont = true;
             this.gridColumn41.Caption = "Kế Hoạch";
             this.gridColumn41.FieldName = "KeHoach";
-            this.gridColumn41.MinWidth = 21;
+            this.gridColumn41.MinWidth = 24;
             this.gridColumn41.Name = "gridColumn41";
             this.gridColumn41.Visible = true;
             this.gridColumn41.VisibleIndex = 9;
-            this.gridColumn41.Width = 81;
+            this.gridColumn41.Width = 94;
             // 
             // gridColumn42
             // 
@@ -1513,11 +1848,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn42.AppearanceHeader.Options.UseFont = true;
             this.gridColumn42.Caption = "Thực hiện";
             this.gridColumn42.FieldName = "ThucHien";
-            this.gridColumn42.MinWidth = 21;
+            this.gridColumn42.MinWidth = 24;
             this.gridColumn42.Name = "gridColumn42";
             this.gridColumn42.Visible = true;
             this.gridColumn42.VisibleIndex = 10;
-            this.gridColumn42.Width = 81;
+            this.gridColumn42.Width = 94;
             // 
             // gridColumn43
             // 
@@ -1527,11 +1862,11 @@ namespace PhanMemQuanLyKPI
             this.gridColumn43.AppearanceHeader.Options.UseFont = true;
             this.gridColumn43.Caption = "Hoàn Thành";
             this.gridColumn43.FieldName = "HoanThanh";
-            this.gridColumn43.MinWidth = 21;
+            this.gridColumn43.MinWidth = 24;
             this.gridColumn43.Name = "gridColumn43";
             this.gridColumn43.Visible = true;
             this.gridColumn43.VisibleIndex = 11;
-            this.gridColumn43.Width = 81;
+            this.gridColumn43.Width = 94;
             // 
             // repositoryItemCheckEdit4
             // 
@@ -1543,10 +1878,10 @@ namespace PhanMemQuanLyKPI
             this.panel12.Controls.Add(this.groupControl6);
             this.panel12.Controls.Add(this.panel14);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 93);
+            this.panel12.Location = new System.Drawing.Point(0, 107);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1167, 169);
+            this.panel12.Size = new System.Drawing.Size(1362, 195);
             this.panel12.TabIndex = 4;
             // 
             // groupControl6
@@ -1561,7 +1896,7 @@ namespace PhanMemQuanLyKPI
             this.groupControl6.Location = new System.Drawing.Point(0, 0);
             this.groupControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(595, 169);
+            this.groupControl6.Size = new System.Drawing.Size(695, 195);
             this.groupControl6.TabIndex = 2;
             this.groupControl6.Text = "Tiến trình";
             // 
@@ -1572,17 +1907,17 @@ namespace PhanMemQuanLyKPI
             this.panel13.Location = new System.Drawing.Point(2, 23);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(591, 81);
+            this.panel13.Size = new System.Drawing.Size(691, 93);
             this.panel13.TabIndex = 3;
             // 
             // progressPanel2
             // 
             this.progressPanel2.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.progressPanel2.Appearance.Options.UseBackColor = true;
-            this.progressPanel2.Location = new System.Drawing.Point(362, 16);
+            this.progressPanel2.Location = new System.Drawing.Point(422, 18);
             this.progressPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressPanel2.Name = "progressPanel2";
-            this.progressPanel2.Size = new System.Drawing.Size(211, 54);
+            this.progressPanel2.Size = new System.Drawing.Size(246, 62);
             this.progressPanel2.TabIndex = 0;
             this.progressPanel2.Text = "progressPanel2";
             // 
@@ -1590,7 +1925,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label10.Location = new System.Drawing.Point(302, 123);
+            this.label10.Location = new System.Drawing.Point(352, 142);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(277, 27);
             this.label10.TabIndex = 2;
@@ -1600,10 +1935,10 @@ namespace PhanMemQuanLyKPI
             // 
             this.panel14.Controls.Add(this.groupControl7);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel14.Location = new System.Drawing.Point(595, 0);
+            this.panel14.Location = new System.Drawing.Point(695, 0);
             this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(572, 169);
+            this.panel14.Size = new System.Drawing.Size(667, 195);
             this.panel14.TabIndex = 1;
             // 
             // groupControl7
@@ -1620,33 +1955,33 @@ namespace PhanMemQuanLyKPI
             this.groupControl7.Location = new System.Drawing.Point(0, 0);
             this.groupControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(572, 169);
+            this.groupControl7.Size = new System.Drawing.Size(667, 195);
             this.groupControl7.TabIndex = 0;
             this.groupControl7.Text = "Thông tin cá nhân";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(215, 123);
+            this.textBox1.Location = new System.Drawing.Point(251, 142);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 20);
+            this.textBox1.Size = new System.Drawing.Size(378, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(215, 63);
+            this.textBox2.Location = new System.Drawing.Point(251, 73);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 20);
+            this.textBox2.Size = new System.Drawing.Size(378, 20);
             this.textBox2.TabIndex = 2;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label11.Location = new System.Drawing.Point(40, 119);
+            this.label11.Location = new System.Drawing.Point(47, 137);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(163, 27);
             this.label11.TabIndex = 1;
@@ -1656,7 +1991,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label12.Location = new System.Drawing.Point(150, 58);
+            this.label12.Location = new System.Drawing.Point(175, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 27);
             this.label12.TabIndex = 0;
@@ -1670,18 +2005,18 @@ namespace PhanMemQuanLyKPI
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1167, 93);
+            this.panel11.Size = new System.Drawing.Size(1362, 107);
             this.panel11.TabIndex = 1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(2, 6);
+            this.groupBox2.Location = new System.Drawing.Point(2, 7);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(447, 81);
+            this.groupBox2.Size = new System.Drawing.Size(521, 93);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -1689,7 +2024,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label7.Location = new System.Drawing.Point(24, 16);
+            this.label7.Location = new System.Drawing.Point(28, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 27);
             this.label7.TabIndex = 0;
@@ -1699,7 +2034,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label8.Location = new System.Drawing.Point(24, 50);
+            this.label8.Location = new System.Drawing.Point(28, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 27);
             this.label8.TabIndex = 1;
@@ -1710,7 +2045,7 @@ namespace PhanMemQuanLyKPI
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(498, 30);
+            this.label9.Location = new System.Drawing.Point(581, 35);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(805, 38);
             this.label9.TabIndex = 0;
@@ -1722,7 +2057,7 @@ namespace PhanMemQuanLyKPI
             this.tabVanHanh.Appearance.Header.Options.UseFont = true;
             this.tabVanHanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabVanHanh.Name = "tabVanHanh";
-            this.tabVanHanh.Size = new System.Drawing.Size(1167, 749);
+            this.tabVanHanh.Size = new System.Drawing.Size(1362, 701);
             this.tabVanHanh.Text = "Vận hành";
             // 
             // tabPhatTrien
@@ -1731,7 +2066,7 @@ namespace PhanMemQuanLyKPI
             this.tabPhatTrien.Appearance.Header.Options.UseFont = true;
             this.tabPhatTrien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPhatTrien.Name = "tabPhatTrien";
-            this.tabPhatTrien.Size = new System.Drawing.Size(1167, 749);
+            this.tabPhatTrien.Size = new System.Drawing.Size(1362, 701);
             this.tabPhatTrien.Text = "Phát triển";
             // 
             // tabHoanThanh
@@ -1743,7 +2078,7 @@ namespace PhanMemQuanLyKPI
             this.tabHoanThanh.Controls.Add(this.panel17);
             this.tabHoanThanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabHoanThanh.Name = "tabHoanThanh";
-            this.tabHoanThanh.Size = new System.Drawing.Size(1167, 749);
+            this.tabHoanThanh.Size = new System.Drawing.Size(1362, 701);
             this.tabHoanThanh.Text = "Hoàn thành";
             // 
             // groupControl5
@@ -1752,216 +2087,12 @@ namespace PhanMemQuanLyKPI
             this.groupControl5.AppearanceCaption.Options.UseFont = true;
             this.groupControl5.Controls.Add(this.gcTaiChinhHT);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl5.Location = new System.Drawing.Point(0, 134);
+            this.groupControl5.Location = new System.Drawing.Point(0, 154);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1167, 163);
+            this.groupControl5.Size = new System.Drawing.Size(1362, 188);
             this.groupControl5.TabIndex = 9;
             this.groupControl5.Text = "Thông tin nhập liệu ";
-            // 
-            // gcTaiChinhHT
-            // 
-            this.gcTaiChinhHT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcTaiChinhHT.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcTaiChinhHT.Location = new System.Drawing.Point(2, 23);
-            this.gcTaiChinhHT.MainView = this.gvTaiChinhHT;
-            this.gcTaiChinhHT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcTaiChinhHT.Name = "gcTaiChinhHT";
-            this.gcTaiChinhHT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit3,
-            this.repositoryItemLookUpEdit1,
-            this.repositoryItemButtonEdit1});
-            this.gcTaiChinhHT.Size = new System.Drawing.Size(1163, 138);
-            this.gcTaiChinhHT.TabIndex = 3;
-            this.gcTaiChinhHT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvTaiChinhHT});
-            // 
-            // gvTaiChinhHT
-            // 
-            this.gvTaiChinhHT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn27,
-            this.gridColumn28,
-            this.gridColumn29,
-            this.gridColumn30,
-            this.gridColumn31,
-            this.gridColumn32,
-            this.gridColumn33,
-            this.gridColumn34,
-            this.gridColumn56,
-            this.gridColumn57});
-            this.gvTaiChinhHT.DetailHeight = 284;
-            this.gvTaiChinhHT.GridControl = this.gcTaiChinhHT;
-            this.gvTaiChinhHT.Name = "gvTaiChinhHT";
-            this.gvTaiChinhHT.OptionsEditForm.PopupEditFormWidth = 686;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn27.AppearanceCell.Options.UseFont = true;
-            this.gridColumn27.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
-            this.gridColumn27.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn27.Caption = "Mã phiếu";
-            this.gridColumn27.FieldName = "MaPhieuKPIBV";
-            this.gridColumn27.MinWidth = 21;
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 0;
-            this.gridColumn27.Width = 103;
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn28.AppearanceCell.Options.UseFont = true;
-            this.gridColumn28.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn28.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn28.Caption = "Nội dung";
-            this.gridColumn28.FieldName = "NoiDung";
-            this.gridColumn28.MinWidth = 21;
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 1;
-            this.gridColumn28.Width = 114;
-            // 
-            // gridColumn29
-            // 
-            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn29.AppearanceCell.Options.UseFont = true;
-            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
-            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn29.Caption = "Trọng số";
-            this.gridColumn29.FieldName = "TrongSoTCBV";
-            this.gridColumn29.MaxWidth = 51;
-            this.gridColumn29.MinWidth = 103;
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 2;
-            this.gridColumn29.Width = 103;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn30.AppearanceCell.Options.UseFont = true;
-            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn30.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn30.Caption = "Tiêu chí đánh giá";
-            this.gridColumn30.FieldName = "TieuChiDanhGiaKQ";
-            this.gridColumn30.MinWidth = 21;
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 3;
-            this.gridColumn30.Width = 81;
-            // 
-            // gridColumn31
-            // 
-            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn31.AppearanceCell.Options.UseFont = true;
-            this.gridColumn31.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn31.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn31.Caption = "Phương pháp đo";
-            this.gridColumn31.FieldName = "PhuongPhapDo";
-            this.gridColumn31.MinWidth = 21;
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 5;
-            this.gridColumn31.Width = 81;
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn32.AppearanceCell.Options.UseFont = true;
-            this.gridColumn32.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn32.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn32.Caption = "Chứng minh";
-            this.gridColumn32.FieldName = "NguonChungMinh";
-            this.gridColumn32.MinWidth = 21;
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 4;
-            this.gridColumn32.Width = 81;
-            // 
-            // gridColumn33
-            // 
-            this.gridColumn33.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn33.AppearanceCell.Options.UseFont = true;
-            this.gridColumn33.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn33.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn33.Caption = "DVT";
-            this.gridColumn33.FieldName = "DonViTinh";
-            this.gridColumn33.MinWidth = 21;
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 6;
-            this.gridColumn33.Width = 81;
-            // 
-            // gridColumn34
-            // 
-            this.gridColumn34.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn34.AppearanceCell.Options.UseFont = true;
-            this.gridColumn34.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn34.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn34.Caption = "Kế Hoạch";
-            this.gridColumn34.FieldName = "KeHoach";
-            this.gridColumn34.MinWidth = 21;
-            this.gridColumn34.Name = "gridColumn34";
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 7;
-            this.gridColumn34.Width = 81;
-            // 
-            // gridColumn56
-            // 
-            this.gridColumn56.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn56.AppearanceCell.Options.UseFont = true;
-            this.gridColumn56.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn56.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn56.Caption = "Thực hiện";
-            this.gridColumn56.FieldName = "ThucHien";
-            this.gridColumn56.MinWidth = 21;
-            this.gridColumn56.Name = "gridColumn56";
-            this.gridColumn56.Visible = true;
-            this.gridColumn56.VisibleIndex = 8;
-            this.gridColumn56.Width = 81;
-            // 
-            // gridColumn57
-            // 
-            this.gridColumn57.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn57.AppearanceCell.Options.UseFont = true;
-            this.gridColumn57.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn57.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn57.Caption = "Hoàn Thành";
-            this.gridColumn57.FieldName = "HoanThanh";
-            this.gridColumn57.MinWidth = 21;
-            this.gridColumn57.Name = "gridColumn57";
-            this.gridColumn57.Visible = true;
-            this.gridColumn57.VisibleIndex = 9;
-            this.gridColumn57.Width = 81;
-            // 
-            // repositoryItemCheckEdit3
-            // 
-            this.repositoryItemCheckEdit3.AutoHeight = false;
-            this.repositoryItemCheckEdit3.Name = "repositoryItemCheckEdit3";
-            // 
-            // repositoryItemLookUpEdit1
-            // 
-            this.repositoryItemLookUpEdit1.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.repositoryItemLookUpEdit1.AppearanceDropDown.Options.UseFont = true;
-            this.repositoryItemLookUpEdit1.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.repositoryItemLookUpEdit1.AppearanceDropDownHeader.Options.UseFont = true;
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPK", "Mã PK", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPK", "Tên PK", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // panel18
             // 
@@ -1969,10 +2100,10 @@ namespace PhanMemQuanLyKPI
             this.panel18.Controls.Add(this.txtTSTC);
             this.panel18.Controls.Add(this.label17);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(0, 93);
+            this.panel18.Location = new System.Drawing.Point(0, 107);
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(1167, 41);
+            this.panel18.Size = new System.Drawing.Size(1362, 47);
             this.panel18.TabIndex = 8;
             // 
             // txtTSTC
@@ -1980,7 +2111,7 @@ namespace PhanMemQuanLyKPI
             this.txtTSTC.AutoSize = true;
             this.txtTSTC.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.txtTSTC.ForeColor = System.Drawing.Color.White;
-            this.txtTSTC.Location = new System.Drawing.Point(123, 11);
+            this.txtTSTC.Location = new System.Drawing.Point(143, 13);
             this.txtTSTC.Name = "txtTSTC";
             this.txtTSTC.Size = new System.Drawing.Size(23, 24);
             this.txtTSTC.TabIndex = 1;
@@ -1991,7 +2122,7 @@ namespace PhanMemQuanLyKPI
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(9, 11);
+            this.label17.Location = new System.Drawing.Point(10, 13);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(113, 24);
             this.label17.TabIndex = 0;
@@ -2005,18 +2136,18 @@ namespace PhanMemQuanLyKPI
             this.panel17.Location = new System.Drawing.Point(0, 0);
             this.panel17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1167, 93);
+            this.panel17.Size = new System.Drawing.Size(1362, 107);
             this.panel17.TabIndex = 2;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Location = new System.Drawing.Point(2, 6);
+            this.groupBox3.Location = new System.Drawing.Point(2, 7);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(447, 81);
+            this.groupBox3.Size = new System.Drawing.Size(521, 93);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -2024,7 +2155,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label14.Location = new System.Drawing.Point(24, 16);
+            this.label14.Location = new System.Drawing.Point(28, 18);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 27);
             this.label14.TabIndex = 0;
@@ -2034,7 +2165,7 @@ namespace PhanMemQuanLyKPI
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label15.Location = new System.Drawing.Point(24, 50);
+            this.label15.Location = new System.Drawing.Point(28, 58);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 27);
             this.label15.TabIndex = 1;
@@ -2045,32 +2176,41 @@ namespace PhanMemQuanLyKPI
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(498, 30);
+            this.label16.Location = new System.Drawing.Point(581, 35);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(805, 38);
             this.label16.TabIndex = 0;
             this.label16.Text = "TỔNG QUÁT TẤT CẢ MỤC TIÊU API BỆNH VIỆN";
             // 
-            // frmMain
+            // Frm_A75
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 784);
+            this.ClientSize = new System.Drawing.Size(1364, 736);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmMain";
+            this.Name = "Frm_A75";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biểu mẫu A7.5: Bảng KPI Bệnh viện";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.FrmSPTrangThaiTC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTaiChinhHT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTaiChinhHT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabDanhSach)).EndInit();
             this.tabDanhSach.ResumeLayout(false);
             this.tabTaiChinh.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
@@ -2086,18 +2226,11 @@ namespace PhanMemQuanLyKPI
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepProgressBar2)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabKhachHang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
             this.groupControl8.ResumeLayout(false);
@@ -2130,11 +2263,6 @@ namespace PhanMemQuanLyKPI
             this.tabHoanThanh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcTaiChinhHT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTaiChinhHT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -2146,42 +2274,43 @@ namespace PhanMemQuanLyKPI
         }
 
         #endregion
-
+        private DevExpress.XtraEditors.StepProgressBar FrmSPTrangThaiTC;
+        private DevExpress.XtraEditors.StepProgressBarItem spTaiChinhTC;
+        private DevExpress.XtraEditors.StepProgressBarItem spKhachHang;
+        private DevExpress.XtraEditors.StepProgressBarItem spVanHanh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcTaiChinhHT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTaiChinhHT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn56;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn57;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.StepProgressBar stepProgressBar1;
+        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem1;
+        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem2;
+        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraTab.XtraTabControl tabDanhSach;
         private DevExpress.XtraTab.XtraTabPage tabTaiChinh;
-        private DevExpress.XtraTab.XtraTabPage tabKhachHang;
-        private DevExpress.XtraTab.XtraTabPage tabVanHanh;
-        private DevExpress.XtraTab.XtraTabPage tabPhatTrien;
-        private DevExpress.XtraTab.XtraTabPage tabHoanThanh;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.TextBox txtViTri;
-        private System.Windows.Forms.TextBox txtTen;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblDay;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
-        private System.Windows.Forms.Panel panel7;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel8;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.SimpleButton btnTiepTuc;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTongTrongSo;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel7;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraGrid.GridControl gcDanhSach1;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach1;
+        private DevExpress.XtraGrid.Columns.GridColumn MaKPI;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
@@ -2192,56 +2321,10 @@ namespace PhanMemQuanLyKPI
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn MaKPI;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraGrid.GridControl gcDanhSach2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit slkChungMinh;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel12;
-        private DevExpress.XtraEditors.GroupControl groupControl6;
-        private System.Windows.Forms.Panel panel13;
-        private DevExpress.XtraWaitForm.ProgressPanel progressPanel2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel14;
-        private DevExpress.XtraEditors.GroupControl groupControl7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel3;
+        private DevExpress.XtraTab.XtraTabPage tabKhachHang;
         private DevExpress.XtraEditors.GroupControl groupControl8;
-        private DevExpress.XtraGrid.GridControl gcKhachHang1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvKhachHang1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit4;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox textBox3;
@@ -2265,29 +2348,87 @@ namespace PhanMemQuanLyKPI
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn55;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit5;
+        private DevExpress.XtraGrid.GridControl gcKhachHang1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvKhachHang1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit4;
+        private System.Windows.Forms.Panel panel12;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private System.Windows.Forms.Panel panel13;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel14;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private DevExpress.XtraTab.XtraTabPage tabVanHanh;
+        private DevExpress.XtraTab.XtraTabPage tabPhatTrien;
+        private DevExpress.XtraTab.XtraTabPage tabHoanThanh;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label txtTSTC;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label txtTSTC;
-        private System.Windows.Forms.Label label17;
-        private DevExpress.XtraEditors.GroupControl groupControl5;
-        private DevExpress.XtraGrid.GridControl gcTaiChinhHT;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvTaiChinhHT;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn56;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn57;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private System.Windows.Forms.Panel panel5;
+        private DevExpress.XtraEditors.StepProgressBar stepProgressBar2;
+        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem4;
+        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem5;
+        private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem6;
+        private DevExpress.XtraEditors.StepProgressBarItem spPhatTrien;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lbYearTC;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label2;
+        private ControlProject1510.XFilteg txtTenNVTC;
+        private ControlProject1510.XFilteg txtViTriCVTC;
+        private System.Windows.Forms.Label lbViTriCV;
+        private System.Windows.Forms.Label lbTen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel9;
+        private DevExpress.XtraEditors.SimpleButton btnTTKH;
+        private ControlProject1510.XFilteg txtTongTrongSoTC;
+        private System.Windows.Forms.Label label4;
+        private DevExpress.XtraGrid.GridControl gcDanhSach2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit slkChungMinh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
     }
 }
