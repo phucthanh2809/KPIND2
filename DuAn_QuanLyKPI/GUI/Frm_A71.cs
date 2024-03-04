@@ -20,6 +20,7 @@ namespace DuAn_QuanLyKPI.GUI
         private clsCommonMethod comm = new clsCommonMethod();
         private clsEventArgs ev = new clsEventArgs(string.Empty);
         private string msql;
+
         private int CurrentTab;
         public static string MaNV = Frm_Login.MaNV;
         public static string MaPhongKhoa = Frm_Login.MaPhongKhoa;
@@ -75,7 +76,6 @@ namespace DuAn_QuanLyKPI.GUI
             DataTable tb = comm.GetDataTable(mconnecstring, msql, "PhatTrien");
             dgrBVMucTieuPhatTrien.AutoGenerateColumns = false;
             dgrBVMucTieuPhatTrien.DataSource =  tb;
-
         }
 
         #endregion
@@ -173,7 +173,6 @@ namespace DuAn_QuanLyKPI.GUI
         {
             LoadDataTableTC();
             LoadDataTableKH();
-
         }
         #region 
         private void CreateTableCopyTC()
@@ -1529,7 +1528,6 @@ namespace DuAn_QuanLyKPI.GUI
                     command.Parameters.AddWithValue("@npd", DBNull.Value); // Hoặc có thể sử dụng giá trị mặc định phù hợp
                     command.Parameters.AddWithValue("@idbm", 71);
                     command.Parameters.AddWithValue("@trangthai", 0);
-
                     command.ExecuteNonQuery();
                 }
             }
@@ -2000,8 +1998,6 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btnAddKPITC_Click(object sender, EventArgs e)
         {
-            Frm_AddKPIGrid add = new Frm_AddKPIGrid();
-            add.ShowDialog();
         }
     }
 }

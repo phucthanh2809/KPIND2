@@ -183,50 +183,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         #endregion
         //stt grid
-        private void dgrChonBieuMau_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex == -1)
-                return;
-            if (dgrChonBieuMauNam["cNam", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
-            {
-                if (nmYear == null)
-                {
-                    ev.QFrmThongBao("Vui lòng nhập năm vào");
-                    nmYear.Focus();
-                }
-                else
-                {
-                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Năm này không ?"))
-                    {
-                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
-                        Nam = nmYear.Text;
-                        switch (caseValue)
-                        {
-                            case 71:
-                                OpenForm(71);
-                                break;
-                            case 72:
-                                OpenForm(72);
-                                break;
-                            case 73:
-                                OpenForm(73);
-                                break;
-                            case 74:
-                                OpenForm(74);
-                                break;
-                            case 79:
-                                OpenForm(79);
-                                break;
-                            case 710:
-                                OpenForm(710);
-                                break;
-                        }
-                    }
-                }
-            }
-
-        }
-
+           
         private void dgrChonBieuMau_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             ev.Qdgr_RowPostPaint(sender, e, dgrChonBieuMauNam);
@@ -362,6 +319,57 @@ namespace DuAn_QuanLyKPI.GUI
                     }
                 }
             }
+        }
+
+        private void nmYear_Validated(object sender, EventArgs e)
+        {
+            LoadDataNam();
+        }
+
+        private void dgrChonBieuMauNam_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (nmYear == null)
+            {
+                ev.QFrmThongBao("Vui lòng nhập năm vào");
+                nmYear.Focus();
+            }
+            else if (nmYear != null)
+            {
+                if (e.RowIndex == -1)
+                    return;
+                if (dgrChonBieuMauNam["cNam", e.RowIndex] == dgrChonBieuMauNam.CurrentCell)
+                    if (ev.QFrmThongBao_YesNo("Bạn có muốn mở Biểu mẫu " + dgrChonBieuMauNam.CurrentRow.Cells["cTenBieuMau"].Value.ToString() + "Năm này không ?"))
+                    {
+                        int caseValue = int.Parse(dgrChonBieuMauNam.CurrentRow.Cells["cIDBieuMau"].Value.ToString());
+                        Nam = nmYear.Text;
+                        switch (caseValue)
+                        {
+                            case 71:
+                                OpenForm(71);
+                                break;
+                            case 72:
+                                OpenForm(72);
+                                break;
+                            case 73:
+                                OpenForm(73);
+                                break;
+                            case 74:
+                                OpenForm(74);
+                                break;
+                            case 79:
+                                OpenForm(79);
+                                break;
+                            case 710:
+                                OpenForm(710);
+                                break;
+                        }
+                    }
+            }
+        }
+
+        private void nmYear_Leave(object sender, EventArgs e)
+        {
+            LoadDataNam();
         }
     }
 }

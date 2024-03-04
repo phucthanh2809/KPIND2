@@ -604,70 +604,7 @@ namespace DuAn_QuanLyKPI.GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            #region luu
-            //if (isDataChanged)
-            //{
-            //    if (Edit == 1)
-            //    //thì là trạng thái thêm
-            //    {
-            //        string noiDung = txtNoiDung.Text;
-            //        string donViTinh = cbo_DonViTinh.Text;
-            //        string phuongPhapDo = cbo_PhuongPhapDo.Text;
-            //        bool congViecCaNhan = chkCongViecCaNhan.Checked;
-            //        string chiTieu = cbo_ChiTieu.Text;
-            //        //string tieuChiID = cbx_TieuChiID.SelectedValue;
-
-            //        //LoadData();
-            //        ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
-            //        if (isCaNhanSelected)
-            //        {
-            //            //string tieuChiID = cbx_TieuChiID.SelectedValue;
-            //            msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID,KPIDKT) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "',1)";
-            //            comm.RunSQL(mconnectstring, msql);
-            //            LoadData3();
-            //            ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
-            //        }
-            //        else if (isBenhVienSelected)
-            //        {
-            //            msql = $"INSERT INTO [dbo].[KPI] (NoiDung, DonViTinh, PhuongPhapDo, CongViecCaNhan, ChiTieu, TieuChiID,KPIDKT) VALUES (N'{noiDung}', N'{donViTinh}', N'{phuongPhapDo}', {(congViecCaNhan ? 1 : 0)}, N'{chiTieu}', N'" + cbx_TieuChiID.SelectedValue + "',0)";
-            //            comm.RunSQL(mconnectstring, msql);
-            //            LoadData2();
-            //            ev.QFrmThongBao("Đã lưu dữ liệu thành công !");
-            //        }
-            //    }
-            //    if (Edit == 2)
-            //    //trạng thái sửa
-            //    {
-            //        bool result = ev.QFrmThongBao_YesNo("Bạn có chắc chắn muốn sửa ?");
-            //        if (result == true)
-            //        {
-            //            string noiDung = txtNoiDung.Text;
-            //            string donViTinh = cbo_DonViTinh.Text;
-            //            string phuongPhapDo = cbo_PhuongPhapDo.Text;
-            //            bool congViecCaNhan = chkCongViecCaNhan.Checked;
-            //            string chiTieu = cbo_ChiTieu.Text;
-            //            string tieuChiID = txt_TenTieuChi.Text; // Hoặc sử dụng SelectedValue tùy thuộc vào cách bạn set up ComboBox         
-
-            //            string updateSql = $"UPDATE [dbo].[KPI] SET NoiDung = N'{noiDung}', DonViTinh = N'{donViTinh}', PhuongPhapDo = N'{phuongPhapDo}', CongViecCaNhan = '{congViecCaNhan}', ChiTieu = '{chiTieu}', TieuChiID = '{tieuChiID}' WHERE MaKPI = {maKPI}";
-
-            //            comm.RunSQL(mconnectstring, updateSql);
-            //            ev.QFrmThongBao("Đã cập nhật dữ liệu thành công!");
-            //        }
-            //        if (isCaNhanSelected)
-            //        {
-            //            LoadData3();
-            //        }
-            //        else if (isBenhVienSelected)
-            //        {
-            //            LoadData();
-            //        }
-            //    }
-            //    Edit = 0;
-
-            //}
-            #endregion
-            Frm_AddKPIGrid form = new Frm_AddKPIGrid();
-            form.ShowDialog();
+            
         }
         private bool isDataChanged = false;
         private void txtNoiDung_TextChanged(object sender, EventArgs e)

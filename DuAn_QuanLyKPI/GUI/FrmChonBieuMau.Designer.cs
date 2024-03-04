@@ -38,6 +38,7 @@ namespace DuAn_QuanLyKPI.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNam = new DevExpress.XtraEditors.SimpleButton();
+            this.btnQuy = new DevExpress.XtraEditors.SimpleButton();
             this.nmYear = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.dgrChonBieuMauQuy = new System.Windows.Forms.DataGridView();
@@ -54,28 +55,20 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cIDBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTenBieuMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cQuy1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cQuy2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cQuy3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cQuy4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cNam = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnQuy = new DevExpress.XtraEditors.SimpleButton();
-            this.nmQuarter = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMauQuy)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMauNam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.nmQuarter);
             this.panel2.Controls.Add(this.btnNam);
             this.panel2.Controls.Add(this.btnQuy);
             this.panel2.Controls.Add(this.nmYear);
@@ -88,6 +81,7 @@ namespace DuAn_QuanLyKPI.GUI
             // 
             // btnNam
             // 
+            this.btnNam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNam.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNam.Appearance.Options.UseFont = true;
             this.btnNam.Location = new System.Drawing.Point(1115, 10);
@@ -96,6 +90,18 @@ namespace DuAn_QuanLyKPI.GUI
             this.btnNam.TabIndex = 12;
             this.btnNam.Text = "Năm";
             this.btnNam.Click += new System.EventHandler(this.btnNam_Click);
+            // 
+            // btnQuy
+            // 
+            this.btnQuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuy.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuy.Appearance.Options.UseFont = true;
+            this.btnQuy.Location = new System.Drawing.Point(1000, 10);
+            this.btnQuy.Name = "btnQuy";
+            this.btnQuy.Size = new System.Drawing.Size(109, 40);
+            this.btnQuy.TabIndex = 11;
+            this.btnQuy.Text = "Quý";
+            this.btnQuy.Click += new System.EventHandler(this.btnQuy_Click);
             // 
             // nmYear
             // 
@@ -109,6 +115,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.nmYear.Name = "nmYear";
             this.nmYear.Size = new System.Drawing.Size(120, 32);
             this.nmYear.TabIndex = 9;
+            this.nmYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nmYear.Value = new decimal(new int[] {
             2024,
             0,
@@ -116,6 +123,8 @@ namespace DuAn_QuanLyKPI.GUI
             0});
             this.nmYear.ValueChanged += new System.EventHandler(this.nmYear_ValueChanged);
             this.nmYear.Click += new System.EventHandler(this.nmYear_Click);
+            this.nmYear.Leave += new System.EventHandler(this.nmYear_Leave);
+            this.nmYear.Validated += new System.EventHandler(this.nmYear_Validated);
             // 
             // label2
             // 
@@ -152,9 +161,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn3,
             this.dataGridViewImageColumn4,
             this.dataGridViewImageColumn5});
-            this.dgrChonBieuMauQuy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrChonBieuMauQuy.EnableHeadersVisualStyles = false;
-            this.dgrChonBieuMauQuy.Location = new System.Drawing.Point(0, 0);
+            this.dgrChonBieuMauQuy.Location = new System.Drawing.Point(142, 71);
             this.dgrChonBieuMauQuy.Name = "dgrChonBieuMauQuy";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -167,7 +175,7 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMauQuy.RowHeadersWidth = 75;
             this.dgrChonBieuMauQuy.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgrChonBieuMauQuy.RowTemplate.Height = 50;
-            this.dgrChonBieuMauQuy.Size = new System.Drawing.Size(1364, 676);
+            this.dgrChonBieuMauQuy.Size = new System.Drawing.Size(696, 536);
             this.dgrChonBieuMauQuy.TabIndex = 3;
             this.dgrChonBieuMauQuy.Visible = false;
             this.dgrChonBieuMauQuy.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMauQuy_CellMouseClick);
@@ -272,10 +280,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cMaBieuMau,
             this.cIDBieuMau,
             this.cTenBieuMau,
-            this.cQuy1,
-            this.cQuy2,
-            this.cQuy3,
-            this.cQuy4,
             this.cNam});
             this.dgrChonBieuMauNam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrChonBieuMauNam.EnableHeadersVisualStyles = false;
@@ -294,8 +298,8 @@ namespace DuAn_QuanLyKPI.GUI
             this.dgrChonBieuMauNam.RowTemplate.Height = 50;
             this.dgrChonBieuMauNam.Size = new System.Drawing.Size(1364, 676);
             this.dgrChonBieuMauNam.TabIndex = 2;
-            this.dgrChonBieuMauNam.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMau_CellMouseClick);
-            this.dgrChonBieuMauNam.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMau_RowPostPaint);
+            this.dgrChonBieuMauNam.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrChonBieuMauNam_CellMouseClick);
+            this.dgrChonBieuMauNam.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgrChonBieuMauQuy_RowPostPaint);
             // 
             // cMaBieuMau
             // 
@@ -324,39 +328,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.cTenBieuMau.Name = "cTenBieuMau";
             this.cTenBieuMau.ReadOnly = true;
             // 
-            // cQuy1
-            // 
-            this.cQuy1.HeaderText = "Quý 1";
-            this.cQuy1.Image = ((System.Drawing.Image)(resources.GetObject("cQuy1.Image")));
-            this.cQuy1.Name = "cQuy1";
-            this.cQuy1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cQuy1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cQuy1.Visible = false;
-            // 
-            // cQuy2
-            // 
-            this.cQuy2.HeaderText = "Quý 2";
-            this.cQuy2.Name = "cQuy2";
-            this.cQuy2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cQuy2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cQuy2.Visible = false;
-            // 
-            // cQuy3
-            // 
-            this.cQuy3.HeaderText = "Quý 3";
-            this.cQuy3.Name = "cQuy3";
-            this.cQuy3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cQuy3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cQuy3.Visible = false;
-            // 
-            // cQuy4
-            // 
-            this.cQuy4.HeaderText = "Quý 4";
-            this.cQuy4.Name = "cQuy4";
-            this.cQuy4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cQuy4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cQuy4.Visible = false;
-            // 
             // cNam
             // 
             this.cNam.HeaderText = "Năm";
@@ -382,35 +353,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.dataGridViewImageColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // btnQuy
-            // 
-            this.btnQuy.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuy.Appearance.Options.UseFont = true;
-            this.btnQuy.Location = new System.Drawing.Point(874, 10);
-            this.btnQuy.Name = "btnQuy";
-            this.btnQuy.Size = new System.Drawing.Size(109, 40);
-            this.btnQuy.TabIndex = 11;
-            this.btnQuy.Text = "Quý";
-            this.btnQuy.Click += new System.EventHandler(this.btnQuy_Click);
-            // 
-            // nmQuarter
-            // 
-            this.nmQuarter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmQuarter.Location = new System.Drawing.Point(989, 14);
-            this.nmQuarter.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.nmQuarter.Name = "nmQuarter";
-            this.nmQuarter.Size = new System.Drawing.Size(120, 32);
-            this.nmQuarter.TabIndex = 14;
-            this.nmQuarter.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // FrmChonBieuMau
             // 
             this.Appearance.Options.UseFont = true;
@@ -430,7 +372,6 @@ namespace DuAn_QuanLyKPI.GUI
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrChonBieuMauNam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmQuarter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,16 +393,11 @@ namespace DuAn_QuanLyKPI.GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgrChonBieuMauNam;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
+        private DevExpress.XtraEditors.SimpleButton btnQuy;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMaBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDBieuMau;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTenBieuMau;
-        private System.Windows.Forms.DataGridViewImageColumn cQuy1;
-        private System.Windows.Forms.DataGridViewImageColumn cQuy2;
-        private System.Windows.Forms.DataGridViewImageColumn cQuy3;
-        private System.Windows.Forms.DataGridViewImageColumn cQuy4;
         private System.Windows.Forms.DataGridViewImageColumn cNam;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
-        private DevExpress.XtraEditors.SimpleButton btnQuy;
-        private System.Windows.Forms.NumericUpDown nmQuarter;
     }
 }

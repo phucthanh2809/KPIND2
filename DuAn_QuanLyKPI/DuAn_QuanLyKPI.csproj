@@ -138,7 +138,6 @@
   <ItemGroup>
     <Compile Include="Constants\DataProvider.cs" />
     <Compile Include="Constants\DataUserCurrent.cs" />
-    <Compile Include="DAO\CommonValue.cs" />
     <Compile Include="DAO\myFunctions.cs" />
     <Compile Include="DAO\PHONGKHOA.cs" />
     <Compile Include="DTO\ChiTietKPIBenhVien.cs">
@@ -309,12 +308,6 @@
     <Compile Include="GUI\Frm_AddEditKPI.Designer.cs">
       <DependentUpon>Frm_AddEditKPI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Frm_AddKPIGrid.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Frm_AddKPIGrid.Designer.cs">
-      <DependentUpon>Frm_AddKPIGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Frm_AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,9 +438,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_AddEditKPI.resx">
       <DependentUpon>Frm_AddEditKPI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Frm_AddKPIGrid.resx">
-      <DependentUpon>Frm_AddKPIGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Frm_AddUser.resx">
       <DependentUpon>Frm_AddUser.cs</DependentUpon>
